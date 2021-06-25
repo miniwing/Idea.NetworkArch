@@ -1,5 +1,5 @@
 //
-//  HomeRootController+Theme.h
+//  HomeController.h
 //  NetworkArch
 //
 //  Created by Harry on 2021/6/25.
@@ -8,13 +8,15 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import "HomeRootController.h"
-
 #import <IDEAUIVendor/IDEAUIVendor.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeRootController (Theme)
+@interface HomeController : IDEAViewController
+
+@end
+
+@interface HomeController ()
 
 @end
 

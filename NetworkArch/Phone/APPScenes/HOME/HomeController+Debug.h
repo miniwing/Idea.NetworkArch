@@ -1,5 +1,5 @@
 //
-//  HomeRootController+Inner.h
+//  HomeController+Debug.h
 //  NetworkArch
 //
 //  Created by Harry on 2021/6/25.
@@ -8,18 +8,16 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import "HomeRootController.h"
+#import "HomeController.h"
 
 #import <IDEAUIVendor/IDEAUIVendor.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeRootController ()
+#if __Debug__
+@interface HomeController (Debug)
 
 @end
-
-@interface HomeRootController (Inner)
-
-@end
+#endif /* __Debug__ */
 
 NS_ASSUME_NONNULL_END

@@ -25,7 +25,7 @@
    [self removeAllSignalResponders];
    [self unobserveAllNotifications];
    [self removeNotification];
-
+   
    __SUPER_DEALLOC;
    
    return;
@@ -46,10 +46,10 @@
       
       [_appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
       [_appBar.headerViewController.headerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-
+      
       [_appBar.headerViewController setShowsHairline:YES];
       [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
-
+      
       [self addChildViewController:_appBar.headerViewController];
 #endif /* MATERIAL_APP_BAR */
       
@@ -73,16 +73,16 @@
    
    [super viewDidLoad];
    
-   [self setTitle:APP_STR(@"设置")];
-   LogDebug((@"[MeController viewDidLoad] : VIEW : %@", self.view));
-
+   [self setTitle:APP_STR(@"SETTING")];
+   LogDebug((@"[SettingRootController viewDidLoad] : VIEW : %@", self.view));
+   
 #if MATERIAL_APP_BAR
    [self.navigationController setNavigationBarHidden:YES];
-
+   
 #  if FULLSCREEN_POP_GESTURE
    [self setPrefersNavigationBarHidden:YES];
 #  endif /* FULLSCREEN_POP_GESTURE */
-
+   
    [self.appBar addSubviewsToParent];
    
    [self.appBar.navigationBar setAllowAnyTitleFontSize:YES];
@@ -92,7 +92,7 @@
    [self.appBar.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
    [self.appBar.navigationBar setTitleFont:[APPFont regularFontOfSize:[APPFont appFontTitleSize]]];
    
-//   [self.appBar.navigationBar setLeftBarButtonItem:self.leftBarButtonItem];
+   //   [self.appBar.navigationBar setLeftBarButtonItem:self.leftBarButtonItem];
 #else /* MATERIAL_APP_BAR */
    [self.navigationController setNavigationBarHidden:NO];
    [self.navigationController.navigationBar setTranslucent:NO];
@@ -126,10 +126,18 @@
                          forKey:NSFontAttributeName];
    
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
-//   [self.navigationItem setLeftBarButtonItem:self.leftBarButtonItem];
+   //   [self.navigationItem setLeftBarButtonItem:self.leftBarButtonItem];
 #endif /* !MATERIAL_APP_BAR */
    
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   
+   if ([self.rt_navigationController isKindOfClass:SettingRootController.class]
+       || [self.navigationController isKindOfClass:SettingRootController.class]) {
+      
+      [self.navigationItem setLeftBarButtonItem:nil];
+      [self.navigationItem setLeftBarButtonItems:nil];
+      
+   } /* End if () */
    
    [self.contentView setBackgroundColor:UIColor.clearColor];
    
@@ -146,19 +154,19 @@
    
    [super viewWillLayoutSubviews];
    
-//   dispatch_once(&_willLayoutOnceToken, ^{
-//
-//   });
-
-//#if MATERIAL_APP_BAR
-//      // Dispose of any resources that can be recreated.
-//      [self.contentViewTop setConstant:self.appBar.headerViewController.headerView.frameHeight];
-//#endif /* MATERIAL_APP_BAR */
-//
-//      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
-////      [self.leftBarButtonItem setWidth:40];
-////      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
-//
+   //   dispatch_once(&_willLayoutOnceToken, ^{
+   //
+   //   });
+   
+   //#if MATERIAL_APP_BAR
+   //      // Dispose of any resources that can be recreated.
+   //      [self.contentViewTop setConstant:self.appBar.headerViewController.headerView.frameHeight];
+   //#endif /* MATERIAL_APP_BAR */
+   //
+   //      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
+   ////      [self.leftBarButtonItem setWidth:40];
+   ////      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
+   //
    [self.contentController viewWillLayoutSubviews];
    
    __CATCH(nErr);
@@ -174,18 +182,18 @@
    
    [super viewDidLayoutSubviews];
    
-//   dispatch_once(&_didLayoutOnceToken, ^{
-//
-//   });
+   //   dispatch_once(&_didLayoutOnceToken, ^{
+   //
+   //   });
 #if MATERIAL_APP_BAR
-      // Dispose of any resources that can be recreated.
-      [self.contentViewTop setConstant:self.appBar.headerViewController.headerView.height];
+   // Dispose of any resources that can be recreated.
+   [self.contentViewTop setConstant:self.appBar.headerViewController.headerView.height];
 #endif /* MATERIAL_APP_BAR */
-
-      LogDebug((@"-[SettingController viewDidLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
-//      [self.leftBarButtonItem setWidth:40];
-//      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
-
+   
+   LogDebug((@"-[SettingController viewDidLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
+   //      [self.leftBarButtonItem setWidth:40];
+   //      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
+   
    [self.contentController viewDidLayoutSubviews];
    
    __CATCH(nErr);

@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24077DC52C859AE021021112 /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8DC8C1A6FD0347DEC1399C /* Pods_NetworkArch.framework */; };
 		4A0E4DBF268584C100A85517 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4DB9268584C100A85517 /* RootViewController.m */; };
 		4A0E4DC0268584C100A85517 /* APPDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4DBD268584C100A85517 /* APPDelegate.m */; };
 		4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4DBE268584C100A85517 /* SplashViewController.m */; };
 		4A0E4DED268585C500A85517 /* ICON.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4DE9268585C400A85517 /* ICON.xcassets */; };
 		4A0E4DEF268585C500A85517 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4DEC268585C500A85517 /* main.m */; };
-		4A0E4DF7268585CF00A85517 /* MAIN.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4DF1268585CE00A85517 /* MAIN.storyboard */; };
 		4A0E4DF8268585CF00A85517 /* LAUNCH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4DF3268585CE00A85517 /* LAUNCH.storyboard */; };
 		4A0E4DF9268585CF00A85517 /* SPLASH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4DF5268585CE00A85517 /* SPLASH.storyboard */; };
 		4A0E4E37268587E800A85517 /* APPFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4E31268587E800A85517 /* APPFont.m */; };
@@ -32,15 +30,25 @@
 		4A0E4EA726858ADC00A85517 /* HOME.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA126858ADC00A85517 /* HOME.storyboard */; };
 		4A0E4EA826858ADC00A85517 /* PRIVACY.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA326858ADC00A85517 /* PRIVACY.storyboard */; };
 		4A0E4EA926858ADC00A85517 /* ONBOARDING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */; };
-		4AB5C1DC26859BB800B1639D /* HomeRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1D226859BB800B1639D /* HomeRootController+Debug.m */; };
-		4AB5C1DD26859BB800B1639D /* HomeRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1D326859BB800B1639D /* HomeRootController+Theme.m */; };
 		4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1D726859BB800B1639D /* HomeRootController.m */; };
 		4AB5C1EE26859F3C00B1639D /* SETTING-HEADER.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB5C1E826859F3C00B1639D /* SETTING-HEADER.xib */; };
 		4AB5C1EF26859F3C00B1639D /* SettingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1EA26859F3C00B1639D /* SettingHeader.m */; };
 		4AB5C1F026859F3C00B1639D /* THEME-BUTTON.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB5C1EB26859F3C00B1639D /* THEME-BUTTON.xib */; };
 		4AB5C1F126859F3C00B1639D /* ThemeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1ED26859F3C00B1639D /* ThemeButton.m */; };
 		4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0E4E21268587BE00A85517 /* libAPPBase.a */; };
-		9C8D55D67EA9F092E178961F /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A14F0B6897A453A3E730E5 /* Pods_APPBase.framework */; };
+		4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B812685C39400DC1DA2 /* HomeController+Notification.m */; };
+		4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B842685C39400DC1DA2 /* HomeController+Debug.m */; };
+		4AE51B8F2685C39400DC1DA2 /* HomeController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B852685C39400DC1DA2 /* HomeController+Theme.m */; };
+		4AE51B902685C39400DC1DA2 /* HomeController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B872685C39400DC1DA2 /* HomeController+Inner.m */; };
+		4AE51B912685C39400DC1DA2 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B892685C39400DC1DA2 /* HomeController.m */; };
+		4AE51B922685C39400DC1DA2 /* HomeController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B8B2685C39400DC1DA2 /* HomeController+Signal.m */; };
+		4AE51B942685C4DA00DC1DA2 /* SPONSOR.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B932685C4DA00DC1DA2 /* SPONSOR.png */; };
+		4AE51B962685C7C500DC1DA2 /* IMAGEs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B952685C7C500DC1DA2 /* IMAGEs.xcassets */; };
+		4AE51B9B2685CD3400DC1DA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B972685CD3400DC1DA2 /* InfoPlist.strings */; };
+		4AE51B9C2685CD3400DC1DA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B992685CD3400DC1DA2 /* Localizable.strings */; };
+		4AE51B9F2685CDFB00DC1DA2 /* MAIN.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B9D2685CDFB00DC1DA2 /* MAIN.storyboard */; };
+		4CB9F4A6F649DF588A38AFB8 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663787BBE6EACDC040EEC31E /* Pods_APPBase.framework */; };
+		A293A0A96CE7D1BF91BE9290 /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A363B9596FBE76FCEE4DC2D1 /* Pods_NetworkArch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +74,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2B8DC8C1A6FD0347DEC1399C /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0E4DB9268584C100A85517 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		4A0E4DBA268584C100A85517 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		4A0E4DBB268584C100A85517 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -77,7 +84,6 @@
 		4A0E4DEA268585C400A85517 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		4A0E4DEB268585C400A85517 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A0E4DEC268585C500A85517 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4A0E4DF2268585CE00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MAIN.storyboard; sourceTree = "<group>"; };
 		4A0E4DF4268585CE00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LAUNCH.storyboard; sourceTree = "<group>"; };
 		4A0E4DF6268585CE00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SPLASH.storyboard; sourceTree = "<group>"; };
 		4A0E4E21268587BE00A85517 /* libAPPBase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAPPBase.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,24 +120,37 @@
 		4A0E4EA426858ADC00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PRIVACY.storyboard; sourceTree = "<group>"; };
 		4A0E4EA626858ADC00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ONBOARDING.storyboard; sourceTree = "<group>"; };
 		4A98A6362684B50F00EEEB60 /* NetworkArch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkArch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AB5C1D026859BB800B1639D /* HomeRootController+Inner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeRootController+Inner.h"; sourceTree = "<group>"; };
 		4AB5C1D126859BB800B1639D /* HomeRootController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRootController.h; sourceTree = "<group>"; };
-		4AB5C1D226859BB800B1639D /* HomeRootController+Debug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeRootController+Debug.m"; sourceTree = "<group>"; };
-		4AB5C1D326859BB800B1639D /* HomeRootController+Theme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeRootController+Theme.m"; sourceTree = "<group>"; };
 		4AB5C1D726859BB800B1639D /* HomeRootController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeRootController.m; sourceTree = "<group>"; };
-		4AB5C1D826859BB800B1639D /* HomeRootController+Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeRootController+Theme.h"; sourceTree = "<group>"; };
-		4AB5C1DA26859BB800B1639D /* HomeRootController+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeRootController+Debug.h"; sourceTree = "<group>"; };
 		4AB5C1E826859F3C00B1639D /* SETTING-HEADER.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SETTING-HEADER.xib"; sourceTree = "<group>"; };
 		4AB5C1E926859F3C00B1639D /* SettingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingHeader.h; sourceTree = "<group>"; };
 		4AB5C1EA26859F3C00B1639D /* SettingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingHeader.m; sourceTree = "<group>"; };
 		4AB5C1EB26859F3C00B1639D /* THEME-BUTTON.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "THEME-BUTTON.xib"; sourceTree = "<group>"; };
 		4AB5C1EC26859F3C00B1639D /* ThemeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeButton.h; sourceTree = "<group>"; };
 		4AB5C1ED26859F3C00B1639D /* ThemeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeButton.m; sourceTree = "<group>"; };
+		4AE51B812685C39400DC1DA2 /* HomeController+Notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeController+Notification.m"; sourceTree = "<group>"; };
+		4AE51B822685C39400DC1DA2 /* HomeController+Inner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeController+Inner.h"; sourceTree = "<group>"; };
+		4AE51B832685C39400DC1DA2 /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		4AE51B842685C39400DC1DA2 /* HomeController+Debug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeController+Debug.m"; sourceTree = "<group>"; };
+		4AE51B852685C39400DC1DA2 /* HomeController+Theme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeController+Theme.m"; sourceTree = "<group>"; };
+		4AE51B862685C39400DC1DA2 /* HomeController+Signal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeController+Signal.h"; sourceTree = "<group>"; };
+		4AE51B872685C39400DC1DA2 /* HomeController+Inner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeController+Inner.m"; sourceTree = "<group>"; };
+		4AE51B882685C39400DC1DA2 /* HomeController+Notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeController+Notification.h"; sourceTree = "<group>"; };
+		4AE51B892685C39400DC1DA2 /* HomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		4AE51B8A2685C39400DC1DA2 /* HomeController+Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeController+Theme.h"; sourceTree = "<group>"; };
+		4AE51B8B2685C39400DC1DA2 /* HomeController+Signal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeController+Signal.m"; sourceTree = "<group>"; };
+		4AE51B8C2685C39400DC1DA2 /* HomeController+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeController+Debug.h"; sourceTree = "<group>"; };
+		4AE51B932685C4DA00DC1DA2 /* SPONSOR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SPONSOR.png; sourceTree = "<group>"; };
+		4AE51B952685C7C500DC1DA2 /* IMAGEs.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IMAGEs.xcassets; sourceTree = "<group>"; };
+		4AE51B982685CD3400DC1DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4AE51B9A2685CD3400DC1DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4AE51B9E2685CDFB00DC1DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MAIN.storyboard; sourceTree = "<group>"; };
 		65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
+		663787BBE6EACDC040EEC31E /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A363B9596FBE76FCEE4DC2D1 /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90D912BF379DE28D323CFC9 /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
 		C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.release.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.release.xcconfig"; sourceTree = "<group>"; };
 		CC7F3049F2B28E17A49195A2 /* Pods-NetworkArch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.debug.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.debug.xcconfig"; sourceTree = "<group>"; };
-		D4A14F0B6897A453A3E730E5 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C8D55D67EA9F092E178961F /* Pods_APPBase.framework in Frameworks */,
+				4CB9F4A6F649DF588A38AFB8 /* Pods_APPBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */,
-				24077DC52C859AE021021112 /* Pods_NetworkArch.framework in Frameworks */,
+				A293A0A96CE7D1BF91BE9290 /* Pods_NetworkArch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,15 +192,19 @@
 		4A0E4DE7268585B800A85517 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4AE51B932685C4DA00DC1DA2 /* SPONSOR.png */,
+				4AE51B972685CD3400DC1DA2 /* InfoPlist.strings */,
+				4AE51B992685CD3400DC1DA2 /* Localizable.strings */,
 				4A0E4DEC268585C500A85517 /* main.m */,
 				4A0E4DEA268585C400A85517 /* Prefix.pch */,
 				4A0E4DEB268585C400A85517 /* Info.plist */,
 				4A0E4DF3268585CE00A85517 /* LAUNCH.storyboard */,
 				4A0E4DF5268585CE00A85517 /* SPLASH.storyboard */,
 				4A0E4DE9268585C400A85517 /* ICON.xcassets */,
+				4AE51B952685C7C500DC1DA2 /* IMAGEs.xcassets */,
 				4A0E4EA326858ADC00A85517 /* PRIVACY.storyboard */,
 				4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */,
-				4A0E4DF1268585CE00A85517 /* MAIN.storyboard */,
+				4AE51B9D2685CDFB00DC1DA2 /* MAIN.storyboard */,
 				4A0E4EA126858ADC00A85517 /* HOME.storyboard */,
 				4A0E4E5D268589CA00A85517 /* SETTING.storyboard */,
 			);
@@ -290,13 +313,20 @@
 		4A0E4E5C2685898E00A85517 /* HOME */ = {
 			isa = PBXGroup;
 			children = (
-				4AB5C1D026859BB800B1639D /* HomeRootController+Inner.h */,
 				4AB5C1D126859BB800B1639D /* HomeRootController.h */,
 				4AB5C1D726859BB800B1639D /* HomeRootController.m */,
-				4AB5C1DA26859BB800B1639D /* HomeRootController+Debug.h */,
-				4AB5C1D226859BB800B1639D /* HomeRootController+Debug.m */,
-				4AB5C1D826859BB800B1639D /* HomeRootController+Theme.h */,
-				4AB5C1D326859BB800B1639D /* HomeRootController+Theme.m */,
+				4AE51B832685C39400DC1DA2 /* HomeController.h */,
+				4AE51B892685C39400DC1DA2 /* HomeController.m */,
+				4AE51B822685C39400DC1DA2 /* HomeController+Inner.h */,
+				4AE51B872685C39400DC1DA2 /* HomeController+Inner.m */,
+				4AE51B8A2685C39400DC1DA2 /* HomeController+Theme.h */,
+				4AE51B852685C39400DC1DA2 /* HomeController+Theme.m */,
+				4AE51B862685C39400DC1DA2 /* HomeController+Signal.h */,
+				4AE51B8B2685C39400DC1DA2 /* HomeController+Signal.m */,
+				4AE51B882685C39400DC1DA2 /* HomeController+Notification.h */,
+				4AE51B812685C39400DC1DA2 /* HomeController+Notification.m */,
+				4AE51B8C2685C39400DC1DA2 /* HomeController+Debug.h */,
+				4AE51B842685C39400DC1DA2 /* HomeController+Debug.m */,
 			);
 			path = HOME;
 			sourceTree = "<group>";
@@ -304,6 +334,10 @@
 		4A0E4E62268589E500A85517 /* SETTING */ = {
 			isa = PBXGroup;
 			children = (
+				4A0E4E6F268589E500A85517 /* SettingRootController.h */,
+				4A0E4E70268589E500A85517 /* SettingRootController.m */,
+				4A0E4E6D268589E500A85517 /* SettingController.h */,
+				4A0E4E6E268589E500A85517 /* SettingController.m */,
 				4A0E4E63268589E500A85517 /* SettingContentController+Theme.h */,
 				4A0E4E64268589E500A85517 /* SettingContentController+Theme.m */,
 				4A0E4E65268589E500A85517 /* SettingContentController.h */,
@@ -314,10 +348,6 @@
 				4A0E4E6A268589E500A85517 /* SettingController+Notification.m */,
 				4A0E4E6B268589E500A85517 /* SettingController+Theme.h */,
 				4A0E4E6C268589E500A85517 /* SettingController+Theme.m */,
-				4A0E4E6D268589E500A85517 /* SettingController.h */,
-				4A0E4E6E268589E500A85517 /* SettingController.m */,
-				4A0E4E6F268589E500A85517 /* SettingRootController.h */,
-				4A0E4E70268589E500A85517 /* SettingRootController.m */,
 			);
 			path = SETTING;
 			sourceTree = "<group>";
@@ -382,8 +412,8 @@
 		BC9F1E42789CEDD6C11BF75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2B8DC8C1A6FD0347DEC1399C /* Pods_NetworkArch.framework */,
-				D4A14F0B6897A453A3E730E5 /* Pods_APPBase.framework */,
+				663787BBE6EACDC040EEC31E /* Pods_APPBase.framework */,
+				A363B9596FBE76FCEE4DC2D1 /* Pods_NetworkArch.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -472,13 +502,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A0E4E5F268589CA00A85517 /* SETTING.storyboard in Resources */,
-				4A0E4DF7268585CF00A85517 /* MAIN.storyboard in Resources */,
 				4A0E4EA726858ADC00A85517 /* HOME.storyboard in Resources */,
+				4AE51B9C2685CD3400DC1DA2 /* Localizable.strings in Resources */,
+				4AE51B9B2685CD3400DC1DA2 /* InfoPlist.strings in Resources */,
 				4A0E4DF9268585CF00A85517 /* SPLASH.storyboard in Resources */,
 				4A0E4EA826858ADC00A85517 /* PRIVACY.storyboard in Resources */,
+				4AE51B962685C7C500DC1DA2 /* IMAGEs.xcassets in Resources */,
 				4A0E4DED268585C500A85517 /* ICON.xcassets in Resources */,
+				4AE51B942685C4DA00DC1DA2 /* SPONSOR.png in Resources */,
 				4A0E4DF8268585CF00A85517 /* LAUNCH.storyboard in Resources */,
 				4AB5C1F026859F3C00B1639D /* THEME-BUTTON.xib in Resources */,
+				4AE51B9F2685CDFB00DC1DA2 /* MAIN.storyboard in Resources */,
 				4AB5C1EE26859F3C00B1639D /* SETTING-HEADER.xib in Resources */,
 				4A0E4EA926858ADC00A85517 /* ONBOARDING.storyboard in Resources */,
 			);
@@ -581,21 +615,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AB5C1DD26859BB800B1639D /* HomeRootController+Theme.m in Sources */,
 				4A0E4E74268589E600A85517 /* SettingController+Notification.m in Sources */,
 				4A0E4E462685888500A85517 /* APPDelegate+APP.m in Sources */,
 				4A0E4E77268589E600A85517 /* SettingRootController.m in Sources */,
+				4AE51B922685C39400DC1DA2 /* HomeController+Signal.m in Sources */,
 				4A0E4DC0268584C100A85517 /* APPDelegate.m in Sources */,
 				4A0E4E75268589E600A85517 /* SettingController+Theme.m in Sources */,
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
 				4A0E4E76268589E600A85517 /* SettingController.m in Sources */,
 				4A0E4E72268589E500A85517 /* SettingContentController.m in Sources */,
-				4AB5C1DC26859BB800B1639D /* HomeRootController+Debug.m in Sources */,
 				4A0E4DBF268584C100A85517 /* RootViewController.m in Sources */,
 				4AB5C1F126859F3C00B1639D /* ThemeButton.m in Sources */,
 				4A0E4E73268589E500A85517 /* SettingController+Inner.m in Sources */,
+				4AE51B902685C39400DC1DA2 /* HomeController+Inner.m in Sources */,
 				4A0E4DEF268585C500A85517 /* main.m in Sources */,
+				4AE51B8F2685C39400DC1DA2 /* HomeController+Theme.m in Sources */,
+				4AE51B912685C39400DC1DA2 /* HomeController.m in Sources */,
 				4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */,
+				4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */,
+				4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */,
 				4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */,
 				4AB5C1EF26859F3C00B1639D /* SettingHeader.m in Sources */,
 				4A0E4E4D2685888F00A85517 /* APPDelegate+Kit.m in Sources */,
@@ -614,14 +652,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4A0E4DF1268585CE00A85517 /* MAIN.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4A0E4DF2268585CE00A85517 /* Base */,
-			);
-			name = MAIN.storyboard;
-			sourceTree = "<group>";
-		};
 		4A0E4DF3268585CE00A85517 /* LAUNCH.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -668,6 +698,30 @@
 				4A0E4EA626858ADC00A85517 /* Base */,
 			);
 			name = ONBOARDING.storyboard;
+			sourceTree = "<group>";
+		};
+		4AE51B972685CD3400DC1DA2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AE51B982685CD3400DC1DA2 /* Base */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4AE51B992685CD3400DC1DA2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AE51B9A2685CD3400DC1DA2 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4AE51B9D2685CDFB00DC1DA2 /* MAIN.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AE51B9E2685CDFB00DC1DA2 /* Base */,
+			);
+			name = MAIN.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

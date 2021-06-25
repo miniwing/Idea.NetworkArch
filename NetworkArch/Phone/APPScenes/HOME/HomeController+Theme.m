@@ -1,5 +1,5 @@
 //
-//  HomeRootController+Theme.m
+//  HomeController+Theme.m
 //  NetworkArch
 //
 //  Created by Harry on 2021/6/25.
@@ -9,10 +9,10 @@
 //  TEL : +(852)53054612
 //
 
-#import "HomeRootController+Theme.h"
+#import "HomeController.h"
 
 #pragma mark - UITheme
-@implementation HomeRootController (Theme)
+@implementation HomeController (Theme)
 
 // #if DK_NIGHT_VERSION
 // #endif // #if DK_NIGHT_VERSION
@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[HomeRootController+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[HomeController+Theme onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
 

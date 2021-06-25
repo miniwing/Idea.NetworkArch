@@ -170,6 +170,7 @@ typedef FBLPromise Promise;
 #     import "RTRootNavigationController.h"
 #     define RT_ROOT_NAVIGATIONCONTROLLER                                  (1)
 #  else
+#     define rt_navigationController                                       navigationController
 #     define RT_ROOT_NAVIGATIONCONTROLLER                                  (0)
 #  endif
 

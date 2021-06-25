@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q25-V3-PS6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CHECKIN-ROOT-->
+        <!--HOME-ROOT-->
         <scene sceneID="XNF-vM-NDd">
             <objects>
-                <navigationController storyboardIdentifier="CHECKIN-ROOT" id="KZy-95-h4Q" userLabel="CHECKIN-ROOT" customClass="CheckinRootController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HOME-ROOT" id="KZy-95-h4Q" userLabel="HOME-ROOT" customClass="HomeRootController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Tlr-J3-fVB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,21 +25,63 @@
             </objects>
             <point key="canvasLocation" x="-396" y="161"/>
         </scene>
-        <!--CHECKIN-->
+        <!--HOME-->
         <scene sceneID="lNF-oO-wjU">
             <objects>
-                <viewController storyboardIdentifier="CheckinController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q25-V3-PS6" userLabel="CHECKIN" customClass="CheckinController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q25-V3-PS6" userLabel="HOME" customClass="HomeController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fu3-kW-ZxG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdA-Lf-zxg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <connections>
+                                    <segue destination="FpE-1M-I5K" kind="embed" id="iC0-8D-llQ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Jx0-Fl-Mpd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AdA-Lf-zxg" secondAttribute="trailing" id="8lF-9V-z0e"/>
+                            <constraint firstItem="AdA-Lf-zxg" firstAttribute="top" secondItem="fu3-kW-ZxG" secondAttribute="top" id="XjW-aB-Gxz"/>
+                            <constraint firstAttribute="bottom" secondItem="AdA-Lf-zxg" secondAttribute="bottom" id="aF4-Zk-s0t"/>
+                            <constraint firstItem="AdA-Lf-zxg" firstAttribute="leading" secondItem="fu3-kW-ZxG" secondAttribute="leading" id="ye8-ZT-AfY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kge-OB-nD4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCe-ii-5jb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="493" y="161"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="4VA-JJ-Y4H">
+            <objects>
+                <tableViewController id="FpE-1M-I5K" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pbQ-4U-rhh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ol5-fV-gXU">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ol5-fV-gXU" id="BR7-Pw-PpD">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FpE-1M-I5K" id="kC6-tA-RvG"/>
+                            <outlet property="delegate" destination="FpE-1M-I5K" id="YSc-oI-zGa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Upj-TP-CHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="190"/>
         </scene>
     </scenes>
     <resources>

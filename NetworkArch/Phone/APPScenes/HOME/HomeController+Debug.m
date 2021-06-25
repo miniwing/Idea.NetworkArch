@@ -1,5 +1,5 @@
 //
-//  HomeRootController+Debug.m
+//  HomeController+Debug.m
 //  NetworkArch
 //
 //  Created by Harry on 2021/6/25.
@@ -9,17 +9,17 @@
 //  TEL : +(852)53054612
 //
 
-#import "HomeRootController+Debug.h"
+#import "HomeController+Debug.h"
 
 #if __Debug__
-@implementation HomeRootController (Debug)
+@implementation HomeController (Debug)
 
 @end
 #endif /* __Debug__ */
 
 #if __InjectionIII__
 #pragma mark - InjectionIII
-@implementation HomeRootController (InjectionIII)
+@implementation HomeController (InjectionIII)
 
 - (void)injected {
    

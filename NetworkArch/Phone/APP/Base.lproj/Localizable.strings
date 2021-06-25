@@ -1,0 +1,31 @@
+/*
+  Localizable.strings
+ NetworkArch
+
+  Created by Harry on 2021/6/7.
+  Copyright © 2021 Harry. All rights reserved.
+*/
+
+/// HOME
+"HOME"                              = "HOME";
+
+/// SETTING
+"SETTING"                           = "SETTING";
+
+"APPEARANCE"                        = "外观";
+
+"Appearance"                        = "外观";
+"Light"                             = "浅色";
+"Night"                             = "深色";
+"Auto"                              = "自动（跟随系统)";
+
+"Animation"                         = "动画";
+
+"Rate on App Store"                 = "在App Store上评分";
+
+"About"                             = "关于";
+"Follow on Weibo"                   = "关注微博";
+"Follow on Twitter"                 = "关注Twitter";
+"Follow on Facebook"                = "关注Facebook";
+
+"Version"                           = "版本";

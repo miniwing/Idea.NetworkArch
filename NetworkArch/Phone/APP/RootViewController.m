@@ -156,10 +156,8 @@ NS_ASSUME_NONNULL_END
    //   Icons_Tabbar_Diary
    
    // Do any additional setup after loading the view.
-   stTitles       = @[ APP_STR(@"DISCOVERY"),
-                       APP_STR(@"TREND"),
-                       APP_STR(@"CHECKIN"),
-                       APP_STR(@"DIARY")];
+   stTitles       = @[ APP_STR(@"HOME"),
+                       APP_STR(@"SETTING")];
    
    stAttributes   = @{
       NSFontAttributeName : [APPFont lightFontOfSize:[APPFont appFontTabTitleSize]]
