@@ -15,6 +15,8 @@
 #import "SplashViewController.h"
 #import "RootViewController.h"
 
+#import "TrackingController.h"
+
 #import "SettingController+Notification.h"
 
 IDEA_ENUM(NSInteger, TransType) {
@@ -215,7 +217,7 @@ NS_ASSUME_NONNULL_END
    //
    //   } /* End if () */
    
-   //   UI_PERFORM_SELECTOR(self, @selector(openPrivacy:), @(NO), NO);
+   //   UI_PERFORM_SELECTOR(self, @selector(openTracking:), @(NO), NO);
    
    __CATCH(nErr);
    
@@ -292,20 +294,29 @@ NS_ASSUME_NONNULL_END
    return;
 }
 
-- (void)openPrivacy:(NSNumber *)aAnimated {
+- (void)openTracking:(NSNumber *)aAnimated {
    
    int                            nErr                                     = EFAULT;
-      
+   
+   TrackingController             *stTrackingController                      = nil;
+   
    __TRY;
    
-   if ([APPDelegate isPrivacy]) {
+   if ([APPDelegate isTracking]) {
       
       nErr  = noErr;
       
       break;
       
    } /* End if () */
+   
+   stTrackingController  = [UIStoryboard loadStoryboard:TrackingController.storyboard
+                                        viewController:[TrackingController class]];
+   
+   [self popUp:stTrackingController animated:aAnimated.boolValue completion:^{
       
+   }];
+   
    __CATCH(nErr);
    
    return;
@@ -318,7 +329,7 @@ NS_ASSUME_NONNULL_END
    
    __TRY;
    
-   UI_PERFORM_SELECTOR(self, @selector(openPrivacy:), @(YES), NO);
+   UI_PERFORM_SELECTOR(self, @selector(openTracking:), @(YES), NO);
    
    __CATCH(nErr);
    

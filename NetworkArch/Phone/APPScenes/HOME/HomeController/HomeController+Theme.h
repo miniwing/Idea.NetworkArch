@@ -1,5 +1,5 @@
 //
-//  HomeController+Debug.h
+//  HomeController+Theme.h
 //  NetworkArch
 //
 //  Created by Harry on 2021/6/25.
@@ -10,14 +10,10 @@
 
 #import "HomeController.h"
 
-#import <IDEAUIVendor/IDEAUIVendor.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
-#if __Debug__
-@interface HomeController (Debug)
+@interface HomeController (Theme)
 
 @end
-#endif /* __Debug__ */
 
 NS_ASSUME_NONNULL_END

@@ -1,5 +1,5 @@
 //
-//  HomeController+Theme.h
+//  HomeContentController+Signal.h
 //  NetworkArch
 //
 //  Created by Harry on 2021/6/25.
@@ -8,13 +8,15 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import "HomeController.h"
-
-#import <IDEAUIVendor/IDEAUIVendor.h>
+#import "HomeContentController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeController (Theme)
+@interface HomeContentController (Signal)
+
+#if __Debug__
+@signal(self);
+#endif /* __Debug__ */
 
 @end
 

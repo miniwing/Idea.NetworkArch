@@ -19,10 +19,6 @@
 
 #import "SettingController+Notification.h"
 
-@interface APPDelegate ()
-
-@end
-
 @implementation APPDelegate
 
 - (BOOL)application:(UIApplication *)aApplication willFinishLaunchingWithOptions:(nullable NSDictionary<UIApplicationLaunchOptionsKey, id> *)aLaunchOptions {
@@ -89,7 +85,6 @@
 
 #if __InjectionIII__
    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
-   
 //   // or switf
 //   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
 //   // for tvOS:

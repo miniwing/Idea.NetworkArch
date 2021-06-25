@@ -53,6 +53,8 @@
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
    
+   [self setNeedsStatusBarAppearanceUpdate];
+
    __CATCH(nErr);
    
    return;

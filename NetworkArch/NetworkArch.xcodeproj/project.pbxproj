@@ -28,8 +28,17 @@
 		4A0E4E77268589E600A85517 /* SettingRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4E70268589E500A85517 /* SettingRootController.m */; };
 		4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4E9D26858A0200A85517 /* UIApplication+Notification.m */; };
 		4A0E4EA726858ADC00A85517 /* HOME.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA126858ADC00A85517 /* HOME.storyboard */; };
-		4A0E4EA826858ADC00A85517 /* PRIVACY.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA326858ADC00A85517 /* PRIVACY.storyboard */; };
+		4A0E4EA826858ADC00A85517 /* TRACKING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA326858ADC00A85517 /* TRACKING.storyboard */; };
 		4A0E4EA926858ADC00A85517 /* ONBOARDING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */; };
+		4A45536526862E4D0050E736 /* HomeContentController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535826862E4B0050E736 /* HomeContentController+Signal.m */; };
+		4A45536626862E4D0050E736 /* HomeContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535C26862E4B0050E736 /* HomeContentController.m */; };
+		4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535E26862E4C0050E736 /* HomeContentController+Debug.m */; };
+		4A45536826862E4D0050E736 /* HomeContentController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535F26862E4C0050E736 /* HomeContentController+Theme.m */; };
+		4A45536926862E4D0050E736 /* HomeContentController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45536026862E4C0050E736 /* HomeContentController+Notification.m */; };
+		4A45536A26862E4D0050E736 /* HomeContentController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45536426862E4C0050E736 /* HomeContentController+Inner.m */; };
+		4A4553842686327B0050E736 /* TrackingController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45537F2686327A0050E736 /* TrackingController+Notification.m */; };
+		4A4553852686327B0050E736 /* TrackingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4553812686327A0050E736 /* TrackingController.m */; };
+		4A4553862686327B0050E736 /* TrackingRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4553832686327A0050E736 /* TrackingRootController.m */; };
 		4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1D726859BB800B1639D /* HomeRootController.m */; };
 		4AB5C1EE26859F3C00B1639D /* SETTING-HEADER.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB5C1E826859F3C00B1639D /* SETTING-HEADER.xib */; };
 		4AB5C1EF26859F3C00B1639D /* SettingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1EA26859F3C00B1639D /* SettingHeader.m */; };
@@ -47,6 +56,7 @@
 		4AE51B9B2685CD3400DC1DA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B972685CD3400DC1DA2 /* InfoPlist.strings */; };
 		4AE51B9C2685CD3400DC1DA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B992685CD3400DC1DA2 /* Localizable.strings */; };
 		4AE51B9F2685CDFB00DC1DA2 /* MAIN.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B9D2685CDFB00DC1DA2 /* MAIN.storyboard */; };
+		4AFFEDBC268645160052712A /* AppTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFEDBB268645160052712A /* AppTracking.m */; };
 		4CB9F4A6F649DF588A38AFB8 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663787BBE6EACDC040EEC31E /* Pods_APPBase.framework */; };
 		A293A0A96CE7D1BF91BE9290 /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A363B9596FBE76FCEE4DC2D1 /* Pods_NetworkArch.framework */; };
 /* End PBXBuildFile section */
@@ -117,8 +127,26 @@
 		4A0E4E9C26858A0200A85517 /* UIApplication+Notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Notification.h"; sourceTree = "<group>"; };
 		4A0E4E9D26858A0200A85517 /* UIApplication+Notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Notification.m"; sourceTree = "<group>"; };
 		4A0E4EA226858ADC00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HOME.storyboard; sourceTree = "<group>"; };
-		4A0E4EA426858ADC00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PRIVACY.storyboard; sourceTree = "<group>"; };
+		4A0E4EA426858ADC00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TRACKING.storyboard; sourceTree = "<group>"; };
 		4A0E4EA626858ADC00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ONBOARDING.storyboard; sourceTree = "<group>"; };
+		4A45535726862E4B0050E736 /* HomeContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentController.h; sourceTree = "<group>"; };
+		4A45535826862E4B0050E736 /* HomeContentController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeContentController+Signal.m"; sourceTree = "<group>"; };
+		4A45535926862E4B0050E736 /* HomeContentController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeContentController+Inner.h"; sourceTree = "<group>"; };
+		4A45535A26862E4B0050E736 /* HomeContentController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeContentController+Debug.h"; sourceTree = "<group>"; };
+		4A45535B26862E4B0050E736 /* HomeContentController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeContentController+Notification.h"; sourceTree = "<group>"; };
+		4A45535C26862E4B0050E736 /* HomeContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeContentController.m; sourceTree = "<group>"; };
+		4A45535D26862E4C0050E736 /* HomeContentController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeContentController+Signal.h"; sourceTree = "<group>"; };
+		4A45535E26862E4C0050E736 /* HomeContentController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeContentController+Debug.m"; sourceTree = "<group>"; };
+		4A45535F26862E4C0050E736 /* HomeContentController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeContentController+Theme.m"; sourceTree = "<group>"; };
+		4A45536026862E4C0050E736 /* HomeContentController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeContentController+Notification.m"; sourceTree = "<group>"; };
+		4A45536126862E4C0050E736 /* HomeContentController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeContentController+Theme.h"; sourceTree = "<group>"; };
+		4A45536426862E4C0050E736 /* HomeContentController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeContentController+Inner.m"; sourceTree = "<group>"; };
+		4A45537E2686327A0050E736 /* TrackingController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TrackingController+Notification.h"; sourceTree = "<group>"; };
+		4A45537F2686327A0050E736 /* TrackingController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TrackingController+Notification.m"; sourceTree = "<group>"; };
+		4A4553802686327A0050E736 /* TrackingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingController.h; sourceTree = "<group>"; };
+		4A4553812686327A0050E736 /* TrackingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingController.m; sourceTree = "<group>"; };
+		4A4553822686327A0050E736 /* TrackingRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingRootController.h; sourceTree = "<group>"; };
+		4A4553832686327A0050E736 /* TrackingRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingRootController.m; sourceTree = "<group>"; };
 		4A98A6362684B50F00EEEB60 /* NetworkArch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkArch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB5C1D126859BB800B1639D /* HomeRootController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRootController.h; sourceTree = "<group>"; };
 		4AB5C1D726859BB800B1639D /* HomeRootController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeRootController.m; sourceTree = "<group>"; };
@@ -145,6 +173,8 @@
 		4AE51B982685CD3400DC1DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AE51B9A2685CD3400DC1DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4AE51B9E2685CDFB00DC1DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MAIN.storyboard; sourceTree = "<group>"; };
+		4AFFEDBA268645160052712A /* AppTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTracking.h; sourceTree = "<group>"; };
+		4AFFEDBB268645160052712A /* AppTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTracking.m; sourceTree = "<group>"; };
 		65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		663787BBE6EACDC040EEC31E /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A363B9596FBE76FCEE4DC2D1 /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,7 +232,7 @@
 				4A0E4DF5268585CE00A85517 /* SPLASH.storyboard */,
 				4A0E4DE9268585C400A85517 /* ICON.xcassets */,
 				4AE51B952685C7C500DC1DA2 /* IMAGEs.xcassets */,
-				4A0E4EA326858ADC00A85517 /* PRIVACY.storyboard */,
+				4A0E4EA326858ADC00A85517 /* TRACKING.storyboard */,
 				4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */,
 				4AE51B9D2685CDFB00DC1DA2 /* MAIN.storyboard */,
 				4A0E4EA126858ADC00A85517 /* HOME.storyboard */,
@@ -289,6 +319,7 @@
 		4A0E4E592685897400A85517 /* APPScenes */ = {
 			isa = PBXGroup;
 			children = (
+				4A45537D2686327A0050E736 /* TRACKING */,
 				4A0E4E5C2685898E00A85517 /* HOME */,
 				4A0E4E62268589E500A85517 /* SETTING */,
 			);
@@ -298,6 +329,8 @@
 		4A0E4E5A2685897C00A85517 /* APPModels */ = {
 			isa = PBXGroup;
 			children = (
+				4AFFEDBA268645160052712A /* AppTracking.h */,
+				4AFFEDBB268645160052712A /* AppTracking.m */,
 			);
 			path = APPModels;
 			sourceTree = "<group>";
@@ -315,6 +348,26 @@
 			children = (
 				4AB5C1D126859BB800B1639D /* HomeRootController.h */,
 				4AB5C1D726859BB800B1639D /* HomeRootController.m */,
+				4A45533926862DEF0050E736 /* HomeController */,
+				4A45533E26862DFC0050E736 /* HomeContentController */,
+			);
+			path = HOME;
+			sourceTree = "<group>";
+		};
+		4A0E4E62268589E500A85517 /* SETTING */ = {
+			isa = PBXGroup;
+			children = (
+				4A0E4E6F268589E500A85517 /* SettingRootController.h */,
+				4A0E4E70268589E500A85517 /* SettingRootController.m */,
+				4A455371268630D30050E736 /* SettingController */,
+				4A455374268630EC0050E736 /* SettingContentController */,
+			);
+			path = SETTING;
+			sourceTree = "<group>";
+		};
+		4A45533926862DEF0050E736 /* HomeController */ = {
+			isa = PBXGroup;
+			children = (
 				4AE51B832685C39400DC1DA2 /* HomeController.h */,
 				4AE51B892685C39400DC1DA2 /* HomeController.m */,
 				4AE51B822685C39400DC1DA2 /* HomeController+Inner.h */,
@@ -328,28 +381,65 @@
 				4AE51B8C2685C39400DC1DA2 /* HomeController+Debug.h */,
 				4AE51B842685C39400DC1DA2 /* HomeController+Debug.m */,
 			);
-			path = HOME;
+			path = HomeController;
 			sourceTree = "<group>";
 		};
-		4A0E4E62268589E500A85517 /* SETTING */ = {
+		4A45533E26862DFC0050E736 /* HomeContentController */ = {
 			isa = PBXGroup;
 			children = (
-				4A0E4E6F268589E500A85517 /* SettingRootController.h */,
-				4A0E4E70268589E500A85517 /* SettingRootController.m */,
+				4A45535726862E4B0050E736 /* HomeContentController.h */,
+				4A45535C26862E4B0050E736 /* HomeContentController.m */,
+				4A45535926862E4B0050E736 /* HomeContentController+Inner.h */,
+				4A45536426862E4C0050E736 /* HomeContentController+Inner.m */,
+				4A45536126862E4C0050E736 /* HomeContentController+Theme.h */,
+				4A45535F26862E4C0050E736 /* HomeContentController+Theme.m */,
+				4A45535D26862E4C0050E736 /* HomeContentController+Signal.h */,
+				4A45535826862E4B0050E736 /* HomeContentController+Signal.m */,
+				4A45535B26862E4B0050E736 /* HomeContentController+Notification.h */,
+				4A45536026862E4C0050E736 /* HomeContentController+Notification.m */,
+				4A45535A26862E4B0050E736 /* HomeContentController+Debug.h */,
+				4A45535E26862E4C0050E736 /* HomeContentController+Debug.m */,
+			);
+			path = HomeContentController;
+			sourceTree = "<group>";
+		};
+		4A455371268630D30050E736 /* SettingController */ = {
+			isa = PBXGroup;
+			children = (
 				4A0E4E6D268589E500A85517 /* SettingController.h */,
 				4A0E4E6E268589E500A85517 /* SettingController.m */,
-				4A0E4E63268589E500A85517 /* SettingContentController+Theme.h */,
-				4A0E4E64268589E500A85517 /* SettingContentController+Theme.m */,
-				4A0E4E65268589E500A85517 /* SettingContentController.h */,
-				4A0E4E66268589E500A85517 /* SettingContentController.m */,
 				4A0E4E67268589E500A85517 /* SettingController+Inner.h */,
 				4A0E4E68268589E500A85517 /* SettingController+Inner.m */,
-				4A0E4E69268589E500A85517 /* SettingController+Notification.h */,
-				4A0E4E6A268589E500A85517 /* SettingController+Notification.m */,
 				4A0E4E6B268589E500A85517 /* SettingController+Theme.h */,
 				4A0E4E6C268589E500A85517 /* SettingController+Theme.m */,
+				4A0E4E69268589E500A85517 /* SettingController+Notification.h */,
+				4A0E4E6A268589E500A85517 /* SettingController+Notification.m */,
 			);
-			path = SETTING;
+			path = SettingController;
+			sourceTree = "<group>";
+		};
+		4A455374268630EC0050E736 /* SettingContentController */ = {
+			isa = PBXGroup;
+			children = (
+				4A0E4E65268589E500A85517 /* SettingContentController.h */,
+				4A0E4E66268589E500A85517 /* SettingContentController.m */,
+				4A0E4E63268589E500A85517 /* SettingContentController+Theme.h */,
+				4A0E4E64268589E500A85517 /* SettingContentController+Theme.m */,
+			);
+			path = SettingContentController;
+			sourceTree = "<group>";
+		};
+		4A45537D2686327A0050E736 /* TRACKING */ = {
+			isa = PBXGroup;
+			children = (
+				4A4553822686327A0050E736 /* TrackingRootController.h */,
+				4A4553832686327A0050E736 /* TrackingRootController.m */,
+				4A4553802686327A0050E736 /* TrackingController.h */,
+				4A4553812686327A0050E736 /* TrackingController.m */,
+				4A45537E2686327A0050E736 /* TrackingController+Notification.h */,
+				4A45537F2686327A0050E736 /* TrackingController+Notification.m */,
+			);
+			path = TRACKING;
 			sourceTree = "<group>";
 		};
 		4A98A62D2684B50F00EEEB60 = {
@@ -506,7 +596,7 @@
 				4AE51B9C2685CD3400DC1DA2 /* Localizable.strings in Resources */,
 				4AE51B9B2685CD3400DC1DA2 /* InfoPlist.strings in Resources */,
 				4A0E4DF9268585CF00A85517 /* SPLASH.storyboard in Resources */,
-				4A0E4EA826858ADC00A85517 /* PRIVACY.storyboard in Resources */,
+				4A0E4EA826858ADC00A85517 /* TRACKING.storyboard in Resources */,
 				4AE51B962685C7C500DC1DA2 /* IMAGEs.xcassets in Resources */,
 				4A0E4DED268585C500A85517 /* ICON.xcassets in Resources */,
 				4AE51B942685C4DA00DC1DA2 /* SPONSOR.png in Resources */,
@@ -616,26 +706,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A0E4E74268589E600A85517 /* SettingController+Notification.m in Sources */,
+				4A45536926862E4D0050E736 /* HomeContentController+Notification.m in Sources */,
 				4A0E4E462685888500A85517 /* APPDelegate+APP.m in Sources */,
 				4A0E4E77268589E600A85517 /* SettingRootController.m in Sources */,
+				4A45536A26862E4D0050E736 /* HomeContentController+Inner.m in Sources */,
 				4AE51B922685C39400DC1DA2 /* HomeController+Signal.m in Sources */,
 				4A0E4DC0268584C100A85517 /* APPDelegate.m in Sources */,
 				4A0E4E75268589E600A85517 /* SettingController+Theme.m in Sources */,
+				4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */,
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
 				4A0E4E76268589E600A85517 /* SettingController.m in Sources */,
 				4A0E4E72268589E500A85517 /* SettingContentController.m in Sources */,
 				4A0E4DBF268584C100A85517 /* RootViewController.m in Sources */,
+				4A45536526862E4D0050E736 /* HomeContentController+Signal.m in Sources */,
 				4AB5C1F126859F3C00B1639D /* ThemeButton.m in Sources */,
 				4A0E4E73268589E500A85517 /* SettingController+Inner.m in Sources */,
+				4A45536826862E4D0050E736 /* HomeContentController+Theme.m in Sources */,
 				4AE51B902685C39400DC1DA2 /* HomeController+Inner.m in Sources */,
 				4A0E4DEF268585C500A85517 /* main.m in Sources */,
 				4AE51B8F2685C39400DC1DA2 /* HomeController+Theme.m in Sources */,
 				4AE51B912685C39400DC1DA2 /* HomeController.m in Sources */,
+				4A45536626862E4D0050E736 /* HomeContentController.m in Sources */,
 				4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */,
 				4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */,
+				4A4553862686327B0050E736 /* TrackingRootController.m in Sources */,
 				4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */,
 				4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */,
+				4AFFEDBC268645160052712A /* AppTracking.m in Sources */,
+				4A4553842686327B0050E736 /* TrackingController+Notification.m in Sources */,
 				4AB5C1EF26859F3C00B1639D /* SettingHeader.m in Sources */,
+				4A4553852686327B0050E736 /* TrackingController.m in Sources */,
 				4A0E4E4D2685888F00A85517 /* APPDelegate+Kit.m in Sources */,
 				4A0E4E71268589E500A85517 /* SettingContentController+Theme.m in Sources */,
 			);
@@ -684,12 +784,12 @@
 			name = HOME.storyboard;
 			sourceTree = "<group>";
 		};
-		4A0E4EA326858ADC00A85517 /* PRIVACY.storyboard */ = {
+		4A0E4EA326858ADC00A85517 /* TRACKING.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4A0E4EA426858ADC00A85517 /* Base */,
 			);
-			name = PRIVACY.storyboard;
+			name = TRACKING.storyboard;
 			sourceTree = "<group>";
 		};
 		4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */ = {

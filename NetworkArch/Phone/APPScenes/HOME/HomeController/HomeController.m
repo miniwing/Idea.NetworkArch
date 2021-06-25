@@ -151,6 +151,8 @@
 
    [super viewWillAppear:aAnimated];
 
+   [self.contentController viewWillAppear:aAnimated];
+
    __CATCH(nErr);
 
    return;
@@ -163,6 +165,8 @@
    __TRY;
 
    [super viewDidAppear:aAnimated];
+
+   [self.contentController viewDidAppear:aAnimated];
 
    __CATCH(nErr);
 
@@ -177,6 +181,8 @@
 
    [super viewWillDisappear:aAnimated];
 
+   [self.contentController viewWillDisappear:aAnimated];
+
    __CATCH(nErr);
 
    return;
@@ -189,6 +195,8 @@
    __TRY;
 
    [super viewDidDisappear:aAnimated];
+
+   [self.contentController viewDidDisappear:aAnimated];
 
    __CATCH(nErr);
 
@@ -210,6 +218,12 @@
    // Get the new view controller using [aSegue destinationViewController].
    // Pass the selected object to the new view controller.
 
+   if ([aSegue.identifier isEqualToString:HomeContentController.className]) {
+      
+      self.contentController  = aSegue.destinationViewController;
+      
+   } /* End if () */
+   
    __CATCH(nErr);
 
    return;

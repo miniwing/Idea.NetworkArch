@@ -48,14 +48,14 @@
    return;
 }
 
-+ (BOOL)isPrivacy {
++ (BOOL)isTracking {
    
-   return [NSUserDefaults boolForKey:@"isPrivacy"];
+   return [NSUserDefaults boolForKey:@"isTracking"];
 }
 
-+ (void)setPrivacy:(BOOL)aPrivacy {
++ (void)setTracking:(BOOL)aTracking {
    
-   [NSUserDefaults setBool:aPrivacy forKey:@"isPrivacy"];
+   [NSUserDefaults setBool:aTracking forKey:@"isTracking"];
    
    return;
 }

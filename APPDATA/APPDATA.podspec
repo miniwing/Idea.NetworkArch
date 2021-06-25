@@ -43,13 +43,13 @@ Pod::Spec.new do |spec|
 
   spec.dependency 'YYKit'
 
-  spec.public_header_files  = 'APPDATA/APPDATA.h'
-  spec.source_files         = 'APPDATA/APPDATA.{h,m}'
+  spec.public_header_files  = 'APPDATA/*.h'
+  spec.source_files         = 'APPDATA/*.{h,m}'
 
   spec.resource_bundles     = {
                                 'APPDATA' => [
-                                              'DATA/*.plist',
-                                              'DATA/*.json',
+                                              'PLISTs/*.plist',
+                                              'JSONs/*.json',
 #                                              'DATA/*.png',
                                               'HTMLs/*.html'
                                              ]

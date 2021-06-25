@@ -9,7 +9,8 @@
 //  TEL : +(852)53054612
 //
 
-#import "HomeController.h"
+#import "HomeController+Inner.h"
+#import "HomeController+Theme.h"
 
 #pragma mark - UITheme
 @implementation HomeController (Theme)
@@ -17,23 +18,47 @@
 // #if DK_NIGHT_VERSION
 // #endif // #if DK_NIGHT_VERSION
 - (void)onThemeUpdate:(NSNotification *)aNotification {
-
+   
    int                            nErr                                     = EFAULT;
    
+#if MATERIAL_APP_BAR
+#else /* MATERIAL_APP_BAR */
+   NSMutableDictionary           *stTitleAttributes                        = nil;
+#endif /* !MATERIAL_APP_BAR */
+
    __TRY;
    
-   LogDebug((@"-[HomeController+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   [super onThemeUpdate:aNotification];
+   
+   LogDebug((@"-[HomeController onThemeUpdate:] : Notification : %@", aNotification));
 
-   if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
-
-      [super onThemeUpdate:aNotification];
+#if MATERIAL_APP_BAR
+   [self.appBar.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
+   [self.appBar.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
+   
+   [self.appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
+   [self.appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
+#else /* MATERIAL_APP_BAR */
+   if (nil == self.navigationController.navigationBar.titleTextAttributes) {
+      
+      stTitleAttributes = [NSMutableDictionary dictionary];
       
    } /* End if () */
+   else {
+      
+      stTitleAttributes = [self.navigationController.navigationBar.titleTextAttributes mutableCopy];
+      
+   } /* End else */
 
+   [stTitleAttributes setObject:[IDEAColor colorWithKey:[IDEAColor label]]
+                         forKey:NSForegroundColorAttributeName];
+   [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
+#endif /* !MATERIAL_APP_BAR */
+   
    [self setNeedsStatusBarAppearanceUpdate];
 
    __CATCH(nErr);
-
+   
    return;
 }
 

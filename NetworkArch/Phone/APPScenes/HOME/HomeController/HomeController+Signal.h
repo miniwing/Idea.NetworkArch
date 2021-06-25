@@ -1,5 +1,5 @@
 //
-//  HomeController+Notification.h
+//  HomeController+Signal.h
 //  NetworkArch
 //
 //  Created by Harry on 2021/6/25.
@@ -10,14 +10,12 @@
 
 #import "HomeController.h"
 
-#import <IDEAUIVendor/IDEAUIVendor.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeController (Notification)
+@interface HomeController (Signal)
 
 #if __Debug__
-@notification(self);
+@signal(self);
 #endif /* __Debug__ */
 
 @end

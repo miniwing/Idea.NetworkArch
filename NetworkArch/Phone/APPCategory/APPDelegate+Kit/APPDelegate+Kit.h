@@ -21,8 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isAutoTheme;
 + (void)setAutoTheme:(BOOL)aAutoTheme;
 
-+ (BOOL)isPrivacy;
-+ (void)setPrivacy:(BOOL)aPrivacy;
++ (BOOL)isTracking;
++ (void)setTracking:(BOOL)aTracking;
 
 @end
 

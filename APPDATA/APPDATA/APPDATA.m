@@ -10,6 +10,7 @@
 
 @implementation APPDATA
 
+#pragma mark - Bundle
 + (NSString *)bundleName {
    
    return @"APPDATA";
@@ -20,7 +21,7 @@
    return [self bundleNamed:[APPDATA bundleName]];
 }
 
-+ (nullable NSBundle *)bundleNamed:(nonnull NSString *)aBundleName {
++ (NSBundle *)bundleNamed:(NSString *)aBundleName {
    
    static   NSBundle       *g_BUNDLE;
    static   dispatch_once_t stOnceToken;
@@ -34,22 +35,42 @@
    return g_BUNDLE;
 }
 
-+ (nonnull NSString *)pathForName:(nonnull NSString *)aName {
++ (NSString *)pathForName:(NSString *)aName {
    
    NSBundle *stBundle = [APPDATA bundle];
    NSAssert(stBundle, @"Missing bundle %@ containing icon %@.", stBundle, aName);
    return [stBundle pathForResource:aName ofType:nil];
 }
 
-+ (nullable NSString *)htmlPath:(NSString *)aHtmlName {
+#pragma mark - xmlApi
++ (NSString *)xmlAPIKey {
    
-   return [self pathForName:aHtmlName];
+   return @"at_wa51HmNxHCpSNqTTi1UFv38wluCtf";
 }
 
-+ (nullable NSString *)htmlFile:(NSString *)aHtmlName {
+#pragma mark - HTML
++ (NSString *)htmlFile:(NSString *)aHtmlName {
    
    NSString    *szPath     = [self pathForName:aHtmlName];
    LogDebug((@"-[APPDATA htmlFile:] : HTML : %@", szPath));
+   
+   NSString     *szContent = [NSString stringWithContentsOfFile:szPath
+                                                       encoding:NSUTF8StringEncoding
+                                                          error:nil];
+   
+   return szContent;
+}
+
+#pragma mark - Tracking
++ (NSString *)tracking {
+   
+   return @"TRACKING.json";
+}
+
++ (NSString *)trackingFile:(NSString *)aTrackingName {
+   
+   NSString    *szPath     = [self pathForName:aTrackingName];
+   LogDebug((@"-[APPDATA trackingPath:] : HTML : %@", szPath));
    
    NSString     *szContent = [NSString stringWithContentsOfFile:szPath
                                                        encoding:NSUTF8StringEncoding

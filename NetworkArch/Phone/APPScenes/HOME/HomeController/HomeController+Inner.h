@@ -10,13 +10,15 @@
 
 #import "HomeController.h"
 
-#import <IDEAUIVendor/IDEAUIVendor.h>
+#import "HomeContentController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeController ()
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
+
+@property (nonatomic, strong)                HomeContentController               * contentController;
 
 @end
 

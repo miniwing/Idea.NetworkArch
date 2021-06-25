@@ -13,8 +13,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPDATA : NSObject
 
-+ (nullable NSString *)htmlPath:(NSString * _Nonnull)aHtmlName;
-+ (nullable NSString *)htmlFile:(NSString * _Nonnull)aHtmlName;
++ (NSString *)xmlAPIKey;
+
++ (NSString *)tracking;
+
+@end
+
+@interface APPDATA ()
+
++ (NSString *)htmlFile:(NSString *)aHtmlName;
+
++ (NSString *)trackingFile:(NSString *)aTrackingName;
 
 @end
 
