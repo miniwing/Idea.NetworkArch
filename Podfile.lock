@@ -1,21 +1,4 @@
 PODS:
-  - AFNetworkActivityLogger (3.0.0):
-    - AFNetworking/NSURLSession
-  - AFNetworking (4.0.1-IDEA):
-    - AFNetworking/NSURLSession (= 4.0.1-IDEA)
-    - AFNetworking/Reachability (= 4.0.1-IDEA)
-    - AFNetworking/Security (= 4.0.1-IDEA)
-    - AFNetworking/Serialization (= 4.0.1-IDEA)
-    - AFNetworking/UIKit (= 4.0.1-IDEA)
-  - AFNetworking/NSURLSession (4.0.1-IDEA):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1-IDEA)
-  - AFNetworking/Security (4.0.1-IDEA)
-  - AFNetworking/Serialization (4.0.1-IDEA)
-  - AFNetworking/UIKit (4.0.1-IDEA):
-    - AFNetworking/NSURLSession
   - APPDATA (1.0.0):
     - YYKit
   - APPDEBUG (1.0.0):
@@ -31,11 +14,8 @@ PODS:
   - FoundationExtension/FoundationExtensionRC (2.1.0):
     - cdebug (~> 1.3)
   - IDEAApplet (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework (= 1.0.1)
-    - IDEAApplet/applet-webcore (= 1.0.1)
   - IDEAApplet/applet-framework (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-config (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-core (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-event (= 1.0.1)
@@ -43,139 +23,45 @@ PODS:
     - IDEAApplet/applet-framework/samurai-service (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view (= 1.0.1)
     - IDEAApplet/applet-framework/vendor (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-config (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-config (1.0.1)
   - IDEAApplet/applet-framework/samurai-core (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-core/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-core/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-core/extension (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-core/modules (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-core/extension (1.0.1)
+  - IDEAApplet/applet-framework/samurai-core/modules (1.0.1)
   - IDEAApplet/applet-framework/samurai-event (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-event/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-event/modules (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-event/modules (1.0.1)
   - IDEAApplet/applet-framework/samurai-model (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-model/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-model/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-model/extension (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-model/modules (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-model/extension (1.0.1)
+  - IDEAApplet/applet-framework/samurai-model/modules (1.0.1)
   - IDEAApplet/applet-framework/samurai-service (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-service/modules (= 1.0.1)
   - IDEAApplet/applet-framework/samurai-service/modules (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-service/modules/docker (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-service/modules/service (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-service/modules/docker (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-service/modules/service (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-service/modules/docker (1.0.1)
+  - IDEAApplet/applet-framework/samurai-service/modules/service (1.0.1)
   - IDEAApplet/applet-framework/samurai-view (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-view/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/extension (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-view/extension (1.0.1)
   - IDEAApplet/applet-framework/samurai-view/modules (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-view/modules/view-component (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-controller (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-core (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-event (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-utility (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-component (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-view/modules/view-controller (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-view/modules/view-core (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-view/modules/view-event (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-view/modules/view-utility (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-view/modules/view-component (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/modules/view-controller (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/modules/view-core (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/modules/view-event (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/modules/view-utility (1.0.1)
   - IDEAApplet/applet-framework/vendor (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/vendor/fishhook (= 1.0.1)
-  - IDEAApplet/applet-framework/vendor/fishhook (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore (1.0.1):
-    - AFNetworking
-    - IDEAApplet/applet-webcore/extension (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules (= 1.0.1)
-    - IDEAApplet/applet-webcore/resource (= 1.0.1)
-    - IDEAApplet/applet-webcore/vendor (= 1.0.1)
-  - IDEAApplet/applet-webcore/extension (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules (1.0.1):
-    - AFNetworking
-    - IDEAApplet/applet-webcore/modules/css-media (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/css-parser (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/css-resolver (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/css-stylesheet (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/css-value (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-component (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-document (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-document-workflow (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-dom (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-element (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-layout (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-render (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-render-query (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-render-store (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-render-style (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-render-workflow (= 1.0.1)
-    - IDEAApplet/applet-webcore/modules/html-useragent (= 1.0.1)
-  - IDEAApplet/applet-webcore/modules/css-media (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/css-parser (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/css-resolver (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/css-stylesheet (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/css-value (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-component (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-document (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-document-workflow (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-dom (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-element (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-layout (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-render (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-render-query (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-render-store (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-render-style (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-render-workflow (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/modules/html-useragent (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/resource (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/vendor (1.0.1):
-    - AFNetworking
-    - IDEAApplet/applet-webcore/vendor/gumbo-parser (= 1.0.1)
-    - IDEAApplet/applet-webcore/vendor/katana-parser (= 1.0.1)
-  - IDEAApplet/applet-webcore/vendor/gumbo-parser (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-webcore/vendor/katana-parser (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/vendor/fishhook (1.0.1)
   - IDEAAppletDebugger (1.0.0):
     - IDEAApplet
     - IDEAAppletDebugger/ServiceBorder (= 1.0.0)
@@ -227,7 +113,6 @@ PODS:
   - IDEAFONT/Zekton (1.0.0):
     - IDEAFONT/Core
   - IDEAKit (1.0.1):
-    - AFNetworking
     - FoundationExtension
     - YYKit
   - IDEANibBridge (2.3.1)
@@ -376,8 +261,6 @@ PODS:
     - libwebp
 
 DEPENDENCIES:
-  - AFNetworkActivityLogger (from `../MINIWING-PODs/AFNetworkActivityLogger`)
-  - AFNetworking (from `../MINIWING-PODs/AFNetworking`)
   - APPDATA (from `APPDATA`)
   - APPDEBUG (from `APPDEBUG`)
   - FoundationExtension
@@ -415,10 +298,6 @@ SPEC REPOS:
     - UIKitExtension
 
 EXTERNAL SOURCES:
-  AFNetworkActivityLogger:
-    :path: "../MINIWING-PODs/AFNetworkActivityLogger"
-  AFNetworking:
-    :path: "../MINIWING-PODs/AFNetworking"
   APPDATA:
     :path: APPDATA
   APPDEBUG:
@@ -449,17 +328,15 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/YYKit"
 
 SPEC CHECKSUMS:
-  AFNetworkActivityLogger: e8856d3d232e99427523d1d6d85d2487504d4b94
-  AFNetworking: e929c4363a6c8e511ff856ff07352830073c6ac3
   APPDATA: 972fc88497d83b5e7c44b8950a971b6dcd49f0b0
   APPDEBUG: f26dee7f05e4b6c8177c5440460fad4a04423393
   cdebug: 0d0b7207fa996236ee9e07e5988e5e39a1d94a28
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
-  IDEAApplet: f0e2ae0d4acd83d88c2ca3981eccdf234431d2d8
+  IDEAApplet: 2fe874445328f10331935c4a3a61351abf1f8994
   IDEAAppletDebugger: 3db816aa332544da2674ecd848b91aeae220b786
   IDEAColor: 2d8f07ae48cb83e6d8dbafe4f152d76bb0bad5e9
   IDEAFONT: 4cecf9f17483802f14437c5ca3ec7a7eb84993a5
-  IDEAKit: 47c13d4e53a4b78bf990fc955459c20e0e27d6b5
+  IDEAKit: f66ec65eaee1a66f47b2b1f1d2024a1818832df1
   IDEANibBridge: dcbec937f9b16def1402ae1b0064c1a24c2e61bd
   IDEANightVersion: 2462ddab6f09bd7c7a7b346cec8dc3eafaad96c0
   IDEAPalettes: 21c238c32f383ae46ee8b3b3f30052076989a8b2
@@ -477,6 +354,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: 4034528106db7708b42917cccb76a77e4c24a9f1
 
-PODFILE CHECKSUM: 1e96df62e1e696e940ae9711b47824cbfc3df76c
+PODFILE CHECKSUM: 7910157aed0597f43e40ff31a531da3aef47575e
 
 COCOAPODS: 1.10.1

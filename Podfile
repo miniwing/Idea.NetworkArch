@@ -8,6 +8,8 @@ install! 'cocoapods', :deterministic_uuids                => false
 
 #install! 'cocoapods', :deterministic_uuids => false, :warn_for_unused_master_specs_repo  => false
 
+# applet_webcore=YES pod update
+
 workspace 'Idea.NetworkArch'
 
 project 'NetworkArch/NetworkArch.xcodeproj'
@@ -30,7 +32,7 @@ def library
 #  pod 'FMDB'
 
   pod 'YYKit'                           , :path => '../MINIWING-PODs/YYKit'
-  pod 'AFNetworking'                    , :path => '../MINIWING-PODs/AFNetworking'
+#  pod 'AFNetworking'                    , :path => '../MINIWING-PODs/AFNetworking'
 
   pod 'IDEAKit'                         , :path => '../MINIWING-PODs/IDEAKit'
   pod 'IDEAColor'                       , :path => '../MINIWING-PODs/IDEAColor'
@@ -83,7 +85,7 @@ target 'NetworkArch' do
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'APPDEBUG'                        , :path => 'APPDEBUG'                                 , :configurations => ['Debug']
 #  pod 'Reveal-SDK'                      , :path => '../MINIWING-PODs/Reveal'                  , :configurations => ['Debug']
-  pod 'AFNetworkActivityLogger'         , :path => '../MINIWING-PODs/AFNetworkActivityLogger' , :configurations => ['Debug']
+#  pod 'AFNetworkActivityLogger'         , :path => '../MINIWING-PODs/AFNetworkActivityLogger' , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'APPDATA'                         , :path => 'APPDATA'
 #  pod 'APPResources'                    , :path => 'APPResources'
@@ -228,10 +230,10 @@ post_install do |installer|
                                                                    'APP_BUNDLE_IDENTIFIER_GROUP=\@\"group.com.idea.NetworkArch\"',
                                                                    'APP_BUNDLE_IDENTIFIER_WIDGET=\@\"com.idea.NetworkArch.Widget\"',
                                                                    'APP_ID=1568321747',
+#                                                                   'IDEAKIT_AFNETWORKING_OPERATIONS=1',
                                                                    'FY_TRANSITION=0',
                                                                    'NS_EVIL_TRANSFORM=0'
                                                                    ]
-#                                                                   'IDEAKIT_AFNETWORKING_OPERATIONS=1',
       end
 
       if target.name == 'IDEAUIKit'

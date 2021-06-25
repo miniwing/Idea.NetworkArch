@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Li-O0-ETa">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ROOT-->
+        <scene sceneID="R4P-DP-Pll">
+            <objects>
+                <tabBarController storyboardIdentifier="RootViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Li-O0-ETa" userLabel="ROOT" customClass="RootViewController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FEf-Le-LKK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="4x6-Or-dUO" kind="relationship" relationship="viewControllers" id="VMA-1T-t6O"/>
+                        <segue destination="km0-vG-yOf" kind="relationship" relationship="viewControllers" id="8m3-ay-PYN"/>
+                        <segue destination="l1o-VZ-CTq" kind="relationship" relationship="viewControllers" id="qEx-4w-kTt"/>
+                        <segue destination="aA2-ui-aRs" kind="relationship" relationship="viewControllers" id="BWc-Rf-rhX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M9M-wc-vnT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1020" y="609"/>
+        </scene>
+        <!--DISCOVERY-ROOT-->
+        <scene sceneID="DKv-7f-NdD">
+            <objects>
+                <navigationController storyboardIdentifier="DiscoveryRootController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4x6-Or-dUO" userLabel="DISCOVERY-ROOT" customClass="DiscoveryRootController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discovery" image="Icons_Tabbar_Discovery" id="dGk-ti-iju"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7Md-ZV-LDi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xPU-6t-5Ij" kind="relationship" relationship="rootViewController" id="qsa-IW-Bpz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AU0-Ij-XAW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="402.89855072463769" y="-1872.3214285714284"/>
+        </scene>
+        <!--DISCOVERY-->
+        <scene sceneID="5vq-fA-Yt1">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="DiscoveryController" storyboardName="DISCOVERY" referencedIdentifier="DiscoveryController" id="xPU-6t-5Ij" userLabel="DISCOVERY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="A8g-5p-bcM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gjt-LR-NtG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1067" y="-1872"/>
+        </scene>
+        <!--TREND-ROOT-->
+        <scene sceneID="mmP-cK-gSY">
+            <objects>
+                <navigationController storyboardIdentifier="TrendRootController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="km0-vG-yOf" userLabel="TREND-ROOT" customClass="TrendRootController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Trend" image="Icons_Tabbar_Trend" id="sMc-8A-LAn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bm9-wY-Z1Y">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qt1-Ad-sfV" kind="relationship" relationship="rootViewController" id="tAj-G2-phS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1bb-CK-cKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="402.89855072463769" y="-1048.6607142857142"/>
+        </scene>
+        <!--TREND-->
+        <scene sceneID="OkN-MD-0qP">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TrendController" storyboardName="TREND" referencedIdentifier="TrendController" id="qt1-Ad-sfV" userLabel="TREND" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="z3B-Kr-off"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C7P-Y5-Czb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="-1049"/>
+        </scene>
+        <!--CHECKIN-ROOT-->
+        <scene sceneID="c7n-kc-IBO">
+            <objects>
+                <navigationController storyboardIdentifier="CheckinRootController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l1o-VZ-CTq" userLabel="CHECKIN-ROOT" customClass="CheckinRootController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Checkin" image="Icons_Tabbar_Checkin" id="q7C-gs-KkD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="HdD-Sf-O0v">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AvB-ul-qLg" kind="relationship" relationship="rootViewController" id="Q5W-0t-37v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JC5-iP-JtQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="402.89855072463769" y="-220.3125"/>
+        </scene>
+        <!--CHECKIN-->
+        <scene sceneID="rqv-8j-fpv">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CheckinController" storyboardName="CHECKIN" referencedIdentifier="CheckinController" id="AvB-ul-qLg" userLabel="CHECKIN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="stb-vh-oMr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Zq-qM-Q3u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="-221"/>
+        </scene>
+        <!--DIARY-ROOT-->
+        <scene sceneID="ONB-T9-e5S">
+            <objects>
+                <navigationController storyboardIdentifier="DiaryRootController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aA2-ui-aRs" userLabel="DIARY-ROOT" customClass="DiaryRootController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Diary" image="Icons_Tabbar_Diary" id="Aqu-fF-z2X"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="FQR-aj-3cH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1aU-B6-Cn1" kind="relationship" relationship="rootViewController" id="5K7-Uc-VCD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yM5-zZ-zAt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="402.89855072463769" y="609.375"/>
+        </scene>
+        <!--DIARY-->
+        <scene sceneID="F65-0v-Chm">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="DiaryController" storyboardName="DIARY" referencedIdentifier="DiaryController" id="1aU-B6-Cn1" userLabel="DIARY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="eaW-El-grR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0u3-Rs-DUC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066" y="609"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icons_Tabbar_Checkin" width="22" height="22"/>
+        <image name="Icons_Tabbar_Diary" width="17" height="22"/>
+        <image name="Icons_Tabbar_Discovery" width="21" height="21"/>
+        <image name="Icons_Tabbar_Trend" width="128" height="128"/>
+    </resources>
+</document>
