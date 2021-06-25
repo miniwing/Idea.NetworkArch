@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HY-Regular.ttf">
+            <string>HY-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB" customClass="ThemeButton">
+            <rect key="frame" x="0.0" y="0.0" width="64" height="178"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUI-vy-cSM" userLabel="IMAGE">
+                    <rect key="frame" x="0.0" y="0.0" width="64" height="138"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ZUI-vy-cSM" secondAttribute="height" multiplier="188:406" id="tlE-v8-Ewh"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwN-k3-8to" userLabel="MASK">
+                    <rect key="frame" x="0.0" y="0.0" width="64" height="138"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="un0-Mg-PfL" userLabel="TITLE">
+                    <rect key="frame" x="0.0" y="138" width="64" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="AQI-jq-O62"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HY-Regular" family="HY" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAK-Fg-Map" userLabel="CHECK">
+                    <rect key="frame" x="0.0" y="158" width="64" height="20"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="mwN-k3-8to" firstAttribute="bottom" secondItem="ZUI-vy-cSM" secondAttribute="bottom" id="2qQ-WA-9GS"/>
+                <constraint firstAttribute="trailing" secondItem="un0-Mg-PfL" secondAttribute="trailing" id="96Z-FS-sFE"/>
+                <constraint firstItem="un0-Mg-PfL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Kd9-nM-dsm"/>
+                <constraint firstItem="un0-Mg-PfL" firstAttribute="top" secondItem="ZUI-vy-cSM" secondAttribute="bottom" id="Ljo-PD-M3K"/>
+                <constraint firstItem="mwN-k3-8to" firstAttribute="trailing" secondItem="ZUI-vy-cSM" secondAttribute="trailing" id="N8j-uq-1ST"/>
+                <constraint firstItem="aAK-Fg-Map" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ODb-zw-Xfj"/>
+                <constraint firstAttribute="trailing" secondItem="aAK-Fg-Map" secondAttribute="trailing" id="PkD-9C-6Ig"/>
+                <constraint firstItem="mwN-k3-8to" firstAttribute="top" secondItem="ZUI-vy-cSM" secondAttribute="top" id="Tov-Yh-LHF"/>
+                <constraint firstItem="ZUI-vy-cSM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jjq-Vl-VQW"/>
+                <constraint firstItem="aAK-Fg-Map" firstAttribute="top" secondItem="un0-Mg-PfL" secondAttribute="bottom" id="jyV-OI-bvx"/>
+                <constraint firstAttribute="trailing" secondItem="ZUI-vy-cSM" secondAttribute="trailing" id="k3b-O0-HrG"/>
+                <constraint firstItem="mwN-k3-8to" firstAttribute="leading" secondItem="ZUI-vy-cSM" secondAttribute="leading" id="kCv-W3-0l2"/>
+                <constraint firstItem="ZUI-vy-cSM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qMd-AR-5cR"/>
+                <constraint firstAttribute="bottom" secondItem="aAK-Fg-Map" secondAttribute="bottom" id="v9y-fP-xh5"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="checkImageView" destination="aAK-Fg-Map" id="4cW-M7-4U3"/>
+                <outlet property="imageView" destination="ZUI-vy-cSM" id="Nvf-1I-fqe"/>
+                <outlet property="maskView" destination="mwN-k3-8to" id="V3H-Vo-gzE"/>
+                <outlet property="titleLabel" destination="un0-Mg-PfL" id="KAD-8E-ZPa"/>
+            </connections>
+            <point key="canvasLocation" x="-317.39130434782612" y="155.35714285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

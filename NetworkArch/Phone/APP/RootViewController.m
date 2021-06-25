@@ -17,8 +17,6 @@
 
 #import "SettingController+Notification.h"
 
-#import "PrivacyController.h"
-
 IDEA_ENUM(NSInteger, TransType) {
    
    TransTypeNone  = -1,
@@ -299,9 +297,7 @@ NS_ASSUME_NONNULL_END
 - (void)openPrivacy:(NSNumber *)aAnimated {
    
    int                            nErr                                     = EFAULT;
-   
-   PrivacyController             *stPrivacyController                      = nil;
-   
+      
    __TRY;
    
    if ([APPDelegate isPrivacy]) {
@@ -311,14 +307,7 @@ NS_ASSUME_NONNULL_END
       break;
       
    } /* End if () */
-   
-   stPrivacyController  = [UIStoryboard loadStoryboard:PrivacyController.storyboard
-                                        viewController:[PrivacyController class]];
-   
-   [self popUp:stPrivacyController animated:aAnimated.boolValue completion:^{
       
-   }];
-   
    __CATCH(nErr);
    
    return;

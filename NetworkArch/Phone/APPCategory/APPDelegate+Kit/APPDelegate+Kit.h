@@ -12,6 +12,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPDelegate (Kit)
 
++ (NSString *)version;
++ (void)setVersion:(NSString *)aVersion;
+
++ (BOOL)isTabbarAnimation;
++ (void)setTabbarAnimation:(BOOL)aAnimation;
+
++ (BOOL)isAutoTheme;
++ (void)setAutoTheme:(BOOL)aAutoTheme;
+
++ (BOOL)isPrivacy;
++ (void)setPrivacy:(BOOL)aPrivacy;
+
 @end
 
 NS_ASSUME_NONNULL_END

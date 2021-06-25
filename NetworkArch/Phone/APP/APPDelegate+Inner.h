@@ -8,14 +8,19 @@
 
 #import "APPDelegate.h"
 
+#import "RootViewController.h"
+#import "SplashViewController.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APPDelegate ()
 
-@property (nonatomic, strong)                UIWindow                            * window;
-
 @property (nonatomic, strong)                RootViewController                  * rootViewController;
 @property (nonatomic, strong)                SplashViewController                * splashViewController;
+
+@end
+
+@interface APPDelegate (Inner)
 
 @end
 

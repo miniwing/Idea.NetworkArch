@@ -19,8 +19,6 @@
 
 #import "SettingController+Notification.h"
 
-#import "PrivacyController.h"
-
 @interface APPDelegate ()
 
 @end

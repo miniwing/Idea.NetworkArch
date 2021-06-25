@@ -32,7 +32,26 @@
 		4A0E4EA726858ADC00A85517 /* HOME.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA126858ADC00A85517 /* HOME.storyboard */; };
 		4A0E4EA826858ADC00A85517 /* PRIVACY.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA326858ADC00A85517 /* PRIVACY.storyboard */; };
 		4A0E4EA926858ADC00A85517 /* ONBOARDING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */; };
+		4AB5C1DC26859BB800B1639D /* HomeRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1D226859BB800B1639D /* HomeRootController+Debug.m */; };
+		4AB5C1DD26859BB800B1639D /* HomeRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1D326859BB800B1639D /* HomeRootController+Theme.m */; };
+		4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1D726859BB800B1639D /* HomeRootController.m */; };
+		4AB5C1EE26859F3C00B1639D /* SETTING-HEADER.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB5C1E826859F3C00B1639D /* SETTING-HEADER.xib */; };
+		4AB5C1EF26859F3C00B1639D /* SettingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1EA26859F3C00B1639D /* SettingHeader.m */; };
+		4AB5C1F026859F3C00B1639D /* THEME-BUTTON.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB5C1EB26859F3C00B1639D /* THEME-BUTTON.xib */; };
+		4AB5C1F126859F3C00B1639D /* ThemeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1ED26859F3C00B1639D /* ThemeButton.m */; };
+		4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0E4E21268587BE00A85517 /* libAPPBase.a */; };
+		9C8D55D67EA9F092E178961F /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A14F0B6897A453A3E730E5 /* Pods_APPBase.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4AB5C1F42685A06E00B1639D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A98A62E2684B50F00EEEB60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A0E4E20268587BE00A85517;
+			remoteInfo = APPBase;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4A0E4E1F268587BE00A85517 /* CopyFiles */ = {
@@ -95,8 +114,24 @@
 		4A0E4EA426858ADC00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PRIVACY.storyboard; sourceTree = "<group>"; };
 		4A0E4EA626858ADC00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ONBOARDING.storyboard; sourceTree = "<group>"; };
 		4A98A6362684B50F00EEEB60 /* NetworkArch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkArch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AB5C1D026859BB800B1639D /* HomeRootController+Inner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeRootController+Inner.h"; sourceTree = "<group>"; };
+		4AB5C1D126859BB800B1639D /* HomeRootController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRootController.h; sourceTree = "<group>"; };
+		4AB5C1D226859BB800B1639D /* HomeRootController+Debug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeRootController+Debug.m"; sourceTree = "<group>"; };
+		4AB5C1D326859BB800B1639D /* HomeRootController+Theme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeRootController+Theme.m"; sourceTree = "<group>"; };
+		4AB5C1D726859BB800B1639D /* HomeRootController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeRootController.m; sourceTree = "<group>"; };
+		4AB5C1D826859BB800B1639D /* HomeRootController+Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeRootController+Theme.h"; sourceTree = "<group>"; };
+		4AB5C1DA26859BB800B1639D /* HomeRootController+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeRootController+Debug.h"; sourceTree = "<group>"; };
+		4AB5C1E826859F3C00B1639D /* SETTING-HEADER.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SETTING-HEADER.xib"; sourceTree = "<group>"; };
+		4AB5C1E926859F3C00B1639D /* SettingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingHeader.h; sourceTree = "<group>"; };
+		4AB5C1EA26859F3C00B1639D /* SettingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingHeader.m; sourceTree = "<group>"; };
+		4AB5C1EB26859F3C00B1639D /* THEME-BUTTON.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "THEME-BUTTON.xib"; sourceTree = "<group>"; };
+		4AB5C1EC26859F3C00B1639D /* ThemeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeButton.h; sourceTree = "<group>"; };
+		4AB5C1ED26859F3C00B1639D /* ThemeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeButton.m; sourceTree = "<group>"; };
+		65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
+		A90D912BF379DE28D323CFC9 /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
 		C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.release.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.release.xcconfig"; sourceTree = "<group>"; };
 		CC7F3049F2B28E17A49195A2 /* Pods-NetworkArch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.debug.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.debug.xcconfig"; sourceTree = "<group>"; };
+		D4A14F0B6897A453A3E730E5 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8D55D67EA9F092E178961F /* Pods_APPBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */,
 				24077DC52C859AE021021112 /* Pods_NetworkArch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +282,7 @@
 		4A0E4E5B2685898300A85517 /* APPViews */ = {
 			isa = PBXGroup;
 			children = (
+				4AB5C1E726859F3C00B1639D /* SETTING */,
 			);
 			path = APPViews;
 			sourceTree = "<group>";
@@ -252,6 +290,13 @@
 		4A0E4E5C2685898E00A85517 /* HOME */ = {
 			isa = PBXGroup;
 			children = (
+				4AB5C1D026859BB800B1639D /* HomeRootController+Inner.h */,
+				4AB5C1D126859BB800B1639D /* HomeRootController.h */,
+				4AB5C1D726859BB800B1639D /* HomeRootController.m */,
+				4AB5C1DA26859BB800B1639D /* HomeRootController+Debug.h */,
+				4AB5C1D226859BB800B1639D /* HomeRootController+Debug.m */,
+				4AB5C1D826859BB800B1639D /* HomeRootController+Theme.h */,
+				4AB5C1D326859BB800B1639D /* HomeRootController+Theme.m */,
 			);
 			path = HOME;
 			sourceTree = "<group>";
@@ -309,11 +354,26 @@
 			path = Phone;
 			sourceTree = "<group>";
 		};
+		4AB5C1E726859F3C00B1639D /* SETTING */ = {
+			isa = PBXGroup;
+			children = (
+				4AB5C1E826859F3C00B1639D /* SETTING-HEADER.xib */,
+				4AB5C1E926859F3C00B1639D /* SettingHeader.h */,
+				4AB5C1EA26859F3C00B1639D /* SettingHeader.m */,
+				4AB5C1EB26859F3C00B1639D /* THEME-BUTTON.xib */,
+				4AB5C1EC26859F3C00B1639D /* ThemeButton.h */,
+				4AB5C1ED26859F3C00B1639D /* ThemeButton.m */,
+			);
+			path = SETTING;
+			sourceTree = "<group>";
+		};
 		5A073BE837F8A6FE5151B56D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				CC7F3049F2B28E17A49195A2 /* Pods-NetworkArch.debug.xcconfig */,
 				C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */,
+				A90D912BF379DE28D323CFC9 /* Pods-APPBase.debug.xcconfig */,
+				65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -323,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				2B8DC8C1A6FD0347DEC1399C /* Pods_NetworkArch.framework */,
+				D4A14F0B6897A453A3E730E5 /* Pods_APPBase.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -334,6 +395,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A0E4E27268587BE00A85517 /* Build configuration list for PBXNativeTarget "APPBase" */;
 			buildPhases = (
+				F01D9982C5DA9857ADE108B8 /* [CP] Check Pods Manifest.lock */,
 				4A0E4E1D268587BE00A85517 /* Sources */,
 				4A0E4E1E268587BE00A85517 /* Frameworks */,
 				4A0E4E1F268587BE00A85517 /* CopyFiles */,
@@ -361,6 +423,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4AB5C1F52685A06E00B1639D /* PBXTargetDependency */,
 			);
 			name = NetworkArch;
 			productName = NetworkArch;
@@ -415,6 +478,8 @@
 				4A0E4EA826858ADC00A85517 /* PRIVACY.storyboard in Resources */,
 				4A0E4DED268585C500A85517 /* ICON.xcassets in Resources */,
 				4A0E4DF8268585CF00A85517 /* LAUNCH.storyboard in Resources */,
+				4AB5C1F026859F3C00B1639D /* THEME-BUTTON.xib in Resources */,
+				4AB5C1EE26859F3C00B1639D /* SETTING-HEADER.xib in Resources */,
 				4A0E4EA926858ADC00A85517 /* ONBOARDING.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +543,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F01D9982C5DA9857ADE108B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-APPBase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -494,6 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB5C1DD26859BB800B1639D /* HomeRootController+Theme.m in Sources */,
 				4A0E4E74268589E600A85517 /* SettingController+Notification.m in Sources */,
 				4A0E4E462685888500A85517 /* APPDelegate+APP.m in Sources */,
 				4A0E4E77268589E600A85517 /* SettingRootController.m in Sources */,
@@ -502,16 +590,28 @@
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
 				4A0E4E76268589E600A85517 /* SettingController.m in Sources */,
 				4A0E4E72268589E500A85517 /* SettingContentController.m in Sources */,
+				4AB5C1DC26859BB800B1639D /* HomeRootController+Debug.m in Sources */,
 				4A0E4DBF268584C100A85517 /* RootViewController.m in Sources */,
+				4AB5C1F126859F3C00B1639D /* ThemeButton.m in Sources */,
 				4A0E4E73268589E500A85517 /* SettingController+Inner.m in Sources */,
 				4A0E4DEF268585C500A85517 /* main.m in Sources */,
+				4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */,
 				4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */,
+				4AB5C1EF26859F3C00B1639D /* SettingHeader.m in Sources */,
 				4A0E4E4D2685888F00A85517 /* APPDelegate+Kit.m in Sources */,
 				4A0E4E71268589E500A85517 /* SettingContentController+Theme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4AB5C1F52685A06E00B1639D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A0E4E20268587BE00A85517 /* APPBase */;
+			targetProxy = 4AB5C1F42685A06E00B1639D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4A0E4DF1268585CE00A85517 /* MAIN.storyboard */ = {
@@ -575,13 +675,11 @@
 /* Begin XCBuildConfiguration section */
 		4A0E4E28268587BE00A85517 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A90D912BF379DE28D323CFC9 /* Pods-APPBase.debug.xcconfig */;
 			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = APPBase/Prefix.pch;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -590,13 +688,11 @@
 		};
 		4A0E4E29268587BE00A85517 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */;
 			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = APPBase/Prefix.pch;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

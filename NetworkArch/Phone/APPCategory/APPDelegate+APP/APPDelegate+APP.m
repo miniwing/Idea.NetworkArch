@@ -7,6 +7,7 @@
 //
 
 #import "APPDelegate+Inner.h"
+#import "APPDelegate+APP.h"
 
 @implementation APPDelegate (APP)
 
