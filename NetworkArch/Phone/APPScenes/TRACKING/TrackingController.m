@@ -249,11 +249,8 @@
    [self dismissViewControllerAnimated:YES
                             completion:^{
       
-#if __Debug__
-#else /* __Debug__ */
       [APPDelegate setTracking:YES];
-#endif /* !__Debug__ */
-      
+
       @strongify(self);
       UI_PERFORM_SELECTOR(self, @selector(openTracking), nil, NO);
    }];
@@ -383,8 +380,6 @@
       [super onThemeUpdate:aNotification];
       
    } /* End if () */
-
-   [self setNeedsStatusBarAppearanceUpdate];
 
    __CATCH(nErr);
 

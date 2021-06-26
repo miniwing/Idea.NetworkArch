@@ -336,15 +336,15 @@ typedef FBLPromise Promise;
 
 #  if __has_include(<IDEANightVersion/DKNightVersion.h>)
 #     import <IDEANightVersion/DKNightVersion.h>
-#     define DK_NIGHT_VERSION                                    (1)
+#     define DK_NIGHT_VERSION                                              (1)
 #  elif __has_include("IDEANightVersion/DKNightVersion.h")
 #     import "IDEANightVersion/DKNightVersion.h"
-#     define DK_NIGHT_VERSION                                    (1)
+#     define DK_NIGHT_VERSION                                              (1)
 #  elif __has_include("DKNightVersion.h")
 #     import "DKNightVersion.h"
-#     define DK_NIGHT_VERSION                                    (1)
+#     define DK_NIGHT_VERSION                                              (1)
 #  else
-#     define DK_NIGHT_VERSION                                    (0)
+#     define DK_NIGHT_VERSION                                              (0)
 #  endif
 
 #  if __has_include(<IDEARefresh/MJRefresh.h>)
@@ -415,19 +415,6 @@ typedef FBLPromise Promise;
 #     define IDEA_STAR_RATE                                                (0)
 #  endif
 
-#  if __has_include(<IDEAFONT/IDEAFONT.h>)
-#     import <IDEAFONT/IDEAFONT.h>
-#     define IDEA_FONT                                                     (1)
-#  elif __has_include("IDEAFONT/IDEAFONT.h")
-#     import "IDEAFONT/IDEAFONT.h"
-#     define IDEA_FONT                                                     (1)
-#  elif __has_include("IDEAFONT.h")
-#     import "IDEAFONT.h"
-#     define IDEA_FONT                                                     (1)
-#  else
-#     define IDEA_FONT                                                     (0)
-#  endif
-
 #  if __has_include(<IDEASearchController/IDEASearchController.h>)
 #     import <IDEASearchController/IDEASearchController.h>
 #     define IDEA_SEARCH_CONTROLLER                                        (1)
@@ -441,6 +428,19 @@ typedef FBLPromise Promise;
 #     define IDEA_SEARCH_CONTROLLER                                        (0)
 #  endif
 #endif
+
+#  if __has_include(<IDEAFONT/IDEAFONT.h>)
+#     import <IDEAFONT/IDEAFONT.h>
+#     define IDEA_FONT                                                     (1)
+#  elif __has_include("IDEAFONT/IDEAFONT.h")
+#     import "IDEAFONT/IDEAFONT.h"
+#     define IDEA_FONT                                                     (1)
+#  elif __has_include("IDEAFONT.h")
+#     import "IDEAFONT.h"
+#     define IDEA_FONT                                                     (1)
+#  else
+#     define IDEA_FONT                                                     (0)
+#  endif
 
 /****************************************************************************/
 

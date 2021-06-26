@@ -9,6 +9,11 @@
 /// HOME
 "HOME"                              = "HOME";
 
+"WIFI"                              = "Wi-Fi";
+"CELLULAR"                          = "Cellular";
+"UTILITIES"                         = "Utilities";
+
+
 /// SETTING
 "SETTING"                           = "SETTING";
 

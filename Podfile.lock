@@ -103,15 +103,6 @@ PODS:
     - IDEANightVersion
   - IDEAColor (1.0.0):
     - IDEANightVersion
-  - IDEAFONT (1.0.0):
-    - IDEAFONT/Core (= 1.0.0)
-    - IDEAFONT/HY (= 1.0.0)
-    - IDEAFONT/Zekton (= 1.0.0)
-  - IDEAFONT/Core (1.0.0)
-  - IDEAFONT/HY (1.0.0):
-    - IDEAFONT/Core
-  - IDEAFONT/Zekton (1.0.0):
-    - IDEAFONT/Core
   - IDEAKit (1.0.1):
     - FoundationExtension
     - YYKit
@@ -267,7 +258,6 @@ DEPENDENCIES:
   - IDEAApplet (from `../MINIWING-PODs/Idea.Applets`)
   - IDEAAppletDebugger (from `../MINIWING-PODs/Idea.Applets`)
   - IDEAColor (from `../MINIWING-PODs/IDEAColor`)
-  - IDEAFONT (from `../MINIWING-PODs/IDEAFONT`)
   - IDEAKit (from `../MINIWING-PODs/IDEAKit`)
   - IDEANibBridge (from `../MINIWING-PODs/IDEANibBridge`)
   - IDEANightVersion (from `../MINIWING-PODs/IDEANightVersion`)
@@ -308,8 +298,6 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/Idea.Applets"
   IDEAColor:
     :path: "../MINIWING-PODs/IDEAColor"
-  IDEAFONT:
-    :path: "../MINIWING-PODs/IDEAFONT"
   IDEAKit:
     :path: "../MINIWING-PODs/IDEAKit"
   IDEANibBridge:
@@ -335,7 +323,6 @@ SPEC CHECKSUMS:
   IDEAApplet: f73ebd27e39297b2fd2b96966cae350d7e588758
   IDEAAppletDebugger: 3db816aa332544da2674ecd848b91aeae220b786
   IDEAColor: 2d8f07ae48cb83e6d8dbafe4f152d76bb0bad5e9
-  IDEAFONT: 4cecf9f17483802f14437c5ca3ec7a7eb84993a5
   IDEAKit: 1b21a8f7306677aec87f91bb596b92207f1b6258
   IDEANibBridge: dcbec937f9b16def1402ae1b0064c1a24c2e61bd
   IDEANightVersion: 2462ddab6f09bd7c7a7b346cec8dc3eafaad96c0
@@ -354,6 +341,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: 4034528106db7708b42917cccb76a77e4c24a9f1
 
-PODFILE CHECKSUM: b18ca8d009b83b914d79295c4baebc322d260352
+PODFILE CHECKSUM: 09ea8854790a24ccb09c6612d928907ef96eb4cb
 
 COCOAPODS: 1.10.1

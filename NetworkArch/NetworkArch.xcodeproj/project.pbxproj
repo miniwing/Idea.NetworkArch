@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033C73F4CF24CA7C0646158F /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB1DF078AC8EC6537D6E92B3 /* Pods_NetworkArch.framework */; };
 		4A0E4DBF268584C100A85517 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4DB9268584C100A85517 /* RootViewController.m */; };
 		4A0E4DC0268584C100A85517 /* APPDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4DBD268584C100A85517 /* APPDelegate.m */; };
 		4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4DBE268584C100A85517 /* SplashViewController.m */; };
@@ -30,6 +31,8 @@
 		4A0E4EA726858ADC00A85517 /* HOME.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA126858ADC00A85517 /* HOME.storyboard */; };
 		4A0E4EA826858ADC00A85517 /* TRACKING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA326858ADC00A85517 /* TRACKING.storyboard */; };
 		4A0E4EA926858ADC00A85517 /* ONBOARDING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */; };
+		4A0EB7F22687268B00AA4366 /* HomeContentCell+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EB7E82687268B00AA4366 /* HomeContentCell+Debug.m */; };
+		4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */; };
 		4A45536526862E4D0050E736 /* HomeContentController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535826862E4B0050E736 /* HomeContentController+Signal.m */; };
 		4A45536626862E4D0050E736 /* HomeContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535C26862E4B0050E736 /* HomeContentController.m */; };
 		4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535E26862E4C0050E736 /* HomeContentController+Debug.m */; };
@@ -57,8 +60,7 @@
 		4AE51B9C2685CD3400DC1DA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B992685CD3400DC1DA2 /* Localizable.strings */; };
 		4AE51B9F2685CDFB00DC1DA2 /* MAIN.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B9D2685CDFB00DC1DA2 /* MAIN.storyboard */; };
 		4AFFEDBC268645160052712A /* AppTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFEDBB268645160052712A /* AppTracking.m */; };
-		4CB9F4A6F649DF588A38AFB8 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663787BBE6EACDC040EEC31E /* Pods_APPBase.framework */; };
-		A293A0A96CE7D1BF91BE9290 /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A363B9596FBE76FCEE4DC2D1 /* Pods_NetworkArch.framework */; };
+		B9758410F3D74B5C74DE1847 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0811AE0A7E57319D89414BEE /* Pods_APPBase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0811AE0A7E57319D89414BEE /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0E4DB9268584C100A85517 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		4A0E4DBA268584C100A85517 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		4A0E4DBB268584C100A85517 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -129,6 +132,10 @@
 		4A0E4EA226858ADC00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HOME.storyboard; sourceTree = "<group>"; };
 		4A0E4EA426858ADC00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TRACKING.storyboard; sourceTree = "<group>"; };
 		4A0E4EA626858ADC00A85517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ONBOARDING.storyboard; sourceTree = "<group>"; };
+		4A0EB7E72687268B00AA4366 /* HomeContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeContentCell.h; sourceTree = "<group>"; };
+		4A0EB7E82687268B00AA4366 /* HomeContentCell+Debug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeContentCell+Debug.m"; sourceTree = "<group>"; };
+		4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeContentCell.m; sourceTree = "<group>"; };
+		4A0EB7F02687268B00AA4366 /* HomeContentCell+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeContentCell+Debug.h"; sourceTree = "<group>"; };
 		4A45535726862E4B0050E736 /* HomeContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentController.h; sourceTree = "<group>"; };
 		4A45535826862E4B0050E736 /* HomeContentController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeContentController+Signal.m"; sourceTree = "<group>"; };
 		4A45535926862E4B0050E736 /* HomeContentController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeContentController+Inner.h"; sourceTree = "<group>"; };
@@ -156,6 +163,7 @@
 		4AB5C1EB26859F3C00B1639D /* THEME-BUTTON.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "THEME-BUTTON.xib"; sourceTree = "<group>"; };
 		4AB5C1EC26859F3C00B1639D /* ThemeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeButton.h; sourceTree = "<group>"; };
 		4AB5C1ED26859F3C00B1639D /* ThemeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeButton.m; sourceTree = "<group>"; };
+		4AD711532686F5D7003E5EEC /* pod.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = pod.sh; path = ../../pod.sh; sourceTree = "<group>"; };
 		4AE51B812685C39400DC1DA2 /* HomeController+Notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeController+Notification.m"; sourceTree = "<group>"; };
 		4AE51B822685C39400DC1DA2 /* HomeController+Inner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeController+Inner.h"; sourceTree = "<group>"; };
 		4AE51B832685C39400DC1DA2 /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
@@ -176,11 +184,10 @@
 		4AFFEDBA268645160052712A /* AppTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTracking.h; sourceTree = "<group>"; };
 		4AFFEDBB268645160052712A /* AppTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTracking.m; sourceTree = "<group>"; };
 		65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
-		663787BBE6EACDC040EEC31E /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A363B9596FBE76FCEE4DC2D1 /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90D912BF379DE28D323CFC9 /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
 		C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.release.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.release.xcconfig"; sourceTree = "<group>"; };
 		CC7F3049F2B28E17A49195A2 /* Pods-NetworkArch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.debug.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.debug.xcconfig"; sourceTree = "<group>"; };
+		FB1DF078AC8EC6537D6E92B3 /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CB9F4A6F649DF588A38AFB8 /* Pods_APPBase.framework in Frameworks */,
+				B9758410F3D74B5C74DE1847 /* Pods_APPBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */,
-				A293A0A96CE7D1BF91BE9290 /* Pods_NetworkArch.framework in Frameworks */,
+				033C73F4CF24CA7C0646158F /* Pods_NetworkArch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +345,7 @@
 		4A0E4E5B2685898300A85517 /* APPViews */ = {
 			isa = PBXGroup;
 			children = (
+				4A0EB7E42687266200AA4366 /* HOME */,
 				4AB5C1E726859F3C00B1639D /* SETTING */,
 			);
 			path = APPViews;
@@ -363,6 +371,17 @@
 				4A455374268630EC0050E736 /* SettingContentController */,
 			);
 			path = SETTING;
+			sourceTree = "<group>";
+		};
+		4A0EB7E42687266200AA4366 /* HOME */ = {
+			isa = PBXGroup;
+			children = (
+				4A0EB7E72687268B00AA4366 /* HomeContentCell.h */,
+				4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */,
+				4A0EB7F02687268B00AA4366 /* HomeContentCell+Debug.h */,
+				4A0EB7E82687268B00AA4366 /* HomeContentCell+Debug.m */,
+			);
+			path = HOME;
 			sourceTree = "<group>";
 		};
 		4A45533926862DEF0050E736 /* HomeController */ = {
@@ -445,6 +464,7 @@
 		4A98A62D2684B50F00EEEB60 = {
 			isa = PBXGroup;
 			children = (
+				4AD711522686F5C0003E5EEC /* Build */,
 				4A0E4E22268587BE00A85517 /* APPBase */,
 				4A98A6382684B50F00EEEB60 /* Phone */,
 				4A98A6372684B50F00EEEB60 /* Products */,
@@ -487,6 +507,14 @@
 			path = SETTING;
 			sourceTree = "<group>";
 		};
+		4AD711522686F5C0003E5EEC /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				4AD711532686F5D7003E5EEC /* pod.sh */,
+			);
+			path = Build;
+			sourceTree = "<group>";
+		};
 		5A073BE837F8A6FE5151B56D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,8 +530,8 @@
 		BC9F1E42789CEDD6C11BF75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				663787BBE6EACDC040EEC31E /* Pods_APPBase.framework */,
-				A363B9596FBE76FCEE4DC2D1 /* Pods_NetworkArch.framework */,
+				0811AE0A7E57319D89414BEE /* Pods_APPBase.framework */,
+				FB1DF078AC8EC6537D6E92B3 /* Pods_NetworkArch.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -716,6 +744,7 @@
 				4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */,
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
 				4A0E4E76268589E600A85517 /* SettingController.m in Sources */,
+				4A0EB7F22687268B00AA4366 /* HomeContentCell+Debug.m in Sources */,
 				4A0E4E72268589E500A85517 /* SettingContentController.m in Sources */,
 				4A0E4DBF268584C100A85517 /* RootViewController.m in Sources */,
 				4A45536526862E4D0050E736 /* HomeContentController+Signal.m in Sources */,
@@ -729,6 +758,7 @@
 				4A45536626862E4D0050E736 /* HomeContentController.m in Sources */,
 				4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */,
 				4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */,
+				4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */,
 				4A4553862686327B0050E736 /* TrackingRootController.m in Sources */,
 				4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */,
 				4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */,

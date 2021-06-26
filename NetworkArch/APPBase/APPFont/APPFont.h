@@ -12,7 +12,15 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import <IDEAFONT/IDEAFONT.h>
+#  if __has_include(<IDEAFONT/IDEAFONT.h>)
+#     import <IDEAFONT/IDEAFONT.h>
+#  elif __has_include("IDEAFONT/IDEAFONT.h")
+#     import "IDEAFONT/IDEAFONT.h"
+#  elif __has_include("IDEAFONT.h")
+#     import "IDEAFONT.h"
+#  else
+//#     define IDEA_FONT                                                     (0)
+#  endif
 
 NS_ASSUME_NONNULL_BEGIN
 

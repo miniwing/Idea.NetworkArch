@@ -78,6 +78,8 @@
 
 /***************************************************************************************************************/
 
+#define IDEA_FONT_FAMILY(name, func)               (name##func)
+
 @interface APPFont ()
 
 @end
@@ -249,23 +251,3 @@
 }
 
 @end
-
-//#pragma mark - Zekton
-//@implementation APPFont (Zekton)
-//
-//+ (NSString *)appFontZektonLight {
-//   
-//   return APP_FONT_ZEKTON_LIGHT;
-//}
-//
-//+ (NSString *)appFontZektonRegular {
-//   
-//   return APP_FONT_ZEKTON_REGULAR;
-//}
-//
-//+ (NSString *)appFontZektonBold {
-//   
-//   return APP_FONT_ZEKTON_BOLD;
-//}
-//
-//@end

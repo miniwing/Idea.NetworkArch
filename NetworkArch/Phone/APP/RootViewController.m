@@ -46,8 +46,7 @@ NS_ASSUME_NONNULL_END
    __LOG_FUNCTION;
    
    // Custom dealloc
-   
-   [self removeNotification];
+   [self removeAllNotification];
    
    __SUPER_DEALLOC;
    
@@ -145,10 +144,10 @@ NS_ASSUME_NONNULL_END
    [self.tabBar setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor appTabbarBackground])];
    [self.tabBar setBarTintColorPicker:DKColorPickerWithKey([IDEAColor appTabbarBackground])];
    [self.tabBar setBackgroundImage:[UIImage new]];
-   [self.tabBar setShadowImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
-      
-      return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor separator]] size:CGSizeMake(1, 0.5)];
-   }];
+//   [self.tabBar setShadowImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
+//
+//      return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor separator]] size:CGSizeMake(1, 0.5)];
+//   }];
 #  else /* DK_NIGHT_VERSION */
 #  endif /* !DK_NIGHT_VERSION */
    
@@ -176,6 +175,32 @@ NS_ASSUME_NONNULL_END
    
 //   [self.tabBar setShadowColor:UIColor.clearColor];
 //   [self.tabBar setShadowImage:[UIImage new]];
+//   [self.tabBar setBackgroundImage:[UIImage new]];
+//
+//   if (@available(iOS 13, *)) {
+//      
+//      UITabBarAppearance   *stAppearance = [self.tabBar.standardAppearance copy];
+//      stAppearance.backgroundImage  = [UIImage imageWithColor:[UIColor clearColor]];
+//      stAppearance.shadowImage      = [UIImage imageWithColor:[UIColor clearColor]];
+//      
+//      // 官方文档写的是 重置背景和阴影为透明
+//      [stAppearance configureWithTransparentBackground];
+//      self.tabBar.standardAppearance = stAppearance;
+//      
+//   } /* End if () */
+//   else {
+//      
+//      self.tabBar.backgroundImage   = [UIImage new];
+//      self.tabBar.shadowImage       = [UIImage new];
+//      
+//   }/* End else */
+
+//   [self.tabBar setBackgroundImage:[UIImage imageWithColor:UIColor.systemRedColor]];
+   
+//   [self.tabBar setBackgroundImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
+//
+//      return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor systemGroupedBackground]]];
+//   }];
    
    __CATCH(nErr);
    

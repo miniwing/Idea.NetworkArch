@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeController : IDEAViewController
 
+@property (nonatomic, weak)   IBOutlet       UIView                              * contentView;
+
 @end
 
 @interface HomeController ()

@@ -24,7 +24,7 @@
    // Custom dealloc
    [self removeAllSignalResponders];
    [self unobserveAllNotifications];
-   [self removeNotification];
+   [self removeAllNotification];
    
    __SUPER_DEALLOC;
    
@@ -160,7 +160,7 @@
    
    //#if MATERIAL_APP_BAR
    //      // Dispose of any resources that can be recreated.
-   //      [self.contentViewTop setConstant:self.appBar.headerViewController.headerView.frameHeight];
+   //      [self.contentViewTop setConstant:self.appBar.headerViewController.headerView.height];
    //#endif /* MATERIAL_APP_BAR */
    //
    //      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));

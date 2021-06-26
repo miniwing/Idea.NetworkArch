@@ -92,19 +92,6 @@
 #     define MATERIAL_APP_BAR                                              (0)
 #  endif
 
-#  if __has_include(<IDEAFONT/IDEAFONT.h>)
-#     define IDEA_FONT                                                     (1)
-#     import <IDEAFONT/IDEAFONT.h>
-#  elif __has_include("IDEAFONT/IDEAFONT.h")
-#     define IDEA_FONT                                                     (1)
-#     import "IDEAFONT/IDEAFONT.h"
-#  elif __has_include("IDEAFONT.h")
-#     define IDEA_FONT                                                     (1)
-#     import "IDEAFONT.h"
-#  else
-#     define IDEA_FONT                                                     (0)
-#  endif
-
 #  if __has_include(<YYKit/YYKit.h>)
 #     define YY_KIT                                                        (1)
 #     import <YYKit/YYKit.h>
@@ -116,6 +103,19 @@
 #     import "YYKit.h"
 #  else
 #     define YY_KIT                                                        (0)
+#  endif
+
+#  if __has_include(<IDEAFONT/IDEAFONT.h>)
+#     define IDEA_FONT                                                     (1)
+#     import <IDEAFONT/IDEAFONT.h>
+#  elif __has_include("IDEAFONT/IDEAFONT.h")
+#     define IDEA_FONT                                                     (1)
+#     import "IDEAFONT/IDEAFONT.h"
+#  elif __has_include("IDEAFONT.h")
+#     define IDEA_FONT                                                     (1)
+#     import "IDEAFONT.h"
+#  else
+#     define IDEA_FONT                                                     (0)
 #  endif
 
 #endif /* __OBJC__ */

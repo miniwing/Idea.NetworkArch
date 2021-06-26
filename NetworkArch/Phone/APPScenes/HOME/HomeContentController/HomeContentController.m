@@ -22,6 +22,7 @@
    __LOG_FUNCTION;
 
    // Custom dealloc
+   [self removeAllNotification];
 
    __SUPER_DEALLOC;
 
@@ -54,10 +55,63 @@
    [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // self.clearsSelectionOnViewWillAppear = NO;acki
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+   [self.tableView setTableFooterView:[UIView new]];
+   [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+
+   [self.tableView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+
+   dispatch_async_on_main_queue(^{
+      
+      [self.wifiCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
+      [self.wifiCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+
+      [self.cellularCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
+      [self.cellularCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+
+      [self.utilitiesCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
+      [self.utilitiesCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+   });
+   
+   for (UIView *stView in self.wifiCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemBlueColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
+   for (UIView *stView in self.cellularCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemPinkColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
+   for (UIView *stView in self.utilitiesCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemOrangeColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+
+   for (UIView *stView in self.cellSeparatorViews) {
+      
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
+
+   } /* End for () */
 
    __CATCH(nErr);
 
@@ -130,29 +184,155 @@
    return;
 }
 
-#pragma mark - UITableViewDataSource
+//#pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
 
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return HomeSectionNumber;
 }
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
 
-#warning Incomplete implementation, return the number of rows
-    return 0;
+   int                            nErr                                     = EFAULT;
+   
+   NSInteger                      nNumberOfRows                            = 0;
+
+   __TRY;
+
+//   HomeSectionWifi      = 0,
+//   HomeSectionCellular  = 1,
+//   HomeSectionUtilities = 2,
+   
+   if (HomeSectionWifi == aSection) {
+      
+      nNumberOfRows  = self.wifiCells.count;
+      LogDebug((@"-[HomeContentController tableView:numberOfRowsInSection:] : HomeSectionWifi : %d", nNumberOfRows));
+      
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+
+   if (HomeSectionCellular == aSection) {
+      
+      nNumberOfRows  = self.cellularCells.count;
+      LogDebug((@"-[HomeContentController tableView:numberOfRowsInSection:] : HomeSectionCellular : %d", nNumberOfRows));
+
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+
+   if (HomeSectionUtilities == aSection) {
+      
+      nNumberOfRows  = self.utilitiesCells.count;
+      LogDebug((@"-[HomeContentController tableView:numberOfRowsInSection:] : HomeSectionUtilities : %d", nNumberOfRows));
+
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+
+   __CATCH(nErr);
+
+   return nNumberOfRows;
 }
 
-/*
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)aSection {
+   
+   int                            nErr                                     = EFAULT;
+   
+   NSString                      *szTitle                                  = nil;
+   
+   __TRY;
+   
+//   HomeSectionWifi      = 0,
+//   HomeSectionCellular  = 1,
+//   HomeSectionUtilities = 2,
+
+//   "WIFI"                              = "Wi-Fi";
+//   "CELLULAR"                          = "Cellular";
+//   "UTILITIES"                         = "Utilities";
+
+   if (HomeSectionWifi == aSection) {
+      
+      szTitle  = APP_STR(@"WIFI");
+      
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+   
+   if (HomeSectionCellular == aSection) {
+      
+      szTitle  = APP_STR(@"CELLULAR");
+
+      nErr  = noErr;
+      
+      break;
+
+   } /* End if () */
+
+   if (HomeSectionUtilities == aSection) {
+      
+      szTitle  = APP_STR(@"UTILITIES");
+      
+      nErr  = noErr;
+      
+      break;
+
+   } /* End if () */
+
+   __CATCH(nErr);
+   
+   return szTitle;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {
+   
+   int                            nErr                                     = EFAULT;
+   
+   UITableViewCell               *stTableViewCell                          = nil;
+   
+   __TRY;
+   
+//   HomeSectionWifi      = 0,
+//   HomeSectionCellular  = 1,
+//   HomeSectionUtilities = 2,
 
-   UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:aIndexPath];
+   if (HomeSectionWifi == aIndexPath.section) {
+      
+      stTableViewCell   = self.wifiCells[aIndexPath.row];
+      
+   } /* End if () */
+   else if (HomeSectionCellular == aIndexPath.section) {
+      
+      stTableViewCell   = self.cellularCells[aIndexPath.row];
+      
+   } /* End if () */
+   else if (HomeSectionUtilities == aIndexPath.section) {
+      
+      stTableViewCell   = self.utilitiesCells[aIndexPath.row];
+      
+   } /* End if () */
+   
+   if (nil != stTableViewCell) {
+            
+//      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+//      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
 
-   // Configure the cell...
+      [stTableViewCell setBackgroundColor:UIColor.clearColor];
+      [stTableViewCell.contentView setBackgroundColor:UIColor.clearColor];
 
-   return cell;
+   } /* End if () */
+   
+   __CATCH(nErr);
+   
+   return stTableViewCell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -237,8 +417,7 @@
 
 + (NSString *)storyboard {
    
-#warning Incomplete implementation, Name of the Stroyboard.
-   return @"";
+   return @"HOME";
 }
 
 @end

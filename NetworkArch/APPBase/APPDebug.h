@@ -19,13 +19,12 @@
 //#define __DebugFunc__                              __AUTO__  /* __AUTO__ */
 //#define __HWDecodeDebug__                          __AUTO__
 
-#define __DEBUG_FONT_SIZE__                        (48)
-
 /***************************************************************************************************************/
 
-#define __DEBUG_COLOR__                            (__OFF__)
+#define __DEBUG_COLOR__                            (__AUTO__)
+#define __DEBUG_HTTP__                             (__AUTO__)
 
-#define __DEBUG_HTTP__                             (__OFF__)
+/***************************************************************************************************************/
 
 #if __DEBUG_HTTP__
 #  define LogHttp(x)                               LoggerDebug x

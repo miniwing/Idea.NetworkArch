@@ -38,7 +38,7 @@ def library
   pod 'IDEAColor'                       , :path => '../MINIWING-PODs/IDEAColor'
   pod 'IDEAPalettes'                    , :path => '../MINIWING-PODs/IDEAPalettes'
   pod 'IDEANightVersion'                , :path => '../MINIWING-PODs/IDEANightVersion'
-  pod 'IDEAFONT'                        , :path => '../MINIWING-PODs/IDEAFONT'
+#  pod 'IDEAFONT'                        , :path => '../MINIWING-PODs/IDEAFONT'
 
   pod 'APPDATA'                         , :path => 'APPDATA'
 
@@ -292,7 +292,7 @@ post_install do |installer|
       if target.name == 'IDEAFONT'
         config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
                                                                    '$(inherited)',
-                                                                   'IDEA_FONT_BOLD=1'
+                                                                   'IDEA_FONT_BOLD=0'
                                                                    ]
       end
 

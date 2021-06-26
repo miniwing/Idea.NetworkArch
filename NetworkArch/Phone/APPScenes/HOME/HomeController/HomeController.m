@@ -19,13 +19,13 @@
 @implementation HomeController
 
 - (void)dealloc {
-
+   
    __LOG_FUNCTION;
-
+   
    // Custom dealloc
-
+   
    __SUPER_DEALLOC;
-
+   
    return;
 }
 
@@ -44,10 +44,10 @@
       
       [_appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
       [_appBar.headerViewController.headerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-
+      
       [_appBar.headerViewController setShowsHairline:YES];
       [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
-
+      
       [self addChildViewController:_appBar.headerViewController];
 #endif /* MATERIAL_APP_BAR */
       
@@ -67,20 +67,22 @@
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
    
+   NSLayoutConstraint            *stLayoutConstraint                       = nil;
+   
    __TRY;
    
    [super viewDidLoad];
    
    [self setTitle:APP_STR(@"HOME")];
    LogDebug((@"[SettingRootController viewDidLoad] : VIEW : %@", self.view));
-
+   
 #if MATERIAL_APP_BAR
    [self.navigationController setNavigationBarHidden:YES];
-
+   
 #  if FULLSCREEN_POP_GESTURE
    [self setPrefersNavigationBarHidden:YES];
 #  endif /* FULLSCREEN_POP_GESTURE */
-
+   
    [self.appBar addSubviewsToParent];
    
    [self.appBar.navigationBar setAllowAnyTitleFontSize:YES];
@@ -123,83 +125,98 @@
    
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
+   
+   [self.contentView setBackgroundColor:UIColor.clearColor];
+   
+   /**
+    调整 Layout
+    contentView.top
+    */
+   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"contentView.top"
+                                                              fromView:self.view];
+   
+   if (nil != stLayoutConstraint) {
       
+      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
+      
+   } /* End if () */
+
    __CATCH(nErr);
    
    return;
 }
 
 - (void)didReceiveMemoryWarning {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super didReceiveMemoryWarning];
    // Dispose of any resources that can be recreated.
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewWillAppear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewWillAppear:aAnimated];
-
+   
    [self.contentController viewWillAppear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewDidAppear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidAppear:aAnimated];
-
+   
    [self.contentController viewDidAppear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewWillDisappear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewWillDisappear:aAnimated];
-
+   
    [self.contentController viewWillDisappear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewDidDisappear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidDisappear:aAnimated];
-
+   
    [self.contentController viewDidDisappear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -210,14 +227,14 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)aSegue sender:(id)aSender {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    // Get the new view controller using [aSegue destinationViewController].
    // Pass the selected object to the new view controller.
-
+   
    if ([aSegue.identifier isEqualToString:HomeContentController.className]) {
       
       self.contentController  = aSegue.destinationViewController;
@@ -225,7 +242,7 @@
    } /* End if () */
    
    __CATCH(nErr);
-
+   
    return;
 }
 
