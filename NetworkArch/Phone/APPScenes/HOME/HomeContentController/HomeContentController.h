@@ -54,6 +54,8 @@ IDEA_ENUM(NSInteger, HomeSection) {
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesWhoisLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesDNSLabel;
 
+@property (nonatomic, strong) IBOutletCollection(UIImageView)     NSArray<UIImageView *>     * cellRightImageViews;
+
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * cellSeparatorViews;
 
 @end

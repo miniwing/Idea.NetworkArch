@@ -38,7 +38,7 @@ def library
   pod 'IDEAColor'                       , :path => '../MINIWING-PODs/IDEAColor'
   pod 'IDEAPalettes'                    , :path => '../MINIWING-PODs/IDEAPalettes'
   pod 'IDEANightVersion'                , :path => '../MINIWING-PODs/IDEANightVersion'
-#  pod 'IDEAFONT'                        , :path => '../MINIWING-PODs/IDEAFONT'
+  pod 'IDEAFONT'                        , :path => '../MINIWING-PODs/IDEAFONT'
 
   pod 'APPDATA'                         , :path => 'APPDATA'
 

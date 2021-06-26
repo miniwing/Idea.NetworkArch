@@ -33,6 +33,7 @@
 		4A0E4EA926858ADC00A85517 /* ONBOARDING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */; };
 		4A0EB7F22687268B00AA4366 /* HomeContentCell+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EB7E82687268B00AA4366 /* HomeContentCell+Debug.m */; };
 		4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */; };
+		4A1DE0B12687889E00C2C73C /* pod.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4A1DE0B02687889E00C2C73C /* pod.sh */; };
 		4A45536526862E4D0050E736 /* HomeContentController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535826862E4B0050E736 /* HomeContentController+Signal.m */; };
 		4A45536626862E4D0050E736 /* HomeContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535C26862E4B0050E736 /* HomeContentController.m */; };
 		4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535E26862E4C0050E736 /* HomeContentController+Debug.m */; };
@@ -136,6 +137,7 @@
 		4A0EB7E82687268B00AA4366 /* HomeContentCell+Debug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeContentCell+Debug.m"; sourceTree = "<group>"; };
 		4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeContentCell.m; sourceTree = "<group>"; };
 		4A0EB7F02687268B00AA4366 /* HomeContentCell+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeContentCell+Debug.h"; sourceTree = "<group>"; };
+		4A1DE0B02687889E00C2C73C /* pod.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = pod.sh; path = ../pod.sh; sourceTree = "<group>"; };
 		4A45535726862E4B0050E736 /* HomeContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentController.h; sourceTree = "<group>"; };
 		4A45535826862E4B0050E736 /* HomeContentController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeContentController+Signal.m"; sourceTree = "<group>"; };
 		4A45535926862E4B0050E736 /* HomeContentController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeContentController+Inner.h"; sourceTree = "<group>"; };
@@ -163,7 +165,6 @@
 		4AB5C1EB26859F3C00B1639D /* THEME-BUTTON.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "THEME-BUTTON.xib"; sourceTree = "<group>"; };
 		4AB5C1EC26859F3C00B1639D /* ThemeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeButton.h; sourceTree = "<group>"; };
 		4AB5C1ED26859F3C00B1639D /* ThemeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeButton.m; sourceTree = "<group>"; };
-		4AD711532686F5D7003E5EEC /* pod.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = pod.sh; path = ../../pod.sh; sourceTree = "<group>"; };
 		4AE51B812685C39400DC1DA2 /* HomeController+Notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeController+Notification.m"; sourceTree = "<group>"; };
 		4AE51B822685C39400DC1DA2 /* HomeController+Inner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeController+Inner.h"; sourceTree = "<group>"; };
 		4AE51B832685C39400DC1DA2 /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
@@ -384,6 +385,14 @@
 			path = HOME;
 			sourceTree = "<group>";
 		};
+		4A1DE0AF2687888C00C2C73C /* SHELL */ = {
+			isa = PBXGroup;
+			children = (
+				4A1DE0B02687889E00C2C73C /* pod.sh */,
+			);
+			name = SHELL;
+			sourceTree = "<group>";
+		};
 		4A45533926862DEF0050E736 /* HomeController */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,7 +473,7 @@
 		4A98A62D2684B50F00EEEB60 = {
 			isa = PBXGroup;
 			children = (
-				4AD711522686F5C0003E5EEC /* Build */,
+				4A1DE0AF2687888C00C2C73C /* SHELL */,
 				4A0E4E22268587BE00A85517 /* APPBase */,
 				4A98A6382684B50F00EEEB60 /* Phone */,
 				4A98A6372684B50F00EEEB60 /* Products */,
@@ -505,14 +514,6 @@
 				4AB5C1ED26859F3C00B1639D /* ThemeButton.m */,
 			);
 			path = SETTING;
-			sourceTree = "<group>";
-		};
-		4AD711522686F5C0003E5EEC /* Build */ = {
-			isa = PBXGroup;
-			children = (
-				4AD711532686F5D7003E5EEC /* pod.sh */,
-			);
-			path = Build;
 			sourceTree = "<group>";
 		};
 		5A073BE837F8A6FE5151B56D /* Pods */ = {
@@ -619,6 +620,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1DE0B12687889E00C2C73C /* pod.sh in Resources */,
 				4A0E4E5F268589CA00A85517 /* SETTING.storyboard in Resources */,
 				4A0E4EA726858ADC00A85517 /* HOME.storyboard in Resources */,
 				4AE51B9C2685CD3400DC1DA2 /* Localizable.strings in Resources */,

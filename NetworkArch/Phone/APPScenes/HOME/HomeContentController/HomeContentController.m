@@ -107,9 +107,123 @@
       
    } /* End for () */
 
+   /**
+    WI-FI
+    */
+   [self.wifiSSIDLabel setBackgroundColor:UIColor.clearColor];
+   [self.wifiSSIDLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.wifiSSIDLabel setFont:[APPFont regularFontOfSize:self.wifiSSIDLabel.font.pointSize]];
+
+   [self.wifiSSIDIcon setBackgroundColor:UIColor.clearColor];
+   [self.wifiSSIDIcon setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return UIColor.whiteColor;
+         
+      } /* End if () */
+      else {
+         
+         return UIColor.blackColor;
+         
+      }/* End else */
+   }];
+
+   [self.wifiIPLabel setBackgroundColor:UIColor.clearColor];
+   [self.wifiIPLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.wifiIPLabel setFont:[APPFont lightFontOfSize:self.wifiIPLabel.font.pointSize]];
+
+   [self.wifiIP setBackgroundColor:UIColor.clearColor];
+   [self.wifiIP setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.wifiIP setFont:[APPFont lightFontOfSize:self.wifiIP.font.pointSize]];
+
+   [self.wifiMoreLabel setBackgroundColor:UIColor.clearColor];
+   [self.wifiMoreLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.wifiMoreLabel setFont:[APPFont regularFontOfSize:self.wifiMoreLabel.font.pointSize]];
+
+
+   /**
+    Cellular
+    */
+   [self.cellularOperatorLabel setBackgroundColor:UIColor.clearColor];
+   [self.cellularOperatorLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.cellularOperatorLabel setFont:[APPFont regularFontOfSize:self.wifiSSIDLabel.font.pointSize]];
+
+   [self.cellularOperatorIcon setBackgroundColor:UIColor.clearColor];
+   [self.cellularOperatorIcon setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return UIColor.whiteColor;
+         
+      } /* End if () */
+      else {
+         
+         return UIColor.blackColor;
+         
+      }/* End else */
+   }];
+
+   [self.cellularIPLabel setBackgroundColor:UIColor.clearColor];
+   [self.cellularIPLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.cellularIPLabel setFont:[APPFont lightFontOfSize:self.cellularIPLabel.font.pointSize]];
+
+   [self.cellularIP setBackgroundColor:UIColor.clearColor];
+   [self.cellularIP setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.cellularIP setFont:[APPFont lightFontOfSize:self.cellularIP.font.pointSize]];
+
+   [self.cellularMoreLabel setBackgroundColor:UIColor.clearColor];
+   [self.cellularMoreLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.cellularMoreLabel setFont:[APPFont regularFontOfSize:self.cellularMoreLabel.font.pointSize]];
+
+   /**
+    工具
+    */
+   [self.utilitiesPingLabel setBackgroundColor:UIColor.clearColor];
+   [self.utilitiesPingLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.utilitiesPingLabel setFont:[APPFont lightFontOfSize:self.utilitiesPingLabel.font.pointSize]];
+
+   [self.utilitiesWakeOnLanLabel setBackgroundColor:UIColor.clearColor];
+   [self.utilitiesWakeOnLanLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.utilitiesWakeOnLanLabel setFont:[APPFont lightFontOfSize:self.utilitiesWakeOnLanLabel.font.pointSize]];
+
+   [self.utilitiesWhoisLabel setBackgroundColor:UIColor.clearColor];
+   [self.utilitiesWhoisLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.utilitiesWhoisLabel setFont:[APPFont lightFontOfSize:self.utilitiesWhoisLabel.font.pointSize]];
+
+   [self.utilitiesDNSLabel setBackgroundColor:UIColor.clearColor];
+   [self.utilitiesDNSLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.utilitiesDNSLabel setFont:[APPFont lightFontOfSize:self.utilitiesDNSLabel.font.pointSize]];
+
+   for (UIImageView *stICON in self.cellRightImageViews) {
+      
+      [stICON setBackgroundColor:UIColor.clearColor];
+      [stICON setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+         
+         if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+            
+            return UIColor.whiteColor;
+            
+         } /* End if () */
+         else {
+            
+            return UIColor.blackColor;
+            
+         }/* End else */
+      }];
+      
+   } /* End for () */
+   
+   /**
+    分割线
+    */
    for (UIView *stView in self.cellSeparatorViews) {
       
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.whiteColor];
+#else /* __DEBUG_COLOR__ */
       [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
+#endif /* !__DEBUG_COLOR__ */
 
    } /* End for () */
 

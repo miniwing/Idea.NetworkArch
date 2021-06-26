@@ -9,6 +9,7 @@
 //  TEL : +(852)53054612
 //
 
+#import "HomeContentController+Inner.h"
 #import "HomeContentController+Debug.h"
 
 #if __Debug__
@@ -26,6 +27,11 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
+   
+   dispatch_async_on_main_queue(^{
+      
+      [self.tableView reloadData];
+   });
    
    __CATCH(nErr);
    
