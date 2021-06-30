@@ -54,6 +54,14 @@
 
    [super awakeFromNib];
    // Initialization code
+   
+   self.selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];//这句不可省略
+//   [self.selectedBackgroundView setSize:CGSizeZero];
+   [self.selectedBackgroundView setBackgroundColor:UIColor.clearColor];
+   [self.selectedBackgroundView setClipsToBounds:YES];
+
+   [self.selectedColorView setClipsToBounds:YES];
+   [self.selectedColorView setBackgroundColor:UIColor.clearColor];
 
    __CATCH(nErr);
 

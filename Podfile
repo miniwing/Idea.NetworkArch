@@ -66,6 +66,8 @@ target 'NetworkArch' do
   pod 'RTRootNavigationController'
 #  pod 'ZKCycleScrollView'
 
+  pod 'FGRoute'
+
 #  pod 'MaterialComponents'              , :path => 'LocalModule/MaterialComponents'
 #  pod 'MDFInternationalization'         , :path => 'LocalModule/MaterialComponents'
 #  pod 'MDFTextAccessibility'            , :path => 'LocalModule/MaterialComponents'

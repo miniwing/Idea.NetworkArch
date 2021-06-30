@@ -427,7 +427,6 @@ typedef FBLPromise Promise;
 #  else
 #     define IDEA_SEARCH_CONTROLLER                                        (0)
 #  endif
-#endif
 
 #  if __has_include(<IDEAFONT/IDEAFONT.h>)
 #     import <IDEAFONT/IDEAFONT.h>
@@ -441,6 +440,9 @@ typedef FBLPromise Promise;
 #  else
 #     define IDEA_FONT                                                     (0)
 #  endif
+#endif
+
+#import <FGRoute/FGRoute.h>
 
 /****************************************************************************/
 

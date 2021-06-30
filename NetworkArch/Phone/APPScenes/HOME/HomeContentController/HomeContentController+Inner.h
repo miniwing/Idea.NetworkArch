@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeContentController ()
 
+@property (nonatomic, strong)                NSString                            * SSID;
+
 @end
 
 @interface HomeContentController (Inner)

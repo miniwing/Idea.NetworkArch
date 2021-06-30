@@ -13,4 +13,15 @@
 
 @implementation HomeContentController (Inner)
 
+handleSignal(HomeContentController, loadNetInfoSignal) {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
 @end

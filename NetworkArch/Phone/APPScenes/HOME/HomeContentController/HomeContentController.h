@@ -34,6 +34,7 @@ IDEA_ENUM(NSInteger, HomeSection) {
 @property (nonatomic, weak)   IBOutlet       UILabel                             * wifiIP;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                             * wifiMoreLabel;
+@property (nonatomic, weak)   IBOutlet       UIImageView                         * wifiMoreIcon;
 
 @property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray<UITableViewCell *> * cellularCells;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * cellularCellContainerViews;
@@ -45,6 +46,7 @@ IDEA_ENUM(NSInteger, HomeSection) {
 @property (nonatomic, weak)   IBOutlet       UILabel                             * cellularIP;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                             * cellularMoreLabel;
+@property (nonatomic, weak)   IBOutlet       UIImageView                         * cellularMoreIcon;
 
 @property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray<UITableViewCell *> * utilitiesCells;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * utilitiesCellContainerViews;

@@ -4,6 +4,7 @@ PODS:
   - APPDEBUG (1.0.0):
     - YYKit
   - cdebug (1.3)
+  - FGRoute (1.0.7)
   - FoundationExtension (2.1.0):
     - cdebug (~> 1.3)
     - FoundationExtension/FoundationExtension (= 2.1.0)
@@ -263,6 +264,7 @@ PODS:
 DEPENDENCIES:
   - APPDATA (from `APPDATA`)
   - APPDEBUG (from `APPDEBUG`)
+  - FGRoute
   - FoundationExtension
   - IDEAApplet (from `../MINIWING-PODs/Idea.Applets`)
   - IDEAAppletDebugger (from `../MINIWING-PODs/Idea.Applets`)
@@ -286,6 +288,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - cdebug
+    - FGRoute
     - FoundationExtension
     - libwebp
     - MaterialComponents
@@ -331,6 +334,7 @@ SPEC CHECKSUMS:
   APPDATA: abb27d7f2a8a971f965ed98afb3ae8d09202e157
   APPDEBUG: f26dee7f05e4b6c8177c5440460fad4a04423393
   cdebug: 0d0b7207fa996236ee9e07e5988e5e39a1d94a28
+  FGRoute: e46b1ef1a98f74659fb4e25c8473550175799da4
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
   IDEAApplet: 20ef1c0b47e84d39ca40000abaafc452b8f3efe8
   IDEAAppletDebugger: 3db816aa332544da2674ecd848b91aeae220b786
@@ -354,6 +358,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: 4034528106db7708b42917cccb76a77e4c24a9f1
 
-PODFILE CHECKSUM: 4c32c4c02dcafea52cf3b65c1f1256002ae57b0a
+PODFILE CHECKSUM: 0256866671296d57fa01ac07f609a22aff83b99a
 
 COCOAPODS: 1.10.1
