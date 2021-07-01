@@ -18,7 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @signal(self);
 #endif /* __Debug__ */
 
-@signal(loadNetInfo);
+@signal(loadWifiInfo);
+@signal(loadCellularInfo);
 
 @end
 

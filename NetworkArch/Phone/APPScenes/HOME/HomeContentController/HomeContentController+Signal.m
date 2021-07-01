@@ -17,6 +17,7 @@
 @def_signal(self);
 #endif /* __Debug__ */
 
-@def_signal(loadNetInfo);
+@def_signal(loadWifiInfo);
+@def_signal(loadCellularInfo);
 
 @end

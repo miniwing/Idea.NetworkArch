@@ -117,7 +117,8 @@
    [self.wifiSSIDLabel setBackgroundColor:UIColor.clearColor];
    [self.wifiSSIDLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.wifiSSIDLabel setFont:[APPFont regularFontOfSize:self.wifiSSIDLabel.font.pointSize]];
-   
+   [self.wifiIPLabel setText:APP_STR(@"SSID not available")];
+
    [self.wifiSSIDIcon setBackgroundColor:UIColor.clearColor];
    [self.wifiSSIDIcon setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       
@@ -132,18 +133,22 @@
          
       }/* End else */
    }];
-   
+   [self.wifiSSIDIcon setImage:[UIImage imageNamed:@"WIFI-SLASH"]];
+
    [self.wifiIPLabel setBackgroundColor:UIColor.clearColor];
    [self.wifiIPLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.wifiIPLabel setFont:[APPFont lightFontOfSize:self.wifiIPLabel.font.pointSize]];
+   [self.wifiIPLabel setText:APP_STR(@"IP Address")];
    
    [self.wifiIP setBackgroundColor:UIColor.clearColor];
    [self.wifiIP setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.wifiIP setFont:[APPFont lightFontOfSize:self.wifiIP.font.pointSize]];
-   
+   [self.wifiIP setText:APP_STR(@"N/A")];
+
    [self.wifiMoreLabel setBackgroundColor:UIColor.clearColor];
    [self.wifiMoreLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.wifiMoreLabel setFont:[APPFont regularFontOfSize:self.wifiMoreLabel.font.pointSize]];
+   [self.wifiMoreLabel setText:APP_STR(@"More Info")];
    
    [self.wifiMoreIcon setBackgroundColor:UIColor.clearColor];
    [self.wifiMoreIcon setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
@@ -159,14 +164,15 @@
          
       }/* End else */
    }];
-   
+
    /**
     Cellular
     */
    [self.cellularOperatorLabel setBackgroundColor:UIColor.clearColor];
    [self.cellularOperatorLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.cellularOperatorLabel setFont:[APPFont regularFontOfSize:self.wifiSSIDLabel.font.pointSize]];
-   
+   [self.cellularOperatorLabel setText:APP_STR(@"No Service")];
+
    [self.cellularOperatorIcon setBackgroundColor:UIColor.clearColor];
    [self.cellularOperatorIcon setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       
@@ -181,19 +187,23 @@
          
       }/* End else */
    }];
+   [self.cellularOperatorIcon setImage:[UIImage imageNamed:@"CELLULAR-SLASH"]];
    
    [self.cellularIPLabel setBackgroundColor:UIColor.clearColor];
    [self.cellularIPLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.cellularIPLabel setFont:[APPFont lightFontOfSize:self.cellularIPLabel.font.pointSize]];
-   
+   [self.cellularIPLabel setText:APP_STR(@"IP Address")];
+
    [self.cellularIP setBackgroundColor:UIColor.clearColor];
    [self.cellularIP setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.cellularIP setFont:[APPFont lightFontOfSize:self.cellularIP.font.pointSize]];
-   
+   [self.cellularIP setText:APP_STR(@"N/A")];
+
    [self.cellularMoreLabel setBackgroundColor:UIColor.clearColor];
    [self.cellularMoreLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.cellularMoreLabel setFont:[APPFont regularFontOfSize:self.cellularMoreLabel.font.pointSize]];
-   
+   [self.cellularMoreLabel setText:APP_STR(@"More Info")];
+
    [self.cellularMoreIcon setBackgroundColor:UIColor.clearColor];
    [self.cellularMoreIcon setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       
@@ -263,7 +273,9 @@
    /**
     Load Wi-Fi, Cellular
     */
-   [self postSignal:HomeContentController.loadNetInfoSignal onQueue:dispatch_get_main_queue()];
+//   [self postSignal:HomeContentController.loadWifiInfoSignal onQueue:dispatch_get_main_queue()];
+   [self sendSignal:HomeContentController.loadWifiInfoSignal];
+   [self sendSignal:HomeContentController.loadCellularInfoSignal];
    
    __CATCH(nErr);
    

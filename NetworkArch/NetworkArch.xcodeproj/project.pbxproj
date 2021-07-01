@@ -156,6 +156,7 @@
 		4A4553812686327A0050E736 /* TrackingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingController.m; sourceTree = "<group>"; };
 		4A4553822686327A0050E736 /* TrackingRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingRootController.h; sourceTree = "<group>"; };
 		4A4553832686327A0050E736 /* TrackingRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingRootController.m; sourceTree = "<group>"; };
+		4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkArch.entitlements; sourceTree = "<group>"; };
 		4A98A6362684B50F00EEEB60 /* NetworkArch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkArch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB5C1D126859BB800B1639D /* HomeRootController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRootController.h; sourceTree = "<group>"; };
 		4AB5C1D726859BB800B1639D /* HomeRootController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeRootController.m; sourceTree = "<group>"; };
@@ -215,9 +216,9 @@
 		4A0E4DE42685858000A85517 /* APP */ = {
 			isa = PBXGroup;
 			children = (
-				4A0E4E50268588E300A85517 /* APPDelegate+Inner.h */,
 				4A0E4DBC268584C100A85517 /* APPDelegate.h */,
 				4A0E4DBD268584C100A85517 /* APPDelegate.m */,
+				4A0E4E50268588E300A85517 /* APPDelegate+Inner.h */,
 				4A0E4DBB268584C100A85517 /* RootViewController.h */,
 				4A0E4DB9268584C100A85517 /* RootViewController.m */,
 				4A0E4DBA268584C100A85517 /* SplashViewController.h */,
@@ -230,6 +231,7 @@
 		4A0E4DE7268585B800A85517 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */,
 				4AE51B932685C4DA00DC1DA2 /* SPONSOR.png */,
 				4AE51B972685CD3400DC1DA2 /* InfoPlist.strings */,
 				4AE51B992685CD3400DC1DA2 /* Localizable.strings */,
@@ -1004,6 +1006,7 @@
 			baseConfigurationReference = CC7F3049F2B28E17A49195A2 /* Pods-NetworkArch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
+				CODE_SIGN_ENTITLEMENTS = Phone/APP/NetworkArch.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = G8G9TAP4UN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1015,7 +1018,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.idea.NetworkArch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Idea.TEST;
+				PROVISIONING_PROFILE_SPECIFIER = Idea.NetworkArch;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1025,6 +1028,8 @@
 			baseConfigurationReference = C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Phone/APP/NetworkArch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = G8G9TAP4UN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1036,7 +1041,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.idea.NetworkArch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Idea.TEST;
+				PROVISIONING_PROFILE_SPECIFIER = IdeaNetworkArch;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

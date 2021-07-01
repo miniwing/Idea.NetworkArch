@@ -13,6 +13,14 @@
 "CELLULAR"                          = "Cellular Network";
 "UTILITIES"                         = "Utilities";
 
+"IP Address"                        = "IP Address";
+
+"SSID not available"                = "SSID not available";
+"Wi-Fi not connected"               = "Wi-Fi not connected";
+
+"No Service"                        = "No Service";
+
+"More Info"                         = "More Info";
 
 /// SETTING
 "SETTING"                           = "SETTING";

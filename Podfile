@@ -66,7 +66,7 @@ target 'NetworkArch' do
   pod 'RTRootNavigationController'
 #  pod 'ZKCycleScrollView'
 
-  pod 'FGRoute'
+#  pod 'FGRoute'
 
 #  pod 'MaterialComponents'              , :path => 'LocalModule/MaterialComponents'
 #  pod 'MDFInternationalization'         , :path => 'LocalModule/MaterialComponents'
@@ -106,10 +106,10 @@ target 'NetworkArch' do
 #  pod 'IDEAResources'                   , :path => '../MINIWING-PODs/IDEAResources'
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'IDEARefresh'                     , :path => '../MINIWING-PODs/IDEARefresh'
-  pod 'IDEANibBridge'                   , :path => '../MINIWING-PODs/IDEANibBridge'
-  #-------------------------------------------------------------------------------------------------------------------------------#
+#  pod 'IDEANibBridge'                   , :path => '../MINIWING-PODs/IDEANibBridge'
   pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
+  pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
 #  pod 'IDEAWaterDropView'               , :path => '../MINIWING-PODs/IDEAWaterDropView'
 #  pod 'IDEANavigationBar'               , :path => '../MINIWING-PODs/IDEANavigationBar'
 #  pod 'IDEASearchController'            , :path => '../MINIWING-PODs/IDEASearchController'
