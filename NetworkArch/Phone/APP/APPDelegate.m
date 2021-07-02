@@ -32,16 +32,16 @@
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : documentsPath   : %@", [UIApplication sharedApplication].documentsPath));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : identifierGroup : %@", [IDEAIdentifier identifierGroup]));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : pathGroup       : %@", [UIApplication groupPath:[IDEAIdentifier identifierGroup]]));
-
+   
 #if AF_NETWORKING
    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 #endif /* AF_NETWORKING */
-
+   
 #if AF_NETWORK_ACTIVITY_LOGGER
    [[AFNetworkActivityLogger sharedLogger] startLogging];
    [[AFNetworkActivityLogger sharedLogger] setLogLevel:AFLoggerLevelDebug];
 #endif /* AF_NETWORK_ACTIVITY_LOGGER */
-
+   
    /******************************************************************************************/
    // https://www.jianshu.com/p/a02be724b7ec
    // 动态注册字体
@@ -51,12 +51,12 @@
       
       LogDebug((@"family:'%@'", szFamilyName));
       
-//      for(NSString *szName in [UIFont fontNamesForFamilyName:szFamilyName]) {
-//
-//         LogDebug((@"\tfont:'%@'",szName));
-//
-//      } /* End for () */
-
+      //      for(NSString *szName in [UIFont fontNamesForFamilyName:szFamilyName]) {
+      //
+      //         LogDebug((@"\tfont:'%@'",szName));
+      //
+      //      } /* End for () */
+      
    } /* End for () */
    LogDebug((@"----------------------------------------------------"));
 #endif /* __Debug__ */
@@ -64,34 +64,34 @@
    /**
     监听保存
     */
-
+   
    /******************************************************************************************/
    
-//   self.onNotification(IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE ), ^(NSNotification *aNotification) {
-//
-//      [APPDelegate setTabbarAnimation:[aNotification.object boolValue]];
-//   });
-
+   //   self.onNotification(IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE ), ^(NSNotification *aNotification) {
+   //
+   //      [APPDelegate setTabbarAnimation:[aNotification.object boolValue]];
+   //   });
+   
    self.onNotification(SettingController.tabAnimationNotification, ^(NSNotification *aNotification) {
-
+      
       LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : tabAnimation : %@", SettingController.tabAnimationNotification));
-
+      
       [APPDelegate setTabbarAnimation:[aNotification.object boolValue]];
    });
-
    
-//   [self observeNotification:SettingController.tabAnimationNotification];
+   
+   //   [self observeNotification:SettingController.tabAnimationNotification];
    
    /******************************************************************************************/
-
+   
 #if __InjectionIII__
    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
-//   // or switf
-//   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
-//   // for tvOS:
-//   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle")?.load()
-//   // Or for macOS:
-//   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle")?.load()
+   //   // or switf
+   //   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
+   //   // for tvOS:
+   //   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle")?.load()
+   //   // Or for macOS:
+   //   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle")?.load()
 #endif /* __InjectionIII__ */
    
    __CATCH(nErr);
@@ -107,7 +107,7 @@
    
    LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : UIApplication : %@", aApplication));
    /******************************************************************************************/
-      
+   
    // Override point for customization after application launch.
    if ([self.window.rootViewController isKindOfClass:[RootViewController class]]) {
       
@@ -127,7 +127,7 @@
    
    /******************************************************************************************/
    
-//   [self monitorReachabilityStatus];
+   //   [self monitorReachabilityStatus];
    
    /******************************************************************************************/
    
@@ -241,22 +241,22 @@
       
    } /* End if () */
    else {
-   
+      
       if ([szVersion isEqual:[UIApplication sharedApplication].appVersion]) {
          
          // 非第一次进入
          
       } /* End if () */
       else {
-
+         
          // 当前版本第一次进入
          // 可能需要升级数据。
          [APPDelegate setVersion:[UIApplication sharedApplication].appVersion];
          
       } /* End else */
-
+      
    } /* End else */
-
+   
    UI_PERFORM_SELECTOR(self, @selector(splashing), nil, NO);
    
    __CATCH(nErr);
@@ -303,7 +303,7 @@
    
    [self postNotificationName:SplashViewController.SPLASH_DONE
                        object:nil];
-
+   
    __CATCH(nErr);
    
    return;

@@ -429,6 +429,19 @@ typedef FBLPromise Promise;
 #     define IDEA_SEARCH_CONTROLLER                                        (0)
 #  endif
 
+#  if __has_include(<IDEARoute/IDEARoute.h>)
+#     import <IDEARoute/IDEARoute.h>
+#     define IDEA_ROUTE                                                    (1)
+#  elif __has_include("IDEARoute/IDEARoute.h")
+#     import "IDEARoute/IDEARoute.h"
+#     define IDEA_ROUTE                                                    (1)
+#  elif __has_include("IDEARoute.h")
+#     import "IDEARoute.h"
+#     define IDEA_ROUTE                                                    (1)
+#  else
+#     define IDEA_ROUTE                                                    (0)
+#  endif
+
 #  if __has_include(<IDEAFONT/IDEAFONT.h>)
 #     import <IDEAFONT/IDEAFONT.h>
 #     define IDEA_FONT                                                     (1)
@@ -442,8 +455,6 @@ typedef FBLPromise Promise;
 #     define IDEA_FONT                                                     (0)
 #  endif
 #endif
-
-#import <IDEARoute/IDEARoute.h>
 
 /****************************************************************************/
 

@@ -90,8 +90,9 @@ target 'NetworkArch' do
 #  pod 'JXCategoryView'
 #  pod 'JXPagingView/Pager'
 
-  #-------------------------------------------------------------------------------------------------------------------------------#
-  pod 'Reveal-SDK'                      , '~> 24' , :configurations => ['Debug']
+#  pod 'DoraemonKit'                                                                           , :configurations => ['Debug']
+#  pod 'YKWoodpecker'                                                                          , :configurations => ['Debug']
+  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'APPDEBUG'                        , :path => 'APPDEBUG'                                 , :configurations => ['Debug']
 #  pod 'Reveal-SDK'                      , :path => '../MINIWING-PODs/Reveal'                  , :configurations => ['Debug']
@@ -287,7 +288,9 @@ post_install do |installer|
                                                                    ' SERVICE_GRIDS=0 ',
                                                                    ' SERVICE_INSPECTOR=1 ',
                                                                    ' SERVICE_MONITOR=0 ',
+                                                                   ' SERVICE_FILE_SYNC=1 ',
                                                                    ' SERVICE_TAPSPOT=0 ',
+                                                                   ' SERVICE_THEME=1 '
                                                                    ]
       end
 
