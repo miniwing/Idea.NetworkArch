@@ -219,78 +219,88 @@ post_install do |installer|
       config.build_settings.delete('CODE_SIGNING_ALLOWED')
       config.build_settings.delete('CODE_SIGNING_REQUIRED')
 
-    end
-    
-    if target.name == 'IDEAColor'
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                  '$(inherited)',
-                                                                  'UICOLOR_SYSTEM=0'
-                                                                ]
-    end
+      if target.name == 'IDEAColor'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+                                                                    '$(inherited)',
+                                                                    'UICOLOR_SYSTEM=0'
+                                                                  ]
+      end
 
-    if target.name == 'IDEAUIVendor'
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                  '$(inherited)',
-                                                                  'APP_NAVIGATION_BAR_BACKGROUND_IMAGE=0'
-                                                                ]
-    end
+      if target.name == 'IDEAUIVendor'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+                                                                    '$(inherited)',
+                                                                    'APP_NAVIGATION_BAR_BACKGROUND_IMAGE=0'
+                                                                  ]
+      end
 
-    if target.name == 'IDEAKit'
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                 '$(inherited)',
-                                                                 'APP_SCHEME=\@\"NetworkArch://\"',
-                                                                 'APP_BUNDLE_IDENTIFIER=\@\"com.idea.NetworkArch\"',
-                                                                 'APP_BUNDLE_IDENTIFIER_GROUP=\@\"group.com.idea.NetworkArch\"',
-                                                                 'APP_BUNDLE_IDENTIFIER_WIDGET=\@\"com.idea.NetworkArch.Widget\"',
-                                                                 'APP_ID=1568321747',
+      if target.name == 'IDEAKit'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+                                                                   '$(inherited)',
+                                                                   'APP_SCHEME=\@\"NetworkArch://\"',
+                                                                   'APP_BUNDLE_IDENTIFIER=\@\"com.idea.NetworkArch\"',
+                                                                   'APP_BUNDLE_IDENTIFIER_GROUP=\@\"group.com.idea.NetworkArch\"',
+                                                                   'APP_BUNDLE_IDENTIFIER_WIDGET=\@\"com.idea.NetworkArch.Widget\"',
+                                                                   'APP_ID=1568321747',
 #                                                                   'IDEAKIT_AFNETWORKING_OPERATIONS=1',
-                                                                 'FY_TRANSITION=0',
-                                                                 'NS_EVIL_TRANSFORM=0'
-                                                                 ]
-    end
+                                                                   'FY_TRANSITION=0',
+                                                                   'NS_EVIL_TRANSFORM=0'
+                                                                   ]
+      end
 
-    if target.name == 'IDEAUIKit'
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                 '$(inherited)',
-                                                                 'HV_TABLE_VIEW=0',
-                                                                 'MB_SLIDER_VIEW=0',
-                                                                 'MK_MAP_VIEW_ZOOM_LEVEL=0',
-                                                                 'UI_CAMERA_BUTTON=0',
-                                                                 'UI_CHART_VIEW=0',
-                                                                 'UI_CYCLE_SCROLL_VIEW=0',
-                                                                 'UI_DROP_REFRESH=0',
-                                                                 'UI_SEVEN_SWITCH=0',
-                                                                 'UI_WATER_DROP_VIEW=0'
-                                                                 ]
-    end
+      if target.name == 'IDEAUIKit'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+                                                                   '$(inherited)',
+                                                                   'HV_TABLE_VIEW=0',
+                                                                   'MB_SLIDER_VIEW=0',
+                                                                   'MK_MAP_VIEW_ZOOM_LEVEL=0',
+                                                                   'UI_CAMERA_BUTTON=0',
+                                                                   'UI_CHART_VIEW=0',
+                                                                   'UI_CYCLE_SCROLL_VIEW=0',
+                                                                   'UI_DROP_REFRESH=0',
+                                                                   'UI_SEVEN_SWITCH=0',
+                                                                   'UI_WATER_DROP_VIEW=0'
+                                                                   ]
+      end
 
-    if target.name == 'IDEAWaterDropView'
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                 '$(inherited)',
-                                                                 'IDEA_WATER_DROP_VIEW=1'
-                                                                 ]
-    end
+#      if target.name == 'IDEAExtension'
+#        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+#                                                                   '$(inherited)',
+#                                                                   'APP_SCHEME=\@\"NetworkArch://\"',
+#                                                                   'APP_BUNDLE_IDENTIFIER=\@\"com.idea.NetworkArch\"',
+#                                                                   'APP_BUNDLE_IDENTIFIER_GROUP=\@\"group.com.idea.NetworkArch\"',
+#                                                                   'APP_BUNDLE_IDENTIFIER_WIDGET=\@\"com.idea.NetworkArch.Widget\"',
+#                                                                   ]
+#      end
 
-    if target.name == 'IDEAAppletDebugger'
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                 '$(inherited)',
-                                                                 ' SERVICE_BORDER=0 ',
-                                                                 ' SERVICE_CONSOLE=0 ',
-                                                                 ' SERVICE_GESTURE=0 ',
-                                                                 ' SERVICE_GRIDS=0 ',
-                                                                 ' SERVICE_INSPECTOR=1 ',
-                                                                 ' SERVICE_MONITOR=0 ',
-                                                                 ' SERVICE_FILE_SYNC=1 ',
-                                                                 ' SERVICE_TAPSPOT=0 ',
-                                                                 ' SERVICE_THEME=1 '
-                                                                 ]
-    end
+      if target.name == 'IDEAWaterDropView'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+                                                                   '$(inherited)',
+                                                                   'IDEA_WATER_DROP_VIEW=1'
+                                                                   ]
+      end
 
-    if target.name == 'IDEAFONT'
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                 '$(inherited)',
-                                                                 'IDEA_FONT_BOLD=0'
-                                                                 ]
+      if target.name == 'IDEAAppletDebugger'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+                                                                   '$(inherited)',
+                                                                   ' SERVICE_BORDER=0 ',
+                                                                   ' SERVICE_CONSOLE=0 ',
+                                                                   ' SERVICE_GESTURE=0 ',
+                                                                   ' SERVICE_GRIDS=0 ',
+                                                                   ' SERVICE_INSPECTOR=1 ',
+                                                                   ' SERVICE_MONITOR=0 ',
+                                                                   ' SERVICE_FILE_SYNC=1 ',
+                                                                   ' SERVICE_TAPSPOT=0 ',
+                                                                   ' SERVICE_THEME=1 '
+                                                                   ]
+      end
+
+      if target.name == 'IDEAFONT'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+                                                                   '$(inherited)',
+                                                                   'IDEA_FONT_BOLD=0'
+                                                                   ]
+      end
+
     end
   end
 end
