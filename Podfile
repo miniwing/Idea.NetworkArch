@@ -200,7 +200,9 @@ post_install do |installer|
       config.build_settings['WARNING_CFLAGS']                 = ['-Wdeprecated-declarations']
 
 #      config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'NO'
-#      config.build_settings['DEBUG_INFORMATION_FORMAT']              = 'dwarf'
+      if config.name == 'Debug'
+        config.build_settings['DEBUG_INFORMATION_FORMAT']     = 'dwarf'
+      end
 #      config.build_settings['SWIFT_VERSION']                  = '5.0'
       config.build_settings['ENABLE_BITCODE']                 = 'YES'
 
