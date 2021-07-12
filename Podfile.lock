@@ -81,6 +81,7 @@ PODS:
     - IDEAAppletDebugger/ServiceMonitor (= 1.0.0)
     - IDEAAppletDebugger/ServiceTapspot (= 1.0.0)
     - IDEAAppletDebugger/ServiceTheme (= 1.0.0)
+    - IDEAAppletDebugger/ServiceWiFi (= 1.0.0)
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceBorder (1.0.0):
     - FMDB
@@ -129,6 +130,11 @@ PODS:
     - IDEAApplet
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceTheme (1.0.0):
+    - FMDB
+    - GCDWebServer
+    - IDEAApplet
+    - IDEANightVersion
+  - IDEAAppletDebugger/ServiceWiFi (1.0.0):
     - FMDB
     - GCDWebServer
     - IDEAApplet
@@ -369,7 +375,7 @@ SPEC CHECKSUMS:
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   IDEAApplet: e40bab3c821b143d43809129e8356989b22ac669
-  IDEAAppletDebugger: 522a1a56cc43c0fafac2ba99bd84bf6375cf200b
+  IDEAAppletDebugger: 600a4d835bd3149ea39c7427fea50302c619bca1
   IDEAColor: 2d8f07ae48cb83e6d8dbafe4f152d76bb0bad5e9
   IDEAFONT: d02bc4ffd9db722e95ba76cbc8389c91a95d530c
   IDEAKit: bff802347b672b93494f3da425dec873d6f09d67
@@ -390,6 +396,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: 4034528106db7708b42917cccb76a77e4c24a9f1
 
-PODFILE CHECKSUM: 98b926a1dbd0f84f25875d26047269cb6a1d4e90
+PODFILE CHECKSUM: 81e40026530473d3daddd7f5533d2ea80fea3d94
 
 COCOAPODS: 1.10.1

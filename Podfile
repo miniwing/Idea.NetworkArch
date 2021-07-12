@@ -292,7 +292,8 @@ post_install do |installer|
                                                                    ' SERVICE_MONITOR=0 ',
                                                                    ' SERVICE_FILE_SYNC=1 ',
                                                                    ' SERVICE_TAPSPOT=0 ',
-                                                                   ' SERVICE_THEME=1 '
+                                                                   ' SERVICE_THEME=1 ',
+                                                                   ' SERVICE_WIFI=1 '
                                                                    ]
       end
 
