@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
   - APPDATA (1.0.0):
     - YYKit
   - APPDEBUG (1.0.0):
@@ -19,6 +34,10 @@ PODS:
   - GCDWebServer (3.5.4):
     - GCDWebServer/Core (= 3.5.4)
   - GCDWebServer/Core (3.5.4)
+  - GCDWebServer/WebDAV (3.5.4):
+    - GCDWebServer/Core
+  - GCDWebServer/WebUploader (3.5.4):
+    - GCDWebServer/Core
   - IDEAApplet (1.0.1):
     - IDEAApplet/applet-framework (= 1.0.1)
   - IDEAApplet/applet-framework (1.0.1):
@@ -26,6 +45,7 @@ PODS:
     - IDEAApplet/applet-framework/samurai-core (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-event (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-model (= 1.0.1)
+    - IDEAApplet/applet-framework/samurai-route (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-service (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view (= 1.0.1)
     - IDEAApplet/applet-framework/vendor (= 1.0.1)
@@ -43,6 +63,7 @@ PODS:
     - IDEAApplet/applet-framework/samurai-model/modules (= 1.0.1)
   - IDEAApplet/applet-framework/samurai-model/extension (1.0.1)
   - IDEAApplet/applet-framework/samurai-model/modules (1.0.1)
+  - IDEAApplet/applet-framework/samurai-route (1.0.1)
   - IDEAApplet/applet-framework/samurai-service (1.0.1):
     - IDEAApplet/applet-framework/samurai-service/modules (= 1.0.1)
   - IDEAApplet/applet-framework/samurai-service/modules (1.0.1):
@@ -69,8 +90,11 @@ PODS:
     - IDEAApplet/applet-framework/vendor/fishhook (= 1.0.1)
   - IDEAApplet/applet-framework/vendor/fishhook (1.0.1)
   - IDEAAppletDebugger (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEAAppletDebugger/ServiceBorder (= 1.0.0)
     - IDEAAppletDebugger/ServiceConsole (= 1.0.0)
@@ -84,59 +108,92 @@ PODS:
     - IDEAAppletDebugger/ServiceWiFi (= 1.0.0)
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceBorder (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceConsole (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceFileSync (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceGesture (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceGrids (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceInspector (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceMonitor (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEAAppletDebugger/ServiceMonitor/JBChartView (= 1.0.0)
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceMonitor/JBChartView (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceTapspot (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceTheme (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEANightVersion
   - IDEAAppletDebugger/ServiceWiFi (1.0.0):
+    - AFNetworking
     - FMDB
     - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
     - IDEAApplet
     - IDEANightVersion
   - IDEAColor (1.0.0):
@@ -323,6 +380,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
     - cdebug
     - FMDB
     - FoundationExtension
@@ -368,14 +426,15 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/YYKit"
 
 SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   APPDATA: abb27d7f2a8a971f965ed98afb3ae8d09202e157
   APPDEBUG: f26dee7f05e4b6c8177c5440460fad4a04423393
   cdebug: 0d0b7207fa996236ee9e07e5988e5e39a1d94a28
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
-  IDEAApplet: e40bab3c821b143d43809129e8356989b22ac669
-  IDEAAppletDebugger: 600a4d835bd3149ea39c7427fea50302c619bca1
+  IDEAApplet: 4dad95f82fd9d00478a9285d67ecf504fcd53244
+  IDEAAppletDebugger: 85a8847cb857f5413c5583791035efee26b03a8b
   IDEAColor: 2d8f07ae48cb83e6d8dbafe4f152d76bb0bad5e9
   IDEAFONT: d02bc4ffd9db722e95ba76cbc8389c91a95d530c
   IDEAKit: bff802347b672b93494f3da425dec873d6f09d67
