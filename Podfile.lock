@@ -39,8 +39,10 @@ PODS:
   - GCDWebServer/WebUploader (3.5.4):
     - GCDWebServer/Core
   - IDEAApplet (1.0.1):
+    - AFNetworking
     - IDEAApplet/applet-framework (= 1.0.1)
   - IDEAApplet/applet-framework (1.0.1):
+    - AFNetworking
     - IDEAApplet/applet-framework/samurai-config (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-core (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-event (= 1.0.1)
@@ -49,46 +51,70 @@ PODS:
     - IDEAApplet/applet-framework/samurai-service (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view (= 1.0.1)
     - IDEAApplet/applet-framework/vendor (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-config (1.0.1)
+  - IDEAApplet/applet-framework/samurai-config (1.0.1):
+    - AFNetworking
   - IDEAApplet/applet-framework/samurai-core (1.0.1):
+    - AFNetworking
     - IDEAApplet/applet-framework/samurai-core/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-core/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-core/extension (1.0.1)
-  - IDEAApplet/applet-framework/samurai-core/modules (1.0.1)
+  - IDEAApplet/applet-framework/samurai-core/extension (1.0.1):
+    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-core/modules (1.0.1):
+    - AFNetworking
   - IDEAApplet/applet-framework/samurai-event (1.0.1):
+    - AFNetworking
     - IDEAApplet/applet-framework/samurai-event/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-event/modules (1.0.1)
+  - IDEAApplet/applet-framework/samurai-event/modules (1.0.1):
+    - AFNetworking
   - IDEAApplet/applet-framework/samurai-model (1.0.1):
+    - AFNetworking
     - IDEAApplet/applet-framework/samurai-model/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-model/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-model/extension (1.0.1)
-  - IDEAApplet/applet-framework/samurai-model/modules (1.0.1)
-  - IDEAApplet/applet-framework/samurai-route (1.0.1)
+  - IDEAApplet/applet-framework/samurai-model/extension (1.0.1):
+    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-model/modules (1.0.1):
+    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-route (1.0.1):
+    - AFNetworking
   - IDEAApplet/applet-framework/samurai-service (1.0.1):
+    - AFNetworking
     - IDEAApplet/applet-framework/samurai-service/modules (= 1.0.1)
   - IDEAApplet/applet-framework/samurai-service/modules (1.0.1):
+    - AFNetworking
     - IDEAApplet/applet-framework/samurai-service/modules/docker (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-service/modules/service (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-service/modules/docker (1.0.1)
-  - IDEAApplet/applet-framework/samurai-service/modules/service (1.0.1)
+  - IDEAApplet/applet-framework/samurai-service/modules/docker (1.0.1):
+    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-service/modules/service (1.0.1):
+    - AFNetworking
   - IDEAApplet/applet-framework/samurai-view (1.0.1):
+    - AFNetworking
     - IDEAApplet/applet-framework/samurai-view/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/extension (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/extension (1.0.1):
+    - AFNetworking
   - IDEAApplet/applet-framework/samurai-view/modules (1.0.1):
+    - AFNetworking
     - IDEAApplet/applet-framework/samurai-view/modules/view-component (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-controller (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-core (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-event (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-utility (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-component (1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-controller (1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-core (1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-event (1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-utility (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/modules/view-component (1.0.1):
+    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-view/modules/view-controller (1.0.1):
+    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-view/modules/view-core (1.0.1):
+    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-view/modules/view-event (1.0.1):
+    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-view/modules/view-utility (1.0.1):
+    - AFNetworking
   - IDEAApplet/applet-framework/vendor (1.0.1):
+    - AFNetworking
     - IDEAApplet/applet-framework/vendor/fishhook (= 1.0.1)
-  - IDEAApplet/applet-framework/vendor/fishhook (1.0.1)
+  - IDEAApplet/applet-framework/vendor/fishhook (1.0.1):
+    - AFNetworking
   - IDEAAppletDebugger (1.0.0):
     - AFNetworking
     - FMDB
@@ -208,6 +234,7 @@ PODS:
   - IDEAFONT/Zekton (1.0.0):
     - IDEAFONT/Core
   - IDEAKit (1.0.1):
+    - AFNetworking
     - FoundationExtension
     - YYKit
   - IDEANightVersion (2.4.3)
@@ -433,11 +460,11 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
-  IDEAApplet: 4dad95f82fd9d00478a9285d67ecf504fcd53244
+  IDEAApplet: 6721212efadb6e52fdb15c705889f41228a7e09c
   IDEAAppletDebugger: 85a8847cb857f5413c5583791035efee26b03a8b
   IDEAColor: 2d8f07ae48cb83e6d8dbafe4f152d76bb0bad5e9
   IDEAFONT: d02bc4ffd9db722e95ba76cbc8389c91a95d530c
-  IDEAKit: bff802347b672b93494f3da425dec873d6f09d67
+  IDEAKit: b16c3f9cbddb5f9c9aa6f6dd32bfd83cb5116133
   IDEANightVersion: 2462ddab6f09bd7c7a7b346cec8dc3eafaad96c0
   IDEAPalettes: 21c238c32f383ae46ee8b3b3f30052076989a8b2
   IDEARoute: 472c165bb85973c0a2f42d36376c455c621406bb
