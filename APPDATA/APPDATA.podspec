@@ -41,7 +41,9 @@ Pod::Spec.new do |spec|
     'GCC_PREPROCESSOR_DEFINITIONS'      => [ ' MODULE=\"APPDATA\" ' ]
                                       }
 
-  spec.dependency 'YYKit'
+  if ENV['IDEA_YYKIT'] == 'YES'
+    spec.dependency 'YYKit'
+  end # IDEA_YYKIT
 
   spec.public_header_files  = 'APPDATA/*.h'
   spec.source_files         = 'APPDATA/*.{h,m}'

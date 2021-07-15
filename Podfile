@@ -10,6 +10,13 @@ install! 'cocoapods', :deterministic_uuids                => false
 
 # applet_webcore=YES pod update
 
+ENV['IDEAFONT_HY']        = 'YES'
+ENV['IDEAFONT_MSYH']      = 'NO'
+ENV['IDEAFONT_ZEKTON']    = 'YES'
+
+ENV['IDEA_YYKIT']         = 'YES'
+ENV['IDERA_AFNETWORKING'] = "YES"
+
 workspace 'Idea.NetworkArch'
 
 project 'NetworkArch/NetworkArch.xcodeproj'
@@ -31,8 +38,13 @@ def library
   
 #  pod 'FMDB'
 
-  pod 'YYKit'                           , :path => '../MINIWING-PODs/YYKit'
-#  pod 'AFNetworking'                    , :path => '../MINIWING-PODs/AFNetworking'
+  if ENV['IDEA_YYKIT'] == 'YES'
+    pod 'YYKit'                         , :path => '../MINIWING-PODs/YYKit'
+  end # IDEA_YYKIT
+  
+  if ENV['IDERA_AFNETWORKING'] == 'YES'
+    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'            , :configurations => ['Debug']
+  end # IDERA_AFNETWORKING
 
   pod 'IDEAKit'                         , :path => '../MINIWING-PODs/IDEAKit'
   pod 'IDEAColor'                       , :path => '../MINIWING-PODs/IDEAColor'

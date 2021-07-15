@@ -41,7 +41,9 @@ Pod::Spec.new do |spec|
     'GCC_PREPROCESSOR_DEFINITIONS'      => [ ' MODULE=\"DEBUG\" ' ]
                                       }
 
-  spec.dependency 'YYKit'
+  if ENV['IDEA_YYKIT'] == 'YES'
+    spec.dependency 'YYKit'
+  end # IDEA_YYKIT
 
   spec.public_header_files  = 'DEBUG/APPDEBUG.h'
   spec.source_files         = 'DEBUG/APPDEBUG.{h,m}'

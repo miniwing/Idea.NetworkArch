@@ -1,18 +1,18 @@
 PODS:
-  - AFNetworking (4.0.1):
-    - AFNetworking/NSURLSession (= 4.0.1)
-    - AFNetworking/Reachability (= 4.0.1)
-    - AFNetworking/Security (= 4.0.1)
-    - AFNetworking/Serialization (= 4.0.1)
-    - AFNetworking/UIKit (= 4.0.1)
-  - AFNetworking/NSURLSession (4.0.1):
+  - AFNetworking (4.0.1-IDEA):
+    - AFNetworking/NSURLSession (= 4.0.1-IDEA)
+    - AFNetworking/Reachability (= 4.0.1-IDEA)
+    - AFNetworking/Security (= 4.0.1-IDEA)
+    - AFNetworking/Serialization (= 4.0.1-IDEA)
+    - AFNetworking/UIKit (= 4.0.1-IDEA)
+  - AFNetworking/NSURLSession (4.0.1-IDEA):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1)
-  - AFNetworking/Security (4.0.1)
-  - AFNetworking/Serialization (4.0.1)
-  - AFNetworking/UIKit (4.0.1):
+  - AFNetworking/Reachability (4.0.1-IDEA)
+  - AFNetworking/Security (4.0.1-IDEA)
+  - AFNetworking/Serialization (4.0.1-IDEA)
+  - AFNetworking/UIKit (4.0.1-IDEA):
     - AFNetworking/NSURLSession
   - APPDATA (1.0.0):
     - YYKit
@@ -383,6 +383,7 @@ PODS:
     - libwebp
 
 DEPENDENCIES:
+  - AFNetworking (from `../MINIWING-PODs/AFNetworking`)
   - APPDATA (from `APPDATA`)
   - APPDEBUG (from `APPDEBUG`)
   - FoundationExtension
@@ -407,7 +408,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AFNetworking
     - cdebug
     - FMDB
     - FoundationExtension
@@ -423,6 +423,8 @@ SPEC REPOS:
     - UIKitExtension
 
 EXTERNAL SOURCES:
+  AFNetworking:
+    :path: "../MINIWING-PODs/AFNetworking"
   APPDATA:
     :path: APPDATA
   APPDEBUG:
@@ -453,7 +455,7 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/YYKit"
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  AFNetworking: e929c4363a6c8e511ff856ff07352830073c6ac3
   APPDATA: abb27d7f2a8a971f965ed98afb3ae8d09202e157
   APPDEBUG: f26dee7f05e4b6c8177c5440460fad4a04423393
   cdebug: 0d0b7207fa996236ee9e07e5988e5e39a1d94a28
@@ -482,6 +484,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: 4034528106db7708b42917cccb76a77e4c24a9f1
 
-PODFILE CHECKSUM: 81e40026530473d3daddd7f5533d2ea80fea3d94
+PODFILE CHECKSUM: 03790285cfef10c948168fcc41a1e78024da9610
 
 COCOAPODS: 1.10.1
