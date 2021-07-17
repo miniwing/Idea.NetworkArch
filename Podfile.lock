@@ -239,6 +239,8 @@ PODS:
     - YYKit
   - IDEANightVersion (2.4.3)
   - IDEAPalettes (2.1)
+  - IDEAPing (1.0.1):
+    - SimplePing
   - IDEARoute (1.0.7)
   - IDEATabBarControllerTransition (1.0.0):
     - RTRootNavigationController
@@ -373,6 +375,7 @@ PODS:
   - RTRootNavigationController (0.8.0):
     - RTRootNavigationController/Core (= 0.8.0)
   - RTRootNavigationController/Core (0.8.0)
+  - SimplePing (1.0.1)
   - UIKitExtension (2.1.0):
     - cdebug (~> 1.3)
     - FoundationExtension (~> 2.1.0)
@@ -394,6 +397,7 @@ DEPENDENCIES:
   - IDEAKit (from `../MINIWING-PODs/IDEAKit`)
   - IDEANightVersion (from `../MINIWING-PODs/IDEANightVersion`)
   - IDEAPalettes (from `../MINIWING-PODs/IDEAPalettes`)
+  - IDEAPing (from `../MINIWING-PODs/IDEAPing`)
   - IDEARoute (from `../MINIWING-PODs/IDEARoute`)
   - IDEATabBarControllerTransition (from `../MINIWING-PODs/IDEATabBarControllerTransition`)
   - IDEAUIKit (from `../MINIWING-PODs/IDEAUIKit`)
@@ -420,6 +424,7 @@ SPEC REPOS:
     - MotionInterchange
     - Reveal-SDK
     - RTRootNavigationController
+    - SimplePing
     - UIKitExtension
 
 EXTERNAL SOURCES:
@@ -443,6 +448,8 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/IDEANightVersion"
   IDEAPalettes:
     :path: "../MINIWING-PODs/IDEAPalettes"
+  IDEAPing:
+    :path: "../MINIWING-PODs/IDEAPing"
   IDEARoute:
     :path: "../MINIWING-PODs/IDEARoute"
   IDEATabBarControllerTransition:
@@ -469,6 +476,7 @@ SPEC CHECKSUMS:
   IDEAKit: b16c3f9cbddb5f9c9aa6f6dd32bfd83cb5116133
   IDEANightVersion: 2462ddab6f09bd7c7a7b346cec8dc3eafaad96c0
   IDEAPalettes: 21c238c32f383ae46ee8b3b3f30052076989a8b2
+  IDEAPing: 95dc1726e3b0c4eaa3eab08f3d2bc4b1d33e451c
   IDEARoute: 472c165bb85973c0a2f42d36376c455c621406bb
   IDEATabBarControllerTransition: 2ebe0fd83430fb1d0173fef9038305c925f7dd92
   IDEAUIKit: 121255ce9e5af6dd5c1afd0bcfc3952d7a0c7a46
@@ -481,9 +489,10 @@ SPEC CHECKSUMS:
   MotionInterchange: 13adae439b377e31d1674cc165539d50e1d1566a
   Reveal-SDK: 5d7e56b8f018c0a88b3a2c10bf68d598bbd3b071
   RTRootNavigationController: 36c6301870f0467f89d69f4286795340b537d473
+  SimplePing: 4b3bdd3c779a77953809b75b9c8b3fff10586f14
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: 4034528106db7708b42917cccb76a77e4c24a9f1
 
-PODFILE CHECKSUM: 03790285cfef10c948168fcc41a1e78024da9610
+PODFILE CHECKSUM: f7729083e5a583c0198f68b523b2a40c9f85e889
 
 COCOAPODS: 1.10.1

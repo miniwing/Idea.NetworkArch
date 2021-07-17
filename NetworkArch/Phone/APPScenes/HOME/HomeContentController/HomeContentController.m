@@ -225,19 +225,23 @@
    [self.utilitiesPingLabel setBackgroundColor:UIColor.clearColor];
    [self.utilitiesPingLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.utilitiesPingLabel setFont:[APPFont lightFontOfSize:self.utilitiesPingLabel.font.pointSize]];
+   [self.utilitiesPingLabel setText:APP_STR(@"Ping")];
    
    [self.utilitiesWakeOnLanLabel setBackgroundColor:UIColor.clearColor];
    [self.utilitiesWakeOnLanLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.utilitiesWakeOnLanLabel setFont:[APPFont lightFontOfSize:self.utilitiesWakeOnLanLabel.font.pointSize]];
-   
+   [self.utilitiesWakeOnLanLabel setText:APP_STR(@"Wake on LAN")];
+
    [self.utilitiesWhoisLabel setBackgroundColor:UIColor.clearColor];
    [self.utilitiesWhoisLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.utilitiesWhoisLabel setFont:[APPFont lightFontOfSize:self.utilitiesWhoisLabel.font.pointSize]];
-   
+   [self.utilitiesWhoisLabel setText:APP_STR(@"Whois")];
+
    [self.utilitiesDNSLabel setBackgroundColor:UIColor.clearColor];
    [self.utilitiesDNSLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.utilitiesDNSLabel setFont:[APPFont lightFontOfSize:self.utilitiesDNSLabel.font.pointSize]];
-   
+   [self.utilitiesDNSLabel setText:APP_STR(@"DNS Lookup")];
+
    for (UIImageView *stICON in self.cellRightImageViews) {
       
       [stICON setBackgroundColor:UIColor.clearColor];

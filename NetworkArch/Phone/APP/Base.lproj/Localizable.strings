@@ -9,18 +9,29 @@
 /// HOME
 "HOME"                              = "HOME";
 
+/// Wi-Fi
 "WIFI"                              = "Wi-Fi";
-"CELLULAR"                          = "Cellular Network";
-"UTILITIES"                         = "Utilities";
 
 "IP Address"                        = "IP Address";
 
 "SSID not available"                = "SSID not available";
 "Wi-Fi not connected"               = "Wi-Fi not connected";
 
+/// Cellular Network
+"CELLULAR"                          = "Cellular Network";
+
 "No Service"                        = "No Service";
 
+
 "More Info"                         = "More Info";
+
+/// Utilities
+"UTILITIES"                         = "Utilities";
+
+"Ping"                              = "Ping";
+"Wake on LAN"                       = "Wake on LAN";
+"Whois"                             = "Whois";
+"DNS Lookup"                        = "DNS Lookup";
 
 /// SETTING
 "SETTING"                           = "SETTING";

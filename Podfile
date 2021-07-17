@@ -73,6 +73,8 @@ target 'NetworkArch' do
 #  pod 'PromisesObjC'
   
 #  pod 'Masonry'
+
+#  pod 'SimplePing'
   
 #  pod 'Appirater'  
   pod 'RTRootNavigationController'
@@ -117,7 +119,9 @@ target 'NetworkArch' do
 #  pod 'IDEAFONT/HY'                     , :path => '../MINIWING-PODs/IDEAFONT'
 #  pod 'IDEAFONT/Zekton'                 , :path => '../MINIWING-PODs/IDEAFONT'
 #  pod 'IDEAResources'                   , :path => '../MINIWING-PODs/IDEAResources'
-  #-------------------------------------------------------------------------------------------------------------------------------#
+#-------------------------------------------------------------------------------------------------------------------------------#
+  pod 'IDEAPing'                        , :path => '../MINIWING-PODs/IDEAPing'
+#-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'IDEARefresh'                     , :path => '../MINIWING-PODs/IDEARefresh'
 #  pod 'IDEANibBridge'                   , :path => '../MINIWING-PODs/IDEANibBridge'
   pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
