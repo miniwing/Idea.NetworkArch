@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WhoisController ()
 
+@property (nonatomic, strong)                MDCAppBar                           * appBar;
+
 @end
 
 @interface WhoisController (Inner)

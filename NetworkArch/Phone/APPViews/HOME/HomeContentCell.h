@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeContentCell ()
 
+@property (nonatomic, assign)                BOOL                                 canSelected;
+
 @end
 
 NS_ASSUME_NONNULL_END

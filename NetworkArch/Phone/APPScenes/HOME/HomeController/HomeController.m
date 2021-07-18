@@ -74,7 +74,7 @@
    [super viewDidLoad];
    
    [self setTitle:APP_STR(@"HOME")];
-   LogDebug((@"[SettingRootController viewDidLoad] : VIEW : %@", self.view));
+   LogDebug((@"[HomeController viewDidLoad] : VIEW : %@", self.view));
    
 #if MATERIAL_APP_BAR
    [self.navigationController setNavigationBarHidden:YES];
@@ -183,7 +183,7 @@
    
    [super viewDidAppear:aAnimated];
    
-   [self.contentController viewDidAppear:aAnimated];
+//   [self.contentController viewDidAppear:aAnimated];
    
    __CATCH(nErr);
    

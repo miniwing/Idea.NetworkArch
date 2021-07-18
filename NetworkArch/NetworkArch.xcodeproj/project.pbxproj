@@ -34,7 +34,6 @@
 		4A0EB7F22687268B00AA4366 /* HomeContentCell+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EB7E82687268B00AA4366 /* HomeContentCell+Debug.m */; };
 		4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */; };
 		4A1DE0B12687889E00C2C73C /* pod.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4A1DE0B02687889E00C2C73C /* pod.sh */; };
-		4A221EE226A44D2A00C94F00 /* PING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A221EE026A44D2A00C94F00 /* PING.storyboard */; };
 		4A221F0226A44DA100C94F00 /* PingRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221EF726A44DA000C94F00 /* PingRootController.m */; };
 		4A221F0326A44DA100C94F00 /* PingRootController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221EFA26A44DA100C94F00 /* PingRootController+Notification.m */; };
 		4A221F0426A44DA100C94F00 /* PingRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221EFB26A44DA100C94F00 /* PingRootController+Debug.m */; };
@@ -92,9 +91,33 @@
 		4A53AAC726A47403000700F2 /* DNSController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53AAB926A47402000700F2 /* DNSController+Signal.m */; };
 		4A53AAC826A47403000700F2 /* DNSController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53AABB26A47402000700F2 /* DNSController+Theme.m */; };
 		4A53AAC926A47403000700F2 /* DNSController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53AABD26A47402000700F2 /* DNSController.m */; };
-		4A53AAD026A474E6000700F2 /* WoLAN.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A53AACE26A474E6000700F2 /* WoLAN.storyboard */; };
-		4A53AAD526A474F9000700F2 /* WHOIS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A53AAD326A474F9000700F2 /* WHOIS.storyboard */; };
-		4A53AADA26A47509000700F2 /* DNS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A53AAD826A47509000700F2 /* DNS.storyboard */; };
+		4A5D99CB26A494FA00E00610 /* CellularMoreRootController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99C026A494F900E00610 /* CellularMoreRootController+Signal.m */; };
+		4A5D99CC26A494FA00E00610 /* CellularMoreRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99C126A494F900E00610 /* CellularMoreRootController+Debug.m */; };
+		4A5D99CD26A494FA00E00610 /* CellularMoreRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99C426A494F900E00610 /* CellularMoreRootController+Theme.m */; };
+		4A5D99CE26A494FA00E00610 /* CellularMoreRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99C726A494F900E00610 /* CellularMoreRootController.m */; };
+		4A5D99CF26A494FA00E00610 /* CellularMoreRootController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99C926A494FA00E00610 /* CellularMoreRootController+Notification.m */; };
+		4A5D99D026A494FA00E00610 /* CellularMoreRootController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99CA26A494FA00E00610 /* CellularMoreRootController+Inner.m */; };
+		4A5D99DD26A4950B00E00610 /* CellularMoreController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99D126A4950B00E00610 /* CellularMoreController+Inner.m */; };
+		4A5D99DE26A4950B00E00610 /* CellularMoreController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99D326A4950B00E00610 /* CellularMoreController+Notification.m */; };
+		4A5D99DF26A4950B00E00610 /* CellularMoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99D526A4950B00E00610 /* CellularMoreController.m */; };
+		4A5D99E026A4950B00E00610 /* CellularMoreController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99D826A4950B00E00610 /* CellularMoreController+Debug.m */; };
+		4A5D99E126A4950B00E00610 /* CellularMoreController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99DA26A4950B00E00610 /* CellularMoreController+Theme.m */; };
+		4A5D99E226A4950B00E00610 /* CellularMoreController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99DC26A4950B00E00610 /* CellularMoreController+Signal.m */; };
+		4A5D99EF26A4951C00E00610 /* WifiMoreRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99E526A4951C00E00610 /* WifiMoreRootController+Theme.m */; };
+		4A5D99F026A4951C00E00610 /* WifiMoreRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99E826A4951C00E00610 /* WifiMoreRootController.m */; };
+		4A5D99F126A4951C00E00610 /* WifiMoreRootController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99EA26A4951C00E00610 /* WifiMoreRootController+Notification.m */; };
+		4A5D99F226A4951C00E00610 /* WifiMoreRootController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99EB26A4951C00E00610 /* WifiMoreRootController+Inner.m */; };
+		4A5D99F326A4951C00E00610 /* WifiMoreRootController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99EC26A4951C00E00610 /* WifiMoreRootController+Signal.m */; };
+		4A5D99F426A4951C00E00610 /* WifiMoreRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99ED26A4951C00E00610 /* WifiMoreRootController+Debug.m */; };
+		4A5D9A0126A4952B00E00610 /* WifiMoreController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99FA26A4952B00E00610 /* WifiMoreController+Debug.m */; };
+		4A5D9A0226A4952B00E00610 /* WifiMoreController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99FB26A4952B00E00610 /* WifiMoreController+Theme.m */; };
+		4A5D9A0326A4952B00E00610 /* WifiMoreController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99FC26A4952B00E00610 /* WifiMoreController+Inner.m */; };
+		4A5D9A0426A4952B00E00610 /* WifiMoreController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99FD26A4952B00E00610 /* WifiMoreController+Signal.m */; };
+		4A5D9A0526A4952B00E00610 /* WifiMoreController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99FF26A4952B00E00610 /* WifiMoreController+Notification.m */; };
+		4A5D9A0626A4952B00E00610 /* WifiMoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D9A0026A4952B00E00610 /* WifiMoreController.m */; };
+		4A5D9A0926A4965200E00610 /* WIFI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D9A0726A4965200E00610 /* WIFI.storyboard */; };
+		4A5D9A0C26A4966400E00610 /* CELLULAR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D9A0A26A4966400E00610 /* CELLULAR.storyboard */; };
+		4A5D9A0F26A4968800E00610 /* UTILITIES.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D9A0D26A4968800E00610 /* UTILITIES.storyboard */; };
 		4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1D726859BB800B1639D /* HomeRootController.m */; };
 		4AB5C1EE26859F3C00B1639D /* SETTING-HEADER.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB5C1E826859F3C00B1639D /* SETTING-HEADER.xib */; };
 		4AB5C1EF26859F3C00B1639D /* SettingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1EA26859F3C00B1639D /* SettingHeader.m */; };
@@ -190,7 +213,6 @@
 		4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeContentCell.m; sourceTree = "<group>"; };
 		4A0EB7F02687268B00AA4366 /* HomeContentCell+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeContentCell+Debug.h"; sourceTree = "<group>"; };
 		4A1DE0B02687889E00C2C73C /* pod.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = pod.sh; path = ../pod.sh; sourceTree = "<group>"; };
-		4A221EE126A44D2A00C94F00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PING.storyboard; sourceTree = "<group>"; };
 		4A221EF626A44DA000C94F00 /* PingRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Inner.h"; sourceTree = "<group>"; };
 		4A221EF726A44DA000C94F00 /* PingRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingRootController.m; sourceTree = "<group>"; };
 		4A221EF826A44DA000C94F00 /* PingRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Signal.h"; sourceTree = "<group>"; };
@@ -305,9 +327,58 @@
 		4A53AABB26A47402000700F2 /* DNSController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSController+Theme.m"; sourceTree = "<group>"; };
 		4A53AABC26A47402000700F2 /* DNSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSController.h; sourceTree = "<group>"; };
 		4A53AABD26A47402000700F2 /* DNSController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSController.m; sourceTree = "<group>"; };
-		4A53AACF26A474E6000700F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WoLAN.storyboard; sourceTree = "<group>"; };
-		4A53AAD426A474F9000700F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WHOIS.storyboard; sourceTree = "<group>"; };
-		4A53AAD926A47509000700F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DNS.storyboard; sourceTree = "<group>"; };
+		4A5D98EB26A47B1200E00610 /* APPDelegate+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APPDelegate+Inner.m"; sourceTree = "<group>"; };
+		4A5D99BF26A494F900E00610 /* CellularMoreRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreRootController+Signal.h"; sourceTree = "<group>"; };
+		4A5D99C026A494F900E00610 /* CellularMoreRootController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CellularMoreRootController+Signal.m"; sourceTree = "<group>"; };
+		4A5D99C126A494F900E00610 /* CellularMoreRootController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CellularMoreRootController+Debug.m"; sourceTree = "<group>"; };
+		4A5D99C226A494F900E00610 /* CellularMoreRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreRootController+Inner.h"; sourceTree = "<group>"; };
+		4A5D99C326A494F900E00610 /* CellularMoreRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellularMoreRootController.h; sourceTree = "<group>"; };
+		4A5D99C426A494F900E00610 /* CellularMoreRootController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CellularMoreRootController+Theme.m"; sourceTree = "<group>"; };
+		4A5D99C526A494F900E00610 /* CellularMoreRootController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreRootController+Notification.h"; sourceTree = "<group>"; };
+		4A5D99C626A494F900E00610 /* CellularMoreRootController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreRootController+Theme.h"; sourceTree = "<group>"; };
+		4A5D99C726A494F900E00610 /* CellularMoreRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellularMoreRootController.m; sourceTree = "<group>"; };
+		4A5D99C826A494FA00E00610 /* CellularMoreRootController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreRootController+Debug.h"; sourceTree = "<group>"; };
+		4A5D99C926A494FA00E00610 /* CellularMoreRootController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CellularMoreRootController+Notification.m"; sourceTree = "<group>"; };
+		4A5D99CA26A494FA00E00610 /* CellularMoreRootController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CellularMoreRootController+Inner.m"; sourceTree = "<group>"; };
+		4A5D99D126A4950B00E00610 /* CellularMoreController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CellularMoreController+Inner.m"; sourceTree = "<group>"; };
+		4A5D99D226A4950B00E00610 /* CellularMoreController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreController+Notification.h"; sourceTree = "<group>"; };
+		4A5D99D326A4950B00E00610 /* CellularMoreController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CellularMoreController+Notification.m"; sourceTree = "<group>"; };
+		4A5D99D426A4950B00E00610 /* CellularMoreController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreController+Inner.h"; sourceTree = "<group>"; };
+		4A5D99D526A4950B00E00610 /* CellularMoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellularMoreController.m; sourceTree = "<group>"; };
+		4A5D99D626A4950B00E00610 /* CellularMoreController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreController+Debug.h"; sourceTree = "<group>"; };
+		4A5D99D726A4950B00E00610 /* CellularMoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellularMoreController.h; sourceTree = "<group>"; };
+		4A5D99D826A4950B00E00610 /* CellularMoreController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CellularMoreController+Debug.m"; sourceTree = "<group>"; };
+		4A5D99D926A4950B00E00610 /* CellularMoreController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreController+Signal.h"; sourceTree = "<group>"; };
+		4A5D99DA26A4950B00E00610 /* CellularMoreController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CellularMoreController+Theme.m"; sourceTree = "<group>"; };
+		4A5D99DB26A4950B00E00610 /* CellularMoreController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreController+Theme.h"; sourceTree = "<group>"; };
+		4A5D99DC26A4950B00E00610 /* CellularMoreController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CellularMoreController+Signal.m"; sourceTree = "<group>"; };
+		4A5D99E326A4951C00E00610 /* WifiMoreRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiMoreRootController.h; sourceTree = "<group>"; };
+		4A5D99E426A4951C00E00610 /* WifiMoreRootController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiMoreRootController+Theme.h"; sourceTree = "<group>"; };
+		4A5D99E526A4951C00E00610 /* WifiMoreRootController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiMoreRootController+Theme.m"; sourceTree = "<group>"; };
+		4A5D99E626A4951C00E00610 /* WifiMoreRootController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiMoreRootController+Debug.h"; sourceTree = "<group>"; };
+		4A5D99E726A4951C00E00610 /* WifiMoreRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiMoreRootController+Inner.h"; sourceTree = "<group>"; };
+		4A5D99E826A4951C00E00610 /* WifiMoreRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiMoreRootController.m; sourceTree = "<group>"; };
+		4A5D99E926A4951C00E00610 /* WifiMoreRootController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiMoreRootController+Notification.h"; sourceTree = "<group>"; };
+		4A5D99EA26A4951C00E00610 /* WifiMoreRootController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiMoreRootController+Notification.m"; sourceTree = "<group>"; };
+		4A5D99EB26A4951C00E00610 /* WifiMoreRootController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiMoreRootController+Inner.m"; sourceTree = "<group>"; };
+		4A5D99EC26A4951C00E00610 /* WifiMoreRootController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiMoreRootController+Signal.m"; sourceTree = "<group>"; };
+		4A5D99ED26A4951C00E00610 /* WifiMoreRootController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiMoreRootController+Debug.m"; sourceTree = "<group>"; };
+		4A5D99EE26A4951C00E00610 /* WifiMoreRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiMoreRootController+Signal.h"; sourceTree = "<group>"; };
+		4A5D99F526A4952B00E00610 /* WifiMoreController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiMoreController+Debug.h"; sourceTree = "<group>"; };
+		4A5D99F626A4952B00E00610 /* WifiMoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiMoreController.h; sourceTree = "<group>"; };
+		4A5D99F726A4952B00E00610 /* WifiMoreController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiMoreController+Inner.h"; sourceTree = "<group>"; };
+		4A5D99F826A4952B00E00610 /* WifiMoreController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiMoreController+Signal.h"; sourceTree = "<group>"; };
+		4A5D99F926A4952B00E00610 /* WifiMoreController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiMoreController+Theme.h"; sourceTree = "<group>"; };
+		4A5D99FA26A4952B00E00610 /* WifiMoreController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiMoreController+Debug.m"; sourceTree = "<group>"; };
+		4A5D99FB26A4952B00E00610 /* WifiMoreController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiMoreController+Theme.m"; sourceTree = "<group>"; };
+		4A5D99FC26A4952B00E00610 /* WifiMoreController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiMoreController+Inner.m"; sourceTree = "<group>"; };
+		4A5D99FD26A4952B00E00610 /* WifiMoreController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiMoreController+Signal.m"; sourceTree = "<group>"; };
+		4A5D99FE26A4952B00E00610 /* WifiMoreController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiMoreController+Notification.h"; sourceTree = "<group>"; };
+		4A5D99FF26A4952B00E00610 /* WifiMoreController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiMoreController+Notification.m"; sourceTree = "<group>"; };
+		4A5D9A0026A4952B00E00610 /* WifiMoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiMoreController.m; sourceTree = "<group>"; };
+		4A5D9A0826A4965200E00610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WIFI.storyboard; sourceTree = "<group>"; };
+		4A5D9A0B26A4966400E00610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CELLULAR.storyboard; sourceTree = "<group>"; };
+		4A5D9A0E26A4968800E00610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UTILITIES.storyboard; sourceTree = "<group>"; };
 		4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkArch.entitlements; sourceTree = "<group>"; };
 		4A98A6362684B50F00EEEB60 /* NetworkArch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkArch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB5C1D126859BB800B1639D /* HomeRootController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRootController.h; sourceTree = "<group>"; };
@@ -371,6 +442,7 @@
 				4A0E4DBC268584C100A85517 /* APPDelegate.h */,
 				4A0E4DBD268584C100A85517 /* APPDelegate.m */,
 				4A0E4E50268588E300A85517 /* APPDelegate+Inner.h */,
+				4A5D98EB26A47B1200E00610 /* APPDelegate+Inner.m */,
 				4A0E4DBB268584C100A85517 /* RootViewController.h */,
 				4A0E4DB9268584C100A85517 /* RootViewController.m */,
 				4A0E4DBA268584C100A85517 /* SplashViewController.h */,
@@ -398,10 +470,9 @@
 				4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */,
 				4AE51B9D2685CDFB00DC1DA2 /* MAIN.storyboard */,
 				4A0E4EA126858ADC00A85517 /* HOME.storyboard */,
-				4A221EE026A44D2A00C94F00 /* PING.storyboard */,
-				4A53AACE26A474E6000700F2 /* WoLAN.storyboard */,
-				4A53AAD326A474F9000700F2 /* WHOIS.storyboard */,
-				4A53AAD826A47509000700F2 /* DNS.storyboard */,
+				4A5D9A0726A4965200E00610 /* WIFI.storyboard */,
+				4A5D9A0A26A4966400E00610 /* CELLULAR.storyboard */,
+				4A5D9A0D26A4968800E00610 /* UTILITIES.storyboard */,
 				4A0E4E5D268589CA00A85517 /* SETTING.storyboard */,
 			);
 			name = "Supporting Files";
@@ -487,6 +558,8 @@
 			children = (
 				4A45537D2686327A0050E736 /* TRACKING */,
 				4A0E4E5C2685898E00A85517 /* HOME */,
+				4A5D98EC26A493C600E00610 /* WIFI-MORE */,
+				4A5D98ED26A493D600E00610 /* CELLULAR-MORE */,
 				4A221EE326A44D5F00C94F00 /* PING */,
 				4AC5B95D26A46CFA002AAB48 /* WoLAN */,
 				4A53A97226A46E39000700F2 /* WHOIS */,
@@ -792,6 +865,100 @@
 			path = DNS;
 			sourceTree = "<group>";
 		};
+		4A5D98EC26A493C600E00610 /* WIFI-MORE */ = {
+			isa = PBXGroup;
+			children = (
+				4A5D992126A4944000E00610 /* WiFiMoreRoot */,
+				4A5D991426A4944000E00610 /* WiFiMoreController */,
+			);
+			path = "WIFI-MORE";
+			sourceTree = "<group>";
+		};
+		4A5D98ED26A493D600E00610 /* CELLULAR-MORE */ = {
+			isa = PBXGroup;
+			children = (
+				4A5D999926A494E000E00610 /* CellularMoreRoot */,
+				4A5D99A626A494E000E00610 /* CellularMoreController */,
+			);
+			path = "CELLULAR-MORE";
+			sourceTree = "<group>";
+		};
+		4A5D991426A4944000E00610 /* WiFiMoreController */ = {
+			isa = PBXGroup;
+			children = (
+				4A5D99F626A4952B00E00610 /* WifiMoreController.h */,
+				4A5D9A0026A4952B00E00610 /* WifiMoreController.m */,
+				4A5D99F526A4952B00E00610 /* WifiMoreController+Debug.h */,
+				4A5D99FA26A4952B00E00610 /* WifiMoreController+Debug.m */,
+				4A5D99F726A4952B00E00610 /* WifiMoreController+Inner.h */,
+				4A5D99FC26A4952B00E00610 /* WifiMoreController+Inner.m */,
+				4A5D99FE26A4952B00E00610 /* WifiMoreController+Notification.h */,
+				4A5D99FF26A4952B00E00610 /* WifiMoreController+Notification.m */,
+				4A5D99F826A4952B00E00610 /* WifiMoreController+Signal.h */,
+				4A5D99FD26A4952B00E00610 /* WifiMoreController+Signal.m */,
+				4A5D99F926A4952B00E00610 /* WifiMoreController+Theme.h */,
+				4A5D99FB26A4952B00E00610 /* WifiMoreController+Theme.m */,
+			);
+			path = WiFiMoreController;
+			sourceTree = "<group>";
+		};
+		4A5D992126A4944000E00610 /* WiFiMoreRoot */ = {
+			isa = PBXGroup;
+			children = (
+				4A5D99E326A4951C00E00610 /* WifiMoreRootController.h */,
+				4A5D99E826A4951C00E00610 /* WifiMoreRootController.m */,
+				4A5D99E626A4951C00E00610 /* WifiMoreRootController+Debug.h */,
+				4A5D99ED26A4951C00E00610 /* WifiMoreRootController+Debug.m */,
+				4A5D99E726A4951C00E00610 /* WifiMoreRootController+Inner.h */,
+				4A5D99EB26A4951C00E00610 /* WifiMoreRootController+Inner.m */,
+				4A5D99E926A4951C00E00610 /* WifiMoreRootController+Notification.h */,
+				4A5D99EA26A4951C00E00610 /* WifiMoreRootController+Notification.m */,
+				4A5D99EE26A4951C00E00610 /* WifiMoreRootController+Signal.h */,
+				4A5D99EC26A4951C00E00610 /* WifiMoreRootController+Signal.m */,
+				4A5D99E426A4951C00E00610 /* WifiMoreRootController+Theme.h */,
+				4A5D99E526A4951C00E00610 /* WifiMoreRootController+Theme.m */,
+			);
+			path = WiFiMoreRoot;
+			sourceTree = "<group>";
+		};
+		4A5D999926A494E000E00610 /* CellularMoreRoot */ = {
+			isa = PBXGroup;
+			children = (
+				4A5D99C326A494F900E00610 /* CellularMoreRootController.h */,
+				4A5D99C726A494F900E00610 /* CellularMoreRootController.m */,
+				4A5D99C826A494FA00E00610 /* CellularMoreRootController+Debug.h */,
+				4A5D99C126A494F900E00610 /* CellularMoreRootController+Debug.m */,
+				4A5D99C226A494F900E00610 /* CellularMoreRootController+Inner.h */,
+				4A5D99CA26A494FA00E00610 /* CellularMoreRootController+Inner.m */,
+				4A5D99C526A494F900E00610 /* CellularMoreRootController+Notification.h */,
+				4A5D99C926A494FA00E00610 /* CellularMoreRootController+Notification.m */,
+				4A5D99BF26A494F900E00610 /* CellularMoreRootController+Signal.h */,
+				4A5D99C026A494F900E00610 /* CellularMoreRootController+Signal.m */,
+				4A5D99C626A494F900E00610 /* CellularMoreRootController+Theme.h */,
+				4A5D99C426A494F900E00610 /* CellularMoreRootController+Theme.m */,
+			);
+			path = CellularMoreRoot;
+			sourceTree = "<group>";
+		};
+		4A5D99A626A494E000E00610 /* CellularMoreController */ = {
+			isa = PBXGroup;
+			children = (
+				4A5D99D726A4950B00E00610 /* CellularMoreController.h */,
+				4A5D99D526A4950B00E00610 /* CellularMoreController.m */,
+				4A5D99D626A4950B00E00610 /* CellularMoreController+Debug.h */,
+				4A5D99D826A4950B00E00610 /* CellularMoreController+Debug.m */,
+				4A5D99D426A4950B00E00610 /* CellularMoreController+Inner.h */,
+				4A5D99D126A4950B00E00610 /* CellularMoreController+Inner.m */,
+				4A5D99D226A4950B00E00610 /* CellularMoreController+Notification.h */,
+				4A5D99D326A4950B00E00610 /* CellularMoreController+Notification.m */,
+				4A5D99D926A4950B00E00610 /* CellularMoreController+Signal.h */,
+				4A5D99DC26A4950B00E00610 /* CellularMoreController+Signal.m */,
+				4A5D99DB26A4950B00E00610 /* CellularMoreController+Theme.h */,
+				4A5D99DA26A4950B00E00610 /* CellularMoreController+Theme.m */,
+			);
+			path = CellularMoreController;
+			sourceTree = "<group>";
+		};
 		4A8F878E26A4661F0012F3D6 /* PingRoot */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,23 +1137,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A53AAD026A474E6000700F2 /* WoLAN.storyboard in Resources */,
 				4A1DE0B12687889E00C2C73C /* pod.sh in Resources */,
+				4A5D9A0C26A4966400E00610 /* CELLULAR.storyboard in Resources */,
 				4A0E4E5F268589CA00A85517 /* SETTING.storyboard in Resources */,
 				4A0E4EA726858ADC00A85517 /* HOME.storyboard in Resources */,
 				4AE51B9C2685CD3400DC1DA2 /* Localizable.strings in Resources */,
-				4A221EE226A44D2A00C94F00 /* PING.storyboard in Resources */,
 				4AE51B9B2685CD3400DC1DA2 /* InfoPlist.strings in Resources */,
 				4A0E4DF9268585CF00A85517 /* SPLASH.storyboard in Resources */,
 				4A0E4EA826858ADC00A85517 /* TRACKING.storyboard in Resources */,
 				4AE51B962685C7C500DC1DA2 /* IMAGEs.xcassets in Resources */,
 				4A0E4DED268585C500A85517 /* ICON.xcassets in Resources */,
 				4AE51B942685C4DA00DC1DA2 /* SPONSOR.png in Resources */,
+				4A5D9A0F26A4968800E00610 /* UTILITIES.storyboard in Resources */,
 				4A0E4DF8268585CF00A85517 /* LAUNCH.storyboard in Resources */,
-				4A53AAD526A474F9000700F2 /* WHOIS.storyboard in Resources */,
 				4AB5C1F026859F3C00B1639D /* THEME-BUTTON.xib in Resources */,
-				4A53AADA26A47509000700F2 /* DNS.storyboard in Resources */,
 				4AE51B9F2685CDFB00DC1DA2 /* MAIN.storyboard in Resources */,
+				4A5D9A0926A4965200E00610 /* WIFI.storyboard in Resources */,
 				4AB5C1EE26859F3C00B1639D /* SETTING-HEADER.xib in Resources */,
 				4A0E4EA926858ADC00A85517 /* ONBOARDING.storyboard in Resources */,
 			);
@@ -1092,38 +1258,50 @@
 				4A53A9BD26A46E60000700F2 /* WoLANRootController+Notification.m in Sources */,
 				4A0E4E74268589E600A85517 /* SettingController+Notification.m in Sources */,
 				4A45536926862E4D0050E736 /* HomeContentController+Notification.m in Sources */,
+				4A5D99CE26A494FA00E00610 /* CellularMoreRootController.m in Sources */,
 				4A53A9BF26A46E60000700F2 /* WoLANRootController+Theme.m in Sources */,
 				4A53AA4226A46F18000700F2 /* PingController+Notification.m in Sources */,
 				4A53AA6B26A46F52000700F2 /* WoLANController+Theme.m in Sources */,
 				4A53AAC726A47403000700F2 /* DNSController+Signal.m in Sources */,
+				4A5D9A0526A4952B00E00610 /* WifiMoreController+Notification.m in Sources */,
 				4A53AABF26A47403000700F2 /* DNSRootController+Inner.m in Sources */,
 				4A0E4E462685888500A85517 /* APPDelegate+APP.m in Sources */,
 				4A53A9BB26A46E60000700F2 /* WoLANRootController+Debug.m in Sources */,
 				4A0E4E77268589E600A85517 /* SettingRootController.m in Sources */,
 				4A45536A26862E4D0050E736 /* HomeContentController+Inner.m in Sources */,
+				4A5D9A0626A4952B00E00610 /* WifiMoreController.m in Sources */,
 				4A53AA6D26A46F52000700F2 /* WoLANController+Inner.m in Sources */,
+				4A5D99CB26A494FA00E00610 /* CellularMoreRootController+Signal.m in Sources */,
 				4AE51B922685C39400DC1DA2 /* HomeController+Signal.m in Sources */,
 				4A0E4DC0268584C100A85517 /* APPDelegate.m in Sources */,
 				4A221F0726A44DA100C94F00 /* PingRootController+Inner.m in Sources */,
 				4A53A9BE26A46E60000700F2 /* WoLANRootController+Signal.m in Sources */,
+				4A5D99E226A4950B00E00610 /* CellularMoreController+Signal.m in Sources */,
 				4A221F0426A44DA100C94F00 /* PingRootController+Debug.m in Sources */,
 				4A53AAC326A47403000700F2 /* DNSRootController.m in Sources */,
 				4A0E4E75268589E600A85517 /* SettingController+Theme.m in Sources */,
+				4A5D99E126A4950B00E00610 /* CellularMoreController+Theme.m in Sources */,
 				4A53A9EB26A46EA5000700F2 /* WhoisRootController+Signal.m in Sources */,
 				4A53AA6926A46F52000700F2 /* WoLANController+Notification.m in Sources */,
+				4A5D99F126A4951C00E00610 /* WifiMoreRootController+Notification.m in Sources */,
 				4A53AAC026A47403000700F2 /* DNSRootController+Notification.m in Sources */,
+				4A5D99F226A4951C00E00610 /* WifiMoreRootController+Inner.m in Sources */,
 				4A221F0626A44DA100C94F00 /* PingRootController+Theme.m in Sources */,
 				4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */,
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
 				4A53A9EC26A46EA5000700F2 /* WhoisRootController+Debug.m in Sources */,
+				4A5D99F026A4951C00E00610 /* WifiMoreRootController.m in Sources */,
 				4A0E4E76268589E600A85517 /* SettingController.m in Sources */,
 				4A0EB7F22687268B00AA4366 /* HomeContentCell+Debug.m in Sources */,
+				4A5D99DE26A4950B00E00610 /* CellularMoreController+Notification.m in Sources */,
 				4A53AA4126A46F18000700F2 /* PingController+Debug.m in Sources */,
+				4A5D9A0226A4952B00E00610 /* WifiMoreController+Theme.m in Sources */,
 				4A0E4E72268589E500A85517 /* SettingContentController.m in Sources */,
 				4A53AA1526A46EE2000700F2 /* WhoisController+Inner.m in Sources */,
 				4A0E4DBF268584C100A85517 /* RootViewController.m in Sources */,
 				4A53AA1326A46EE2000700F2 /* WhoisController+Signal.m in Sources */,
 				4A53AA6C26A46F52000700F2 /* WoLANController.m in Sources */,
+				4A5D99E026A4950B00E00610 /* CellularMoreController+Debug.m in Sources */,
 				4A45536526862E4D0050E736 /* HomeContentController+Signal.m in Sources */,
 				4AB5C1F126859F3C00B1639D /* ThemeButton.m in Sources */,
 				4A53AAC226A47403000700F2 /* DNSRootController+Theme.m in Sources */,
@@ -1131,11 +1309,14 @@
 				4A45536826862E4D0050E736 /* HomeContentController+Theme.m in Sources */,
 				4AE51B902685C39400DC1DA2 /* HomeController+Inner.m in Sources */,
 				4A53AA1826A46EE2000700F2 /* WhoisController.m in Sources */,
+				4A5D99F326A4951C00E00610 /* WifiMoreRootController+Signal.m in Sources */,
 				4A53A9ED26A46EA5000700F2 /* WhoisRootController+Theme.m in Sources */,
 				4A0E4DEF268585C500A85517 /* main.m in Sources */,
 				4AE51B8F2685C39400DC1DA2 /* HomeController+Theme.m in Sources */,
 				4AE51B912685C39400DC1DA2 /* HomeController.m in Sources */,
 				4A53AA1426A46EE2000700F2 /* WhoisController+Notification.m in Sources */,
+				4A5D99CF26A494FA00E00610 /* CellularMoreRootController+Notification.m in Sources */,
+				4A5D99CC26A494FA00E00610 /* CellularMoreRootController+Debug.m in Sources */,
 				4A53AA3D26A46F18000700F2 /* PingController+Inner.m in Sources */,
 				4A221F0326A44DA100C94F00 /* PingRootController+Notification.m in Sources */,
 				4A53A9E826A46EA5000700F2 /* WhoisRootController+Inner.m in Sources */,
@@ -1146,13 +1327,18 @@
 				4A53A9C026A46E60000700F2 /* WoLANRootController.m in Sources */,
 				4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */,
 				4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */,
+				4A5D99CD26A494FA00E00610 /* CellularMoreRootController+Theme.m in Sources */,
 				4A4553862686327B0050E736 /* TrackingRootController.m in Sources */,
 				4A53AABE26A47403000700F2 /* DNSRootController+Debug.m in Sources */,
 				4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */,
 				4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */,
+				4A5D99DF26A4950B00E00610 /* CellularMoreController.m in Sources */,
+				4A5D9A0426A4952B00E00610 /* WifiMoreController+Signal.m in Sources */,
 				4AFFEDBC268645160052712A /* AppTracking.m in Sources */,
 				4A53AAC926A47403000700F2 /* DNSController.m in Sources */,
+				4A5D99DD26A4950B00E00610 /* CellularMoreController+Inner.m in Sources */,
 				4A53AA3F26A46F18000700F2 /* PingController+Theme.m in Sources */,
+				4A5D9A0126A4952B00E00610 /* WifiMoreController+Debug.m in Sources */,
 				4A53AA3E26A46F18000700F2 /* PingController+Signal.m in Sources */,
 				4A4553842686327B0050E736 /* TrackingController+Notification.m in Sources */,
 				4A53AAC826A47403000700F2 /* DNSController+Theme.m in Sources */,
@@ -1162,16 +1348,20 @@
 				4AB5C1EF26859F3C00B1639D /* SettingHeader.m in Sources */,
 				4A4553852686327B0050E736 /* TrackingController.m in Sources */,
 				4A221F0226A44DA100C94F00 /* PingRootController.m in Sources */,
+				4A5D9A0326A4952B00E00610 /* WifiMoreController+Inner.m in Sources */,
 				4A53AAC526A47403000700F2 /* DNSController+Inner.m in Sources */,
 				4A0E4E4D2685888F00A85517 /* APPDelegate+Kit.m in Sources */,
 				4A53AA1726A46EE2000700F2 /* WhoisController+Theme.m in Sources */,
 				4A53A9E926A46EA5000700F2 /* WhoisRootController.m in Sources */,
 				4A221F0526A44DA100C94F00 /* PingRootController+Signal.m in Sources */,
+				4A5D99D026A494FA00E00610 /* CellularMoreRootController+Inner.m in Sources */,
 				4A0E4E71268589E500A85517 /* SettingContentController+Theme.m in Sources */,
 				4A53AAC126A47403000700F2 /* DNSRootController+Signal.m in Sources */,
 				4A53A9BC26A46E60000700F2 /* WoLANRootController+Inner.m in Sources */,
 				4A53AA6E26A46F52000700F2 /* WoLANController+Signal.m in Sources */,
+				4A5D99F426A4951C00E00610 /* WifiMoreRootController+Debug.m in Sources */,
 				4A53A9EA26A46EA5000700F2 /* WhoisRootController+Notification.m in Sources */,
+				4A5D99EF26A4951C00E00610 /* WifiMoreRootController+Theme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1234,36 +1424,28 @@
 			name = ONBOARDING.storyboard;
 			sourceTree = "<group>";
 		};
-		4A221EE026A44D2A00C94F00 /* PING.storyboard */ = {
+		4A5D9A0726A4965200E00610 /* WIFI.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4A221EE126A44D2A00C94F00 /* Base */,
+				4A5D9A0826A4965200E00610 /* Base */,
 			);
-			name = PING.storyboard;
+			name = WIFI.storyboard;
 			sourceTree = "<group>";
 		};
-		4A53AACE26A474E6000700F2 /* WoLAN.storyboard */ = {
+		4A5D9A0A26A4966400E00610 /* CELLULAR.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4A53AACF26A474E6000700F2 /* Base */,
+				4A5D9A0B26A4966400E00610 /* Base */,
 			);
-			name = WoLAN.storyboard;
+			name = CELLULAR.storyboard;
 			sourceTree = "<group>";
 		};
-		4A53AAD326A474F9000700F2 /* WHOIS.storyboard */ = {
+		4A5D9A0D26A4968800E00610 /* UTILITIES.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4A53AAD426A474F9000700F2 /* Base */,
+				4A5D9A0E26A4968800E00610 /* Base */,
 			);
-			name = WHOIS.storyboard;
-			sourceTree = "<group>";
-		};
-		4A53AAD826A47509000700F2 /* DNS.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4A53AAD926A47509000700F2 /* Base */,
-			);
-			name = DNS.storyboard;
+			name = UTILITIES.storyboard;
 			sourceTree = "<group>";
 		};
 		4AE51B972685CD3400DC1DA2 /* InfoPlist.strings */ = {

@@ -55,16 +55,84 @@
    [super awakeFromNib];
    // Initialization code
    
-   self.selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];//这句不可省略
+   self.selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];// 这句不可省略
 //   [self.selectedBackgroundView setSize:CGSizeZero];
    [self.selectedBackgroundView setBackgroundColor:UIColor.clearColor];
    [self.selectedBackgroundView setClipsToBounds:YES];
 
+   LogDebug((@"-[HomeContentCell awakeFromNib] : selectionStyle : %d", self.selectionStyle));
+   
    [self.selectedColorView setClipsToBounds:YES];
    [self.selectedColorView setBackgroundColor:UIColor.clearColor];
 
    __CATCH(nErr);
 
+   return;
+}
+
+- (void)setHighlighted:(BOOL)aHighlighted animated:(BOOL)aAnimated {
+   
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+
+   LogDebug((@"-[HomeContentCell setHighlighted:animated:] : selectionStyle : %d", self.selectionStyle));
+   
+   if (NO == self.canSelected) {
+      
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+   
+   [super setHighlighted:aHighlighted animated:aAnimated];
+
+   // Configure the view for the highlighted state
+   if (aHighlighted) {
+
+      [self.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+
+   } /* End if () */
+
+//   if (aAnimated) {
+//
+//      [UIView transitionWithView:self.selectedColorView
+//                        duration:UIAViewAnimationDefaultDuraton
+//                         options:UIViewAnimationOptionTransitionCrossDissolve
+//                      animations:^{
+//
+//         if (aHighlighted) {
+//
+//            [self.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+//
+//         } /* End if () */
+//         else {
+//
+////            [self.selectedColorView setBackgroundColor:UIColor.clearColor];
+//
+//         } /* End else */
+//      }
+//                      completion:nil];
+//
+//   } /* End if () */
+//   else {
+//
+//      if (aHighlighted) {
+//
+//         [self.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+//
+//      } /* End if () */
+//      else {
+//
+////         [self.selectedColorView setBackgroundColor:UIColor.clearColor];
+//
+//      } /* End else */
+//
+//   } /* End else */
+
+   __CATCH(nErr);
+   
    return;
 }
 
@@ -74,10 +142,67 @@
 
    __TRY;
 
+   LogDebug((@"-[HomeContentCell setSelected:animated:] : selectionStyle : %d", self.selectionStyle));
+
+   if (NO == self.canSelected) {
+      
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+
    [super setSelected:aSelected animated:aAnimated];
 
    // Configure the view for the selected state
 
+   if (aSelected) {
+
+      [self.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+
+   } /* End if () */
+   else {
+
+      [self.selectedColorView setBackgroundColor:UIColor.clearColor];
+
+   } /* End else */
+
+//   if (aAnimated) {
+//
+//      [UIView transitionWithView:self.selectedColorView
+//                        duration:UIAViewAnimationDefaultDuraton
+//                         options:UIViewAnimationOptionTransitionCrossDissolve
+//                      animations:^{
+//
+//         if (aSelected) {
+//
+//            [self.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+//
+//         } /* End if () */
+//         else {
+//
+//            [self.selectedColorView setBackgroundColor:UIColor.clearColor];
+//
+//         } /* End else */
+//      }
+//                      completion:nil];
+//
+//   } /* End if () */
+//   else {
+//
+//      if (aSelected) {
+//
+//         [self.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+//
+//      } /* End if () */
+//      else {
+//
+//         [self.selectedColorView setBackgroundColor:UIColor.clearColor];
+//
+//      } /* End else */
+//
+//   } /* End else */
+   
    __CATCH(nErr);
    
    return;

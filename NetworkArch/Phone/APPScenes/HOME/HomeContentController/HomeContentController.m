@@ -13,7 +13,12 @@
 #import "HomeContentController+Inner.h"
 #import "HomeContentController+Signal.h"
 
+#import "WifiMoreController.h"
+#import "CellularMoreController.h"
 #import "PingController.h"
+#import "WoLANController.h"
+#import "WhoisController.h"
+#import "DNSController.h"
 
 @interface HomeContentController ()
 
@@ -167,6 +172,10 @@
       }/* End else */
    }];
 
+   self.wifiCells[HomeWifiSSID].canSelected  = NO;
+   self.wifiCells[HomeWifiIP].canSelected    = NO;
+   self.wifiCells[HomeWifiMore].canSelected  = YES;
+
    /**
     Cellular
     */
@@ -221,6 +230,10 @@
       }/* End else */
    }];
    
+   self.cellularCells[HomeCellularOperator].canSelected  = NO;
+   self.cellularCells[HomeCellularIP].canSelected        = NO;
+   self.cellularCells[HomeCellularMore].canSelected      = YES;
+
    /**
     工具
     */
@@ -260,6 +273,12 @@
             
          }/* End else */
       }];
+      
+   } /* End for () */
+   
+   for (HomeContentCell *stHomeContentCell in self.utilitiesCells) {
+      
+      stHomeContentCell.canSelected = YES;
       
    } /* End for () */
    
@@ -399,6 +418,9 @@
    
    [super viewDidDisappear:aAnimated];
    
+   [self.tableView clearSelectedRowsAnimated:YES];
+   [self.tableView reloadData];
+
    __CATCH(nErr);
    
    return;
@@ -515,8 +537,8 @@
    
    int                            nErr                                     = EFAULT;
    
-   UITableViewCell               *stTableViewCell                          = nil;
-   
+   HomeContentCell               *stTableViewCell                          = nil;
+
    __TRY;
    
    //   HomeSectionWifi      = 0,
@@ -541,11 +563,12 @@
    
    if (nil != stTableViewCell) {
       
-      //      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-      //      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+//      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+//      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
       
       [stTableViewCell setBackgroundColor:UIColor.clearColor];
       [stTableViewCell.contentView setBackgroundColor:UIColor.clearColor];
+      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.clearColor];
       
    } /* End if () */
    
@@ -564,15 +587,26 @@
    __TRY;
    
    stTableViewCell = [aTableView cellForRowAtIndexPath:aIndexPath];
+
+   if (NO == stTableViewCell.canSelected) {
+      
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+
+//   [UIView transitionWithView:stTableViewCell.selectedColorView
+//                     duration:UIAViewAnimationDefaultDuraton
+//                      options:UIViewAnimationOptionTransitionCrossDissolve
+//                   animations:^{
+//
+//      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+//   }
+//                   completion:nil];
    
-   [UIView transitionWithView:stTableViewCell.selectedColorView
-                     duration:UIAViewAnimationDefaultDuraton
-                      options:UIViewAnimationOptionTransitionCrossDissolve
-                   animations:^{
-      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
-   }
-                   completion:nil];
-   
+   [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+
    __CATCH(nErr);
    
    return aIndexPath;
@@ -584,31 +618,122 @@
    
    HomeContentCell               *stTableViewCell                          = nil;
    
+   WifiMoreController            *stWifiMoreController                     = nil;
+   CellularMoreController        *stCellularMoreController                 = nil;
+   
    PingController                *stPingController                         = nil;
+   WoLANController               *stWoLANController                        = nil;
+   WhoisController               *stWhoisController                        = nil;
+   DNSController                 *stDNSController                          = nil;
+   
+   UIViewController              *stViewController                         = nil;
    
    __TRY;
    
    stTableViewCell = [aTableView cellForRowAtIndexPath:aIndexPath];
    
-   [UIView transitionWithView:stTableViewCell.selectedColorView
-                     duration:UIAViewAnimationDefaultDuraton
-                      options:UIViewAnimationOptionTransitionCrossDissolve
-                   animations:^{
-      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
-   }
-                   completion:nil];
-   
-   stPingController  = [UIStoryboard loadStoryboard:PingController.storyboard
-                                     viewController:[PingController class]];
-   
-   @weakify(self);
-   [self.navigationController pushViewController:stPingController
-                                        animated:YES
-                                      completion:^{
+   if (NO == stTableViewCell.canSelected) {
       
-      @strongify(self);
-      [self.tableView deselectRowAtIndexPath:aIndexPath animated:NO];
-   }];
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+
+//   [UIView transitionWithView:stTableViewCell.selectedColorView
+//                     duration:UIAViewAnimationDefaultDuraton
+//                      options:UIViewAnimationOptionTransitionCrossDissolve
+//                   animations:^{
+//      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+//   }
+//                   completion:^(BOOL aComplete) {
+//      [stTableViewCell setSelectionStyle:UITableViewCellSelectionStyleDefault];
+//   }];
+
+   [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+   [stTableViewCell setSelected:YES animated:NO];
+
+//   HomeSectionWifi      = 0,
+//   HomeSectionCellular  = 1,
+//   HomeSectionUtilities = 2,
+//   HomeSectionNumber
+   
+   if (HomeSectionWifi == aIndexPath.section) {
+
+      if (HomeWifiMore == aIndexPath.row) {
+         
+         stWifiMoreController = [UIStoryboard loadStoryboard:WifiMoreController.storyboard
+                                              viewController:[WifiMoreController class]];
+         
+         stViewController  = stWifiMoreController;
+         
+      } /* End if () */
+      
+   } /* End if () */
+   else if (HomeSectionCellular == aIndexPath.section) {
+      
+      if (HomeCellularMore == aIndexPath.row) {
+         
+         stCellularMoreController = [UIStoryboard loadStoryboard:CellularMoreController.storyboard
+                                              viewController:[CellularMoreController class]];
+         
+         stViewController  = stCellularMoreController;
+
+      } /* End if () */
+      
+   } /* End else if () */
+   else if (HomeSectionUtilities == aIndexPath.section) {
+
+      if (HomeUtilitiesPing == aIndexPath.row) {
+         
+         stPingController  = [UIStoryboard loadStoryboard:PingController.storyboard
+                                           viewController:[PingController class]];
+
+         stViewController  = stPingController;
+         
+      } /* End if () */
+      else if (HomeUtilitiesWoL == aIndexPath.row) {
+
+         stWoLANController = [UIStoryboard loadStoryboard:WoLANController.storyboard
+                                           viewController:[WoLANController class]];
+
+         stViewController  = stWoLANController;
+
+      } /* End else if () */
+      else if (HomeUtilitiesWhois == aIndexPath.row) {
+
+         stWhoisController = [UIStoryboard loadStoryboard:WhoisController.storyboard
+                                           viewController:[WhoisController class]];
+
+         stViewController  = stWhoisController;
+
+      } /* End else if () */
+      else if (HomeUtilitiesDNS == aIndexPath.row) {
+
+         stDNSController   = [UIStoryboard loadStoryboard:DNSController.storyboard
+                                           viewController:[DNSController class]];
+
+         stViewController  = stDNSController;
+
+      } /* End else if () */
+      else {
+   //      Error
+         
+      } /* End else */
+
+   } /* End else if () */
+   else {
+//      Error
+      
+   } /* End else */
+   
+   if (nil != stViewController) {
+      
+      [self.navigationController pushViewController:stViewController
+                                           animated:YES
+                                         completion:nil];
+
+   } /* End if () */
    
    __CATCH(nErr);
    
@@ -624,15 +749,27 @@
    __TRY;
    
    stTableViewCell = [aTableView cellForRowAtIndexPath:aIndexPath];
-   
-   [UIView transitionWithView:stTableViewCell.selectedColorView
-                     duration:UIAViewAnimationDefaultDuraton
-                      options:UIViewAnimationOptionTransitionCrossDissolve
-                   animations:^{
-      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.clearColor];
-   }
-                   completion:nil];
-   
+
+   if (NO == stTableViewCell.canSelected) {
+      
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+
+//   [UIView transitionWithView:stTableViewCell.selectedColorView
+//                     duration:UIATableViewSelectedDefaultDuraton
+//                      options:UIViewAnimationOptionTransitionCrossDissolve
+//                   animations:^{
+//
+//      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.clearColor];
+//   }
+//                   completion:nil];
+
+   [stTableViewCell setSelected:NO animated:NO];
+   [stTableViewCell.selectedColorView setBackgroundColor:UIColor.clearColor];
+
    __CATCH(nErr);
    
    return;

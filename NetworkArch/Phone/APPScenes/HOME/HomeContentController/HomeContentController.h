@@ -22,7 +22,23 @@ IDEA_ENUM(NSInteger, HomeSection) {
    HomeSectionNumber
 };
 
-IDEA_ENUM(NSInteger, HomeUtilitiesSection) {
+IDEA_ENUM(NSInteger, HomeWifi) {
+   
+   HomeWifiSSID         = 0,
+   HomeWifiIP           = 1,
+   HomeWifiMore         = 2,
+   HomeWifiNumber
+};
+
+IDEA_ENUM(NSInteger, HomeCellular) {
+   
+   HomeCellularOperator = 0,
+   HomeCellularIP       = 1,
+   HomeCellularMore     = 2,
+   HomeCellularNumber
+};
+
+IDEA_ENUM(NSInteger, HomeUtilities) {
    
    HomeUtilitiesPing    = 0,
    HomeUtilitiesWoL     = 1,
@@ -33,7 +49,7 @@ IDEA_ENUM(NSInteger, HomeUtilitiesSection) {
 
 @interface HomeContentController : IDEATableViewController
 
-@property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray<UITableViewCell *> * wifiCells;
+@property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * wifiCells;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * wifiCellContainerViews;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                             * wifiSSIDLabel;
@@ -45,7 +61,7 @@ IDEA_ENUM(NSInteger, HomeUtilitiesSection) {
 @property (nonatomic, weak)   IBOutlet       UILabel                             * wifiMoreLabel;
 @property (nonatomic, weak)   IBOutlet       UIImageView                         * wifiMoreIcon;
 
-@property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray<UITableViewCell *> * cellularCells;
+@property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * cellularCells;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * cellularCellContainerViews;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                             * cellularOperatorLabel;
@@ -57,7 +73,7 @@ IDEA_ENUM(NSInteger, HomeUtilitiesSection) {
 @property (nonatomic, weak)   IBOutlet       UILabel                             * cellularMoreLabel;
 @property (nonatomic, weak)   IBOutlet       UIImageView                         * cellularMoreIcon;
 
-@property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray<UITableViewCell *> * utilitiesCells;
+@property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * utilitiesCells;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * utilitiesCellContainerViews;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesPingLabel;

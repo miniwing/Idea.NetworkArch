@@ -10,7 +10,9 @@
 //
 
 #import "WoLANRootController.h"
+
 #import "WoLANController.h"
+#import "WoLANController+Inner.h"
 
 @interface WoLANController ()
 
@@ -30,7 +32,7 @@
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aCoder {
-
+   
    int                            nErr                                     = EFAULT;
    
    __TRY;
@@ -38,7 +40,19 @@
    self  = [super initWithCoder:aCoder];
    
    if (self) {
-            
+      
+#if MATERIAL_APP_BAR
+      _appBar  = [[MDCAppBar alloc] init];
+      
+      [_appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
+      [_appBar.headerViewController.headerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+      
+      [_appBar.headerViewController setShowsHairline:YES];
+      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
+      
+      [self addChildViewController:_appBar.headerViewController];
+#endif /* MATERIAL_APP_BAR */
+      
    } /* End if () */
    
    __CATCH(nErr);
@@ -47,17 +61,73 @@
 }
 
 - (void)viewDidLoad {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
+#if MATERIAL_APP_BAR
+#else /* MATERIAL_APP_BAR */
+   NSMutableDictionary           *stTitleAttributes                        = nil;
+#endif /* MATERIAL_APP_BAR */
+      
    __TRY;
-
+   
    [super viewDidLoad];
-
-   // Do any additional setup after loading the view.
-
+   
+   [self setTitle:APP_STR(@"Wake on LAN")];
+   LogDebug((@"[WoLANController viewDidLoad] : VIEW : %@", self.view));
+   
+#if MATERIAL_APP_BAR
+   [self.navigationController setNavigationBarHidden:YES];
+   
+#  if FULLSCREEN_POP_GESTURE
+   [self setPrefersNavigationBarHidden:YES];
+#  endif /* FULLSCREEN_POP_GESTURE */
+   
+   [self.appBar addSubviewsToParent];
+   
+   [self.appBar.navigationBar setAllowAnyTitleFontSize:YES];
+   [self.appBar.navigationBar setEnableRippleBehavior:NO];
+   
+   [self.appBar.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
+   [self.appBar.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
+   [self.appBar.navigationBar setTitleFont:[APPFont regularFontOfSize:[APPFont appFontTitleSize]]];
+#else /* MATERIAL_APP_BAR */
+   [self.navigationController setNavigationBarHidden:NO];
+   [self.navigationController.navigationBar setTranslucent:NO];
+   [self.navigationController.navigationBar setOpaque:YES];
+   [self setPrefersNavigationBarHidden:NO];
+   
+   [self setSeparator];
+   
+   [self.navigationController.navigationBar setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+   [self.navigationController.navigationBar setBarTintColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+   
+   [self.navigationController.navigationBar setBackgroundImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
+      return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
+   }
+                                                       forBarMetrics:UIBarMetricsDefault];
+   
+   if (nil == self.navigationController.navigationBar.titleTextAttributes) {
+      
+      stTitleAttributes = [NSMutableDictionary dictionary];
+      
+   } /* End if () */
+   else {
+      
+      stTitleAttributes = [self.navigationController.navigationBar.titleTextAttributes mutableCopy];
+      
+   } /* End else */
+   
+   [stTitleAttributes setObject:[IDEAColor colorWithKey:[IDEAColor label]]
+                         forKey:NSForegroundColorAttributeName];
+   [stTitleAttributes setObject:[APPFont regularFontOfSize:[APPFont appFontTitleSize]]
+                         forKey:NSFontAttributeName];
+   
+   [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
+#endif /* !MATERIAL_APP_BAR */
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -149,7 +219,7 @@
 
 + (NSString *)storyboard {
    
-   return @"WoLAN";
+   return @"UTILITIES";
 }
 
 @end
