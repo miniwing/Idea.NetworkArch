@@ -13,6 +13,8 @@
 #import "HomeContentController+Inner.h"
 #import "HomeContentController+Signal.h"
 
+#import "PingController.h"
+
 @interface HomeContentController ()
 
 @property (nonatomic, assign)                dispatch_once_t                       viewDidLayoutToken;
@@ -582,6 +584,8 @@
    
    HomeContentCell               *stTableViewCell                          = nil;
    
+   PingController                *stPingController                         = nil;
+   
    __TRY;
    
    stTableViewCell = [aTableView cellForRowAtIndexPath:aIndexPath];
@@ -593,6 +597,18 @@
       [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
    }
                    completion:nil];
+   
+   stPingController  = [UIStoryboard loadStoryboard:PingController.storyboard
+                                     viewController:[PingController class]];
+   
+   @weakify(self);
+   [self.navigationController pushViewController:stPingController
+                                        animated:YES
+                                      completion:^{
+      
+      @strongify(self);
+      [self.tableView deselectRowAtIndexPath:aIndexPath animated:NO];
+   }];
    
    __CATCH(nErr);
    

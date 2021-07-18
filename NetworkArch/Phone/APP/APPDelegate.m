@@ -79,7 +79,6 @@
       [APPDelegate setTabbarAnimation:[aNotification.object boolValue]];
    });
    
-   
    //   [self observeNotification:SettingController.tabAnimationNotification];
    
    /******************************************************************************************/

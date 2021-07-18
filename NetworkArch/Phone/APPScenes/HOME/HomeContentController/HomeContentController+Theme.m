@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[HomeContentController+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[HomeContentController onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
 

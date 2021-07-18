@@ -22,6 +22,15 @@ IDEA_ENUM(NSInteger, HomeSection) {
    HomeSectionNumber
 };
 
+IDEA_ENUM(NSInteger, HomeUtilitiesSection) {
+   
+   HomeUtilitiesPing    = 0,
+   HomeUtilitiesWoL     = 1,
+   HomeUtilitiesWhois   = 2,
+   HomeUtilitiesDNS     = 3,
+   HomeUtilitiesNumber
+};
+
 @interface HomeContentController : IDEATableViewController
 
 @property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray<UITableViewCell *> * wifiCells;
