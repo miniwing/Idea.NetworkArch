@@ -10,12 +10,14 @@ install! 'cocoapods', :deterministic_uuids                => false
 
 # applet_webcore=YES pod update
 
-ENV['IDEAFONT_HY']        = 'YES'
-ENV['IDEAFONT_MSYH']      = 'NO'
-ENV['IDEAFONT_ZEKTON']    = 'YES'
+ENV['IDEAFONT_HY']            = 'YES'
+ENV['IDEAFONT_MSYH']          = 'NO'
+ENV['IDEAFONT_ZEKTON']        = 'YES'
 
-ENV['IDEA_YYKIT']         = 'YES'
-ENV['IDERA_AFNETWORKING'] = "YES"
+ENV['IDEA_YYKIT']             = 'YES'
+ENV['IDERA_AFNETWORKING']     = "YES"
+
+ENV['IDEA_SERVICE_FILE_SYNC'] = 'NO'
 
 workspace 'Idea.NetworkArch'
 

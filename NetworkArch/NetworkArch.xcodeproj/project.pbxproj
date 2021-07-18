@@ -34,6 +34,19 @@
 		4A0EB7F22687268B00AA4366 /* HomeContentCell+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EB7E82687268B00AA4366 /* HomeContentCell+Debug.m */; };
 		4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */; };
 		4A1DE0B12687889E00C2C73C /* pod.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4A1DE0B02687889E00C2C73C /* pod.sh */; };
+		4A221EE226A44D2A00C94F00 /* PING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A221EE026A44D2A00C94F00 /* PING.storyboard */; };
+		4A221F0226A44DA100C94F00 /* PingRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221EF726A44DA000C94F00 /* PingRootController.m */; };
+		4A221F0326A44DA100C94F00 /* PingRootController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221EFA26A44DA100C94F00 /* PingRootController+Notification.m */; };
+		4A221F0426A44DA100C94F00 /* PingRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221EFB26A44DA100C94F00 /* PingRootController+Debug.m */; };
+		4A221F0526A44DA100C94F00 /* PingRootController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221EFE26A44DA100C94F00 /* PingRootController+Signal.m */; };
+		4A221F0626A44DA100C94F00 /* PingRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221F0026A44DA100C94F00 /* PingRootController+Theme.m */; };
+		4A221F0726A44DA100C94F00 /* PingRootController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221F0126A44DA100C94F00 /* PingRootController+Inner.m */; };
+		4A221F2726A44E2500C94F00 /* PingViewController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221F1C26A44E2400C94F00 /* PingViewController+Debug.m */; };
+		4A221F2826A44E2500C94F00 /* PingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221F1D26A44E2400C94F00 /* PingViewController.m */; };
+		4A221F2926A44E2500C94F00 /* PingViewController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221F1F26A44E2500C94F00 /* PingViewController+Theme.m */; };
+		4A221F2A26A44E2500C94F00 /* PingViewController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221F2026A44E2500C94F00 /* PingViewController+Notification.m */; };
+		4A221F2B26A44E2500C94F00 /* PingViewController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221F2226A44E2500C94F00 /* PingViewController+Inner.m */; };
+		4A221F2C26A44E2500C94F00 /* PingViewController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221F2426A44E2500C94F00 /* PingViewController+Signal.m */; };
 		4A45536526862E4D0050E736 /* HomeContentController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535826862E4B0050E736 /* HomeContentController+Signal.m */; };
 		4A45536626862E4D0050E736 /* HomeContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535C26862E4B0050E736 /* HomeContentController.m */; };
 		4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535E26862E4C0050E736 /* HomeContentController+Debug.m */; };
@@ -138,6 +151,31 @@
 		4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeContentCell.m; sourceTree = "<group>"; };
 		4A0EB7F02687268B00AA4366 /* HomeContentCell+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeContentCell+Debug.h"; sourceTree = "<group>"; };
 		4A1DE0B02687889E00C2C73C /* pod.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = pod.sh; path = ../pod.sh; sourceTree = "<group>"; };
+		4A221EE126A44D2A00C94F00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PING.storyboard; sourceTree = "<group>"; };
+		4A221EF626A44DA000C94F00 /* PingRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Inner.h"; sourceTree = "<group>"; };
+		4A221EF726A44DA000C94F00 /* PingRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingRootController.m; sourceTree = "<group>"; };
+		4A221EF826A44DA000C94F00 /* PingRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Signal.h"; sourceTree = "<group>"; };
+		4A221EF926A44DA000C94F00 /* PingRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingRootController.h; sourceTree = "<group>"; };
+		4A221EFA26A44DA100C94F00 /* PingRootController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingRootController+Notification.m"; sourceTree = "<group>"; };
+		4A221EFB26A44DA100C94F00 /* PingRootController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingRootController+Debug.m"; sourceTree = "<group>"; };
+		4A221EFC26A44DA100C94F00 /* PingRootController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Debug.h"; sourceTree = "<group>"; };
+		4A221EFD26A44DA100C94F00 /* PingRootController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Notification.h"; sourceTree = "<group>"; };
+		4A221EFE26A44DA100C94F00 /* PingRootController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingRootController+Signal.m"; sourceTree = "<group>"; };
+		4A221EFF26A44DA100C94F00 /* PingRootController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Theme.h"; sourceTree = "<group>"; };
+		4A221F0026A44DA100C94F00 /* PingRootController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingRootController+Theme.m"; sourceTree = "<group>"; };
+		4A221F0126A44DA100C94F00 /* PingRootController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingRootController+Inner.m"; sourceTree = "<group>"; };
+		4A221F1B26A44E2400C94F00 /* PingViewController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingViewController+Inner.h"; sourceTree = "<group>"; };
+		4A221F1C26A44E2400C94F00 /* PingViewController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingViewController+Debug.m"; sourceTree = "<group>"; };
+		4A221F1D26A44E2400C94F00 /* PingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingViewController.m; sourceTree = "<group>"; };
+		4A221F1E26A44E2500C94F00 /* PingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingViewController.h; sourceTree = "<group>"; };
+		4A221F1F26A44E2500C94F00 /* PingViewController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingViewController+Theme.m"; sourceTree = "<group>"; };
+		4A221F2026A44E2500C94F00 /* PingViewController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingViewController+Notification.m"; sourceTree = "<group>"; };
+		4A221F2126A44E2500C94F00 /* PingViewController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingViewController+Debug.h"; sourceTree = "<group>"; };
+		4A221F2226A44E2500C94F00 /* PingViewController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingViewController+Inner.m"; sourceTree = "<group>"; };
+		4A221F2326A44E2500C94F00 /* PingViewController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingViewController+Signal.h"; sourceTree = "<group>"; };
+		4A221F2426A44E2500C94F00 /* PingViewController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingViewController+Signal.m"; sourceTree = "<group>"; };
+		4A221F2526A44E2500C94F00 /* PingViewController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingViewController+Theme.h"; sourceTree = "<group>"; };
+		4A221F2626A44E2500C94F00 /* PingViewController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingViewController+Notification.h"; sourceTree = "<group>"; };
 		4A45535726862E4B0050E736 /* HomeContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentController.h; sourceTree = "<group>"; };
 		4A45535826862E4B0050E736 /* HomeContentController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeContentController+Signal.m"; sourceTree = "<group>"; };
 		4A45535926862E4B0050E736 /* HomeContentController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeContentController+Inner.h"; sourceTree = "<group>"; };
@@ -246,6 +284,7 @@
 				4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */,
 				4AE51B9D2685CDFB00DC1DA2 /* MAIN.storyboard */,
 				4A0E4EA126858ADC00A85517 /* HOME.storyboard */,
+				4A221EE026A44D2A00C94F00 /* PING.storyboard */,
 				4A0E4E5D268589CA00A85517 /* SETTING.storyboard */,
 			);
 			name = "Supporting Files";
@@ -331,6 +370,7 @@
 			children = (
 				4A45537D2686327A0050E736 /* TRACKING */,
 				4A0E4E5C2685898E00A85517 /* HOME */,
+				4A221EE326A44D5F00C94F00 /* PING */,
 				4A0E4E62268589E500A85517 /* SETTING */,
 			);
 			path = APPScenes;
@@ -393,6 +433,45 @@
 				4A1DE0B02687889E00C2C73C /* pod.sh */,
 			);
 			name = SHELL;
+			sourceTree = "<group>";
+		};
+		4A221EE326A44D5F00C94F00 /* PING */ = {
+			isa = PBXGroup;
+			children = (
+				4A221EF926A44DA000C94F00 /* PingRootController.h */,
+				4A221EF726A44DA000C94F00 /* PingRootController.m */,
+				4A221EFC26A44DA100C94F00 /* PingRootController+Debug.h */,
+				4A221EFB26A44DA100C94F00 /* PingRootController+Debug.m */,
+				4A221EF626A44DA000C94F00 /* PingRootController+Inner.h */,
+				4A221F0126A44DA100C94F00 /* PingRootController+Inner.m */,
+				4A221EFD26A44DA100C94F00 /* PingRootController+Notification.h */,
+				4A221EFA26A44DA100C94F00 /* PingRootController+Notification.m */,
+				4A221EF826A44DA000C94F00 /* PingRootController+Signal.h */,
+				4A221EFE26A44DA100C94F00 /* PingRootController+Signal.m */,
+				4A221EFF26A44DA100C94F00 /* PingRootController+Theme.h */,
+				4A221F0026A44DA100C94F00 /* PingRootController+Theme.m */,
+				4A221F0826A44DEF00C94F00 /* PingController */,
+			);
+			path = PING;
+			sourceTree = "<group>";
+		};
+		4A221F0826A44DEF00C94F00 /* PingController */ = {
+			isa = PBXGroup;
+			children = (
+				4A221F1E26A44E2500C94F00 /* PingViewController.h */,
+				4A221F1D26A44E2400C94F00 /* PingViewController.m */,
+				4A221F2126A44E2500C94F00 /* PingViewController+Debug.h */,
+				4A221F1C26A44E2400C94F00 /* PingViewController+Debug.m */,
+				4A221F1B26A44E2400C94F00 /* PingViewController+Inner.h */,
+				4A221F2226A44E2500C94F00 /* PingViewController+Inner.m */,
+				4A221F2626A44E2500C94F00 /* PingViewController+Notification.h */,
+				4A221F2026A44E2500C94F00 /* PingViewController+Notification.m */,
+				4A221F2326A44E2500C94F00 /* PingViewController+Signal.h */,
+				4A221F2426A44E2500C94F00 /* PingViewController+Signal.m */,
+				4A221F2526A44E2500C94F00 /* PingViewController+Theme.h */,
+				4A221F1F26A44E2500C94F00 /* PingViewController+Theme.m */,
+			);
+			path = PingController;
 			sourceTree = "<group>";
 		};
 		4A45533926862DEF0050E736 /* HomeController */ = {
@@ -587,7 +666,7 @@
 		4A98A62E2684B50F00EEEB60 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = Harry;
 				TargetAttributes = {
 					4A0E4E20268587BE00A85517 = {
@@ -626,6 +705,7 @@
 				4A0E4E5F268589CA00A85517 /* SETTING.storyboard in Resources */,
 				4A0E4EA726858ADC00A85517 /* HOME.storyboard in Resources */,
 				4AE51B9C2685CD3400DC1DA2 /* Localizable.strings in Resources */,
+				4A221EE226A44D2A00C94F00 /* PING.storyboard in Resources */,
 				4AE51B9B2685CD3400DC1DA2 /* InfoPlist.strings in Resources */,
 				4A0E4DF9268585CF00A85517 /* SPLASH.storyboard in Resources */,
 				4A0E4EA826858ADC00A85517 /* TRACKING.storyboard in Resources */,
@@ -740,14 +820,22 @@
 				4A0E4E74268589E600A85517 /* SettingController+Notification.m in Sources */,
 				4A45536926862E4D0050E736 /* HomeContentController+Notification.m in Sources */,
 				4A0E4E462685888500A85517 /* APPDelegate+APP.m in Sources */,
+				4A221F2A26A44E2500C94F00 /* PingViewController+Notification.m in Sources */,
 				4A0E4E77268589E600A85517 /* SettingRootController.m in Sources */,
 				4A45536A26862E4D0050E736 /* HomeContentController+Inner.m in Sources */,
 				4AE51B922685C39400DC1DA2 /* HomeController+Signal.m in Sources */,
 				4A0E4DC0268584C100A85517 /* APPDelegate.m in Sources */,
+				4A221F0726A44DA100C94F00 /* PingRootController+Inner.m in Sources */,
+				4A221F0426A44DA100C94F00 /* PingRootController+Debug.m in Sources */,
 				4A0E4E75268589E600A85517 /* SettingController+Theme.m in Sources */,
+				4A221F2726A44E2500C94F00 /* PingViewController+Debug.m in Sources */,
+				4A221F0626A44DA100C94F00 /* PingRootController+Theme.m in Sources */,
+				4A221F2B26A44E2500C94F00 /* PingViewController+Inner.m in Sources */,
 				4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */,
+				4A221F2826A44E2500C94F00 /* PingViewController.m in Sources */,
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
 				4A0E4E76268589E600A85517 /* SettingController.m in Sources */,
+				4A221F2926A44E2500C94F00 /* PingViewController+Theme.m in Sources */,
 				4A0EB7F22687268B00AA4366 /* HomeContentCell+Debug.m in Sources */,
 				4A0E4E72268589E500A85517 /* SettingContentController.m in Sources */,
 				4A0E4DBF268584C100A85517 /* RootViewController.m in Sources */,
@@ -759,18 +847,22 @@
 				4A0E4DEF268585C500A85517 /* main.m in Sources */,
 				4AE51B8F2685C39400DC1DA2 /* HomeController+Theme.m in Sources */,
 				4AE51B912685C39400DC1DA2 /* HomeController.m in Sources */,
+				4A221F0326A44DA100C94F00 /* PingRootController+Notification.m in Sources */,
 				4A45536626862E4D0050E736 /* HomeContentController.m in Sources */,
 				4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */,
 				4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */,
 				4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */,
 				4A4553862686327B0050E736 /* TrackingRootController.m in Sources */,
+				4A221F2C26A44E2500C94F00 /* PingViewController+Signal.m in Sources */,
 				4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */,
 				4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */,
 				4AFFEDBC268645160052712A /* AppTracking.m in Sources */,
 				4A4553842686327B0050E736 /* TrackingController+Notification.m in Sources */,
 				4AB5C1EF26859F3C00B1639D /* SettingHeader.m in Sources */,
 				4A4553852686327B0050E736 /* TrackingController.m in Sources */,
+				4A221F0226A44DA100C94F00 /* PingRootController.m in Sources */,
 				4A0E4E4D2685888F00A85517 /* APPDelegate+Kit.m in Sources */,
+				4A221F0526A44DA100C94F00 /* PingRootController+Signal.m in Sources */,
 				4A0E4E71268589E500A85517 /* SettingContentController+Theme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -832,6 +924,14 @@
 				4A0E4EA626858ADC00A85517 /* Base */,
 			);
 			name = ONBOARDING.storyboard;
+			sourceTree = "<group>";
+		};
+		4A221EE026A44D2A00C94F00 /* PING.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A221EE126A44D2A00C94F00 /* Base */,
+			);
+			name = PING.storyboard;
 			sourceTree = "<group>";
 		};
 		4AE51B972685CD3400DC1DA2 /* InfoPlist.strings */ = {
