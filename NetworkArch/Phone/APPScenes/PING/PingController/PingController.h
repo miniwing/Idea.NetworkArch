@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PingController : IDEAViewController
 
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * leftBarButtonItem;
+@property (nonatomic, weak)   IBOutlet       UITextField                         * textField;
 
 @end
 

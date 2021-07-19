@@ -604,8 +604,8 @@
 //      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
 //   }
 //                   completion:nil];
-   
-   [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+//
+//   [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
 
    __CATCH(nErr);
    
@@ -650,8 +650,8 @@
 //      [stTableViewCell setSelectionStyle:UITableViewCellSelectionStyleDefault];
 //   }];
 
-   [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
-   [stTableViewCell setSelected:YES animated:NO];
+//   [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
+//   [stTableViewCell setSelected:YES animated:NO];
 
 //   HomeSectionWifi      = 0,
 //   HomeSectionCellular  = 1,
@@ -767,8 +767,8 @@
 //   }
 //                   completion:nil];
 
-   [stTableViewCell setSelected:NO animated:NO];
-   [stTableViewCell.selectedColorView setBackgroundColor:UIColor.clearColor];
+//   [stTableViewCell setSelected:NO animated:NO];
+//   [stTableViewCell.selectedColorView setBackgroundColor:UIColor.clearColor];
 
    __CATCH(nErr);
    

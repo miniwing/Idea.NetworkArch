@@ -239,6 +239,13 @@ post_install do |installer|
       config.build_settings.delete('CODE_SIGNING_ALLOWED')
       config.build_settings.delete('CODE_SIGNING_REQUIRED')
 
+      config.build_settings['WARNING_CFLAGS']                 = [
+                                                                  '$(inherited)',
+                                                                  '-Wnonnull',
+                                                                  '-Wdocumentation',
+                                                                  '-Wnullability-completeness'
+                                                                ]
+
       if target.name == 'IDEAColor'
         config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
                                                                     '$(inherited)',

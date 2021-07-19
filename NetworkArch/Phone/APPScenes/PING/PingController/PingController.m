@@ -126,6 +126,8 @@
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
    
+    [self.textField setCornerRadius:6];
+    
    __CATCH(nErr);
    
    return;
