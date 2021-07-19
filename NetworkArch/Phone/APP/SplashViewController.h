@@ -14,10 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface SplashViewController ()
+@interface SplashViewController (UIStoryboard)
 
-//- (BOOL)splashing;
-//+ (NSTimeInterval)duration;
+@property (nonatomic, class, readonly)       NSString                            * storyboard;
 
 @end
 

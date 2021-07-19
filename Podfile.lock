@@ -111,6 +111,7 @@ PODS:
   - IDEAAppletDebugger (1.0.0):
     - AFNetworking
     - FMDB
+    - FoundationExtension
     - IDEAApplet
     - IDEAAppletDebugger/ServiceBorder (= 1.0.0)
     - IDEAAppletDebugger/ServiceConsole (= 1.0.0)
@@ -122,57 +123,78 @@ PODS:
     - IDEAAppletDebugger/ServiceTheme (= 1.0.0)
     - IDEAAppletDebugger/ServiceWiFi (= 1.0.0)
     - IDEANightVersion
+    - UIKitExtension
   - IDEAAppletDebugger/ServiceBorder (1.0.0):
     - AFNetworking
     - FMDB
+    - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
+    - UIKitExtension
   - IDEAAppletDebugger/ServiceConsole (1.0.0):
     - AFNetworking
     - FMDB
+    - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
+    - UIKitExtension
   - IDEAAppletDebugger/ServiceGesture (1.0.0):
     - AFNetworking
     - FMDB
+    - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
+    - UIKitExtension
   - IDEAAppletDebugger/ServiceGrids (1.0.0):
     - AFNetworking
     - FMDB
+    - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
+    - UIKitExtension
   - IDEAAppletDebugger/ServiceInspector (1.0.0):
     - AFNetworking
     - FMDB
+    - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
+    - UIKitExtension
   - IDEAAppletDebugger/ServiceMonitor (1.0.0):
     - AFNetworking
     - FMDB
+    - FoundationExtension
     - IDEAApplet
     - IDEAAppletDebugger/ServiceMonitor/JBChartView (= 1.0.0)
     - IDEANightVersion
+    - UIKitExtension
   - IDEAAppletDebugger/ServiceMonitor/JBChartView (1.0.0):
     - AFNetworking
     - FMDB
+    - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
+    - UIKitExtension
   - IDEAAppletDebugger/ServiceTapspot (1.0.0):
     - AFNetworking
     - FMDB
+    - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
+    - UIKitExtension
   - IDEAAppletDebugger/ServiceTheme (1.0.0):
     - AFNetworking
     - FMDB
+    - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
+    - UIKitExtension
   - IDEAAppletDebugger/ServiceWiFi (1.0.0):
     - AFNetworking
     - FMDB
+    - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
+    - UIKitExtension
   - IDEAColor (1.0.0):
     - IDEANightVersion
   - IDEAFONT (1.0.0):
@@ -419,7 +441,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
   IDEAApplet: 6721212efadb6e52fdb15c705889f41228a7e09c
-  IDEAAppletDebugger: a5862b24afa42b2ba042d40fafa152a5f39a3ac7
+  IDEAAppletDebugger: 1a6275e1befacb64c01e7ca45b2955c89c9d0f0b
   IDEAColor: 2d8f07ae48cb83e6d8dbafe4f152d76bb0bad5e9
   IDEAFONT: d02bc4ffd9db722e95ba76cbc8389c91a95d530c
   IDEAKit: b16c3f9cbddb5f9c9aa6f6dd32bfd83cb5116133
@@ -442,6 +464,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: 4034528106db7708b42917cccb76a77e4c24a9f1
 
-PODFILE CHECKSUM: b94c2c670f17b430618e7c8b1bc9d4fa80d096b7
+PODFILE CHECKSUM: 504c70e8ca404fa83f433ed9e58544617702a312
 
 COCOAPODS: 1.10.1
