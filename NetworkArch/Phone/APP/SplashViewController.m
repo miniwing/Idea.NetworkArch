@@ -75,58 +75,60 @@
 //
 //   return;
 //}
-//
-//- (void)viewWillAppear:(BOOL)aAnimated {
-//
-//   int                            nErr                                     = EFAULT;
-//
-//   __TRY;
-//
-//   [super viewWillAppear:aAnimated];
-//
-//   __CATCH(nErr);
-//
-//   return;
-//}
-//
-//- (void)viewDidAppear:(BOOL)aAnimated {
-//
-//   int                            nErr                                     = EFAULT;
-//
-//   __TRY;
-//
-//   [super viewDidAppear:aAnimated];
-//
-//   __CATCH(nErr);
-//
-//   return;
-//}
-//
-//- (void)viewWillDisappear:(BOOL)aAnimated {
-//
-//   int                            nErr                                     = EFAULT;
-//
-//   __TRY;
-//
-//   [super viewWillDisappear:aAnimated];
-//
-//   __CATCH(nErr);
-//
-//   return;
-//}
-//
-//- (void)viewDidDisappear:(BOOL)aAnimated {
-//
-//   int                            nErr                                     = EFAULT;
-//
-//   __TRY;
-//
-//   [super viewDidDisappear:aAnimated];
-//
-//   __CATCH(nErr);
-//
-//   return;
-//}
+
+#if __Debug__
+- (void)viewWillAppear:(BOOL)aAnimated {
+
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+
+   [super viewWillAppear:aAnimated];
+
+   __CATCH(nErr);
+
+   return;
+}
+
+- (void)viewDidAppear:(BOOL)aAnimated {
+
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+
+   [super viewDidAppear:aAnimated];
+
+   __CATCH(nErr);
+
+   return;
+}
+
+- (void)viewWillDisappear:(BOOL)aAnimated {
+
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+
+   [super viewWillDisappear:aAnimated];
+
+   __CATCH(nErr);
+
+   return;
+}
+
+- (void)viewDidDisappear:(BOOL)aAnimated {
+
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+
+   [super viewDidDisappear:aAnimated];
+
+   __CATCH(nErr);
+
+   return;
+}
+#endif /* __Debug__ */
 
 //+ (NSTimeInterval)duration {
 //

@@ -112,18 +112,22 @@
       
       self.rootViewController = __cast(RootViewController *, self.window.rootViewController);
       
+      self.splashViewController  = [UIStoryboard loadStoryboard:SplashViewController.storyboard
+                                                 viewController:[SplashViewController class]];
+
    } /* End if () */
    else if ([self.window.rootViewController isKindOfClass:[SplashViewController class]]) {
       
       self.splashViewController  = __cast(SplashViewController *, self.window.rootViewController);
       
+      self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
+                                              viewController:[RootViewController class]];
+
    } /* End else */
    
 //   [self.window setRootViewController:self.splashViewController];
    [self.window makeKeyAndVisible];
    
-   self.splashViewController  = [UIStoryboard loadStoryboard:SplashViewController.storyboard
-                                              viewController:[SplashViewController class]];
    [self.window addSubview:self.splashViewController.view];
    
    [self splash];
@@ -272,11 +276,13 @@
    
    int                            nErr                                     = EFAULT;
    
+   NSTimeInterval                 fDuration                                = UIAViewAnimationDefaultDuraton;
+   
    __TRY;
    
 //   self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
 //                                           viewController:[RootViewController class]];
-   
+//
 //   [UIView transitionFromView:self.splashViewController.view
 //                       toView:self.rootViewController.view
 //#if __Debug__
@@ -290,8 +296,13 @@
 //      UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
 //   }];
    
-   [UIView animateWithDuration:UIAViewAnimationDefaultDuraton
+#if __Debug__
+   fDuration   = UIAViewAnimationDefaultDuraton * 5;
+#endif /* __Debug__ */
+
+   [UIView animateWithDuration:fDuration
                     animations:^{
+      
       self.splashViewController.view.alpha   = 0;
    }
                     completion:^(BOOL finished) {
