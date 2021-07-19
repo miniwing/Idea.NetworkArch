@@ -119,8 +119,12 @@
       
    } /* End else */
    
-   [self.window setRootViewController:self.splashViewController];
+//   [self.window setRootViewController:self.splashViewController];
    [self.window makeKeyAndVisible];
+   
+   self.splashViewController  = [UIStoryboard loadStoryboard:SplashViewController.storyboard
+                                              viewController:[SplashViewController class]];
+   [self.window addSubview:self.splashViewController.view];
    
    [self splash];
    
@@ -270,22 +274,33 @@
    
    __TRY;
    
-   self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
-                                           viewController:[RootViewController class]];
+//   self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
+//                                           viewController:[RootViewController class]];
    
-   [UIView transitionFromView:self.splashViewController.view
-                       toView:self.rootViewController.view
-#if __Debug__
-                     duration:UIAViewAnimationDefaultDuraton * 2
-#else /* __Debug__ */
-                     duration:UIAViewAnimationDefaultDuraton
-#endif /* !__Debug__ */
-                      options:UIViewAnimationOptionTransitionCrossDissolve
-                   completion:^(BOOL aFinished) {
+//   [UIView transitionFromView:self.splashViewController.view
+//                       toView:self.rootViewController.view
+//#if __Debug__
+//                     duration:UIAViewAnimationDefaultDuraton * 10
+//#else /* __Debug__ */
+//                     duration:UIAViewAnimationDefaultDuraton
+//#endif /* !__Debug__ */
+//                      options:UIViewAnimationOptionTransitionCrossDissolve
+//                   completion:^(BOOL aFinished) {
+//
+//      UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
+//   }];
+   
+   [UIView animateWithDuration:UIAViewAnimationDefaultDuraton
+                    animations:^{
+      self.splashViewController.view.alpha   = 0;
+   }
+                    completion:^(BOOL finished) {
+      
+      [self.splashViewController.view removeFromSuperview];
       
       UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
    }];
-   
+
    __CATCH(nErr);
    
    return;

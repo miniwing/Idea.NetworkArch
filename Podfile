@@ -23,8 +23,8 @@ workspace 'Idea.NetworkArch'
 
 project 'NetworkArch/NetworkArch.xcodeproj'
 
-#use_frameworks!
-use_modular_headers!
+use_frameworks!
+#use_modular_headers!
 inhibit_all_warnings!
 
 platform :ios, '10.0'
@@ -45,7 +45,8 @@ def library
   end # IDEA_YYKIT
   
   if ENV['IDERA_AFNETWORKING'] == 'YES'
-    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'            , :configurations => ['Debug']
+#    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'            , :configurations => ['Debug']
+    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'
   end # IDERA_AFNETWORKING
 
   pod 'IDEAKit'                         , :path => '../MINIWING-PODs/IDEAKit'
@@ -149,7 +150,7 @@ target 'NetworkArch' do
 #  pod 'IDEAApplet'                      , :git => 'https://github.com/miniwing/Idea.Applets.git'
 #  pod 'IDEAAppletDebugger'              , :git => 'https://github.com/miniwing/Idea.Applets.git'
   pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
-  pod 'IDEAAppletDebugger'              , :path => '../MINIWING-PODs/Idea.Applets'            , :configurations => ['Debug']
+#  pod 'IDEAAppletDebugger'              , :path => '../MINIWING-PODs/Idea.Applets'            , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
 
 #  pod 'GoogleAnalytics'
