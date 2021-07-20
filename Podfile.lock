@@ -15,10 +15,15 @@ PODS:
   - AFNetworking/UIKit (4.0.1-IDEA):
     - AFNetworking/NSURLSession
   - APPDATA (1.0.0):
+    - IDEAKit
     - YYKit
   - APPDEBUG (1.0.0):
+    - IDEAKit
     - YYKit
   - cdebug (1.3)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - FoundationExtension (2.1.0):
     - cdebug (~> 1.3)
     - FoundationExtension/FoundationExtension (= 2.1.0)
@@ -105,6 +110,93 @@ PODS:
     - IDEAApplet/applet-framework/vendor/fishhook (= 1.0.1)
   - IDEAApplet/applet-framework/vendor/fishhook (1.0.1):
     - AFNetworking
+  - IDEAAppletDebugger (1.0.0):
+    - AFNetworking
+    - FMDB
+    - FoundationExtension
+    - IDEAApplet
+    - IDEAAppletDebugger/ServiceBorder (= 1.0.0)
+    - IDEAAppletDebugger/ServiceConsole (= 1.0.0)
+    - IDEAAppletDebugger/ServiceGesture (= 1.0.0)
+    - IDEAAppletDebugger/ServiceGrids (= 1.0.0)
+    - IDEAAppletDebugger/ServiceInspector (= 1.0.0)
+    - IDEAAppletDebugger/ServiceMonitor (= 1.0.0)
+    - IDEAAppletDebugger/ServiceTapspot (= 1.0.0)
+    - IDEAAppletDebugger/ServiceTheme (= 1.0.0)
+    - IDEAAppletDebugger/ServiceWiFi (= 1.0.0)
+    - IDEANightVersion
+    - UIKitExtension
+  - IDEAAppletDebugger/ServiceBorder (1.0.0):
+    - AFNetworking
+    - FMDB
+    - FoundationExtension
+    - IDEAApplet
+    - IDEANightVersion
+    - UIKitExtension
+  - IDEAAppletDebugger/ServiceConsole (1.0.0):
+    - AFNetworking
+    - FMDB
+    - FoundationExtension
+    - IDEAApplet
+    - IDEANightVersion
+    - UIKitExtension
+  - IDEAAppletDebugger/ServiceGesture (1.0.0):
+    - AFNetworking
+    - FMDB
+    - FoundationExtension
+    - IDEAApplet
+    - IDEANightVersion
+    - UIKitExtension
+  - IDEAAppletDebugger/ServiceGrids (1.0.0):
+    - AFNetworking
+    - FMDB
+    - FoundationExtension
+    - IDEAApplet
+    - IDEANightVersion
+    - UIKitExtension
+  - IDEAAppletDebugger/ServiceInspector (1.0.0):
+    - AFNetworking
+    - FMDB
+    - FoundationExtension
+    - IDEAApplet
+    - IDEANightVersion
+    - UIKitExtension
+  - IDEAAppletDebugger/ServiceMonitor (1.0.0):
+    - AFNetworking
+    - FMDB
+    - FoundationExtension
+    - IDEAApplet
+    - IDEAAppletDebugger/ServiceMonitor/JBChartView (= 1.0.0)
+    - IDEANightVersion
+    - UIKitExtension
+  - IDEAAppletDebugger/ServiceMonitor/JBChartView (1.0.0):
+    - AFNetworking
+    - FMDB
+    - FoundationExtension
+    - IDEAApplet
+    - IDEANightVersion
+    - UIKitExtension
+  - IDEAAppletDebugger/ServiceTapspot (1.0.0):
+    - AFNetworking
+    - FMDB
+    - FoundationExtension
+    - IDEAApplet
+    - IDEANightVersion
+    - UIKitExtension
+  - IDEAAppletDebugger/ServiceTheme (1.0.0):
+    - AFNetworking
+    - FMDB
+    - FoundationExtension
+    - IDEAApplet
+    - IDEANightVersion
+    - UIKitExtension
+  - IDEAAppletDebugger/ServiceWiFi (1.0.0):
+    - AFNetworking
+    - FMDB
+    - FoundationExtension
+    - IDEAApplet
+    - IDEANightVersion
+    - UIKitExtension
   - IDEAColor (1.0.0):
     - IDEANightVersion
   - IDEAFONT (1.0.0):
@@ -274,6 +366,7 @@ DEPENDENCIES:
   - APPDEBUG (from `APPDEBUG`)
   - FoundationExtension
   - IDEAApplet (from `../MINIWING-PODs/Idea.Applets`)
+  - IDEAAppletDebugger (from `../MINIWING-PODs/Idea.Applets`)
   - IDEAColor (from `../MINIWING-PODs/IDEAColor`)
   - IDEAFONT (from `../MINIWING-PODs/IDEAFONT`)
   - IDEAKit (from `../MINIWING-PODs/IDEAKit`)
@@ -295,6 +388,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - cdebug
+    - FMDB
     - FoundationExtension
     - libwebp
     - MaterialComponents
@@ -315,6 +409,8 @@ EXTERNAL SOURCES:
   APPDEBUG:
     :path: APPDEBUG
   IDEAApplet:
+    :path: "../MINIWING-PODs/Idea.Applets"
+  IDEAAppletDebugger:
     :path: "../MINIWING-PODs/Idea.Applets"
   IDEAColor:
     :path: "../MINIWING-PODs/IDEAColor"
@@ -340,21 +436,23 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/YYKit"
 
 SPEC CHECKSUMS:
-  AFNetworking: e929c4363a6c8e511ff856ff07352830073c6ac3
-  APPDATA: abb27d7f2a8a971f965ed98afb3ae8d09202e157
-  APPDEBUG: f26dee7f05e4b6c8177c5440460fad4a04423393
+  AFNetworking: b0b5cb4b5e6b9cff7d7b3b2aa37e471c325552e4
+  APPDATA: 15eaf7cc5d32e19c9e2e12d2fd12fd5a6701cafc
+  APPDEBUG: 60210590892f42ec5041f82c662797299b8261b3
   cdebug: 0d0b7207fa996236ee9e07e5988e5e39a1d94a28
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
-  IDEAApplet: 6721212efadb6e52fdb15c705889f41228a7e09c
-  IDEAColor: 2d8f07ae48cb83e6d8dbafe4f152d76bb0bad5e9
-  IDEAFONT: d02bc4ffd9db722e95ba76cbc8389c91a95d530c
-  IDEAKit: b16c3f9cbddb5f9c9aa6f6dd32bfd83cb5116133
-  IDEANightVersion: 2462ddab6f09bd7c7a7b346cec8dc3eafaad96c0
-  IDEAPalettes: 21c238c32f383ae46ee8b3b3f30052076989a8b2
-  IDEAPing: 95dc1726e3b0c4eaa3eab08f3d2bc4b1d33e451c
-  IDEARoute: 472c165bb85973c0a2f42d36376c455c621406bb
-  IDEATabBarControllerTransition: 2ebe0fd83430fb1d0173fef9038305c925f7dd92
-  IDEAUIKit: 121255ce9e5af6dd5c1afd0bcfc3952d7a0c7a46
+  IDEAApplet: f259143442547628f2cbaf22a9612a497864d293
+  IDEAAppletDebugger: 3f462256473aca6cc243347ea4ee8af11ab58276
+  IDEAColor: 2c1379d6ea66a53ad0bc4ddc4e37811b6228db93
+  IDEAFONT: d6ea00307fcb53cd79a43f04bf12fd3e6344e901
+  IDEAKit: 2eb4d923085981cee863881da195191b998136b2
+  IDEANightVersion: caeadf49b593bedc4974b64963665457ca94698e
+  IDEAPalettes: 9891e82fb5e25413a9428f403e4eec285d89c2ee
+  IDEAPing: 5ce5474f28ca4ee377d1ae317b867bbc8a612df4
+  IDEARoute: e226aebda97fd2dff7339df6ecc18e0b6c7974f5
+  IDEATabBarControllerTransition: 4a8e9e79dccbf364c46c74c93173e760e8e19224
+  IDEAUIKit: 5b1099a056321421614ff96611d29fd8d1c583f4
   IDEAUIVendor: 1d5bfc377dc446089b2ced63926a7908cd7b1983
   libwebp: e90b9c01d99205d03b6bb8f2c8c415e5a4ef66f0
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
@@ -366,8 +464,8 @@ SPEC CHECKSUMS:
   RTRootNavigationController: 36c6301870f0467f89d69f4286795340b537d473
   SimplePing: 4b3bdd3c779a77953809b75b9c8b3fff10586f14
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
-  YYKit: 4034528106db7708b42917cccb76a77e4c24a9f1
+  YYKit: 4d9ea9aa791752a8a7482c036e247a9fc06bdf3a
 
-PODFILE CHECKSUM: 127080ce3c5ae3adcd81b231ea7a02e7e66850f6
+PODFILE CHECKSUM: e5e41568f1045aef91cededfce68c9df94d07623
 
 COCOAPODS: 1.10.1

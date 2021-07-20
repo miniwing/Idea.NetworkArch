@@ -150,7 +150,7 @@ target 'NetworkArch' do
 #  pod 'IDEAApplet'                      , :git => 'https://github.com/miniwing/Idea.Applets.git'
 #  pod 'IDEAAppletDebugger'              , :git => 'https://github.com/miniwing/Idea.Applets.git'
   pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
-#  pod 'IDEAAppletDebugger'              , :path => '../MINIWING-PODs/Idea.Applets'            , :configurations => ['Debug']
+  pod 'IDEAAppletDebugger'              , :path => '../MINIWING-PODs/Idea.Applets'            , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
 
 #  pod 'GoogleAnalytics'
