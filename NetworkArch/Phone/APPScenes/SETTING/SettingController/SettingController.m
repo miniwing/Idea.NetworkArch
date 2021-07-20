@@ -225,7 +225,7 @@
    
    [super viewWillAppear:aAnimated];
    
-   [self.contentController viewWillAppear:aAnimated];
+//   [self.contentController viewWillAppear:aAnimated];
    
    __CATCH(nErr);
    
@@ -240,7 +240,7 @@
    
    [super viewDidAppear:aAnimated];
    
-   [self.contentController viewDidAppear:aAnimated];
+//   [self.contentController viewDidAppear:aAnimated];
    
    __CATCH(nErr);
    
@@ -255,7 +255,7 @@
    
    [super viewWillDisappear:aAnimated];
    
-   [self.contentController viewWillDisappear:aAnimated];
+//   [self.contentController viewWillDisappear:aAnimated];
    
    __CATCH(nErr);
    
@@ -270,7 +270,7 @@
    
    [super viewDidDisappear:aAnimated];
    
-   [self.contentController viewDidDisappear:aAnimated];
+//   [self.contentController viewDidDisappear:aAnimated];
    
    __CATCH(nErr);
    

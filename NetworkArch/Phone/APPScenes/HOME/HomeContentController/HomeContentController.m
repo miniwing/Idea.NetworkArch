@@ -612,6 +612,30 @@
    return aIndexPath;
 }
 
+- (nullable NSIndexPath *)tableView:(UITableView *)aTableView willDeselectRowAtIndexPath:(NSIndexPath *)aIndexPath {
+   
+   int                            nErr                                     = EFAULT;
+   
+   HomeContentCell               *stTableViewCell                          = nil;
+   
+   __TRY;
+   
+   stTableViewCell = [aTableView cellForRowAtIndexPath:aIndexPath];
+
+   if (NO == stTableViewCell.canSelected) {
+      
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+
+   __CATCH(nErr);
+   
+   return aIndexPath;
+}
+
+
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)aIndexPath {
    
    int                            nErr                                     = EFAULT;

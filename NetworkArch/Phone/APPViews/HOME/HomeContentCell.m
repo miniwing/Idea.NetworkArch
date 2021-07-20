@@ -76,8 +76,17 @@
 
    __TRY;
 
-   LogDebug((@"-[HomeContentCell setHighlighted:animated:] : selectionStyle : %d", self.selectionStyle));
+   LogDebug((@"-[HomeContentCell setHighlighted:animated:] : Highlighted : %d", aHighlighted));
    
+   if (aHighlighted) {
+
+   } /* End if () */
+   else {
+
+      [self.selectedColorView setBackgroundColor:UIColor.clearColor];
+
+   } /* End else */
+
    if (NO == self.canSelected) {
       
       nErr  = noErr;
@@ -142,7 +151,16 @@
 
    __TRY;
 
-   LogDebug((@"-[HomeContentCell setSelected:animated:] : selectionStyle : %d", self.selectionStyle));
+   LogDebug((@"-[HomeContentCell setSelected:animated:] : Selected : %d", aSelected));
+
+   if (aSelected) {
+
+   } /* End if () */
+   else {
+
+      [self.selectedColorView setBackgroundColor:UIColor.clearColor];
+
+   } /* End else */
 
    if (NO == self.canSelected) {
       

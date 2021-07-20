@@ -286,7 +286,7 @@
    [UIView transitionFromView:self.splashViewController.view
                        toView:self.rootViewController.view
 #if __Debug__
-                     duration:UIAViewAnimationDefaultDuraton * 10
+                     duration:UIAViewAnimationDefaultDuraton * 2
 #else /* __Debug__ */
                      duration:UIAViewAnimationDefaultDuraton
 #endif /* !__Debug__ */

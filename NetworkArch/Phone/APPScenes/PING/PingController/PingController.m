@@ -65,6 +65,7 @@
    int                            nErr                                     = EFAULT;
    
 #if MATERIAL_APP_BAR
+   NSLayoutConstraint            *stLayoutConstraint                       = nil;
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
@@ -103,6 +104,7 @@
    [self.navigationController.navigationBar setBarTintColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    
    [self.navigationController.navigationBar setBackgroundImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
+      
       return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
    }
                                                        forBarMetrics:UIBarMetricsDefault];
@@ -126,8 +128,24 @@
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
    
-    [self.textField setCornerRadius:6];
-    
+   [self.textField setCornerRadius:6];
+   
+#if MATERIAL_APP_BAR
+   // Dispose of any resources that can be recreated.
+   /**
+    调整 Layout
+    contentView.top
+    */
+   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"TextField.top"
+                                                              fromView:self.view];
+#endif /* MATERIAL_APP_BAR */
+
+   if (nil != stLayoutConstraint) {
+      
+      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height + 16;
+      
+   } /* End if () */
+
    __CATCH(nErr);
    
    return;
@@ -142,6 +160,23 @@
    [super didReceiveMemoryWarning];
    // Dispose of any resources that can be recreated.
    
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)viewDidLayoutSubviews {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [super viewDidLayoutSubviews];
+   
+   //   dispatch_once(&_didLayoutOnceToken, ^{
+   //
+   //   });
+      
    __CATCH(nErr);
    
    return;
