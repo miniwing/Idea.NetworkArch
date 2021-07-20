@@ -128,7 +128,7 @@
 //   [self.window setRootViewController:self.splashViewController];
    [self.window makeKeyAndVisible];
    
-   [self.window addSubview:self.splashViewController.view];
+//   [self.window addSubview:self.splashViewController.view];
    
    [self splash];
    
@@ -276,41 +276,41 @@
    
    int                            nErr                                     = EFAULT;
    
-   NSTimeInterval                 fDuration                                = UIAViewAnimationDefaultDuraton;
+//   NSTimeInterval                 fDuration                                = UIAViewAnimationDefaultDuraton;
    
    __TRY;
    
-//   self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
-//                                           viewController:[RootViewController class]];
-//
-//   [UIView transitionFromView:self.splashViewController.view
-//                       toView:self.rootViewController.view
+   self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
+                                           viewController:[RootViewController class]];
+
+   [UIView transitionFromView:self.splashViewController.view
+                       toView:self.rootViewController.view
+#if __Debug__
+                     duration:UIAViewAnimationDefaultDuraton * 10
+#else /* __Debug__ */
+                     duration:UIAViewAnimationDefaultDuraton
+#endif /* !__Debug__ */
+                      options:UIViewAnimationOptionTransitionCrossDissolve
+                   completion:^(BOOL aFinished) {
+
+      UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
+   }];
+   
 //#if __Debug__
-//                     duration:UIAViewAnimationDefaultDuraton * 10
-//#else /* __Debug__ */
-//                     duration:UIAViewAnimationDefaultDuraton
-//#endif /* !__Debug__ */
-//                      options:UIViewAnimationOptionTransitionCrossDissolve
-//                   completion:^(BOOL aFinished) {
+//   fDuration   = UIAViewAnimationDefaultDuraton * 5;
+//#endif /* __Debug__ */
+//
+//   [UIView animateWithDuration:fDuration
+//                    animations:^{
+//
+//      self.splashViewController.view.alpha   = 0;
+//   }
+//                    completion:^(BOOL finished) {
+//
+//      [self.splashViewController.view removeFromSuperview];
 //
 //      UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
 //   }];
-   
-#if __Debug__
-   fDuration   = UIAViewAnimationDefaultDuraton * 5;
-#endif /* __Debug__ */
-
-   [UIView animateWithDuration:fDuration
-                    animations:^{
-      
-      self.splashViewController.view.alpha   = 0;
-   }
-                    completion:^(BOOL finished) {
-      
-      [self.splashViewController.view removeFromSuperview];
-      
-      UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
-   }];
 
    __CATCH(nErr);
    

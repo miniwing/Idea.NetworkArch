@@ -41,7 +41,7 @@
 //#  pragma clang diagnostic ignored                 "-Wtautological-pointer-compare"
 //#  pragma clang diagnostic ignored                 "-Wimplicit-function-declaration"
 //#  pragma clang diagnostic ignored                 "-Wnullability-completeness-on-arrays"
-#  pragma clang diagnostic ignored                 "-Wquoted-include-in-framework-header"
+//#  pragma clang diagnostic ignored                 "-Wquoted-include-in-framework-header"
 #endif /* DEBUG */
 
 //#  pragma clang diagnostic ignored                 "-Wundeclared-selector"
