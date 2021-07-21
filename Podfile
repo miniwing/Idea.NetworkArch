@@ -320,7 +320,7 @@ post_install do |installer|
                                                                    ' SERVICE_FILE_SYNC=1 ',
                                                                    ' SERVICE_TAPSPOT=0 ',
                                                                    ' SERVICE_THEME=1 ',
-                                                                   ' SERVICE_WIFI=1 '
+                                                                   ' SERVICE_WIFI=0 '
                                                                    ]
       end
 
