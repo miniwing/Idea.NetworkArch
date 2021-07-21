@@ -49,7 +49,7 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    [self removeAllSignalResponders];
    [self unobserveAllNotifications];
    [self removeAllNotification];
-
+   
    __SUPER_DEALLOC;
    
    return;
@@ -81,9 +81,13 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    [super viewDidLoad];
    
    [self.tableView setTableFooterView:[UIView new]];
+   [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+   
+   [self.tableView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
    
    [self.tableView registerNib:[UINib nibWithNibName:[SettingHeader nibName] bundle:nil] forHeaderFooterViewReuseIdentifier:[SettingHeader reuseIdentifier]];
    
+   /// UI Cells
    for (UITableViewCell *stCell in self.cellUIs) {
       
       [stCell setBackgroundColor:UIColor.clearColor];
@@ -91,6 +95,42 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
       
    } /* End for () */
    
+   for (UIView *stView in self.uiCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemBlueColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
+   if (@available(iOS 13.0, *)) {
+      
+      for (UIView *stSeparatorView in self.uiSeparatorViews) {
+         
+#if __DEBUG_COLOR__
+         [stSeparatorView setBackgroundColor:UIColor.whiteColor];
+#else /* __DEBUG_COLOR__ */
+         [stSeparatorView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
+#endif /* !__DEBUG_COLOR__ */
+         
+      } /* End for () */
+      
+   } /* End if () */
+   else {
+      
+      for (UIView *stSeparatorView in self.uiSeparatorViews) {
+         
+         [stSeparatorView setHidden:YES];
+         
+      } /* End for () */
+      
+   } /* End else */
+   
+   [self.annimateCellContainerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+   
+   /// Rate Cells
    for (UITableViewCell *stCell in self.cellRates) {
       
       [stCell setBackgroundColor:UIColor.clearColor];
@@ -104,6 +144,8 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
       [stCell.contentView setBackgroundColor:UIColor.clearColor];
       
    } /* End for () */
+   
+   [self.rateCellContainerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    
    // Header Footer
    [self.lightBGView setBackgroundColor:UIColor.clearColor];
@@ -239,6 +281,29 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    [self.cellVerBuild setTextColorPicker:DKColorPickerWithKey([IDEAColor darkGray])];
    [self.cellVerBuild setFont:[APPFont lightFontOfSize:self.cellVerBuild.font.pointSize]];
    
+   
+   for (UIView *stView in self.aboutCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemBlueColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
+   for (UIView *stSeparatorView in self.aboutSeparatorViews) {
+      
+      [stSeparatorView setHidden:NO];
+      
+#if __DEBUG_COLOR__
+      [stSeparatorView setBackgroundColor:UIColor.whiteColor];
+#else /* __DEBUG_COLOR__ */
+      [stSeparatorView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
    [self.tableView reloadData];
    
    __CATCH(nErr);
@@ -254,6 +319,37 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    
    [super didReceiveMemoryWarning];
    // Dispose of any resources that can be recreated.
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)viewDidLayoutSubviews {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [super viewDidLayoutSubviews];
+   
+   if (@available(iOS 13.0, *)) {
+      
+      [self.uiCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
+      [self.uiCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+      
+   } /* End if () */
+   else {
+      
+      [self.uiCellContainerViews.firstObject setCornerRadius:8 clipsToBounds:YES];
+      
+   } /* End else */
+   
+   [self.annimateCellContainerView setCornerRadius:8 clipsToBounds:YES];
+   [self.rateCellContainerView setCornerRadius:8 clipsToBounds:YES];
+   
+   [self.aboutCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
+   [self.aboutCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
    
    __CATCH(nErr);
    
@@ -399,7 +495,7 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    } /* End else */
    
    [UISelectionFeedbackGenerator selectionChanged];
-
+   
    __CATCH(nErr);
    
    return;
@@ -411,9 +507,9 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    
    __TRY;
    
-//   [self postNotify:IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE )
-//         withObject:@(aSender.isOn)
-//            onQueue:dispatch_get_main_queue()];
+   //   [self postNotify:IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE )
+   //         withObject:@(aSender.isOn)
+   //            onQueue:dispatch_get_main_queue()];
    
    LogDebug((@"-[SettingContentController onAnimationSwitch:] : tabAnimation : %@", SettingController.tabAnimationNotification));
    [self postNotify:SettingController.tabAnimationNotification
@@ -421,7 +517,7 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
             onQueue:dispatch_get_main_queue()];
    
    [UISelectionFeedbackGenerator selectionChanged];
-
+   
    __CATCH(nErr);
    
    return;
@@ -592,8 +688,11 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
       //      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor secondarySystemGroupedBackground])];
       //      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor secondarySystemGroupedBackground])];
       
-      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+      [stTableViewCell setBackgroundColor:UIColor.clearColor];
+      [stTableViewCell.contentView setBackgroundColor:UIColor.clearColor];
+      
+      //      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+      //      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
       
    } /* End if () */
    
