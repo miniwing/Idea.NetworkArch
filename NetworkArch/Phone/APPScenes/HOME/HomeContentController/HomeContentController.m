@@ -635,7 +635,6 @@
    return aIndexPath;
 }
 
-
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)aIndexPath {
    
    int                            nErr                                     = EFAULT;

@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_END
       
       self.type   = TransTypeMove;
       
-      @weakify(self);
+//      @weakify(self);
       /******************************************************************************************/
 //      self.onNotification(IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE ), ^(NSNotification *aNotification) {
 //
@@ -92,7 +92,7 @@ NS_ASSUME_NONNULL_END
       
       self.onNotification(SettingController.tabAnimationNotification, ^(NSNotification *aNotification) {
          
-         @strongify(self);
+//         @strongify(self);
          LogDebug((@"-[RootViewController onNotification : %@] : %@ : %@", aNotification.name, aNotification.name, aNotification.object));
          
          if ([aNotification.object boolValue]) {
@@ -435,8 +435,7 @@ NS_ASSUME_NONNULL_END
    
    __TRY;
    
-   //   AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-   //   AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+   [UISelectionFeedbackGenerator selectionChanged];
    
    __CATCH(nErr);
    

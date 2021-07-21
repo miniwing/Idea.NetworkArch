@@ -130,6 +130,7 @@ target 'NetworkArch' do
   pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
   pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
+#  pod 'IDEATapticEngine'                , :path => '../MINIWING-PODs/IDEATapticEngine'
 #  pod 'IDEAWaterDropView'               , :path => '../MINIWING-PODs/IDEAWaterDropView'
 #  pod 'IDEANavigationBar'               , :path => '../MINIWING-PODs/IDEANavigationBar'
 #  pod 'IDEASearchController'            , :path => '../MINIWING-PODs/IDEASearchController'

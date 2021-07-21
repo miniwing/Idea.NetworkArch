@@ -337,6 +337,8 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
       
    } /* End else */
    
+   [UISelectionFeedbackGenerator selectionChanged];
+   
    __CATCH(nErr);
    
    return;
@@ -396,6 +398,8 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
       
    } /* End else */
    
+   [UISelectionFeedbackGenerator selectionChanged];
+
    __CATCH(nErr);
    
    return;
@@ -416,6 +420,8 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
          withObject:@(aSender.isOn)
             onQueue:dispatch_get_main_queue()];
    
+   [UISelectionFeedbackGenerator selectionChanged];
+
    __CATCH(nErr);
    
    return;
