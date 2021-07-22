@@ -89,6 +89,10 @@
    [self.appBar.navigationBar setAllowAnyTitleFontSize:YES];
    [self.appBar.navigationBar setEnableRippleBehavior:NO];
    
+   /// 关闭水波纹效果
+   [self.appBar.navigationBar setRippleColor:UIColor.clearColor];
+   [self.appBar.navigationBar setInkColor:UIColor.clearColor];
+   
    [self.appBar.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
    [self.appBar.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
    [self.appBar.navigationBar setTitleFont:[APPFont regularFontOfSize:[APPFont appFontTitleSize]]];
@@ -127,24 +131,101 @@
    
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
+
+   [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    
-   [self.textField setCornerRadius:6];
-   
+   [self.rightBarButtonItem setEnabled:NO];
+
 #if MATERIAL_APP_BAR
    // Dispose of any resources that can be recreated.
    /**
     调整 Layout
     contentView.top
     */
-   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"TextField.top"
+   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"search.top"
                                                               fromView:self.view];
 #endif /* MATERIAL_APP_BAR */
 
    if (nil != stLayoutConstraint) {
       
-      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height + 16;
+      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
       
    } /* End if () */
+
+   /**
+    Search Bar
+    */
+   [self.searchView setBackgroundColor:UIColor.clearColor];
+   [self.searchBar setBackgroundImage:[UIImage imageNamed:@"CLEAR-IMAGE"]];
+
+   if (@available(iOS 13, *)) {
+      
+      self.searchBarTextField = self.searchBar.searchTextField;
+      
+   } /* End if () */
+   else {
+      
+      for (UIView *stSubView in [[self.searchBar.subviews lastObject] subviews]) {
+         
+         if ([[stSubView class] isSubclassOfClass:[UITextField class]]) {
+            
+            self.searchBarTextField = (UITextField *)stSubView;
+            
+            break;
+            
+         } /* End if () */
+         
+      } /* End for () */
+      
+   } /* End else */
+   
+   LogDebug((@"-[SearchController viewDidLayoutSubviews] : UITextField : %@", self.searchBarTextField)); // 0x105070200
+   
+   if (nil == self.searchBarTextField) {
+      
+      self.searchBarTextField = [UITextField appearanceWhenContainedInInstancesOfClasses:@[ [UISearchBar class], [PingController class] ]];
+      
+   } /* End if () */
+
+   [self.searchBarTextField setFont:[APPFont regularFontOfSize:16]];
+   [self.searchBarTextField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   if (@available(iOS 13, *)) {
+      
+   } /* End if () */
+   else {
+      
+      [self.searchBarTextField setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+         
+         if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+            
+            return [UIColor lightTextColor];
+            
+         } /* End if () */
+         else {
+            
+            return [UIColor secondaryLabelColor];
+            
+         } /* End else */
+      }];
+      
+      [self.searchBarTextField setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+         
+         if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+            
+            return [IDEAColor colorWithKey:[IDEAColor secondarySystemBackground]];
+            
+         }
+         else {
+            
+            return [IDEAColor colorWithKey:[IDEAColor systemGroupedBackground]];
+            
+         }
+      }];
+   } /* End else */
+   
+   [self.searchBar setDelegate:self];
 
    __CATCH(nErr);
    
@@ -283,6 +364,17 @@
       
    } /* End else */
    
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (IBAction)onStart:(id)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+      
    __CATCH(nErr);
    
    return;

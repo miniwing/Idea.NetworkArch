@@ -14,3 +14,131 @@
 @implementation PingController (Inner)
 
 @end
+
+#pragma mark - <UISearchBarDelegate>
+@implementation PingController (UISearchBarDelegate)
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)aSearchBar {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return YES;
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)aSearchBar {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)aSearchBar {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return YES;
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)aSearchBar {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)searchBar:(UISearchBar *)aSearchBar textDidChange:(NSString *)aSearchText {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[PingController searchBar:textDidChange:] : SearchText : %@", aSearchBar));
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (BOOL)searchBar:(UISearchBar *)aSearchBar shouldChangeTextInRange:(NSRange)aRange replacementText:(NSString *)aText {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return YES;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)aSearchBar {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)searchBarBookmarkButtonClicked:(UISearchBar *)aSearchBar {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)aSearchBar {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)searchBarResultsListButtonClicked:(UISearchBar *)aSearchBar {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+@end

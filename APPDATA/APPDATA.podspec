@@ -155,6 +155,275 @@ Pod::Spec.new do |spec|
 
 /******************************************************************************************************/
 
+#define LOG_BUG_SIZE                               (1024 * 1)
+
+#ifdef __OBJC__
+
+typedef NS_ENUM(NSInteger, LogLevel) {
+
+   __LogLevelFatal   = 0,
+   __LogLevelError,
+   __LogLevelWarn,
+   __LogLevelInfo,
+   __LogLevelDebug
+};
+
+NS_INLINE const char* ____LogLevelToString(LogLevel _eLevel) {
+   
+   switch (_eLevel) {
+         
+      case __LogLevelFatal:
+         return ("Fatal");
+      case __LogLevelError:
+         return ("Error");
+      case __LogLevelWarn:
+         return (" Warn");
+      case __LogLevelInfo:
+         return (" Info");
+      case __LogLevelDebug:
+         return ("Debug");
+      default:
+         break;
+         
+   } /* End switch (); */
+   
+   return ("Unknown");
+}
+
+NS_INLINE void ____Log(LogLevel _eLevel, const NSString *_aMsg) {
+   
+   if (LOG_BUG_SIZE >= _aMsg.length) {
+      
+      printf("[%s] %s :: %s\\n", MODULE, ____LogLevelToString(_eLevel), [_aMsg UTF8String]);
+      
+   }
+   else {
+
+      printf("####################################################################################\\n");
+      printf("[%s] %s :: ", MODULE, ____LogLevelToString(_eLevel));
+
+      // 在数组范围内，则循环分段
+      while (LOG_BUG_SIZE < _aMsg.length) {
+         
+         // 按字节长度截取字符串
+         NSString *szSubStr   = [_aMsg substringToIndex:LOG_BUG_SIZE]; // cutStr(bytes, maxByteNum);
+         
+         // 打印日志
+         printf("%s\\n", [szSubStr UTF8String]);
+         
+         // 截取出尚未打印字节数组
+         _aMsg = [_aMsg substringFromIndex:LOG_BUG_SIZE];
+         
+      } /* End while () */
+
+      // 打印剩余部分
+      printf("%s\\n", [_aMsg UTF8String]);
+      printf("####################################################################################\\n");
+
+   } /* End else */
+
+//   printf("[%s] %s :: %s\\n", MODULE, ____LogLevelToString(_eLevel), _cpszMsg);
+      
+   return;
+}
+
+NS_INLINE void ____LoggerFatal(NSString *aFormat, ...) {
+   
+   va_list      args;
+   NSString    *szMSG   = nil;
+   
+   va_start (args, aFormat);
+   szMSG = [[NSString alloc] initWithFormat:aFormat  arguments:args];
+   va_end (args);
+   
+   ____Log(__LogLevelFatal, szMSG);
+   
+   __RELEASE(szMSG);
+   
+   return;
+}
+
+NS_INLINE void ____LoggerError(NSString *aFormat, ...) {
+   
+   va_list      args;
+   NSString    *szMSG   = nil;
+   
+   va_start (args, aFormat);
+   szMSG = [[NSString alloc] initWithFormat:aFormat  arguments:args];
+   va_end (args);
+   
+   ____Log(__LogLevelError, szMSG);
+   
+   __RELEASE(szMSG);
+   
+   return;
+}
+
+NS_INLINE void ____LoggerWarn(NSString *aFormat, ...) {
+   
+   va_list      args;
+   NSString    *szMSG   = nil;
+   
+   va_start (args, aFormat);
+   szMSG = [[NSString alloc] initWithFormat:aFormat  arguments:args];
+   va_end (args);
+   
+   ____Log(__LogLevelWarn, szMSG);
+   
+   __RELEASE(szMSG);
+   
+   return;
+}
+
+NS_INLINE void ____LoggerInfo(NSString *aFormat, ...) {
+   
+   va_list      args;
+   NSString    *szMSG   = nil;
+   
+   va_start (args, aFormat);
+   szMSG = [[NSString alloc] initWithFormat:aFormat  arguments:args];
+   va_end (args);
+   
+   ____Log(__LogLevelInfo, szMSG);
+   
+   __RELEASE(szMSG);
+   
+   return;
+}
+
+NS_INLINE void ____LoggerDebug(NSString *aFormat, ...) {
+   
+   va_list      args;
+   NSString    *szMSG   = nil;
+   
+   va_start (args, aFormat);
+   szMSG = [[NSString alloc] initWithFormat:aFormat  arguments:args];
+   va_end (args);
+   
+   ____Log(__LogLevelDebug, szMSG);
+   
+   __RELEASE(szMSG);
+   
+   return;
+}
+
+#else
+
+__BEGIN_DECLS
+
+static __inline void ____LoggerFatal(char *_Format, ...) {
+   
+   va_list      args;
+   static char s_MSG[LOG_BUG_SIZE]  = {0};
+   
+   bzero(s_MSG, sizeof(s_MSG));
+   
+   va_start (args, _Format);
+   vsnprintf(s_MSG, sizeof(s_MSG), _Format, args);
+   va_end (args);
+   
+   printf("[%s] %s :: %s\\n", MODULE, "Fatal", s_MSG);
+   
+   return;
+}
+
+static __inline void ____LoggerError(char *_Format, ...) {
+   
+   va_list      args;
+   static char s_MSG[LOG_BUG_SIZE]  = {0};
+   
+   bzero(s_MSG, sizeof(s_MSG));
+   
+   va_start (args, _Format);
+   vsnprintf(s_MSG, sizeof(s_MSG), _Format, args);
+   va_end (args);
+   
+   printf("[%s] %s :: %s\\n", MODULE, "Error", s_MSG);
+   
+   return;
+}
+
+static __inline void ____LoggerWarn(char *_Format, ...) {
+   
+   va_list      args;
+   static char s_MSG[LOG_BUG_SIZE]  = {0};
+   
+   bzero(s_MSG, sizeof(s_MSG));
+   
+   va_start (args, _Format);
+   vsnprintf(s_MSG, sizeof(s_MSG), _Format, args);
+   va_end (args);
+   
+   printf("[%s] %s :: %s\\n", MODULE, "Warning", s_MSG);
+   
+   return;
+}
+
+static __inline void ____LoggerInfo(char *_Format, ...) {
+   
+   va_list      args;
+   static char s_MSG[LOG_BUG_SIZE]  = {0};
+   
+   bzero(s_MSG, sizeof(s_MSG));
+   
+   va_start (args, _Format);
+   vsnprintf(s_MSG, sizeof(s_MSG), _Format, args);
+   va_end (args);
+   
+   printf("[%s] %s :: %s\\n", MODULE, "Info", s_MSG);
+   
+   return;
+}
+
+static __inline void ____LoggerDebug(char *_Format, ...) {
+   
+   va_list      args;
+   static char s_MSG[LOG_BUG_SIZE]  = {0};
+   
+   bzero(s_MSG, sizeof(s_MSG));
+   
+   va_start (args, _Format);
+   vsnprintf(s_MSG, sizeof(s_MSG), _Format, args);
+   va_end (args);
+   
+   printf("[%s] %s :: %s\\n", MODULE, "Debug", s_MSG);
+   
+   return;
+}
+
+__END_DECLS
+
+#endif /* !__OBJC__ */
+
+/******************************************************************************************************/
+
+#define __DebugFunc__                              (__AUTO__)
+#define __DebugDebug__                             (__AUTO__)
+#define __DebugColor__                             (__AUTO__)
+#define __DebugView__                              (__AUTO__)
+
+/******************************************************************************************************/
+
+#if __DebugDebug__
+#  define LogDebug(x)                              ____LoggerDebug x
+#else
+#  define LogDebug(x)
+#endif
+
+#if __DebugFunc__
+#  define LogFunc(x)                               ____LoggerInfo x
+#else
+#  define LogFunc(x)
+#endif
+
+#if __DebugView__
+#  define LogView(x)                               ____LoggerInfo x
+#else
+#  define LogView(x)
+#endif
+
+/******************************************************************************************************/
+
 #import <IDEAKit/IDEAKit.h>
 
 /******************************************************************************************************/

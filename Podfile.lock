@@ -199,15 +199,6 @@ PODS:
     - UIKitExtension
   - IDEAColor (1.0.0):
     - IDEANightVersion
-  - IDEAFONT (1.0.0):
-    - IDEAFONT/Core (= 1.0.0)
-    - IDEAFONT/HY (= 1.0.0)
-    - IDEAFONT/Zekton (= 1.0.0)
-  - IDEAFONT/Core (1.0.0)
-  - IDEAFONT/HY (1.0.0):
-    - IDEAFONT/Core
-  - IDEAFONT/Zekton (1.0.0):
-    - IDEAFONT/Core
   - IDEAKit (1.0.1):
     - AFNetworking
     - FoundationExtension
@@ -368,7 +359,6 @@ DEPENDENCIES:
   - IDEAApplet (from `../MINIWING-PODs/Idea.Applets`)
   - IDEAAppletDebugger (from `../MINIWING-PODs/Idea.Applets`)
   - IDEAColor (from `../MINIWING-PODs/IDEAColor`)
-  - IDEAFONT (from `../MINIWING-PODs/IDEAFONT`)
   - IDEAKit (from `../MINIWING-PODs/IDEAKit`)
   - IDEANightVersion (from `../MINIWING-PODs/IDEANightVersion`)
   - IDEAPalettes (from `../MINIWING-PODs/IDEAPalettes`)
@@ -414,8 +404,6 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/Idea.Applets"
   IDEAColor:
     :path: "../MINIWING-PODs/IDEAColor"
-  IDEAFONT:
-    :path: "../MINIWING-PODs/IDEAFONT"
   IDEAKit:
     :path: "../MINIWING-PODs/IDEAKit"
   IDEANightVersion:
@@ -437,23 +425,22 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b0b5cb4b5e6b9cff7d7b3b2aa37e471c325552e4
-  APPDATA: 15eaf7cc5d32e19c9e2e12d2fd12fd5a6701cafc
-  APPDEBUG: 60210590892f42ec5041f82c662797299b8261b3
+  APPDATA: 2add0e7a684f2703a7c5c6ef410f8eafa67a3929
+  APPDEBUG: 037b3424ff5c5f664871141462d568daf90bd85d
   cdebug: 0d0b7207fa996236ee9e07e5988e5e39a1d94a28
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
-  IDEAApplet: f259143442547628f2cbaf22a9612a497864d293
-  IDEAAppletDebugger: 03b77375eded6a75fb47bb50a54eb467237d0f69
-  IDEAColor: 2c1379d6ea66a53ad0bc4ddc4e37811b6228db93
-  IDEAFONT: d6ea00307fcb53cd79a43f04bf12fd3e6344e901
-  IDEAKit: 2eb4d923085981cee863881da195191b998136b2
-  IDEANightVersion: caeadf49b593bedc4974b64963665457ca94698e
-  IDEAPalettes: 9891e82fb5e25413a9428f403e4eec285d89c2ee
-  IDEAPing: 5ce5474f28ca4ee377d1ae317b867bbc8a612df4
-  IDEARoute: e226aebda97fd2dff7339df6ecc18e0b6c7974f5
-  IDEATabBarControllerTransition: 46c2c5341eb08a0f238971b2f088f75f719920d7
-  IDEAUIKit: 5b1099a056321421614ff96611d29fd8d1c583f4
-  IDEAUIVendor: 1d5bfc377dc446089b2ced63926a7908cd7b1983
+  IDEAApplet: 7231e363fb06953ba531e48a47c05d7db87cdf14
+  IDEAAppletDebugger: 16945e6ec0d8053e8bb63ac8ebd74a4a10e7b59a
+  IDEAColor: 692183dcefa3073c88e32cad1fab31653959ad75
+  IDEAKit: 7cb96d740df69caec495bf4c75023837d76c013e
+  IDEANightVersion: c01e088c7b55d6cc6bd53515d43f38b87a501db4
+  IDEAPalettes: 0a528b3cbe13d5cf8533df7a3ce72cdf6ca589c5
+  IDEAPing: e85c8af76f37a278457a6905c8a5df7a2a979887
+  IDEARoute: 8ad9d1af05972b5b5899a8fb9a441ea519a18d57
+  IDEATabBarControllerTransition: e71cbcb4938ef949251c775a3738593333b20f76
+  IDEAUIKit: 60f2c3fd54cfe2c52e361454070a95ee064cd352
+  IDEAUIVendor: 6ed2442cdb8d90d81616c53e4e91edcb3a241321
   libwebp: e90b9c01d99205d03b6bb8f2c8c415e5a4ef66f0
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
@@ -464,8 +451,8 @@ SPEC CHECKSUMS:
   RTRootNavigationController: 36c6301870f0467f89d69f4286795340b537d473
   SimplePing: 4b3bdd3c779a77953809b75b9c8b3fff10586f14
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
-  YYKit: 4d9ea9aa791752a8a7482c036e247a9fc06bdf3a
+  YYKit: b06504a19266eb18ece70e1872d6ca91978f4fc0
 
-PODFILE CHECKSUM: df1fee54e1522069eb82193c782433c08fbf939c
+PODFILE CHECKSUM: 707fa80e587922c84796b69c3554f8a2757a3f3c
 
 COCOAPODS: 1.10.1

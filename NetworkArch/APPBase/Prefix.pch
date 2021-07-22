@@ -128,7 +128,10 @@
 #  import <IDEAApplet/IDEAAppletService.h>
 #endif // __has_include(<IDEAApplet/IDEAApplet.h>)
 
+#import <IDEAKit/IDEALog.h>
+#import <IDEAKit/IDEADebug.h>
 #import <IDEAKit/IDEAKit.h>
+
 #import <APPDATA/APPDATA.h>
 
 #import "APPDef.h"

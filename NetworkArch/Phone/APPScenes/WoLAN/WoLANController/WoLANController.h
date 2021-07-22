@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WoLANController : IDEAViewController
 
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * leftBarButtonItem;
+@property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * rightBarButtonItem;
 
 @end
 

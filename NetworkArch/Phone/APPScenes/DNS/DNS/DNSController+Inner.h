@@ -14,9 +14,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DNSController ()
+@interface DNSController () <UISearchBarDelegate>
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
+
+/**
+ The text field of search bar
+ */
+@property (nonatomic, weak)                  UITextField                         * searchBarTextField;
 
 @end
 

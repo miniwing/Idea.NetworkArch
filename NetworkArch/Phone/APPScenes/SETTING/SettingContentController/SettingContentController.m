@@ -507,10 +507,10 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    
    __TRY;
    
-   //   [self postNotify:IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE )
-   //         withObject:@(aSender.isOn)
-   //            onQueue:dispatch_get_main_queue()];
-   
+//   [self postNotify:IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE )
+//         withObject:@(aSender.isOn)
+//            onQueue:dispatch_get_main_queue()];
+
    LogDebug((@"-[SettingContentController onAnimationSwitch:] : tabAnimation : %@", SettingController.tabAnimationNotification));
    [self postNotify:SettingController.tabAnimationNotification
          withObject:@(aSender.isOn)
@@ -685,14 +685,14 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    
    if (nil != stTableViewCell) {
       
-      //      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor secondarySystemGroupedBackground])];
-      //      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor secondarySystemGroupedBackground])];
+//      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor secondarySystemGroupedBackground])];
+//      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor secondarySystemGroupedBackground])];
       
       [stTableViewCell setBackgroundColor:UIColor.clearColor];
       [stTableViewCell.contentView setBackgroundColor:UIColor.clearColor];
       
-      //      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-      //      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+//      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+//      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
       
    } /* End if () */
    

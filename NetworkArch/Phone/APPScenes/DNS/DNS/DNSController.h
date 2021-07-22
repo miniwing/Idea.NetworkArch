@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DNSController : IDEAViewController
 
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * leftBarButtonItem;
+@property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * rightBarButtonItem;
+
+@property (nonatomic, weak)   IBOutlet       UIView                              * searchView;
+@property (nonatomic, weak)   IBOutlet       UISearchBar                         * searchBar;
 
 @end
 

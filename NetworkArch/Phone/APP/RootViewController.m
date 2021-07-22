@@ -140,10 +140,11 @@ NS_ASSUME_NONNULL_END
    } /* End if () */
    
 #  if DK_NIGHT_VERSION
-   [self.tabBar setTintColorPicker:DKColorPickerWithKey([IDEAColor appTabbarTint])];
+   [self.tabBar setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.tabBar setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor appTabbarBackground])];
    [self.tabBar setBarTintColorPicker:DKColorPickerWithKey([IDEAColor appTabbarBackground])];
    [self.tabBar setBackgroundImage:[UIImage new]];
+   [self.tabBar setShadowImage:[UIImage new]];
 //   [self.tabBar setShadowImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
 //
 //      return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor separator]] size:CGSizeMake(1, 0.5)];
@@ -435,7 +436,8 @@ NS_ASSUME_NONNULL_END
    
    __TRY;
    
-   [UISelectionFeedbackGenerator selectionChanged];
+//   [UISelectionFeedbackGenerator selectionChanged];
+   [UIImpactFeedbackGenerator impactOccurredWithStyle:UIImpactFeedbackStyleMedium];
    
    __CATCH(nErr);
    

@@ -126,6 +126,11 @@
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
    
+   [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   [self.rightBarButtonItem setEnabled:NO];
+
    __CATCH(nErr);
    
    return;
@@ -246,6 +251,17 @@
       
    } /* End else */
    
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (IBAction)onStart:(id)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+      
    __CATCH(nErr);
    
    return;

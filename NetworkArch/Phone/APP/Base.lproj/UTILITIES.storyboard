@@ -17,21 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kKJ-zM-BQe">
-                                <rect key="frame" x="16" y="8" width="343" height="34"/>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2H-QB-oR2" userLabel="搜索框">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ak1-VS-Klo">
+                                        <rect key="frame" x="8" y="0.0" width="359" height="51"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="aI8-1h-iOf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ak1-VS-Klo" secondAttribute="trailing" constant="8" id="8Gb-YD-91r"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ak1-VS-Klo" secondAttribute="bottom" id="XwI-pm-6aL"/>
+                                    <constraint firstItem="Ak1-VS-Klo" firstAttribute="leading" secondItem="E2H-QB-oR2" secondAttribute="leading" constant="8" id="jnF-Re-nke"/>
+                                    <constraint firstItem="Ak1-VS-Klo" firstAttribute="top" secondItem="E2H-QB-oR2" secondAttribute="top" id="ntw-u1-YOt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9bc-sm-Zkg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kKJ-zM-BQe" firstAttribute="top" secondItem="YIZ-SO-gjl" secondAttribute="top" constant="8" identifier="TextField.top" id="FK8-e9-8Qb"/>
-                            <constraint firstItem="kKJ-zM-BQe" firstAttribute="leading" secondItem="YIZ-SO-gjl" secondAttribute="leading" constant="16" id="GcZ-Dv-Eiw"/>
-                            <constraint firstAttribute="trailing" secondItem="kKJ-zM-BQe" secondAttribute="trailing" constant="16" id="S5n-IZ-diZ"/>
+                            <constraint firstItem="E2H-QB-oR2" firstAttribute="leading" secondItem="YIZ-SO-gjl" secondAttribute="leading" id="8ek-Hq-Vr8"/>
+                            <constraint firstAttribute="trailing" secondItem="E2H-QB-oR2" secondAttribute="trailing" id="ZWj-Fs-kvb"/>
+                            <constraint firstItem="E2H-QB-oR2" firstAttribute="top" secondItem="YIZ-SO-gjl" secondAttribute="top" identifier="search.top" id="fVz-uB-uPD"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -44,11 +52,16 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="UIButtonBarPlay" id="JP7-fy-Dg4">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onStart:" destination="QDr-rL-P4v" id="Ne9-SR-xLo"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="leftBarButtonItem" destination="7FH-KX-b8s" id="3cj-ww-EJF"/>
-                        <outlet property="textField" destination="kKJ-zM-BQe" id="XCe-gQ-psE"/>
+                        <outlet property="rightBarButtonItem" destination="JP7-fy-Dg4" id="SZR-1t-job"/>
+                        <outlet property="searchBar" destination="Ak1-VS-Klo" id="q3E-55-JbF"/>
+                        <outlet property="searchView" destination="E2H-QB-oR2" id="ay7-CA-d7i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hH0-po-bwH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -91,9 +104,16 @@
                                 <action selector="onBack:" destination="PJN-tB-Oxg" id="IOo-as-eU5"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="UIButtonBarPlay" id="gLZ-me-7em">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onStart:" destination="PJN-tB-Oxg" id="1Go-CI-f0r"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="leftBarButtonItem" destination="c11-QT-ElS" id="VpD-HP-yO1"/>
+                        <outlet property="rightBarButtonItem" destination="gLZ-me-7em" id="7oZ-gz-d7s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tns-DX-s0y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -136,9 +156,16 @@
                                 <action selector="onBack:" destination="ne0-6i-nAt" id="FSN-dR-99y"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="UIButtonBarPlay" id="c4b-qf-GZW">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onStart:" destination="ne0-6i-nAt" id="CMW-lf-u3K"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="leftBarButtonItem" destination="a3F-pm-yNe" id="1Bl-nM-ZQZ"/>
+                        <outlet property="rightBarButtonItem" destination="c4b-qf-GZW" id="XXS-U5-Sd2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gde-vk-CaY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -181,9 +208,16 @@
                                 <action selector="onBack:" destination="8JU-iO-1bR" id="J4Y-ZP-ORg"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="UIButtonBarPlay" id="Fkk-tA-0Fg">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onStart:" destination="8JU-iO-1bR" id="Shi-vd-1ts"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="leftBarButtonItem" destination="J5j-RZ-rbq" id="sTP-Hd-AUo"/>
+                        <outlet property="rightBarButtonItem" destination="Fkk-tA-0Fg" id="Xcf-qS-0yO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNP-Aj-RBJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -214,6 +248,9 @@
         <image name="UIButtonBarPlay" width="15.5" height="18.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

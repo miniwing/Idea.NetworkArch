@@ -10,9 +10,11 @@ install! 'cocoapods', :deterministic_uuids                => false
 
 # applet_webcore=YES pod update
 
-ENV['IDEAFONT_HY']            = 'YES'
+ENV['IDEAFONT_HY']            = 'NO'
 ENV['IDEAFONT_MSYH']          = 'NO'
-ENV['IDEAFONT_ZEKTON']        = 'YES'
+ENV['IDEAFONT_ZEKTON']        = 'NO'
+
+ENV['IDEAFONT']               = 'NO'
 
 ENV['IDEA_YYKIT']             = 'YES'
 ENV['IDERA_AFNETWORKING']     = "YES"
@@ -53,7 +55,10 @@ def library
   pod 'IDEAColor'                       , :path => '../MINIWING-PODs/IDEAColor'
   pod 'IDEAPalettes'                    , :path => '../MINIWING-PODs/IDEAPalettes'
   pod 'IDEANightVersion'                , :path => '../MINIWING-PODs/IDEANightVersion'
-  pod 'IDEAFONT'                        , :path => '../MINIWING-PODs/IDEAFONT'
+  
+  if ENV['IDEAFONT'] == 'YES'
+    pod 'IDEAFONT'                      , :path => '../MINIWING-PODs/IDEAFONT'
+  end # IDEA_YYKIT
 
   pod 'APPDATA'                         , :path => 'APPDATA'
 
@@ -91,6 +96,7 @@ target 'NetworkArch' do
 #  pod 'MotionAnimator'                  , :path => 'LocalModule/MaterialComponents'
 #  pod 'MotionInterchange'               , :path => 'LocalModule/MaterialComponents'
   
+#  pod 'MaterialComponents'
   pod 'MaterialComponents/Palettes'
   pod 'MaterialComponents/AppBar'
   pod 'MaterialComponents/ActivityIndicator'
