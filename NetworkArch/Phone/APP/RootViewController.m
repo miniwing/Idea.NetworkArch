@@ -68,28 +68,7 @@ NS_ASSUME_NONNULL_END
       self.type   = TransTypeMove;
       
 //      @weakify(self);
-      /******************************************************************************************/
-//      self.onNotification(IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE ), ^(NSNotification *aNotification) {
-//
-//         @strongify(self);
-//         LogDebug((@"-[RootViewController onNotification : %@] : %@ : %@", aNotification.name, aNotification.name, aNotification.object));
-//
-//         if ([aNotification.object boolValue]) {
-//
-//            if (TransTypeNone != self.type) {
-//
-//               self.delegate  = self;
-//
-//            } /* End if () */
-//
-//         } /* End if () */
-//         else {
-//
-//            self.delegate     = self.originalDelegate;
-//
-//         } /* End else */
-//      });
-      
+      /******************************************************************************************/      
       self.onNotification(SettingController.tabAnimationNotification, ^(NSNotification *aNotification) {
          
 //         @strongify(self);

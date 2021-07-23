@@ -69,7 +69,7 @@
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
-      
+   
    __TRY;
    
    [super viewDidLoad];
@@ -131,12 +131,12 @@
    
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
-
+   
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    
-   [self.rightBarButtonItem setEnabled:NO];
-
+   [self.rightBarButtonItem setEnabled:YES];
+   
 #if MATERIAL_APP_BAR
    // Dispose of any resources that can be recreated.
    /**
@@ -146,19 +146,19 @@
    stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"search.top"
                                                               fromView:self.view];
 #endif /* MATERIAL_APP_BAR */
-
+   
    if (nil != stLayoutConstraint) {
       
       stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
       
    } /* End if () */
-
+   
    /**
     Search Bar
     */
    [self.searchView setBackgroundColor:UIColor.clearColor];
    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"CLEAR-IMAGE"]];
-
+   
    if (@available(iOS 13, *)) {
       
       self.searchBarTextField = self.searchBar.searchTextField;
@@ -187,10 +187,10 @@
       self.searchBarTextField = [UITextField appearanceWhenContainedInInstancesOfClasses:@[ [UISearchBar class], [PingController class] ]];
       
    } /* End if () */
-
+   
    [self.searchBarTextField setFont:[APPFont regularFontOfSize:16]];
    [self.searchBarTextField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-
+   
    if (@available(iOS 13, *)) {
       
    } /* End if () */
@@ -226,7 +226,7 @@
    } /* End else */
    
    [self.searchBar setDelegate:self];
-
+   
    __CATCH(nErr);
    
    return;
@@ -257,7 +257,7 @@
    //   dispatch_once(&_didLayoutOnceToken, ^{
    //
    //   });
-      
+   
    __CATCH(nErr);
    
    return;
@@ -313,6 +313,26 @@
    __CATCH(nErr);
    
    return;
+}
+
+- (BOOL)resignFirstResponder {
+   
+   int                            nErr                                     = EFAULT;
+   BOOL                           bDone                                    = NO;
+   
+   __TRY;
+   
+   bDone = [self.searchBarTextField resignFirstResponder];
+   
+   if (!bDone) {
+      
+      bDone = [super resignFirstResponder];
+      
+   } /* End if () */
+   
+   __CATCH(nErr);
+   
+   return bDone;
 }
 
 @end
@@ -374,7 +394,11 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-      
+   
+   [self resignFirstResponder];
+   
+   [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
+   
    __CATCH(nErr);
    
    return;

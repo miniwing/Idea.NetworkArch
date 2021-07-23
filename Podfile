@@ -17,7 +17,7 @@ ENV['IDEAFONT_ZEKTON']        = 'NO'
 ENV['IDEAFONT']               = 'NO'
 
 ENV['IDEA_YYKIT']             = 'YES'
-ENV['IDERA_AFNETWORKING']     = "YES"
+ENV['IDEA_AFNETWORKING']      = 'NO'
 
 ENV['IDEA_SERVICE_FILE_SYNC'] = 'NO'
 
@@ -46,10 +46,10 @@ def library
     pod 'YYKit'                         , :path => '../MINIWING-PODs/YYKit'
   end # IDEA_YYKIT
   
-  if ENV['IDERA_AFNETWORKING'] == 'YES'
-#    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'            , :configurations => ['Debug']
-    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'
-  end # IDERA_AFNETWORKING
+  if ENV['IDEA_AFNETWORKING'] == 'YES'
+    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'            , :configurations => ['Debug']
+#    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'
+  end # IDEA_AFNETWORKING
 
   pod 'IDEAKit'                         , :path => '../MINIWING-PODs/IDEAKit'
   pod 'IDEAColor'                       , :path => '../MINIWING-PODs/IDEAColor'

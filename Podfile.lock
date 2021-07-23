@@ -1,19 +1,4 @@
 PODS:
-  - AFNetworking (4.0.1-IDEA):
-    - AFNetworking/NSURLSession (= 4.0.1-IDEA)
-    - AFNetworking/Reachability (= 4.0.1-IDEA)
-    - AFNetworking/Security (= 4.0.1-IDEA)
-    - AFNetworking/Serialization (= 4.0.1-IDEA)
-    - AFNetworking/UIKit (= 4.0.1-IDEA)
-  - AFNetworking/NSURLSession (4.0.1-IDEA):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1-IDEA)
-  - AFNetworking/Security (4.0.1-IDEA)
-  - AFNetworking/Serialization (4.0.1-IDEA)
-  - AFNetworking/UIKit (4.0.1-IDEA):
-    - AFNetworking/NSURLSession
   - APPDATA (1.0.0):
     - IDEAKit
     - YYKit
@@ -34,10 +19,8 @@ PODS:
   - FoundationExtension/FoundationExtensionRC (2.1.0):
     - cdebug (~> 1.3)
   - IDEAApplet (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework (= 1.0.1)
   - IDEAApplet/applet-framework (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-config (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-core (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-event (= 1.0.1)
@@ -46,72 +29,47 @@ PODS:
     - IDEAApplet/applet-framework/samurai-service (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view (= 1.0.1)
     - IDEAApplet/applet-framework/vendor (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-config (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-config (1.0.1)
   - IDEAApplet/applet-framework/samurai-core (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-core/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-core/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-core/extension (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-core/modules (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-core/extension (1.0.1)
+  - IDEAApplet/applet-framework/samurai-core/modules (1.0.1)
   - IDEAApplet/applet-framework/samurai-event (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-event/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-event/modules (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-event/modules (1.0.1)
   - IDEAApplet/applet-framework/samurai-model (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-model/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-model/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-model/extension (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-model/modules (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-route (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-model/extension (1.0.1)
+  - IDEAApplet/applet-framework/samurai-model/modules (1.0.1)
+  - IDEAApplet/applet-framework/samurai-route (1.0.1)
   - IDEAApplet/applet-framework/samurai-service (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-service/modules (= 1.0.1)
   - IDEAApplet/applet-framework/samurai-service/modules (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-service/modules/docker (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-service/modules/service (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-service/modules/docker (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-service/modules/service (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-service/modules/docker (1.0.1)
+  - IDEAApplet/applet-framework/samurai-service/modules/service (1.0.1)
   - IDEAApplet/applet-framework/samurai-view (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-view/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/extension (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-view/extension (1.0.1)
   - IDEAApplet/applet-framework/samurai-view/modules (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/samurai-view/modules/view-component (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-controller (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-core (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-event (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-utility (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-component (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-view/modules/view-controller (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-view/modules/view-core (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-view/modules/view-event (1.0.1):
-    - AFNetworking
-  - IDEAApplet/applet-framework/samurai-view/modules/view-utility (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/samurai-view/modules/view-component (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/modules/view-controller (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/modules/view-core (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/modules/view-event (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/modules/view-utility (1.0.1)
   - IDEAApplet/applet-framework/vendor (1.0.1):
-    - AFNetworking
     - IDEAApplet/applet-framework/vendor/fishhook (= 1.0.1)
-  - IDEAApplet/applet-framework/vendor/fishhook (1.0.1):
-    - AFNetworking
+  - IDEAApplet/applet-framework/vendor/fishhook (1.0.1)
   - IDEAAppletDebugger (1.0.0):
-    - AFNetworking
     - FMDB
     - FoundationExtension
     - IDEAApplet
@@ -123,46 +81,39 @@ PODS:
     - IDEAAppletDebugger/ServiceMonitor (= 1.0.0)
     - IDEAAppletDebugger/ServiceTapspot (= 1.0.0)
     - IDEAAppletDebugger/ServiceTheme (= 1.0.0)
-    - IDEAAppletDebugger/ServiceWiFi (= 1.0.0)
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceBorder (1.0.0):
-    - AFNetworking
     - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceConsole (1.0.0):
-    - AFNetworking
     - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceGesture (1.0.0):
-    - AFNetworking
     - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceGrids (1.0.0):
-    - AFNetworking
     - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceInspector (1.0.0):
-    - AFNetworking
     - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceMonitor (1.0.0):
-    - AFNetworking
     - FMDB
     - FoundationExtension
     - IDEAApplet
@@ -170,28 +121,18 @@ PODS:
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceMonitor/JBChartView (1.0.0):
-    - AFNetworking
     - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceTapspot (1.0.0):
-    - AFNetworking
     - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceTheme (1.0.0):
-    - AFNetworking
-    - FMDB
-    - FoundationExtension
-    - IDEAApplet
-    - IDEANightVersion
-    - UIKitExtension
-  - IDEAAppletDebugger/ServiceWiFi (1.0.0):
-    - AFNetworking
     - FMDB
     - FoundationExtension
     - IDEAApplet
@@ -200,7 +141,6 @@ PODS:
   - IDEAColor (1.0.0):
     - IDEANightVersion
   - IDEAKit (1.0.1):
-    - AFNetworking
     - FoundationExtension
     - YYKit
   - IDEANightVersion (2.4.3)
@@ -352,7 +292,6 @@ PODS:
     - libwebp
 
 DEPENDENCIES:
-  - AFNetworking (from `../MINIWING-PODs/AFNetworking`)
   - APPDATA (from `APPDATA`)
   - APPDEBUG (from `APPDEBUG`)
   - FoundationExtension
@@ -392,8 +331,6 @@ SPEC REPOS:
     - UIKitExtension
 
 EXTERNAL SOURCES:
-  AFNetworking:
-    :path: "../MINIWING-PODs/AFNetworking"
   APPDATA:
     :path: APPDATA
   APPDEBUG:
@@ -424,16 +361,15 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/YYKit"
 
 SPEC CHECKSUMS:
-  AFNetworking: b0b5cb4b5e6b9cff7d7b3b2aa37e471c325552e4
   APPDATA: 2add0e7a684f2703a7c5c6ef410f8eafa67a3929
   APPDEBUG: 037b3424ff5c5f664871141462d568daf90bd85d
   cdebug: 0d0b7207fa996236ee9e07e5988e5e39a1d94a28
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
-  IDEAApplet: 7231e363fb06953ba531e48a47c05d7db87cdf14
-  IDEAAppletDebugger: 16945e6ec0d8053e8bb63ac8ebd74a4a10e7b59a
+  IDEAApplet: 4797b572ebedb08266b78b6862ae9530b2d0fe98
+  IDEAAppletDebugger: 5b32989be60377f9b05ea9908457ffb2df3d0868
   IDEAColor: 692183dcefa3073c88e32cad1fab31653959ad75
-  IDEAKit: 7cb96d740df69caec495bf4c75023837d76c013e
+  IDEAKit: 66a51aa06a10f8dd88002d85c9cec3a392217be7
   IDEANightVersion: c01e088c7b55d6cc6bd53515d43f38b87a501db4
   IDEAPalettes: 0a528b3cbe13d5cf8533df7a3ce72cdf6ca589c5
   IDEAPing: e85c8af76f37a278457a6905c8a5df7a2a979887
@@ -453,6 +389,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: b06504a19266eb18ece70e1872d6ca91978f4fc0
 
-PODFILE CHECKSUM: 707fa80e587922c84796b69c3554f8a2757a3f3c
+PODFILE CHECKSUM: c4995b5e59e7b0a2dfa269dadc5f7bf7ae0a344a
 
 COCOAPODS: 1.10.1

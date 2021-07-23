@@ -155,6 +155,36 @@ Pod::Spec.new do |spec|
 
 /******************************************************************************************************/
 
+#if __has_feature(objc_arc)
+#  define __AUTORELEASE(x)                         (x);
+#  define __RELEASE(x)                             (x) = nil;
+#  define __RETAIN(x)                              (x)
+#  define __SUPER_DEALLOC                          objc_removeAssociatedObjects(self);
+#  define __dispatch_release(x)                    (x) = nil;
+#else
+#  define __RETAIN(x)                              [(x) retain];
+#  define __AUTORELEASE(x)                         [(x) autorelease];
+#  define __RELEASE(x)                             if (nil != (x)) {                               \\
+                                                      [(x) release];                               \\
+                                                      (x) = nil;                                   \\
+                                                   }
+#  define __SUPER_DEALLOC                          objc_removeAssociatedObjects(self);[super dealloc];
+#  define __dispatch_release(x)                    dispatch_release((x))
+#endif
+
+#define __ON__                                     (1)
+#define __OFF__                                    (0)
+
+#if defined(DEBUG) && (1==DEBUG)
+#  define __AUTO__                                 (1)
+#  define __Debug__                                (1)
+#else
+#  define __AUTO__                                 (0)
+#  define __Debug__                                (0)
+#endif
+
+/******************************************************************************************************/
+
 #define LOG_BUG_SIZE                               (1024 * 1)
 
 #ifdef __OBJC__
