@@ -56,6 +56,8 @@ def library
   pod 'IDEAPalettes'                    , :path => '../MINIWING-PODs/IDEAPalettes'
   pod 'IDEANightVersion'                , :path => '../MINIWING-PODs/IDEANightVersion'
   
+  pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
+
   if ENV['IDEAFONT'] == 'YES'
     pod 'IDEAFONT'                      , :path => '../MINIWING-PODs/IDEAFONT'
   end # IDEA_YYKIT
@@ -135,7 +137,6 @@ target 'NetworkArch' do
 #  pod 'IDEANibBridge'                   , :path => '../MINIWING-PODs/IDEANibBridge'
   pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
-  pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
 #  pod 'IDEATapticEngine'                , :path => '../MINIWING-PODs/IDEATapticEngine'
 #  pod 'IDEAWaterDropView'               , :path => '../MINIWING-PODs/IDEAWaterDropView'
 #  pod 'IDEANavigationBar'               , :path => '../MINIWING-PODs/IDEANavigationBar'
@@ -164,6 +165,21 @@ target 'NetworkArch' do
 #  pod 'Firebase'
 
   #-------------------------------------------------------------------------------------------------------------------------------#
+
+  library
+  
+end
+
+###################################################################################################################################
+
+target 'TodayWidget' do
+
+  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
+
+  pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
+  pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
+  pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
+  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
 
   library
   
@@ -271,7 +287,7 @@ post_install do |installer|
       if target.name == 'IDEAKit'
         config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
                                                                    '$(inherited)',
-                                                                   'APP_SCHEME=\@\"NetworkArch://\"',
+                                                                   'APP_SCHEME=\@\"NetworkArch\"',
                                                                    'APP_BUNDLE_IDENTIFIER=\@\"com.idea.NetworkArch\"',
                                                                    'APP_BUNDLE_IDENTIFIER_GROUP=\@\"group.com.idea.NetworkArch\"',
                                                                    'APP_BUNDLE_IDENTIFIER_WIDGET=\@\"com.idea.NetworkArch.Widget\"',
@@ -300,7 +316,7 @@ post_install do |installer|
 #      if target.name == 'IDEAExtension'
 #        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
 #                                                                   '$(inherited)',
-#                                                                   'APP_SCHEME=\@\"NetworkArch://\"',
+#                                                                   'APP_SCHEME=\@\"NetworkArch\"',
 #                                                                   'APP_BUNDLE_IDENTIFIER=\@\"com.idea.NetworkArch\"',
 #                                                                   'APP_BUNDLE_IDENTIFIER_GROUP=\@\"group.com.idea.NetworkArch\"',
 #                                                                   'APP_BUNDLE_IDENTIFIER_WIDGET=\@\"com.idea.NetworkArch.Widget\"',

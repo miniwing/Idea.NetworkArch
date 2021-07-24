@@ -210,6 +210,31 @@
    return;
 }
 
+- (BOOL)application:(UIApplication *)aApplication openURL:(NSURL *)aURL options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)aOptions {
+
+   int                            nErr                                     = EFAULT;
+   
+   BOOL                           bDone                                    = NO;
+      
+   __TRY;
+   
+   LogDebug((@"[APPDelegate application:openURL:options:] : URL : %@", aURL));
+   LogDebug((@"[APPDelegate application:openURL:options:] : UIApplicationOpenURLOptionsSourceApplicationKey : %@", aOptions[UIApplicationOpenURLOptionsSourceApplicationKey]));
+   LogDebug((@"[APPDelegate application:openURL:options:] : UIApplicationOpenURLOptionsAnnotationKey : %@", aOptions[UIApplicationOpenURLOptionsAnnotationKey]));
+   
+   if ([[aURL scheme] isEqualToString:[IDEAIdentifier scheme]]) {
+      
+      //...
+      bDone = YES;
+      
+   } /* End if () */
+
+   __CATCH(nErr);
+   
+   // Add any custom logic here.
+   return bDone;
+}
+
 #pragma mark - Splash
 - (void)splash {
    

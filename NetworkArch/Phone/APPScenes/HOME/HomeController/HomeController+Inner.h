@@ -14,11 +14,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeController ()
+@interface HomeController () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
 
 @property (nonatomic, strong)                HomeContentController               * contentController;
+
+@property (nonatomic, strong)                CLLocationManager                   * locationManager;
 
 @end
 

@@ -44,13 +44,13 @@
       
       [_appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
       [_appBar.headerViewController.headerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-      
+
 //      [_appBar.headerViewController setShowsHairline:YES];
 //      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
-
+      
       [_appBar.headerViewController setShowsHairline:NO];
       [_appBar.headerViewController setHairlineColor:UIColor.clearColor];
-
+      
       [self addChildViewController:_appBar.headerViewController];
 #endif /* MATERIAL_APP_BAR */
       
@@ -94,7 +94,7 @@
    /// 关闭水波纹效果
    [self.appBar.navigationBar setRippleColor:UIColor.clearColor];
    [self.appBar.navigationBar setInkColor:UIColor.clearColor];
-
+   
    [self.appBar.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
    [self.appBar.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
    [self.appBar.navigationBar setTitleFont:[APPFont regularFontOfSize:[APPFont appFontTitleSize]]];
@@ -147,6 +147,10 @@
       stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
       
    } /* End if () */
+   
+   [self.locationManager requestAlwaysAuthorization];
+
+   [self addSignalResponder:self.contentController];
 
    __CATCH(nErr);
    
@@ -175,7 +179,7 @@
    
    [super viewWillAppear:aAnimated];
    
-//   [self.contentController viewWillAppear:aAnimated];
+   //   [self.contentController viewWillAppear:aAnimated];
    
    __CATCH(nErr);
    
@@ -191,7 +195,9 @@
    [super viewDidAppear:aAnimated];
    
 //   [self.contentController viewDidAppear:aAnimated];
-   
+
+   [self.locationManager requestAlwaysAuthorization];
+
    __CATCH(nErr);
    
    return;
@@ -206,7 +212,7 @@
    [super viewWillDisappear:aAnimated];
    
 //   [self.contentController viewWillDisappear:aAnimated];
-   
+         
    __CATCH(nErr);
    
    return;
@@ -220,11 +226,25 @@
    
    [super viewDidDisappear:aAnimated];
    
-//   [self.contentController viewDidDisappear:aAnimated];
+   //   [self.contentController viewDidDisappear:aAnimated];
    
    __CATCH(nErr);
    
    return;
+}
+
+#pragma mark - (CLLocationManager *)locationManager
+- (CLLocationManager *)locationManager {
+   
+   if (nil == _locationManager) {
+      
+      _locationManager  = [[CLLocationManager alloc] init];
+      
+      [_locationManager setDelegate:self];
+      
+   } /* End if () */
+   
+   return _locationManager;
 }
 
 @end
@@ -245,7 +265,7 @@
    if ([aSegue.identifier isEqualToString:HomeContentController.className]) {
       
       self.contentController  = aSegue.destinationViewController;
-      
+
    } /* End if () */
    
    __CATCH(nErr);

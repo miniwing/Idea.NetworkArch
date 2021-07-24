@@ -1,6 +1,6 @@
 //
 //  Prefix.pch
-//  APPBase
+//  TodayWidget
 //
 //  Created by Harry on 2021/6/7.
 //  Copyright © 2021 Harry. All rights reserved.
@@ -60,6 +60,9 @@
 #ifdef __OBJC__
 #  import <UIKit/UIKit.h>
 #  import <Foundation/Foundation.h>
+#  import <CoreLocation/CoreLocation.h>
+#  import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#  import <NotificationCenter/NotificationCenter.h>
 #endif /* __OBJC__ */
 
 #ifdef __OBJC__
@@ -90,14 +93,6 @@
 #     define UIKIT_EXTENSION                                               (0)
 #  endif
 
-#  if __has_include(<MaterialComponents/MaterialAppBar.h>)
-#     import <MaterialComponents/MaterialAppBar.h>
-#     import <MaterialComponents/MaterialFlexibleHeader.h>
-#     define MATERIAL_APP_BAR                                              (1)
-#  else
-#     define MATERIAL_APP_BAR                                              (0)
-#  endif
-
 #  if __has_include(<YYKit/YYKit.h>)
 #     define YY_KIT                                                        (1)
 #     import <YYKit/YYKit.h>
@@ -109,6 +104,19 @@
 #     import "YYKit.h"
 #  else
 #     define YY_KIT                                                        (0)
+#  endif
+
+#  if __has_include(<IDEANightVersion/DKNightVersion.h>)
+#     import <IDEANightVersion/DKNightVersion.h>
+#     define DK_NIGHT_VERSION                                              (1)
+#  elif __has_include("IDEANightVersion/DKNightVersion.h")
+#     import "IDEANightVersion/DKNightVersion.h"
+#     define DK_NIGHT_VERSION                                              (1)
+#  elif __has_include("DKNightVersion.h")
+#     import "DKNightVersion.h"
+#     define DK_NIGHT_VERSION                                              (1)
+#  else
+#     define DK_NIGHT_VERSION                                              (0)
 #  endif
 
 #  if __has_include(<IDEAFONT/IDEAFONT.h>)
@@ -133,6 +141,15 @@
 #  import <IDEAApplet/IDEAAppletEvent.h>
 #  import <IDEAApplet/IDEAAppletService.h>
 #endif // __has_include(<IDEAApplet/IDEAApplet.h>)
+
+#import <IDEARoute/IDEARoute.h>
+
+#import <IDEAColor/IDEAColor.h>
+#import <IDEAColor/UIColor+System.h>
+#import <IDEAColor/UIColor+Dynamic.h>
+
+#import <IDEAUIKit/IDEAUIKit.h>
+#import <IDEAUIVendor/IDEAUIVendor.h>
 
 #import <IDEAKit/IDEALog.h>
 #import <IDEAKit/IDEADebug.h>

@@ -45,7 +45,9 @@ PODS:
   - IDEAApplet/applet-framework/samurai-model/modules (1.0.1)
   - IDEAApplet/applet-framework/samurai-route (1.0.1)
   - IDEAApplet/applet-framework/samurai-service (1.0.1):
+    - IDEAApplet/applet-framework/samurai-service/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-service/modules (= 1.0.1)
+  - IDEAApplet/applet-framework/samurai-service/extension (1.0.1)
   - IDEAApplet/applet-framework/samurai-service/modules (1.0.1):
     - IDEAApplet/applet-framework/samurai-service/modules/docker (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-service/modules/service (= 1.0.1)
@@ -366,7 +368,7 @@ SPEC CHECKSUMS:
   cdebug: 0d0b7207fa996236ee9e07e5988e5e39a1d94a28
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
-  IDEAApplet: 4797b572ebedb08266b78b6862ae9530b2d0fe98
+  IDEAApplet: 93258f22dc2cd2f2bf808d66a026b99b87220e02
   IDEAAppletDebugger: 5b32989be60377f9b05ea9908457ffb2df3d0868
   IDEAColor: 692183dcefa3073c88e32cad1fab31653959ad75
   IDEAKit: 66a51aa06a10f8dd88002d85c9cec3a392217be7
@@ -389,6 +391,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: b06504a19266eb18ece70e1872d6ca91978f4fc0
 
-PODFILE CHECKSUM: 240604024a0a5ebffb6a6d4da22a007494ed5e4e
+PODFILE CHECKSUM: 44545e13ce505e5c10fd763b083918e34f691566
 
 COCOAPODS: 1.10.1
