@@ -49,6 +49,10 @@
 		4A4553842686327B0050E736 /* TrackingController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45537F2686327A0050E736 /* TrackingController+Notification.m */; };
 		4A4553852686327B0050E736 /* TrackingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4553812686327A0050E736 /* TrackingController.m */; };
 		4A4553862686327B0050E736 /* TrackingRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4553832686327A0050E736 /* TrackingRootController.m */; };
+		4A4D0A6126AC0F56008A30E0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A421C0526AC0CC200935235 /* NotificationCenter.framework */; };
+		4A4D0A6526AC0F56008A30E0 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D0A6426AC0F56008A30E0 /* TodayViewController.m */; };
+		4A4D0A6826AC0F56008A30E0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D0A6626AC0F56008A30E0 /* MainInterface.storyboard */; };
+		4A4D0A6C26AC0F56008A30E0 /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A4D0A6026AC0F56008A30E0 /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4A53A9BB26A46E60000700F2 /* WoLANRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53A9AA26A46E60000700F2 /* WoLANRootController+Debug.m */; };
 		4A53A9BC26A46E60000700F2 /* WoLANRootController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53A9AC26A46E60000700F2 /* WoLANRootController+Inner.m */; };
 		4A53A9BD26A46E60000700F2 /* WoLANRootController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53A9AE26A46E60000700F2 /* WoLANRootController+Notification.m */; };
@@ -140,6 +144,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4A4D0A6A26AC0F56008A30E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A98A62E2684B50F00EEEB60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A4D0A5F26AC0F56008A30E0;
+			remoteInfo = TodayWidget;
+		};
 		4AB5C1F42685A06E00B1639D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4A98A62E2684B50F00EEEB60 /* Project object */;
@@ -157,6 +168,17 @@
 			dstSubfolderSpec = 16;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A421C1526AC0CC200935235 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4A4D0A6C26AC0F56008A30E0 /* TodayWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -225,6 +247,7 @@
 		4A221EFF26A44DA100C94F00 /* PingRootController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Theme.h"; sourceTree = "<group>"; };
 		4A221F0026A44DA100C94F00 /* PingRootController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingRootController+Theme.m"; sourceTree = "<group>"; };
 		4A221F0126A44DA100C94F00 /* PingRootController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingRootController+Inner.m"; sourceTree = "<group>"; };
+		4A421C0526AC0CC200935235 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		4A45535726862E4B0050E736 /* HomeContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentController.h; sourceTree = "<group>"; };
 		4A45535826862E4B0050E736 /* HomeContentController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeContentController+Signal.m"; sourceTree = "<group>"; };
 		4A45535926862E4B0050E736 /* HomeContentController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeContentController+Inner.h"; sourceTree = "<group>"; };
@@ -243,6 +266,11 @@
 		4A4553812686327A0050E736 /* TrackingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingController.m; sourceTree = "<group>"; };
 		4A4553822686327A0050E736 /* TrackingRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingRootController.h; sourceTree = "<group>"; };
 		4A4553832686327A0050E736 /* TrackingRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingRootController.m; sourceTree = "<group>"; };
+		4A4D0A6026AC0F56008A30E0 /* TodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A4D0A6326AC0F56008A30E0 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		4A4D0A6426AC0F56008A30E0 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		4A4D0A6726AC0F56008A30E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4A4D0A6926AC0F56008A30E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A53A9A926A46E60000700F2 /* WoLANRootController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WoLANRootController+Debug.h"; sourceTree = "<group>"; };
 		4A53A9AA26A46E60000700F2 /* WoLANRootController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WoLANRootController+Debug.m"; sourceTree = "<group>"; };
 		4A53A9AB26A46E60000700F2 /* WoLANRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WoLANRootController+Inner.h"; sourceTree = "<group>"; };
@@ -421,6 +449,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A7783193CD6AA1B43CD8570 /* Pods_APPBase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A4D0A5D26AC0F56008A30E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A4D0A6126AC0F56008A30E0 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +769,17 @@
 			path = TRACKING;
 			sourceTree = "<group>";
 		};
+		4A4D0A6226AC0F56008A30E0 /* TodayWidget */ = {
+			isa = PBXGroup;
+			children = (
+				4A4D0A6326AC0F56008A30E0 /* TodayViewController.h */,
+				4A4D0A6426AC0F56008A30E0 /* TodayViewController.m */,
+				4A4D0A6626AC0F56008A30E0 /* MainInterface.storyboard */,
+				4A4D0A6926AC0F56008A30E0 /* Info.plist */,
+			);
+			path = TodayWidget;
+			sourceTree = "<group>";
+		};
 		4A53A97226A46E39000700F2 /* WHOIS */ = {
 			isa = PBXGroup;
 			children = (
@@ -984,6 +1031,7 @@
 				4A1DE0AF2687888C00C2C73C /* SHELL */,
 				4A0E4E22268587BE00A85517 /* APPBase */,
 				4A98A6382684B50F00EEEB60 /* Phone */,
+				4A4D0A6226AC0F56008A30E0 /* TodayWidget */,
 				4A98A6372684B50F00EEEB60 /* Products */,
 				5A073BE837F8A6FE5151B56D /* Pods */,
 				BC9F1E42789CEDD6C11BF75C /* Frameworks */,
@@ -995,6 +1043,7 @@
 			children = (
 				4A98A6362684B50F00EEEB60 /* NetworkArch.app */,
 				4A0E4E21268587BE00A85517 /* libAPPBase.a */,
+				4A4D0A6026AC0F56008A30E0 /* TodayWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1050,6 +1099,7 @@
 			children = (
 				498BD4B5D4F436589CF958A4 /* Pods_APPBase.framework */,
 				B21DF61FC27A49E141425387 /* Pods_NetworkArch.framework */,
+				4A421C0526AC0CC200935235 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1075,6 +1125,23 @@
 			productReference = 4A0E4E21268587BE00A85517 /* libAPPBase.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		4A4D0A5F26AC0F56008A30E0 /* TodayWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A4D0A6D26AC0F56008A30E0 /* Build configuration list for PBXNativeTarget "TodayWidget" */;
+			buildPhases = (
+				4A4D0A5C26AC0F56008A30E0 /* Sources */,
+				4A4D0A5D26AC0F56008A30E0 /* Frameworks */,
+				4A4D0A5E26AC0F56008A30E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayWidget;
+			productName = TodayWidget;
+			productReference = 4A4D0A6026AC0F56008A30E0 /* TodayWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4A98A6352684B50F00EEEB60 /* NetworkArch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A98A64C2684B51100EEEB60 /* Build configuration list for PBXNativeTarget "NetworkArch" */;
@@ -1085,11 +1152,13 @@
 				4A98A6342684B50F00EEEB60 /* Resources */,
 				40648E178ADB32282CCCEE06 /* [CP] Embed Pods Frameworks */,
 				4A9D71C62685751300AFA3BB /* ShellScript */,
+				4A421C1526AC0CC200935235 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				4AB5C1F52685A06E00B1639D /* PBXTargetDependency */,
+				4A4D0A6B26AC0F56008A30E0 /* PBXTargetDependency */,
 			);
 			name = NetworkArch;
 			productName = NetworkArch;
@@ -1107,6 +1176,9 @@
 				TargetAttributes = {
 					4A0E4E20268587BE00A85517 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					4A4D0A5F26AC0F56008A30E0 = {
+						CreatedOnToolsVersion = 10.3;
 					};
 					4A98A6352684B50F00EEEB60 = {
 						CreatedOnToolsVersion = 10.3;
@@ -1128,11 +1200,20 @@
 			targets = (
 				4A0E4E20268587BE00A85517 /* APPBase */,
 				4A98A6352684B50F00EEEB60 /* NetworkArch */,
+				4A4D0A5F26AC0F56008A30E0 /* TodayWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4A4D0A5E26AC0F56008A30E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A4D0A6826AC0F56008A30E0 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A98A6342684B50F00EEEB60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1248,6 +1329,14 @@
 			files = (
 				4A0E4E37268587E800A85517 /* APPFont.m in Sources */,
 				4A0E4E38268587E800A85517 /* APPHTTP.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A4D0A5C26AC0F56008A30E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A4D0A6526AC0F56008A30E0 /* TodayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1368,6 +1457,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4A4D0A6B26AC0F56008A30E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A4D0A5F26AC0F56008A30E0 /* TodayWidget */;
+			targetProxy = 4A4D0A6A26AC0F56008A30E0 /* PBXContainerItemProxy */;
+		};
 		4AB5C1F52685A06E00B1639D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4A0E4E20268587BE00A85517 /* APPBase */;
@@ -1422,6 +1516,14 @@
 				4A0E4EA626858ADC00A85517 /* Base */,
 			);
 			name = ONBOARDING.storyboard;
+			sourceTree = "<group>";
+		};
+		4A4D0A6626AC0F56008A30E0 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A4D0A6726AC0F56008A30E0 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		4A5D9A0726A4965200E00610 /* WIFI.storyboard */ = {
@@ -1495,6 +1597,45 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = APPBase/Prefix.pch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4A4D0A6E26AC0F56008A30E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G8G9TAP4UN;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.idea.NetworkArch.TodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A4D0A6F26AC0F56008A30E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G8G9TAP4UN;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.idea.NetworkArch.TodayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1670,6 +1811,15 @@
 			buildConfigurations = (
 				4A0E4E28268587BE00A85517 /* Debug */,
 				4A0E4E29268587BE00A85517 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A4D0A6D26AC0F56008A30E0 /* Build configuration list for PBXNativeTarget "TodayWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A4D0A6E26AC0F56008A30E0 /* Debug */,
+				4A4D0A6F26AC0F56008A30E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
