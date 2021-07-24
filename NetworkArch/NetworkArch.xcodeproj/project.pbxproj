@@ -157,6 +157,10 @@
 		4AF4411D26AC4D4A0008C169 /* TodayWidgetCell+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF4411626AC4D4A0008C169 /* TodayWidgetCell+Theme.m */; };
 		4AF4411F26AC536F0008C169 /* IMAGEs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B952685C7C500DC1DA2 /* IMAGEs.xcassets */; };
 		4AF4412026AC575C0008C169 /* libAPPBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0E4E21268587BE00A85517 /* libAPPBase.a */; };
+		4AF4412726AC8C060008C169 /* BOTTOM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412526AC8C040008C169 /* BOTTOM.png */; };
+		4AF4412826AC8C060008C169 /* BOTTOM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412526AC8C040008C169 /* BOTTOM.png */; };
+		4AF4412926AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
+		4AF4412A26AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
 		4AFFEDBC268645160052712A /* AppTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFEDBB268645160052712A /* AppTracking.m */; };
 		4B946C92228C1056ED814623 /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249FB042012E79B770287900 /* Pods_TodayWidget.framework */; };
 		751F76D4D996174D53CCACE3 /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21DF61FC27A49E141425387 /* Pods_NetworkArch.framework */; };
@@ -492,6 +496,9 @@
 		4AF4411626AC4D4A0008C169 /* TodayWidgetCell+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TodayWidgetCell+Theme.m"; sourceTree = "<group>"; };
 		4AF4411726AC4D4A0008C169 /* TodayWidgetCell+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TodayWidgetCell+Signal.h"; sourceTree = "<group>"; };
 		4AF4412326AC5D440008C169 /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWidget.entitlements; sourceTree = "<group>"; };
+		4AF4412426AC8AC90008C169 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4AF4412526AC8C040008C169 /* BOTTOM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BOTTOM.png; sourceTree = "<group>"; };
+		4AF4412626AC8C050008C169 /* LAUNCH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LAUNCH.png; sourceTree = "<group>"; };
 		4AFFEDBA268645160052712A /* AppTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTracking.h; sourceTree = "<group>"; };
 		4AFFEDBB268645160052712A /* AppTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTracking.m; sourceTree = "<group>"; };
 		63DF92DFFC64AB4198E20875 /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
@@ -553,6 +560,8 @@
 		4A0E4DE7268585B800A85517 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4AF4412526AC8C040008C169 /* BOTTOM.png */,
+				4AF4412626AC8C050008C169 /* LAUNCH.png */,
 				4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */,
 				4AE51B932685C4DA00DC1DA2 /* SPONSOR.png */,
 				4AE51B972685CD3400DC1DA2 /* InfoPlist.strings */,
@@ -1343,6 +1352,8 @@
 				4A4D0A6826AC0F56008A30E0 /* WIDGET.storyboard in Resources */,
 				4AF4411F26AC536F0008C169 /* IMAGEs.xcassets in Resources */,
 				4A842C8126AC1C19005DC131 /* Localizable.strings in Resources */,
+				4AF4412826AC8C060008C169 /* BOTTOM.png in Resources */,
+				4AF4412A26AC8C060008C169 /* LAUNCH.png in Resources */,
 				4A842C8026AC1C0B005DC131 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1351,6 +1362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF4412926AC8C060008C169 /* LAUNCH.png in Resources */,
 				4A1DE0B12687889E00C2C73C /* pod.sh in Resources */,
 				4A5D9A0C26A4966400E00610 /* CELLULAR.storyboard in Resources */,
 				4A0E4E5F268589CA00A85517 /* SETTING.storyboard in Resources */,
@@ -1367,6 +1379,7 @@
 				4AB5C1F026859F3C00B1639D /* THEME-BUTTON.xib in Resources */,
 				4AE51B9F2685CDFB00DC1DA2 /* MAIN.storyboard in Resources */,
 				4A5D9A0926A4965200E00610 /* WIFI.storyboard in Resources */,
+				4AF4412726AC8C060008C169 /* BOTTOM.png in Resources */,
 				4AB5C1EE26859F3C00B1639D /* SETTING-HEADER.xib in Resources */,
 				4A0E4EA926858ADC00A85517 /* ONBOARDING.storyboard in Resources */,
 			);
@@ -1728,6 +1741,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4A842C7F26AC1C0B005DC131 /* Base */,
+				4AF4412426AC8AC90008C169 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

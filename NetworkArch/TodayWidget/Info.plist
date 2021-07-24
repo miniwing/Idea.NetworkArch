@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>TodayWidget</string>
+	<string>NetworkArch</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -27,9 +27,9 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widget-extension</string>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
 </dict>
 </plist>
