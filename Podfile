@@ -10,16 +10,17 @@ install! 'cocoapods', :deterministic_uuids                => false
 
 # applet_webcore=YES pod update
 
-ENV['IDEAFONT_HY']            = 'NO'
-ENV['IDEAFONT_MSYH']          = 'NO'
-ENV['IDEAFONT_ZEKTON']        = 'NO'
+ENV['IDEAFONT_HY']              = 'NO'
+ENV['IDEAFONT_MSYH']            = 'NO'
+ENV['IDEAFONT_ZEKTON']          = 'NO'
 
-ENV['IDEAFONT']               = 'NO'
+ENV['IDEAFONT']                 = 'NO'
 
-ENV['IDEA_YYKIT']             = 'YES'
-ENV['IDEA_AFNETWORKING']      = 'NO'
+ENV['IDEA_YYKIT']               = 'YES'
+ENV['IDEA_AFNETWORKING']        = 'NO'
+#ENV['IDEA_MATERIAL_COMPONENTS'] = 'YES'
 
-ENV['IDEA_SERVICE_FILE_SYNC'] = 'NO'
+ENV['IDEA_SERVICE_FILE_SYNC']   = 'NO'
 
 workspace 'Idea.NetworkArch'
 
@@ -38,6 +39,10 @@ def library
   pod 'FoundationExtension'             # , :modular_headers => false
   pod 'UIKitExtension'                  # , :modular_headers => false
   
+  pod 'MaterialComponents/Palettes'
+  pod 'MaterialComponents/AppBar'
+  pod 'MaterialComponents/ActivityIndicator'
+
 #  pod 'MBProgressHUD'
   
 #  pod 'FMDB'
@@ -54,7 +59,6 @@ def library
   pod 'IDEAKit'                         , :path => '../MINIWING-PODs/IDEAKit'
   pod 'IDEAColor'                       , :path => '../MINIWING-PODs/IDEAColor'
   pod 'IDEAPalettes'                    , :path => '../MINIWING-PODs/IDEAPalettes'
-  pod 'IDEANightVersion'                , :path => '../MINIWING-PODs/IDEANightVersion'
   
   pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
 
@@ -98,10 +102,12 @@ target 'NetworkArch' do
 #  pod 'MotionAnimator'                  , :path => 'LocalModule/MaterialComponents'
 #  pod 'MotionInterchange'               , :path => 'LocalModule/MaterialComponents'
   
-#  pod 'MaterialComponents'
-  pod 'MaterialComponents/Palettes'
-  pod 'MaterialComponents/AppBar'
-  pod 'MaterialComponents/ActivityIndicator'
+  if ENV['IDEA_MATERIAL_COMPONENTS'] == 'YES'
+#    pod 'MaterialComponents'
+#    pod 'MaterialComponents/Palettes'
+#    pod 'MaterialComponents/AppBar'
+#    pod 'MaterialComponents/ActivityIndicator'
+  end # IDEA_MATERIAL_COMPONENTS
 
 #  pod 'FloatingPanel'
 #  pod 'FloatingPanel'                   , '~> 1.7.6'
@@ -138,6 +144,7 @@ target 'NetworkArch' do
   pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
   pod 'IDEARegexKit'                    , :path => '../MINIWING-PODs/IDEARegexKit'
+  pod 'IDEANightVersion'                , :path => '../MINIWING-PODs/IDEANightVersion'
 #  pod 'IDEATapticEngine'                , :path => '../MINIWING-PODs/IDEATapticEngine'
 #  pod 'IDEAWaterDropView'               , :path => '../MINIWING-PODs/IDEAWaterDropView'
 #  pod 'IDEANavigationBar'               , :path => '../MINIWING-PODs/IDEANavigationBar'
@@ -176,15 +183,35 @@ end
 target 'TodayWidget' do
 
 #  pod 'MaterialComponents'
-  pod 'MaterialComponents/Palettes'
+#  pod 'MaterialComponents/Palettes'
 #  pod 'MaterialComponents/AppBar'
-  pod 'MaterialComponents/ActivityIndicator'
+#  pod 'MaterialComponents/ActivityIndicator'
 
   pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
 
   pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
   pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
+  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
+
+  library
+  
+end
+
+###################################################################################################################################
+
+target 'FleetingWidget' do
+
+#  pod 'MaterialComponents'
+#  pod 'MaterialComponents/Palettes'
+#  pod 'MaterialComponents/AppBar'
+#  pod 'MaterialComponents/ActivityIndicator'
+
+  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
+
+  pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
+  pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
+#  pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
   pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
 
   library

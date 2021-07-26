@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>NetworkArch</string>
+	<string>FleetingWidget</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -23,14 +23,10 @@
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionMainStoryboard</key>
-		<string>TODAY</string>
+		<string>FLEETING</string>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widget-extension</string>
 	</dict>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2021 Harry. All rights reserved.</string>
 </dict>

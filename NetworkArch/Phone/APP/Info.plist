@@ -54,5 +54,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2021 Harry. All rights reserved.</string>
 </dict>
 </plist>

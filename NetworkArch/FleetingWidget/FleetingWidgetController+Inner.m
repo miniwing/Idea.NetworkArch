@@ -1,20 +1,19 @@
 //
-//  TodayWidgetController+Inner.m
-//  TodayWidget
+//  FleetingWidgetController+Inner.m
+//  FleetingWidget
 //
-//  Created by Harry on 2021/7/24.
+//  Created by Harry on 2021/7/26.
 //  Copyright © 2021 Harry. All rights reserved.
 //
 
-#import "TodayWidgetController+Inner.h"
-#import "TodayWidgetContentController+Signal.h"
+#import "FleetingWidgetController+Inner.h"
 
-@implementation TodayWidgetController (Inner)
+@implementation FleetingWidgetController (Inner)
 
 @end
 
 #pragma mark - <NCWidgetProviding>
-@implementation TodayWidgetController (NCWidgetProviding)
+@implementation FleetingWidgetController (NCWidgetProviding)
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
    
@@ -51,33 +50,9 @@
       
    } /* End else if () */
    
-   [UIView animateWithDuration:UIAViewAnimationDefaultDuraton
-                    animations:^{
-      [self.contentController.tableView reloadData];
-   }];
-
    __CATCH(nErr);
    
    return;
 }
 
 @end
-
-#pragma mark - <CLLocationManagerDelegate>
-@implementation TodayWidgetController (CLLocationManagerDelegate)
-
-- (void)locationManager:(CLLocationManager *)aManager didChangeAuthorizationStatus:(CLAuthorizationStatus)aStatus {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-      
-   [self sendSignal:TodayWidgetContentController.loadWifiInfoSignal];
-//   [self postSignal:HomeContentController.loadCellularInfoSignal onQueue:dispatch_get_main_queue()];
-
-   __CATCH(nErr);
-   
-   return;
-}
-@end
-

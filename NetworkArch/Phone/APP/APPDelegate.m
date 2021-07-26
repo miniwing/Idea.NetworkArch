@@ -92,17 +92,17 @@
 //      } /* End for () */
       
    } /* End for () */
-
+   
    LogDebug((@"----------------------------------------------------"));
-
+   
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : [IDEAIdentifier scheme] : %@", [IDEAIdentifier scheme]));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : [IDEAIdentifier schemePrefix] : %@", [IDEAIdentifier schemePrefix]));
-
+   
    LogDebug((@"----------------------------------------------------"));
-
+   
    /******************************************************************************************/
 #endif /* __Debug__ */
-
+   
    __CATCH(nErr);
    
    return SUCCESS == nErr; //YES;
@@ -124,7 +124,7 @@
       
       self.splashViewController  = [UIStoryboard loadStoryboard:SplashViewController.storyboard
                                                  viewController:[SplashViewController class]];
-
+      
    } /* End if () */
    else if ([self.window.rootViewController isKindOfClass:[SplashViewController class]]) {
       
@@ -132,13 +132,13 @@
       
       self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
                                               viewController:[RootViewController class]];
-
+      
    } /* End else */
    
-//   [self.window setRootViewController:self.splashViewController];
+   //   [self.window setRootViewController:self.splashViewController];
    [self.window makeKeyAndVisible];
    
-//   [self.window addSubview:self.splashViewController.view];
+   //   [self.window addSubview:self.splashViewController.view];
    
    [self splash];
    
@@ -158,7 +158,7 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-       
+   
    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
    
@@ -221,24 +221,24 @@
 }
 
 - (BOOL)application:(UIApplication *)aApplication openURL:(NSURL *)aURL options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)aOptions {
-
+   
    int                            nErr                                     = EFAULT;
    
    BOOL                           bDone                                    = NO;
-      
+   
    __TRY;
    
    LogDebug((@"-[APPDelegate application:openURL:options:] : URL : %@", aURL));
    LogDebug((@"-[APPDelegate application:openURL:options:] : [IDEAIdentifier scheme] : %@", [IDEAIdentifier scheme]));
    LogDebug((@"-[APPDelegate application:openURL:options:] : [IDEAIdentifier schemePrefix] : %@", [IDEAIdentifier schemePrefix]));
-
+   
    if ([[aURL scheme] isEqualToString:[IDEAIdentifier schemePrefix]]) {
       
       //...
       bDone = YES;
       
    } /* End if () */
-
+   
    __CATCH(nErr);
    
    // Add any custom logic here.
@@ -317,7 +317,7 @@
    
    self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
                                            viewController:[RootViewController class]];
-
+   
    [UIView transitionFromView:self.splashViewController.view
                        toView:self.rootViewController.view
 #if __Debug__
@@ -327,7 +327,7 @@
 #endif /* !__Debug__ */
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    completion:^(BOOL aFinished) {
-
+      
       UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
    }];
    
@@ -346,7 +346,7 @@
 //
 //      UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
 //   }];
-
+   
    __CATCH(nErr);
    
    return;

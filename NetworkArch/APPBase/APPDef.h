@@ -55,8 +55,6 @@
  */
 #define APP_BOOK_CLASSIFY_CELL_COVER_AUTO          (0)
 
-#define kNumberIsEmpty(num)                        ((nil == num) || (0 >= num.intValue))
-
 /**
  阅读界面加载动画
  */

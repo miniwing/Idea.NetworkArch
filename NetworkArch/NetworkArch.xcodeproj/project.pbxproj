@@ -40,6 +40,11 @@
 		4A221F0526A44DA100C94F00 /* PingRootController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221EFE26A44DA100C94F00 /* PingRootController+Signal.m */; };
 		4A221F0626A44DA100C94F00 /* PingRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221F0026A44DA100C94F00 /* PingRootController+Theme.m */; };
 		4A221F0726A44DA100C94F00 /* PingRootController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221F0126A44DA100C94F00 /* PingRootController+Inner.m */; };
+		4A25F19026AED9A10075BE73 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A421C0526AC0CC200935235 /* NotificationCenter.framework */; };
+		4A25F19426AED9A10075BE73 /* FleetingWidgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A25F19326AED9A10075BE73 /* FleetingWidgetController.m */; };
+		4A25F19726AED9A10075BE73 /* FLEETING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A25F19526AED9A10075BE73 /* FLEETING.storyboard */; };
+		4A25F19B26AED9A10075BE73 /* FleetingWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A25F18F26AED9A10075BE73 /* FleetingWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4A25F1A126AED9B20075BE73 /* libAPPBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0E4E21268587BE00A85517 /* libAPPBase.a */; };
 		4A45536526862E4D0050E736 /* HomeContentController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535826862E4B0050E736 /* HomeContentController+Signal.m */; };
 		4A45536626862E4D0050E736 /* HomeContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535C26862E4B0050E736 /* HomeContentController.m */; };
 		4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535E26862E4C0050E736 /* HomeContentController+Debug.m */; };
@@ -49,9 +54,15 @@
 		4A4553842686327B0050E736 /* TrackingController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45537F2686327A0050E736 /* TrackingController+Notification.m */; };
 		4A4553852686327B0050E736 /* TrackingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4553812686327A0050E736 /* TrackingController.m */; };
 		4A4553862686327B0050E736 /* TrackingRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4553832686327A0050E736 /* TrackingRootController.m */; };
+		4A4A003C26AEEA95000D4708 /* FleetingWidgetController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A003B26AEEA95000D4708 /* FleetingWidgetController+Theme.m */; };
+		4A4A003F26AEEB02000D4708 /* FleetingWidgetController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A003E26AEEB02000D4708 /* FleetingWidgetController+Inner.m */; };
+		4A4A004326AEEE55000D4708 /* OneYear.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A004226AEEE55000D4708 /* OneYear.m */; };
+		4A4A004626AEF55A000D4708 /* OneYear+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A004526AEF55A000D4708 /* OneYear+Inner.m */; };
+		4A4A004926AEFDD4000D4708 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A4A004726AEFDD4000D4708 /* InfoPlist.strings */; };
+		4A4A004D26AEFFA7000D4708 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A4A004B26AEFFA7000D4708 /* Localizable.strings */; };
 		4A4D0A6126AC0F56008A30E0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A421C0526AC0CC200935235 /* NotificationCenter.framework */; };
 		4A4D0A6526AC0F56008A30E0 /* TodayWidgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D0A6426AC0F56008A30E0 /* TodayWidgetController.m */; };
-		4A4D0A6826AC0F56008A30E0 /* WIDGET.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D0A6626AC0F56008A30E0 /* WIDGET.storyboard */; };
+		4A4D0A6826AC0F56008A30E0 /* TODAY.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D0A6626AC0F56008A30E0 /* TODAY.storyboard */; };
 		4A4D0A6C26AC0F56008A30E0 /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A4D0A6026AC0F56008A30E0 /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4A53A9BB26A46E60000700F2 /* WoLANRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53A9AA26A46E60000700F2 /* WoLANRootController+Debug.m */; };
 		4A53A9BC26A46E60000700F2 /* WoLANRootController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53A9AC26A46E60000700F2 /* WoLANRootController+Inner.m */; };
@@ -163,10 +174,25 @@
 		4AF4412A26AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
 		4AFFEDBC268645160052712A /* AppTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFEDBB268645160052712A /* AppTracking.m */; };
 		52CE0EB7ACC0CA8AF52591F9 /* libPods-NetworkArch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D90869E152B893B4A26FB70 /* libPods-NetworkArch.a */; };
+		7448694499DA399995699F74 /* libPods-FleetingWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AB876A78F7B23EF7A7CFEF /* libPods-FleetingWidget.a */; };
 		8BC8FA9D55571BEB17D98F3B /* libPods-APPBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C64A8CC2D9EA7AD11F40818F /* libPods-APPBase.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4A25F19926AED9A10075BE73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A98A62E2684B50F00EEEB60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A25F18E26AED9A10075BE73;
+			remoteInfo = FleetingWidget;
+		};
+		4A25F19F26AED9AE0075BE73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A98A62E2684B50F00EEEB60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A0E4E20268587BE00A85517;
+			remoteInfo = APPBase;
+		};
 		4A4D0A6A26AC0F56008A30E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4A98A62E2684B50F00EEEB60 /* Project object */;
@@ -206,6 +232,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				4A25F19B26AED9A10075BE73 /* FleetingWidget.appex in Embed App Extensions */,
 				4A4D0A6C26AC0F56008A30E0 /* TodayWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -214,6 +241,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07AB876A78F7B23EF7A7CFEF /* libPods-FleetingWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FleetingWidget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		445C3CB9AC8A3BADC13DDEC4 /* libPods-TodayWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TodayWidget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0E4DB9268584C100A85517 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		4A0E4DBA268584C100A85517 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
@@ -277,6 +305,11 @@
 		4A221EFF26A44DA100C94F00 /* PingRootController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Theme.h"; sourceTree = "<group>"; };
 		4A221F0026A44DA100C94F00 /* PingRootController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingRootController+Theme.m"; sourceTree = "<group>"; };
 		4A221F0126A44DA100C94F00 /* PingRootController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PingRootController+Inner.m"; sourceTree = "<group>"; };
+		4A25F18F26AED9A10075BE73 /* FleetingWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FleetingWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A25F19226AED9A10075BE73 /* FleetingWidgetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FleetingWidgetController.h; sourceTree = "<group>"; };
+		4A25F19326AED9A10075BE73 /* FleetingWidgetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FleetingWidgetController.m; sourceTree = "<group>"; };
+		4A25F19626AED9A10075BE73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FLEETING.storyboard; sourceTree = "<group>"; };
+		4A25F19826AED9A10075BE73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A421C0526AC0CC200935235 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		4A45535726862E4B0050E736 /* HomeContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentController.h; sourceTree = "<group>"; };
 		4A45535826862E4B0050E736 /* HomeContentController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeContentController+Signal.m"; sourceTree = "<group>"; };
@@ -296,10 +329,22 @@
 		4A4553812686327A0050E736 /* TrackingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingController.m; sourceTree = "<group>"; };
 		4A4553822686327A0050E736 /* TrackingRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingRootController.h; sourceTree = "<group>"; };
 		4A4553832686327A0050E736 /* TrackingRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingRootController.m; sourceTree = "<group>"; };
+		4A4A003926AEE906000D4708 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		4A4A003A26AEEA95000D4708 /* FleetingWidgetController+Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FleetingWidgetController+Theme.h"; sourceTree = "<group>"; };
+		4A4A003B26AEEA95000D4708 /* FleetingWidgetController+Theme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FleetingWidgetController+Theme.m"; sourceTree = "<group>"; };
+		4A4A003D26AEEB02000D4708 /* FleetingWidgetController+Inner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FleetingWidgetController+Inner.h"; sourceTree = "<group>"; };
+		4A4A003E26AEEB02000D4708 /* FleetingWidgetController+Inner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FleetingWidgetController+Inner.m"; sourceTree = "<group>"; };
+		4A4A004126AEEE55000D4708 /* OneYear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneYear.h; sourceTree = "<group>"; };
+		4A4A004226AEEE55000D4708 /* OneYear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneYear.m; sourceTree = "<group>"; };
+		4A4A004426AEF55A000D4708 /* OneYear+Inner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OneYear+Inner.h"; sourceTree = "<group>"; };
+		4A4A004526AEF55A000D4708 /* OneYear+Inner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OneYear+Inner.m"; sourceTree = "<group>"; };
+		4A4A004826AEFDD4000D4708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4A4A004A26AEFE64000D4708 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4A4A004C26AEFFA7000D4708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4A4D0A6026AC0F56008A30E0 /* TodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4D0A6326AC0F56008A30E0 /* TodayWidgetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayWidgetController.h; sourceTree = "<group>"; };
 		4A4D0A6426AC0F56008A30E0 /* TodayWidgetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayWidgetController.m; sourceTree = "<group>"; };
-		4A4D0A6726AC0F56008A30E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WIDGET.storyboard; sourceTree = "<group>"; };
+		4A4D0A6726AC0F56008A30E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TODAY.storyboard; sourceTree = "<group>"; };
 		4A4D0A6926AC0F56008A30E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A53A9A926A46E60000700F2 /* WoLANRootController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WoLANRootController+Debug.h"; sourceTree = "<group>"; };
 		4A53A9AA26A46E60000700F2 /* WoLANRootController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WoLANRootController+Debug.m"; sourceTree = "<group>"; };
@@ -500,10 +545,12 @@
 		4AF4412626AC8C050008C169 /* LAUNCH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LAUNCH.png; sourceTree = "<group>"; };
 		4AFFEDBA268645160052712A /* AppTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTracking.h; sourceTree = "<group>"; };
 		4AFFEDBB268645160052712A /* AppTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTracking.m; sourceTree = "<group>"; };
+		51094CFDD28FA237A0372EFB /* Pods-FleetingWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetingWidget.release.xcconfig"; path = "Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget.release.xcconfig"; sourceTree = "<group>"; };
 		63DF92DFFC64AB4198E20875 /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
 		65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		6B7C763236D1A5B8A55DC1C2 /* Pods-TodayWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.debug.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		6D90869E152B893B4A26FB70 /* libPods-NetworkArch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetworkArch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9427FC1B9FB3144B40E0E517 /* Pods-FleetingWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetingWidget.debug.xcconfig"; path = "Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		A90D912BF379DE28D323CFC9 /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
 		C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.release.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.release.xcconfig"; sourceTree = "<group>"; };
 		C64A8CC2D9EA7AD11F40818F /* libPods-APPBase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APPBase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -516,6 +563,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BC8FA9D55571BEB17D98F3B /* libPods-APPBase.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A25F18C26AED9A10075BE73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A25F1A126AED9B20075BE73 /* libAPPBase.a in Frameworks */,
+				4A25F19026AED9A10075BE73 /* NotificationCenter.framework in Frameworks */,
+				7448694499DA399995699F74 /* libPods-FleetingWidget.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +820,24 @@
 			path = PingController;
 			sourceTree = "<group>";
 		};
+		4A25F19126AED9A10075BE73 /* FleetingWidget */ = {
+			isa = PBXGroup;
+			children = (
+				4A4A004126AEEE55000D4708 /* OneYear.h */,
+				4A4A004226AEEE55000D4708 /* OneYear.m */,
+				4A4A004426AEF55A000D4708 /* OneYear+Inner.h */,
+				4A4A004526AEF55A000D4708 /* OneYear+Inner.m */,
+				4A25F19226AED9A10075BE73 /* FleetingWidgetController.h */,
+				4A25F19326AED9A10075BE73 /* FleetingWidgetController.m */,
+				4A4A003D26AEEB02000D4708 /* FleetingWidgetController+Inner.h */,
+				4A4A003E26AEEB02000D4708 /* FleetingWidgetController+Inner.m */,
+				4A4A003A26AEEA95000D4708 /* FleetingWidgetController+Theme.h */,
+				4A4A003B26AEEA95000D4708 /* FleetingWidgetController+Theme.m */,
+				4A4A004026AEEC17000D4708 /* Supporting Files */,
+			);
+			path = FleetingWidget;
+			sourceTree = "<group>";
+		};
 		4A45533926862DEF0050E736 /* HomeController */ = {
 			isa = PBXGroup;
 			children = (
@@ -838,6 +913,18 @@
 				4A45537F2686327A0050E736 /* TrackingController+Notification.m */,
 			);
 			path = TRACKING;
+			sourceTree = "<group>";
+		};
+		4A4A004026AEEC17000D4708 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A25F19526AED9A10075BE73 /* FLEETING.storyboard */,
+				4A4A004B26AEFFA7000D4708 /* Localizable.strings */,
+				4A4A004726AEFDD4000D4708 /* InfoPlist.strings */,
+				4A25F19826AED9A10075BE73 /* Info.plist */,
+				4A4A003926AEE906000D4708 /* Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4A4D0A6226AC0F56008A30E0 /* TodayWidget */ = {
@@ -1081,7 +1168,7 @@
 			isa = PBXGroup;
 			children = (
 				4AF4412326AC5D440008C169 /* TodayWidget.entitlements */,
-				4A4D0A6626AC0F56008A30E0 /* WIDGET.storyboard */,
+				4A4D0A6626AC0F56008A30E0 /* TODAY.storyboard */,
 				4A842C7E26AC1C0B005DC131 /* InfoPlist.strings */,
 				4A4D0A6926AC0F56008A30E0 /* Info.plist */,
 				4A842C7B26AC19D0005DC131 /* Prefix.pch */,
@@ -1115,6 +1202,7 @@
 				4A0E4E22268587BE00A85517 /* APPBase */,
 				4A98A6382684B50F00EEEB60 /* Phone */,
 				4A4D0A6226AC0F56008A30E0 /* TodayWidget */,
+				4A25F19126AED9A10075BE73 /* FleetingWidget */,
 				4A98A6372684B50F00EEEB60 /* Products */,
 				5A073BE837F8A6FE5151B56D /* Pods */,
 				BC9F1E42789CEDD6C11BF75C /* Frameworks */,
@@ -1127,6 +1215,7 @@
 				4A98A6362684B50F00EEEB60 /* NetworkArch.app */,
 				4A0E4E21268587BE00A85517 /* libAPPBase.a */,
 				4A4D0A6026AC0F56008A30E0 /* TodayWidget.appex */,
+				4A25F18F26AED9A10075BE73 /* FleetingWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1225,6 +1314,8 @@
 				65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */,
 				6B7C763236D1A5B8A55DC1C2 /* Pods-TodayWidget.debug.xcconfig */,
 				63DF92DFFC64AB4198E20875 /* Pods-TodayWidget.release.xcconfig */,
+				9427FC1B9FB3144B40E0E517 /* Pods-FleetingWidget.debug.xcconfig */,
+				51094CFDD28FA237A0372EFB /* Pods-FleetingWidget.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -1237,6 +1328,7 @@
 				C64A8CC2D9EA7AD11F40818F /* libPods-APPBase.a */,
 				6D90869E152B893B4A26FB70 /* libPods-NetworkArch.a */,
 				445C3CB9AC8A3BADC13DDEC4 /* libPods-TodayWidget.a */,
+				07AB876A78F7B23EF7A7CFEF /* libPods-FleetingWidget.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1261,6 +1353,26 @@
 			productName = APPBase;
 			productReference = 4A0E4E21268587BE00A85517 /* libAPPBase.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		4A25F18E26AED9A10075BE73 /* FleetingWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A25F19E26AED9A10075BE73 /* Build configuration list for PBXNativeTarget "FleetingWidget" */;
+			buildPhases = (
+				153E5A5450165EBBB075360C /* [CP] Check Pods Manifest.lock */,
+				4A25F18B26AED9A10075BE73 /* Sources */,
+				4A25F18C26AED9A10075BE73 /* Frameworks */,
+				4A25F18D26AED9A10075BE73 /* Resources */,
+				0DA035B76EF0311AA4E515BE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A25F1A026AED9AE0075BE73 /* PBXTargetDependency */,
+			);
+			name = FleetingWidget;
+			productName = FleetingWidget;
+			productReference = 4A25F18F26AED9A10075BE73 /* FleetingWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		4A4D0A5F26AC0F56008A30E0 /* TodayWidget */ = {
 			isa = PBXNativeTarget;
@@ -1300,6 +1412,7 @@
 			dependencies = (
 				4AB5C1F52685A06E00B1639D /* PBXTargetDependency */,
 				4A4D0A6B26AC0F56008A30E0 /* PBXTargetDependency */,
+				4A25F19A26AED9A10075BE73 /* PBXTargetDependency */,
 			);
 			name = NetworkArch;
 			productName = NetworkArch;
@@ -1312,11 +1425,15 @@
 		4A98A62E2684B50F00EEEB60 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = Harry;
 				TargetAttributes = {
 					4A0E4E20268587BE00A85517 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					4A25F18E26AED9A10075BE73 = {
+						CreatedOnToolsVersion = 10.3;
 					};
 					4A4D0A5F26AC0F56008A30E0 = {
 						CreatedOnToolsVersion = 10.3;
@@ -1340,6 +1457,7 @@
 			projectRoot = "";
 			targets = (
 				4A0E4E20268587BE00A85517 /* APPBase */,
+				4A25F18E26AED9A10075BE73 /* FleetingWidget */,
 				4A4D0A5F26AC0F56008A30E0 /* TodayWidget */,
 				4A98A6352684B50F00EEEB60 /* NetworkArch */,
 			);
@@ -1347,11 +1465,21 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4A25F18D26AED9A10075BE73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A25F19726AED9A10075BE73 /* FLEETING.storyboard in Resources */,
+				4A4A004D26AEFFA7000D4708 /* Localizable.strings in Resources */,
+				4A4A004926AEFDD4000D4708 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A4D0A5E26AC0F56008A30E0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A4D0A6826AC0F56008A30E0 /* WIDGET.storyboard in Resources */,
+				4A4D0A6826AC0F56008A30E0 /* TODAY.storyboard in Resources */,
 				4AF4411F26AC536F0008C169 /* IMAGEs.xcassets in Resources */,
 				4A842C8126AC1C19005DC131 /* Localizable.strings in Resources */,
 				4AF4412826AC8C060008C169 /* BOTTOM.png in Resources */,
@@ -1406,6 +1534,45 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TodayWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0DA035B76EF0311AA4E515BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		153E5A5450165EBBB075360C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FleetingWidget-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1533,6 +1700,18 @@
 			files = (
 				4A0E4E37268587E800A85517 /* APPFont.m in Sources */,
 				4A0E4E38268587E800A85517 /* APPHTTP.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A25F18B26AED9A10075BE73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A4A003F26AEEB02000D4708 /* FleetingWidgetController+Inner.m in Sources */,
+				4A4A003C26AEEA95000D4708 /* FleetingWidgetController+Theme.m in Sources */,
+				4A25F19426AED9A10075BE73 /* FleetingWidgetController.m in Sources */,
+				4A4A004626AEF55A000D4708 /* OneYear+Inner.m in Sources */,
+				4A4A004326AEEE55000D4708 /* OneYear.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1675,6 +1854,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4A25F19A26AED9A10075BE73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A25F18E26AED9A10075BE73 /* FleetingWidget */;
+			targetProxy = 4A25F19926AED9A10075BE73 /* PBXContainerItemProxy */;
+		};
+		4A25F1A026AED9AE0075BE73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A0E4E20268587BE00A85517 /* APPBase */;
+			targetProxy = 4A25F19F26AED9AE0075BE73 /* PBXContainerItemProxy */;
+		};
 		4A4D0A6B26AC0F56008A30E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4A4D0A5F26AC0F56008A30E0 /* TodayWidget */;
@@ -1741,12 +1930,37 @@
 			name = ONBOARDING.storyboard;
 			sourceTree = "<group>";
 		};
-		4A4D0A6626AC0F56008A30E0 /* WIDGET.storyboard */ = {
+		4A25F19526AED9A10075BE73 /* FLEETING.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A25F19626AED9A10075BE73 /* Base */,
+			);
+			name = FLEETING.storyboard;
+			sourceTree = "<group>";
+		};
+		4A4A004726AEFDD4000D4708 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A4A004826AEFDD4000D4708 /* Base */,
+				4A4A004A26AEFE64000D4708 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4A4A004B26AEFFA7000D4708 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A4A004C26AEFFA7000D4708 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4A4D0A6626AC0F56008A30E0 /* TODAY.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4A4D0A6726AC0F56008A30E0 /* Base */,
 			);
-			name = WIDGET.storyboard;
+			name = TODAY.storyboard;
 			sourceTree = "<group>";
 		};
 		4A5D9A0726A4965200E00610 /* WIFI.storyboard */ = {
@@ -1830,6 +2044,56 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = APPBase/Prefix.pch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4A25F19C26AED9A10075BE73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9427FC1B9FB3144B40E0E517 /* Pods-FleetingWidget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: Cai Lu (PHD24T76XW)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = G8G9TAP4UN;
+				GCC_PREFIX_HEADER = FleetingWidget/Prefix.pch;
+				INFOPLIST_FILE = FleetingWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.9.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idea.NetworkArch.FleetingWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Idea.NetworkArch.FleetingWidget;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A25F19D26AED9A10075BE73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51094CFDD28FA237A0372EFB /* Pods-FleetingWidget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Distribution: Cai Lu (G8G9TAP4UN)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = G8G9TAP4UN;
+				GCC_PREFIX_HEADER = FleetingWidget/Prefix.pch;
+				INFOPLIST_FILE = FleetingWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.9.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idea.NetworkArch.FleetingWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Ad Hoc:Idea.NetworkArch.FleetingWidget";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2003,6 +2267,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CC7F3049F2B28E17A49195A2 /* Pods-NetworkArch.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
 				CODE_SIGN_ENTITLEMENTS = Phone/APP/NetworkArch.entitlements;
 				CODE_SIGN_STYLE = Manual;
@@ -2027,6 +2292,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Phone/APP/NetworkArch.entitlements;
 				CODE_SIGN_STYLE = Manual;
@@ -2055,6 +2321,15 @@
 			buildConfigurations = (
 				4A0E4E28268587BE00A85517 /* Debug */,
 				4A0E4E29268587BE00A85517 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A25F19E26AED9A10075BE73 /* Build configuration list for PBXNativeTarget "FleetingWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A25F19C26AED9A10075BE73 /* Debug */,
+				4A25F19D26AED9A10075BE73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
