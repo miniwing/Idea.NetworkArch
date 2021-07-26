@@ -13,10 +13,10 @@
 
 #import "PingController.h"
 #import "PingController+Inner.h"
-
-@interface PingController ()
-
-@end
+#import "PingController+Debug.h"
+#import "PingController+Theme.h"
+#import "PingController+Signal.h"
+#import "PingController+Notification.h"
 
 @implementation PingController
 
@@ -133,8 +133,10 @@
 #endif /* !MATERIAL_APP_BAR */
    
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
    [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   
+   [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
+
    [self.rightBarButtonItem setEnabled:YES];
    
 #if MATERIAL_APP_BAR
@@ -227,6 +229,12 @@
    
    [self.searchBar setDelegate:self];
    
+   [self.searchBar setPlaceholder:APP_STR(@"IP Address / Host Name")];
+   
+#if __Debug__
+   [self.searchBar setText:@"www.baidu.com"];
+#endif /* __Debug__ */
+   
    __CATCH(nErr);
    
    return;
@@ -283,6 +291,11 @@
    __TRY;
    
    [super viewDidAppear:aAnimated];
+   
+   dispatch_once(&_firstResponder, ^{
+      
+      [self.searchBar becomeFirstResponder];
+   });
    
    __CATCH(nErr);
    
@@ -371,19 +384,28 @@
    
    __TRY;
    
-   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[PingRootController class]])) {
+   [CATransaction begin];
+
+   [self resignFirstResponder];
       
-      [self.navigationController popViewControllerAnimated:YES
-                                                completion:nil];
-      
-   } /* End if () */
-   else {
-      
-      [self dismissViewControllerAnimated:YES
-                               completion:nil];
-      
-   } /* End else */
-   
+   [CATransaction commit];
+
+   [CATransaction setCompletionBlock:^{
+
+      if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[PingRootController class]])) {
+         
+         [self.navigationController popViewControllerAnimated:YES
+                                                   completion:nil];
+         
+      } /* End if () */
+      else {
+         
+         [self dismissViewControllerAnimated:YES
+                                  completion:nil];
+         
+      } /* End else */
+   }];
+
    __CATCH(nErr);
    
    return;
@@ -397,8 +419,19 @@
    
    [self resignFirstResponder];
    
-   [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
+   if (NO == self.pinging) {
+      
+      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
+
+   } /* End if () */
+   else {
+      
+      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
+
+   } /* End else */
    
+   self.pinging   = !self.pinging;
+      
    __CATCH(nErr);
    
    return;

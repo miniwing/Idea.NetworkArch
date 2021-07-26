@@ -452,9 +452,43 @@ __END_DECLS
 #  define LogView(x)
 #endif
 
+#define  __Function_Start()                        LogFunc(((@"%s - Enter!") , I_FUNCTION));
+#define  __Function_End(_Return)                                                                                              \\
+                                                   {                                                                          \\
+                                                      if (noErr == (_Return))                                                 \\
+                                                      {                                                                       \\
+                                                         LogFunc(((@"%s - Leave with Success!"), I_FUNCTION));                \\
+                                                      } /*End if () */                                                        \\
+                                                      else                                                                    \\
+                                                      {                                                                       \\
+                                                         LogFunc(((@"%s - Leave with Error : %d(0x%08x)!"), I_FUNCTION, (int)_Return, (int)_Return));\\
+                                                      } /*End else () */                                                      \\
+                                                   }
+
+#if (__Debug__)
+#  define FunctionStart                            __Function_Start
+#  define FunctionEnd                              __Function_End
+#else
+#  define FunctionStart()
+#  define FunctionEnd(x)
+#endif /* (__Debug__) */
+
+#define __TRY                                      FunctionStart();           \\
+                                                   do {
+
+#define __CATCH(nErr)                                 nErr = noErr;           \\
+                                                   } while (0);               \\
+                                                   FunctionEnd(nErr);
+
+#define __LOG_FUNCTION                             LogFunc((@"%s :", __PRETTY_FUNCTION__))
+
+#define __LOG_RECT(rc)                             LogDebug((@"%s : RECT : (%d, %d, %d, %d)", __STRING(rc), (int)((rc).origin.x), (int)((rc).origin.y), (int)((rc).size.width), (int)((rc).size.height)))
+#define __LOG_SIZE(sz)                             LogDebug((@"%s : SIZE : (%d, %d)", __STRING(sz), (int)((sz).width), (int)((sz).height)))
+#define __LOG_POINT(pt)                            LogDebug((@"%s : POINT: (%d, %d)", __STRING(pt), (int)((pt).x), (int)((pt).y)))
+
 /******************************************************************************************************/
 
-#import <IDEAKit/IDEAKit.h>
+// #import <IDEAKit/IDEAKit.h>
 
 /******************************************************************************************************/
 

@@ -70,6 +70,12 @@
    
    LogDebug((@"-[PingController searchBar:textDidChange:] : SearchText : %@", aSearchBar));
    
+   if (kStringIsEmpty(aSearchText)) {
+      
+      [self.rightBarButtonItem setEnabled:NO];
+      
+   } /* End if () */
+   
    __CATCH(nErr);
    
    return;

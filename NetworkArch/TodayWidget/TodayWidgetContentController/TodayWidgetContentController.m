@@ -505,7 +505,7 @@
          
          LogDebug((@"-[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : %@", [NSString stringWithFormat:@"%@%@", [IDEAIdentifier scheme], @"Wi-Fi"]));
          
-         [self.extensionContext openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@://%@", [IDEAIdentifier scheme], @"Wi-Fi"]]
+         [self.extensionContext openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [IDEAIdentifier scheme], @"Wi-Fi"]]
                       completionHandler:^(BOOL aSuccess) {
             
             LogDebug((@"[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : openURL"));
@@ -518,9 +518,9 @@
       
       if (TodayWidgetCellularMore == aIndexPath.row) {
 
-         LogDebug((@"-[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : %@", [NSString stringWithFormat:@"%@://%@", [IDEAIdentifier scheme], @"Wi-Fi"]));
+         LogDebug((@"-[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : %@",  [NSString stringWithFormat:@"%@%@", [IDEAIdentifier scheme], @"Wi-Fi"]));
 
-         [self.extensionContext openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@://%@", [IDEAIdentifier scheme], @"Wi-Fi"]]
+         [self.extensionContext openURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@%@", [IDEAIdentifier scheme], @"Wi-Fi"]]
                       completionHandler:^(BOOL aSuccess) {
             
             LogDebug((@"[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : openURL"));

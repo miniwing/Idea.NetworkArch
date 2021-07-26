@@ -33,6 +33,8 @@
 "Whois"                             = "Whois";
 "DNS Lookup"                        = "DNS Lookup";
 
+"IP Address / Host Name"            = "IP Address / Host Name";
+
 /// SETTING
 "SETTING"                           = "SETTING";
 

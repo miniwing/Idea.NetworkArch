@@ -43,24 +43,6 @@
 #endif /* AF_NETWORK_ACTIVITY_LOGGER */
    
    /******************************************************************************************/
-   // https://www.jianshu.com/p/a02be724b7ec
-   // 动态注册字体
-#if __Debug__
-   LogDebug((@"----------------------------------------------------"));
-   for (NSString *szFamilyName = nil in [UIFont familyNames]) {
-      
-      LogDebug((@"family:'%@'", szFamilyName));
-      
-//      for(NSString *szName in [UIFont fontNamesForFamilyName:szFamilyName]) {
-//
-//         LogDebug((@"\tfont:'%@'",szName));
-//
-//      } /* End for () */
-      
-   } /* End for () */
-   LogDebug((@"----------------------------------------------------"));
-#endif /* __Debug__ */
-   /******************************************************************************************/
    /**
     监听保存
     */
@@ -93,6 +75,34 @@
    //   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle")?.load()
 #endif /* __InjectionIII__ */
    
+#if __Debug__
+   /******************************************************************************************/
+   // https://www.jianshu.com/p/a02be724b7ec
+   // 动态注册字体
+   
+   LogDebug((@"----------------------------------------------------"));
+   for (NSString *szFamilyName = nil in [UIFont familyNames]) {
+      
+      LogDebug((@"family:'%@'", szFamilyName));
+      
+//      for(NSString *szName in [UIFont fontNamesForFamilyName:szFamilyName]) {
+//
+//         LogDebug((@"\tfont:'%@'",szName));
+//
+//      } /* End for () */
+      
+   } /* End for () */
+
+   LogDebug((@"----------------------------------------------------"));
+
+   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : [IDEAIdentifier scheme] : %@", [IDEAIdentifier scheme]));
+   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : [IDEAIdentifier schemePrefix] : %@", [IDEAIdentifier schemePrefix]));
+
+   LogDebug((@"----------------------------------------------------"));
+
+   /******************************************************************************************/
+#endif /* __Debug__ */
+
    __CATCH(nErr);
    
    return SUCCESS == nErr; //YES;
@@ -218,11 +228,11 @@
       
    __TRY;
    
-   LogDebug((@"[APPDelegate application:openURL:options:] : URL : %@", aURL));
-   LogDebug((@"[APPDelegate application:openURL:options:] : UIApplicationOpenURLOptionsSourceApplicationKey : %@", aOptions[UIApplicationOpenURLOptionsSourceApplicationKey]));
-   LogDebug((@"[APPDelegate application:openURL:options:] : UIApplicationOpenURLOptionsAnnotationKey : %@", aOptions[UIApplicationOpenURLOptionsAnnotationKey]));
-   
-   if ([[aURL scheme] isEqualToString:[IDEAIdentifier scheme]]) {
+   LogDebug((@"-[APPDelegate application:openURL:options:] : URL : %@", aURL));
+   LogDebug((@"-[APPDelegate application:openURL:options:] : [IDEAIdentifier scheme] : %@", [IDEAIdentifier scheme]));
+   LogDebug((@"-[APPDelegate application:openURL:options:] : [IDEAIdentifier schemePrefix] : %@", [IDEAIdentifier schemePrefix]));
+
+   if ([[aURL scheme] isEqualToString:[IDEAIdentifier schemePrefix]]) {
       
       //...
       bDone = YES;

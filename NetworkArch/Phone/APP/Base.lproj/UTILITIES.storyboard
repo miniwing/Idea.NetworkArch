@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2H-QB-oR2" userLabel="搜索框">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ak1-VS-Klo">
+                                    <searchBar contentMode="redraw" insetsLayoutMarginsFromSafeArea="NO" placeholder="IP Address / Host Name" translatesAutoresizingMaskIntoConstraints="NO" id="Ak1-VS-Klo">
                                         <rect key="frame" x="8" y="0.0" width="359" height="51"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>

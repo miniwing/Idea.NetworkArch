@@ -149,6 +149,7 @@ PODS:
   - IDEAPalettes (2.1)
   - IDEAPing (1.0.1):
     - SimplePing
+  - IDEARegexKit (4.0)
   - IDEARoute (1.0.7)
   - IDEATabBarControllerTransition (1.0.0):
     - RTRootNavigationController
@@ -304,6 +305,7 @@ DEPENDENCIES:
   - IDEANightVersion (from `../MINIWING-PODs/IDEANightVersion`)
   - IDEAPalettes (from `../MINIWING-PODs/IDEAPalettes`)
   - IDEAPing (from `../MINIWING-PODs/IDEAPing`)
+  - IDEARegexKit (from `../MINIWING-PODs/IDEARegexKit`)
   - IDEARoute (from `../MINIWING-PODs/IDEARoute`)
   - IDEATabBarControllerTransition (from `../MINIWING-PODs/IDEATabBarControllerTransition`)
   - IDEAUIKit (from `../MINIWING-PODs/IDEAUIKit`)
@@ -351,6 +353,8 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/IDEAPalettes"
   IDEAPing:
     :path: "../MINIWING-PODs/IDEAPing"
+  IDEARegexKit:
+    :path: "../MINIWING-PODs/IDEARegexKit"
   IDEARoute:
     :path: "../MINIWING-PODs/IDEARoute"
   IDEATabBarControllerTransition:
@@ -363,22 +367,23 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/YYKit"
 
 SPEC CHECKSUMS:
-  APPDATA: 010aa79f565d1dafc6877a29c62ca9e977dd4ed6
-  APPDEBUG: 037b3424ff5c5f664871141462d568daf90bd85d
+  APPDATA: 4a636dafea08f9f604ad2b0aa3b2e3380ec0a8fd
+  APPDEBUG: 6b85b3f3ef705f9668638c151e44f17d25f3f187
   cdebug: 0d0b7207fa996236ee9e07e5988e5e39a1d94a28
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
-  IDEAApplet: 93258f22dc2cd2f2bf808d66a026b99b87220e02
-  IDEAAppletDebugger: 5b32989be60377f9b05ea9908457ffb2df3d0868
-  IDEAColor: 692183dcefa3073c88e32cad1fab31653959ad75
-  IDEAKit: 66a51aa06a10f8dd88002d85c9cec3a392217be7
-  IDEANightVersion: c01e088c7b55d6cc6bd53515d43f38b87a501db4
-  IDEAPalettes: 0a528b3cbe13d5cf8533df7a3ce72cdf6ca589c5
-  IDEAPing: e85c8af76f37a278457a6905c8a5df7a2a979887
-  IDEARoute: 8ad9d1af05972b5b5899a8fb9a441ea519a18d57
-  IDEATabBarControllerTransition: e71cbcb4938ef949251c775a3738593333b20f76
+  IDEAApplet: 7981266eafc48d64312924e39860d0cdebacde9f
+  IDEAAppletDebugger: a6c16f3c3583ad1af2f07923b919d77eae5cacc2
+  IDEAColor: b70b1e1d7cca00b592e01abb5309fbc95f4a72a9
+  IDEAKit: cd1fa1cd8ed15c1d639d69533bfefd82239e3f5a
+  IDEANightVersion: 6ce5559404ef6c82a95bebb9398e735ca9a4b656
+  IDEAPalettes: 40dc74c454bca6e8133e22a186a1d34080a8c420
+  IDEAPing: c629cb361f54e9280abe213fe0bd00a7ced70187
+  IDEARegexKit: fe7d697620755395b5b884920f75e98b374fc6ec
+  IDEARoute: 878096a8e5bdfb79935a225b41c1deb06acd1b43
+  IDEATabBarControllerTransition: 6f2ae4e34338729f7499b8dffced061508014404
   IDEAUIKit: 60f2c3fd54cfe2c52e361454070a95ee064cd352
-  IDEAUIVendor: 6ed2442cdb8d90d81616c53e4e91edcb3a241321
+  IDEAUIVendor: 7091b82d151d6ae34b772342d5f182b24924f3ca
   libwebp: e90b9c01d99205d03b6bb8f2c8c415e5a4ef66f0
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
@@ -389,8 +394,8 @@ SPEC CHECKSUMS:
   RTRootNavigationController: 36c6301870f0467f89d69f4286795340b537d473
   SimplePing: 4b3bdd3c779a77953809b75b9c8b3fff10586f14
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
-  YYKit: b06504a19266eb18ece70e1872d6ca91978f4fc0
+  YYKit: a0006d7f92e6bc678e165c9b073398839286ee20
 
-PODFILE CHECKSUM: 44545e13ce505e5c10fd763b083918e34f691566
+PODFILE CHECKSUM: b2f1295f1564b0cfa9b522cb32bf77fa854ae8dd
 
 COCOAPODS: 1.10.1

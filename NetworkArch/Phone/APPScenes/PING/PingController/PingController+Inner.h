@@ -14,7 +14,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PingController () <UISearchBarDelegate>
+@interface PingController () <UISearchBarDelegate> {
+
+   dispatch_once_t                          _firstResponder;
+}
+
+@end
+
+@interface PingController ()
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
 
@@ -22,6 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
  The text field of search bar
  */
 @property (nonatomic, weak)                  UITextField                         * searchBarTextField;
+
+@end
+
+@interface PingController ()
+
+@property (nonatomic, assign)                BOOL                                  pinging;
 
 @end
 

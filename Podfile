@@ -25,8 +25,8 @@ workspace 'Idea.NetworkArch'
 
 project 'NetworkArch/NetworkArch.xcodeproj'
 
-use_frameworks!
-#use_modular_headers!
+#use_frameworks!
+use_modular_headers!
 inhibit_all_warnings!
 
 platform :ios, '10.0'
@@ -35,8 +35,8 @@ platform :ios, '10.0'
 
 def library
   
-  pod 'FoundationExtension'
-  pod 'UIKitExtension'
+  pod 'FoundationExtension'             # , :modular_headers => false
+  pod 'UIKitExtension'                  # , :modular_headers => false
   
 #  pod 'MBProgressHUD'
   
@@ -137,6 +137,7 @@ target 'NetworkArch' do
 #  pod 'IDEANibBridge'                   , :path => '../MINIWING-PODs/IDEANibBridge'
   pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
+  pod 'IDEARegexKit'                    , :path => '../MINIWING-PODs/IDEARegexKit'
 #  pod 'IDEATapticEngine'                , :path => '../MINIWING-PODs/IDEATapticEngine'
 #  pod 'IDEAWaterDropView'               , :path => '../MINIWING-PODs/IDEAWaterDropView'
 #  pod 'IDEANavigationBar'               , :path => '../MINIWING-PODs/IDEANavigationBar'
@@ -173,6 +174,11 @@ end
 ###################################################################################################################################
 
 target 'TodayWidget' do
+
+#  pod 'MaterialComponents'
+  pod 'MaterialComponents/Palettes'
+#  pod 'MaterialComponents/AppBar'
+  pod 'MaterialComponents/ActivityIndicator'
 
   pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
 
@@ -287,7 +293,7 @@ post_install do |installer|
       if target.name == 'IDEAKit'
         config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
                                                                    '$(inherited)',
-                                                                   'APP_SCHEME=\@\"NetworkArch\"',
+                                                                   'APP_SCHEME=\@\"NetworkArch://\"',
                                                                    'APP_BUNDLE_IDENTIFIER=\@\"com.idea.NetworkArch\"',
                                                                    'APP_BUNDLE_IDENTIFIER_GROUP=\@\"group.com.idea.NetworkArch\"',
                                                                    'APP_BUNDLE_IDENTIFIER_WIDGET=\@\"com.idea.NetworkArch.Widget\"',
@@ -316,7 +322,7 @@ post_install do |installer|
 #      if target.name == 'IDEAExtension'
 #        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
 #                                                                   '$(inherited)',
-#                                                                   'APP_SCHEME=\@\"NetworkArch\"',
+#                                                                   'APP_SCHEME=\@\"NetworkArch://\"',
 #                                                                   'APP_BUNDLE_IDENTIFIER=\@\"com.idea.NetworkArch\"',
 #                                                                   'APP_BUNDLE_IDENTIFIER_GROUP=\@\"group.com.idea.NetworkArch\"',
 #                                                                   'APP_BUNDLE_IDENTIFIER_WIDGET=\@\"com.idea.NetworkArch.Widget\"',
@@ -337,9 +343,9 @@ post_install do |installer|
                                                                    ' SERVICE_CONSOLE=0 ',
                                                                    ' SERVICE_GESTURE=0 ',
                                                                    ' SERVICE_GRIDS=0 ',
-                                                                   ' SERVICE_INSPECTOR=1 ',
+                                                                   ' SERVICE_INSPECTOR=0 ',
                                                                    ' SERVICE_MONITOR=0 ',
-                                                                   ' SERVICE_FILE_SYNC=1 ',
+                                                                   ' SERVICE_FILE_SYNC=0 ',
                                                                    ' SERVICE_TAPSPOT=0 ',
                                                                    ' SERVICE_THEME=1 ',
                                                                    ' SERVICE_WIFI=0 '

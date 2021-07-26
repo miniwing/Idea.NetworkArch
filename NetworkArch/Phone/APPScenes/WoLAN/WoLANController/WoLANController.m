@@ -238,19 +238,28 @@
    
    __TRY;
    
-   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[WoLANRootController class]])) {
-      
-      [self.navigationController popViewControllerAnimated:YES
-                                                completion:nil];
-      
-   } /* End if () */
-   else {
-      
-      [self dismissViewControllerAnimated:YES
-                               completion:nil];
-      
-   } /* End else */
+   [CATransaction begin];
    
+   [self resignFirstResponder];
+      
+   [CATransaction commit];
+
+   [CATransaction setCompletionBlock:^{
+
+      if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[WoLANRootController class]])) {
+         
+         [self.navigationController popViewControllerAnimated:YES
+                                                   completion:nil];
+         
+      } /* End if () */
+      else {
+         
+         [self dismissViewControllerAnimated:YES
+                                  completion:nil];
+         
+      } /* End else */
+   }];
+
    __CATCH(nErr);
    
    return;
