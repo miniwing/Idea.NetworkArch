@@ -85,11 +85,11 @@
       
       LogDebug((@"family:'%@'", szFamilyName));
       
-//      for(NSString *szName in [UIFont fontNamesForFamilyName:szFamilyName]) {
-//
-//         LogDebug((@"\tfont:'%@'",szName));
-//
-//      } /* End for () */
+      //      for(NSString *szName in [UIFont fontNamesForFamilyName:szFamilyName]) {
+      //
+      //         LogDebug((@"\tfont:'%@'",szName));
+      //
+      //      } /* End for () */
       
    } /* End for () */
    
@@ -99,7 +99,26 @@
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : [IDEAIdentifier schemePrefix] : %@", [IDEAIdentifier schemePrefix]));
    
    LogDebug((@"----------------------------------------------------"));
+
+//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"www.baidu.com") isEmail] ? @"YES" : @"NO"));
+//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"xxx.xxx@gmail.com") isEmail] ? @"YES" : @"NO"));
+//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"xxx@baidu.com") isEmail] ? @"YES" : @"NO"));
+//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"xxx.@baidu.com") isEmail] ? @"YES" : @"NO"));
+//
+//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.2.22") isIPAddress] ? @"YES" : @"NO"));
+//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.2") isIPAddress] ? @"YES" : @"NO"));
+//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.2.2222") isIPAddress] ? @"YES" : @"NO"));
+//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.2.256") isIPAddress] ? @"YES" : @"NO"));
+//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.256.254") isIPAddress] ? @"YES" : @"NO"));
+//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.256.168.254") isIPAddress] ? @"YES" : @"NO"));
+//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"256.192.168.254") isIPAddress] ? @"YES" : @"NO"));
+
    
+   NSArray<NSString *>  *stIPV4s = [(@"192.168.2.22") IPV4s];
+   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IPV4s : %@", stIPV4s));
+
+   LogDebug((@"----------------------------------------------------"));
+
    /******************************************************************************************/
 #endif /* __Debug__ */
    
@@ -311,7 +330,7 @@
    
    int                            nErr                                     = EFAULT;
    
-//   NSTimeInterval                 fDuration                                = UIAViewAnimationDefaultDuraton;
+   //   NSTimeInterval                 fDuration                                = UIAViewAnimationDefaultDuraton;
    
    __TRY;
    

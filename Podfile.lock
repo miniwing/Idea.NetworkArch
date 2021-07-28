@@ -6,9 +6,6 @@ PODS:
     - IDEAKit
     - YYKit
   - cdebug (1.3)
-  - FMDB (2.7.5):
-    - FMDB/standard (= 2.7.5)
-  - FMDB/standard (2.7.5)
   - FoundationExtension (2.1.0):
     - cdebug (~> 1.3)
     - FoundationExtension/FoundationExtension (= 2.1.0)
@@ -19,8 +16,10 @@ PODS:
   - FoundationExtension/FoundationExtensionRC (2.1.0):
     - cdebug (~> 1.3)
   - IDEAApplet (1.0.1):
+    - FoundationExtension
     - IDEAApplet/applet-framework (= 1.0.1)
   - IDEAApplet/applet-framework (1.0.1):
+    - FoundationExtension
     - IDEAApplet/applet-framework/samurai-config (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-core (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-event (= 1.0.1)
@@ -29,50 +28,74 @@ PODS:
     - IDEAApplet/applet-framework/samurai-service (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view (= 1.0.1)
     - IDEAApplet/applet-framework/vendor (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-config (1.0.1)
+  - IDEAApplet/applet-framework/samurai-config (1.0.1):
+    - FoundationExtension
   - IDEAApplet/applet-framework/samurai-core (1.0.1):
+    - FoundationExtension
     - IDEAApplet/applet-framework/samurai-core/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-core/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-core/extension (1.0.1)
-  - IDEAApplet/applet-framework/samurai-core/modules (1.0.1)
+  - IDEAApplet/applet-framework/samurai-core/extension (1.0.1):
+    - FoundationExtension
+  - IDEAApplet/applet-framework/samurai-core/modules (1.0.1):
+    - FoundationExtension
   - IDEAApplet/applet-framework/samurai-event (1.0.1):
+    - FoundationExtension
     - IDEAApplet/applet-framework/samurai-event/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-event/modules (1.0.1)
+  - IDEAApplet/applet-framework/samurai-event/modules (1.0.1):
+    - FoundationExtension
   - IDEAApplet/applet-framework/samurai-model (1.0.1):
+    - FoundationExtension
     - IDEAApplet/applet-framework/samurai-model/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-model/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-model/extension (1.0.1)
-  - IDEAApplet/applet-framework/samurai-model/modules (1.0.1)
-  - IDEAApplet/applet-framework/samurai-route (1.0.1)
+  - IDEAApplet/applet-framework/samurai-model/extension (1.0.1):
+    - FoundationExtension
+  - IDEAApplet/applet-framework/samurai-model/modules (1.0.1):
+    - FoundationExtension
+  - IDEAApplet/applet-framework/samurai-route (1.0.1):
+    - FoundationExtension
   - IDEAApplet/applet-framework/samurai-service (1.0.1):
+    - FoundationExtension
     - IDEAApplet/applet-framework/samurai-service/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-service/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-service/extension (1.0.1)
+  - IDEAApplet/applet-framework/samurai-service/extension (1.0.1):
+    - FoundationExtension
   - IDEAApplet/applet-framework/samurai-service/modules (1.0.1):
+    - FoundationExtension
     - IDEAApplet/applet-framework/samurai-service/modules/docker (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-service/modules/service (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-service/modules/docker (1.0.1)
-  - IDEAApplet/applet-framework/samurai-service/modules/service (1.0.1)
+  - IDEAApplet/applet-framework/samurai-service/modules/docker (1.0.1):
+    - FoundationExtension
+  - IDEAApplet/applet-framework/samurai-service/modules/service (1.0.1):
+    - FoundationExtension
   - IDEAApplet/applet-framework/samurai-view (1.0.1):
+    - FoundationExtension
     - IDEAApplet/applet-framework/samurai-view/extension (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/extension (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/extension (1.0.1):
+    - FoundationExtension
   - IDEAApplet/applet-framework/samurai-view/modules (1.0.1):
+    - FoundationExtension
     - IDEAApplet/applet-framework/samurai-view/modules/view-component (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-controller (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-core (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-event (= 1.0.1)
     - IDEAApplet/applet-framework/samurai-view/modules/view-utility (= 1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-component (1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-controller (1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-core (1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-event (1.0.1)
-  - IDEAApplet/applet-framework/samurai-view/modules/view-utility (1.0.1)
+  - IDEAApplet/applet-framework/samurai-view/modules/view-component (1.0.1):
+    - FoundationExtension
+  - IDEAApplet/applet-framework/samurai-view/modules/view-controller (1.0.1):
+    - FoundationExtension
+  - IDEAApplet/applet-framework/samurai-view/modules/view-core (1.0.1):
+    - FoundationExtension
+  - IDEAApplet/applet-framework/samurai-view/modules/view-event (1.0.1):
+    - FoundationExtension
+  - IDEAApplet/applet-framework/samurai-view/modules/view-utility (1.0.1):
+    - FoundationExtension
   - IDEAApplet/applet-framework/vendor (1.0.1):
+    - FoundationExtension
     - IDEAApplet/applet-framework/vendor/fishhook (= 1.0.1)
-  - IDEAApplet/applet-framework/vendor/fishhook (1.0.1)
+  - IDEAApplet/applet-framework/vendor/fishhook (1.0.1):
+    - FoundationExtension
   - IDEAAppletDebugger (1.0.0):
-    - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEAAppletDebugger/ServiceBorder (= 1.0.0)
@@ -86,62 +109,62 @@ PODS:
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceBorder (1.0.0):
-    - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceConsole (1.0.0):
-    - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceGesture (1.0.0):
-    - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceGrids (1.0.0):
-    - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceInspector (1.0.0):
-    - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceMonitor (1.0.0):
-    - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEAAppletDebugger/ServiceMonitor/JBChartView (= 1.0.0)
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceMonitor/JBChartView (1.0.0):
-    - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceTapspot (1.0.0):
-    - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAAppletDebugger/ServiceTheme (1.0.0):
-    - FMDB
     - FoundationExtension
     - IDEAApplet
     - IDEANightVersion
     - UIKitExtension
   - IDEAColor (1.0.0):
     - IDEANightVersion
+  - IDEAFONT (1.0.0):
+    - IDEAFONT/Core (= 1.0.0)
+    - IDEAFONT/HY (= 1.0.0)
+    - IDEAFONT/Zekton (= 1.0.0)
+  - IDEAFONT/Core (1.0.0)
+  - IDEAFONT/HY (1.0.0):
+    - IDEAFONT/Core
+  - IDEAFONT/Zekton (1.0.0):
+    - IDEAFONT/Core
   - IDEAKit (1.0.1):
     - FoundationExtension
     - YYKit
@@ -149,7 +172,6 @@ PODS:
   - IDEAPalettes (2.1)
   - IDEAPing (1.0.1):
     - SimplePing
-  - IDEARegexKit (4.0)
   - IDEARoute (1.0.7)
   - IDEATabBarControllerTransition (1.0.0):
     - RTRootNavigationController
@@ -297,15 +319,15 @@ PODS:
 DEPENDENCIES:
   - APPDATA (from `APPDATA`)
   - APPDEBUG (from `APPDEBUG`)
-  - FoundationExtension
+  - FoundationExtension (from `https://github.com/miniwing/FoundationExtension.git`)
   - IDEAApplet (from `../MINIWING-PODs/Idea.Applets`)
   - IDEAAppletDebugger (from `../MINIWING-PODs/Idea.Applets`)
   - IDEAColor (from `../MINIWING-PODs/IDEAColor`)
+  - IDEAFONT (from `../MINIWING-PODs/IDEAFONT`)
   - IDEAKit (from `../MINIWING-PODs/IDEAKit`)
   - IDEANightVersion (from `../MINIWING-PODs/IDEANightVersion`)
   - IDEAPalettes (from `../MINIWING-PODs/IDEAPalettes`)
   - IDEAPing (from `../MINIWING-PODs/IDEAPing`)
-  - IDEARegexKit (from `../MINIWING-PODs/IDEARegexKit`)
   - IDEARoute (from `../MINIWING-PODs/IDEARoute`)
   - IDEATabBarControllerTransition (from `../MINIWING-PODs/IDEATabBarControllerTransition`)
   - IDEAUIKit (from `../MINIWING-PODs/IDEAUIKit`)
@@ -315,14 +337,12 @@ DEPENDENCIES:
   - MaterialComponents/Palettes
   - Reveal-SDK (~> 24)
   - RTRootNavigationController
-  - UIKitExtension
+  - UIKitExtension (from `https://github.com/miniwing/FoundationExtension.git`)
   - YYKit (from `../MINIWING-PODs/YYKit`)
 
 SPEC REPOS:
   trunk:
     - cdebug
-    - FMDB
-    - FoundationExtension
     - libwebp
     - MaterialComponents
     - MDFInternationalization
@@ -332,19 +352,22 @@ SPEC REPOS:
     - Reveal-SDK
     - RTRootNavigationController
     - SimplePing
-    - UIKitExtension
 
 EXTERNAL SOURCES:
   APPDATA:
     :path: APPDATA
   APPDEBUG:
     :path: APPDEBUG
+  FoundationExtension:
+    :git: https://github.com/miniwing/FoundationExtension.git
   IDEAApplet:
     :path: "../MINIWING-PODs/Idea.Applets"
   IDEAAppletDebugger:
     :path: "../MINIWING-PODs/Idea.Applets"
   IDEAColor:
     :path: "../MINIWING-PODs/IDEAColor"
+  IDEAFONT:
+    :path: "../MINIWING-PODs/IDEAFONT"
   IDEAKit:
     :path: "../MINIWING-PODs/IDEAKit"
   IDEANightVersion:
@@ -353,8 +376,6 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/IDEAPalettes"
   IDEAPing:
     :path: "../MINIWING-PODs/IDEAPing"
-  IDEARegexKit:
-    :path: "../MINIWING-PODs/IDEARegexKit"
   IDEARoute:
     :path: "../MINIWING-PODs/IDEARoute"
   IDEATabBarControllerTransition:
@@ -363,23 +384,32 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/IDEAUIKit"
   IDEAUIVendor:
     :path: "../MINIWING-PODs/IDEAUIVendor"
+  UIKitExtension:
+    :git: https://github.com/miniwing/FoundationExtension.git
   YYKit:
     :path: "../MINIWING-PODs/YYKit"
+
+CHECKOUT OPTIONS:
+  FoundationExtension:
+    :commit: d5e2f7c664832f3f3aa8726f093901aba3cc071f
+    :git: https://github.com/miniwing/FoundationExtension.git
+  UIKitExtension:
+    :commit: d5e2f7c664832f3f3aa8726f093901aba3cc071f
+    :git: https://github.com/miniwing/FoundationExtension.git
 
 SPEC CHECKSUMS:
   APPDATA: 4a636dafea08f9f604ad2b0aa3b2e3380ec0a8fd
   APPDEBUG: 6b85b3f3ef705f9668638c151e44f17d25f3f187
   cdebug: 0d0b7207fa996236ee9e07e5988e5e39a1d94a28
-  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
-  IDEAApplet: 7981266eafc48d64312924e39860d0cdebacde9f
-  IDEAAppletDebugger: a6c16f3c3583ad1af2f07923b919d77eae5cacc2
+  IDEAApplet: a89c8ba84fddf4ae738de2025630fa17732d3703
+  IDEAAppletDebugger: adff3ca84aa103a8d8119c900d4dedb0cd146660
   IDEAColor: b70b1e1d7cca00b592e01abb5309fbc95f4a72a9
+  IDEAFONT: e78a1e7989b4699eb11c9907d350d999801077d4
   IDEAKit: cd1fa1cd8ed15c1d639d69533bfefd82239e3f5a
   IDEANightVersion: 6ce5559404ef6c82a95bebb9398e735ca9a4b656
   IDEAPalettes: 40dc74c454bca6e8133e22a186a1d34080a8c420
   IDEAPing: c629cb361f54e9280abe213fe0bd00a7ced70187
-  IDEARegexKit: fe7d697620755395b5b884920f75e98b374fc6ec
   IDEARoute: 878096a8e5bdfb79935a225b41c1deb06acd1b43
   IDEATabBarControllerTransition: 6f2ae4e34338729f7499b8dffced061508014404
   IDEAUIKit: 60f2c3fd54cfe2c52e361454070a95ee064cd352
@@ -396,6 +426,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: a0006d7f92e6bc678e165c9b073398839286ee20
 
-PODFILE CHECKSUM: ccd0a98517ff8823b6d8dd04028b74ffd0c3eb51
+PODFILE CHECKSUM: 082be9cad6ae8cde2bf2fdd39926c6014d423ff2
 
 COCOAPODS: 1.10.1

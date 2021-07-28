@@ -46,6 +46,8 @@
 
    LogDebug((@"-[FleetingWidgetController viewDidLoad] : Remaining : ", APP_STR(@"Remaining")));
    [self.titleLabel setText:[NSString stringWithFormat:APP_STR(@"Remaining"), [OneYear sharedInstance].year]];
+   
+   [self.progressLabel setFont:[UIFont HYRegularFontOfSize:self.progressLabel.font.pointSize]];
    [self.progressLabel setText:[OneYear sharedInstance].currentProgress];
 
    @weakify(self);
@@ -91,6 +93,45 @@
    
    __CATCH(nErr);
 
+   return;
+}
+
+- (void)viewWillAppear:(BOOL)aAnimated {
+   
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+   
+   [super viewWillAppear:aAnimated];
+   
+   if (@available(iOS 13.0, *)) {
+      
+      if (UIUserInterfaceStyleDark == self.traitCollection.userInterfaceStyle) {
+
+         self.titleLabel.textColor     = UIColor.whiteColor;
+         self.progressLabel.textColor  = UIColor.whiteColor;
+         self.copyrightLabel.textColor = UIColor.whiteColor;
+
+      } /* End if () */
+      else {
+
+         self.titleLabel.textColor     = UIColor.blackColor;
+         self.progressLabel.textColor  = UIColor.blackColor;
+         self.copyrightLabel.textColor = UIColor.blackColor;
+
+      } /* End else */
+
+   } /* End if () */
+   else {
+      
+      self.titleLabel.textColor     = UIColor.blackColor;
+      self.progressLabel.textColor  = UIColor.blackColor;
+      self.copyrightLabel.textColor = UIColor.blackColor;
+
+   } /* End else */
+   
+   __CATCH(nErr);
+   
    return;
 }
 

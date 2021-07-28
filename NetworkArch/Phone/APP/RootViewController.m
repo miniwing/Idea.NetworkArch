@@ -67,11 +67,11 @@ NS_ASSUME_NONNULL_END
       
       self.type   = TransTypeMove;
       
-//      @weakify(self);
+      @weakify(self);
       /******************************************************************************************/      
       self.onNotification(SettingController.tabAnimationNotification, ^(NSNotification *aNotification) {
          
-//         @strongify(self);
+         @strongify(self);
          LogDebug((@"-[RootViewController onNotification : %@] : %@ : %@", aNotification.name, aNotification.name, aNotification.object));
          
          if ([aNotification.object boolValue]) {

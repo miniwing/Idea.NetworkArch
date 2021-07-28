@@ -26,6 +26,8 @@
    
    // Custom dealloc
    
+   [self removeAllNotification];
+   
    __SUPER_DEALLOC;
    
    return;
@@ -134,10 +136,10 @@
    
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
-   [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
    [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
 
-   [self.rightBarButtonItem setEnabled:YES];
+   [self.rightBarButtonItem setEnabled:NO];
    
 #if MATERIAL_APP_BAR
    // Dispose of any resources that can be recreated.
@@ -162,79 +164,91 @@
    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"CLEAR-IMAGE"]];
    
    if (@available(iOS 13, *)) {
-      
+
       self.searchBarTextField = self.searchBar.searchTextField;
-      
+
    } /* End if () */
    else {
-      
+
       for (UIView *stSubView in [[self.searchBar.subviews lastObject] subviews]) {
-         
+
          if ([[stSubView class] isSubclassOfClass:[UITextField class]]) {
-            
+
             self.searchBarTextField = (UITextField *)stSubView;
-            
+
             break;
-            
+
          } /* End if () */
-         
+
       } /* End for () */
-      
+
    } /* End else */
-   
+
    LogDebug((@"-[SearchController viewDidLayoutSubviews] : UITextField : %@", self.searchBarTextField)); // 0x105070200
-   
+
    if (nil == self.searchBarTextField) {
-      
+
       self.searchBarTextField = [UITextField appearanceWhenContainedInInstancesOfClasses:@[ [UISearchBar class], [PingController class] ]];
-      
+
    } /* End if () */
-   
+
    [self.searchBarTextField setFont:[APPFont regularFontOfSize:16]];
    [self.searchBarTextField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   
+
    if (@available(iOS 13, *)) {
-      
+
    } /* End if () */
    else {
-      
+
       [self.searchBarTextField setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-         
+
          if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-            
+
             return [UIColor lightTextColor];
-            
+
          } /* End if () */
          else {
-            
+
             return [UIColor secondaryLabelColor];
-            
+
          } /* End else */
       }];
-      
+
       [self.searchBarTextField setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-         
+
          if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-            
+
             return [IDEAColor colorWithKey:[IDEAColor secondarySystemBackground]];
-            
+
          }
          else {
-            
+
             return [IDEAColor colorWithKey:[IDEAColor systemGroupedBackground]];
-            
+
          }
       }];
    } /* End else */
    
    [self.searchBar setDelegate:self];
-   
    [self.searchBar setPlaceholder:APP_STR(@"IP Address / Host Name")];
    
+   if (nil != self.searchBarTextField) {
+
+//      [self.searchBarTextField setDelegate:self];
+
+      [self addNotificationName:UITextFieldTextDidChangeNotification
+                       selector:@selector(textFieldTextDidChange:)
+                         object:self.searchBarTextField];
+
+   } /* End if () */
+
 #if __Debug__
-   [self.searchBar setText:@"www.baidu.com"];
+   dispatch_async_on_main_queue(^{
+
+      [self.searchBar setText:@"www.baidu.com"];
+   });
 #endif /* __Debug__ */
-   
+
    __CATCH(nErr);
    
    return;
@@ -295,6 +309,19 @@
    dispatch_once(&_firstResponder, ^{
       
       [self.searchBar becomeFirstResponder];
+      
+//#if __Debug__
+//      [CATransaction begin];
+//      [self.searchBar becomeFirstResponder];
+//      [CATransaction commit];
+//
+//      [CATransaction setCompletionBlock:^{
+//
+//         [self.searchBar setText:@"www.baidu.com"];
+//      }];
+//#else
+//      [self.searchBar becomeFirstResponder];
+//#endif /* __Debug__ */
    });
    
    __CATCH(nErr);
@@ -422,11 +449,13 @@
    if (NO == self.pinging) {
       
       [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
+      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemRed])];
 
    } /* End if () */
    else {
       
       [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
+      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
 
    } /* End else */
    

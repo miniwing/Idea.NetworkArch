@@ -23,6 +23,9 @@
                                     <searchBar contentMode="redraw" insetsLayoutMarginsFromSafeArea="NO" placeholder="IP Address / Host Name" translatesAutoresizingMaskIntoConstraints="NO" id="Ak1-VS-Klo">
                                         <rect key="frame" x="8" y="0.0" width="359" height="51"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="QDr-rL-P4v" id="asl-kT-y83"/>
+                                        </connections>
                                     </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>

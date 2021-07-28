@@ -18,7 +18,18 @@
 
 @implementation OneYear
 
-@def_singleton (OneYear);
++ (instancetype)sharedInstance {
+
+   static dispatch_once_t   stOnce;
+   static __strong OneYear *g_OneYear  = nil;
+   
+   dispatch_once(&stOnce, ^{
+      
+      g_OneYear = [[OneYear alloc] init];
+   });
+   
+   return g_OneYear;
+}
 
 - (void)dealloc {
    

@@ -35,6 +35,19 @@
    
    __TRY;
    
+   LogDebug((@"-[PingController searchBarTextDidBeginEditing:] : SearchText : %@", aSearchBar.text));
+
+   if (!kStringIsEmpty(aSearchBar.text)) {
+      
+      [self.rightBarButtonItem setEnabled:YES];
+      
+   } /* End if () */
+   else {
+      
+      [self.rightBarButtonItem setEnabled:NO];
+      
+   } /* End else */
+
    __CATCH(nErr);
    
    return;
@@ -70,11 +83,16 @@
    
    LogDebug((@"-[PingController searchBar:textDidChange:] : SearchText : %@", aSearchBar));
    
-   if (kStringIsEmpty(aSearchText)) {
+   if (!kStringIsEmpty(aSearchText)) {
+      
+      [self.rightBarButtonItem setEnabled:YES];
+      
+   } /* End if () */
+   else {
       
       [self.rightBarButtonItem setEnabled:NO];
       
-   } /* End if () */
+   } /* End else */
    
    __CATCH(nErr);
    
@@ -137,6 +155,22 @@
 }
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+@end
+
+#pragma mark - <UITextFieldDelegate>
+@implementation PingController (UITextFieldDelegate)
+
+- (void)textFieldTextDidChange:(NSNotification *)aSender {
    
    int                            nErr                                     = EFAULT;
    

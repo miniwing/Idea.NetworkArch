@@ -60,4 +60,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface PingController (UITextFieldDelegate)
+
+- (void)textFieldTextDidChange:(NSNotification *)aSender;
+
+@end
+
 NS_ASSUME_NONNULL_END

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OneYear : NSObject
 
-@singleton  (OneYear);
++ (instancetype)sharedInstance;
 
 @end
 

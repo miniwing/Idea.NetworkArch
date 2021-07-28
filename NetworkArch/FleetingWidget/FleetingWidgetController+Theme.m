@@ -20,29 +20,29 @@
    if (@available(iOS 13.0, *)) {
       
       if (UIUserInterfaceStyleDark == self.traitCollection.userInterfaceStyle) {
-
+         
          self.titleLabel.textColor     = UIColor.whiteColor;
          self.progressLabel.textColor  = UIColor.whiteColor;
          self.copyrightLabel.textColor = UIColor.whiteColor;
-
+         
       } /* End if () */
       else {
-
+         
          self.titleLabel.textColor     = UIColor.blackColor;
          self.progressLabel.textColor  = UIColor.blackColor;
          self.copyrightLabel.textColor = UIColor.blackColor;
-
+         
       } /* End else */
-
+      
    } /* End if () */
    else {
       
       self.titleLabel.textColor     = UIColor.blackColor;
       self.progressLabel.textColor  = UIColor.blackColor;
       self.copyrightLabel.textColor = UIColor.blackColor;
-
+      
    } /* End else */
-
+   
    __CATCH(nErr);
    
    return;
