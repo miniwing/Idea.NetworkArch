@@ -10,6 +10,8 @@
 
 #import <IDEAUIVendor/IDEAUIVendor.h>
 
+#import "PingTextField.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PingController : IDEAViewController
@@ -18,7 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * rightBarButtonItem;
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * searchView;
-@property (nonatomic, weak)   IBOutlet       UISearchBar                         * searchBar;
+//@property (nonatomic, weak)   IBOutlet       UISearchBar                         * searchBar;
+@property (nonatomic, weak)   IBOutlet       PingTextField                       * textField;
+
+@property (nonatomic, weak)   IBOutlet       UITableView                         * tableView;
 
 @end
 

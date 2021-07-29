@@ -10,8 +10,57 @@
 //
 
 #import "PingController+Inner.h"
+#import "PingController+Signal.h"
 
+#pragma mark - handleSignal
 @implementation PingController (Inner)
+
+handleSignal(PingController, startPingSignal) {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [self resignFirstResponder];
+   
+   LogDebug((@"-[PingController startPingSignal:] : Signal : %@", aSignal));
+
+   // 按钮状态变更。
+   if (nil == self.pingClient) {
+      
+      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
+      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemRed])];
+
+      [self.textField setEnabled:NO];
+      
+      self.pingClient   = [IDEAPingClient pingWithHostName:self.textField.text
+                                                    result:^(NSTimeInterval aTime, NSError * _Nonnull aError) {
+         
+         LogDebug((@"-[PingController startPingSignal:] : ping : Error : %@", aError));
+         LogDebug((@"-[PingController startPingSignal:] : ping : Time  : %ld", aTime));
+      }];
+
+   } /* End if () */
+   else {
+      
+      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
+      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
+
+      [self.textField setEnabled:YES];
+
+      if (nil != self.pingClient) {
+         
+         [self.pingClient stopPing];
+         __RELEASE(self.pingClient);
+
+      } /* End if () */
+
+   } /* End else */
+
+   __CATCH(nErr);
+   
+   return;
+}
 
 @end
 
@@ -170,11 +219,152 @@
 #pragma mark - <UITextFieldDelegate>
 @implementation PingController (UITextFieldDelegate)
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)aTextField {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)aTextField {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[PingController textFieldDidBeginEditing:] : Text : %@", aTextField.text));
+
+   if (!kStringIsEmpty(aTextField.text)) {
+      
+      [self.rightBarButtonItem setEnabled:YES];
+      
+   } /* End if () */
+   else {
+      
+      [self.rightBarButtonItem setEnabled:NO];
+      
+   } /* End else */
+
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)aTextField {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)aTextField {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)aTextField reason:(UITextFieldDidEndEditingReason)aReason {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (BOOL)textField:(UITextField *)aTextField shouldChangeCharactersInRange:(NSRange)aRange replacementString:(NSString *)aString {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return YES;
+}
+
+- (void)textFieldDidChangeSelection:(UITextField *)aTextField {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)aTextField {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)aTextField {
+   
+   int                            nErr                                     = EFAULT;
+   
+   BOOL                           bShouldReturn                            = NO;
+   
+   __TRY;
+   
+   if (!kStringIsEmpty(aTextField.text)) {
+      
+      bShouldReturn  = YES;
+      
+      [self postSignal:PingController.startPingSignal
+               onQueue:dispatch_get_main_queue()];
+
+   } /* End if () */
+   else {
+      
+      bShouldReturn  = NO;
+      
+   } /* End else */
+
+   __CATCH(nErr);
+   
+   return bShouldReturn;
+}
+
 - (void)textFieldTextDidChange:(NSNotification *)aSender {
    
    int                            nErr                                     = EFAULT;
    
    __TRY;
+   
+   LogDebug((@"-[PingController textFieldTextDidChange:] : Text : %@", self.textField.text));
+   
+   if (!kStringIsEmpty(self.textField.text)) {
+      
+      [self.rightBarButtonItem setEnabled:YES];
+      
+   } /* End if () */
+   else {
+      
+      [self.rightBarButtonItem setEnabled:NO];
+      
+   } /* End else */
    
    __CATCH(nErr);
    

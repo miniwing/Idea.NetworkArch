@@ -17,8 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PingController (Signal)
 
 #if __Debug__
-@signal(self);
+@signal  (self);
 #endif /* __Debug__ */
+
+@signal  (startPing);
 
 @end
 

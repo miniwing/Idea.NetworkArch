@@ -179,6 +179,11 @@
 		4AF4412826AC8C060008C169 /* BOTTOM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412526AC8C040008C169 /* BOTTOM.png */; };
 		4AF4412926AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
 		4AF4412A26AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
+		4AF9C4EB26B1C1E9002A2ABC /* PingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C4E326B1C1E9002A2ABC /* PingTextField.m */; };
+		4AF9C4FE26B1C5F5002A2ABC /* PingTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C4F626B1C5F5002A2ABC /* PingTimeCell.m */; };
+		4AF9C51026B1C9A4002A2ABC /* PingGraphCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C50826B1C9A4002A2ABC /* PingGraphCell.m */; };
+		4AF9C52226B1C9D6002A2ABC /* PingStatisticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C51A26B1C9D6002A2ABC /* PingStatisticsCell.m */; };
+		4AF9C53426B1D4BC002A2ABC /* PingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C52C26B1D4BC002A2ABC /* PingCell.m */; };
 		4AFFEDBC268645160052712A /* AppTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFEDBB268645160052712A /* AppTracking.m */; };
 		5BEB497136CC0DADCDA759C5 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7ED5B0AF8B13D8017C36B /* Pods_APPBase.framework */; };
 		5FA446E1A3F97CFBBE61B000 /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CF124DFB1AC23736EDFA17 /* Pods_TodayWidget.framework */; };
@@ -585,6 +590,16 @@
 		4AF4412426AC8AC90008C169 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AF4412526AC8C040008C169 /* BOTTOM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BOTTOM.png; sourceTree = "<group>"; };
 		4AF4412626AC8C050008C169 /* LAUNCH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LAUNCH.png; sourceTree = "<group>"; };
+		4AF9C4DD26B1C1E9002A2ABC /* PingTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingTextField.h; sourceTree = "<group>"; };
+		4AF9C4E326B1C1E9002A2ABC /* PingTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingTextField.m; sourceTree = "<group>"; };
+		4AF9C4F026B1C5F5002A2ABC /* PingTimeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingTimeCell.h; sourceTree = "<group>"; };
+		4AF9C4F626B1C5F5002A2ABC /* PingTimeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingTimeCell.m; sourceTree = "<group>"; };
+		4AF9C50226B1C9A4002A2ABC /* PingGraphCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingGraphCell.h; sourceTree = "<group>"; };
+		4AF9C50826B1C9A4002A2ABC /* PingGraphCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingGraphCell.m; sourceTree = "<group>"; };
+		4AF9C51426B1C9D6002A2ABC /* PingStatisticsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingStatisticsCell.h; sourceTree = "<group>"; };
+		4AF9C51A26B1C9D6002A2ABC /* PingStatisticsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingStatisticsCell.m; sourceTree = "<group>"; };
+		4AF9C52626B1D4BC002A2ABC /* PingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingCell.h; sourceTree = "<group>"; };
+		4AF9C52C26B1D4BC002A2ABC /* PingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingCell.m; sourceTree = "<group>"; };
 		4AFFEDBA268645160052712A /* AppTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTracking.h; sourceTree = "<group>"; };
 		4AFFEDBB268645160052712A /* AppTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTracking.m; sourceTree = "<group>"; };
 		51094CFDD28FA237A0372EFB /* Pods-FleetingWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetingWidget.release.xcconfig"; path = "Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget.release.xcconfig"; sourceTree = "<group>"; };
@@ -798,7 +813,9 @@
 		4A0E4E5B2685898300A85517 /* APPViews */ = {
 			isa = PBXGroup;
 			children = (
+				4AF9C4DA26B1C1D2002A2ABC /* UITextField */,
 				4A0EB7E42687266200AA4366 /* HOME */,
+				4AF9C4ED26B1C5DE002A2ABC /* PING */,
 				4AB5C1E726859F3C00B1639D /* SETTING */,
 			);
 			path = APPViews;
@@ -1389,6 +1406,30 @@
 			path = TodayWidgetCell;
 			sourceTree = "<group>";
 		};
+		4AF9C4DA26B1C1D2002A2ABC /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				4AF9C4DD26B1C1E9002A2ABC /* PingTextField.h */,
+				4AF9C4E326B1C1E9002A2ABC /* PingTextField.m */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		4AF9C4ED26B1C5DE002A2ABC /* PING */ = {
+			isa = PBXGroup;
+			children = (
+				4AF9C52626B1D4BC002A2ABC /* PingCell.h */,
+				4AF9C52C26B1D4BC002A2ABC /* PingCell.m */,
+				4AF9C51426B1C9D6002A2ABC /* PingStatisticsCell.h */,
+				4AF9C51A26B1C9D6002A2ABC /* PingStatisticsCell.m */,
+				4AF9C50226B1C9A4002A2ABC /* PingGraphCell.h */,
+				4AF9C50826B1C9A4002A2ABC /* PingGraphCell.m */,
+				4AF9C4F026B1C5F5002A2ABC /* PingTimeCell.h */,
+				4AF9C4F626B1C5F5002A2ABC /* PingTimeCell.m */,
+			);
+			path = PING;
+			sourceTree = "<group>";
+		};
 		5A073BE837F8A6FE5151B56D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1862,6 +1903,7 @@
 				4A53A9BB26A46E60000700F2 /* WoLANRootController+Debug.m in Sources */,
 				4A0E4E77268589E600A85517 /* SettingRootController.m in Sources */,
 				4A45536A26862E4D0050E736 /* HomeContentController+Inner.m in Sources */,
+				4AF9C53426B1D4BC002A2ABC /* PingCell.m in Sources */,
 				4A5D9A0626A4952B00E00610 /* WifiMoreController.m in Sources */,
 				4A53AA6D26A46F52000700F2 /* WoLANController+Inner.m in Sources */,
 				4A5D99CB26A494FA00E00610 /* CellularMoreRootController+Signal.m in Sources */,
@@ -1879,7 +1921,9 @@
 				4A5D99F126A4951C00E00610 /* WifiMoreRootController+Notification.m in Sources */,
 				4A53AAC026A47403000700F2 /* DNSRootController+Notification.m in Sources */,
 				4A5D99F226A4951C00E00610 /* WifiMoreRootController+Inner.m in Sources */,
+				4AF9C4EB26B1C1E9002A2ABC /* PingTextField.m in Sources */,
 				4A221F0626A44DA100C94F00 /* PingRootController+Theme.m in Sources */,
+				4AF9C4FE26B1C5F5002A2ABC /* PingTimeCell.m in Sources */,
 				4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */,
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
 				4A53A9EC26A46EA5000700F2 /* WhoisRootController+Debug.m in Sources */,
@@ -1908,6 +1952,7 @@
 				4AE51B8F2685C39400DC1DA2 /* HomeController+Theme.m in Sources */,
 				4AE51B912685C39400DC1DA2 /* HomeController.m in Sources */,
 				4A53AA1426A46EE2000700F2 /* WhoisController+Notification.m in Sources */,
+				4AF9C52226B1C9D6002A2ABC /* PingStatisticsCell.m in Sources */,
 				4A5D99CF26A494FA00E00610 /* CellularMoreRootController+Notification.m in Sources */,
 				4A5D99CC26A494FA00E00610 /* CellularMoreRootController+Debug.m in Sources */,
 				4A53AA3D26A46F18000700F2 /* PingController+Inner.m in Sources */,
@@ -1925,6 +1970,7 @@
 				4A53AABE26A47403000700F2 /* DNSRootController+Debug.m in Sources */,
 				4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */,
 				4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */,
+				4AF9C51026B1C9A4002A2ABC /* PingGraphCell.m in Sources */,
 				4A5D99DF26A4950B00E00610 /* CellularMoreController.m in Sources */,
 				4A5D9A0426A4952B00E00610 /* WifiMoreController+Signal.m in Sources */,
 				4AFFEDBC268645160052712A /* AppTracking.m in Sources */,

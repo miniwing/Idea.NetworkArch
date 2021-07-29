@@ -319,7 +319,7 @@ PODS:
 DEPENDENCIES:
   - APPDATA (from `APPDATA`)
   - APPDEBUG (from `APPDEBUG`)
-  - FoundationExtension (from `https://github.com/miniwing/FoundationExtension.git`)
+  - FoundationExtension (from `https://github.com/miniwing/FoundationExtension.git`, branch `master`)
   - IDEAApplet (from `../MINIWING-PODs/Idea.Applets`)
   - IDEAAppletDebugger (from `../MINIWING-PODs/Idea.Applets`)
   - IDEAColor (from `../MINIWING-PODs/IDEAColor`)
@@ -337,7 +337,7 @@ DEPENDENCIES:
   - MaterialComponents/Palettes
   - Reveal-SDK (~> 24)
   - RTRootNavigationController
-  - UIKitExtension (from `https://github.com/miniwing/FoundationExtension.git`)
+  - UIKitExtension (from `https://github.com/miniwing/FoundationExtension.git`, branch `master`)
   - YYKit (from `../MINIWING-PODs/YYKit`)
 
 SPEC REPOS:
@@ -359,6 +359,7 @@ EXTERNAL SOURCES:
   APPDEBUG:
     :path: APPDEBUG
   FoundationExtension:
+    :branch: master
     :git: https://github.com/miniwing/FoundationExtension.git
   IDEAApplet:
     :path: "../MINIWING-PODs/Idea.Applets"
@@ -385,6 +386,7 @@ EXTERNAL SOURCES:
   IDEAUIVendor:
     :path: "../MINIWING-PODs/IDEAUIVendor"
   UIKitExtension:
+    :branch: master
     :git: https://github.com/miniwing/FoundationExtension.git
   YYKit:
     :path: "../MINIWING-PODs/YYKit"
@@ -426,6 +428,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: a0006d7f92e6bc678e165c9b073398839286ee20
 
-PODFILE CHECKSUM: 082be9cad6ae8cde2bf2fdd39926c6014d423ff2
+PODFILE CHECKSUM: 38692bb3ce1bbb6ff434125f3220e19a608373e7
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.2

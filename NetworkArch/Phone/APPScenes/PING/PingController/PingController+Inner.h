@@ -10,11 +10,25 @@
 
 #import <IDEAUIVendor/IDEAUIVendor.h>
 
+#import <IDEAPing/IDEAPingClient.h>
+
 #import "PingController.h"
+
+#import "PingStatisticsCell.h"
+#import "PingGraphCell.h"
+#import "PingTimeCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PingController () <UISearchBarDelegate> {
+IDEA_ENUM(NSInteger, PingSection) {
+   
+   PingSectionStatistics   = 0,
+   PingSectionTime         = 1,
+   PingSectionNumber
+};
+
+
+@interface PingController () <UITextFieldDelegate> {
 
    dispatch_once_t                          _firstResponder;
 }
@@ -25,16 +39,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
 
-/**
- The text field of search bar
- */
-@property (nonatomic, weak)                  UITextField                         * searchBarTextField;
-
 @end
 
 @interface PingController ()
 
-@property (nonatomic, assign)                BOOL                                  pinging;
+@property (nonatomic, strong)                IDEAPingClient                      * pingClient;
 
 @end
 
@@ -42,25 +51,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface PingController (UISearchBarDelegate)
-
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar;                      // return NO to not become first responder
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar;                     // called when text starts editing
-- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar;                        // return NO to not resign first responder
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar;                       // called when text ends editing
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;   // called when text changes (including clear)
-- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text API_AVAILABLE(ios(3.0)); // called before text changes
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;                     // called when keyboard search button pressed
-- (void)searchBarBookmarkButtonClicked:(UISearchBar *)searchBar API_UNAVAILABLE(tvos); // called when bookmark button pressed
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar API_UNAVAILABLE(tvos);   // called when cancel button pressed
-- (void)searchBarResultsListButtonClicked:(UISearchBar *)searchBar API_AVAILABLE(ios(3.2)) API_UNAVAILABLE(tvos); // called when search results button pressed
-
-- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope API_AVAILABLE(ios(3.0));
-
-@end
-
 @interface PingController (UITextFieldDelegate)
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)aTextField;
+- (void)textFieldDidBeginEditing:(UITextField *)aTextField;
+- (BOOL)textFieldShouldEndEditing:(UITextField *)aTextField;
+- (void)textFieldDidEndEditing:(UITextField *)aTextField;
+- (void)textFieldDidEndEditing:(UITextField *)aTextField reason:(UITextFieldDidEndEditingReason)aReason;
+
+- (BOOL)textField:(UITextField *)aTextField shouldChangeCharactersInRange:(NSRange)aRange replacementString:(NSString *)aString;
+
+- (void)textFieldDidChangeSelection:(UITextField *)aTextField API_AVAILABLE(ios(13.0), tvos(13.0));
+
+- (BOOL)textFieldShouldClear:(UITextField *)aTextField;               // called when clear button pressed. return NO to ignore (no notifications)
+- (BOOL)textFieldShouldReturn:(UITextField *)aTextField;              // called when 'return' key pressed. return NO to ignore.
 
 - (void)textFieldTextDidChange:(NSNotification *)aSender;
 
