@@ -1,5 +1,5 @@
 //
-//  PingTimeCell.m
+//  PingResultCell.m
 //  NetworkArch
 //
 //  Created by Harry on 2021/7/29.
@@ -9,13 +9,15 @@
 //  TEL : +(852)53054612
 //
 
-#import "PingTimeCell.h"
+#import "PingResultCell.h"
 
-@interface PingTimeCell ()
+@interface PingResultCell ()
+
+@property (nonatomic, strong)                PingResult                          * pingResult;
 
 @end
 
-@implementation PingTimeCell
+@implementation PingResultCell
 
 - (void)dealloc {
 
@@ -54,6 +56,10 @@
 
    [super awakeFromNib];
    // Initialization code
+   
+   [self.statusView setCornerRadius:4 clipsToBounds:YES];
+   
+   [self.statusLabel setBackgroundColor:UIColor.clearColor];
 
    __CATCH(nErr);
 
@@ -70,6 +76,19 @@
 
    // Configure the view for the selected state
 
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)setPingResult:(PingResult *)aPingResult {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+
+   _pingResult = aPingResult;
+   
    __CATCH(nErr);
    
    return;

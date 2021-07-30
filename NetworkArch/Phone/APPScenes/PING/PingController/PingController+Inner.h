@@ -16,7 +16,7 @@
 
 #import "PingStatisticsCell.h"
 #import "PingGraphCell.h"
-#import "PingTimeCell.h"
+#import "PingResultCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -44,6 +44,7 @@ IDEA_ENUM(NSInteger, PingSection) {
 @interface PingController ()
 
 @property (nonatomic, strong)                IDEAPingClient                      * pingClient;
+@property (nonatomic, strong)                NSMutableArray<PingResult *>        * pingResults;
 
 @end
 

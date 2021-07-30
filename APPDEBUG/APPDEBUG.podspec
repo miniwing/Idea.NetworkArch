@@ -33,7 +33,7 @@ Pod::Spec.new do |spec|
     'HEADER_SEARCH_PATHS'               => [
                                             "${PODS_TARGET_SRCROOT}/",
                                             "${PODS_TARGET_SRCROOT}/../",
-                                            "${PODS_ROOT}/Headers/Public/YYKit/"
+#                                            "${PODS_ROOT}/Headers/Public/YYKit/"
                                             ]
                                       }
 
@@ -184,47 +184,47 @@ Pod::Spec.new do |spec|
 
 /******************************************************************************************************/
 
-// #if (__has_include(<YYKit/YYKit.h>))
-// #  import <YYKit/YYKit.h>
-// #elif (__has_include("YYKit/YYKit.h"))
-// #  import "YYKit/YYKit.h"
-// #elif (__has_include("YYKit.h"))
-// #  import "YYKit.h"
-// #elif (__has_include("YYKit.h"))
-// #  import "YYKit.h"
-// #else /* YY_KIT */
-// #  ifndef weakify
-// #     if __has_feature(objc_arc)
-// #        define weakify( x )                                               \\
-//             _Pragma("clang diagnostic push")                               \\
-//             _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
-//             autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x;     \\
-//             _Pragma("clang diagnostic pop")
-// #     else
-// #        define weakify( x )                                               \\
-//             _Pragma("clang diagnostic push")                               \\
-//             _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
-//             autoreleasepool{} __block __typeof__(x) __block_##x##__ = x;   \\
-//             _Pragma("clang diagnostic pop")
-// #     endif
-// #  endif /* !weakify */
+#if (__has_include(<YYKit/YYKit.h>))
+#  import <YYKit/YYKit.h>
+#elif (__has_include("YYKit/YYKit.h"))
+#  import "YYKit/YYKit.h"
+#elif (__has_include("YYKit.h"))
+#  import "YYKit.h"
+#elif (__has_include("YYKit.h"))
+#  import "YYKit.h"
+#else /* YY_KIT */
+#  ifndef weakify
+#     if __has_feature(objc_arc)
+#        define weakify( x )                                               \\
+            _Pragma("clang diagnostic push")                               \\
+            _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
+            autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x;     \\
+            _Pragma("clang diagnostic pop")
+#     else
+#        define weakify( x )                                               \\
+            _Pragma("clang diagnostic push")                               \\
+            _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
+            autoreleasepool{} __block __typeof__(x) __block_##x##__ = x;   \\
+            _Pragma("clang diagnostic pop")
+#     endif
+#  endif /* !weakify */
 
-// #  ifndef strongify
-// #     if __has_feature(objc_arc)
-// #        define strongify( x )                                             \\
-//             _Pragma("clang diagnostic push")                               \\
-//             _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
-//             try{} @finally{} __typeof__(x) x = __weak_##x##__;             \\
-//             _Pragma("clang diagnostic pop")
-// #     else
-// #        define strongify( x )                                             \\
-//             _Pragma("clang diagnostic push")                               \\
-//             _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
-//             try{} @finally{} __typeof__(x) x = __block_##x##__;            \\
-//             _Pragma("clang diagnostic pop")
-// #     endif
-// #  endif /* !strongify */
-// #endif
+#  ifndef strongify
+#     if __has_feature(objc_arc)
+#        define strongify( x )                                             \\
+            _Pragma("clang diagnostic push")                               \\
+            _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
+            try{} @finally{} __typeof__(x) x = __weak_##x##__;             \\
+            _Pragma("clang diagnostic pop")
+#     else
+#        define strongify( x )                                             \\
+            _Pragma("clang diagnostic push")                               \\
+            _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
+            try{} @finally{} __typeof__(x) x = __block_##x##__;            \\
+            _Pragma("clang diagnostic pop")
+#     endif
+#  endif /* !strongify */
+#endif
 
 /******************************************************************************************************/
 
@@ -537,13 +537,16 @@ __END_DECLS
                                                    } while (0);               \\
                                                    FunctionEnd(nErr);
 
-/******************************************************************************************************/
-
-// #import <IDEAKit/IDEAKit.h>
+#define __LOG_FUNCTION                             LogFunc((@"%s :", __PRETTY_FUNCTION__))
 
 /******************************************************************************************************/
 
- EOS
- spec.prefix_header_contents = pch_app_kit
+#define UI_AVAILABLE_SDK_IOS(_ios)                ((__IPHONE_##_ios != 0) &&                          \\
+                                                   (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_##_ios))
 
+/******************************************************************************************************/
+
+EOS
+spec.prefix_header_contents = pch_app_kit
+    
 end

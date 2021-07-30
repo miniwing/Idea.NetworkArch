@@ -33,11 +33,52 @@ handleSignal(PingController, startPingSignal) {
 
       [self.textField setEnabled:NO];
       
+      [self.pingResults removeAllObjects];
+      
+      @weakify(self);
       self.pingClient   = [IDEAPingClient pingWithHostName:self.textField.text
                                                     result:^(NSTimeInterval aTime, NSError * _Nonnull aError) {
          
+         @strongify(self);
          LogDebug((@"-[PingController startPingSignal:] : ping : Error : %@", aError));
-         LogDebug((@"-[PingController startPingSignal:] : ping : Time  : %ld", aTime));
+         LogDebug((@"-[PingController startPingSignal:] : ping : Time  : %.3f", aTime));
+         
+         PingResult  *stPingResult  = [PingResult pingResultWithError:aError duration:aTime];
+         
+         [self.pingResults addObject:stPingResult];
+         
+//         dispatch_async_on_main_queue(^{
+//            
+//            [CATransaction begin];
+//            
+//            [self.tableView insertRow:self.pingResults.count - 1
+//                            inSection:PingSectionTime
+//                     withRowAnimation:UITableViewRowAnimationFade];
+//            
+//            [CATransaction commit];
+//            
+//            [CATransaction setCompletionBlock:^{
+//               [self.tableView scrollToRow:self.pingResults.count - 1
+//                                 inSection:PingSectionTime
+//                          atScrollPosition:UITableViewScrollPositionBottom
+//                                  animated:YES];
+//            }];
+//            
+////            [UIView transitionWithView:self.tableView
+////                              duration:0.1
+////                               options:UIViewAnimationOptionTransitionCrossDissolve
+////                            animations:^{
+////
+////               [self.tableView reloadData];
+////            }
+////                            completion:^(BOOL finished) {
+////
+////               [self.tableView scrollToRow:self.pingResults.count - 1
+////                                 inSection:PingSectionTime
+////                          atScrollPosition:UITableViewScrollPositionBottom
+////                                  animated:YES];
+////            }];
+//         });
       }];
 
    } /* End if () */

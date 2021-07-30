@@ -375,7 +375,7 @@
    } /* End if () */
    else /* if (PingSectionStatistics == aSection) */ {
       
-      nNumberOfRows  = 2;
+      nNumberOfRows  = self.pingResults.count;
       
    } /* End else */
    
@@ -411,7 +411,9 @@
    
    PingStatisticsCell            *stPingStatisticsCell                     = nil;
    PingGraphCell                 *stPingGraphCell                          = nil;
-   PingTimeCell                  *stPingTimeCell                           = nil;
+   
+   PingResult                    *stPingResult                             = nil;
+   PingResultCell                *stPingResultCell                         = nil;
    
    __TRY;
    
@@ -462,18 +464,19 @@
    } /* End if () */
    else /* if (PingSectionTime == aIndexPath.section) */ {
       
-      stPingTimeCell    = [aTableView dequeueReusableCellWithIdentifier:PingTimeCell.reuseIdentifier
+      stPingResult      = [self.pingResults objectAtIndex:aIndexPath.row];
+      
+      stPingResultCell  = [aTableView dequeueReusableCellWithIdentifier:PingResultCell.reuseIdentifier
                                                            forIndexPath:aIndexPath];
       
-      stPingCell  = stPingTimeCell;
+      [stPingResultCell setPingResult:stPingResult];
+      
+      stPingCell  = stPingResultCell;
       
    } /* End else */
    
    if (nil != stPingCell) {
-            
-      [stPingCell setBackgroundColor:UIColor.clearColor];
-      [stPingCell.contentView setBackgroundColor:UIColor.clearColor];
-            
+
    } /* End if () */
 
    __CATCH(nErr);
@@ -482,6 +485,18 @@
 }
 
 #pragma mark - <UITableViewDelegate>
+
+#pragma mark - (NSMutableArray<PingResult *> *)pingResults
+- (NSMutableArray<PingResult *> *)pingResults {
+   
+   if (nil == _pingResults) {
+      
+      _pingResults   = [NSMutableArray<PingResult *> array];
+      
+   } /* End if () */
+   
+   return _pingResults;
+}
 
 @end
 

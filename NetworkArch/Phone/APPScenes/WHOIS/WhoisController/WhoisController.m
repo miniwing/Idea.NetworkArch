@@ -76,6 +76,8 @@
    [self setTitle:APP_STR(@"Whois")];
    LogDebug((@"[WhoisController viewDidLoad] : VIEW : %@", self.view));
    
+   [self.view setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+
 #if MATERIAL_APP_BAR
    [self.navigationController setNavigationBarHidden:YES];
    

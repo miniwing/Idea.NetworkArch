@@ -37,8 +37,8 @@ workspace 'Idea.NetworkArch'
 
 project 'NetworkArch/NetworkArch.xcodeproj'
 
-use_frameworks!
-#use_modular_headers!
+#use_frameworks!
+use_modular_headers!
 inhibit_all_warnings!
 
 platform :ios, '10.0'
@@ -57,28 +57,20 @@ def library
   miniwing_pod('UIKitExtension', file = 'FoundationExtension', type = 'remote', branch = 'master', modular_headers = true)
 
   if ENV['IDEA_AFNETWORKING'] == 'YES'
-#    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'            , :configurations => ['Debug']
+    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'            , :configurations => ['Debug']
 #    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'
-    miniwing_pod('AFNetworking', file = 'AFNetworking', type = 'local', branch = 'master', modular_headers = true)
   end # IDEA_AFNETWORKING
 
   if ENV['IDEA_YYKIT'] == 'YES'
-#    pod 'YYKit'                         , :path => '../MINIWING-PODs/YYKit'
-    miniwing_pod('YYKit', file = 'YYKit', type = 'local', branch = 'master', modular_headers = true)
+    pod 'YYKit'                         , :path => '../MINIWING-PODs/YYKit'
   end # IDEA_YYKIT
 
-#  pod 'IDEAKit'                         , :path => '../MINIWING-PODs/IDEAKit'
-  miniwing_pod('IDEAKit', file = 'IDEAKit', type = 'local', branch = 'master', modular_headers = true)
-
-#  pod 'IDEAColor'                       , :path => '../MINIWING-PODs/IDEAColor'
-  miniwing_pod('IDEAColor', file = 'IDEAColor', type = 'local', branch = 'master', modular_headers = true)
-
-#  pod 'IDEAPalettes'                    , :path => '../MINIWING-PODs/IDEAPalettes'
-  miniwing_pod('IDEAPalettes', file = 'IDEAPalettes', type = 'local', branch = 'master', modular_headers = true)
+  pod 'IDEAKit'                         , :path => '../MINIWING-PODs/IDEAKit'
+  pod 'IDEAColor'                       , :path => '../MINIWING-PODs/IDEAColor'
+  pod 'IDEAPalettes'                    , :path => '../MINIWING-PODs/IDEAPalettes'
 
   if ENV['IDEAFONT'] == 'YES'
-#    pod 'IDEAFONT'                      , :path => '../MINIWING-PODs/IDEAFONT'
-    miniwing_pod('IDEAFONT', file = 'IDEAFONT', type = 'local', branch = 'master', modular_headers = true)
+    pod 'IDEAFONT'                      , :path => '../MINIWING-PODs/IDEAFONT'
   end # IDEAFONT
 
   pod 'APPDATA'                         , :path => 'APPDATA'

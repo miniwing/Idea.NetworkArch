@@ -24,6 +24,7 @@ IDEA_ENUM(NSInteger, PingStatistics) {
 @interface PingCell : UITableViewCell
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * containerView;
+@property (nonatomic, weak)   IBOutlet       UIView                              * selectedColorView;
 
 @end
 

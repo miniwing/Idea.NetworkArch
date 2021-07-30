@@ -76,6 +76,8 @@
    [self setTitle:APP_STR(@"WIFI")];
    LogDebug((@"[WifiMoreController viewDidLoad] : VIEW : %@", self.view));
    
+   [self.view setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+
 #if MATERIAL_APP_BAR
    [self.navigationController setNavigationBarHidden:YES];
    
@@ -126,6 +128,8 @@
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
    
+   [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
    __CATCH(nErr);
    
    return;

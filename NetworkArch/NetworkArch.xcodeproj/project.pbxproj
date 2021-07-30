@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FC44296611BFB5ACEBC57E0 /* libPods-APPBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9D47C730FE60A79D0764E2 /* libPods-APPBase.a */; };
 		4A0E4DBF268584C100A85517 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4DB9268584C100A85517 /* RootViewController.m */; };
 		4A0E4DC0268584C100A85517 /* APPDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4DBD268584C100A85517 /* APPDelegate.m */; };
 		4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E4DBE268584C100A85517 /* SplashViewController.m */; };
@@ -132,6 +133,7 @@
 		4A5D9A0926A4965200E00610 /* WIFI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D9A0726A4965200E00610 /* WIFI.storyboard */; };
 		4A5D9A0C26A4966400E00610 /* CELLULAR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D9A0A26A4966400E00610 /* CELLULAR.storyboard */; };
 		4A5D9A0F26A4968800E00610 /* UTILITIES.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D9A0D26A4968800E00610 /* UTILITIES.storyboard */; };
+		4A7241B126B3153A00009443 /* PingResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7241B026B3153A00009443 /* PingResult.m */; };
 		4A842C8026AC1C0B005DC131 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A842C7E26AC1C0B005DC131 /* InfoPlist.strings */; };
 		4A842C8126AC1C19005DC131 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B992685CD3400DC1DA2 /* Localizable.strings */; };
 		4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1D726859BB800B1639D /* HomeRootController.m */; };
@@ -180,16 +182,15 @@
 		4AF4412926AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
 		4AF4412A26AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
 		4AF9C4EB26B1C1E9002A2ABC /* PingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C4E326B1C1E9002A2ABC /* PingTextField.m */; };
-		4AF9C4FE26B1C5F5002A2ABC /* PingTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C4F626B1C5F5002A2ABC /* PingTimeCell.m */; };
+		4AF9C4FE26B1C5F5002A2ABC /* PingResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C4F626B1C5F5002A2ABC /* PingResultCell.m */; };
 		4AF9C51026B1C9A4002A2ABC /* PingGraphCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C50826B1C9A4002A2ABC /* PingGraphCell.m */; };
 		4AF9C52226B1C9D6002A2ABC /* PingStatisticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C51A26B1C9D6002A2ABC /* PingStatisticsCell.m */; };
 		4AF9C53426B1D4BC002A2ABC /* PingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C52C26B1D4BC002A2ABC /* PingCell.m */; };
 		4AFFEDBC268645160052712A /* AppTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFEDBB268645160052712A /* AppTracking.m */; };
-		5BEB497136CC0DADCDA759C5 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7ED5B0AF8B13D8017C36B /* Pods_APPBase.framework */; };
-		5FA446E1A3F97CFBBE61B000 /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CF124DFB1AC23736EDFA17 /* Pods_TodayWidget.framework */; };
-		759A72A8678771812346F8E6 /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B8CAF4E58A0D2E4F909585 /* Pods_NetworkArch.framework */; };
-		923137F3D82E630E82CC55AD /* Pods_FleetingWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072DD52126BABC350D10091E /* Pods_FleetingWidget.framework */; };
-		FD1A534A10893F60DA9C545B /* Pods_TodayClip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B11A66E71979ADDFE240BE9 /* Pods_TodayClip.framework */; };
+		82F0161563834689859C92D4 /* libPods-NetworkArch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B35E4DFA07EB13BCAF91A77A /* libPods-NetworkArch.a */; };
+		AD3EEFD83FCB3F95CD134188 /* libPods-TodayClip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C0759C2906F00D654C35C2 /* libPods-TodayClip.a */; };
+		CAD8441D9FB29E8E7417E282 /* libPods-TodayWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 740D32830CA12D7EBAEE0B11 /* libPods-TodayWidget.a */; };
+		D22C4EBD6054CCB10489EA66 /* libPods-FleetingWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D22846A98D00C3EC7E588803 /* libPods-FleetingWidget.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -273,8 +274,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		072DD52126BABC350D10091E /* Pods_FleetingWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FleetingWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		103719D4E9EFEDEEFD47152D /* Pods-TodayClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayClip.debug.xcconfig"; path = "Target Support Files/Pods-TodayClip/Pods-TodayClip.debug.xcconfig"; sourceTree = "<group>"; };
+		29C0759C2906F00D654C35C2 /* libPods-TodayClip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TodayClip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0E4DB9268584C100A85517 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		4A0E4DBA268584C100A85517 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		4A0E4DBB268584C100A85517 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -514,6 +515,8 @@
 		4A5D9A0826A4965200E00610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WIFI.storyboard; sourceTree = "<group>"; };
 		4A5D9A0B26A4966400E00610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CELLULAR.storyboard; sourceTree = "<group>"; };
 		4A5D9A0E26A4968800E00610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UTILITIES.storyboard; sourceTree = "<group>"; };
+		4A7241AF26B3153A00009443 /* PingResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingResult.h; sourceTree = "<group>"; };
+		4A7241B026B3153A00009443 /* PingResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingResult.m; sourceTree = "<group>"; };
 		4A842C7B26AC19D0005DC131 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		4A842C7F26AC1C0B005DC131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkArch.entitlements; sourceTree = "<group>"; };
@@ -592,8 +595,8 @@
 		4AF4412626AC8C050008C169 /* LAUNCH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LAUNCH.png; sourceTree = "<group>"; };
 		4AF9C4DD26B1C1E9002A2ABC /* PingTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingTextField.h; sourceTree = "<group>"; };
 		4AF9C4E326B1C1E9002A2ABC /* PingTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingTextField.m; sourceTree = "<group>"; };
-		4AF9C4F026B1C5F5002A2ABC /* PingTimeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingTimeCell.h; sourceTree = "<group>"; };
-		4AF9C4F626B1C5F5002A2ABC /* PingTimeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingTimeCell.m; sourceTree = "<group>"; };
+		4AF9C4F026B1C5F5002A2ABC /* PingResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingResultCell.h; sourceTree = "<group>"; };
+		4AF9C4F626B1C5F5002A2ABC /* PingResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingResultCell.m; sourceTree = "<group>"; };
 		4AF9C50226B1C9A4002A2ABC /* PingGraphCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingGraphCell.h; sourceTree = "<group>"; };
 		4AF9C50826B1C9A4002A2ABC /* PingGraphCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingGraphCell.m; sourceTree = "<group>"; };
 		4AF9C51426B1C9D6002A2ABC /* PingStatisticsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingStatisticsCell.h; sourceTree = "<group>"; };
@@ -603,18 +606,18 @@
 		4AFFEDBA268645160052712A /* AppTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTracking.h; sourceTree = "<group>"; };
 		4AFFEDBB268645160052712A /* AppTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTracking.m; sourceTree = "<group>"; };
 		51094CFDD28FA237A0372EFB /* Pods-FleetingWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetingWidget.release.xcconfig"; path = "Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget.release.xcconfig"; sourceTree = "<group>"; };
-		55CF124DFB1AC23736EDFA17 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9D47C730FE60A79D0764E2 /* libPods-APPBase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APPBase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DF92DFFC64AB4198E20875 /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
 		65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		6B7C763236D1A5B8A55DC1C2 /* Pods-TodayWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.debug.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		83B7ED5B0AF8B13D8017C36B /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		740D32830CA12D7EBAEE0B11 /* libPods-TodayWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TodayWidget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9427FC1B9FB3144B40E0E517 /* Pods-FleetingWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetingWidget.debug.xcconfig"; path = "Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		9B11A66E71979ADDFE240BE9 /* Pods_TodayClip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayClip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0B8CAF4E58A0D2E4F909585 /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D1F27E4DD2E5D1BE2C9145 /* Pods-TodayClip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayClip.release.xcconfig"; path = "Target Support Files/Pods-TodayClip/Pods-TodayClip.release.xcconfig"; sourceTree = "<group>"; };
 		A90D912BF379DE28D323CFC9 /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
+		B35E4DFA07EB13BCAF91A77A /* libPods-NetworkArch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetworkArch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.release.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.release.xcconfig"; sourceTree = "<group>"; };
 		CC7F3049F2B28E17A49195A2 /* Pods-NetworkArch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.debug.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.debug.xcconfig"; sourceTree = "<group>"; };
+		D22846A98D00C3EC7E588803 /* libPods-FleetingWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FleetingWidget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -622,7 +625,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BEB497136CC0DADCDA759C5 /* Pods_APPBase.framework in Frameworks */,
+				2FC44296611BFB5ACEBC57E0 /* libPods-APPBase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,7 +635,7 @@
 			files = (
 				4A25F1A126AED9B20075BE73 /* libAPPBase.a in Frameworks */,
 				4A25F19026AED9A10075BE73 /* NotificationCenter.framework in Frameworks */,
-				923137F3D82E630E82CC55AD /* Pods_FleetingWidget.framework in Frameworks */,
+				D22C4EBD6054CCB10489EA66 /* libPods-FleetingWidget.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,7 +645,7 @@
 			files = (
 				4AF4412026AC575C0008C169 /* libAPPBase.a in Frameworks */,
 				4A4D0A6126AC0F56008A30E0 /* NotificationCenter.framework in Frameworks */,
-				5FA446E1A3F97CFBBE61B000 /* Pods_TodayWidget.framework in Frameworks */,
+				CAD8441D9FB29E8E7417E282 /* libPods-TodayWidget.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,7 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */,
-				759A72A8678771812346F8E6 /* Pods_NetworkArch.framework in Frameworks */,
+				82F0161563834689859C92D4 /* libPods-NetworkArch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,7 +662,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD1A534A10893F60DA9C545B /* Pods_TodayClip.framework in Frameworks */,
+				AD3EEFD83FCB3F95CD134188 /* libPods-TodayClip.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +807,7 @@
 		4A0E4E5A2685897C00A85517 /* APPModels */ = {
 			isa = PBXGroup;
 			children = (
+				4A7241AE26B3152400009443 /* PING */,
 				4AFFEDBA268645160052712A /* AppTracking.h */,
 				4AFFEDBB268645160052712A /* AppTracking.m */,
 			);
@@ -865,7 +869,7 @@
 		4A221EE326A44D5F00C94F00 /* PING */ = {
 			isa = PBXGroup;
 			children = (
-				4A8F878E26A4661F0012F3D6 /* PingRoot */,
+				4A8F878E26A4661F0012F3D6 /* PingRootController */,
 				4A221F0826A44DEF00C94F00 /* PingController */,
 			);
 			path = PING;
@@ -1012,7 +1016,7 @@
 		4A53A97226A46E39000700F2 /* WHOIS */ = {
 			isa = PBXGroup;
 			children = (
-				4A53A9D726A46E89000700F2 /* WhoisRoot */,
+				4A53A9D726A46E89000700F2 /* WhoisRootController */,
 				4A53A9F026A46EA8000700F2 /* WhoisController */,
 			);
 			path = WHOIS;
@@ -1037,7 +1041,7 @@
 			path = WoLANController;
 			sourceTree = "<group>";
 		};
-		4A53A9A826A46E60000700F2 /* WoLANRoot */ = {
+		4A53A9A826A46E60000700F2 /* WoLANRootController */ = {
 			isa = PBXGroup;
 			children = (
 				4A53A9B326A46E60000700F2 /* WoLANRootController.h */,
@@ -1053,10 +1057,10 @@
 				4A53A9B126A46E60000700F2 /* WoLANRootController+Theme.h */,
 				4A53A9B226A46E60000700F2 /* WoLANRootController+Theme.m */,
 			);
-			path = WoLANRoot;
+			path = WoLANRootController;
 			sourceTree = "<group>";
 		};
-		4A53A9D726A46E89000700F2 /* WhoisRoot */ = {
+		4A53A9D726A46E89000700F2 /* WhoisRootController */ = {
 			isa = PBXGroup;
 			children = (
 				4A53A9DF26A46EA2000700F2 /* WhoisRootController.h */,
@@ -1072,7 +1076,7 @@
 				4A53A9E426A46EA4000700F2 /* WhoisRootController+Theme.h */,
 				4A53A9E726A46EA4000700F2 /* WhoisRootController+Theme.m */,
 			);
-			path = WhoisRoot;
+			path = WhoisRootController;
 			sourceTree = "<group>";
 		};
 		4A53A9F026A46EA8000700F2 /* WhoisController */ = {
@@ -1097,13 +1101,13 @@
 		4A53AA7526A473C3000700F2 /* DNS */ = {
 			isa = PBXGroup;
 			children = (
-				4A53AAA426A47402000700F2 /* DNSRoot */,
-				4A53AAB126A47402000700F2 /* DNS */,
+				4A53AAA426A47402000700F2 /* DNSRootController */,
+				4A53AAB126A47402000700F2 /* DNSController */,
 			);
 			path = DNS;
 			sourceTree = "<group>";
 		};
-		4A53AAA426A47402000700F2 /* DNSRoot */ = {
+		4A53AAA426A47402000700F2 /* DNSRootController */ = {
 			isa = PBXGroup;
 			children = (
 				4A53AAAF26A47402000700F2 /* DNSRootController.h */,
@@ -1119,10 +1123,10 @@
 				4A53AAAD26A47402000700F2 /* DNSRootController+Theme.h */,
 				4A53AAAE26A47402000700F2 /* DNSRootController+Theme.m */,
 			);
-			path = DNSRoot;
+			path = DNSRootController;
 			sourceTree = "<group>";
 		};
-		4A53AAB126A47402000700F2 /* DNS */ = {
+		4A53AAB126A47402000700F2 /* DNSController */ = {
 			isa = PBXGroup;
 			children = (
 				4A53AABC26A47402000700F2 /* DNSController.h */,
@@ -1138,13 +1142,13 @@
 				4A53AABA26A47402000700F2 /* DNSController+Theme.h */,
 				4A53AABB26A47402000700F2 /* DNSController+Theme.m */,
 			);
-			path = DNS;
+			path = DNSController;
 			sourceTree = "<group>";
 		};
 		4A5D98EC26A493C600E00610 /* WIFI-MORE */ = {
 			isa = PBXGroup;
 			children = (
-				4A5D992126A4944000E00610 /* WiFiMoreRoot */,
+				4A5D992126A4944000E00610 /* WiFiMoreRootController */,
 				4A5D991426A4944000E00610 /* WiFiMoreController */,
 			);
 			path = "WIFI-MORE";
@@ -1178,7 +1182,7 @@
 			path = WiFiMoreController;
 			sourceTree = "<group>";
 		};
-		4A5D992126A4944000E00610 /* WiFiMoreRoot */ = {
+		4A5D992126A4944000E00610 /* WiFiMoreRootController */ = {
 			isa = PBXGroup;
 			children = (
 				4A5D99E326A4951C00E00610 /* WifiMoreRootController.h */,
@@ -1194,7 +1198,7 @@
 				4A5D99E426A4951C00E00610 /* WifiMoreRootController+Theme.h */,
 				4A5D99E526A4951C00E00610 /* WifiMoreRootController+Theme.m */,
 			);
-			path = WiFiMoreRoot;
+			path = WiFiMoreRootController;
 			sourceTree = "<group>";
 		};
 		4A5D999926A494E000E00610 /* CellularMoreRoot */ = {
@@ -1235,6 +1239,15 @@
 			path = CellularMoreController;
 			sourceTree = "<group>";
 		};
+		4A7241AE26B3152400009443 /* PING */ = {
+			isa = PBXGroup;
+			children = (
+				4A7241AF26B3153A00009443 /* PingResult.h */,
+				4A7241B026B3153A00009443 /* PingResult.m */,
+			);
+			path = PING;
+			sourceTree = "<group>";
+		};
 		4A842C7D26AC1A1C005DC131 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1247,7 +1260,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4A8F878E26A4661F0012F3D6 /* PingRoot */ = {
+		4A8F878E26A4661F0012F3D6 /* PingRootController */ = {
 			isa = PBXGroup;
 			children = (
 				4A221EF926A44DA000C94F00 /* PingRootController.h */,
@@ -1263,7 +1276,7 @@
 				4A221EFF26A44DA100C94F00 /* PingRootController+Theme.h */,
 				4A221F0026A44DA100C94F00 /* PingRootController+Theme.m */,
 			);
-			path = PingRoot;
+			path = PingRootController;
 			sourceTree = "<group>";
 		};
 		4A98A62D2684B50F00EEEB60 = {
@@ -1321,7 +1334,7 @@
 		4AC5B95D26A46CFA002AAB48 /* WoLAN */ = {
 			isa = PBXGroup;
 			children = (
-				4A53A9A826A46E60000700F2 /* WoLANRoot */,
+				4A53A9A826A46E60000700F2 /* WoLANRootController */,
 				4A53A99B26A46E60000700F2 /* WoLANController */,
 			);
 			path = WoLAN;
@@ -1424,8 +1437,8 @@
 				4AF9C51A26B1C9D6002A2ABC /* PingStatisticsCell.m */,
 				4AF9C50226B1C9A4002A2ABC /* PingGraphCell.h */,
 				4AF9C50826B1C9A4002A2ABC /* PingGraphCell.m */,
-				4AF9C4F026B1C5F5002A2ABC /* PingTimeCell.h */,
-				4AF9C4F626B1C5F5002A2ABC /* PingTimeCell.m */,
+				4AF9C4F026B1C5F5002A2ABC /* PingResultCell.h */,
+				4AF9C4F626B1C5F5002A2ABC /* PingResultCell.m */,
 			);
 			path = PING;
 			sourceTree = "<group>";
@@ -1452,11 +1465,11 @@
 			isa = PBXGroup;
 			children = (
 				4A421C0526AC0CC200935235 /* NotificationCenter.framework */,
-				83B7ED5B0AF8B13D8017C36B /* Pods_APPBase.framework */,
-				072DD52126BABC350D10091E /* Pods_FleetingWidget.framework */,
-				A0B8CAF4E58A0D2E4F909585 /* Pods_NetworkArch.framework */,
-				55CF124DFB1AC23736EDFA17 /* Pods_TodayWidget.framework */,
-				9B11A66E71979ADDFE240BE9 /* Pods_TodayClip.framework */,
+				5F9D47C730FE60A79D0764E2 /* libPods-APPBase.a */,
+				D22846A98D00C3EC7E588803 /* libPods-FleetingWidget.a */,
+				B35E4DFA07EB13BCAF91A77A /* libPods-NetworkArch.a */,
+				29C0759C2906F00D654C35C2 /* libPods-TodayClip.a */,
+				740D32830CA12D7EBAEE0B11 /* libPods-TodayWidget.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1490,6 +1503,7 @@
 				4A25F18B26AED9A10075BE73 /* Sources */,
 				4A25F18C26AED9A10075BE73 /* Frameworks */,
 				4A25F18D26AED9A10075BE73 /* Resources */,
+				C97836C01C171CBAE9ED33F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1509,6 +1523,7 @@
 				4A4D0A5C26AC0F56008A30E0 /* Sources */,
 				4A4D0A5D26AC0F56008A30E0 /* Frameworks */,
 				4A4D0A5E26AC0F56008A30E0 /* Resources */,
+				385128BA701140CDA0A69EEE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1532,6 +1547,7 @@
 				4A9D71C62685751300AFA3BB /* ShellScript */,
 				4A421C1526AC0CC200935235 /* Embed App Extensions */,
 				4ACD588726AFB4AF009B1424 /* Embed App Clips */,
+				54ABD47D62A3A7049508D2C1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1555,6 +1571,7 @@
 				4ACD586A26AFB4AE009B1424 /* Frameworks */,
 				4ACD586B26AFB4AE009B1424 /* Resources */,
 				73C49C6E0AFE71BD150D6249 /* [CP] Embed Pods Frameworks */,
+				F24FA955D00B9D3410DCC5D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1722,6 +1739,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		385128BA701140CDA0A69EEE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodayWidget/Pods-TodayWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodayWidget/Pods-TodayWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodayWidget/Pods-TodayWidget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		40648E178ADB32282CCCEE06 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1755,6 +1789,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\n#                      ICON_BADGE_BACKGROUND_COLOR ICON_BADGE_TEXT_COLOR   底部 APP 信息参数\n# $SRCROOT/ICON-DEBUG.sh \"rgba(255,255,255,1.0)\"     \"rgba(255,0,0,1.0)\"     \"NO\"\n\necho \"CONFIGURATION_BUILD_DIR：${CONFIGURATION_BUILD_DIR}/FloatingPanel/Swift Compatibility Header\"\n";
+		};
+		54ABD47D62A3A7049508D2C1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetworkArch/Pods-NetworkArch-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetworkArch/Pods-NetworkArch-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetworkArch/Pods-NetworkArch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		7291B919E30B3AEFCDCB6FB7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1793,6 +1844,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodayClip/Pods-TodayClip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C97836C01C171CBAE9ED33F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CFC36554BFF802D0CADBB22E /* [CP] Check Pods Manifest.lock */ = {
@@ -1837,6 +1905,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F24FA955D00B9D3410DCC5D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodayClip/Pods-TodayClip-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodayClip/Pods-TodayClip-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodayClip/Pods-TodayClip-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1923,7 +2008,8 @@
 				4A5D99F226A4951C00E00610 /* WifiMoreRootController+Inner.m in Sources */,
 				4AF9C4EB26B1C1E9002A2ABC /* PingTextField.m in Sources */,
 				4A221F0626A44DA100C94F00 /* PingRootController+Theme.m in Sources */,
-				4AF9C4FE26B1C5F5002A2ABC /* PingTimeCell.m in Sources */,
+				4AF9C4FE26B1C5F5002A2ABC /* PingResultCell.m in Sources */,
+				4A7241B126B3153A00009443 /* PingResult.m in Sources */,
 				4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */,
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
 				4A53A9EC26A46EA5000700F2 /* WhoisRootController+Debug.m in Sources */,
