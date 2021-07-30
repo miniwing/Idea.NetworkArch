@@ -34,13 +34,13 @@ handleSignal(PingController, startPingSignal) {
    [self resignFirstResponder];
    
    LogDebug((@"-[PingController startPingSignal:] : Signal : %@", aSignal));
-
+   
    // 按钮状态变更。
    if (nil == self.pingClient) {
       
       [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
       [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemRed])];
-
+      
       self.showStatistics  = NO;
       
       [self.textField setEnabled:NO];
@@ -56,7 +56,7 @@ handleSignal(PingController, startPingSignal) {
          LogDebug((@"-[PingController startPingSignal:] : ping : Time  : %.3f", aTime));
          LogDebug((@"-[PingController startPingSignal:] : ping : HOST  : %.3f", aHostName));
          LogDebug((@"-[PingController startPingSignal:] : ping : IP  : %.3f", aIP));
-
+         
          PingResult  *stPingResult  = [PingResult pingResultWithHostName:aHostName ip:aIP error:aError duration:aTime];
          
          [self.pingResults addObject:stPingResult];
@@ -94,9 +94,7 @@ handleSignal(PingController, startPingSignal) {
             }];
          });
       }];
-
-//      [self.pingClient startPing];
-      
+            
    } /* End if () */
    else {
       
@@ -113,16 +111,20 @@ handleSignal(PingController, startPingSignal) {
          
       } /* End if () */
       
-      dispatch_async_on_main_queue(^{
+      if (0 < self.pingResults.count) {
          
-         [self.tableView scrollToRow:0
-                           inSection:PingSectionStatistics
-                    atScrollPosition:UITableViewScrollPositionTop
-                            animated:YES];
-      });
+         dispatch_async_on_main_queue(^{
+            
+            [self.tableView scrollToRow:0
+                              inSection:PingSectionStatistics
+                       atScrollPosition:UITableViewScrollPositionTop
+                               animated:YES];
+         });
+
+      } /* End if () */
       
    } /* End else */
-
+   
    __CATCH(nErr);
    
    return;

@@ -169,60 +169,31 @@
     */
    [self.searchView setBackgroundColor:UIColor.clearColor];
    //   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
-   [self.textField setBackgroundColor:UIColor.whiteColor];
+   [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    [self.textField setCornerRadius:8 clipsToBounds:YES];
    
    [self.textField setFont:[APPFont regularFontOfSize:16]];
-   [self.textField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   
-   if (@available(iOS 13, *)) {
+   [self.textField setTextColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       
-   } /* End if () */
-   else {
-      
-      [self.textField setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
          
-         if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-            
-            return [UIColor lightTextColor];
-            
-         } /* End if () */
-         else {
-            
-            return [UIColor secondaryLabelColor];
-            
-         } /* End else */
-      }];
+         return UIColor.whiteColor;
+         
+      } /* End if () */
+      else {
+         
+         return UIColor.labelColor;
+         
+      } /* End else */
+   }];
       
-      //      [self.textField setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-      //
-      //         if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-      //
-      //            return [IDEAColor colorWithKey:[IDEAColor secondarySystemBackground]];
-      //
-      //         }
-      //         else {
-      //
-      //            return [IDEAColor colorWithKey:[IDEAColor systemGroupedBackground]];
-      //
-      //         }
-      //      }];
-      
-   } /* End else */
-   
    [self.textField setDelegate:self];
    [self.textField setPlaceholder:APP_STR(@"IP Address / Host Name")];
    
-   if (nil != self.textField) {
-      
-      //      [self.searchBarTextField setDelegate:self];
-      
-      [self addNotificationName:UITextFieldTextDidChangeNotification
-                       selector:@selector(textFieldTextDidChange:)
-                         object:self.textField];
-      
-   } /* End if () */
-   
+   [self addNotificationName:UITextFieldTextDidChangeNotification
+                    selector:@selector(textFieldTextDidChange:)
+                      object:self.textField];
+
 #if __Debug__
    dispatch_async_on_main_queue(^{
       
@@ -359,22 +330,6 @@
 #pragma mark - <UITableViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
    
-//   int                            nErr                                     = EFAULT;
-//
-//   NSInteger                      nNumberOfSections                        = PingSectionNumber;
-//
-//   __TRY;
-//
-//   if (NO == [self needShowStatistics]) {
-//
-//      nNumberOfSections --;
-//
-//   } /* End if () */
-//
-//   __CATCH(nErr);
-//
-//   return nNumberOfSections;
-
    return self.sections.count;
 }
 
