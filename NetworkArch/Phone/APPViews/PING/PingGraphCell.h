@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PingGraphCell : PingCell
 
+@property (nonatomic, weak)   IBOutlet       UILabel                             * titleLabel;
+@property (nonatomic, weak)   IBOutlet       UIImageView                         * iconImageView;
+
 @end
 
 @interface PingGraphCell ()

@@ -65,7 +65,7 @@
 
    LogDebug((@"-[PingCell awakeFromNib] : selectionStyle : %d", self.selectionStyle));
    
-   [self.containerView setClipsToBounds:YES];
+//   [self.containerView setClipsToBounds:YES];
 
 #if __DEBUG_COLOR__
    [self.containerView setBackgroundColor:UIColor.systemPinkColor];
@@ -78,38 +78,10 @@
 //   [self.containerView setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
 //   [self.containerView setCornerRadius:8 clipsToBounds:YES];
 
+   self.containerView.layer.mask = nil;
+
    __CATCH(nErr);
    
-   return;
-}
-
-- (void)willMoveToSuperview:(UIView *)aNewSuperview {
-   
-   int                            nErr                                     = EFAULT;
-
-   __TRY;
-   
-   [super willMoveToSuperview:aNewSuperview];
-
-//   [self.containerView setRectCorner:UIRectCornerBottomRight radius:8];
-   
-   __CATCH(nErr);
-
-   return;
-}
-
-- (void)didMoveToSuperview {
-   
-   int                            nErr                                     = EFAULT;
-
-   __TRY;
-   
-   [super didMoveToSuperview];
-
-//   [self.containerView setRectCorner:UIRectCornerBottomRight radius:8];
-   
-   __CATCH(nErr);
-
    return;
 }
 
@@ -196,6 +168,30 @@
    
    __CATCH(nErr);
    
+   return;
+}
+
+//- (void)prepareForReuse {
+//   
+//   int                            nErr                                     = EFAULT;
+//
+//   __TRY;
+//   
+//   [super prepareForReuse];
+//   
+//   self.containerView.layer.mask = nil;
+//
+//   __CATCH(nErr);
+//
+//   return;
+//}
+
+- (void)setRectCorner:(UIRectCorner)aRectCorner {
+   
+   _rectCorner = aRectCorner;
+   
+   [self setNeedsDisplay];
+
    return;
 }
 

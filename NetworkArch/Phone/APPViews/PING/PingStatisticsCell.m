@@ -13,6 +13,9 @@
 
 @interface PingStatisticsCell ()
 
+@property (nonatomic, assign)                PingStatistics                        pingStatistics;
+@property (nonatomic, assign)                NSTimeInterval                        value;
+
 @end
 
 @implementation PingStatisticsCell
@@ -55,6 +58,12 @@
    [super awakeFromNib];
    // Initialization code
 
+   [self.titleLabel setBackgroundColor:UIColor.clearColor];
+   [self.titleLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   [self.timeLabel setBackgroundColor:UIColor.clearColor];
+   [self.timeLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
    __CATCH(nErr);
 
    return;
@@ -74,5 +83,45 @@
    
    return;
 }
+
+
+/// 填充数据
+/// @param aPingStatistics    PingStatisticsMinmum    = 0,
+///                           PingStatisticsAverage   = 1,
+///                           PingStatisticsMaximum   = 2,
+
+/// @param aValue time
+- (void)setStatistics:(PingStatistics)aPingStatistics value:(NSTimeInterval)aValue {
+
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+
+   _pingStatistics   = aPingStatistics;
+   _value            = aValue;
+   
+   if (PingStatisticsMinmum == aPingStatistics) {
+      
+      [self.titleLabel setText:APP_STR(@"Minmum")];
+      
+   } /* End if () */
+   else if (PingStatisticsMaximum == aPingStatistics) {
+      
+      [self.titleLabel setText:APP_STR(@"Maximum")];
+      
+   } /* End else if () */
+   else {
+
+      [self.titleLabel setText:APP_STR(@"Average")];
+
+   } /* End else */
+   
+   [self.timeLabel setText:[NSString stringWithFormat:@"%.3f ms", aValue]];
+
+   __CATCH(nErr);
+
+   return;
+}
+
 
 @end

@@ -16,9 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PingStatisticsCell : PingCell
 
+@property (nonatomic, weak)   IBOutlet       UILabel                             * titleLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * timeLabel;
+
 @end
 
 @interface PingStatisticsCell ()
+
+- (void)setStatistics:(PingStatistics)aPingStatistics value:(NSTimeInterval)aValue;
 
 @end
 

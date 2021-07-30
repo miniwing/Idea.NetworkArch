@@ -15,13 +15,6 @@
 #pragma mark - handleSignal
 @implementation PingController (Inner)
 
-
-/// 是否要显示统计结果
-- (BOOL)needShowStatistics {
-   
-   return self.showStatistics && (0 < self.pingResults.count);
-}
-
 @end
 
 #pragma mark - <UISearchBarDelegate>

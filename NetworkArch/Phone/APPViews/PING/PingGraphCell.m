@@ -55,6 +55,25 @@
    [super awakeFromNib];
    // Initialization code
 
+   [self.titleLabel setBackgroundColor:UIColor.clearColor];
+   [self.titleLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   [self.titleLabel setText:APP_STR(@"Latency graph")];
+
+   [self.iconImageView setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return UIColor.whiteColor;
+         
+      } /* End if () */
+      else {
+         
+         return UIColor.blackColor;
+         
+      }/* End else */
+   }];
+
    __CATCH(nErr);
 
    return;

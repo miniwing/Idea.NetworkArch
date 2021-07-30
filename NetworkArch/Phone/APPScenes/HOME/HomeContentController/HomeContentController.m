@@ -198,6 +198,7 @@
          
       }/* End else */
    }];
+
    [self.cellularOperatorIcon setImage:[UIImage imageNamed:@"CELLULAR-SLASH"]];
    
    [self.cellularIPLabel setBackgroundColor:UIColor.clearColor];

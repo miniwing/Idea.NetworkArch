@@ -55,19 +55,37 @@
                                                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pf-GL-6ei" userLabel="容器">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="44"/>
                                                     <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标签" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YM-b6-oxB" userLabel="标签">
+                                                            <rect key="frame" x="8.0000000000000018" y="8.0000000000000018" width="28.666666666666671" height="27.666666666666671"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozh-bW-Oj1" userLabel="时间">
+                                                            <rect key="frame" x="306.33333333333331" y="8.0000000000000018" width="28.666666666666686" height="27.666666666666671"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjU-5E-jH0" userLabel="分割线">
-                                                            <rect key="frame" x="4" y="43" width="335" height="1"/>
+                                                            <rect key="frame" x="4" y="43.666666666666664" width="335" height="0.3333333333333357"/>
                                                             <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="1" id="6PT-pY-tdJ"/>
+                                                                <constraint firstAttribute="height" constant="0.5" id="6PT-pY-tdJ"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="1YM-b6-oxB" firstAttribute="leading" secondItem="8pf-GL-6ei" secondAttribute="leading" constant="8" id="0eV-pN-8ai"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ozh-bW-Oj1" secondAttribute="trailing" constant="8" id="2yn-Ad-YIx"/>
+                                                        <constraint firstItem="ozh-bW-Oj1" firstAttribute="top" secondItem="8pf-GL-6ei" secondAttribute="top" constant="8" id="KEj-k1-DF4"/>
+                                                        <constraint firstItem="1YM-b6-oxB" firstAttribute="top" secondItem="8pf-GL-6ei" secondAttribute="top" constant="8" id="QBL-Uj-09k"/>
                                                         <constraint firstAttribute="bottom" secondItem="WjU-5E-jH0" secondAttribute="bottom" id="Sjk-Bl-ATn"/>
                                                         <constraint firstItem="WjU-5E-jH0" firstAttribute="leading" secondItem="8pf-GL-6ei" secondAttribute="leading" constant="4" id="gm4-g7-3lr"/>
                                                         <constraint firstAttribute="trailing" secondItem="WjU-5E-jH0" secondAttribute="trailing" constant="4" id="gn9-bZ-iHb"/>
+                                                        <constraint firstItem="WjU-5E-jH0" firstAttribute="top" secondItem="1YM-b6-oxB" secondAttribute="bottom" constant="8" id="lAD-BO-SxJ"/>
+                                                        <constraint firstItem="WjU-5E-jH0" firstAttribute="top" secondItem="ozh-bW-Oj1" secondAttribute="bottom" constant="8" id="u56-Fb-Bnp"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -82,6 +100,8 @@
                                         <connections>
                                             <outlet property="containerView" destination="8pf-GL-6ei" id="yjL-BS-2Ug"/>
                                             <outlet property="separatorView" destination="WjU-5E-jH0" id="Rob-Uu-HS7"/>
+                                            <outlet property="timeLabel" destination="ozh-bW-Oj1" id="qtV-f6-tV0"/>
+                                            <outlet property="titleLabel" destination="1YM-b6-oxB" id="yug-dc-Cwe"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PingGraphCell" id="044-BF-xe8" customClass="PingGraphCell">
@@ -98,21 +118,40 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbJ-wU-jJw" userLabel="分割线">
-                                                            <rect key="frame" x="4" y="43" width="335" height="1"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标签" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8s-n8-r9b" userLabel="标签">
+                                                            <rect key="frame" x="8.0000000000000018" y="8.0000000000000018" width="28.666666666666671" height="27.666666666666671"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UTILITIES-RIGHT" translatesAutoresizingMaskIntoConstraints="NO" id="wxl-h2-fmq" userLabel="箭头">
+                                                            <rect key="frame" x="327" y="8.0000000000000018" width="8" height="27.666666666666671"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="8" id="2AO-KR-v0n"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbJ-wU-jJw" userLabel="分割线">
+                                                            <rect key="frame" x="4" y="43.666666666666664" width="335" height="0.3333333333333357"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="1" id="yXz-5D-Gcp"/>
+                                                                <constraint firstAttribute="height" constant="0.5" id="yXz-5D-Gcp"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="wxl-h2-fmq" secondAttribute="trailing" constant="8" id="8cQ-5Q-pFK"/>
+                                                        <constraint firstItem="wbJ-wU-jJw" firstAttribute="top" secondItem="p8s-n8-r9b" secondAttribute="bottom" constant="8" id="ADZ-fO-AiN"/>
+                                                        <constraint firstItem="wxl-h2-fmq" firstAttribute="top" secondItem="51Y-oS-Qyp" secondAttribute="top" constant="8" id="Ca5-wu-9Lb"/>
                                                         <constraint firstAttribute="trailing" secondItem="wbJ-wU-jJw" secondAttribute="trailing" constant="4" id="Iia-oo-r7D"/>
                                                         <constraint firstAttribute="bottom" secondItem="S0m-yD-nAj" secondAttribute="bottom" id="Kda-kR-wCS"/>
+                                                        <constraint firstItem="p8s-n8-r9b" firstAttribute="leading" secondItem="51Y-oS-Qyp" secondAttribute="leading" constant="8" id="LvS-Ux-gWt"/>
+                                                        <constraint firstItem="p8s-n8-r9b" firstAttribute="top" secondItem="51Y-oS-Qyp" secondAttribute="top" constant="8" id="OW8-Ha-KWB"/>
                                                         <constraint firstItem="S0m-yD-nAj" firstAttribute="leading" secondItem="51Y-oS-Qyp" secondAttribute="leading" id="YUq-np-095"/>
                                                         <constraint firstItem="S0m-yD-nAj" firstAttribute="top" secondItem="51Y-oS-Qyp" secondAttribute="top" id="ZeO-ry-xwk"/>
                                                         <constraint firstAttribute="bottom" secondItem="wbJ-wU-jJw" secondAttribute="bottom" id="cc7-MF-d2s"/>
+                                                        <constraint firstItem="wbJ-wU-jJw" firstAttribute="top" secondItem="wxl-h2-fmq" secondAttribute="bottom" constant="8" id="eYV-dj-rh1"/>
                                                         <constraint firstItem="wbJ-wU-jJw" firstAttribute="leading" secondItem="51Y-oS-Qyp" secondAttribute="leading" constant="4" id="kpV-Qd-LZm"/>
                                                         <constraint firstAttribute="trailing" secondItem="S0m-yD-nAj" secondAttribute="trailing" id="zmw-90-0Au"/>
                                                     </constraints>
@@ -128,8 +167,10 @@
                                         <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                         <connections>
                                             <outlet property="containerView" destination="51Y-oS-Qyp" id="Hwh-jV-ctK"/>
+                                            <outlet property="iconImageView" destination="wxl-h2-fmq" id="O9g-DU-GrW"/>
                                             <outlet property="selectedColorView" destination="S0m-yD-nAj" id="FyO-QM-Cwl"/>
                                             <outlet property="separatorView" destination="wbJ-wU-jJw" id="nE4-Wf-ezI"/>
+                                            <outlet property="titleLabel" destination="p8s-n8-r9b" id="Sfx-aW-JQQ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PingResultCell" id="4cZ-gc-Mju" customClass="PingResultCell">
@@ -162,7 +203,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="999.99 ms" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5P-qC-F0x" userLabel="时间">
-                                                            <rect key="frame" x="265" y="8" width="70" height="27"/>
+                                                            <rect key="frame" x="265" y="8.0000000000000018" width="70" height="27.666666666666671"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="eWn-e7-is1"/>
                                                             </constraints>
@@ -170,13 +211,6 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNt-34-6J1" userLabel="分割线">
-                                                            <rect key="frame" x="4" y="43" width="335" height="1"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="1" id="75h-XV-hB3"/>
-                                                            </constraints>
-                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="HOST NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHE-UM-wGm" userLabel="HOST">
                                                             <rect key="frame" x="86" y="4" width="171" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -189,6 +223,13 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNt-34-6J1" userLabel="分割线">
+                                                            <rect key="frame" x="4" y="43.666666666666664" width="335" height="0.3333333333333357"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="0.5" id="75h-XV-hB3"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                     <constraints>
@@ -455,6 +496,7 @@
         <image name="CLEAR-IMAGE" width="15" height="15"/>
         <image name="UIButtonBarArrowLeft" width="11.5" height="21"/>
         <image name="UIButtonBarPlay" width="15.5" height="18.5"/>
+        <image name="UTILITIES-RIGHT" width="16.333333969116211" height="28.666666030883789"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -407,11 +407,20 @@
 //      PingStatisticsAverage   = 1,
 //      PingStatisticsMaximum   = 2,
 //      PingStatisticsGraph     = 3
-      
+//
+//      int sum = [[self.pingResults valueForKeyPath:@"@sum.intValue"] intValue];//求和
+//      int max = [[self.pingResults valueForKeyPath:@"@max.intValue"] intValue];//求最大值
+//      int min = [[self.pingResults valueForKeyPath:@"@min.intValue"] intValue];//求最小值
+//
+//      float avg = [[self.pingResults valueForKeyPath:@"@avg.floatValue"] floatValue];//求平均值
+
       if (PingStatisticsMinmum == aIndexPath.row) {
          
          stPingStatisticsCell = [aTableView dequeueReusableCellWithIdentifier:PingStatisticsCell.reuseIdentifier
                                                                  forIndexPath:aIndexPath];
+         
+         [stPingStatisticsCell setStatistics:PingStatisticsMinmum
+                                       value:[[self.pingResults valueForKeyPath:@"@min.duration.doubleValue"] doubleValue]];
          
          stPingCell  = stPingStatisticsCell;
          
@@ -424,6 +433,9 @@
          stPingStatisticsCell = [aTableView dequeueReusableCellWithIdentifier:PingStatisticsCell.reuseIdentifier
                                                                  forIndexPath:aIndexPath];
          
+         [stPingStatisticsCell setStatistics:PingStatisticsAverage
+                                       value:[[self.pingResults valueForKeyPath:@"@avg.duration.doubleValue"] doubleValue]];
+
          stPingCell  = stPingStatisticsCell;
          
       } /* End else if () */
@@ -432,6 +444,9 @@
          stPingStatisticsCell = [aTableView dequeueReusableCellWithIdentifier:PingStatisticsCell.reuseIdentifier
                                                                  forIndexPath:aIndexPath];
          
+         [stPingStatisticsCell setStatistics:PingStatisticsMinmum
+                                       value:[[self.pingResults valueForKeyPath:@"@max.duration.doubleValue"] doubleValue]];
+
          stPingCell  = stPingStatisticsCell;
          
          [stPingCell.separatorView setHidden:NO];
@@ -450,7 +465,7 @@
       } /* End else if () */
       
    } /* End if () */
-   else /* if (PingSectionTime == aIndexPath.section) */ {
+   else /* if (PingSectionPing == aIndexPath.section) */ {
       
       stPingResult      = [self.pingResults objectAtIndex:aIndexPath.row];
       
@@ -492,7 +507,7 @@
          } /* End else */
          
       } /* End else */
-      
+            
    } /* End else */
    
    __CATCH(nErr);
@@ -529,7 +544,7 @@
 //      } /* End else if () */
 //
 //   } /* End if () */
-//   else /* if (PingSectionTime == aIndexPath.section) */ {
+//   else /* if (PingSectionPing == aIndexPath.section) */ {
 //
 ////      stPingResult      = [self.pingResults objectAtIndex:aIndexPath.row];
 ////
@@ -575,7 +590,7 @@
 //      } /* End else if () */
 //
 //   } /* End if () */
-//   else /* if (PingSectionTime == aIndexPath.section) */ {
+//   else /* if (PingSectionPing == aIndexPath.section) */ {
 //
 ////      stPingResult      = [self.pingResults objectAtIndex:aIndexPath.row];
 ////

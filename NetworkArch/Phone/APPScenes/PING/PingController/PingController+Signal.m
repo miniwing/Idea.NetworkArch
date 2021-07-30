@@ -40,40 +40,49 @@ handleSignal(PingController, startPingSignal) {
       
       [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
       [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemRed])];
-      
-      self.showStatistics  = NO;
-      
+            
       [self.textField setEnabled:NO];
       
       [self.pingResults removeAllObjects];
       
+      [self.sections removeAllObjects];
+
+      [UIView transitionWithView:self.tableView
+                        duration:UIAViewAnimationDefaultDuraton
+                         options:UIViewAnimationOptionTransitionCrossDissolve
+                      animations:^{
+
+         [self.tableView reloadData];
+      }
+                      completion:nil];
+
       @weakify(self);
       self.pingClient   = [IDEAPingClient pingClientWithHostName:self.textField.text
-                                                          result:^(NSString * _Nonnull aHostName, NSString * _Nullable aIP, NSTimeInterval aTime, NSError * _Nullable aError) {
+                                                            ping:^(NSString * _Nonnull aHostName, NSString * _Nullable aIP, NSTimeInterval aTime, NSError * _Nullable aError) {
          
          @strongify(self);
          LogDebug((@"-[PingController startPingSignal:] : ping : Error : %@", aError));
          LogDebug((@"-[PingController startPingSignal:] : ping : Time  : %.3f", aTime));
-         LogDebug((@"-[PingController startPingSignal:] : ping : HOST  : %.3f", aHostName));
-         LogDebug((@"-[PingController startPingSignal:] : ping : IP  : %.3f", aIP));
+         LogDebug((@"-[PingController startPingSignal:] : ping : HOST  : %@", aHostName));
+         LogDebug((@"-[PingController startPingSignal:] : ping : IP    : %@", aIP));
          
          PingResult  *stPingResult  = [PingResult pingResultWithHostName:aHostName ip:aIP error:aError duration:aTime];
          
          [self.pingResults addObject:stPingResult];
-         
+
          dispatch_async_on_main_queue(^{
             
 //            [CATransaction begin];
 //
 //            [self.tableView insertRow:self.pingResults.count - 1
-//                            inSection:PingSectionTime
+//                            inSection:self.sections.count - 1
 //                     withRowAnimation:UITableViewRowAnimationFade];
 //
 //            [CATransaction commit];
 //
 //            [CATransaction setCompletionBlock:^{
 //               [self.tableView scrollToRow:self.pingResults.count - 1
-//                                 inSection:PingSectionTime
+//                                 inSection:self.sections.count - 1
 //                          atScrollPosition:UITableViewScrollPositionBottom
 //                                  animated:YES];
 //            }];
@@ -82,47 +91,82 @@ handleSignal(PingController, startPingSignal) {
                               duration:0.1
                                options:UIViewAnimationOptionTransitionCrossDissolve
                             animations:^{
-               
+
                [self.tableView reloadData];
             }
                             completion:^(BOOL finished) {
-               
-               [self.tableView scrollToRow:self.pingResults.count - 1
-                                 inSection:PingSectionTime
-                          atScrollPosition:UITableViewScrollPositionBottom
-                                  animated:YES];
+
+   //               [self.tableView scrollToRow:self.pingResults.count - 1
+   //                                 inSection:self.sections.count - 1 // PingSectionPing
+   //                          atScrollPosition:UITableViewScrollPositionBottom
+   //                                  animated:YES];
             }];
          });
-      }];
+      }
+                                                       completed:^(NSString * _Nonnull aHostName, NSString * _Nonnull aIP) {
+         
+         dispatch_async_on_main_queue(^{
             
+            [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
+            [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
+            
+            [self.textField setEnabled:YES];
+
+            if (0 < self.pingResults.count) {
+               
+               [self.sections insertObject:@(PingSectionStatistics)
+                                   atIndex:PingSectionStatistics];
+
+               dispatch_async_on_main_queue(^{
+                  
+                  [UIView transitionWithView:self.tableView
+                                    duration:UIAViewAnimationDefaultDuraton
+                                     options:UIViewAnimationOptionTransitionCrossDissolve
+                                  animations:^{
+
+                     [self.tableView reloadData];
+                  }
+                                  completion:^(BOOL finished) {
+
+                     [self.tableView scrollToRow:0
+                                       inSection:PingSectionStatistics
+                                atScrollPosition:UITableViewScrollPositionTop
+                                        animated:YES];
+                  }];
+               });
+               
+            } /* End if () */
+            else {
+               
+               [self.sections removeAllObjects];
+               
+            } /* End else */
+            
+            __RELEASE(self.pingClient);
+
+         });
+      }];
+
+      [self.sections addObject:@(PingSectionPing)];
+
    } /* End if () */
    else {
-      
-      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
-      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
-      
-      [self.textField setEnabled:YES];
-      self.showStatistics  = YES;
-      
+            
       if (nil != self.pingClient) {
          
          [self.pingClient stopPing];
          __RELEASE(self.pingClient);
          
       } /* End if () */
-      
-      if (0 < self.pingResults.count) {
+      else {
          
-         dispatch_async_on_main_queue(^{
-            
-            [self.tableView scrollToRow:0
-                              inSection:PingSectionStatistics
-                       atScrollPosition:UITableViewScrollPositionTop
-                               animated:YES];
-         });
+         [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
+         [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
+         
+         [self.textField setEnabled:YES];
 
-      } /* End if () */
-      
+      } /* End else */
+            
    } /* End else */
    
    __CATCH(nErr);

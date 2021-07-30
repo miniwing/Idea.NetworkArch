@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 IDEA_ENUM(NSInteger, PingSection) {
    
    PingSectionStatistics   = 0,
-   PingSectionTime         = 1,
+   PingSectionPing         = 1,
    PingSectionNumber
 };
 
@@ -45,15 +45,11 @@ IDEA_ENUM(NSInteger, PingSection) {
 @property (nonatomic, strong)                IDEAPingClient                      * pingClient;
 @property (nonatomic, strong)                NSMutableArray<PingResult *>        * pingResults;
 
-@property (nonatomic, assign)                BOOL                                  showStatistics;
-
 @property (nonatomic, strong)                NSMutableArray<NSNumber *>          * sections;
 
 @end
 
 @interface PingController (Inner)
-
-- (BOOL)needShowStatistics;
 
 @end
 
