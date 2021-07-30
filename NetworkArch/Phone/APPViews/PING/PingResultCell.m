@@ -58,8 +58,18 @@
    // Initialization code
    
    [self.statusView setCornerRadius:4 clipsToBounds:YES];
-   
+
    [self.statusLabel setBackgroundColor:UIColor.clearColor];
+   [self.statusLabel setTextColor:UIColor.whiteColor];
+   
+   [self.hostLabel setBackgroundColor:UIColor.clearColor];
+   [self.hostLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   [self.ipLabel setBackgroundColor:UIColor.clearColor];
+   [self.ipLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   [self.timeLabel setBackgroundColor:UIColor.clearColor];
+   [self.timeLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
    __CATCH(nErr);
 
@@ -88,6 +98,36 @@
    __TRY;
 
    _pingResult = aPingResult;
+   
+   if (nil != aPingResult.error) {
+      
+      [self.statusLabel setText:APP_STR(@"Offline")];
+      [self.statusView setBackgroundColor:UIColor.systemRedColor];
+
+      [self.timeLabel setText:@"N/A"];
+
+   } /* End if () */
+   else {
+      
+      [self.statusLabel setText:APP_STR(@"Online")];
+      [self.statusView setBackgroundColor:UIColor.systemGreenColor];
+
+      [self.timeLabel setText:[NSString stringWithFormat:@"%.3f ms", aPingResult.duration]];
+
+   } /* End else */
+   
+   [self.hostLabel setText:aPingResult.hostName];
+   
+   if (kStringIsEmpty(aPingResult.ip)) {
+      
+      [self.ipLabel setText:@"N/A"];
+      
+   } /* End if () */
+   else {
+
+      [self.ipLabel setText:aPingResult.ip];
+
+   } /* End else */
    
    __CATCH(nErr);
    

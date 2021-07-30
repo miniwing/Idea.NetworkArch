@@ -21,6 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UIView                              * statusView;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * statusLabel;
 
+@property (nonatomic, weak)   IBOutlet       UILabel                             * hostLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * ipLabel;
+
+@property (nonatomic, weak)   IBOutlet       UILabel                             * timeLabel;
+
 @end
 
 @interface PingResultCell ()

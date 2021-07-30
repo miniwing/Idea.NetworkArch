@@ -317,7 +317,7 @@
 
 @end
 
-#pragma mark IBAction
+#pragma mark - IBAction
 @implementation SettingController (Action)
 
 - (IBAction)onBack:(id)aSender {

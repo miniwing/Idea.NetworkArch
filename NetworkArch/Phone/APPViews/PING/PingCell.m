@@ -69,14 +69,47 @@
 
 #if __DEBUG_COLOR__
    [self.containerView setBackgroundColor:UIColor.systemPinkColor];
+   [self.separatorView setBackgroundColor:UIColor.whiteColor];
 #else /* __DEBUG_COLOR__ */
    [self.containerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+   [self.separatorView setBackgroundColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
 #endif /* !__DEBUG_COLOR__ */
 
 //   [self.containerView setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+//   [self.containerView setCornerRadius:8 clipsToBounds:YES];
 
    __CATCH(nErr);
    
+   return;
+}
+
+- (void)willMoveToSuperview:(UIView *)aNewSuperview {
+   
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+   
+   [super willMoveToSuperview:aNewSuperview];
+
+//   [self.containerView setRectCorner:UIRectCornerBottomRight radius:8];
+   
+   __CATCH(nErr);
+
+   return;
+}
+
+- (void)didMoveToSuperview {
+   
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+   
+   [super didMoveToSuperview];
+
+//   [self.containerView setRectCorner:UIRectCornerBottomRight radius:8];
+   
+   __CATCH(nErr);
+
    return;
 }
 
@@ -163,6 +196,30 @@
    
    __CATCH(nErr);
    
+   return;
+}
+
+- (void)drawRect:(CGRect)aRect {
+   
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+   
+   [super drawRect:aRect];
+   
+   if (0 != self.rectCorner) {
+      
+      [self.containerView setRectCorner:self.rectCorner radius:8];
+
+   } /* End if () */
+   else {
+
+      self.containerView.layer.mask = nil;
+
+   } /* End else */
+   
+   __CATCH(nErr);
+
    return;
 }
 

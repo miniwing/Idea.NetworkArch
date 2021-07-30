@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PingResult : NSObject
 
+@property (nonatomic, copy)                  NSString                            * hostName;
+@property (nonatomic, copy)                  NSString                            * ip;
+
 @property (nonatomic, strong)                NSError                             * error;
 @property (nonatomic, assign)                NSTimeInterval                        duration;
 
@@ -21,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PingResult ()
 
-+ (instancetype)pingResultWithError:(NSError *)aError duration:(NSTimeInterval)aDuration;
++ (instancetype)pingResultWithHostName:(NSString *)aHostName ip:(NSString *)aIP error:(NSError *)aError duration:(NSTimeInterval)aDuration;
 - (instancetype)init NS_UNAVAILABLE;
 
 @end

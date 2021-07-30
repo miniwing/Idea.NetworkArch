@@ -231,7 +231,7 @@
 
 @end
 
-#pragma mark IBAction
+#pragma mark - IBAction
 @implementation WoLANController (Action)
 
 - (IBAction)onBack:(id)aSender {

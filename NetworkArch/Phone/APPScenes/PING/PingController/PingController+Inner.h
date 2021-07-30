@@ -27,7 +27,6 @@ IDEA_ENUM(NSInteger, PingSection) {
    PingSectionNumber
 };
 
-
 @interface PingController () <UITextFieldDelegate> {
 
    dispatch_once_t                          _firstResponder;
@@ -46,9 +45,15 @@ IDEA_ENUM(NSInteger, PingSection) {
 @property (nonatomic, strong)                IDEAPingClient                      * pingClient;
 @property (nonatomic, strong)                NSMutableArray<PingResult *>        * pingResults;
 
+@property (nonatomic, assign)                BOOL                                  showStatistics;
+
+@property (nonatomic, strong)                NSMutableArray<NSNumber *>          * sections;
+
 @end
 
 @interface PingController (Inner)
+
+- (BOOL)needShowStatistics;
 
 @end
 

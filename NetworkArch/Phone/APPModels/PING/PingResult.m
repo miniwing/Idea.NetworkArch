@@ -28,12 +28,12 @@
    return;
 }
 
-+ (instancetype)pingResultWithError:(NSError *)aError duration:(NSTimeInterval)aDuration {
++ (instancetype)pingResultWithHostName:(NSString *)aHostName ip:(NSString *)aIP  error:(NSError *)aError duration:(NSTimeInterval)aDuration {
    
-   return [[PingResult alloc] initWithError:aError duration:aDuration];
+   return [[PingResult alloc] initWithHostName:aHostName ip:aIP  error:aError duration:aDuration];
 }
 
-- (instancetype)initWithError:(NSError *)aError duration:(NSTimeInterval)aDuration {
+- (instancetype)initWithHostName:(NSString *)aHostName ip:(NSString *)aIP  error:(NSError *)aError duration:(NSTimeInterval)aDuration {
 
    int                            nErr                                     = EFAULT;
    
@@ -42,9 +42,12 @@
    self  = [super init];
    
    if (self) {
-
+      
       _error      = aError;
       _duration   = aDuration;
+      
+      _hostName   = aHostName;
+      _ip         = aIP;
       
    } /* End if () */
    

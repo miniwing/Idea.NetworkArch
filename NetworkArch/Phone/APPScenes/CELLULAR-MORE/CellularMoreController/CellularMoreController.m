@@ -224,7 +224,7 @@
 
 @end
 
-#pragma mark IBAction
+#pragma mark - IBAction
 @implementation CellularMoreController (Action)
 
 - (IBAction)onBack:(id)aSender {

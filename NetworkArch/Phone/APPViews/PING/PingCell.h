@@ -26,9 +26,13 @@ IDEA_ENUM(NSInteger, PingStatistics) {
 @property (nonatomic, weak)   IBOutlet       UIView                              * containerView;
 @property (nonatomic, weak)   IBOutlet       UIView                              * selectedColorView;
 
+@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
+
 @end
 
 @interface PingCell ()
+
+@property (nonatomic, assign)                UIRectCorner                          rectCorner;
 
 @end
 

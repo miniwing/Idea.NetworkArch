@@ -228,7 +228,7 @@
 
 @end
 
-#pragma mark IBAction
+#pragma mark - IBAction
 @implementation WifiMoreController (Action)
 
 - (IBAction)onBack:(id)aSender {
