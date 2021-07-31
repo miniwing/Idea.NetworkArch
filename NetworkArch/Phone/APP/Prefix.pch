@@ -70,6 +70,7 @@
 //#  import <AVFoundation/AVFoundation.h>
 //#  import <AssetsLibrary/AssetsLibrary.h>
 #  import <CoreLocation/CoreLocation.h>
+#  import <CoreTelephony/CTCarrier.h>
 #  import <CoreTelephony/CTTelephonyNetworkInfo.h>
 //#  import <MapKit/MapKit.h>
 //#  import <VideoToolbox/VideoToolbox.h>

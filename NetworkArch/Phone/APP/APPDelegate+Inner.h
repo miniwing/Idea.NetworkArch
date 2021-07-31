@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPDelegate (Inner)
 
-- (void) networkMonitoring;
+- (void)monitorReachabilityStatus;
 
 @end
 

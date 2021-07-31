@@ -139,6 +139,8 @@
 		4A7241B126B3153A00009443 /* PingResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7241B026B3153A00009443 /* PingResult.m */; };
 		4A842C8026AC1C0B005DC131 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A842C7E26AC1C0B005DC131 /* InfoPlist.strings */; };
 		4A842C8126AC1C19005DC131 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B992685CD3400DC1DA2 /* Localizable.strings */; };
+		4A99B5B926B5910D006F479F /* APPDelegate+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D98EB26A47B1200E00610 /* APPDelegate+Inner.m */; };
+		4AAF697826B58E1300E68E32 /* APPDelegate+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF697726B58E1300E68E32 /* APPDelegate+Signal.m */; };
 		4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1D726859BB800B1639D /* HomeRootController.m */; };
 		4AB5C1EE26859F3C00B1639D /* SETTING-HEADER.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB5C1E826859F3C00B1639D /* SETTING-HEADER.xib */; };
 		4AB5C1EF26859F3C00B1639D /* SettingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1EA26859F3C00B1639D /* SettingHeader.m */; };
@@ -524,6 +526,8 @@
 		4A842C7F26AC1C0B005DC131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkArch.entitlements; sourceTree = "<group>"; };
 		4A98A6362684B50F00EEEB60 /* NetworkArch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkArch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AAF697626B58E1300E68E32 /* APPDelegate+Signal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APPDelegate+Signal.h"; sourceTree = "<group>"; };
+		4AAF697726B58E1300E68E32 /* APPDelegate+Signal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "APPDelegate+Signal.m"; sourceTree = "<group>"; };
 		4AB5C1D126859BB800B1639D /* HomeRootController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRootController.h; sourceTree = "<group>"; };
 		4AB5C1D726859BB800B1639D /* HomeRootController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeRootController.m; sourceTree = "<group>"; };
 		4AB5C1E826859F3C00B1639D /* SETTING-HEADER.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SETTING-HEADER.xib"; sourceTree = "<group>"; };
@@ -679,6 +683,8 @@
 				4A0E4DBD268584C100A85517 /* APPDelegate.m */,
 				4A0E4E50268588E300A85517 /* APPDelegate+Inner.h */,
 				4A5D98EB26A47B1200E00610 /* APPDelegate+Inner.m */,
+				4AAF697626B58E1300E68E32 /* APPDelegate+Signal.h */,
+				4AAF697726B58E1300E68E32 /* APPDelegate+Signal.m */,
 				4A0E4DBB268584C100A85517 /* RootViewController.h */,
 				4A0E4DB9268584C100A85517 /* RootViewController.m */,
 				4A0E4DBA268584C100A85517 /* SplashViewController.h */,
@@ -1924,6 +1930,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A53A9BD26A46E60000700F2 /* WoLANRootController+Notification.m in Sources */,
+				4A99B5B926B5910D006F479F /* APPDelegate+Inner.m in Sources */,
 				4A0E4E74268589E600A85517 /* SettingController+Notification.m in Sources */,
 				4A45536926862E4D0050E736 /* HomeContentController+Notification.m in Sources */,
 				4A5D99CE26A494FA00E00610 /* CellularMoreRootController.m in Sources */,
@@ -1961,6 +1968,7 @@
 				4A7241B126B3153A00009443 /* PingResult.m in Sources */,
 				4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */,
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
+				4AAF697826B58E1300E68E32 /* APPDelegate+Signal.m in Sources */,
 				4A53A9EC26A46EA5000700F2 /* WhoisRootController+Debug.m in Sources */,
 				4A5D99F026A4951C00E00610 /* WifiMoreRootController.m in Sources */,
 				4A0E4E76268589E600A85517 /* SettingController.m in Sources */,
