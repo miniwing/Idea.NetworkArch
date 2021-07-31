@@ -404,4 +404,16 @@
 //   return;
 //}
 
+#pragma mark - (AFNetworkReachabilityManager *)networkReachabilityManager
+- (AFNetworkReachabilityManager *)networkReachabilityManager {
+   
+   if (nil == _networkReachabilityManager) {
+      
+      _networkReachabilityManager   = [AFNetworkReachabilityManager manager];
+      
+   } /* End if () */
+   
+   return _networkReachabilityManager;
+}
+
 @end

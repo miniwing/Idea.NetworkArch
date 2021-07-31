@@ -148,6 +148,8 @@ typedef FBLPromise Promise;
 #     define AF_NETWORKING                                                 (0)
 #  endif
 
+#  import <AFNetworking/AFNetworkReachabilityManager.h>
+
 #  if __has_include(<AFNetworkActivityLogger/AFNetworkActivityLogger.h>)
 #     import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
 #     define AF_NETWORK_ACTIVITY_LOGGER                                    (1 && (1 == DEBUG))

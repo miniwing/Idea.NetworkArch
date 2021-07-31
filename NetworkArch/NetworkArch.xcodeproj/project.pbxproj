@@ -1606,7 +1606,7 @@
 				};
 			};
 			buildConfigurationList = 4A98A6312684B50F00EEEB60 /* Build configuration list for PBXProject "NetworkArch" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -2259,7 +2259,6 @@
 				DEVELOPMENT_TEAM = G8G9TAP4UN;
 				GCC_PREFIX_HEADER = FleetingWidget/Prefix.pch;
 				INFOPLIST_FILE = FleetingWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2285,7 +2284,6 @@
 				DEVELOPMENT_TEAM = G8G9TAP4UN;
 				GCC_PREFIX_HEADER = FleetingWidget/Prefix.pch;
 				INFOPLIST_FILE = FleetingWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2528,6 +2526,7 @@
 				DEVELOPMENT_TEAM = G8G9TAP4UN;
 				GCC_PREFIX_HEADER = TodayClip/Prefix.pch;
 				INFOPLIST_FILE = TodayClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2552,6 +2551,7 @@
 				DEVELOPMENT_TEAM = G8G9TAP4UN;
 				GCC_PREFIX_HEADER = TodayClip/Prefix.pch;
 				INFOPLIST_FILE = TodayClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

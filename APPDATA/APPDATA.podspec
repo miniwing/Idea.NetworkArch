@@ -33,7 +33,7 @@ Pod::Spec.new do |spec|
     'HEADER_SEARCH_PATHS'               => [
                                             "${PODS_TARGET_SRCROOT}/",
                                             "${PODS_TARGET_SRCROOT}/../",
-                                            "${PODS_ROOT}/Headers/Public/YYKit/"
+#                                            "${PODS_ROOT}/Headers/Public/YYKit/"
                                             ]
                                       }
 

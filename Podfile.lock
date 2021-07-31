@@ -1,4 +1,5 @@
 PODS:
+  - AFNetworking/Reachability (4.0.1-IDEA)
   - APPDATA (1.0.0):
     - IDEAKit
     - YYKit
@@ -317,6 +318,7 @@ PODS:
     - libwebp
 
 DEPENDENCIES:
+  - AFNetworking/Reachability (from `../MINIWING-PODs/AFNetworking`)
   - APPDATA (from `APPDATA`)
   - APPDEBUG (from `APPDEBUG`)
   - FoundationExtension (from `https://github.com/miniwing/FoundationExtension.git`, branch `master`)
@@ -354,6 +356,8 @@ SPEC REPOS:
     - SimplePing
 
 EXTERNAL SOURCES:
+  AFNetworking:
+    :path: "../MINIWING-PODs/AFNetworking"
   APPDATA:
     :path: APPDATA
   APPDEBUG:
@@ -400,7 +404,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/miniwing/FoundationExtension.git
 
 SPEC CHECKSUMS:
-  APPDATA: 4a636dafea08f9f604ad2b0aa3b2e3380ec0a8fd
+  AFNetworking: e1693ab290d0390ddedb708ead525b467f4f38be
+  APPDATA: 86a0efdfc993700d2f7749dcc78653012754473e
   APPDEBUG: 02129654be9c76b17e21c4eb987577ec1ae05c53
   cdebug: 0d0b7207fa996236ee9e07e5988e5e39a1d94a28
   FoundationExtension: 56c1c923c9a3bc69c5a5ac08c47c8f2f57b06288
@@ -428,6 +433,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: 44275af986f8cec820765f05bfa9d126b0b2ba50
 
-PODFILE CHECKSUM: 5978b681208516b48d77e21c8da8a9485c9562cf
+PODFILE CHECKSUM: c9d9513905c3d7af846f6eede15fc14dede318ce
 
 COCOAPODS: 1.10.2

@@ -260,20 +260,20 @@
    
    dispatch_once(&_firstResponder, ^{
       
-      //      [self.textField becomeFirstResponder];
-      //
-      //#if __Debug__
-      //      [CATransaction begin];
-      //      [self.searchBar becomeFirstResponder];
-      //      [CATransaction commit];
-      //
-      //      [CATransaction setCompletionBlock:^{
-      //
-      //         [self.searchBar setText:@"www.baidu.com"];
-      //      }];
-      //#else
-      //      [self.searchBar becomeFirstResponder];
-      //#endif /* __Debug__ */
+//      [self.textField becomeFirstResponder];
+//
+//#if __Debug__
+//      [CATransaction begin];
+//      [self.searchBar becomeFirstResponder];
+//      [CATransaction commit];
+//
+//      [CATransaction setCompletionBlock:^{
+//
+//         [self.searchBar setText:@"www.baidu.com"];
+//      }];
+//#else
+//      [self.searchBar becomeFirstResponder];
+//#endif /* __Debug__ */
    });
    
    __CATCH(nErr);
@@ -701,38 +701,38 @@
    
    __TRY;
    
-   //   [self resignFirstResponder];
-   //
-   //   LogDebug((@"-[PingController onStart:] : aSender : %@", aSender));
-   //
-   //   // 按钮状态变更。
-   //   if (nil == self.pingClient) {
-   //
-   //      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
-   //      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemRed])];
-   //
-   //      self.pingClient   = [IDEAPingClient pingWithHostName:self.textField.text
-   //                                                    result:^(NSTimeInterval aTime, NSError * _Nonnull aError) {
-   //
-   //         LogDebug((@"-[PingController onStart:] : ping : Error : %@", aError));
-   //         LogDebug((@"-[PingController onStart:] : ping : Time  : %ld", aTime));
-   //      }];
-   //
-   //   } /* End if () */
-   //   else {
-   //
-   //      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
-   //      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
-   //
-   //      if (nil != self.pingClient) {
-   //
-   //         [self.pingClient stopPing];
-   //         __RELEASE(_pingClient);
-   //
-   //      } /* End if () */
-   //
-   //   } /* End else */
-   
+//   [self resignFirstResponder];
+//
+//   LogDebug((@"-[PingController onStart:] : aSender : %@", aSender));
+//
+//   // 按钮状态变更。
+//   if (nil == self.pingClient) {
+//
+//      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
+//      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemRed])];
+//
+//      self.pingClient   = [IDEAPingClient pingWithHostName:self.textField.text
+//                                                    result:^(NSTimeInterval aTime, NSError * _Nonnull aError) {
+//
+//         LogDebug((@"-[PingController onStart:] : ping : Error : %@", aError));
+//         LogDebug((@"-[PingController onStart:] : ping : Time  : %ld", aTime));
+//      }];
+//
+//   } /* End if () */
+//   else {
+//
+//      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
+//      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
+//
+//      if (nil != self.pingClient) {
+//
+//         [self.pingClient stopPing];
+//         __RELEASE(_pingClient);
+//
+//      } /* End if () */
+//
+//   } /* End else */
+
    [self postSignal:PingController.startPingSignal
             onQueue:dispatch_get_main_queue()];
    

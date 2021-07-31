@@ -59,6 +59,8 @@ def library
   if ENV['IDEA_AFNETWORKING'] == 'YES'
     pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'            , :configurations => ['Debug']
 #    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'
+  else
+    pod 'AFNetworking/Reachability'     , :path => '../MINIWING-PODs/AFNetworking'
   end # IDEA_AFNETWORKING
 
   if ENV['IDEA_YYKIT'] == 'YES'
@@ -149,6 +151,7 @@ target 'NetworkArch' do
 #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'IDEAPing'                        , :path => '../MINIWING-PODs/IDEAPing'
   pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
+#  pod 'IDEAReachability'                , :path => '../MINIWING-PODs/IDEAReachability'
 #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'IDEARefresh'                     , :path => '../MINIWING-PODs/IDEARefresh'
 #  pod 'IDEANibBridge'                   , :path => '../MINIWING-PODs/IDEANibBridge'
