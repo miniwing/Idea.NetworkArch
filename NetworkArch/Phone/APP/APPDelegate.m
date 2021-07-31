@@ -270,7 +270,7 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-   
+      
    BG_PERFORM_SELECTOR(self, @selector(loadData), nil);
    
    __CATCH(nErr);
@@ -318,6 +318,8 @@
       
    } /* End else */
    
+   LogDebug((@"[UIDevice ipv4:NetworkCellular] : %@", [UIDevice ipv4:NetworkCellular]));
+
    UI_PERFORM_SELECTOR(self, @selector(splashing), nil, NO);
    
    __CATCH(nErr);

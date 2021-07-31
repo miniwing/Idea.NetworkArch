@@ -11,6 +11,8 @@
 #import "RootViewController.h"
 #import "SplashViewController.h"
 
+#import "UIDevice+Network.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APPDelegate ()

@@ -108,6 +108,7 @@
 		4A53AAC726A47403000700F2 /* DNSController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53AAB926A47402000700F2 /* DNSController+Signal.m */; };
 		4A53AAC826A47403000700F2 /* DNSController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53AABB26A47402000700F2 /* DNSController+Theme.m */; };
 		4A53AAC926A47403000700F2 /* DNSController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53AABD26A47402000700F2 /* DNSController.m */; };
+		4A584B0626B59E83002A2E81 /* UIDevice+Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A584B0526B59E83002A2E81 /* UIDevice+Network.m */; };
 		4A5D99CB26A494FA00E00610 /* CellularMoreRootController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99C026A494F900E00610 /* CellularMoreRootController+Signal.m */; };
 		4A5D99CC26A494FA00E00610 /* CellularMoreRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99C126A494F900E00610 /* CellularMoreRootController+Debug.m */; };
 		4A5D99CD26A494FA00E00610 /* CellularMoreRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D99C426A494F900E00610 /* CellularMoreRootController+Theme.m */; };
@@ -463,6 +464,8 @@
 		4A53AABB26A47402000700F2 /* DNSController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSController+Theme.m"; sourceTree = "<group>"; };
 		4A53AABC26A47402000700F2 /* DNSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSController.h; sourceTree = "<group>"; };
 		4A53AABD26A47402000700F2 /* DNSController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSController.m; sourceTree = "<group>"; };
+		4A584B0426B59E83002A2E81 /* UIDevice+Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Network.h"; sourceTree = "<group>"; };
+		4A584B0526B59E83002A2E81 /* UIDevice+Network.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Network.m"; sourceTree = "<group>"; };
 		4A5D98EB26A47B1200E00610 /* APPDelegate+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APPDelegate+Inner.m"; sourceTree = "<group>"; };
 		4A5D99BF26A494F900E00610 /* CellularMoreRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreRootController+Signal.h"; sourceTree = "<group>"; };
 		4A5D99C026A494F900E00610 /* CellularMoreRootController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CellularMoreRootController+Signal.m"; sourceTree = "<group>"; };
@@ -757,6 +760,7 @@
 				4A0E4E412685885700A85517 /* APPDelegate+APP */,
 				4A0E4E422685885F00A85517 /* APPDelegate+Kit */,
 				4A0E4E432685886600A85517 /* UIApplication+Notification */,
+				4A584B0C26B59E89002A2E81 /* UIDevice+Network */,
 			);
 			path = APPCategory;
 			sourceTree = "<group>";
@@ -1145,6 +1149,22 @@
 			path = DNSController;
 			sourceTree = "<group>";
 		};
+		4A584B0326B59E45002A2E81 /* APPUtils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APPUtils;
+			sourceTree = "<group>";
+		};
+		4A584B0C26B59E89002A2E81 /* UIDevice+Network */ = {
+			isa = PBXGroup;
+			children = (
+				4A584B0426B59E83002A2E81 /* UIDevice+Network.h */,
+				4A584B0526B59E83002A2E81 /* UIDevice+Network.m */,
+			);
+			path = "UIDevice+Network";
+			sourceTree = "<group>";
+		};
 		4A5D98EC26A493C600E00610 /* WIFI-MORE */ = {
 			isa = PBXGroup;
 			children = (
@@ -1314,6 +1334,7 @@
 				4A0E4E592685897400A85517 /* APPScenes */,
 				4A0E4E5B2685898300A85517 /* APPViews */,
 				4A0E4E5A2685897C00A85517 /* APPModels */,
+				4A584B0326B59E45002A2E81 /* APPUtils */,
 			);
 			path = Phone;
 			sourceTree = "<group>";
@@ -1585,7 +1606,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Harry;
 				TargetAttributes = {
 					4A0E4E20268587BE00A85517 = {
@@ -1980,6 +2001,7 @@
 				4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */,
 				4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */,
 				4A5D99CD26A494FA00E00610 /* CellularMoreRootController+Theme.m in Sources */,
+				4A584B0626B59E83002A2E81 /* UIDevice+Network.m in Sources */,
 				4A4553862686327B0050E736 /* TrackingRootController.m in Sources */,
 				4A53AABE26A47403000700F2 /* DNSRootController+Debug.m in Sources */,
 				4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */,
