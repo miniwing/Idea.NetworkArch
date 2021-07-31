@@ -2406,6 +2406,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
 			};
 			name = Debug;
 		};
@@ -2461,6 +2462,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
 			};
 			name = Release;
 		};
@@ -2526,7 +2528,6 @@
 				DEVELOPMENT_TEAM = G8G9TAP4UN;
 				GCC_PREFIX_HEADER = TodayClip/Prefix.pch;
 				INFOPLIST_FILE = TodayClip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2551,7 +2552,6 @@
 				DEVELOPMENT_TEAM = G8G9TAP4UN;
 				GCC_PREFIX_HEADER = TodayClip/Prefix.pch;
 				INFOPLIST_FILE = TodayClip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
