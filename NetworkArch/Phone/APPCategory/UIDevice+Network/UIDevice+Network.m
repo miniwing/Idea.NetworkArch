@@ -8,7 +8,33 @@
 
 #import "UIDevice+Network.h"
 
+
 @implementation UIDevice (Network)
+
++ (NSDictionary<NSString *, NSString *> *)radioTechnology {
+   
+   static NSDictionary<NSString *, NSString *>  *g_RADIO_TECHNOLOGY  = nil;
+   static dispatch_once_t                        onceToken;
+   dispatch_once(&onceToken, ^{
+      g_RADIO_TECHNOLOGY   = @{
+         @"CTRadioAccessTechnologyCDMA1x"  : @"CDMA1x" ,
+         @"CTRadioAccessTechnologyEdge"    : @"Edge"   ,
+         @"CTRadioAccessTechnologyGPRS"    : @"GPRS"   ,
+         @"CTRadioAccessTechnologyHSDPA"   : @"HSDPA"  ,
+         @"CTRadioAccessTechnologyHSUPA"   : @"HSUPA"  ,
+         @"CTRadioAccessTechnologyLTE"     : @"LTE"    ,
+         @"CTRadioAccessTechnologyWCDMA"   : @"WCDMA"  ,
+         @"CTRadioAccessTechnologyeHRPD"   : @"eHRDP"  ,
+         @"N/A"                            : @"N/A"
+      };
+   });
+   return g_RADIO_TECHNOLOGY;
+}
+
++ (NSString *)radioTechnologyFor:(NSString *)aKey {
+
+   return [UIDevice radioTechnology][aKey];
+}
 
 + (NSString *)networkName:(Network)aNetwork {
    
@@ -54,7 +80,7 @@
    } /* End if () */
    
    szNetwork   = [UIDevice networkName:aNetwork];
-   LogDebug((@"+[UIDevice addressForFamily:network:] : networkName : %s", szNetwork));
+   LogDebug((@"+[UIDevice addressForFamily:network:] : networkName : %@", szNetwork));
 
    for (struct ifaddrs *pstIfAddrTemp = pstIfaddrs; NULL != pstIfAddrTemp; pstIfAddrTemp = pstIfAddrTemp->ifa_next) {
       
@@ -69,22 +95,37 @@
 //
 //      } /* End else */
 
+      LogDebug((@"+[UIDevice addressForFamily:network:] : ifa_name  : %s", pstIfAddrTemp->ifa_name));
+      LogDebug((@"+[UIDevice addressForFamily:network:] : sa_family : %d", pstIfAddrTemp->ifa_addr->sa_family));
+
       if(pstIfAddrTemp->ifa_addr->sa_family == (uint8_t)aFamily) {
          
-         LogDebug((@"+[UIDevice addressForFamily:network:] : ifa_name : %s", pstIfAddrTemp->ifa_name));
          LogDebug((@"+[UIDevice addressForFamily:network:] : ifa_name : %@", @(pstIfAddrTemp->ifa_name)));
 
          if ([szNetwork isEqualToString:@(pstIfAddrTemp->ifa_name)]) {
             
-            getnameinfo(pstIfAddrTemp->ifa_addr,
+            nErr  = getnameinfo(pstIfAddrTemp->ifa_addr,
                         pstIfAddrTemp->ifa_addr->sa_len,
                         acHostName,
                         sizeof(acHostName),
                         NULL,
                         0,
                         NI_NUMERICHOST);
+            if (noErr != nErr) {
+               
+               continue;
+               
+            } /* End if () */
             
-//            address = String(cString: hostname)
+            szAddress   = [NSString stringWithUTF8String:acHostName];
+
+            if (NO == kStringIsEmpty(szAddress)) {
+               
+               break;
+               
+            } /* End if () */
+            
+            continue;
 
          } /* End if () */
          

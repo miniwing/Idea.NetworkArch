@@ -18,6 +18,7 @@ IDEA_ENUM(NSInteger, Network) {
 
 @interface UIDevice (Network)
 
++ (NSString *)radioTechnologyFor:(NSString *)aKey;
 + (NSString *)networkName:(Network)aNetwork;
 
 + (NSString *)ipv4:(Network)aNetwork;

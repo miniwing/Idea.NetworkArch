@@ -9,6 +9,7 @@
 //  TEL : +(852)53054612
 //
 
+#import "HomeContentController+Inner.h"
 #import "HomeContentController+Signal.h"
 
 @implementation HomeContentController (Signal)
@@ -127,6 +128,9 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
    NSDictionary<NSString *, NSString *>   *stRadioAccesses                 = nil;
    NSString                      *szRadioAccess                            = nil;
    
+   NSString                      *szCarrierName                            = nil;
+   NSString                      *szIP                                     = nil;
+
    __TRY;
    
    stTelephonyNetworkInfo  = [[CTTelephonyNetworkInfo alloc] init];
@@ -147,6 +151,8 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
       }];
 #endif /* __Debug__ */
       
+      stCarrier   = [stCarriers objectForKey:stCarriers.allKeys.firstObject];
+            
       stRadioAccesses   = stTelephonyNetworkInfo.serviceCurrentRadioAccessTechnology;
       
       LogDebug((@"-[HomeContentController handleSignal:%@] : RadioAccesses : %@", aSignal.name, stRadioAccesses));
@@ -158,6 +164,8 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
 
       }];
 #endif /* __Debug__ */
+
+      szRadioAccess  = [stRadioAccesses objectForKey:stRadioAccesses.allKeys.firstObject];
 
    } /* End if () */
    else {
@@ -172,27 +180,46 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
       
    } /* End else */
    
+   if ((nil == stCarrier) || (YES == kStringIsEmpty(stCarrier.carrierName))){
+      
+      szCarrierName  = APP_STR(@"No service");
+      
+   } /* End if () */
+   else {
+      
+      szCarrierName  = stCarrier.carrierName;
+      
+   } /* End else */
+   
+   szIP  = [UIDevice ipv4:NetworkCellular];
+   
+   if (kStringIsEmpty(szIP)) {
+      
+      szIP           = APP_STR(@"N/A");
+
+   } /* End if () */
+   
    [UIView transitionWithView:self.cellularOperatorLabel
                      duration:UIAViewAnimationDefaultDuraton
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
-      [self.cellularOperatorLabel setText:stCarrier.carrierName];
+      [self.cellularOperatorLabel setText:szCarrierName];
    }
                    completion:nil];
    
-   [UIView transitionWithView:self.wifiSSIDIcon
+   [UIView transitionWithView:self.cellularOperatorIcon
                      duration:UIAViewAnimationDefaultDuraton
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
-      [self.wifiSSIDIcon setImage:[UIImage imageNamed:szIcon]];
+      [self.cellularOperatorIcon setImage:[UIImage imageNamed:szIcon]];
    }
                    completion:nil];
 
-   [UIView transitionWithView:self.wifiIP
+   [UIView transitionWithView:self.cellularIP
                      duration:UIAViewAnimationDefaultDuraton
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
-      [self.wifiIP setText:szIP];
+      [self.cellularIP setText:szIP];
    }
                    completion:nil];
 

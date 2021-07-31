@@ -325,6 +325,7 @@
    } /* End else */
    
    LogDebug((@"[UIDevice ipv4:NetworkCellular] : %@", [UIDevice ipv4:NetworkCellular]));
+
    /******************************************************************************************/
    /**
     监听网络状态
