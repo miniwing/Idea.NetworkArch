@@ -9,6 +9,8 @@
 //  TEL : +(852)53054612
 //
 
+#import "APPDelegate+APP.h"
+
 #import "HomeContentController.h"
 #import "HomeContentController+Inner.h"
 #import "HomeContentController+Signal.h"
@@ -295,6 +297,11 @@
 #endif /* !__DEBUG_COLOR__ */
       
    } /* End for () */
+   
+   /**
+    添加网络状态监听
+    */
+   [[APPDelegate APP] addSignalResponder:self];
    
    /**
     Load Wi-Fi, Cellular
