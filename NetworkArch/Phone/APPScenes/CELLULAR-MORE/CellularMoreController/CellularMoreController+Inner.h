@@ -11,12 +11,15 @@
 #import <IDEAUIVendor/IDEAUIVendor.h>
 
 #import "CellularMoreController.h"
+#import "CellularMoreContentController+Inner.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CellularMoreController ()
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
+
+@property (nonatomic, strong)                CellularMoreContentController       * moreContentController;
 
 @end
 

@@ -11,12 +11,15 @@
 #import <IDEAUIVendor/IDEAUIVendor.h>
 
 #import "WifiMoreController.h"
+#import "WiFiMoreContentController+Inner.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WifiMoreController ()
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
+
+@property (nonatomic, strong)                WiFiMoreContentController           * moreContentController;
 
 @end
 
