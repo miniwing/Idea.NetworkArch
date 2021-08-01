@@ -131,17 +131,17 @@
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
+//
+//#warning Incomplete implementation, return the number of sections
+//    return 0;
+//}
 
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
-
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
+//- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
+//
+//#warning Incomplete implementation, return the number of rows
+//    return 0;
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {

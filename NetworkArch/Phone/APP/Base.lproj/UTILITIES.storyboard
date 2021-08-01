@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PJN-tB-Oxg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,7 +46,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PingStatisticsCell" id="nIx-iA-ng0" customClass="PingStatisticsCell">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="49" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nIx-iA-ng0" id="Ynt-X6-RuL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -55,13 +55,16 @@
                                                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pf-GL-6ei" userLabel="容器">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="44"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标签" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YM-b6-oxB" userLabel="标签">
-                                                            <rect key="frame" x="8.0000000000000018" y="8.0000000000000018" width="28.666666666666671" height="27.666666666666671"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Maximum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YM-b6-oxB" userLabel="标签">
+                                                            <rect key="frame" x="8" y="8.0000000000000018" width="64" height="27.666666666666671"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="2Gw-Sp-Z8Z"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozh-bW-Oj1" userLabel="时间">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="时间" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozh-bW-Oj1" userLabel="时间">
                                                             <rect key="frame" x="306.33333333333331" y="8.0000000000000018" width="28.666666666666686" height="27.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
@@ -79,6 +82,7 @@
                                                     <constraints>
                                                         <constraint firstItem="1YM-b6-oxB" firstAttribute="leading" secondItem="8pf-GL-6ei" secondAttribute="leading" constant="8" id="0eV-pN-8ai"/>
                                                         <constraint firstAttribute="trailing" secondItem="ozh-bW-Oj1" secondAttribute="trailing" constant="8" id="2yn-Ad-YIx"/>
+                                                        <constraint firstItem="ozh-bW-Oj1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1YM-b6-oxB" secondAttribute="trailing" constant="8" symbolic="YES" id="4uz-06-tbE"/>
                                                         <constraint firstItem="ozh-bW-Oj1" firstAttribute="top" secondItem="8pf-GL-6ei" secondAttribute="top" constant="8" id="KEj-k1-DF4"/>
                                                         <constraint firstItem="1YM-b6-oxB" firstAttribute="top" secondItem="8pf-GL-6ei" secondAttribute="top" constant="8" id="QBL-Uj-09k"/>
                                                         <constraint firstAttribute="bottom" secondItem="WjU-5E-jH0" secondAttribute="bottom" id="Sjk-Bl-ATn"/>
@@ -105,7 +109,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PingGraphCell" id="044-BF-xe8" customClass="PingGraphCell">
-                                        <rect key="frame" x="0.0" y="99.333332061767578" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="93" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="044-BF-xe8" id="mmI-VW-BuL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -118,8 +122,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标签" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8s-n8-r9b" userLabel="标签">
-                                                            <rect key="frame" x="8.0000000000000018" y="8.0000000000000018" width="28.666666666666671" height="27.666666666666671"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Latency graph" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8s-n8-r9b" userLabel="标签">
+                                                            <rect key="frame" x="8" y="8.0000000000000018" width="92.666666666666671" height="27.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -142,6 +146,7 @@
                                                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="wxl-h2-fmq" secondAttribute="trailing" constant="8" id="8cQ-5Q-pFK"/>
+                                                        <constraint firstItem="wxl-h2-fmq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p8s-n8-r9b" secondAttribute="trailing" constant="8" symbolic="YES" id="8qB-4d-Aa2"/>
                                                         <constraint firstItem="wbJ-wU-jJw" firstAttribute="top" secondItem="p8s-n8-r9b" secondAttribute="bottom" constant="8" id="ADZ-fO-AiN"/>
                                                         <constraint firstItem="wxl-h2-fmq" firstAttribute="top" secondItem="51Y-oS-Qyp" secondAttribute="top" constant="8" id="Ca5-wu-9Lb"/>
                                                         <constraint firstAttribute="trailing" secondItem="wbJ-wU-jJw" secondAttribute="trailing" constant="4" id="Iia-oo-r7D"/>
@@ -174,7 +179,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PingResultCell" id="4cZ-gc-Mju" customClass="PingResultCell">
-                                        <rect key="frame" x="0.0" y="143.33333206176758" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="137" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4cZ-gc-Mju" id="dQT-aP-OHO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -315,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hH0-po-bwH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082.4000000000001" y="72.413793103448285"/>
+            <point key="canvasLocation" x="1082" y="-708"/>
         </scene>
         <!--PING-ROOT-->
         <scene sceneID="y04-QB-tbA">
@@ -333,7 +338,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9J8-UG-j9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="72.413793103448285"/>
+            <point key="canvasLocation" x="140" y="-709"/>
         </scene>
         <!--WoLAN-->
         <scene sceneID="tTA-BG-eBG">
@@ -367,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tns-DX-s0y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082.4000000000001" y="72.413793103448285"/>
+            <point key="canvasLocation" x="1082" y="889"/>
         </scene>
         <!--WoLAN-ROOT-->
         <scene sceneID="YDU-CQ-4C5">
@@ -385,7 +390,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8M-i1-Kpd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="72.413793103448285"/>
+            <point key="canvasLocation" x="140" y="889"/>
         </scene>
         <!--WHOIS-->
         <scene sceneID="aV6-Hg-8gx">
@@ -471,7 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNP-Aj-RBJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082.4000000000001" y="72.413793103448285"/>
+            <point key="canvasLocation" x="1081" y="1697"/>
         </scene>
         <!--DNS-ROOT-->
         <scene sceneID="eVG-MT-q87">
@@ -489,7 +494,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RbC-Wk-OSN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="72.413793103448285"/>
+            <point key="canvasLocation" x="140" y="1697"/>
         </scene>
     </scenes>
     <resources>

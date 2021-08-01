@@ -68,7 +68,9 @@
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
-      
+
+   NSLayoutConstraint            *stLayoutConstraint                       = nil;
+
    __TRY;
    
    [super viewDidLoad];
@@ -129,6 +131,21 @@
 #endif /* !MATERIAL_APP_BAR */
    
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   [self.contentView setBackgroundColor:UIColor.clearColor];
+
+   /**
+    调整 Layout
+    contentView.top
+    */
+   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"contentView.top"
+                                                              fromView:self.view];
+   
+   if (nil != stLayoutConstraint) {
+      
+      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
+      
+   } /* End if () */
 
    __CATCH(nErr);
    

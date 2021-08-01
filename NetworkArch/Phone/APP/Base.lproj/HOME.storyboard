@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdA-Lf-zxg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <connections>
                                     <segue destination="FpE-1M-I5K" kind="embed" identifier="HomeContentController" id="iC0-8D-llQ"/>
                                 </connections>
@@ -45,7 +45,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="AdA-Lf-zxg" secondAttribute="trailing" id="8lF-9V-z0e"/>
                             <constraint firstItem="AdA-Lf-zxg" firstAttribute="top" secondItem="fu3-kW-ZxG" secondAttribute="top" identifier="contentView.top" id="XjW-aB-Gxz"/>
-                            <constraint firstItem="Jx0-Fl-Mpd" firstAttribute="bottom" secondItem="AdA-Lf-zxg" secondAttribute="bottom" id="aF4-Zk-s0t"/>
+                            <constraint firstAttribute="bottom" secondItem="AdA-Lf-zxg" secondAttribute="bottom" id="aF4-Zk-s0t"/>
                             <constraint firstItem="AdA-Lf-zxg" firstAttribute="leading" secondItem="fu3-kW-ZxG" secondAttribute="leading" id="ye8-ZT-AfY"/>
                         </constraints>
                     </view>
@@ -63,7 +63,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="HomeContentController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FpE-1M-I5K" userLabel="HOME-CONTENT" customClass="HomeContentController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="128" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" contentViewInsetsToSafeArea="NO" id="pbQ-4U-rhh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>

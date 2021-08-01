@@ -1229,13 +1229,6 @@
 			path = DNSController;
 			sourceTree = "<group>";
 		};
-		4A584B0326B59E45002A2E81 /* APPUtils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APPUtils;
-			sourceTree = "<group>";
-		};
 		4A584B0C26B59E89002A2E81 /* UIDevice+Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -1416,7 +1409,6 @@
 				4A0E4E592685897400A85517 /* APPScenes */,
 				4A0E4E5B2685898300A85517 /* APPViews */,
 				4A0E4E5A2685897C00A85517 /* APPModels */,
-				4A584B0326B59E45002A2E81 /* APPUtils */,
 			);
 			path = Phone;
 			sourceTree = "<group>";
