@@ -8,13 +8,11 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import "WifiMoreCell+Notification.h"
-
-#import <UIKit/UIKit.h>
+#import "WifiMoreCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WifiMoreCell+Notification (Notification)
+@interface WifiMoreCell (Notification)
 
 #if __Debug__
 @notification(self);

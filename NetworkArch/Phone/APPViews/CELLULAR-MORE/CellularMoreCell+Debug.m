@@ -1,5 +1,5 @@
 //
-//  WifiMoreCell+Debug.m
+//  CellularMoreCell+Debug.m
 //  NetworkArch
 //
 //  Created by Harry on 2021/8/1.
@@ -9,17 +9,17 @@
 //  TEL : +(852)53054612
 //
 
-#import "WifiMoreCell+Debug.h"
+#import "CellularMoreCell+Debug.h"
 
 #if __Debug__
-@implementation WifiMoreCell (Debug)
+@implementation CellularMoreCell (Debug)
 
 @end
 #endif /* __Debug__ */
 
 #if __InjectionIII__
 #pragma mark - InjectionIII
-@implementation WifiMoreCell (InjectionIII)
+@implementation CellularMoreCell (InjectionIII)
 
 - (void)injected {
    

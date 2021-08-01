@@ -8,13 +8,11 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import "WifiMoreCell+Signal.h"
-
-#import <UIKit/UIKit.h>
+#import "WifiMoreCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WifiMoreCell+Signal (Signal)
+@interface WifiMoreCell (Signal)
 
 #if __Debug__
 @signal(self);

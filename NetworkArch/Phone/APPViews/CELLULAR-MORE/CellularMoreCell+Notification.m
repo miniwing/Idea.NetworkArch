@@ -1,21 +1,20 @@
 //
-//  WifiMoreCell+Debug.h
+//  CellularMoreCell+Notification.m
 //  NetworkArch
 //
 //  Created by Harry on 2021/8/1.
 //  Copyright © 2021 Harry. All rights reserved.
 //
 //  Mail: miniwing.hz@gmail.com
+//  TEL : +(852)53054612
 //
 
-#import "WifiMoreCell.h"
+#import "CellularMoreCell+Notification.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation CellularMoreCell (Notification)
 
 #if __Debug__
-@interface WifiMoreCell (Debug)
-
-@end
+@def_notification(self);
 #endif /* __Debug__ */
 
-NS_ASSUME_NONNULL_END
+@end

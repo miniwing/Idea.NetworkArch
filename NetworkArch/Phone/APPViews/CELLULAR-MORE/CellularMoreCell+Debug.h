@@ -1,5 +1,5 @@
 //
-//  WifiMoreCell+Inner.h
+//  CellularMoreCell+Debug.h
 //  NetworkArch
 //
 //  Created by Harry on 2021/8/1.
@@ -8,16 +8,14 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import "WifiMoreCell.h"
+#import "CellularMoreCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WifiMoreCell ()
+#if __Debug__
+@interface CellularMoreCell (Debug)
 
 @end
-
-@interface WifiMoreCell (Inner)
-
-@end
+#endif /* __Debug__ */
 
 NS_ASSUME_NONNULL_END

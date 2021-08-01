@@ -1,5 +1,5 @@
 //
-//  WifiMoreCell+Inner.h
+//  CellularMoreCell.h
 //  NetworkArch
 //
 //  Created by Harry on 2021/8/1.
@@ -8,15 +8,15 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import "WifiMoreCell.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WifiMoreCell ()
+@interface CellularMoreCell : UITableViewCell
 
 @end
 
-@interface WifiMoreCell (Inner)
+@interface CellularMoreCell ()
 
 @end
 

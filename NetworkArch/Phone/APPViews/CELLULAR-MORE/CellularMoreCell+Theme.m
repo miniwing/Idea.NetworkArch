@@ -1,5 +1,5 @@
 //
-//  WifiMoreCell+Theme.m
+//  CellularMoreCell+Theme.m
 //  NetworkArch
 //
 //  Created by Harry on 2021/8/1.
@@ -9,10 +9,10 @@
 //  TEL : +(852)53054612
 //
 
-#import "WifiMoreCell+Theme.h"
+#import "CellularMoreCell+Theme.h"
 
 #pragma mark - UITheme
-@implementation WifiMoreCell (Theme)
+@implementation CellularMoreCell (Theme)
 
 // #if DK_NIGHT_VERSION
 // #endif // #if DK_NIGHT_VERSION
@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[WifiMoreCell+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[CellularMoreCell+Theme onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
 

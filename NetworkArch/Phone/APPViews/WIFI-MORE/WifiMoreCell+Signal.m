@@ -11,7 +11,7 @@
 
 #import "WifiMoreCell+Signal.h"
 
-@implementation WifiMoreCell+Signal (Signal)
+@implementation WifiMoreCell (Signal)
 
 #if __Debug__
 @def_signal(self);

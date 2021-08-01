@@ -1,5 +1,5 @@
 //
-//  WifiMoreCell+Inner.m
+//  CellularMoreCell+Inner.m
 //  NetworkArch
 //
 //  Created by Harry on 2021/8/1.
@@ -9,8 +9,8 @@
 //  TEL : +(852)53054612
 //
 
-#import "WifiMoreCell+Inner.h"
+#import "CellularMoreCell+Inner.h"
 
-@implementation WifiMoreCell (Inner)
+@implementation CellularMoreCell (Inner)
 
 @end

@@ -11,7 +11,7 @@
 
 #import "WifiMoreCell+Notification.h"
 
-@implementation WifiMoreCell+Notification (Notification)
+@implementation WifiMoreCell (Notification)
 
 #if __Debug__
 @def_notification(self);
