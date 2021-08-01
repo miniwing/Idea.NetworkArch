@@ -25,8 +25,6 @@
    LogDebug((@"-[WifiMoreCell+Theme onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
-
-      [super onThemeUpdate:aNotification];
       
    } /* End if () */
 

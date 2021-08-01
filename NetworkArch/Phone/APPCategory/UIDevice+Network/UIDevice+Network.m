@@ -8,7 +8,6 @@
 
 #import "UIDevice+Network.h"
 
-
 @implementation UIDevice (Network)
 
 + (NSDictionary<NSString *, NSString *> *)radioTechnology {
@@ -98,7 +97,7 @@
       LogDebug((@"+[UIDevice addressForFamily:network:] : ifa_name  : %s", pstIfAddrTemp->ifa_name));
       LogDebug((@"+[UIDevice addressForFamily:network:] : sa_family : %d", pstIfAddrTemp->ifa_addr->sa_family));
 
-      if(pstIfAddrTemp->ifa_addr->sa_family == (uint8_t)aFamily) {
+      if (pstIfAddrTemp->ifa_addr->sa_family == (uint8_t)aFamily) {
          
          LogDebug((@"+[UIDevice addressForFamily:network:] : ifa_name : %@", @(pstIfAddrTemp->ifa_name)));
 

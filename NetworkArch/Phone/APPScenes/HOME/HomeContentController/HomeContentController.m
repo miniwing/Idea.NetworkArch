@@ -573,11 +573,7 @@
       
 //      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
 //      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-      
-      [stTableViewCell setBackgroundColor:UIColor.clearColor];
-      [stTableViewCell.contentView setBackgroundColor:UIColor.clearColor];
-      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.clearColor];
-      
+            
    } /* End if () */
    
    __CATCH(nErr);

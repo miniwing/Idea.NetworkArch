@@ -18,18 +18,18 @@
 @implementation WiFiMoreContentController
 
 - (void)dealloc {
-
+   
    __LOG_FUNCTION;
-
+   
    // Custom dealloc
-
+   
    __SUPER_DEALLOC;
-
+   
    return;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aCoder {
-
+   
    int                            nErr                                     = EFAULT;
    
    __TRY;
@@ -37,7 +37,7 @@
    self  = [super initWithCoder:aCoder];
    
    if (self) {
-            
+      
    } /* End if () */
    
    __CATCH(nErr);
@@ -46,87 +46,178 @@
 }
 
 - (void)viewDidLoad {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidLoad];
+   
+   // Uncomment the following line to preserve selection between presentations.
+   // self.clearsSelectionOnViewWillAppear = NO;
+   
+   // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+   
+   [self.tableView setTableFooterView:[UIView new]];
+   [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+   
+   [self.tableView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+   
+   for (UIView *stView in self.detailCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemBlueColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
+   for (UIView *stView in self.dataUsageCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemPinkColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
+   for (UIView *stView in self.warningCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemOrangeColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
+   for (UIView *stView in self.separatorViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemOrangeColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
+#endif /* !__DEBUG_COLOR__ */
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+   } /* End for () */
+   
+   [self.separatorViews.lastObject setHidden:YES];
+   
+   [self.interfacesImageView setBackgroundColor:UIColor.clearColor];
+   [self.interfacesImageView setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return UIColor.whiteColor;
+         
+      } /* End if () */
+      else {
+         
+         return UIColor.blackColor;
+         
+      }/* End else */
+   }];
 
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)didReceiveMemoryWarning {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super didReceiveMemoryWarning];
    // Dispose of any resources that can be recreated.
-
+   
    __CATCH(nErr);
+   
+   return;
+}
 
+- (void)viewWillLayoutSubviews {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [super viewWillLayoutSubviews];
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)viewDidLayoutSubviews {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [super viewDidLayoutSubviews];
+   
+   [self.detailCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
+   [self.detailCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+   
+   __CATCH(nErr);
+   
    return;
 }
 
 - (void)viewWillAppear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewWillAppear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewDidAppear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidAppear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewWillDisappear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewWillDisappear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewDidDisappear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidDisappear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -143,61 +234,183 @@
 //    return 0;
 //}
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {
+   
+   int                            nErr                                     = EFAULT;
+   
+   WifiMoreCell                  *stTableViewCell                          = nil;
+   
+   NSArray<NSString *>           *stTitles                                 = @[
+      @"Status",
+      @"SSID",
+      @"BSSID",
+      @"Default Gateway",
+      @"Subnet Mask",
+      @"Internal IPV4",
+      @"Internal IPV6",
+      @"External IPV4",
+      @"Interfaces",
+   ];
+   
+   __TRY;
+   
+//   WifiSectionDetail    = 0,
+//   WifiSectionDataUsage = 1,
+//   WifiSectionWarning   = 2,
+//   WifiSectionNumber
 
-   UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:aIndexPath];
-
-   // Configure the cell...
-
-   return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)aTableView canEditRowAtIndexPath:(NSIndexPath *)aIndexPath {
-
-   // Return NO if you do not want the specified item to be editable.
-   return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)aEditingStyle forRowAtIndexPath:(NSIndexPath *)aIndexPath {
-
-   if (aEditingStyle == UITableViewCellEditingStyleDelete) {
-
-      // Delete the row from the data source
-      [aTableView deleteRowsAtIndexPaths:@[aIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+   if (WifiSectionDetail == aIndexPath.section) {
       
-   }
-   else if (aEditingStyle == UITableViewCellEditingStyleInsert) {
+      stTableViewCell   = self.detailCells[aIndexPath.row];
+      
+//      WifiDetailStatus        = 0,
+//      WifiDetailSSID          = 1,
+//      WifiDetailBSSID         = 2,
+//      WifiDetailGateway       = 3,
+//      WifiDetailSubnet        = 4,
+//      WifiDetailIPV4          = 5,
+//      WifiDetailIPV6          = 6,
+//      WifiDetailExternalIPV4  = 7,
+//      WifiDetailInterfaces    = 8,
+      
+      [stTableViewCell.titleLabel setText:stTitles[aIndexPath.row]];
+      
+      if (WifiDetailStatus == aIndexPath.row) {
+         
+         if ([IDEARoute isWifiConnected]) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"Connected")];
+            
+         } /* End if () */
+         else {
 
-      // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-   }
+            [stTableViewCell.infoLabel setText:APP_STR(@"Not connected")];
 
-   return;
+         } /* End else */
+         
+      } /* End if () */
+      else if (WifiDetailSSID == aIndexPath.row) {
+         
+         if (kStringIsEmpty([IDEARoute getSSID])) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:[IDEARoute getSSID]];
+
+         } /* End else */
+         
+      } /* End if () */
+      else if (WifiDetailBSSID == aIndexPath.row) {
+         
+         if (kStringIsEmpty([IDEARoute getBSSID])) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:[IDEARoute getBSSID]];
+
+         } /* End else */
+         
+      } /* End if () */
+      else if (WifiDetailGateway == aIndexPath.row) {
+         
+         if (kStringIsEmpty([IDEARoute getGatewayIP])) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:[IDEARoute getGatewayIP]];
+
+         } /* End else */
+         
+      } /* End if () */
+      else if (WifiDetailSubnet == aIndexPath.row) {
+         
+         if (kStringIsEmpty([IDEARoute getGatewayIP])) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:[IDEARoute getGatewayIP]];
+
+         } /* End else */
+         
+      } /* End if () */
+
+   } /* End if () */
+   else if (WifiSectionDataUsage == aIndexPath.section) {
+      
+      stTableViewCell   = self.dataUsageCells[aIndexPath.row];
+      
+   } /* End if () */
+   else if (WifiSectionWarning == aIndexPath.section) {
+      
+      stTableViewCell   = self.warningCells[aIndexPath.row];
+      
+   } /* End if () */
+   
+   if (nil != stTableViewCell) {
+            
+   } /* End if () */
+   
+   __CATCH(nErr);
+   
+   return stTableViewCell;
 }
-*/
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)aTableView moveRowAtIndexPath:(NSIndexPath *)aFromIndexPath toIndexPath:(NSIndexPath *)aToIndexPath {
-
-   return;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)aTableView canEditRowAtIndexPath:(NSIndexPath *)aIndexPath {
+ 
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)aIndexPath {
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)aEditingStyle forRowAtIndexPath:(NSIndexPath *)aIndexPath {
+ 
+ if (aEditingStyle == UITableViewCellEditingStyleDelete) {
+ 
+ // Delete the row from the data source
+ [aTableView deleteRowsAtIndexPaths:@[aIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+ 
+ }
+ else if (aEditingStyle == UITableViewCellEditingStyleInsert) {
+ 
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ 
+ return;
+ }
+ */
 
-   // Return NO if you do not want the item to be re-orderable.
-   return YES;
-}
-*/
+/*
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)aTableView moveRowAtIndexPath:(NSIndexPath *)aFromIndexPath toIndexPath:(NSIndexPath *)aToIndexPath {
+ 
+ return;
+ }
+ */
+
+/*
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)aIndexPath {
+ 
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 @end
 
@@ -205,13 +418,13 @@
 @implementation WiFiMoreContentController (IBACTION)
 
 - (IBAction)onAction:(id)aSender {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -222,16 +435,16 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)aSegue sender:(id)aSender {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    // Get the new view controller using [aSegue destinationViewController].
    // Pass the selected object to the new view controller.
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 

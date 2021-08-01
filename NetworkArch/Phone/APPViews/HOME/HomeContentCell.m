@@ -54,14 +54,19 @@
 
    [super awakeFromNib];
    // Initialization code
+
+   LogDebug((@"-[HomeContentCell awakeFromNib] : selectionStyle : %d", self.selectionStyle));
+   
+   [self setBackgroundColor:UIColor.clearColor];
+   [self.contentView setBackgroundColor:UIColor.clearColor];
    
    self.selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];// 这句不可省略
 //   [self.selectedBackgroundView setSize:CGSizeZero];
    [self.selectedBackgroundView setBackgroundColor:UIColor.clearColor];
    [self.selectedBackgroundView setClipsToBounds:YES];
 
-   LogDebug((@"-[HomeContentCell awakeFromNib] : selectionStyle : %d", self.selectionStyle));
-   
+   [self.selectedColorView setBackgroundColor:UIColor.clearColor];
+
    [self.selectedColorView setClipsToBounds:YES];
    [self.selectedColorView setBackgroundColor:UIColor.clearColor];
 

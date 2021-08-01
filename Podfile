@@ -104,12 +104,6 @@ target 'NetworkArch' do
 #  pod 'ZKCycleScrollView'
 
 #  pod 'FGRoute'
-
-#  pod 'MaterialComponents'              , :path => 'LocalModule/MaterialComponents'
-#  pod 'MDFInternationalization'         , :path => 'LocalModule/MaterialComponents'
-#  pod 'MDFTextAccessibility'            , :path => 'LocalModule/MaterialComponents'
-#  pod 'MotionAnimator'                  , :path => 'LocalModule/MaterialComponents'
-#  pod 'MotionInterchange'               , :path => 'LocalModule/MaterialComponents'
   
   if ENV['IDEA_MATERIAL_COMPONENTS'] == 'YES'
 #    pod 'MaterialComponents'
@@ -122,17 +116,8 @@ target 'NetworkArch' do
   pod 'MaterialComponents/ActivityIndicator'
 
 #  pod 'FloatingPanel'
-#  pod 'FloatingPanel'                   , '~> 1.7.6'
-#  pod 'FloatingPanel'                   , '~> 2.0.0'
 
-#  pod 'HHTransition'
-#  pod 'HHTransition'                    , '~> 2.0.0'
-
-#  pod 'AFNetworking'
-
-#  pod 'JXCategoryView'
-#  pod 'JXPagingView/Pager'
-
+  #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'DoraemonKit'                                                                           , :configurations => ['Debug']
 #  pod 'YKWoodpecker'                                                                          , :configurations => ['Debug']
   pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
@@ -151,7 +136,7 @@ target 'NetworkArch' do
 #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'IDEAPing'                        , :path => '../MINIWING-PODs/IDEAPing'
   pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
-#  pod 'IDEAReachability'                , :path => '../MINIWING-PODs/IDEAReachability'
+  pod 'IDEANetUtils'                    , :path => '../MINIWING-PODs/IDEANetUtils'
 #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'IDEARefresh'                     , :path => '../MINIWING-PODs/IDEARefresh'
 #  pod 'IDEANibBridge'                   , :path => '../MINIWING-PODs/IDEANibBridge'

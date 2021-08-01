@@ -14,6 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WifiMoreCell : UITableViewCell
 
+@property (nonatomic, weak)   IBOutlet       UIView                              * selectedColorView;
+@property (nonatomic, weak)   IBOutlet       UIView                              * cellContainerView;
+@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
+
+@property (nonatomic, weak)   IBOutlet       UILabel                             * titleLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * infoLabel;
+
 @end
 
 @interface WifiMoreCell ()

@@ -169,6 +169,7 @@ PODS:
   - IDEAKit (1.0.1):
     - FoundationExtension
     - YYKit
+  - IDEANetUtils (1.0.0-IDEA)
   - IDEANightVersion (2.4.3)
   - IDEAPalettes (2.1)
   - IDEAPing (1.0.0):
@@ -327,6 +328,7 @@ DEPENDENCIES:
   - IDEAColor (from `../MINIWING-PODs/IDEAColor`)
   - IDEAFONT (from `../MINIWING-PODs/IDEAFONT`)
   - IDEAKit (from `../MINIWING-PODs/IDEAKit`)
+  - IDEANetUtils (from `../MINIWING-PODs/IDEANetUtils`)
   - IDEANightVersion (from `../MINIWING-PODs/IDEANightVersion`)
   - IDEAPalettes (from `../MINIWING-PODs/IDEAPalettes`)
   - IDEAPing (from `../MINIWING-PODs/IDEAPing`)
@@ -375,6 +377,8 @@ EXTERNAL SOURCES:
     :path: "../MINIWING-PODs/IDEAFONT"
   IDEAKit:
     :path: "../MINIWING-PODs/IDEAKit"
+  IDEANetUtils:
+    :path: "../MINIWING-PODs/IDEANetUtils"
   IDEANightVersion:
     :path: "../MINIWING-PODs/IDEANightVersion"
   IDEAPalettes:
@@ -414,6 +418,7 @@ SPEC CHECKSUMS:
   IDEAColor: dfda727694c7fe815fcbf121d58dc987edc39e70
   IDEAFONT: e78a1e7989b4699eb11c9907d350d999801077d4
   IDEAKit: cd1fa1cd8ed15c1d639d69533bfefd82239e3f5a
+  IDEANetUtils: 649d8314a91e33a9d8913be9605049e36a37d4d6
   IDEANightVersion: a590973ea50df286dd03fb91df56837257eb35b3
   IDEAPalettes: 40dc74c454bca6e8133e22a186a1d34080a8c420
   IDEAPing: bb5c9e8812c0b1f634cb6a38281104a84934126a
@@ -433,6 +438,6 @@ SPEC CHECKSUMS:
   UIKitExtension: 0bd97dd39413c5d88d0aaccd631e90e4879af704
   YYKit: 44275af986f8cec820765f05bfa9d126b0b2ba50
 
-PODFILE CHECKSUM: c9d9513905c3d7af846f6eede15fc14dede318ce
+PODFILE CHECKSUM: 332a35b141a2521814b1d5a17be96f85a6fbf137
 
 COCOAPODS: 1.10.2

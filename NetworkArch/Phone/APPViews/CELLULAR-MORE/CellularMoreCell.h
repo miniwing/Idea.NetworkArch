@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CellularMoreCell : UITableViewCell
 
+@property (nonatomic, weak)   IBOutlet       UIView                              * selectedColorView;
+
 @end
 
 @interface CellularMoreCell ()
