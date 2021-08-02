@@ -103,7 +103,7 @@ target 'NetworkArch' do
   pod 'RTRootNavigationController'
 #  pod 'ZKCycleScrollView'
 
-#  pod 'FGRoute'
+  pod 'NetUtils'
   
   if ENV['IDEA_MATERIAL_COMPONENTS'] == 'YES'
 #    pod 'MaterialComponents'
