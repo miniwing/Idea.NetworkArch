@@ -168,6 +168,18 @@
 		4AB5C1F026859F3C00B1639D /* THEME-BUTTON.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB5C1EB26859F3C00B1639D /* THEME-BUTTON.xib */; };
 		4AB5C1F126859F3C00B1639D /* ThemeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1ED26859F3C00B1639D /* ThemeButton.m */; };
 		4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0E4E21268587BE00A85517 /* libAPPBase.a */; };
+		4AC0B85526B9AAE500B2DA58 /* WifiInterfacesController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B84426B9AAE100B2DA58 /* WifiInterfacesController+Theme.m */; };
+		4AC0B85626B9AAE500B2DA58 /* WifiInterfacesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B84A26B9AAE200B2DA58 /* WifiInterfacesController.m */; };
+		4AC0B85726B9AAE500B2DA58 /* WifiInterfacesController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B84F26B9AAE300B2DA58 /* WifiInterfacesController+Debug.m */; };
+		4AC0B85826B9AAE500B2DA58 /* WifiInterfacesController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B85026B9AAE400B2DA58 /* WifiInterfacesController+Inner.m */; };
+		4AC0B85926B9AAE500B2DA58 /* WifiInterfacesController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B85226B9AAE400B2DA58 /* WifiInterfacesController+Signal.m */; };
+		4AC0B85A26B9AAE500B2DA58 /* WifiInterfacesController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B85326B9AAE400B2DA58 /* WifiInterfacesController+Notification.m */; };
+		4AC0B88E26B9AB1A00B2DA58 /* WifiInterfacesRootController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B87D26B9AB1700B2DA58 /* WifiInterfacesRootController+Inner.m */; };
+		4AC0B88F26B9AB1A00B2DA58 /* WifiInterfacesRootController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B87E26B9AB1700B2DA58 /* WifiInterfacesRootController+Notification.m */; };
+		4AC0B89026B9AB1A00B2DA58 /* WifiInterfacesRootController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B88126B9AB1800B2DA58 /* WifiInterfacesRootController+Signal.m */; };
+		4AC0B89126B9AB1A00B2DA58 /* WifiInterfacesRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B88226B9AB1800B2DA58 /* WifiInterfacesRootController+Theme.m */; };
+		4AC0B89226B9AB1A00B2DA58 /* WifiInterfacesRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B88426B9AB1900B2DA58 /* WifiInterfacesRootController+Debug.m */; };
+		4AC0B89326B9AB1A00B2DA58 /* WifiInterfacesRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B88726B9AB1900B2DA58 /* WifiInterfacesRootController.m */; };
 		4ACD587126AFB4AE009B1424 /* APPDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD587026AFB4AE009B1424 /* APPDelegate.m */; };
 		4ACD587426AFB4AE009B1424 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD587326AFB4AE009B1424 /* SceneDelegate.m */; };
 		4ACD587726AFB4AE009B1424 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD587626AFB4AE009B1424 /* ViewController.m */; };
@@ -610,6 +622,30 @@
 		4AB5C1EB26859F3C00B1639D /* THEME-BUTTON.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "THEME-BUTTON.xib"; sourceTree = "<group>"; };
 		4AB5C1EC26859F3C00B1639D /* ThemeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeButton.h; sourceTree = "<group>"; };
 		4AB5C1ED26859F3C00B1639D /* ThemeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeButton.m; sourceTree = "<group>"; };
+		4AC0B84426B9AAE100B2DA58 /* WifiInterfacesController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesController+Theme.m"; sourceTree = "<group>"; };
+		4AC0B84A26B9AAE200B2DA58 /* WifiInterfacesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiInterfacesController.m; sourceTree = "<group>"; };
+		4AC0B84B26B9AAE200B2DA58 /* WifiInterfacesController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiInterfacesController+Signal.h"; sourceTree = "<group>"; };
+		4AC0B84C26B9AAE300B2DA58 /* WifiInterfacesController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiInterfacesController+Inner.h"; sourceTree = "<group>"; };
+		4AC0B84D26B9AAE300B2DA58 /* WifiInterfacesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiInterfacesController.h; sourceTree = "<group>"; };
+		4AC0B84E26B9AAE300B2DA58 /* WifiInterfacesController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiInterfacesController+Debug.h"; sourceTree = "<group>"; };
+		4AC0B84F26B9AAE300B2DA58 /* WifiInterfacesController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesController+Debug.m"; sourceTree = "<group>"; };
+		4AC0B85026B9AAE400B2DA58 /* WifiInterfacesController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesController+Inner.m"; sourceTree = "<group>"; };
+		4AC0B85126B9AAE400B2DA58 /* WifiInterfacesController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiInterfacesController+Notification.h"; sourceTree = "<group>"; };
+		4AC0B85226B9AAE400B2DA58 /* WifiInterfacesController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesController+Signal.m"; sourceTree = "<group>"; };
+		4AC0B85326B9AAE400B2DA58 /* WifiInterfacesController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesController+Notification.m"; sourceTree = "<group>"; };
+		4AC0B85426B9AAE500B2DA58 /* WifiInterfacesController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiInterfacesController+Theme.h"; sourceTree = "<group>"; };
+		4AC0B87D26B9AB1700B2DA58 /* WifiInterfacesRootController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesRootController+Inner.m"; sourceTree = "<group>"; };
+		4AC0B87E26B9AB1700B2DA58 /* WifiInterfacesRootController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesRootController+Notification.m"; sourceTree = "<group>"; };
+		4AC0B87F26B9AB1700B2DA58 /* WifiInterfacesRootController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiInterfacesRootController+Debug.h"; sourceTree = "<group>"; };
+		4AC0B88026B9AB1800B2DA58 /* WifiInterfacesRootController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiInterfacesRootController+Theme.h"; sourceTree = "<group>"; };
+		4AC0B88126B9AB1800B2DA58 /* WifiInterfacesRootController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesRootController+Signal.m"; sourceTree = "<group>"; };
+		4AC0B88226B9AB1800B2DA58 /* WifiInterfacesRootController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesRootController+Theme.m"; sourceTree = "<group>"; };
+		4AC0B88326B9AB1900B2DA58 /* WifiInterfacesRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiInterfacesRootController+Inner.h"; sourceTree = "<group>"; };
+		4AC0B88426B9AB1900B2DA58 /* WifiInterfacesRootController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesRootController+Debug.m"; sourceTree = "<group>"; };
+		4AC0B88526B9AB1900B2DA58 /* WifiInterfacesRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiInterfacesRootController+Signal.h"; sourceTree = "<group>"; };
+		4AC0B88626B9AB1900B2DA58 /* WifiInterfacesRootController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiInterfacesRootController+Notification.h"; sourceTree = "<group>"; };
+		4AC0B88726B9AB1900B2DA58 /* WifiInterfacesRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiInterfacesRootController.m; sourceTree = "<group>"; };
+		4AC0B88D26B9AB1A00B2DA58 /* WifiInterfacesRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiInterfacesRootController.h; sourceTree = "<group>"; };
 		4ACD586D26AFB4AE009B1424 /* TodayClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ACD586F26AFB4AE009B1424 /* APPDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPDelegate.h; sourceTree = "<group>"; };
 		4ACD587026AFB4AE009B1424 /* APPDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPDelegate.m; sourceTree = "<group>"; };
@@ -914,6 +950,7 @@
 				4A45537D2686327A0050E736 /* TRACKING */,
 				4A0E4E5C2685898E00A85517 /* HOME */,
 				4A5D98EC26A493C600E00610 /* WIFI-MORE */,
+				4AC0B81C26B9AA7F00B2DA58 /* WIFI-INTERFACEs */,
 				4A5D98ED26A493D600E00610 /* CELLULAR-MORE */,
 				4A221EE326A44D5F00C94F00 /* PING */,
 				4AC5B95D26A46CFA002AAB48 /* WoLAN */,
@@ -1502,6 +1539,53 @@
 			path = SETTING;
 			sourceTree = "<group>";
 		};
+		4AC0B81C26B9AA7F00B2DA58 /* WIFI-INTERFACEs */ = {
+			isa = PBXGroup;
+			children = (
+				4AC0B86026B9AAEF00B2DA58 /* WifiInterfacesRootController */,
+				4AC0B83926B9AAC700B2DA58 /* WifiInterfacesController */,
+			);
+			path = "WIFI-INTERFACEs";
+			sourceTree = "<group>";
+		};
+		4AC0B83926B9AAC700B2DA58 /* WifiInterfacesController */ = {
+			isa = PBXGroup;
+			children = (
+				4AC0B84D26B9AAE300B2DA58 /* WifiInterfacesController.h */,
+				4AC0B84A26B9AAE200B2DA58 /* WifiInterfacesController.m */,
+				4AC0B84C26B9AAE300B2DA58 /* WifiInterfacesController+Inner.h */,
+				4AC0B85026B9AAE400B2DA58 /* WifiInterfacesController+Inner.m */,
+				4AC0B85426B9AAE500B2DA58 /* WifiInterfacesController+Theme.h */,
+				4AC0B84426B9AAE100B2DA58 /* WifiInterfacesController+Theme.m */,
+				4AC0B84B26B9AAE200B2DA58 /* WifiInterfacesController+Signal.h */,
+				4AC0B85226B9AAE400B2DA58 /* WifiInterfacesController+Signal.m */,
+				4AC0B85126B9AAE400B2DA58 /* WifiInterfacesController+Notification.h */,
+				4AC0B85326B9AAE400B2DA58 /* WifiInterfacesController+Notification.m */,
+				4AC0B84E26B9AAE300B2DA58 /* WifiInterfacesController+Debug.h */,
+				4AC0B84F26B9AAE300B2DA58 /* WifiInterfacesController+Debug.m */,
+			);
+			path = WifiInterfacesController;
+			sourceTree = "<group>";
+		};
+		4AC0B86026B9AAEF00B2DA58 /* WifiInterfacesRootController */ = {
+			isa = PBXGroup;
+			children = (
+				4AC0B88D26B9AB1A00B2DA58 /* WifiInterfacesRootController.h */,
+				4AC0B88726B9AB1900B2DA58 /* WifiInterfacesRootController.m */,
+				4AC0B88326B9AB1900B2DA58 /* WifiInterfacesRootController+Inner.h */,
+				4AC0B87D26B9AB1700B2DA58 /* WifiInterfacesRootController+Inner.m */,
+				4AC0B88026B9AB1800B2DA58 /* WifiInterfacesRootController+Theme.h */,
+				4AC0B88226B9AB1800B2DA58 /* WifiInterfacesRootController+Theme.m */,
+				4AC0B88526B9AB1900B2DA58 /* WifiInterfacesRootController+Signal.h */,
+				4AC0B88126B9AB1800B2DA58 /* WifiInterfacesRootController+Signal.m */,
+				4AC0B88626B9AB1900B2DA58 /* WifiInterfacesRootController+Notification.h */,
+				4AC0B87E26B9AB1700B2DA58 /* WifiInterfacesRootController+Notification.m */,
+				4AC0B87F26B9AB1700B2DA58 /* WifiInterfacesRootController+Debug.h */,
+				4AC0B88426B9AB1900B2DA58 /* WifiInterfacesRootController+Debug.m */,
+			);
+			path = WifiInterfacesRootController;
+			sourceTree = "<group>";
+		};
 		4AC5B95D26A46CFA002AAB48 /* WoLAN */ = {
 			isa = PBXGroup;
 			children = (
@@ -2075,6 +2159,7 @@
 			files = (
 				4A53A9BD26A46E60000700F2 /* WoLANRootController+Notification.m in Sources */,
 				4A99B5B926B5910D006F479F /* APPDelegate+Inner.m in Sources */,
+				4AC0B85826B9AAE500B2DA58 /* WifiInterfacesController+Inner.m in Sources */,
 				4A0E4E74268589E600A85517 /* SettingController+Notification.m in Sources */,
 				4A45536926862E4D0050E736 /* HomeContentController+Notification.m in Sources */,
 				4A5D99CE26A494FA00E00610 /* CellularMoreRootController.m in Sources */,
@@ -2102,6 +2187,7 @@
 				4A221F0426A44DA100C94F00 /* PingRootController+Debug.m in Sources */,
 				4A53AAC326A47403000700F2 /* DNSRootController.m in Sources */,
 				4A0E4E75268589E600A85517 /* SettingController+Theme.m in Sources */,
+				4AC0B88E26B9AB1A00B2DA58 /* WifiInterfacesRootController+Inner.m in Sources */,
 				4A5D99E126A4950B00E00610 /* CellularMoreController+Theme.m in Sources */,
 				4A53A9EB26A46EA5000700F2 /* WhoisRootController+Signal.m in Sources */,
 				4A53AA6926A46F52000700F2 /* WoLANController+Notification.m in Sources */,
@@ -2123,6 +2209,7 @@
 				4A0E4E76268589E600A85517 /* SettingController.m in Sources */,
 				4A0EB7F22687268B00AA4366 /* HomeContentCell+Debug.m in Sources */,
 				4A07080C26B64B6E00D3A1DC /* WiFiMoreContentController.m in Sources */,
+				4AC0B85626B9AAE500B2DA58 /* WifiInterfacesController.m in Sources */,
 				4A5D99DE26A4950B00E00610 /* CellularMoreController+Notification.m in Sources */,
 				4A53AA4126A46F18000700F2 /* PingController+Debug.m in Sources */,
 				4A0E0E3A26B6CDA5001AE345 /* CellularMoreCell+Signal.m in Sources */,
@@ -2130,12 +2217,15 @@
 				4A0E4E72268589E500A85517 /* SettingContentController.m in Sources */,
 				4A53AA1526A46EE2000700F2 /* WhoisController+Inner.m in Sources */,
 				4A0E4DBF268584C100A85517 /* RootViewController.m in Sources */,
+				4AC0B89126B9AB1A00B2DA58 /* WifiInterfacesRootController+Theme.m in Sources */,
+				4AC0B85A26B9AAE500B2DA58 /* WifiInterfacesController+Notification.m in Sources */,
 				4A0E0E0726B6CD51001AE345 /* WifiMoreCell+Inner.m in Sources */,
 				4A53AA1326A46EE2000700F2 /* WhoisController+Signal.m in Sources */,
 				4A53AA6C26A46F52000700F2 /* WoLANController.m in Sources */,
 				4A5D99E026A4950B00E00610 /* CellularMoreController+Debug.m in Sources */,
 				4A45536526862E4D0050E736 /* HomeContentController+Signal.m in Sources */,
 				4AB5C1F126859F3C00B1639D /* ThemeButton.m in Sources */,
+				4AC0B89226B9AB1A00B2DA58 /* WifiInterfacesRootController+Debug.m in Sources */,
 				4A53AAC226A47403000700F2 /* DNSRootController+Theme.m in Sources */,
 				4A07080B26B64B6E00D3A1DC /* WiFiMoreContentController+Inner.m in Sources */,
 				4A0E0E3B26B6CDA5001AE345 /* CellularMoreCell+Theme.m in Sources */,
@@ -2146,7 +2236,10 @@
 				4AE51B902685C39400DC1DA2 /* HomeController+Inner.m in Sources */,
 				4A53AA1826A46EE2000700F2 /* WhoisController.m in Sources */,
 				4A5D99F326A4951C00E00610 /* WifiMoreRootController+Signal.m in Sources */,
+				4AC0B85926B9AAE500B2DA58 /* WifiInterfacesController+Signal.m in Sources */,
 				4A0E0E0B26B6CD51001AE345 /* WifiMoreCell+Theme.m in Sources */,
+				4AC0B85526B9AAE500B2DA58 /* WifiInterfacesController+Theme.m in Sources */,
+				4AC0B85726B9AAE500B2DA58 /* WifiInterfacesController+Debug.m in Sources */,
 				4A07080D26B64B6E00D3A1DC /* WiFiMoreContentController+Notification.m in Sources */,
 				4A0E0E3F26B6CDA5001AE345 /* CellularMoreCell+Notification.m in Sources */,
 				4A53A9ED26A46EA5000700F2 /* WhoisRootController+Theme.m in Sources */,
@@ -2155,8 +2248,10 @@
 				4AE51B912685C39400DC1DA2 /* HomeController.m in Sources */,
 				4A53AA1426A46EE2000700F2 /* WhoisController+Notification.m in Sources */,
 				4A0E0E3E26B6CDA5001AE345 /* CellularMoreCell.m in Sources */,
+				4AC0B89026B9AB1A00B2DA58 /* WifiInterfacesRootController+Signal.m in Sources */,
 				4AF9C52226B1C9D6002A2ABC /* PingStatisticsCell.m in Sources */,
 				4A5D99CF26A494FA00E00610 /* CellularMoreRootController+Notification.m in Sources */,
+				4AC0B88F26B9AB1A00B2DA58 /* WifiInterfacesRootController+Notification.m in Sources */,
 				4A0707F926B64B5A00D3A1DC /* CellularMoreContentController+Signal.m in Sources */,
 				4A5D99CC26A494FA00E00610 /* CellularMoreRootController+Debug.m in Sources */,
 				4A53AA3D26A46F18000700F2 /* PingController+Inner.m in Sources */,
@@ -2178,6 +2273,7 @@
 				4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */,
 				4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */,
 				4AF9C51026B1C9A4002A2ABC /* PingGraphCell.m in Sources */,
+				4AC0B89326B9AB1A00B2DA58 /* WifiInterfacesRootController.m in Sources */,
 				4A5D99DF26A4950B00E00610 /* CellularMoreController.m in Sources */,
 				4A0707FB26B64B5A00D3A1DC /* CellularMoreContentController+Notification.m in Sources */,
 				4A5D9A0426A4952B00E00610 /* WifiMoreController+Signal.m in Sources */,

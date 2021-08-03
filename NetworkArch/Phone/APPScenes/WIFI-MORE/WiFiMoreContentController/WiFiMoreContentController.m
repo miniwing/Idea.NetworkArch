@@ -16,6 +16,10 @@
 #import "WiFiMoreContentController+Inner.h"
 #import "WiFiMoreContentController+Signal.h"
 
+#import "WifiInterfacesController.h"
+#import "WifiInterfacesController+Inner.h"
+#import "WifiInterfacesController+Signal.h"
+
 @interface WiFiMoreContentController ()
 
 @end
@@ -27,6 +31,7 @@
    __LOG_FUNCTION;
    
    // Custom dealloc
+   [[APPDelegate APP] removeSignalResponder:self];
    
    __SUPER_DEALLOC;
    
@@ -455,61 +460,28 @@
    return stTableViewCell;
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)aTableView canEditRowAtIndexPath:(NSIndexPath *)aIndexPath {
- 
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)aEditingStyle forRowAtIndexPath:(NSIndexPath *)aIndexPath {
- 
- if (aEditingStyle == UITableViewCellEditingStyleDelete) {
- 
- // Delete the row from the data source
- [aTableView deleteRowsAtIndexPaths:@[aIndexPath] withRowAnimation:UITableViewRowAnimationFade];
- 
- }
- else if (aEditingStyle == UITableViewCellEditingStyleInsert) {
- 
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- 
- return;
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)aTableView moveRowAtIndexPath:(NSIndexPath *)aFromIndexPath toIndexPath:(NSIndexPath *)aToIndexPath {
- 
- return;
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)aIndexPath {
- 
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-@end
-
-#pragma mark - IBAction
-@implementation WiFiMoreContentController (IBACTION)
-
-- (IBAction)onAction:(id)aSender {
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)aIndexPath {
    
    int                            nErr                                     = EFAULT;
    
+   WifiInterfacesController      *stWifiInterfacesController               = nil;
+   
    __TRY;
+   
+   if (WifiSectionDetail == aIndexPath.section) {
+      
+      if (WifiDetailInterfaces == aIndexPath.row) {
+         
+         stWifiInterfacesController = [UIStoryboard loadStoryboard:WifiInterfacesController.storyboard
+                                                    viewController:[WifiInterfacesController class]];
+         
+         [self.navigationController pushViewController:stWifiInterfacesController
+                                              animated:YES];
+         
+      } /* End if () */
+      
+   } /* End if () */
    
    __CATCH(nErr);
    

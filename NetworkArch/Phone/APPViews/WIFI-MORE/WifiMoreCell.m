@@ -69,7 +69,7 @@
    [self.selectedColorView setClipsToBounds:YES];
    [self.selectedColorView setBackgroundColor:UIColor.clearColor];
    
-   [self.titleLabel setFont:[APPFont lightFontOfSize:self.titleLabel.font.pointSize]];
+   [self.titleLabel setFont:[APPFont regularFontOfSize:self.titleLabel.font.pointSize]];
    [self.titleLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
    if (nil != self.infoView) {

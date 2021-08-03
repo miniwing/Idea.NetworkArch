@@ -35,6 +35,9 @@
    __LOG_FUNCTION;
    
    // Custom dealloc
+   
+   [[APPDelegate APP] removeSignalResponder:self];
+
    [self removeAllNotification];
    
    __SUPER_DEALLOC;
