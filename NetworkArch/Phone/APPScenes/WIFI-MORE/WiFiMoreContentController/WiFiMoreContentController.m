@@ -9,6 +9,8 @@
 //  TEL : +(852)53054612
 //
 
+#import <IDEANetUtils/IDEANetUtils.h>
+
 #import "WiFiMoreContentController.h"
 
 @interface WiFiMoreContentController ()
@@ -315,7 +317,7 @@
             [stTableViewCell.infoLabel setText:[IDEARoute getBSSID]];
 
          } /* End else */
-         
+                  
       } /* End if () */
       else if (WifiDetailGateway == aIndexPath.row) {
          
@@ -333,6 +335,9 @@
       } /* End if () */
       else if (WifiDetailSubnet == aIndexPath.row) {
          
+         // ().first(where: {$0.name == "en0" && $0.family.toString() == "IPv4"})
+         NSArray<IDEANetInterface *>   *stInterfaces  = [IDEANetUtils allInterfaces];
+
          if (kStringIsEmpty([IDEARoute getGatewayIP])) {
             
             [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
