@@ -9,9 +9,12 @@
 //  TEL : +(852)53054612
 //
 
-#import <IDEANetUtils/IDEANetUtils.h>
+#import "APPDelegate+APP.h"
+#import "UIDevice+Network.h"
 
 #import "WiFiMoreContentController.h"
+#import "WiFiMoreContentController+Inner.h"
+#import "WiFiMoreContentController+Signal.h"
 
 @interface WiFiMoreContentController ()
 
@@ -122,7 +125,14 @@
          
       }/* End else */
    }];
+   
+   /**
+    添加网络状态监听
+    */
+   [[APPDelegate APP] addSignalResponder:self];
 
+   [self sendSignal:WiFiMoreContentController.loadExternalIPv4Signal];
+   
    __CATCH(nErr);
    
    return;
@@ -281,11 +291,13 @@
          
          if ([IDEARoute isWifiConnected]) {
             
+            [stTableViewCell.infoView setBackgroundColor:UIColor.systemGreenColor];
             [stTableViewCell.infoLabel setText:APP_STR(@"Connected")];
             
          } /* End if () */
          else {
 
+            [stTableViewCell.infoView setBackgroundColor:UIColor.systemRedColor];
             [stTableViewCell.infoLabel setText:APP_STR(@"Not connected")];
 
          } /* End else */
@@ -338,14 +350,85 @@
          // ().first(where: {$0.name == "en0" && $0.family.toString() == "IPv4"})
          NSArray<IDEANetInterface *>   *stInterfaces  = [IDEANetUtils allInterfaces];
 
-         if (kStringIsEmpty([IDEARoute getGatewayIP])) {
+         IDEANetInterface              *stInterface   = nil;
+         
+         for (stInterface in stInterfaces) {
+            
+            if ([stInterface.name isEqualToString:@"en0"] && NetFamilyIPV4 == stInterface.family) {
+               
+               break;
+               
+            } /* End if () */
+            
+         } /* End for () */
+                  
+         if (nil == stInterface || kStringIsEmpty(stInterface.netmask)) {
             
             [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
             
          } /* End if () */
          else {
             
-            [stTableViewCell.infoLabel setText:[IDEARoute getGatewayIP]];
+            [stTableViewCell.infoLabel setText:stInterface.netmask];
+
+         } /* End else */
+         
+      } /* End if () */
+      else if (WifiDetailIPV4 == aIndexPath.row) {
+         
+         NSString    *szIPV4  = [UIDevice ipv4:NetworkWifi];
+         
+         if (kStringIsEmpty(szIPV4)) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:szIPV4];
+
+         } /* End else */
+         
+      } /* End if () */
+      else if (WifiDetailIPV6 == aIndexPath.row) {
+         
+         // ().first(where: {$0.name == "en0" && $0.family.toString() == "IPv4"})
+         NSArray<IDEANetInterface *>   *stInterfaces  = [IDEANetUtils allInterfaces];
+
+         IDEANetInterface              *stInterface   = nil;
+         
+         for (stInterface in stInterfaces) {
+            
+            if ([stInterface.name isEqualToString:@"en0"] && NetFamilyIPV6 == stInterface.family) {
+               
+               break;
+               
+            } /* End if () */
+            
+         } /* End for () */
+                  
+         if (nil == stInterface || kStringIsEmpty(stInterface.address)) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:stInterface.address];
+
+         } /* End else */
+         
+      } /* End if () */
+      else if (WifiDetailExternalIPV4 == aIndexPath.row) {
+                  
+         if (NO == [IDEARoute isWifiConnected] || kStringIsEmpty(self.externalIPv4)) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:self.externalIPv4];
 
          } /* End else */
          

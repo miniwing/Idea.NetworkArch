@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                             * titleLabel;
+@property (nonatomic, weak)   IBOutlet       UIView                              * infoView;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * infoLabel;
 
 @end

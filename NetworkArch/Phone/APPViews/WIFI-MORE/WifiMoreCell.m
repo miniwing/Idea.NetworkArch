@@ -72,8 +72,20 @@
    [self.titleLabel setFont:[APPFont lightFontOfSize:self.titleLabel.font.pointSize]];
    [self.titleLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
+   if (nil != self.infoView) {
+      
+      [self.infoView setCornerRadius:4 clipsToBounds:YES];
+   
+      [self.infoLabel setTextColor:UIColor.whiteColor];
+
+   } /* End if () */
+   else {
+
+      [self.infoLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   } /* End else */
+   
    [self.infoLabel setFont:[APPFont lightFontOfSize:self.infoLabel.font.pointSize]];
-   [self.infoLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
    __CATCH(nErr);
 

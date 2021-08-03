@@ -32,7 +32,7 @@ handleSignal(APPDelegate, networkStatusSignal) {
       
    __TRY;
 
-   LogDebug((@"-[HomeContentController handleSignal:%@] : status : %@", aSignal.name, aSignal.object));
+   LogDebug((@"-[HomeContentController handleSignal:networkStatusSignal:] : status : %@", aSignal.object));
 
    [self sendSignal:HomeContentController.loadWifiInfoSignal];
    [self sendSignal:HomeContentController.loadCellularInfoSignal];
@@ -56,8 +56,8 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
    szIP     = [IDEARoute getIPAddress];
    szSSID   = [IDEARoute getSSID];
    
-   LogDebug((@"-[HomeContentController handleSignal:%@] : IPV4 : %@", aSignal.name, szIP));
-   LogDebug((@"-[HomeContentController handleSignal:%@] : SSID : %@", aSignal.name, szSSID));
+   LogDebug((@"-[HomeContentController handleSignal:networkStatusSignal:] : IPV4 : %@", szIP));
+   LogDebug((@"-[HomeContentController handleSignal:networkStatusSignal:] : SSID : %@", szSSID));
 
    szIcon   = @"WIFI-ON";
    
@@ -141,12 +141,12 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
       
       stCarriers  = stTelephonyNetworkInfo.serviceSubscriberCellularProviders;
       
-      LogDebug((@"-[HomeContentController handleSignal:%@] : Carriers : %@", aSignal.name, stCarriers));
+      LogDebug((@"-[HomeContentController handleSignal:loadCellularInfoSignal:] : Carriers : %@", stCarriers));
       
 #if __Debug__
       [stCarriers enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, CTCarrier * _Nonnull aObject, BOOL * _Nonnull aStop) {
 
-         LogDebug((@"-[HomeContentController handleSignal:%@] : Carrier : %@:%@", aSignal.name, aKey, aObject));
+         LogDebug((@"-[HomeContentController handleSignal:loadCellularInfoSignal:] : Carrier : %@:%@", aKey, aObject));
 
       }];
 #endif /* __Debug__ */
@@ -155,12 +155,12 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
             
       stRadioAccesses   = stTelephonyNetworkInfo.serviceCurrentRadioAccessTechnology;
       
-      LogDebug((@"-[HomeContentController handleSignal:%@] : RadioAccesses : %@", aSignal.name, stRadioAccesses));
+      LogDebug((@"-[HomeContentController handleSignal:loadCellularInfoSignal:] : RadioAccesses : %@", stRadioAccesses));
 
 #if __Debug__
       [stRadioAccesses enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, NSString * _Nonnull aObject, BOOL * _Nonnull aStop) {
 
-         LogDebug((@"-[HomeContentController handleSignal:%@] : RadioAccess : %@:%@", aSignal.name, aKey, aObject));
+         LogDebug((@"-[HomeContentController handleSignal:loadCellularInfoSignal:] : RadioAccess : %@:%@", aKey, aObject));
 
       }];
 #endif /* __Debug__ */
@@ -172,11 +172,11 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
       
       stCarrier   = stTelephonyNetworkInfo.subscriberCellularProvider;
       
-      LogDebug((@"-[HomeContentController handleSignal:%@] : Carrier : %@", aSignal.name, stCarrier));
+      LogDebug((@"-[HomeContentController handleSignal:loadCellularInfoSignal:] : Carrier : %@", stCarrier));
       
       szRadioAccess  = stTelephonyNetworkInfo.currentRadioAccessTechnology;
       
-      LogDebug((@"-[HomeContentController handleSignal:%@] : RadioAccess : %@", aSignal.name, szRadioAccess));
+      LogDebug((@"-[HomeContentController handleSignal:loadCellularInfoSignal:] : RadioAccess : %@", szRadioAccess));
       
    } /* End else */
    

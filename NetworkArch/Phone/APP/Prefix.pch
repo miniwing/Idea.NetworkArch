@@ -497,6 +497,7 @@ typedef FBLPromise Promise;
 #endif
 /****************************************************************************/
 #import <APPDATA/APPDATA.h>
+#import <IDEANetUtils/IDEANetUtils.h>
 /****************************************************************************/
 
 #import "APPDef.h"

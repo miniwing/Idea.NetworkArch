@@ -16,9 +16,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WiFiMoreContentController ()
 
+@property (nonatomic, strong)                NSTimer                             * timer;
+
+@property (nonatomic, strong)                NSString                            * externalIPv4;
+@property (nonatomic, assign)                BOOL                                  externalIPv4ing;
+
 @end
 
 @interface WiFiMoreContentController (Inner)
+
+- (void)getExternalIPv4;
 
 @end
 

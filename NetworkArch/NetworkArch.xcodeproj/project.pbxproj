@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03F61FECCCE85454C8A15DF5 /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5431DE4AF147E840DDE9B1A /* Pods_NetworkArch.framework */; };
-		3951D0836A183F30041E9FB5 /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BCAE046AFD970838EF8187 /* Pods_TodayWidget.framework */; };
-		42CEEFB5B1F30200694A8D89 /* Pods_TodayClip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99BD28404DEB1F304678D5B0 /* Pods_TodayClip.framework */; };
 		4A0707F826B64B5A00D3A1DC /* CellularMoreContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0707ED26B64B5900D3A1DC /* CellularMoreContentController.m */; };
 		4A0707F926B64B5A00D3A1DC /* CellularMoreContentController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0707F026B64B5A00D3A1DC /* CellularMoreContentController+Signal.m */; };
 		4A0707FA26B64B5A00D3A1DC /* CellularMoreContentController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0707F126B64B5A00D3A1DC /* CellularMoreContentController+Theme.m */; };
@@ -216,8 +213,11 @@
 		4AF9C52226B1C9D6002A2ABC /* PingStatisticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C51A26B1C9D6002A2ABC /* PingStatisticsCell.m */; };
 		4AF9C53426B1D4BC002A2ABC /* PingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C52C26B1D4BC002A2ABC /* PingCell.m */; };
 		4AFFEDBC268645160052712A /* AppTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFEDBB268645160052712A /* AppTracking.m */; };
-		8E496AA37D0FB5C2D28F2EC2 /* Pods_FleetingWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16586A58279119CAE11D4794 /* Pods_FleetingWidget.framework */; };
-		E34E448266A87669CC2AA733 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E50FF7BBA996602C5FE1BCE4 /* Pods_APPBase.framework */; };
+		5007639B3B1CD4008C581642 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A7EE7CB1CF1FA2641E06D60 /* Pods_APPBase.framework */; };
+		517932287CBBB6DFF06A2BCA /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B7CD151AE25C80BCBAE257 /* Pods_TodayWidget.framework */; };
+		9356ABD29868E603D084FC9A /* Pods_FleetingWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E04D749BC13E5E32890BD7 /* Pods_FleetingWidget.framework */; };
+		C10E60D5F8B4C4A974D853BE /* Pods_TodayClip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02D63B78043CE3B0C621526 /* Pods_TodayClip.framework */; };
+		EC6099F595D712BB1336037D /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1411B76940062966E43DAD /* Pods_NetworkArch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,7 +302,8 @@
 
 /* Begin PBXFileReference section */
 		103719D4E9EFEDEEFD47152D /* Pods-TodayClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayClip.debug.xcconfig"; path = "Target Support Files/Pods-TodayClip/Pods-TodayClip.debug.xcconfig"; sourceTree = "<group>"; };
-		16586A58279119CAE11D4794 /* Pods_FleetingWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FleetingWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E1411B76940062966E43DAD /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44E04D749BC13E5E32890BD7 /* Pods_FleetingWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FleetingWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0707EC26B64B5900D3A1DC /* CellularMoreContentController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreContentController+Inner.h"; sourceTree = "<group>"; };
 		4A0707ED26B64B5900D3A1DC /* CellularMoreContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellularMoreContentController.m; sourceTree = "<group>"; };
 		4A0707EE26B64B5900D3A1DC /* CellularMoreContentController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreContentController+Notification.h"; sourceTree = "<group>"; };
@@ -594,6 +595,7 @@
 		4A5D9A0E26A4968800E00610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UTILITIES.storyboard; sourceTree = "<group>"; };
 		4A7241AF26B3153A00009443 /* PingResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingResult.h; sourceTree = "<group>"; };
 		4A7241B026B3153A00009443 /* PingResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingResult.m; sourceTree = "<group>"; };
+		4A7EE7CB1CF1FA2641E06D60 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A842C7B26AC19D0005DC131 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		4A842C7F26AC1C0B005DC131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkArch.entitlements; sourceTree = "<group>"; };
@@ -688,15 +690,13 @@
 		63DF92DFFC64AB4198E20875 /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
 		65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		6B7C763236D1A5B8A55DC1C2 /* Pods-TodayWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.debug.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		77BCAE046AFD970838EF8187 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9427FC1B9FB3144B40E0E517 /* Pods-FleetingWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetingWidget.debug.xcconfig"; path = "Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		99BD28404DEB1F304678D5B0 /* Pods_TodayClip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayClip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D1F27E4DD2E5D1BE2C9145 /* Pods-TodayClip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayClip.release.xcconfig"; path = "Target Support Files/Pods-TodayClip/Pods-TodayClip.release.xcconfig"; sourceTree = "<group>"; };
 		A90D912BF379DE28D323CFC9 /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
 		C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.release.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.release.xcconfig"; sourceTree = "<group>"; };
 		CC7F3049F2B28E17A49195A2 /* Pods-NetworkArch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.debug.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.debug.xcconfig"; sourceTree = "<group>"; };
-		E50FF7BBA996602C5FE1BCE4 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5431DE4AF147E840DDE9B1A /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E02D63B78043CE3B0C621526 /* Pods_TodayClip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayClip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B7CD151AE25C80BCBAE257 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -704,7 +704,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E34E448266A87669CC2AA733 /* Pods_APPBase.framework in Frameworks */,
+				5007639B3B1CD4008C581642 /* Pods_APPBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,7 +714,7 @@
 			files = (
 				4A25F1A126AED9B20075BE73 /* libAPPBase.a in Frameworks */,
 				4A25F19026AED9A10075BE73 /* NotificationCenter.framework in Frameworks */,
-				8E496AA37D0FB5C2D28F2EC2 /* Pods_FleetingWidget.framework in Frameworks */,
+				9356ABD29868E603D084FC9A /* Pods_FleetingWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,7 +724,7 @@
 			files = (
 				4AF4412026AC575C0008C169 /* libAPPBase.a in Frameworks */,
 				4A4D0A6126AC0F56008A30E0 /* NotificationCenter.framework in Frameworks */,
-				3951D0836A183F30041E9FB5 /* Pods_TodayWidget.framework in Frameworks */,
+				517932287CBBB6DFF06A2BCA /* Pods_TodayWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,7 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */,
-				03F61FECCCE85454C8A15DF5 /* Pods_NetworkArch.framework in Frameworks */,
+				EC6099F595D712BB1336037D /* Pods_NetworkArch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,7 +741,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42CEEFB5B1F30200694A8D89 /* Pods_TodayClip.framework in Frameworks */,
+				C10E60D5F8B4C4A974D853BE /* Pods_TodayClip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,12 +757,12 @@
 				4A0707FF26B64B6E00D3A1DC /* WiFiMoreContentController+Inner.m */,
 				4A07080426B64B6E00D3A1DC /* WiFiMoreContentController+Theme.h */,
 				4A07080726B64B6E00D3A1DC /* WiFiMoreContentController+Theme.m */,
-				4A07080026B64B6E00D3A1DC /* WiFiMoreContentController+Debug.h */,
-				4A07080526B64B6E00D3A1DC /* WiFiMoreContentController+Debug.m */,
-				4A07080326B64B6E00D3A1DC /* WiFiMoreContentController+Notification.h */,
-				4A07080226B64B6E00D3A1DC /* WiFiMoreContentController+Notification.m */,
 				4A07080926B64B6E00D3A1DC /* WiFiMoreContentController+Signal.h */,
 				4A0707FE26B64B6E00D3A1DC /* WiFiMoreContentController+Signal.m */,
+				4A07080326B64B6E00D3A1DC /* WiFiMoreContentController+Notification.h */,
+				4A07080226B64B6E00D3A1DC /* WiFiMoreContentController+Notification.m */,
+				4A07080026B64B6E00D3A1DC /* WiFiMoreContentController+Debug.h */,
+				4A07080526B64B6E00D3A1DC /* WiFiMoreContentController+Debug.m */,
 			);
 			path = WiFiMoreContentController;
 			sourceTree = "<group>";
@@ -1636,11 +1636,11 @@
 			isa = PBXGroup;
 			children = (
 				4A421C0526AC0CC200935235 /* NotificationCenter.framework */,
-				E50FF7BBA996602C5FE1BCE4 /* Pods_APPBase.framework */,
-				16586A58279119CAE11D4794 /* Pods_FleetingWidget.framework */,
-				E5431DE4AF147E840DDE9B1A /* Pods_NetworkArch.framework */,
-				99BD28404DEB1F304678D5B0 /* Pods_TodayClip.framework */,
-				77BCAE046AFD970838EF8187 /* Pods_TodayWidget.framework */,
+				4A7EE7CB1CF1FA2641E06D60 /* Pods_APPBase.framework */,
+				44E04D749BC13E5E32890BD7 /* Pods_FleetingWidget.framework */,
+				3E1411B76940062966E43DAD /* Pods_NetworkArch.framework */,
+				E02D63B78043CE3B0C621526 /* Pods_TodayClip.framework */,
+				E5B7CD151AE25C80BCBAE257 /* Pods_TodayWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
