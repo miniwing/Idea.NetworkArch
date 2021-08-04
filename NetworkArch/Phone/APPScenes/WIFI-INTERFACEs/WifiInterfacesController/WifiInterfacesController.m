@@ -66,7 +66,7 @@
    
    if (nil != stLayoutConstraint) {
       
-      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
+//      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
       
    } /* End if () */
 
