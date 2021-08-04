@@ -17,6 +17,8 @@
 "SSID not available"                = "SSID not available";
 "Wi-Fi not connected"               = "Wi-Fi not connected";
 
+"Interfaces"                        = "Interfaces";
+
 /// Cellular Network
 "CELLULAR"                          = "Cellular Network";
 
