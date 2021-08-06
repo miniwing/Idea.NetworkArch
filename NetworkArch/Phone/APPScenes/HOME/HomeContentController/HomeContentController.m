@@ -697,6 +697,8 @@
          
          stViewController  = stWifiMoreController;
          
+         LogDebug((@"canOpenURL : %d", [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"NetworkArch://"]]));
+
       } /* End if () */
       
    } /* End if () */

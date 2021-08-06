@@ -117,8 +117,6 @@ target 'NetworkArch' do
 
 #  pod 'FloatingPanel'
 
-  pod 'GCTSignSDK'                      , :path => 'GCTSignSDK'
-
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'DoraemonKit'                                                                           , :configurations => ['Debug']
 #  pod 'YKWoodpecker'                                                                          , :configurations => ['Debug']

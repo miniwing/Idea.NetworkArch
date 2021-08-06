@@ -270,6 +270,26 @@
    return bDone;
 }
 
+- (BOOL)canOpenURL:(NSURL *)aURL {
+    
+    int                            nErr                                     = EFAULT;
+    
+    BOOL                           bDone                                    = NO;
+
+    __TRY;
+    
+   if ([[aURL scheme] isEqualToString:[IDEAIdentifier schemePrefix]]) {
+      
+      //...
+      bDone = YES;
+      
+   } /* End if () */
+
+    __CATCH(nErr);
+    
+    return bDone;
+ }
+
 #pragma mark - Splash
 - (void)splash {
    

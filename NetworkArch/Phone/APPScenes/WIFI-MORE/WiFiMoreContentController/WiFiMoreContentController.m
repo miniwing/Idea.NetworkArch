@@ -111,7 +111,7 @@
 #else /* __DEBUG_COLOR__ */
       [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
 #endif /* !__DEBUG_COLOR__ */
-
+      
    } /* End for () */
    
    [self.separatorViews.lastObject setHidden:YES];
@@ -135,7 +135,7 @@
     添加网络状态监听
     */
    [[APPDelegate APP] addSignalResponder:self];
-
+   
    [self sendSignal:WiFiMoreContentController.loadExternalIPv4Signal];
    
    __CATCH(nErr);
@@ -271,24 +271,24 @@
    
    __TRY;
    
-//   WifiSectionDetail    = 0,
-//   WifiSectionDataUsage = 1,
-//   WifiSectionWarning   = 2,
-//   WifiSectionNumber
-
+   //   WifiSectionDetail    = 0,
+   //   WifiSectionDataUsage = 1,
+   //   WifiSectionWarning   = 2,
+   //   WifiSectionNumber
+   
    if (WifiSectionDetail == aIndexPath.section) {
       
       stTableViewCell   = self.detailCells[aIndexPath.row];
       
-//      WifiDetailStatus        = 0,
-//      WifiDetailSSID          = 1,
-//      WifiDetailBSSID         = 2,
-//      WifiDetailGateway       = 3,
-//      WifiDetailSubnet        = 4,
-//      WifiDetailIPV4          = 5,
-//      WifiDetailIPV6          = 6,
-//      WifiDetailExternalIPV4  = 7,
-//      WifiDetailInterfaces    = 8,
+      //      WifiDetailStatus        = 0,
+      //      WifiDetailSSID          = 1,
+      //      WifiDetailBSSID         = 2,
+      //      WifiDetailGateway       = 3,
+      //      WifiDetailSubnet        = 4,
+      //      WifiDetailIPV4          = 5,
+      //      WifiDetailIPV6          = 6,
+      //      WifiDetailExternalIPV4  = 7,
+      //      WifiDetailInterfaces    = 8,
       
       [stTableViewCell.titleLabel setText:stTitles[aIndexPath.row]];
       
@@ -301,10 +301,10 @@
             
          } /* End if () */
          else {
-
+            
             [stTableViewCell.infoView setBackgroundColor:UIColor.systemRedColor];
             [stTableViewCell.infoLabel setText:APP_STR(@"Not connected")];
-
+            
          } /* End else */
          
       } /* End if () */
@@ -318,7 +318,7 @@
          else {
             
             [stTableViewCell.infoLabel setText:[IDEARoute getSSID]];
-
+            
          } /* End else */
          
       } /* End if () */
@@ -332,9 +332,9 @@
          else {
             
             [stTableViewCell.infoLabel setText:[IDEARoute getBSSID]];
-
+            
          } /* End else */
-                  
+         
       } /* End if () */
       else if (WifiDetailGateway == aIndexPath.row) {
          
@@ -346,7 +346,7 @@
          else {
             
             [stTableViewCell.infoLabel setText:[IDEARoute getGatewayIP]];
-
+            
          } /* End else */
          
       } /* End if () */
@@ -354,7 +354,7 @@
          
          // ().first(where: {$0.name == "en0" && $0.family.toString() == "IPv4"})
          NSArray<IDEANetInterface *>   *stInterfaces  = [IDEANetUtils allInterfaces];
-
+         
          IDEANetInterface              *stInterface   = nil;
          
          for (stInterface in stInterfaces) {
@@ -366,7 +366,7 @@
             } /* End if () */
             
          } /* End for () */
-                  
+         
          if (nil == stInterface || kStringIsEmpty(stInterface.netmask)) {
             
             [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
@@ -375,7 +375,7 @@
          else {
             
             [stTableViewCell.infoLabel setText:stInterface.netmask];
-
+            
          } /* End else */
          
       } /* End if () */
@@ -391,7 +391,7 @@
          else {
             
             [stTableViewCell.infoLabel setText:szIPV4];
-
+            
          } /* End else */
          
       } /* End if () */
@@ -399,7 +399,7 @@
          
          // ().first(where: {$0.name == "en0" && $0.family.toString() == "IPv4"})
          NSArray<IDEANetInterface *>   *stInterfaces  = [IDEANetUtils allInterfaces];
-
+         
          IDEANetInterface              *stInterface   = nil;
          
          for (stInterface in stInterfaces) {
@@ -411,7 +411,7 @@
             } /* End if () */
             
          } /* End for () */
-                  
+         
          if (nil == stInterface || kStringIsEmpty(stInterface.address)) {
             
             [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
@@ -420,12 +420,12 @@
          else {
             
             [stTableViewCell.infoLabel setText:stInterface.address];
-
+            
          } /* End else */
          
       } /* End if () */
       else if (WifiDetailExternalIPV4 == aIndexPath.row) {
-                  
+         
          if (NO == [IDEARoute isWifiConnected] || kStringIsEmpty(self.externalIPv4)) {
             
             [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
@@ -434,11 +434,11 @@
          else {
             
             [stTableViewCell.infoLabel setText:self.externalIPv4];
-
+            
          } /* End else */
          
       } /* End if () */
-
+      
    } /* End if () */
    else if (WifiSectionDataUsage == aIndexPath.section) {
       
@@ -452,7 +452,7 @@
    } /* End if () */
    
    if (nil != stTableViewCell) {
-            
+      
    } /* End if () */
    
    __CATCH(nErr);
@@ -482,7 +482,7 @@
       } /* End if () */
       
    } /* End if () */
-   
+      
    __CATCH(nErr);
    
    return;
