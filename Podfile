@@ -302,7 +302,7 @@ post_install do |installer|
         config.build_settings['DEBUG_INFORMATION_FORMAT']     = 'dwarf'
       end
 #      config.build_settings['SWIFT_VERSION']                  = '5.0'
-      config.build_settings['ENABLE_BITCODE']                 = 'YES'
+      config.build_settings['ENABLE_BITCODE']                 = 'NO'
 
 #      config.build_settings['EMBEDDED_CONTENT_CONTAINS_SWIFT']                      = 'NO'
 #      config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES']                = 'NO'
