@@ -505,4 +505,9 @@ typedef FBLPromise Promise;
 #import "APPFont.h"
 #import "APPHTTP.h"
 
+//NS_INLINE BOOL __isPlatformVersionAtLeast() {
+//      
+//   return YES;
+//}
+
 #endif /* Prefix_pch */

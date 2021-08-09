@@ -27,6 +27,7 @@
    static dispatch_once_t   stOnceToken   = 0;
    
    dispatch_once(&stOnceToken, ^{
+      
       // TODO unknown in user-agent
       // bundleIdentifier/version (unknow, systemName systemVersion, model, Scale/scaleNumber)
       // User-Agent Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.43
@@ -68,13 +69,13 @@
       // bundleIdentifier/version (unknow, systemName systemVersion, model, Scale/scaleNumber)
       // User-Agent Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.43
 #if TARGET_OS_IOS
-      g_USER_AGENT   = [NSString stringWithFormat:@"%@/%@ (%@; iOS %@; Scale/%0.2f)", @"com.zhenl.biquRead", [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [[UIScreen mainScreen] scale]];
+      g_USER_AGENT   = [NSString stringWithFormat:@"%@/%@ (%@; iOS %@; Scale/%0.2f)", [IDEAIdentifier identifier], [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [[UIScreen mainScreen] scale]];
 #elif TARGET_OS_TV
-      g_USER_AGENT   = [NSString stringWithFormat:@"%@/%@ (%@; tvOS %@; Scale/%0.2f)", @"com.zhenl.biquRead", [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [[UIScreen mainScreen] scale]];
+      g_USER_AGENT   = [NSString stringWithFormat:@"%@/%@ (%@; tvOS %@; Scale/%0.2f)", [IDEAIdentifier identifier], [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [[UIScreen mainScreen] scale]];
 #elif TARGET_OS_WATCH
-      g_USER_AGENT   = [NSString stringWithFormat:@"%@/%@ (%@; watchOS %@; Scale/%0.2f)", @"com.zhenl.biquRead", [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey], [[WKInterfaceDevice currentDevice] model], [[WKInterfaceDevice currentDevice] systemVersion], [[WKInterfaceDevice currentDevice] screenScale]];
+      g_USER_AGENT   = [NSString stringWithFormat:@"%@/%@ (%@; watchOS %@; Scale/%0.2f)", [IDEAIdentifier identifier], [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey], [[WKInterfaceDevice currentDevice] model], [[WKInterfaceDevice currentDevice] systemVersion], [[WKInterfaceDevice currentDevice] screenScale]];
 #elif defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
-      g_USER_AGENT   = [NSString stringWithFormat:@"%@/%@ (Mac OS X %@)", @"com.zhenl.biquRead", [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey], [[NSProcessInfo processInfo] operatingSystemVersionString]];
+      g_USER_AGENT   = [NSString stringWithFormat:@"%@/%@ (Mac OS X %@)", [IDEAIdentifier identifier], [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey], [[NSProcessInfo processInfo] operatingSystemVersionString]];
 #endif
       if (g_USER_AGENT) {
          
