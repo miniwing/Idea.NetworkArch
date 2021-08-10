@@ -233,33 +233,6 @@
                        self.view.height));
 }
 
-@end
-
-#pragma mark - IBAction
-@implementation TrackingController (Action)
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (IBAction)onContinue:(UIButton *)aButton {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   @weakify(self);
-   [self dismissViewControllerAnimated:YES
-                            completion:^{
-      
-      [APPDelegate setTracking:YES];
-
-      @strongify(self);
-      UI_PERFORM_SELECTOR(self, @selector(openTracking), nil, NO);
-   }];
-   
-   __CATCH(nErr);
-   
-   return;
-}
-
 - (void)openTracking {
    
    int                            nErr                                     = EFAULT;
@@ -455,3 +428,28 @@
 
 @end
 
+#pragma mark - IBAction
+@implementation TrackingController (Action)
+
+- (IBAction)onContinue:(UIButton *)aButton {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   @weakify(self);
+   [self dismissViewControllerAnimated:YES
+                            completion:^{
+      
+      [APPDelegate setTracking:YES];
+
+      @strongify(self);
+      UI_PERFORM_SELECTOR(self, @selector(openTracking), nil, NO);
+   }];
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+@end

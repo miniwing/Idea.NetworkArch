@@ -9,6 +9,10 @@
 //  TEL : +(852)53054612
 //
 
+#import "UIDevice+Network.h"
+
+#import "APPDelegate+APP.h"
+
 #import "CellularMoreContentController.h"
 
 @interface CellularMoreContentController ()
@@ -22,6 +26,7 @@
    __LOG_FUNCTION;
 
    // Custom dealloc
+   [[APPDelegate APP] removeSignalResponder:self];
 
    __SUPER_DEALLOC;
 
@@ -46,21 +51,88 @@
 }
 
 - (void)viewDidLoad {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
+   
+   // Uncomment the following line to preserve selection between presentations.
+   // self.clearsSelectionOnViewWillAppear = NO;
+   
+   // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+   
+   [self.tableView setTableFooterView:[UIView new]];
+   [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+   
+   [self.tableView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+   
+   for (UIView *stView in self.detailCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemBlueColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
+   for (UIView *stView in self.dataUsageCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemPinkColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
+   for (UIView *stView in self.warningCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemOrangeColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
+   for (UIView *stView in self.separatorViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemOrangeColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+   
+   [self.separatorViews.lastObject setHidden:YES];
+   
+   [self.interfacesImageView setBackgroundColor:UIColor.clearColor];
+   [self.interfacesImageView setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return UIColor.whiteColor;
+         
+      } /* End if () */
+      else {
+         
+         return UIColor.blackColor;
+         
+      }/* End else */
+   }];
+   
+   /**
+    添加网络状态监听
+    */
+   [[APPDelegate APP] addSignalResponder:self];
+      
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -75,6 +147,35 @@
 
    __CATCH(nErr);
 
+   return;
+}
+
+- (void)viewWillLayoutSubviews {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [super viewWillLayoutSubviews];
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)viewDidLayoutSubviews {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [super viewDidLayoutSubviews];
+   
+   [self.detailCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
+   [self.detailCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+   
+   __CATCH(nErr);
+   
    return;
 }
 
@@ -143,75 +244,211 @@
 //    return 0;
 //}
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {
-
-   UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:aIndexPath];
-
-   // Configure the cell...
-
-   return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)aTableView canEditRowAtIndexPath:(NSIndexPath *)aIndexPath {
-
-   // Return NO if you do not want the specified item to be editable.
-   return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)aEditingStyle forRowAtIndexPath:(NSIndexPath *)aIndexPath {
-
-   if (aEditingStyle == UITableViewCellEditingStyleDelete) {
-
-      // Delete the row from the data source
-      [aTableView deleteRowsAtIndexPaths:@[aIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-      
-   }
-   else if (aEditingStyle == UITableViewCellEditingStyleInsert) {
-
-      // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-   }
-
-   return;
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)aTableView moveRowAtIndexPath:(NSIndexPath *)aFromIndexPath toIndexPath:(NSIndexPath *)aToIndexPath {
-
-   return;
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)aIndexPath {
-
-   // Return NO if you do not want the item to be re-orderable.
-   return YES;
-}
-*/
-
-@end
-
-#pragma mark - IBAction
-@implementation CellularMoreContentController (IBACTION)
-
-- (IBAction)onAction:(id)aSender {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
+   CellularMoreCell              *stTableViewCell                          = nil;
+   
+   NSArray<NSString *>           *stTitles                                 = @[
+      @"Carrier",
+      @"ISO Country Code",
+      @"Mobile Country Code",
+      @"Mobile Network Code",
+      @"Rdio Access Technology",
+      @"IPv4 Address",
+      @"IPv6 Address",
+      @"VoIP Supprt",
+   ];
+   
    __TRY;
+   
+   //   CellularSectionDetail    = 0,
+   //   CellularSectionDataUsage = 1,
+   //   CellularSectionWarning   = 2,
+   //   CellularSectionNumber
+   
+   if (CellularSectionDetail == aIndexPath.section) {
+      
+      stTableViewCell   = self.detailCells[aIndexPath.row];
+      
+//      CellularDetailCarrier      = 0,
+//      CellularDetailISO          = 1,
+//      CellularDetailCountry      = 2,
+//      CellularDetailNetwork      = 3,
+//      CellularDetailRadio        = 4,
+//      CellularDetailIPV4         = 5,
+//      CellularDetailIPV6         = 6,
+//      CellularDetailVOIP         = 7,
 
+      [stTableViewCell.titleLabel setText:stTitles[aIndexPath.row]];
+      
+      if (CellularDetailCarrier == aIndexPath.row) {
+         
+         if ([IDEARoute isWifiConnected]) {
+            
+            [stTableViewCell.infoView setBackgroundColor:UIColor.systemGreenColor];
+            [stTableViewCell.infoLabel setText:APP_STR(@"Connected")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoView setBackgroundColor:UIColor.systemRedColor];
+            [stTableViewCell.infoLabel setText:APP_STR(@"Not connected")];
+            
+         } /* End else */
+         
+      } /* End if () */
+      else if (CellularDetailISO == aIndexPath.row) {
+         
+         if (kStringIsEmpty([IDEARoute getSSID])) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:[IDEARoute getSSID]];
+            
+         } /* End else */
+         
+      } /* End if () */
+      else if (CellularDetailCountry == aIndexPath.row) {
+         
+         if (kStringIsEmpty([IDEARoute getBSSID])) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:[IDEARoute getBSSID]];
+            
+         } /* End else */
+         
+      } /* End if () */
+      else if (CellularDetailNetwork == aIndexPath.row) {
+         
+         if (kStringIsEmpty([IDEARoute getGatewayIP])) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:[IDEARoute getGatewayIP]];
+            
+         } /* End else */
+         
+      } /* End if () */
+      else if (CellularDetailRadio == aIndexPath.row) {
+         
+         // ().first(where: {$0.name == "en0" && $0.family.toString() == "IPv4"})
+         NSArray<IDEANetInterface *>   *stInterfaces  = [IDEANetUtils allInterfaces];
+         
+         IDEANetInterface              *stInterface   = nil;
+         
+         for (stInterface in stInterfaces) {
+            
+            if ([stInterface.name isEqualToString:@"en0"] && NetFamilyIPV4 == stInterface.family) {
+               
+               break;
+               
+            } /* End if () */
+            
+         } /* End for () */
+         
+         if (nil == stInterface || kStringIsEmpty(stInterface.netmask)) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:stInterface.netmask];
+            
+         } /* End else */
+         
+      } /* End if () */
+      else if (CellularDetailIPV4 == aIndexPath.row) {
+         
+         NSString    *szIPV4  = [UIDevice ipv4:NetworkWifi];
+         
+         if (kStringIsEmpty(szIPV4)) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:szIPV4];
+            
+         } /* End else */
+         
+      } /* End if () */
+      else if (CellularDetailIPV6 == aIndexPath.row) {
+         
+         // ().first(where: {$0.name == "en0" && $0.family.toString() == "IPv4"})
+         NSArray<IDEANetInterface *>   *stInterfaces  = [IDEANetUtils allInterfaces];
+         
+         IDEANetInterface              *stInterface   = nil;
+         
+         for (stInterface in stInterfaces) {
+            
+            if ([stInterface.name isEqualToString:@"en0"] && NetFamilyIPV6 == stInterface.family) {
+               
+               break;
+               
+            } /* End if () */
+            
+         } /* End for () */
+         
+         if (nil == stInterface || kStringIsEmpty(stInterface.address)) {
+            
+            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            
+         } /* End if () */
+         else {
+            
+            [stTableViewCell.infoLabel setText:stInterface.address];
+            
+         } /* End else */
+         
+      } /* End if () */
+      else if (CellularDetailVOIP == aIndexPath.row) {
+                  
+      } /* End if () */
+      
+   } /* End if () */
+   else if (CellularSectionDataUsage == aIndexPath.section) {
+      
+      stTableViewCell   = self.dataUsageCells[aIndexPath.row];
+      
+   } /* End if () */
+   else if (CellularSectionWarning == aIndexPath.section) {
+      
+      stTableViewCell   = self.warningCells[aIndexPath.row];
+      
+   } /* End if () */
+   
+   if (nil != stTableViewCell) {
+      
+   } /* End if () */
+   
    __CATCH(nErr);
+   
+   return stTableViewCell;
+}
 
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)aIndexPath {
+   
+   int                            nErr                                     = EFAULT;
+      
+   __TRY;
+         
+   __CATCH(nErr);
+   
    return;
 }
 
@@ -238,6 +475,22 @@
 + (NSString *)storyboard {
    
    return @"CELLULAR";
+}
+
+@end
+
+#pragma mark - IBAction
+@implementation CellularMoreContentController (Action)
+
+- (IBAction)onAction:(id)aSender {
+
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+
+   __CATCH(nErr);
+
+   return;
 }
 
 @end

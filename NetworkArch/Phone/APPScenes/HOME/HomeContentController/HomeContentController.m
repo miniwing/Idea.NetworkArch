@@ -854,22 +854,6 @@
 
 @end
 
-#pragma mark - IBAction
-@implementation HomeContentController (IBACTION)
-
-- (IBAction)onAction:(id)aSender {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   __CATCH(nErr);
-   
-   return;
-}
-
-@end
-
 #pragma mark - UIStoryboard
 @implementation HomeContentController (UIStoryboard)
 
@@ -891,6 +875,22 @@
 + (NSString *)storyboard {
    
    return @"HOME";
+}
+
+@end
+
+#pragma mark - IBAction
+@implementation HomeContentController (Action)
+
+- (IBAction)onAction:(id)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
 }
 
 @end

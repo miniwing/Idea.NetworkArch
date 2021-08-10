@@ -44,9 +44,9 @@
       
       [_appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
       [_appBar.headerViewController.headerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-
-//      [_appBar.headerViewController setShowsHairline:YES];
-//      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
+      
+      //      [_appBar.headerViewController setShowsHairline:YES];
+      //      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
       
       [_appBar.headerViewController setShowsHairline:NO];
       [_appBar.headerViewController setHairlineColor:UIColor.clearColor];
@@ -149,9 +149,9 @@
    } /* End if () */
    
    [self.locationManager requestAlwaysAuthorization];
-
+   
    [self addSignalResponder:self.contentController];
-
+   
    __CATCH(nErr);
    
    return;
@@ -194,10 +194,10 @@
    
    [super viewDidAppear:aAnimated];
    
-//   [self.contentController viewDidAppear:aAnimated];
-
+   //   [self.contentController viewDidAppear:aAnimated];
+   
    [self.locationManager requestAlwaysAuthorization];
-
+   
    __CATCH(nErr);
    
    return;
@@ -211,8 +211,8 @@
    
    [super viewWillDisappear:aAnimated];
    
-//   [self.contentController viewWillDisappear:aAnimated];
-         
+   //   [self.contentController viewWillDisappear:aAnimated];
+   
    __CATCH(nErr);
    
    return;
@@ -265,7 +265,7 @@
    if ([aSegue.identifier isEqualToString:HomeContentController.className]) {
       
       self.contentController  = aSegue.destinationViewController;
-
+      
    } /* End if () */
    
    __CATCH(nErr);
@@ -277,5 +277,10 @@
    
    return @"HOME";
 }
+
+@end
+
+#pragma mark - IBAction
+@implementation HomeController (Action)
 
 @end

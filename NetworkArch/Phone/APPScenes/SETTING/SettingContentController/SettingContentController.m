@@ -440,89 +440,6 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    return;
 }
 
-@end
-
-#pragma mark - IBAction
-@implementation SettingContentController (Action)
-
-- (IBAction)onThemeSwitch:(UISwitch *)aSender {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   if (aSender.isOn) {
-      
-      [self.lightButton setEnabled:NO];
-      [self.nightButton setEnabled:NO];
-      
-      [APPDelegate setAutoTheme:YES];
-      
-      if (@available(iOS 13.0, *)) {
-         
-         if (UIUserInterfaceStyleDark == self.traitCollection.userInterfaceStyle) {
-            
-            [self.lightButton setSelected:NO];
-            [self.nightButton setSelected:YES];
-            
-            [[DKNightVersionManager sharedManager] nightFalling];
-            
-         } /* End if () */
-         else {
-            
-            [self.lightButton setSelected:YES];
-            [self.nightButton setSelected:NO];
-            
-            [[DKNightVersionManager sharedManager] dawnComing];
-            
-         } /* End else */
-         
-      } /* End if (iOS 13) */
-      
-   } /* End if () */
-   else {
-      
-      [APPDelegate setAutoTheme:NO];
-      
-      [self.lightButton setEnabled:YES];
-      [self.nightButton setEnabled:YES];
-      
-      [self.lightButton setSelected:YES];
-      [self.nightButton setSelected:NO];
-      
-      [[DKNightVersionManager sharedManager] dawnComing];
-      
-   } /* End else */
-   
-   [UISelectionFeedbackGenerator selectionChanged];
-   
-   __CATCH(nErr);
-   
-   return;
-}
-
-- (IBAction)onAnimationSwitch:(UISwitch *)aSender {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-//   [self postNotify:IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE )
-//         withObject:@(aSender.isOn)
-//            onQueue:dispatch_get_main_queue()];
-
-   LogDebug((@"-[SettingContentController onAnimationSwitch:] : tabAnimation : %@", SettingController.tabAnimationNotification));
-   [self postNotify:SettingController.tabAnimationNotification
-         withObject:@(aSender.isOn)
-            onQueue:dispatch_get_main_queue()];
-   
-   [UISelectionFeedbackGenerator selectionChanged];
-   
-   __CATCH(nErr);
-   
-   return;
-}
-
 #pragma mark - Follow
 - (void)followWeibo {
    
@@ -812,6 +729,89 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
 + (NSString *)storyboard {
    
    return @"SETTING";
+}
+
+@end
+
+#pragma mark - IBAction
+@implementation SettingContentController (Action)
+
+- (IBAction)onThemeSwitch:(UISwitch *)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   if (aSender.isOn) {
+      
+      [self.lightButton setEnabled:NO];
+      [self.nightButton setEnabled:NO];
+      
+      [APPDelegate setAutoTheme:YES];
+      
+      if (@available(iOS 13.0, *)) {
+         
+         if (UIUserInterfaceStyleDark == self.traitCollection.userInterfaceStyle) {
+            
+            [self.lightButton setSelected:NO];
+            [self.nightButton setSelected:YES];
+            
+            [[DKNightVersionManager sharedManager] nightFalling];
+            
+         } /* End if () */
+         else {
+            
+            [self.lightButton setSelected:YES];
+            [self.nightButton setSelected:NO];
+            
+            [[DKNightVersionManager sharedManager] dawnComing];
+            
+         } /* End else */
+         
+      } /* End if (iOS 13) */
+      
+   } /* End if () */
+   else {
+      
+      [APPDelegate setAutoTheme:NO];
+      
+      [self.lightButton setEnabled:YES];
+      [self.nightButton setEnabled:YES];
+      
+      [self.lightButton setSelected:YES];
+      [self.nightButton setSelected:NO];
+      
+      [[DKNightVersionManager sharedManager] dawnComing];
+      
+   } /* End else */
+   
+   [UISelectionFeedbackGenerator selectionChanged];
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (IBAction)onAnimationSwitch:(UISwitch *)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+//   [self postNotify:IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE )
+//         withObject:@(aSender.isOn)
+//            onQueue:dispatch_get_main_queue()];
+
+   LogDebug((@"-[SettingContentController onAnimationSwitch:] : tabAnimation : %@", SettingController.tabAnimationNotification));
+   [self postNotify:SettingController.tabAnimationNotification
+         withObject:@(aSender.isOn)
+            onQueue:dispatch_get_main_queue()];
+   
+   [UISelectionFeedbackGenerator selectionChanged];
+   
+   __CATCH(nErr);
+   
+   return;
 }
 
 @end

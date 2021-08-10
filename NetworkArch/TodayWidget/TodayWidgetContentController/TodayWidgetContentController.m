@@ -541,22 +541,6 @@
 
 @end
 
-#pragma mark - IBAction
-@implementation TodayWidgetContentController (IBACTION)
-
-- (IBAction)onAction:(id)aSender {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   __CATCH(nErr);
-   
-   return;
-}
-
-@end
-
 #pragma mark - UIStoryboard
 @implementation TodayWidgetContentController (UIStoryboard)
 
@@ -578,6 +562,22 @@
 + (NSString *)storyboard {
    
    return @"WIDGET";
+}
+
+@end
+
+#pragma mark - IBAction
+@implementation TodayWidgetContentController (Action)
+
+- (IBAction)onAction:(id)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
 }
 
 @end

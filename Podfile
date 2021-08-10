@@ -137,6 +137,7 @@ target 'NetworkArch' do
   pod 'IDEAPing'                        , :path => '../MINIWING-PODs/IDEAPing'
   pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
   pod 'IDEANetUtils'                    , :path => '../MINIWING-PODs/IDEANetUtils'
+#  pod 'IDEAThrottle'                    , :path => '../MINIWING-PODs/IDEAThrottle'
 #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'IDEARefresh'                     , :path => '../MINIWING-PODs/IDEARefresh'
 #  pod 'IDEANibBridge'                   , :path => '../MINIWING-PODs/IDEANibBridge'

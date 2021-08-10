@@ -81,7 +81,7 @@
 #define IDEA_FONT_FAMILY(name, func)               (name##func)
 
 #undef IDEA_FONT
-#define IDEA_FONT                                  (0)
+#define IDEA_FONT                                  (1)
 
 @interface APPFont ()
 

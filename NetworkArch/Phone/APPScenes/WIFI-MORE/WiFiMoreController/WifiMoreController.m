@@ -232,6 +232,12 @@
 
    // Get the new view controller using [aSegue destinationViewController].
    // Pass the selected object to the new view controller.
+   
+   if ([aSegue.identifier isEqualToString:WiFiMoreContentController.className]) {
+      
+      self.moreContentController = aSegue.destinationViewController;
+      
+   } /* End if () */
 
    __CATCH(nErr);
 

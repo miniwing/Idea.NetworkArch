@@ -68,7 +68,9 @@
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
-      
+
+   NSLayoutConstraint            *stLayoutConstraint                       = nil;
+
    __TRY;
    
    [super viewDidLoad];
@@ -126,6 +128,23 @@
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
    
+   [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   [self.contentView setBackgroundColor:UIColor.clearColor];
+
+   /**
+    调整 Layout
+    contentView.top
+    */
+   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"contentView.top"
+                                                              fromView:self.view];
+   
+   if (nil != stLayoutConstraint) {
+      
+      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
+      
+   } /* End if () */
+
    __CATCH(nErr);
    
    return;
@@ -211,6 +230,12 @@
 
    // Get the new view controller using [aSegue destinationViewController].
    // Pass the selected object to the new view controller.
+
+   if ([aSegue.identifier isEqualToString:CellularMoreContentController.className]) {
+      
+      self.moreContentController = aSegue.destinationViewController;
+      
+   } /* End if () */
 
    __CATCH(nErr);
 
