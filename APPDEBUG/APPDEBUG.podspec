@@ -47,8 +47,8 @@ Pod::Spec.new do |spec|
   
   spec.dependency 'IDEAKit'
 
-  spec.public_header_files  = 'DEBUG/APPDEBUG.h'
-  spec.source_files         = 'DEBUG/APPDEBUG.{h,m}'
+  spec.public_header_files  = 'DEBUG/**/*.h'
+  spec.source_files         = 'DEBUG/**/*.{h,m}'
 
   spec.resource_bundles     = {
                                 'APPDEBUG' => [
@@ -134,9 +134,6 @@ Pod::Spec.new do |spec|
 /******************************************************************************************************/
 
 #ifdef __OBJC__
-
-#  import <UIKit/UIKit.h>
-#  import <Foundation/Foundation.h>
 
 #  if __has_include(<YYKit/YYKit.h>)
 #     import <YYKit/YYKit.h>

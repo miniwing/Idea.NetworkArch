@@ -124,6 +124,12 @@
    /******************************************************************************************/
 #endif /* __Debug__ */
    
+#if APP_DEBUG
+
+   [APP_OBFUSCATION OBFUSCATION];
+   
+#endif /* APP_DEBUG */
+
    __CATCH(nErr);
    
    return SUCCESS == nErr; //YES;

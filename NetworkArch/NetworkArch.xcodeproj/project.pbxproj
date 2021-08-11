@@ -157,6 +157,9 @@
 		4A5D9A0926A4965200E00610 /* WIFI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D9A0726A4965200E00610 /* WIFI.storyboard */; };
 		4A5D9A0C26A4966400E00610 /* CELLULAR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D9A0A26A4966400E00610 /* CELLULAR.storyboard */; };
 		4A5D9A0F26A4968800E00610 /* UTILITIES.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D9A0D26A4968800E00610 /* UTILITIES.storyboard */; };
+		4A64D9CC26C41FDE00A9BBC0 /* libclang_rt.ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */; };
+		4A64D9CD26C41FE900A9BBC0 /* libclang_rt.ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */; };
+		4A64D9CE26C4201100A9BBC0 /* libclang_rt.ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */; };
 		4A7241B126B3153A00009443 /* PingResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7241B026B3153A00009443 /* PingResult.m */; };
 		4A842C8026AC1C0B005DC131 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A842C7E26AC1C0B005DC131 /* InfoPlist.strings */; };
 		4A842C8126AC1C19005DC131 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B992685CD3400DC1DA2 /* Localizable.strings */; };
@@ -611,6 +614,7 @@
 		4A5D9A0826A4965200E00610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WIFI.storyboard; sourceTree = "<group>"; };
 		4A5D9A0B26A4966400E00610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CELLULAR.storyboard; sourceTree = "<group>"; };
 		4A5D9A0E26A4968800E00610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UTILITIES.storyboard; sourceTree = "<group>"; };
+		4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libclang_rt.ios.a; path = ../libs/libclang_rt.ios.a; sourceTree = "<group>"; };
 		4A7241AF26B3153A00009443 /* PingResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingResult.h; sourceTree = "<group>"; };
 		4A7241B026B3153A00009443 /* PingResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingResult.m; sourceTree = "<group>"; };
 		4A7EE7CB1CF1FA2641E06D60 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -766,6 +770,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A64D9CC26C41FDE00A9BBC0 /* libclang_rt.ios.a in Frameworks */,
 				4A25F1A126AED9B20075BE73 /* libAPPBase.a in Frameworks */,
 				4A25F19026AED9A10075BE73 /* NotificationCenter.framework in Frameworks */,
 				9356ABD29868E603D084FC9A /* Pods_FleetingWidget.framework in Frameworks */,
@@ -776,6 +781,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A64D9CD26C41FE900A9BBC0 /* libclang_rt.ios.a in Frameworks */,
 				4AF4412026AC575C0008C169 /* libAPPBase.a in Frameworks */,
 				4A4D0A6126AC0F56008A30E0 /* NotificationCenter.framework in Frameworks */,
 				517932287CBBB6DFF06A2BCA /* Pods_TodayWidget.framework in Frameworks */,
@@ -786,6 +792,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A64D9CE26C4201100A9BBC0 /* libclang_rt.ios.a in Frameworks */,
 				4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */,
 				EC6099F595D712BB1336037D /* Pods_NetworkArch.framework in Frameworks */,
 			);
@@ -1757,6 +1764,7 @@
 		BC9F1E42789CEDD6C11BF75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */,
 				4A421C0526AC0CC200935235 /* NotificationCenter.framework */,
 				4A7EE7CB1CF1FA2641E06D60 /* Pods_APPBase.framework */,
 				44E04D749BC13E5E32890BD7 /* Pods_FleetingWidget.framework */,
@@ -2732,6 +2740,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LIBRARY_SEARCH_PATHS = "/Volumes/Work/MINI-WING/Idea.NetworkArch/libs";
 				MARKETING_VERSION = 0.9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -2791,6 +2800,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LIBRARY_SEARCH_PATHS = "/Volumes/Work/MINI-WING/Idea.NetworkArch/libs";
 				MARKETING_VERSION = 0.9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

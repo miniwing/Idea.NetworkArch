@@ -96,12 +96,14 @@
    
    for (UIView *stView in self.warningCellContainerViews) {
       
-#if __DEBUG_COLOR__
-      [stView setBackgroundColor:UIColor.systemOrangeColor];
-#else /* __DEBUG_COLOR__ */
-      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-#endif /* !__DEBUG_COLOR__ */
-      
+//#if __DEBUG_COLOR__
+//      [stView setBackgroundColor:UIColor.systemOrangeColor];
+//#else /* __DEBUG_COLOR__ */
+//      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+//#endif /* !__DEBUG_COLOR__ */
+
+      [stView setBackgroundColor:UIColor.systemYellowColor];
+
    } /* End for () */
    
    for (UIView *stView in self.separatorViews) {
@@ -180,6 +182,11 @@
    
    [self.detailCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
    [self.detailCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+   
+   [self.dataUsageCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
+   [self.dataUsageCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+   
+   [self.warningCellContainerViews.firstObject setCornerRadius:8 clipsToBounds:YES];
    
    __CATCH(nErr);
    
