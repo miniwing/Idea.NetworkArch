@@ -280,15 +280,15 @@
       
       stTableViewCell   = self.detailCells[aIndexPath.row];
       
-      //      WifiDetailStatus        = 0,
-      //      WifiDetailSSID          = 1,
-      //      WifiDetailBSSID         = 2,
-      //      WifiDetailGateway       = 3,
-      //      WifiDetailSubnet        = 4,
-      //      WifiDetailIPV4          = 5,
-      //      WifiDetailIPV6          = 6,
-      //      WifiDetailExternalIPV4  = 7,
-      //      WifiDetailInterfaces    = 8,
+//      WifiDetailStatus        = 0,
+//      WifiDetailSSID          = 1,
+//      WifiDetailBSSID         = 2,
+//      WifiDetailGateway       = 3,
+//      WifiDetailSubnet        = 4,
+//      WifiDetailIPV4          = 5,
+//      WifiDetailIPV6          = 6,
+//      WifiDetailExternalIPV4  = 7,
+//      WifiDetailInterfaces    = 8,
       
       [stTableViewCell.titleLabel setText:stTitles[aIndexPath.row]];
       

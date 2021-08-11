@@ -67,29 +67,33 @@ NS_ASSUME_NONNULL_END
       
       self.type   = TransTypeMove;
       
-      @weakify(self);
-      /******************************************************************************************/      
+//      @weakify(self);
+      /******************************************************************************************/
       self.onNotification(SettingController.tabAnimationNotification, ^(NSNotification *aNotification) {
          
-         @strongify(self);
+//         @strongify(self);
          LogDebug((@"-[RootViewController onNotification : %@] : %@ : %@", aNotification.name, aNotification.name, aNotification.object));
          
-         if ([aNotification.object boolValue]) {
+         if (nil != self) {
             
-            if (TransTypeNone != self.type) {
+            if ([aNotification.object boolValue]) {
                
-               self.delegate  = self;
+               if (TransTypeNone != self.type) {
+                  
+                  self.delegate  = self;
+                  
+               } /* End if () */
                
             } /* End if () */
+            else {
+               
+               self.delegate     = self.originalDelegate;
+               
+            } /* End else */
             
          } /* End if () */
-         else {
-            
-            self.delegate     = self.originalDelegate;
-            
-         } /* End else */
       });
-
+      
       [self addNotificationName:SplashViewController.SPLASH_DONE
                        selector:@selector(onSplashDone:)
                          object:nil];
@@ -124,10 +128,10 @@ NS_ASSUME_NONNULL_END
    [self.tabBar setBarTintColorPicker:DKColorPickerWithKey([IDEAColor appTabbarBackground])];
    [self.tabBar setBackgroundImage:[UIImage new]];
    [self.tabBar setShadowImage:[UIImage new]];
-//   [self.tabBar setShadowImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
-//
-//      return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor separator]] size:CGSizeMake(1, 0.5)];
-//   }];
+   //   [self.tabBar setShadowImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
+   //
+   //      return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor separator]] size:CGSizeMake(1, 0.5)];
+   //   }];
 #  else /* DK_NIGHT_VERSION */
 #  endif /* !DK_NIGHT_VERSION */
    
@@ -153,34 +157,34 @@ NS_ASSUME_NONNULL_END
                                           forState:UIControlStateSelected];
    } /* End for () */
    
-//   [self.tabBar setShadowColor:UIColor.clearColor];
-//   [self.tabBar setShadowImage:[UIImage new]];
-//   [self.tabBar setBackgroundImage:[UIImage new]];
-//
-//   if (@available(iOS 13, *)) {
-//      
-//      UITabBarAppearance   *stAppearance = [self.tabBar.standardAppearance copy];
-//      stAppearance.backgroundImage  = [UIImage imageWithColor:[UIColor clearColor]];
-//      stAppearance.shadowImage      = [UIImage imageWithColor:[UIColor clearColor]];
-//      
-//      // 官方文档写的是 重置背景和阴影为透明
-//      [stAppearance configureWithTransparentBackground];
-//      self.tabBar.standardAppearance = stAppearance;
-//      
-//   } /* End if () */
-//   else {
-//      
-//      self.tabBar.backgroundImage   = [UIImage new];
-//      self.tabBar.shadowImage       = [UIImage new];
-//      
-//   }/* End else */
-
-//   [self.tabBar setBackgroundImage:[UIImage imageWithColor:UIColor.systemRedColor]];
+   //   [self.tabBar setShadowColor:UIColor.clearColor];
+   //   [self.tabBar setShadowImage:[UIImage new]];
+   //   [self.tabBar setBackgroundImage:[UIImage new]];
+   //
+   //   if (@available(iOS 13, *)) {
+   //
+   //      UITabBarAppearance   *stAppearance = [self.tabBar.standardAppearance copy];
+   //      stAppearance.backgroundImage  = [UIImage imageWithColor:[UIColor clearColor]];
+   //      stAppearance.shadowImage      = [UIImage imageWithColor:[UIColor clearColor]];
+   //
+   //      // 官方文档写的是 重置背景和阴影为透明
+   //      [stAppearance configureWithTransparentBackground];
+   //      self.tabBar.standardAppearance = stAppearance;
+   //
+   //   } /* End if () */
+   //   else {
+   //
+   //      self.tabBar.backgroundImage   = [UIImage new];
+   //      self.tabBar.shadowImage       = [UIImage new];
+   //
+   //   }/* End else */
    
-//   [self.tabBar setBackgroundImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
-//
-//      return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor systemGroupedBackground]]];
-//   }];
+   //   [self.tabBar setBackgroundImage:[UIImage imageWithColor:UIColor.systemRedColor]];
+   
+   //   [self.tabBar setBackgroundImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
+   //
+   //      return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor systemGroupedBackground]]];
+   //   }];
    
    __CATCH(nErr);
    
@@ -316,7 +320,7 @@ NS_ASSUME_NONNULL_END
    } /* End if () */
    
    stTrackingController  = [UIStoryboard loadStoryboard:TrackingController.storyboard
-                                        viewController:[TrackingController class]];
+                                         viewController:[TrackingController class]];
    
    [self popUp:stTrackingController animated:aAnimated.boolValue completion:^{
       
@@ -415,7 +419,7 @@ NS_ASSUME_NONNULL_END
    
    __TRY;
    
-//   [UISelectionFeedbackGenerator selectionChanged];
+   //   [UISelectionFeedbackGenerator selectionChanged];
    [UIImpactFeedbackGenerator impactOccurredWithStyle:UIImpactFeedbackStyleMedium];
    
    __CATCH(nErr);

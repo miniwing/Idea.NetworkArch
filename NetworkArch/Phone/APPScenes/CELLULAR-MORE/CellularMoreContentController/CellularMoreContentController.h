@@ -31,7 +31,7 @@ IDEA_ENUM(NSInteger, CellularDetail) {
    CellularDetailRadio        = 4,
    CellularDetailIPV4         = 5,
    CellularDetailIPV6         = 6,
-   CellularDetailVOIP         = 7,
+   CellularDetailVoIP         = 7,
    CellularDetailNumber
 };
 

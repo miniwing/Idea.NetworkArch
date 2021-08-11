@@ -79,7 +79,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Cj7-7Z-Eop">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WifiInterfacesCell" id="Cj7-7Z-Eop">
                                         <rect key="frame" x="0.0" y="49" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cj7-7Z-Eop" id="wbo-4X-Rcc">
@@ -270,13 +270,13 @@
                                                     <rect key="frame" x="16" y="0.0" width="343" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="SSID not available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crG-VT-thO" userLabel="TITLE">
-                                                            <rect key="frame" x="8" y="0.0" width="163.66666666666666" height="48"/>
+                                                            <rect key="frame" x="8" y="0.0" width="116" height="48"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="SSID not available" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtO-aj-PBV" userLabel="CONTENT">
-                                                            <rect key="frame" x="171.66666666666663" y="0.0" width="163.33333333333337" height="48"/>
+                                                            <rect key="frame" x="219" y="0.0" width="116" height="48"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -293,9 +293,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="GtO-aj-PBV" secondAttribute="trailing" constant="8" id="0V4-lz-W83"/>
                                                         <constraint firstItem="CqZ-uZ-QrJ" firstAttribute="leading" secondItem="UP3-bm-9RJ" secondAttribute="leading" constant="4" id="1o3-JS-eIj"/>
-                                                        <constraint firstItem="GtO-aj-PBV" firstAttribute="width" secondItem="crG-VT-thO" secondAttribute="width" id="Ets-SX-FjL"/>
                                                         <constraint firstAttribute="bottom" secondItem="crG-VT-thO" secondAttribute="bottom" id="OWv-aA-CgT"/>
-                                                        <constraint firstItem="GtO-aj-PBV" firstAttribute="leading" secondItem="crG-VT-thO" secondAttribute="trailing" id="OmA-VI-T9r"/>
+                                                        <constraint firstItem="GtO-aj-PBV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="crG-VT-thO" secondAttribute="trailing" id="OmA-VI-T9r"/>
                                                         <constraint firstAttribute="bottom" secondItem="CqZ-uZ-QrJ" secondAttribute="bottom" id="SLI-hP-APb"/>
                                                         <constraint firstItem="crG-VT-thO" firstAttribute="top" secondItem="UP3-bm-9RJ" secondAttribute="top" id="beF-QR-ecQ"/>
                                                         <constraint firstItem="GtO-aj-PBV" firstAttribute="top" secondItem="UP3-bm-9RJ" secondAttribute="top" id="ePD-el-SFp"/>

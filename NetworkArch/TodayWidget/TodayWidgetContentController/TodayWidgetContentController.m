@@ -381,7 +381,13 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
    
-   return TodayWidgetSectionNumber;
+   if (NCWidgetDisplayModeExpanded == self.extensionContext.widgetActiveDisplayMode) {
+      
+      return TodayWidgetSectionNumber;
+      
+   } /* End if () */
+   
+   return TodayWidgetSectionNumber - 1;
 }
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
@@ -448,9 +454,6 @@
    
    if (nil != stTableViewCell) {
       
-      //      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-      //      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-      
       [stTableViewCell setBackgroundColor:UIColor.clearColor];
       [stTableViewCell.contentView setBackgroundColor:UIColor.clearColor];
       [stTableViewCell.selectedColorView setBackgroundColor:UIColor.clearColor];
@@ -510,22 +513,22 @@
             
             LogDebug((@"[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : openURL"));
          }];
-
+         
       } /* End if () */
       
    } /* End if () */
    else if (TodayWidgetSectionCellular == aIndexPath.section) {
       
       if (TodayWidgetCellularMore == aIndexPath.row) {
-
+         
          LogDebug((@"-[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : %@",  [NSString stringWithFormat:@"%@%@", [IDEAIdentifier scheme], @"Wi-Fi"]));
-
+         
          [self.extensionContext openURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@%@", [IDEAIdentifier scheme], @"Wi-Fi"]]
                       completionHandler:^(BOOL aSuccess) {
             
             LogDebug((@"[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : openURL"));
          }];
-
+         
       } /* End if () */
       
    } /* End else if () */
@@ -537,6 +540,53 @@
    __CATCH(nErr);
    
    return;
+}
+
+- (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)aIndexPath {
+   
+   int                            nErr                                     = EFAULT;
+   
+   CGFloat                        fTableViewHeight                         = 0.0f;
+   CGFloat                        fHeight                                  = 0.0f;
+   
+   __TRY;
+   
+//   fHeight  = aTableView.height / self.wifiCells.count;
+   
+   fTableViewHeight  = self.preferredContentSize.height / [aTableView numberOfSections];
+   
+   if (TodayWidgetSectionWifi == aIndexPath.section) {
+
+      if (aIndexPath.row == self.wifiCells.count - 1) {
+         
+         fHeight  = fTableViewHeight * 3 / 7;
+
+      } /* End if () */
+      else {
+         
+         fHeight  = fTableViewHeight * 2 / 7;
+
+      } /* End else */
+
+   } /* End if () */
+   else {
+      
+      if (aIndexPath.row == self.cellularCells.count - 1) {
+         
+         fHeight  = fTableViewHeight * 3 / 7;
+
+      } /* End if () */
+      else {
+         
+         fHeight  = fTableViewHeight * 2 / 7;
+
+      } /* End else */
+
+   } /* End else */
+   
+   __CATCH(nErr);
+   
+   return fHeight;
 }
 
 @end

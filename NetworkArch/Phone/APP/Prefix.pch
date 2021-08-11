@@ -469,6 +469,10 @@ typedef FBLPromise Promise;
 #endif
 
 /****************************************************************************/
+
+#import <MMKV/MMKV.h>
+
+/****************************************************************************/
 #if __has_include(<IDEAApplet/IDEAApplet.h>)
 #  import <IDEAApplet/IDEAApplet.h>
 #  import <IDEAApplet/IDEAAppletCore.h>

@@ -52,6 +52,21 @@
    return;
 }
 
+- (void)viewWillAppear:(BOOL)aAnimated {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [super viewWillAppear:aAnimated];
+   
+   [self.contentController.tableView reloadData];
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
 - (void)viewDidAppear:(BOOL)aAnimated {
    
    int                            nErr                                     = EFAULT;

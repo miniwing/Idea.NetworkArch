@@ -135,6 +135,8 @@
 
 #endif /* __OBJC__ */
 
+/****************************************************************************/
+
 #if __has_include(<IDEAApplet/IDEAApplet.h>)
 #  import <IDEAApplet/IDEAApplet.h>
 #  import <IDEAApplet/IDEAAppletCore.h>
@@ -142,6 +144,12 @@
 #  import <IDEAApplet/IDEAAppletEvent.h>
 #  import <IDEAApplet/IDEAAppletService.h>
 #endif // __has_include(<IDEAApplet/IDEAApplet.h>)
+
+/****************************************************************************/
+
+#import <MMKVAppExtension/MMKV.h>
+
+/****************************************************************************/
 
 #import <IDEARoute/IDEARoute.h>
 

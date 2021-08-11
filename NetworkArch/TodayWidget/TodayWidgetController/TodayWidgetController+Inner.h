@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)                TodayWidgetContentController        * contentController;
 @property (nonatomic, strong)                CLLocationManager                   * locationManager;
 
+@property (nonatomic, assign)                CGSize                                minimumContentSize;
+
 @end
 
 @interface TodayWidgetController (Inner)

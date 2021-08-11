@@ -234,14 +234,36 @@
 #pragma mark - UITableViewDataSource
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
 //
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
+//   return CellularSectionNumber;
 //}
-
+//
 //- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
 //
-//#warning Incomplete implementation, return the number of rows
-//    return 0;
+//   int                            nErr                                     = EFAULT;
+//
+//   NSInteger                      nRows                                    = 0;
+//
+//   __TRY;
+//
+//   if (CellularSectionDetail == aSection) {
+//
+//      nRows = self.detailCells.count;
+//
+//   } /* End if () */
+//   else if (CellularSectionDataUsage == aSection) {
+//
+//      nRows = self.dataUsageCells.count;
+//
+//   } /* End if () */
+//   else if (CellularSectionWarning == aSection) {
+//
+//      nRows = self.warningCells.count;
+//
+//   } /* End if () */
+//
+//   __CATCH(nErr);
+//
+//   return nRows;
 //}
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {
@@ -258,9 +280,20 @@
       @"Rdio Access Technology",
       @"IPv4 Address",
       @"IPv6 Address",
-      @"VoIP Supprt",
+      @"VoIP Support",
    ];
    
+   CTTelephonyNetworkInfo        *stTelephonyNetworkInfo                   = nil;
+   
+   NSDictionary<NSString *, CTCarrier *>  *stCarriers                      = nil;
+   CTCarrier                     *stCarrier                                = nil;
+
+   NSDictionary<NSString *, NSString *>   *stRadioAccesses                 = nil;
+   NSString                      *szRadioAccess                            = nil;
+   
+   NSString                      *szCarrierName                            = nil;
+   NSString                      *szIP                                     = nil;
+
    __TRY;
    
    //   CellularSectionDetail    = 0,
@@ -268,6 +301,53 @@
    //   CellularSectionWarning   = 2,
    //   CellularSectionNumber
    
+   LogDebug((@"-[CellularMoreContentController tableView:cellForRowAtIndexPath:] : Section : %d, Row : %d", aIndexPath.section, aIndexPath.row));
+   
+   stTelephonyNetworkInfo  = [[CTTelephonyNetworkInfo alloc] init];
+
+   if (@available(iOS 12.0, *)) {
+      
+      stCarriers  = stTelephonyNetworkInfo.serviceSubscriberCellularProviders;
+      
+      LogDebug((@"-[CellularMoreContentController tableView:cellForRowAtIndexPath:] : Carriers : %@", stCarriers));
+      
+#if __Debug__
+      [stCarriers enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, CTCarrier * _Nonnull aObject, BOOL * _Nonnull aStop) {
+
+         LogDebug((@"-[CellularMoreContentController tableView:cellForRowAtIndexPath:] : Carrier : %@:%@", aKey, aObject));
+
+      }];
+#endif /* __Debug__ */
+      
+      stCarrier   = [stCarriers objectForKey:stCarriers.allKeys.firstObject];
+            
+      stRadioAccesses   = stTelephonyNetworkInfo.serviceCurrentRadioAccessTechnology;
+      
+      LogDebug((@"-[CellularMoreContentController tableView:cellForRowAtIndexPath:] : RadioAccesses : %@", stRadioAccesses));
+
+#if __Debug__
+      [stRadioAccesses enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, NSString * _Nonnull aObject, BOOL * _Nonnull aStop) {
+
+         LogDebug((@"-[CellularMoreContentController tableView:cellForRowAtIndexPath:] : RadioAccess : %@:%@", aKey, aObject));
+
+      }];
+#endif /* __Debug__ */
+
+      szRadioAccess  = [stRadioAccesses objectForKey:stRadioAccesses.allKeys.firstObject];
+
+   } /* End if () */
+   else {
+      
+      stCarrier   = stTelephonyNetworkInfo.subscriberCellularProvider;
+      
+      LogDebug((@"-[CellularMoreContentController tableView:cellForRowAtIndexPath:] : Carrier : %@", stCarrier));
+      
+      szRadioAccess  = stTelephonyNetworkInfo.currentRadioAccessTechnology;
+      
+      LogDebug((@"-[CellularMoreContentController tableView:cellForRowAtIndexPath:] : RadioAccess : %@", szRadioAccess));
+      
+   } /* End else */
+      
    if (CellularSectionDetail == aIndexPath.section) {
       
       stTableViewCell   = self.detailCells[aIndexPath.row];
@@ -279,144 +359,105 @@
 //      CellularDetailRadio        = 4,
 //      CellularDetailIPV4         = 5,
 //      CellularDetailIPV6         = 6,
-//      CellularDetailVOIP         = 7,
+//      CellularDetailVoIP         = 7,
 
       [stTableViewCell.titleLabel setText:stTitles[aIndexPath.row]];
-      
+      [stTableViewCell.infoLabel setText:@"N/A"];
+
       if (CellularDetailCarrier == aIndexPath.row) {
          
-         if ([IDEARoute isWifiConnected]) {
+         if ((nil == stCarrier) || (YES == kStringIsEmpty(stCarrier.carrierName))){
             
-            [stTableViewCell.infoView setBackgroundColor:UIColor.systemGreenColor];
-            [stTableViewCell.infoLabel setText:APP_STR(@"Connected")];
+            szCarrierName  = APP_STR(@"No service");
             
          } /* End if () */
          else {
             
-            [stTableViewCell.infoView setBackgroundColor:UIColor.systemRedColor];
-            [stTableViewCell.infoLabel setText:APP_STR(@"Not connected")];
+            szCarrierName  = stCarrier.carrierName;
             
          } /* End else */
+         
+
+         [stTableViewCell.infoLabel setText:szCarrierName];
          
       } /* End if () */
       else if (CellularDetailISO == aIndexPath.row) {
          
-         if (kStringIsEmpty([IDEARoute getSSID])) {
+         if (NO == kStringIsEmpty(stCarrier.isoCountryCode)) {
             
-            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
-            
+            [stTableViewCell.infoLabel setText:stCarrier.isoCountryCode];
+
          } /* End if () */
-         else {
-            
-            [stTableViewCell.infoLabel setText:[IDEARoute getSSID]];
-            
-         } /* End else */
-         
+                  
       } /* End if () */
       else if (CellularDetailCountry == aIndexPath.row) {
-         
-         if (kStringIsEmpty([IDEARoute getBSSID])) {
+
+         if (NO == kStringIsEmpty(stCarrier.mobileCountryCode)) {
             
-            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
-            
+            [stTableViewCell.infoLabel setText:stCarrier.mobileCountryCode];
+
          } /* End if () */
-         else {
-            
-            [stTableViewCell.infoLabel setText:[IDEARoute getBSSID]];
-            
-         } /* End else */
-         
+
       } /* End if () */
       else if (CellularDetailNetwork == aIndexPath.row) {
-         
-         if (kStringIsEmpty([IDEARoute getGatewayIP])) {
+
+         if (NO == kStringIsEmpty(stCarrier.mobileNetworkCode)) {
             
-            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
-            
+            [stTableViewCell.infoLabel setText:stCarrier.mobileNetworkCode];
+
          } /* End if () */
-         else {
-            
-            [stTableViewCell.infoLabel setText:[IDEARoute getGatewayIP]];
-            
-         } /* End else */
-         
+
       } /* End if () */
       else if (CellularDetailRadio == aIndexPath.row) {
-         
-         // ().first(where: {$0.name == "en0" && $0.family.toString() == "IPv4"})
-         NSArray<IDEANetInterface *>   *stInterfaces  = [IDEANetUtils allInterfaces];
-         
-         IDEANetInterface              *stInterface   = nil;
-         
-         for (stInterface in stInterfaces) {
+
+         if (kStringIsEmpty(szRadioAccess)) {
             
-            if ([stInterface.name isEqualToString:@"en0"] && NetFamilyIPV4 == stInterface.family) {
-               
-               break;
-               
-            } /* End if () */
-            
-         } /* End for () */
-         
-         if (nil == stInterface || kStringIsEmpty(stInterface.netmask)) {
-            
-            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
+            szRadioAccess  = @"N/A";
             
          } /* End if () */
-         else {
-            
-            [stTableViewCell.infoLabel setText:stInterface.netmask];
-            
-         } /* End else */
-         
+
+         [stTableViewCell.infoLabel setText:[UIDevice radioTechnologyFor:szRadioAccess]];
+
       } /* End if () */
       else if (CellularDetailIPV4 == aIndexPath.row) {
+
+         szIP  = [UIDevice ipv4:NetworkCellular];
          
-         NSString    *szIPV4  = [UIDevice ipv4:NetworkWifi];
-         
-         if (kStringIsEmpty(szIPV4)) {
+         if (kStringIsEmpty(szIP)) {
             
-            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
-            
+            szIP           = APP_STR(@"N/A");
+
          } /* End if () */
-         else {
-            
-            [stTableViewCell.infoLabel setText:szIPV4];
-            
-         } /* End else */
-         
+
+         [stTableViewCell.infoLabel setText:szIP];
+
       } /* End if () */
       else if (CellularDetailIPV6 == aIndexPath.row) {
+
+         szIP  = [UIDevice ipv6:NetworkCellular];
          
-         // ().first(where: {$0.name == "en0" && $0.family.toString() == "IPv4"})
-         NSArray<IDEANetInterface *>   *stInterfaces  = [IDEANetUtils allInterfaces];
+         if (kStringIsEmpty(szIP)) {
+            
+            szIP           = APP_STR(@"N/A");
+
+         } /* End if () */
+
+         [stTableViewCell.infoLabel setText:szIP];
+
+      } /* End if () */
+      else if (CellularDetailVoIP == aIndexPath.row) {
          
-         IDEANetInterface              *stInterface   = nil;
-         
-         for (stInterface in stInterfaces) {
+         if (stCarrier.allowsVOIP) {
             
-            if ([stInterface.name isEqualToString:@"en0"] && NetFamilyIPV6 == stInterface.family) {
-               
-               break;
-               
-            } /* End if () */
-            
-         } /* End for () */
-         
-         if (nil == stInterface || kStringIsEmpty(stInterface.address)) {
-            
-            [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
-            
+            [stTableViewCell.infoLabel setText:@"Yes"];
+
          } /* End if () */
          else {
-            
-            [stTableViewCell.infoLabel setText:stInterface.address];
-            
+
+            [stTableViewCell.infoLabel setText:@"No"];
+
          } /* End else */
          
-      } /* End if () */
-      else if (CellularDetailVOIP == aIndexPath.row) {
-                  
       } /* End if () */
       
    } /* End if () */

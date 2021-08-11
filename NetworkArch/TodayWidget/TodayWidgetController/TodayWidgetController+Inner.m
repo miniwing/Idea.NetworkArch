@@ -42,24 +42,48 @@
    
    if (NCWidgetDisplayModeExpanded == aActiveDisplayMode) {
       
-      self.preferredContentSize  = CGSizeMake(0, 200);
+      self.preferredContentSize  = CGSizeMake(0, self.minimumContentSize.height * TodayWidgetSectionNumber);
+      
+      self.contentController.preferredContentSize  = self.preferredContentSize;
       
    } /* End if () */
    else if (NCWidgetDisplayModeCompact == aActiveDisplayMode) {
       
+      self.minimumContentSize    = aMaxSize;
       self.preferredContentSize  = aMaxSize; // CGSizeMake(0, [TodayViewCell CELL_H]);
-      
+
+      self.contentController.preferredContentSize  = self.preferredContentSize;
+
    } /* End else if () */
    
-   [UIView animateWithDuration:UIAViewAnimationDefaultDuraton
-                    animations:^{
+   [UIView transitionWithView:self.contentController.tableView
+                     duration:UIAViewAnimationDefaultDuraton
+                      options:UIViewAnimationOptionTransitionCrossDissolve
+                   animations:^{
+      
       [self.contentController.tableView reloadData];
+   }
+                   completion:^(BOOL finished) {
+      
    }];
+   
+//   [UIView animateWithDuration:UIAViewAnimationDefaultDuraton
+//                    animations:^{
+//
+//      [self.contentController.tableView reloadData];
+//   }];
 
    __CATCH(nErr);
    
    return;
 }
+
+//- (NCWidgetDisplayMode)widgetActiveDisplayMode {
+//
+//   LogDebug((@"-[TodayWidgetController widgetActiveDisplayMode]"));
+//
+//   return NCWidgetDisplayModeCompact;
+//}
 
 @end
 

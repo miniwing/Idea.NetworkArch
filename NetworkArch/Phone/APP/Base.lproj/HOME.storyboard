@@ -62,10 +62,31 @@
         <scene sceneID="4VA-JJ-Y4H">
             <objects>
                 <tableViewController storyboardIdentifier="HomeContentController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FpE-1M-I5K" userLabel="HOME-CONTENT" customClass="HomeContentController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="128" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" contentViewInsetsToSafeArea="NO" id="pbQ-4U-rhh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" contentViewInsetsToSafeArea="NO" id="pbQ-4U-rhh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U4B-qG-a8E" userLabel="COPYRIGHT">
+                            <rect key="frame" x="0.0" y="646" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Copyright © 2021 Harry. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XQ-Ee-bt8" userLabel="TITLE">
+                                    <rect key="frame" x="16" y="0.0" width="343" height="14"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="14" id="mOZ-6T-sOa"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="8XQ-Ee-bt8" secondAttribute="trailing" constant="16" id="4c1-OF-Icn"/>
+                                <constraint firstItem="8XQ-Ee-bt8" firstAttribute="top" secondItem="U4B-qG-a8E" secondAttribute="top" id="kl8-U5-UKO"/>
+                                <constraint firstItem="8XQ-Ee-bt8" firstAttribute="leading" secondItem="U4B-qG-a8E" secondAttribute="leading" constant="16" id="rEB-HA-3JD"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection headerTitle="Wi-Fi" id="MdF-Sh-J63">
                                 <cells>
@@ -651,6 +672,8 @@
                         <outlet property="cellularMoreLabel" destination="SnQ-LW-8QK" id="KsA-Jj-uA2"/>
                         <outlet property="cellularOperatorIcon" destination="Wu3-ZC-GpE" id="KJQ-xN-a9F"/>
                         <outlet property="cellularOperatorLabel" destination="fCD-Qo-cmf" id="CHJ-g1-zBa"/>
+                        <outlet property="copyrightLabel" destination="8XQ-Ee-bt8" id="Ff2-Nd-3XV"/>
+                        <outlet property="copyrightView" destination="U4B-qG-a8E" id="Zr7-kw-ewn"/>
                         <outlet property="utilitiesDNSLabel" destination="Ycx-8Z-fWr" id="xsr-nq-yDV"/>
                         <outlet property="utilitiesPingLabel" destination="17M-KZ-vbn" id="coi-EF-XKF"/>
                         <outlet property="utilitiesWakeOnLanLabel" destination="n6e-cV-KvY" id="Gse-CG-3eT"/>
@@ -706,6 +729,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -93,6 +93,8 @@ target 'NetworkArch' do
 #  platform :ios, '10.0'
 #  plugin 'cocoapods-hmap-prebuilt'
   
+  pod 'MMKV'
+
 #  pod 'PromisesObjC'
   
 #  pod 'Masonry'
@@ -203,8 +205,10 @@ end
 ###################################################################################################################################
 
 target 'TodayWidget' do
-
+  
   pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
+
+  pod 'MMKVAppExtension'
 
 #  pod 'MaterialComponents'
 #  pod 'MaterialComponents/Palettes'

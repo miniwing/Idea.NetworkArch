@@ -76,7 +76,9 @@
    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
    
-   [self.tableView setTableFooterView:[UIView new]];
+   [self.tableView setTableHeaderView:[UIView new]];
+//   [self.tableView setTableFooterView:[UIView new]];
+   [self.tableView setEstimatedSectionFooterHeight:0];
    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
    
    [self.tableView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
@@ -122,7 +124,7 @@
 #endif /* !__DEBUG_COLOR__ */
       
    } /* End for () */
-   
+
    /**
     WI-FI
     */
@@ -289,6 +291,15 @@
    } /* End for () */
    
    /**
+    Copyright
+    */
+   [self.copyrightView setBackgroundColor:UIColor.clearColor];
+   
+   [self.copyrightLabel setBackgroundColor:UIColor.clearColor];
+   [self.copyrightLabel setTextColor:UIColor.lightGrayColor];
+   [self.copyrightLabel setFont:[APPFont lightFontOfSize:self.copyrightLabel.font.pointSize]];
+
+   /**
     分割线
     */
    for (UIView *stView in self.cellSeparatorViews) {
@@ -366,15 +377,15 @@
    [super viewDidLayoutSubviews];
 
 //   dispatch_once(&_viewDidLayoutToken, ^{
-      
-      [self.wifiCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
-      [self.wifiCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
-      
-      [self.cellularCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
-      [self.cellularCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
-      
-      [self.utilitiesCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
-      [self.utilitiesCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+
+   [self.wifiCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
+   [self.wifiCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+   
+   [self.cellularCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
+   [self.cellularCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+   
+   [self.utilitiesCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
+   [self.utilitiesCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
 //   });
    
    __CATCH(nErr);
@@ -487,6 +498,17 @@
       break;
       
    } /* End if () */
+
+//   if (HomeSectionCopyright == aSection) {
+//
+//      nNumberOfRows  = self.copyrightCells.count;
+//      LogDebug((@"-[HomeContentController tableView:numberOfRowsInSection:] : HomeSectionCopyright : %d", nNumberOfRows));
+//
+//      nErr  = noErr;
+//
+//      break;
+//
+//   } /* End if () */
    
    __CATCH(nErr);
    
@@ -565,18 +587,27 @@
       
       stTableViewCell   = self.cellularCells[aIndexPath.row];
       
-   } /* End if () */
+   } /* End else if () */
    else if (HomeSectionUtilities == aIndexPath.section) {
       
       stTableViewCell   = self.utilitiesCells[aIndexPath.row];
       
-   } /* End if () */
+   } /* End else if () */
+//   else if (HomeSectionCopyright == aIndexPath.section) {
+//
+//      stTableViewCell   = self.copyrightCells[aIndexPath.row];
+//
+//      [stTableViewCell setBackgroundColor:UIColor.clearColor];
+//      [stTableViewCell.contentView setBackgroundColor:UIColor.clearColor];
+//      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.clearColor];
+//
+//   } /* End else if () */
    
    if (nil != stTableViewCell) {
       
 //      [stTableViewCell setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
 //      [stTableViewCell.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-            
+
    } /* End if () */
    
    __CATCH(nErr);
@@ -807,50 +838,46 @@
    return;
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)aTableView canEditRowAtIndexPath:(NSIndexPath *)aIndexPath {
- 
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
+//- (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)aIndexPath {
+//
+//   int                            nErr                                     = EFAULT;
+//
+//   __TRY;
+//
+//   __CATCH(nErr);
+//
+//   return;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)aTableView heightForHeaderInSection:(NSInteger)aSection {
+//
+//   int                            nErr                                     = EFAULT;
+//
+//   __TRY;
+//
+//   __CATCH(nErr);
+//
+//   return;
+//}
+//
+- (CGFloat)tableView:(UITableView *)aTableView heightForFooterInSection:(NSInteger)aSection {
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)aEditingStyle forRowAtIndexPath:(NSIndexPath *)aIndexPath {
- 
- if (aEditingStyle == UITableViewCellEditingStyleDelete) {
- 
- // Delete the row from the data source
- [aTableView deleteRowsAtIndexPaths:@[aIndexPath] withRowAnimation:UITableViewRowAnimationFade];
- 
- }
- else if (aEditingStyle == UITableViewCellEditingStyleInsert) {
- 
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- 
- return;
- }
- */
+   int                            nErr                                     = EFAULT;
+   
+   CGFloat                        fHeight                                  = 0.1f;
 
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)aTableView moveRowAtIndexPath:(NSIndexPath *)aFromIndexPath toIndexPath:(NSIndexPath *)aToIndexPath {
- 
- return;
- }
- */
+   __TRY;
 
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)aIndexPath {
- 
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
+   if (HomeSectionUtilities == aSection) {
+      
+      fHeight  = 20.0f;
+      
+   } /* End if () */
+   
+   __CATCH(nErr);
+
+   return fHeight;
+}
 
 @end
 
