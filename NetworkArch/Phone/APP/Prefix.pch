@@ -440,10 +440,13 @@ typedef FBLPromise Promise;
 #import "APPDebug.h"
 #import "APPFont.h"
 #import "APPHTTP.h"
+#import "APPUtils.h"
 
 //NS_INLINE BOOL __isPlatformVersionAtLeast() {
 //
 //   return YES;
 //}
+
+#define PING_STATISTICS_GRAPH                                              (0)
 
 #endif /* Prefix_pch */

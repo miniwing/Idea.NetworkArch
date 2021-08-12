@@ -17,7 +17,11 @@ IDEA_ENUM(NSInteger, PingStatistics) {
    PingStatisticsMinmum    = 0,
    PingStatisticsAverage   = 1,
    PingStatisticsMaximum   = 2,
+   
+#if PING_STATISTICS_GRAPH
    PingStatisticsGraph     = 3,
+#endif /* PING_STATISTICS_GRAPH */
+   
    PingStatisticsNumber
 };
 

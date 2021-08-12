@@ -20,6 +20,8 @@
 #import "WifiInterfacesController+Inner.h"
 #import "WifiInterfacesController+Signal.h"
 
+#import "DataUsage.h"
+
 @interface WiFiMoreContentController ()
 
 @end
@@ -64,7 +66,7 @@
    [super viewDidLoad];
    
    // Uncomment the following line to preserve selection between presentations.
-   // self.clearsSelectionOnViewWillAppear = NO;
+   self.clearsSelectionOnViewWillAppear = NO;
    
    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -133,6 +135,12 @@
       }/* End else */
    }];
    
+#if __Debug__
+#else /* __Debug__ */
+   [self.warningButton setHidden:YES];
+#endif /* !__Debug__ */
+   [self.warningButton.titleLabel setFont:[APPFont lightFontOfSize:self.warningButton.titleLabel.font.pointSize]];
+
    /**
     添加网络状态监听
     */
@@ -448,9 +456,22 @@
       
    } /* End if () */
    else if (WifiSectionDataUsage == aIndexPath.section) {
-      
+            
       stTableViewCell   = self.dataUsageCells[aIndexPath.row];
       
+      DataUsageInfo  *stDataUsageInfo  = [[DataUsage sharedInstance] getDataUsage];
+
+      if (WifiDataUsageReceived == aIndexPath.row) {
+         
+         [stTableViewCell.infoLabel setText:[APPUtils byteCountFormat:stDataUsageInfo.wifiReceived]];
+         
+      } /* End if () */
+      else if (WifiDataUsageSent == aIndexPath.row) {
+
+         [stTableViewCell.infoLabel setText:[APPUtils byteCountFormat:stDataUsageInfo.wifiSent]];
+
+      } /* End if () */
+
    } /* End if () */
    else if (WifiSectionWarning == aIndexPath.section) {
       
@@ -518,6 +539,23 @@
 + (NSString *)storyboard {
    
    return @"WIFI";
+}
+
+@end
+
+#pragma mark - IBAction
+@implementation WiFiMoreContentController (Action)
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (IBAction)onWarning:(id)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+      
+   __CATCH(nErr);
+   
+   return;
 }
 
 @end

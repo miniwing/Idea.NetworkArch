@@ -9,11 +9,12 @@
 //  TEL : +(852)53054612
 //
 
+#import "APPDelegate+APP.h"
 #import "UIDevice+Network.h"
 
-#import "APPDelegate+APP.h"
-
 #import "CellularMoreContentController.h"
+
+#import "DataUsage.h"
 
 @interface CellularMoreContentController ()
 
@@ -59,7 +60,7 @@
    [super viewDidLoad];
    
    // Uncomment the following line to preserve selection between presentations.
-   // self.clearsSelectionOnViewWillAppear = NO;
+   self.clearsSelectionOnViewWillAppear = NO;
    
    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -127,6 +128,12 @@
          
       }/* End else */
    }];
+   
+#if __Debug__
+#else /* __Debug__ */
+   [self.warningButton setHidden:YES];
+#endif /* !__Debug__ */
+   [self.warningButton.titleLabel setFont:[APPFont lightFontOfSize:self.warningButton.titleLabel.font.pointSize]];
    
    /**
     添加网络状态监听
@@ -472,6 +479,19 @@
       
       stTableViewCell   = self.dataUsageCells[aIndexPath.row];
       
+      DataUsageInfo  *stDataUsageInfo  = [[DataUsage sharedInstance] getDataUsage];
+
+      if (CellularDataUsageReceived == aIndexPath.row) {
+         
+         [stTableViewCell.infoLabel setText:[APPUtils byteCountFormat:stDataUsageInfo.wirelessWanDataReceived]];
+         
+      } /* End if () */
+      else if (CellularDataUsageSent == aIndexPath.row) {
+
+         [stTableViewCell.infoLabel setText:[APPUtils byteCountFormat:stDataUsageInfo.wirelessWanDataSent]];
+
+      } /* End if () */
+
    } /* End if () */
    else if (CellularSectionWarning == aIndexPath.section) {
       
@@ -530,7 +550,7 @@
 #pragma mark - IBAction
 @implementation CellularMoreContentController (Action)
 
-- (IBAction)onAction:(id)aSender {
+- (IBAction)onWarning:(id)aSender {
 
    int                            nErr                                     = EFAULT;
 

@@ -49,6 +49,8 @@ platform :ios, '10.0'
 
 def library
   
+  pod 'APPDATA'                         , :path => 'APPDATA'
+
   if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
 #    pod 'FoundationExtension'           , :git => 'https://github.com/miniwing/FoundationExtension.git'
     miniwing_pod('FoundationExtension', file = 'FoundationExtension', type = 'remote', branch = 'master', modular_headers = true)
@@ -58,6 +60,10 @@ def library
 #  pod 'UIKitExtension'                  , :path => '../../CocoaPods/FoundationExtension'
   miniwing_pod('UIKitExtension', file = 'FoundationExtension', type = 'remote', branch = 'master', modular_headers = true)
 
+  if ENV['IDEA_YYKIT'] == 'YES'
+    pod 'YYKit'                         , :path => '../MINIWING-PODs/YYKit'
+  end # IDEA_YYKIT
+
   if ENV['IDEA_AFNETWORKING'] == 'YES'
     pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'            , :configurations => ['Debug']
 #    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'
@@ -65,19 +71,15 @@ def library
     pod 'AFNetworking/Reachability'     , :path => '../MINIWING-PODs/AFNetworking'
   end # IDEA_AFNETWORKING
 
-  if ENV['IDEA_YYKIT'] == 'YES'
-    pod 'YYKit'                         , :path => '../MINIWING-PODs/YYKit'
-  end # IDEA_YYKIT
+  if ENV['IDEAFONT'] == 'YES'
+    pod 'IDEAFONT'                      , :path => '../MINIWING-PODs/IDEAFONT'
+  end # IDEAFONT
 
   pod 'IDEAKit'                         , :path => '../MINIWING-PODs/IDEAKit'
   pod 'IDEAColor'                       , :path => '../MINIWING-PODs/IDEAColor'
   pod 'IDEAPalettes'                    , :path => '../MINIWING-PODs/IDEAPalettes'
 
-  if ENV['IDEAFONT'] == 'YES'
-    pod 'IDEAFONT'                      , :path => '../MINIWING-PODs/IDEAFONT'
-  end # IDEAFONT
-
-  pod 'APPDATA'                         , :path => 'APPDATA'
+  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
 
 end
 
@@ -170,7 +172,7 @@ target 'NetworkArch' do
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'IDEAApplet'                      , :git => 'https://github.com/miniwing/Idea.Applets.git'
 #  pod 'IDEAAppletDebugger'              , :git => 'https://github.com/miniwing/Idea.Applets.git'
-  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
+#  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
   pod 'IDEAAppletDebugger'              , :path => '../MINIWING-PODs/Idea.Applets'            , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
 

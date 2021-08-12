@@ -172,7 +172,7 @@
    [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    [self.textField setCornerRadius:8 clipsToBounds:YES];
    
-   [self.textField setFont:[APPFont regularFontOfSize:16]];
+   [self.textField setFont:[APPFont regularFontOfSize:self.textField.font.pointSize]];
    [self.textField setTextColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       
       if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
@@ -186,14 +186,19 @@
          
       } /* End else */
    }];
+   
+   [self.textField setPlaceholderColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       
+      return [IDEAColor colorWithKey:[IDEAColor lightText]];
+   }];
+
    [self.textField setDelegate:self];
    [self.textField setPlaceholder:APP_STR(@"IP Address / Host Name")];
    
    [self addNotificationName:UITextFieldTextDidChangeNotification
                     selector:@selector(textFieldTextDidChange:)
                       object:self.textField];
-
+   
 #if __Debug__
    dispatch_async_on_main_queue(^{
       
@@ -260,20 +265,20 @@
    
    dispatch_once(&_firstResponder, ^{
       
-//      [self.textField becomeFirstResponder];
-//
-//#if __Debug__
-//      [CATransaction begin];
-//      [self.searchBar becomeFirstResponder];
-//      [CATransaction commit];
-//
-//      [CATransaction setCompletionBlock:^{
-//
-//         [self.searchBar setText:@"www.baidu.com"];
-//      }];
-//#else
-//      [self.searchBar becomeFirstResponder];
-//#endif /* __Debug__ */
+      //      [self.textField becomeFirstResponder];
+      //
+      //#if __Debug__
+      //      [CATransaction begin];
+      //      [self.searchBar becomeFirstResponder];
+      //      [CATransaction commit];
+      //
+      //      [CATransaction setCompletionBlock:^{
+      //
+      //         [self.searchBar setText:@"www.baidu.com"];
+      //      }];
+      //#else
+      //      [self.searchBar becomeFirstResponder];
+      //#endif /* __Debug__ */
    });
    
    __CATCH(nErr);
@@ -341,20 +346,20 @@
    NSNumber                      *stSection                                = nil;
    
    __TRY;
-      
+   
    stSection   = [self.sections objectAtIndex:aSection];
    
    if (PingSectionStatistics == stSection.integerValue) {
-
+      
       nNumberOfRows  = PingStatisticsNumber;
-
+      
    } /* End if () */
    else /* if (PingSectionStatistics == aSection) */ {
-
+      
       nNumberOfRows  = self.pingResults.count;
-
+      
    } /* End else */
-
+   
    __CATCH(nErr);
    
    return nNumberOfRows;
@@ -365,13 +370,13 @@
    int                            nErr                                     = EFAULT;
    
    NSNumber                      *stSection                                = nil;
-
+   
    NSString                      *szTitle                                  = nil;
    
    __TRY;
    
    stSection   = [self.sections objectAtIndex:aSection];
-
+   
    if (PingSectionStatistics == stSection.integerValue) {
       
       szTitle  = APP_STR(@"Statistics");
@@ -388,11 +393,13 @@
    int                            nErr                                     = EFAULT;
    
    NSNumber                      *stSection                                = nil;
-
+   
    PingCell                      *stPingCell                               = nil;
    
    PingStatisticsCell            *stPingStatisticsCell                     = nil;
+#if PING_STATISTICS_GRAPH
    PingGraphCell                 *stPingGraphCell                          = nil;
+#endif /* PING_STATISTICS_GRAPH */
    
    PingResult                    *stPingResult                             = nil;
    PingResultCell                *stPingResultCell                         = nil;
@@ -400,20 +407,20 @@
    __TRY;
    
    stSection   = [self.sections objectAtIndex:aIndexPath.section];
-
+   
    if (PingSectionStatistics == stSection.integerValue) {
       
-//      PingStatisticsMinmum    = 0,
-//      PingStatisticsAverage   = 1,
-//      PingStatisticsMaximum   = 2,
-//      PingStatisticsGraph     = 3
-//
-//      int sum = [[self.pingResults valueForKeyPath:@"@sum.intValue"] intValue];//求和
-//      int max = [[self.pingResults valueForKeyPath:@"@max.intValue"] intValue];//求最大值
-//      int min = [[self.pingResults valueForKeyPath:@"@min.intValue"] intValue];//求最小值
-//
-//      float avg = [[self.pingResults valueForKeyPath:@"@avg.floatValue"] floatValue];//求平均值
-
+      //      PingStatisticsMinmum    = 0,
+      //      PingStatisticsAverage   = 1,
+      //      PingStatisticsMaximum   = 2,
+      //      PingStatisticsGraph     = 3
+      //
+      //      int sum = [[self.pingResults valueForKeyPath:@"@sum.intValue"] intValue];//求和
+      //      int max = [[self.pingResults valueForKeyPath:@"@max.intValue"] intValue];//求最大值
+      //      int min = [[self.pingResults valueForKeyPath:@"@min.intValue"] intValue];//求最小值
+      //
+      //      float avg = [[self.pingResults valueForKeyPath:@"@avg.floatValue"] floatValue];//求平均值
+      
       if (PingStatisticsMinmum == aIndexPath.row) {
          
          stPingStatisticsCell = [aTableView dequeueReusableCellWithIdentifier:PingStatisticsCell.reuseIdentifier
@@ -435,7 +442,7 @@
          
          [stPingStatisticsCell setStatistics:PingStatisticsAverage
                                        value:[[self.pingResults valueForKeyPath:@"@avg.duration.doubleValue"] doubleValue]];
-
+         
          stPingCell  = stPingStatisticsCell;
          
       } /* End else if () */
@@ -446,12 +453,18 @@
          
          [stPingStatisticsCell setStatistics:PingStatisticsMinmum
                                        value:[[self.pingResults valueForKeyPath:@"@max.duration.doubleValue"] doubleValue]];
-
+         
          stPingCell  = stPingStatisticsCell;
          
          [stPingCell.separatorView setHidden:NO];
          
+#if PING_STATISTICS_GRAPH
+#else /* PING_STATISTICS_GRAPH */
+         [stPingCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
+#endif /* !PING_STATISTICS_GRAPH */
+         
       } /* End else if () */
+#if PING_STATISTICS_GRAPH
       else /* if (PingStatisticsGraph == aIndexPath.row) */ {
          
          stPingGraphCell      = [aTableView dequeueReusableCellWithIdentifier:PingGraphCell.reuseIdentifier
@@ -463,6 +476,8 @@
          [stPingCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
          
       } /* End else if () */
+      
+#endif /* PING_STATISTICS_GRAPH */
       
    } /* End if () */
    else /* if (PingSectionPing == aIndexPath.section) */ {
@@ -507,7 +522,7 @@
          } /* End else */
          
       } /* End else */
-            
+      
    } /* End else */
    
    __CATCH(nErr);
@@ -701,38 +716,38 @@
    
    __TRY;
    
-//   [self resignFirstResponder];
-//
-//   LogDebug((@"-[PingController onStart:] : aSender : %@", aSender));
-//
-//   // 按钮状态变更。
-//   if (nil == self.pingClient) {
-//
-//      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
-//      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemRed])];
-//
-//      self.pingClient   = [IDEAPingClient pingWithHostName:self.textField.text
-//                                                    result:^(NSTimeInterval aTime, NSError * _Nonnull aError) {
-//
-//         LogDebug((@"-[PingController onStart:] : ping : Error : %@", aError));
-//         LogDebug((@"-[PingController onStart:] : ping : Time  : %ld", aTime));
-//      }];
-//
-//   } /* End if () */
-//   else {
-//
-//      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
-//      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
-//
-//      if (nil != self.pingClient) {
-//
-//         [self.pingClient stopPing];
-//         __RELEASE(_pingClient);
-//
-//      } /* End if () */
-//
-//   } /* End else */
-
+   //   [self resignFirstResponder];
+   //
+   //   LogDebug((@"-[PingController onStart:] : aSender : %@", aSender));
+   //
+   //   // 按钮状态变更。
+   //   if (nil == self.pingClient) {
+   //
+   //      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
+   //      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemRed])];
+   //
+   //      self.pingClient   = [IDEAPingClient pingWithHostName:self.textField.text
+   //                                                    result:^(NSTimeInterval aTime, NSError * _Nonnull aError) {
+   //
+   //         LogDebug((@"-[PingController onStart:] : ping : Error : %@", aError));
+   //         LogDebug((@"-[PingController onStart:] : ping : Time  : %ld", aTime));
+   //      }];
+   //
+   //   } /* End if () */
+   //   else {
+   //
+   //      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
+   //      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
+   //
+   //      if (nil != self.pingClient) {
+   //
+   //         [self.pingClient stopPing];
+   //         __RELEASE(_pingClient);
+   //
+   //      } /* End if () */
+   //
+   //   } /* End else */
+   
    [self postSignal:PingController.startPingSignal
             onQueue:dispatch_get_main_queue()];
    

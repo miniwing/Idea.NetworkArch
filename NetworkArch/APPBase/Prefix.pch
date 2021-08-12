@@ -65,21 +65,21 @@
 #ifdef __OBJC__
 
 #  if __has_include(<FoundationExtension/FoundationExtension.h>)
-#     define FOUNDATION_EXTENSION                                          (1)
 #     import <FoundationExtension/FoundationExtension.h>
-#  elif __has_include("FoundationExtension/FoundationExtension.h")
 #     define FOUNDATION_EXTENSION                                          (1)
+#  elif __has_include("FoundationExtension/FoundationExtension.h")
 #     import "FoundationExtension/FoundationExtension.h"
+#     define FOUNDATION_EXTENSION                                          (1)
 #  else
 #     define FOUNDATION_EXTENSION                                          (0)
 #  endif
 
 #  if __has_include(<UIKitExtension/UIKitExtension.h>)
-#     define UIKIT_EXTENSION                                               (1)
 #     import <UIKitExtension/UIKitExtension.h>
-#  elif __has_include("UIKitExtension/UIKitExtension.h")
 #     define UIKIT_EXTENSION                                               (1)
+#  elif __has_include("UIKitExtension/UIKitExtension.h")
 #     import "UIKitExtension/UIKitExtension.h"
+#     define UIKIT_EXTENSION                                               (1)
 #  else
 #     define UIKIT_EXTENSION                                               (0)
 #  endif
@@ -93,27 +93,28 @@
 #  endif
 
 #  if __has_include(<YYKit/YYKit.h>)
-#     define YY_KIT                                                        (1)
 #     import <YYKit/YYKit.h>
-#  elif __has_include("YYKit/YYKit.h")
 #     define YY_KIT                                                        (1)
+#  elif __has_include("YYKit/YYKit.h")
 #     import "YYKit/YYKit.h"
+#     define YY_KIT                                                        (1)
 #  else
 #     define YY_KIT                                                        (0)
 #  endif
 
 #  if __has_include(<IDEAFONT/IDEAFONT.h>)
-#     define IDEA_FONT                                                     (1)
 #     import <IDEAFONT/IDEAFONT.h>
-#  elif __has_include("IDEAFONT/IDEAFONT.h")
 #     define IDEA_FONT                                                     (1)
+#  elif __has_include("IDEAFONT/IDEAFONT.h")
 #     import "IDEAFONT/IDEAFONT.h"
+#     define IDEA_FONT                                                     (1)
 #  else
 #     define IDEA_FONT                                                     (0)
 #  endif
 
 #endif /* __OBJC__ */
 
+/****************************************************************************/
 #if __has_include(<IDEAApplet/IDEAApplet.h>)
 #  import <IDEAApplet/IDEAApplet.h>
 #  import <IDEAApplet/IDEAAppletCore.h>
@@ -121,6 +122,7 @@
 #  import <IDEAApplet/IDEAAppletEvent.h>
 #  import <IDEAApplet/IDEAAppletService.h>
 #endif // __has_include(<IDEAApplet/IDEAApplet.h>)
+/****************************************************************************/
 
 #import <IDEAKit/IDEALog.h>
 #import <IDEAKit/IDEADebug.h>

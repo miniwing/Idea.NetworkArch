@@ -720,6 +720,9 @@
                                                             <state key="normal" title="OK">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="onWarning:" destination="0Ab-lB-vxK" eventType="touchUpInside" id="0Ns-rE-yjl"/>
+                                                            </connections>
                                                         </button>
                                                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMU-Bi-aKZ" userLabel="分割线">
                                                             <rect key="frame" x="4" y="47.666666666666664" width="335" height="0.3333333333333357"/>
@@ -769,6 +772,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="warningButton" destination="FtG-Ue-3XO" id="j5m-dW-o04"/>
                         <outletCollection property="detailCells" destination="i7S-Qs-ek3" id="xVs-8F-Oz4"/>
                         <outletCollection property="detailCells" destination="MuQ-xt-V8S" id="ACr-yf-NbN"/>
                         <outletCollection property="detailCells" destination="EzM-4d-XAT" id="r28-QP-Wsx"/>

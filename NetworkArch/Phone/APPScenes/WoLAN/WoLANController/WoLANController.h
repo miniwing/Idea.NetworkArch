@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * leftBarButtonItem;
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * rightBarButtonItem;
 
+@property (nonatomic, weak)   IBOutlet       UIView                              * contentView;
+
 @end
 
 @interface WoLANController ()

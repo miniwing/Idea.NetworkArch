@@ -36,6 +36,13 @@ IDEA_ENUM(NSInteger, WifiDetail) {
    WifiDetailNumber
 };
 
+IDEA_ENUM(NSInteger, WifiDataUsage) {
+   
+   WifiDataUsageReceived   = 0,
+   WifiDataUsageSent       = 1,
+   WifiDataUsageNumber
+};
+
 @interface WiFiMoreContentController : IDEATableViewController
 
 @property (nonatomic, strong) IBOutletCollection(WifiMoreCell)    NSArray<WifiMoreCell *>    * detailCells;
@@ -47,6 +54,7 @@ IDEA_ENUM(NSInteger, WifiDetail) {
 
 @property (nonatomic, strong) IBOutletCollection(WifiMoreCell)    NSArray<WifiMoreCell *>    * warningCells;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * warningCellContainerViews;
+@property (nonatomic, weak)   IBOutlet       UIButton                                        * warningButton;
 
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * separatorViews;
 

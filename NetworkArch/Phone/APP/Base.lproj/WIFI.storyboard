@@ -838,6 +838,9 @@
                                                             <state key="normal" title="OK">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="onWarning:" destination="jCm-WC-W5e" eventType="touchUpInside" id="vvl-pu-gZk"/>
+                                                            </connections>
                                                         </button>
                                                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXn-yh-zzX" userLabel="分割线">
                                                             <rect key="frame" x="4" y="47.666666666666664" width="335" height="0.3333333333333357"/>
@@ -888,6 +891,7 @@
                     </tableView>
                     <connections>
                         <outlet property="interfacesImageView" destination="x7c-pg-ep4" id="fVH-8D-rin"/>
+                        <outlet property="warningButton" destination="IOI-H4-Vzz" id="9wt-3D-N6e"/>
                         <outletCollection property="detailCells" destination="6Ug-TY-nvF" id="Gf7-q3-oUH"/>
                         <outletCollection property="detailCells" destination="ICd-Rf-F2f" id="uLq-tA-u5g"/>
                         <outletCollection property="detailCells" destination="r9h-8l-adn" id="SJU-zw-sav"/>

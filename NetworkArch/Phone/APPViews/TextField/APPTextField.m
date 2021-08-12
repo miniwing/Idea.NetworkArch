@@ -1,5 +1,5 @@
 //
-//  PingTextField.m
+//  APPTextField.m
 //  NetworkArch
 //
 //  Created by Harry on 2021/7/29.
@@ -9,13 +9,13 @@
 //  TEL : +(852)53054612
 //
 
-#import "PingTextField.h"
+#import "APPTextField.h"
 
-@interface PingTextField ()
+@interface APPTextField ()
 
 @end
 
-@implementation PingTextField
+@implementation APPTextField
 
 - (CGRect)textRectForBounds:(CGRect)aBounds {
    

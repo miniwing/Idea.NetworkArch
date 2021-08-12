@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2H-QB-oR2" userLabel="搜索框">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="IP Address / Host Name" textAlignment="natural" minimumFontSize="18" background="CLEAR-IMAGE" translatesAutoresizingMaskIntoConstraints="NO" id="006-1q-pgr" customClass="PingTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="IP Address / Host Name" textAlignment="natural" minimumFontSize="18" background="CLEAR-IMAGE" translatesAutoresizingMaskIntoConstraints="NO" id="006-1q-pgr" customClass="APPTextField">
                                         <rect key="frame" x="16" y="8" width="343" height="42"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <constraints>
@@ -46,7 +46,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PingStatisticsCell" id="nIx-iA-ng0" customClass="PingStatisticsCell">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="49" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nIx-iA-ng0" id="Ynt-X6-RuL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -109,7 +109,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PingGraphCell" id="044-BF-xe8" customClass="PingGraphCell">
-                                        <rect key="frame" x="0.0" y="99.333332061767578" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="93" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="044-BF-xe8" id="mmI-VW-BuL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -179,7 +179,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PingResultCell" id="4cZ-gc-Mju" customClass="PingResultCell">
-                                        <rect key="frame" x="0.0" y="143.33333206176758" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="137" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4cZ-gc-Mju" id="dQT-aP-OHO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -347,8 +347,22 @@
                     <view key="view" contentMode="scaleToFill" id="2h4-eB-6tw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoF-UJ-x3U">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <connections>
+                                    <segue destination="fZa-bN-cET" kind="embed" id="fAn-qf-2mb"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vJP-za-Pv3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AoF-UJ-x3U" firstAttribute="leading" secondItem="2h4-eB-6tw" secondAttribute="leading" id="4iR-DV-oks"/>
+                            <constraint firstAttribute="bottom" secondItem="AoF-UJ-x3U" secondAttribute="bottom" id="Uju-pO-E4M"/>
+                            <constraint firstAttribute="trailing" secondItem="AoF-UJ-x3U" secondAttribute="trailing" id="Wp5-tc-1R1"/>
+                            <constraint firstItem="AoF-UJ-x3U" firstAttribute="top" secondItem="2h4-eB-6tw" secondAttribute="top" identifier="contentView.top" id="xyo-fe-q5h"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Chc-Ve-UTV">
@@ -373,6 +387,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tns-DX-s0y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1082" y="889"/>
+        </scene>
+        <!--WoLAN-CONTENT-->
+        <scene sceneID="75X-2v-NsW">
+            <objects>
+                <tableViewController storyboardIdentifier="WoLANContentController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fZa-bN-cET" userLabel="WoLAN-CONTENT" customClass="WoLANContentController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="132" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ike-P2-SRM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WoLANCell" id="RWY-OC-ObR" customClass="WoLANCell">
+                                <rect key="frame" x="0.0" y="49" width="375" height="132"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RWY-OC-ObR" id="LAq-ja-jmp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYv-rE-WX5" userLabel="容器">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="132"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="MAC Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sjT-jx-dxb" userLabel="MAC">
+                                                    <rect key="frame" x="8" y="4" width="327" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFc-TI-EH4" userLabel="分割-1">
+                                                    <rect key="frame" x="8" y="45" width="327" height="0.6666666666666643"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="BdV-34-aXp"/>
+                                                    </constraints>
+                                                </view>
+                                                <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Broadcast Address (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="atj-Qe-9Gd" userLabel="BROADCAST">
+                                                    <rect key="frame" x="8" y="45.666666666666657" width="327" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69o-Wv-33R" userLabel="分割-2">
+                                                    <rect key="frame" x="8" y="86.666666666666671" width="327" height="0.3333333333333286"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="zWA-1d-Szr"/>
+                                                    </constraints>
+                                                </view>
+                                                <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Port (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bs-KT-EYW" userLabel="PORT">
+                                                    <rect key="frame" x="8" y="87" width="327" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemRedColor"/>
+                                            <constraints>
+                                                <constraint firstItem="aFc-TI-EH4" firstAttribute="top" secondItem="sjT-jx-dxb" secondAttribute="bottom" id="327-ry-VTU"/>
+                                                <constraint firstItem="sjT-jx-dxb" firstAttribute="top" secondItem="fYv-rE-WX5" secondAttribute="top" constant="4" id="Oje-PW-5So"/>
+                                                <constraint firstItem="atj-Qe-9Gd" firstAttribute="top" secondItem="aFc-TI-EH4" secondAttribute="bottom" id="QnA-UF-ZZL"/>
+                                                <constraint firstItem="atj-Qe-9Gd" firstAttribute="leading" secondItem="fYv-rE-WX5" secondAttribute="leading" constant="8" id="UTC-gZ-qYS"/>
+                                                <constraint firstAttribute="bottom" secondItem="5bs-KT-EYW" secondAttribute="bottom" constant="4" id="UfT-75-3YI"/>
+                                                <constraint firstAttribute="trailing" secondItem="sjT-jx-dxb" secondAttribute="trailing" constant="8" id="W2C-Y2-Sbh"/>
+                                                <constraint firstAttribute="trailing" secondItem="aFc-TI-EH4" secondAttribute="trailing" constant="8" id="XPB-ZS-uiL"/>
+                                                <constraint firstItem="5bs-KT-EYW" firstAttribute="leading" secondItem="fYv-rE-WX5" secondAttribute="leading" constant="8" id="XgW-g4-jbj"/>
+                                                <constraint firstAttribute="trailing" secondItem="atj-Qe-9Gd" secondAttribute="trailing" constant="8" id="YFI-to-vLt"/>
+                                                <constraint firstItem="atj-Qe-9Gd" firstAttribute="height" secondItem="sjT-jx-dxb" secondAttribute="height" id="a6K-pN-j37"/>
+                                                <constraint firstItem="5bs-KT-EYW" firstAttribute="height" secondItem="sjT-jx-dxb" secondAttribute="height" id="ajZ-YE-WmG"/>
+                                                <constraint firstItem="69o-Wv-33R" firstAttribute="leading" secondItem="fYv-rE-WX5" secondAttribute="leading" constant="8" id="eqO-GM-lbc"/>
+                                                <constraint firstItem="5bs-KT-EYW" firstAttribute="top" secondItem="69o-Wv-33R" secondAttribute="bottom" id="gjF-tu-1dI"/>
+                                                <constraint firstItem="sjT-jx-dxb" firstAttribute="leading" secondItem="fYv-rE-WX5" secondAttribute="leading" constant="8" id="i04-mh-TbM"/>
+                                                <constraint firstItem="69o-Wv-33R" firstAttribute="top" secondItem="atj-Qe-9Gd" secondAttribute="bottom" id="p0h-MT-UDh"/>
+                                                <constraint firstAttribute="trailing" secondItem="69o-Wv-33R" secondAttribute="trailing" constant="8" id="qSl-Io-3JS"/>
+                                                <constraint firstAttribute="trailing" secondItem="5bs-KT-EYW" secondAttribute="trailing" constant="8" id="rM6-IR-RKU"/>
+                                                <constraint firstItem="aFc-TI-EH4" firstAttribute="leading" secondItem="fYv-rE-WX5" secondAttribute="leading" constant="8" id="x5t-Pm-1Oi"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="fYv-rE-WX5" secondAttribute="trailing" constant="16" id="Bo9-K2-nZi"/>
+                                        <constraint firstItem="fYv-rE-WX5" firstAttribute="leading" secondItem="LAq-ja-jmp" secondAttribute="leading" constant="16" id="bdJ-wB-yKF"/>
+                                        <constraint firstAttribute="bottom" secondItem="fYv-rE-WX5" secondAttribute="bottom" id="ib2-JD-5iw"/>
+                                        <constraint firstItem="fYv-rE-WX5" firstAttribute="top" secondItem="LAq-ja-jmp" secondAttribute="top" id="oQk-Mh-4ZI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="broadcastTextField" destination="atj-Qe-9Gd" id="cME-JQ-4i9"/>
+                                    <outlet property="containerView" destination="fYv-rE-WX5" id="gS8-Lu-nFz"/>
+                                    <outlet property="macTextField" destination="sjT-jx-dxb" id="fDi-f1-Fl0"/>
+                                    <outlet property="portTextField" destination="5bs-KT-EYW" id="MdK-lX-VKb"/>
+                                    <outletCollection property="separatorViews" destination="aFc-TI-EH4" id="cdz-JH-E9e"/>
+                                    <outletCollection property="separatorViews" destination="69o-Wv-33R" id="jqY-TZ-cnR"/>
+                                    <outletCollection property="textFields" destination="sjT-jx-dxb" id="IiS-qE-EsT"/>
+                                    <outletCollection property="textFields" destination="atj-Qe-9Gd" id="gje-g4-gip"/>
+                                    <outletCollection property="textFields" destination="5bs-KT-EYW" id="ICb-y0-6L7"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="fZa-bN-cET" id="ZpZ-3f-rf2"/>
+                            <outlet property="delegate" destination="fZa-bN-cET" id="Tgw-nA-Qvh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUb-7n-7Jj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2020" y="888.91625615763553"/>
         </scene>
         <!--WoLAN-ROOT-->
         <scene sceneID="YDU-CQ-4C5">

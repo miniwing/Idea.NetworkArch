@@ -35,6 +35,13 @@ IDEA_ENUM(NSInteger, CellularDetail) {
    CellularDetailNumber
 };
 
+IDEA_ENUM(NSInteger, CellularDataUsage) {
+   
+   CellularDataUsageReceived  = 0,
+   CellularDataUsageSent      = 1,
+   CellularDataUsageNumber
+};
+
 @interface CellularMoreContentController : IDEATableViewController
 
 @property (nonatomic, strong) IBOutletCollection(CellularMoreCell)   NSArray<CellularMoreCell *>   * detailCells;
@@ -46,6 +53,7 @@ IDEA_ENUM(NSInteger, CellularDetail) {
 
 @property (nonatomic, strong) IBOutletCollection(CellularMoreCell)   NSArray<CellularMoreCell *>   * warningCells;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * warningCellContainerViews;
+@property (nonatomic, weak)   IBOutlet       UIButton                                        * warningButton;
 
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * separatorViews;
 
