@@ -69,40 +69,31 @@
 #ifdef __OBJC__
 
 #  if __has_include(<FoundationExtension/FoundationExtension.h>)
-#     define FOUNDATION_EXTENSION                                          (1)
 #     import <FoundationExtension/FoundationExtension.h>
+#     define FOUNDATION_EXTENSION                                          (1)
 #  elif __has_include("FoundationExtension/FoundationExtension.h")
-#     define FOUNDATION_EXTENSION                                          (1)
 #     import "FoundationExtension/FoundationExtension.h"
-#  elif __has_include("FoundationExtension.h")
 #     define FOUNDATION_EXTENSION                                          (1)
-#     import "FoundationExtension.h"
 #  else
 #     define FOUNDATION_EXTENSION                                          (0)
 #  endif
 
 #  if __has_include(<UIKitExtension/UIKitExtension.h>)
-#     define UIKIT_EXTENSION                                               (1)
 #     import <UIKitExtension/UIKitExtension.h>
+#     define UIKIT_EXTENSION                                               (1)
 #  elif __has_include("UIKitExtension/UIKitExtension.h")
-#     define UIKIT_EXTENSION                                               (1)
 #     import "UIKitExtension/UIKitExtension.h"
-#  elif __has_include("UIKitExtension.h")
 #     define UIKIT_EXTENSION                                               (1)
-#     import "UIKitExtension.h"
 #  else
 #     define UIKIT_EXTENSION                                               (0)
 #  endif
 
 #  if __has_include(<YYKit/YYKit.h>)
-#     define YY_KIT                                                        (1)
 #     import <YYKit/YYKit.h>
+#     define YY_KIT                                                        (1)
 #  elif __has_include("YYKit/YYKit.h")
-#     define YY_KIT                                                        (1)
 #     import "YYKit/YYKit.h"
-#  elif __has_include("YYKit.h")
 #     define YY_KIT                                                        (1)
-#     import "YYKit.h"
 #  else
 #     define YY_KIT                                                        (0)
 #  endif
@@ -113,22 +104,16 @@
 #  elif __has_include("IDEANightVersion/DKNightVersion.h")
 #     import "IDEANightVersion/DKNightVersion.h"
 #     define DK_NIGHT_VERSION                                              (1)
-#  elif __has_include("DKNightVersion.h")
-#     import "DKNightVersion.h"
-#     define DK_NIGHT_VERSION                                              (1)
 #  else
 #     define DK_NIGHT_VERSION                                              (0)
 #  endif
 
 #  if __has_include(<IDEAFONT/IDEAFONT.h>)
-#     define IDEA_FONT                                                     (1)
 #     import <IDEAFONT/IDEAFONT.h>
+#     define IDEA_FONT                                                     (1)
 #  elif __has_include("IDEAFONT/IDEAFONT.h")
-#     define IDEA_FONT                                                     (1)
 #     import "IDEAFONT/IDEAFONT.h"
-#  elif __has_include("IDEAFONT.h")
 #     define IDEA_FONT                                                     (1)
-#     import "IDEAFONT.h"
 #  else
 #     define IDEA_FONT                                                     (0)
 #  endif
@@ -147,7 +132,7 @@
 
 /****************************************************************************/
 
-#import <MMKVAppExtension/MMKV.h>
+//#import <MMKVAppExtension/MMKV.h>
 
 /****************************************************************************/
 

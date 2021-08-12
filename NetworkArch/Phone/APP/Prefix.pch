@@ -96,9 +96,6 @@
 #  elif __has_include("FoundationExtension/FoundationExtension.h")
 #     define FOUNDATION_EXTENSION                                          (1)
 #     import "FoundationExtension/FoundationExtension.h"
-#  elif __has_include("FoundationExtension.h")
-#     define FOUNDATION_EXTENSION                                          (1)
-#     import "FoundationExtension.h"
 #  else
 #     define FOUNDATION_EXTENSION                                          (0)
 #  endif
@@ -109,9 +106,6 @@
 #  elif __has_include("UIKitExtension/UIKitExtension.h")
 #     define UIKIT_EXTENSION                                               (1)
 #     import "UIKitExtension/UIKitExtension.h"
-#  elif __has_include("UIKitExtension.h")
-#     define UIKIT_EXTENSION                                               (1)
-#     import "UIKitExtension.h"
 #  else
 #     define UIKIT_EXTENSION                                               (0)
 #  endif
@@ -125,10 +119,6 @@ typedef FBLPromise Promise;
 #     import "FBLPromises/FBLPromises.h"
 #     define PROMISES                                                      (1)
 typedef FBLPromise Promise;
-#  elif __has_include("FBLPromises.h")
-#     import "FBLPromises.h"
-#     define PROMISES                                                      (1)
-typedef FBLPromise Promise;
 #  else
 #     define PROMISES                                                      (0)
 #  endif
@@ -140,10 +130,6 @@ typedef FBLPromise Promise;
 #  elif __has_include("AFNetworking/AFNetworking.h")
 #     import "AFNetworking/AFNetworking.h"
 #     import "AFNetworking/AFNetworkActivityIndicatorManager.h"
-#     define AF_NETWORKING                                                 (1)
-#  elif __has_include("AFNetworking.h")
-#     import "AFNetworking.h"
-#     import "AFNetworkActivityIndicatorManager.h"
 #     define AF_NETWORKING                                                 (1)
 #  else
 #     define AF_NETWORKING                                                 (0)
@@ -170,9 +156,6 @@ typedef FBLPromise Promise;
 #  elif __has_include("RTRootNavigationController/RTRootNavigationController.h")
 #     import "RTRootNavigationController/RTRootNavigationController.h"
 #     define RT_ROOT_NAVIGATIONCONTROLLER                                  (1)
-#  elif __has_include("RTRootNavigationController.h")
-#     import "RTRootNavigationController.h"
-#     define RT_ROOT_NAVIGATIONCONTROLLER                                  (1)
 #  else
 #     define rt_navigationController                                       navigationController
 #     define RT_ROOT_NAVIGATIONCONTROLLER                                  (0)
@@ -183,9 +166,6 @@ typedef FBLPromise Promise;
 #     define FULLSCREEN_POP_GESTURE                                        (1)
 #  elif __has_include("IDEAUIKit/UINavigationController+FullscreenPopGesture.h")
 #     import "IDEAUIKit/UINavigationController+FullscreenPopGesture.h"
-#     define FULLSCREEN_POP_GESTURE                                        (1)
-#  elif __has_include("UINavigationController+FullscreenPopGesture.h")
-#     import "UINavigationController+FullscreenPopGesture.h"
 #     define FULLSCREEN_POP_GESTURE                                        (1)
 #  else
 #     define FULLSCREEN_POP_GESTURE                                        (0)
@@ -253,9 +233,6 @@ typedef FBLPromise Promise;
 #  elif __has_include("IDEANibBridge/IDEANibBridge.h")
 #     import "IDEANibBridge/IDEANibBridge.h"
 #     define IDEA_NIB_BRIDGE                                               (1)
-#  elif __has_include("IDEANibBridge.h")
-#     import "IDEANibBridge.h"
-#     define IDEA_NIB_BRIDGE                                               (1)
 #  else
 #     define IDEA_NIB_BRIDGE                                               (0)
 #  endif
@@ -265,9 +242,6 @@ typedef FBLPromise Promise;
 #     define APP_RATER                                                     (1)
 #  elif __has_include("Appirater/Appirater.h")
 #     import "Appirater/Appirater.h"
-#     define APP_RATER                                                     (1)
-#  elif __has_include("Appirater.h")
-#     import "Appirater.h"
 #     define APP_RATER                                                     (1)
 #  else
 #     define APP_RATER                                                     (0)
@@ -279,9 +253,6 @@ typedef FBLPromise Promise;
 #  elif __has_include("Masonry/Masonry.h")
 #     import "Masonry/Masonry.h"
 #     define MASONRY                                                       (1)
-#  elif __has_include("Masonry.h")
-#     import "Masonry.h"
-#     define MASONRY                                                       (1)
 #  else
 #     define MASONRY                                                       (0)
 #  endif
@@ -291,9 +262,6 @@ typedef FBLPromise Promise;
 #     define IDEA_PAN_MODAL                                                (1)
 #  elif __has_include("IDEAPanModal/IDEAPanModal.h")
 #     import "IDEAPanModal/IDEAPanModal.h"
-#     define IDEA_PAN_MODAL                                                (1)
-#  elif __has_include("IDEAPanModal.h")
-#     import "IDEAPanModal.h"
 #     define IDEA_PAN_MODAL                                                (1)
 #  else
 #     define IDEA_PAN_MODAL                                                (0)
@@ -305,9 +273,6 @@ typedef FBLPromise Promise;
 #  elif __has_include("IDEANavigationBar/WRNavigationBar.h")
 #     import "IDEANavigationBar/WRNavigationBar.h"
 #     define IDEA_NAVIGATION_BAR                                           (1)
-#  elif __has_include("WRNavigationBar.h")
-#     import "WRNavigationBar.h"
-#     define IDEA_NAVIGATION_BAR                                           (1)
 #  else
 #     define IDEA_NAVIGATION_BAR                                           (0)
 #  endif
@@ -317,9 +282,6 @@ typedef FBLPromise Promise;
 #     define IDEA_ACTIVITY_INDICATOR                                       (1)
 #  elif __has_include("IDEAActivityIndicatorView/IDEAActivityIndicatorView.h")
 #     import "IDEAActivityIndicatorView/IDEAActivityIndicatorView.h"
-#     define IDEA_ACTIVITY_INDICATOR                                       (1)
-#  elif __has_include("IDEAActivityIndicatorView.h")
-#     import "IDEAActivityIndicatorView.h"
 #     define IDEA_ACTIVITY_INDICATOR                                       (1)
 #  else
 #     define IDEA_ACTIVITY_INDICATOR                                       (0)
@@ -331,9 +293,6 @@ typedef FBLPromise Promise;
 #  elif __has_include("IDEAPalettes/IDEAPalettes.h")
 #     import "IDEAPalettes/IDEAPalettes.h"
 #     define IDEA_PALETTES                                                 (1)
-#  elif __has_include("IDEAPalettes.h")
-#     import "IDEAPalettes.h"
-#     define IDEA_PALETTES                                                 (1)
 #  else
 #     define IDEA_PALETTES                                                 (0)
 #  endif
@@ -343,9 +302,6 @@ typedef FBLPromise Promise;
 #     define DK_NIGHT_VERSION                                              (1)
 #  elif __has_include("IDEANightVersion/DKNightVersion.h")
 #     import "IDEANightVersion/DKNightVersion.h"
-#     define DK_NIGHT_VERSION                                              (1)
-#  elif __has_include("DKNightVersion.h")
-#     import "DKNightVersion.h"
 #     define DK_NIGHT_VERSION                                              (1)
 #  else
 #     define DK_NIGHT_VERSION                                              (0)
@@ -357,9 +313,6 @@ typedef FBLPromise Promise;
 #  elif __has_include("IDEARefresh/MJRefresh.h")
 #     import "IDEARefresh/MJRefresh.h"
 #     define IDEA_REFRESH                                                  (1)
-#  elif __has_include("MJRefresh.h")
-#     import "MJRefresh.h"
-#     define IDEA_REFRESH                                                  (1)
 #  else
 #     define IDEA_REFRESH                                                  (0)
 #  endif
@@ -369,9 +322,6 @@ typedef FBLPromise Promise;
 #     define IDEA_MODAL_TRANSITION                                         (1)
 #  elif __has_include("IDEAModalTransition/ModalTransitionAnimator.h")
 #     import "IDEAModalTransition/ModalTransitionAnimator.h"
-#     define IDEA_MODAL_TRANSITION                                         (1)
-#  elif __has_include("ModalTransitionAnimator.h")
-#     import "ModalTransitionAnimator.h"
 #     define IDEA_MODAL_TRANSITION                                         (1)
 #  else
 #     define IDEA_MODAL_TRANSITION                                         (0)
@@ -385,10 +335,6 @@ typedef FBLPromise Promise;
 #     import "IDEATabBarControllerTransition/IDEATabBarControllerTransition.h"
 #     import "IDEATabBarControllerTransition/IDEATabBarControllerTransitionAnimation.h"
 #     define IDEA_TABBARCONTROLLER_TRANSITION                              (1)
-#  elif __has_include("IDEATabBarControllerTransition.h")
-#     import "IDEATabBarControllerTransition.h"
-#     import "IDEATabBarControllerTransitionAnimation.h"
-#     define IDEA_TABBARCONTROLLER_TRANSITION                              (1)
 #  else
 #     define IDEA_TABBARCONTROLLER_TRANSITION                              (0)
 #  endif
@@ -398,9 +344,6 @@ typedef FBLPromise Promise;
 #     define IDEA_PHOTO_TOOLS                                              (1)
 #  elif __has_include("IDEAPhoto/IDEAPhotoTools.h")
 #     import "IDEAPhoto/IDEAPhotoTools.h"
-#     define IDEA_PHOTO_TOOLS                                              (1)
-#  elif __has_include("IDEAPhotoTools.h")
-#     import "IDEAPhotoTools.h"
 #     define IDEA_PHOTO_TOOLS                                              (1)
 #  else
 #     define IDEA_PHOTO_TOOLS                                              (0)
@@ -412,9 +355,6 @@ typedef FBLPromise Promise;
 #  elif __has_include("IDEAStarRateView/IDEAStarRateView.h")
 #     import "IDEAStarRateView/IDEAStarRateView.h"
 #     define IDEA_STAR_RATE                                                (1)
-#  elif __has_include("IDEAStarRateView.h")
-#     import "IDEAStarRateView.h"
-#     define IDEA_STAR_RATE                                                (1)
 #  else
 #     define IDEA_STAR_RATE                                                (0)
 #  endif
@@ -424,9 +364,6 @@ typedef FBLPromise Promise;
 #     define IDEA_SEARCH_CONTROLLER                                        (1)
 #  elif __has_include("IDEASearchController/IDEASearchController.h")
 #     import "IDEASearchController/IDEASearchController.h"
-#     define IDEA_SEARCH_CONTROLLER                                        (1)
-#  elif __has_include("IDEASearchController.h")
-#     import "IDEASearchController.h"
 #     define IDEA_SEARCH_CONTROLLER                                        (1)
 #  else
 #     define IDEA_SEARCH_CONTROLLER                                        (0)
@@ -438,9 +375,6 @@ typedef FBLPromise Promise;
 #  elif __has_include("IDEARoute/IDEARoute.h")
 #     import "IDEARoute/IDEARoute.h"
 #     define IDEA_ROUTE                                                    (1)
-#  elif __has_include("IDEARoute.h")
-#     import "IDEARoute.h"
-#     define IDEA_ROUTE                                                    (1)
 #  else
 #     define IDEA_ROUTE                                                    (0)
 #  endif
@@ -450,9 +384,6 @@ typedef FBLPromise Promise;
 #     define IDEA_FONT                                                     (1)
 #  elif __has_include("IDEAFONT/IDEAFONT.h")
 #     import "IDEAFONT/IDEAFONT.h"
-#     define IDEA_FONT                                                     (1)
-#  elif __has_include("IDEAFONT.h")
-#     import "IDEAFONT.h"
 #     define IDEA_FONT                                                     (1)
 #  else
 #     define IDEA_FONT                                                     (0)
@@ -470,7 +401,7 @@ typedef FBLPromise Promise;
 
 /****************************************************************************/
 
-#import <MMKV/MMKV.h>
+//#import <MMKV/MMKV.h>
 
 /****************************************************************************/
 #if __has_include(<IDEAApplet/IDEAApplet.h>)

@@ -21,6 +21,8 @@
 
    // Custom dealloc
 
+   [self removeSignalResponder:self.contentController];
+
    __SUPER_DEALLOC;
 
    return;

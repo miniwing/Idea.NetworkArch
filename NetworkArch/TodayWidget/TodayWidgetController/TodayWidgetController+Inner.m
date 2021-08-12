@@ -97,8 +97,9 @@
    __TRY;
       
    [self sendSignal:TodayWidgetContentController.loadWifiInfoSignal];
-//   [self postSignal:HomeContentController.loadCellularInfoSignal onQueue:dispatch_get_main_queue()];
-
+   
+//   [self sendSignal:TodayWidgetContentController.loadCellularInfoSignal];
+   
    __CATCH(nErr);
    
    return;

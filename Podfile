@@ -10,6 +10,8 @@ install! 'cocoapods', :deterministic_uuids                => false
 
 # applet_webcore=YES pod update
 
+ENV['OLLVM']                      = 'NO'
+
 ENV['IDEAFONT_HY']                = 'YES'
 ENV['IDEAFONT_MSYH']              = 'NO'
 ENV['IDEAFONT_ZEKTON']            = 'YES'
@@ -93,7 +95,7 @@ target 'NetworkArch' do
 #  platform :ios, '10.0'
 #  plugin 'cocoapods-hmap-prebuilt'
   
-  pod 'MMKV'
+#  pod 'MMKV'
 
 #  pod 'PromisesObjC'
   
@@ -208,7 +210,7 @@ target 'TodayWidget' do
   
   pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
 
-  pod 'MMKVAppExtension'
+#  pod 'MMKVAppExtension'
 
 #  pod 'MaterialComponents'
 #  pod 'MaterialComponents/Palettes'
@@ -301,7 +303,13 @@ post_install do |installer|
 
       config.build_settings['LD_RUNPATH_SEARCH_PATHS']        = ['$(FRAMEWORK_SEARCH_PATHS)']
       config.build_settings['WARNING_CFLAGS']                 = ['-Wdeprecated-declarations']
-
+      
+      if ENV['OLLVM'] == 'YES'
+#      config.build_settings['HEADER_SEARCH_PATHS']            = ["$(SRCROOT)/../ollvm-libs"];
+      config.build_settings['LIBRARY_SEARCH_PATHS']           = ["$(SRCROOT)/../ollvm-libs"];
+      config.build_settings['OTHER_LDFLAGS']                  = ["-l\"clang_rt.ios\""];
+      end # OLLVM
+      
 #      config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'NO'
       if config.name == 'Debug'
         config.build_settings['DEBUG_INFORMATION_FORMAT']     = 'dwarf'
