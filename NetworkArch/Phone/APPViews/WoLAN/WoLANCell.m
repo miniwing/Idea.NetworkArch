@@ -10,10 +10,7 @@
 //
 
 #import "WoLANCell.h"
-
-@interface WoLANCell ()
-
-@end
+#import "WoLANCell+Inner.h"
 
 @implementation WoLANCell
 
@@ -77,51 +74,20 @@
       [stTextField setBackgroundColor:UIColor.clearColor];
       
       [stTextField setFont:[APPFont regularFontOfSize:stTextField.font.pointSize]];
-      [stTextField setTextColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-         
-         if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-            
-            return UIColor.whiteColor;
-            
-         } /* End if () */
-         else {
-            
-            return UIColor.labelColor;
-            
-         } /* End else */
-      }];
+      [stTextField setTextColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
       
-      [stTextField setPlaceholderColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-         
-         if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-            
-            return [IDEAColor colorWithKey:[IDEAColor lightText]];
-
-         } /* End if () */
-         else {
-            
-            return [IDEAColor colorWithKey:[IDEAColor darkGray]];
-
-         } /* End else */
-      }];
+      [stTextField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
       if ([stTextField respondsToSelector:@selector(setPlaceholderColor:)]) {
          
-         if ([DKThemeVersionNight isEqualToString:[DKNightVersionManager sharedManager].themeVersion]) {
-            
-            [stTextField performSelector:@selector(setPlaceholderColor:) withObject:UIColor.lightTextColor];
-
-         } /* End if () */
-         else {
-            
-            [stTextField performSelector:@selector(setPlaceholderColor:) withObject:UIColor.darkGrayColor];
-
-         } /* End else */
+         [stTextField performSelector:@selector(setPlaceholderColor:) withObject:[IDEAColor colorWithKey:[IDEAColor placeholderText]]];
 
       } /* End if () */
 #pragma clang diagnostic pop
+      
+      [stTextField setDelegate:self];
 
    } /* End for () */
    

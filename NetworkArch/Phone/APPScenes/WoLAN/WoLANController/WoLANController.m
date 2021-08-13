@@ -13,6 +13,9 @@
 
 #import "WoLANController.h"
 #import "WoLANController+Inner.h"
+#import "WoLANContentController+Inner.h"
+#import "WoLANContentController+Signal.h"
+#import "WoLANContentController+Notification.h"
 
 @interface WoLANController ()
 
@@ -235,6 +238,12 @@
    
    // Get the new view controller using [aSegue destinationViewController].
    // Pass the selected object to the new view controller.
+   
+   if ([aSegue.identifier isEqualToString:WoLANContentController.className]) {
+      
+      self.contentController  = aSegue.destinationViewController;
+      
+   } /* End if () */
    
    __CATCH(nErr);
    

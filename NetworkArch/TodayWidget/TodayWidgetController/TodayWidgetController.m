@@ -16,41 +16,41 @@
 @implementation TodayWidgetController
 
 - (void)dealloc {
-
+   
    __LOG_FUNCTION;
-
+   
    // Custom dealloc
-
+   
    [self removeSignalResponder:self.contentController];
-
+   
    __SUPER_DEALLOC;
-
+   
    return;
 }
 
 - (void)viewDidLoad {
    
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidLoad];
-
+   
    // Do any additional setup after loading the view.
-
+   
    [self.view setBackgroundColorPicker:nil];
    [self.view setBackgroundColor:UIColor.clearColor];
    
    [self.contentView setBackgroundColorPicker:nil];
    [self.contentView setBackgroundColor:UIColor.clearColor];
-
+   
    [self.locationManager requestAlwaysAuthorization];
    [self addSignalResponder:self.contentController];
-
-//   [self.extensionContext setWidgetLargestAvailableDisplayMode:NCWidgetDisplayModeExpanded];
+   
+   //   [self.extensionContext setWidgetLargestAvailableDisplayMode:NCWidgetDisplayModeExpanded];
    
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -79,8 +79,6 @@
    
    [self.locationManager requestAlwaysAuthorization];
    
-   [self addSignalResponder:self.contentController];
-
    if (@available(iOS 13, *)) {
       
       if (UIUserInterfaceStyleDark == self.traitCollection.userInterfaceStyle) {
@@ -93,9 +91,9 @@
          [[DKNightVersionManager sharedManager] dawnComing];
          
       } /* End else */
-
+      
    } /* End if () */
-
+   
    __CATCH(nErr);
    
    return;
@@ -133,7 +131,7 @@
    if ([aSegue.identifier isEqualToString:TodayWidgetContentController.className]) {
       
       self.contentController  = aSegue.destinationViewController;
-
+      
    } /* End if () */
    
    __CATCH(nErr);

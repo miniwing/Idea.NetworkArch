@@ -12,11 +12,16 @@
 
 #import "WoLANController.h"
 
+#import "WoLANContentController.h"
+#import "WoLANContentController+Inner.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WoLANController ()
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
+
+@property (nonatomic, strong)                WoLANContentController              * contentController;
 
 @end
 

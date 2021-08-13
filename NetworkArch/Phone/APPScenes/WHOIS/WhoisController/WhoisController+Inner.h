@@ -27,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WhoisController (Inner)
 
++ (NSString *)whoisURL;
++ (NSString *)whoisURLWithKey:(NSString *)aKey;
+
 @end
 
 NS_ASSUME_NONNULL_END

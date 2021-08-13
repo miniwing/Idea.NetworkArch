@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2H-QB-oR2" userLabel="搜索框">
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2H-QB-oR2" userLabel="输入框">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="IP Address / Host Name" textAlignment="natural" minimumFontSize="18" background="CLEAR-IMAGE" translatesAutoresizingMaskIntoConstraints="NO" id="006-1q-pgr" customClass="APPTextField">
@@ -351,7 +351,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoF-UJ-x3U">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <connections>
-                                    <segue destination="fZa-bN-cET" kind="embed" id="fAn-qf-2mb"/>
+                                    <segue destination="fZa-bN-cET" kind="embed" identifier="WoLANContentController" id="fAn-qf-2mb"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -380,6 +380,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contentView" destination="AoF-UJ-x3U" id="IXW-1y-xmZ"/>
                         <outlet property="leftBarButtonItem" destination="c11-QT-ElS" id="VpD-HP-yO1"/>
                         <outlet property="rightBarButtonItem" destination="gLZ-me-7em" id="7oZ-gz-d7s"/>
                     </connections>
@@ -516,8 +517,51 @@
                     <view key="view" contentMode="scaleToFill" id="z8y-cO-Orf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8c-R4-5CW" userLabel="输入框">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="IP Address / Host Name" textAlignment="natural" minimumFontSize="18" background="CLEAR-IMAGE" translatesAutoresizingMaskIntoConstraints="NO" id="yH0-Ua-qqn" customClass="APPTextField">
+                                        <rect key="frame" x="16" y="8" width="343" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="HT5-VL-FVn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="QDr-rL-P4v" id="zWc-n1-cTH"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstItem="yH0-Ua-qqn" firstAttribute="top" secondItem="M8c-R4-5CW" secondAttribute="top" constant="8" id="Gve-n5-2pP"/>
+                                    <constraint firstItem="yH0-Ua-qqn" firstAttribute="leading" secondItem="M8c-R4-5CW" secondAttribute="leading" constant="16" id="hdB-Hj-7eC"/>
+                                    <constraint firstAttribute="bottom" secondItem="yH0-Ua-qqn" secondAttribute="bottom" constant="8" id="owT-r8-Si1"/>
+                                    <constraint firstAttribute="trailing" secondItem="yH0-Ua-qqn" secondAttribute="trailing" constant="16" id="rp1-h6-yXY"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ezN-8i-buT">
+                                <rect key="frame" x="0.0" y="66" width="375" height="658"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aQR-Ae-pME"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ezN-8i-buT" firstAttribute="leading" secondItem="z8y-cO-Orf" secondAttribute="leading" id="1MW-lC-NWS"/>
+                            <constraint firstAttribute="bottom" secondItem="ezN-8i-buT" secondAttribute="bottom" id="b28-Xz-SMA"/>
+                            <constraint firstItem="M8c-R4-5CW" firstAttribute="top" secondItem="aQR-Ae-pME" secondAttribute="top" id="fM0-Oc-0eT"/>
+                            <constraint firstItem="aQR-Ae-pME" firstAttribute="trailing" secondItem="M8c-R4-5CW" secondAttribute="trailing" id="php-xR-HYA"/>
+                            <constraint firstItem="ezN-8i-buT" firstAttribute="top" secondItem="M8c-R4-5CW" secondAttribute="bottom" constant="8" id="qwx-c3-uXO"/>
+                            <constraint firstAttribute="trailing" secondItem="ezN-8i-buT" secondAttribute="trailing" id="vXl-25-TqE"/>
+                            <constraint firstItem="M8c-R4-5CW" firstAttribute="leading" secondItem="z8y-cO-Orf" secondAttribute="leading" id="wyz-dF-KWb"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cE3-Lu-0tm">
@@ -619,6 +663,9 @@
         <image name="UIButtonBarArrowLeft" width="11.5" height="21"/>
         <image name="UIButtonBarPlay" width="15.5" height="18.5"/>
         <image name="UTILITIES-RIGHT" width="16.333333969116211" height="28.666666030883789"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
