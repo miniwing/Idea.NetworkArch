@@ -63,11 +63,10 @@
    int                            nErr                                     = EFAULT;
 
 #if MATERIAL_APP_BAR
+   NSLayoutConstraint            *stLayoutConstraint                       = nil;
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
-
-   NSLayoutConstraint            *stLayoutConstraint                       = nil;
 
    __TRY;
 
@@ -92,6 +91,10 @@
    [self.appBar.navigationBar setAllowAnyTitleFontSize:YES];
    [self.appBar.navigationBar setEnableRippleBehavior:NO];
    
+   /// 关闭水波纹效果
+   [self.appBar.navigationBar setRippleColor:UIColor.clearColor];
+   [self.appBar.navigationBar setInkColor:UIColor.clearColor];
+
    [self.appBar.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
    [self.appBar.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
    [self.appBar.navigationBar setTitleFont:[APPFont regularFontOfSize:[APPFont appFontTitleSize]]];
@@ -132,6 +135,7 @@
    
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
+#if MATERIAL_APP_BAR
    /**
     调整 Layout
     contentView.top
@@ -144,6 +148,7 @@
       stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
       
    } /* End if () */
+#endif /* MATERIAL_APP_BAR */
 
    __CATCH(nErr);
 

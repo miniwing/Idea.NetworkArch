@@ -17,4 +17,26 @@
 @def_signal(self);
 #endif /* __Debug__ */
 
+@def_signal(start);
+
+@end
+
+#pragma mark - handleSignal
+@implementation WoLANController (handleSignal)
+
+handleSignal(WoLANController, startSignal) {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [self resignFirstResponder];
+   
+   LogDebug((@"-[WoLANController startSignal:] : Signal : %@", aSignal));
+      
+   __CATCH(nErr);
+   
+   return;
+}
+
 @end

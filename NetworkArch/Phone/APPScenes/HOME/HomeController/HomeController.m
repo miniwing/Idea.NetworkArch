@@ -67,12 +67,11 @@
    int                            nErr                                     = EFAULT;
    
 #if MATERIAL_APP_BAR
+   NSLayoutConstraint            *stLayoutConstraint                       = nil;
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
-   
-   NSLayoutConstraint            *stLayoutConstraint                       = nil;
-   
+
    __TRY;
    
    [super viewDidLoad];
@@ -136,6 +135,7 @@
    
    [self.contentView setBackgroundColor:UIColor.clearColor];
    
+#if MATERIAL_APP_BAR
    /**
     调整 Layout
     contentView.top
@@ -148,6 +148,7 @@
       stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
       
    } /* End if () */
+#endif /* MATERIAL_APP_BAR */
    
    [self.locationManager requestAlwaysAuthorization];
    

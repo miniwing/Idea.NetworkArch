@@ -211,6 +211,8 @@
 		4ACD587F26AFB4AF009B1424 /* LAUNCH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ACD587D26AFB4AF009B1424 /* LAUNCH.storyboard */; };
 		4ACD588226AFB4AF009B1424 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD588126AFB4AF009B1424 /* main.m */; };
 		4ACD588626AFB4AF009B1424 /* TodayClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 4ACD586D26AFB4AE009B1424 /* TodayClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4ACE80DA26C6868E00E962E1 /* WoLANDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE80D926C6868E00E962E1 /* WoLANDevice.m */; };
+		4ACE80DE26C6877F00E962E1 /* DeviceAwake.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE80DD26C6877F00E962E1 /* DeviceAwake.m */; };
 		4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B812685C39400DC1DA2 /* HomeController+Notification.m */; };
 		4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B842685C39400DC1DA2 /* HomeController+Debug.m */; };
 		4AE51B8F2685C39400DC1DA2 /* HomeController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B852685C39400DC1DA2 /* HomeController+Theme.m */; };
@@ -723,6 +725,10 @@
 		4ACD588326AFB4AF009B1424 /* TodayClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayClip.entitlements; sourceTree = "<group>"; };
 		4ACD588B26AFB67B009B1424 /* FleetingWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FleetingWidget.entitlements; sourceTree = "<group>"; };
 		4ACD588C26AFB7DB009B1424 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		4ACE80D826C6868E00E962E1 /* WoLANDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WoLANDevice.h; sourceTree = "<group>"; };
+		4ACE80D926C6868E00E962E1 /* WoLANDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WoLANDevice.m; sourceTree = "<group>"; };
+		4ACE80DC26C6877F00E962E1 /* DeviceAwake.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceAwake.h; sourceTree = "<group>"; };
+		4ACE80DD26C6877F00E962E1 /* DeviceAwake.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceAwake.m; sourceTree = "<group>"; };
 		4AE51B812685C39400DC1DA2 /* HomeController+Notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeController+Notification.m"; sourceTree = "<group>"; };
 		4AE51B822685C39400DC1DA2 /* HomeController+Inner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeController+Inner.h"; sourceTree = "<group>"; };
 		4AE51B832685C39400DC1DA2 /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
@@ -943,7 +949,6 @@
 				4A0E4E2F268587E800A85517 /* APPFont */,
 				4A0E4E34268587E800A85517 /* APPHTTP */,
 				4A745E9D26C57A2700DA644A /* APPUtils */,
-				4A275F6326C53C32005F0F37 /* DATA-USAGE */,
 				4A0E4E3B268587ED00A85517 /* Supporting Files */,
 			);
 			path = APPBase;
@@ -1033,9 +1038,9 @@
 		4A0E4E5A2685897C00A85517 /* APPModels */ = {
 			isa = PBXGroup;
 			children = (
-				4AFFEDBA268645160052712A /* AppTracking.h */,
-				4AFFEDBB268645160052712A /* AppTracking.m */,
+				4ACE80DB26C6874A00E962E1 /* TRACKing */,
 				4A7241AE26B3152400009443 /* PING */,
+				4ACE80D726C6867A00E962E1 /* WoLAN */,
 			);
 			path = APPModels;
 			sourceTree = "<group>";
@@ -1179,15 +1184,6 @@
 				4A4A004026AEEC17000D4708 /* Supporting Files */,
 			);
 			path = FleetingWidget;
-			sourceTree = "<group>";
-		};
-		4A275F6326C53C32005F0F37 /* DATA-USAGE */ = {
-			isa = PBXGroup;
-			children = (
-				4A275F6426C53C51005F0F37 /* DataUsage.h */,
-				4A275F6526C53C51005F0F37 /* DataUsage.m */,
-			);
-			path = "DATA-USAGE";
 			sourceTree = "<group>";
 		};
 		4A45533926862DEF0050E736 /* HomeController */ = {
@@ -1649,6 +1645,7 @@
 				4A0E4E592685897400A85517 /* APPScenes */,
 				4A0E4E5B2685898300A85517 /* APPViews */,
 				4A0E4E5A2685897C00A85517 /* APPModels */,
+				4ACE80D426C6860900E962E1 /* APPDriver */,
 			);
 			path = Phone;
 			sourceTree = "<group>";
@@ -1768,6 +1765,51 @@
 				4ACD588326AFB4AF009B1424 /* TodayClip.entitlements */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ACE80D426C6860900E962E1 /* APPDriver */ = {
+			isa = PBXGroup;
+			children = (
+				4ACE80D626C6865900E962E1 /* DEVICE-AWAKE */,
+				4ACE80D526C6862900E962E1 /* DATA-USAGE */,
+			);
+			path = APPDriver;
+			sourceTree = "<group>";
+		};
+		4ACE80D526C6862900E962E1 /* DATA-USAGE */ = {
+			isa = PBXGroup;
+			children = (
+				4A275F6426C53C51005F0F37 /* DataUsage.h */,
+				4A275F6526C53C51005F0F37 /* DataUsage.m */,
+			);
+			path = "DATA-USAGE";
+			sourceTree = "<group>";
+		};
+		4ACE80D626C6865900E962E1 /* DEVICE-AWAKE */ = {
+			isa = PBXGroup;
+			children = (
+				4ACE80DC26C6877F00E962E1 /* DeviceAwake.h */,
+				4ACE80DD26C6877F00E962E1 /* DeviceAwake.m */,
+			);
+			path = "DEVICE-AWAKE";
+			sourceTree = "<group>";
+		};
+		4ACE80D726C6867A00E962E1 /* WoLAN */ = {
+			isa = PBXGroup;
+			children = (
+				4ACE80D826C6868E00E962E1 /* WoLANDevice.h */,
+				4ACE80D926C6868E00E962E1 /* WoLANDevice.m */,
+			);
+			path = WoLAN;
+			sourceTree = "<group>";
+		};
+		4ACE80DB26C6874A00E962E1 /* TRACKing */ = {
+			isa = PBXGroup;
+			children = (
+				4AFFEDBA268645160052712A /* AppTracking.h */,
+				4AFFEDBB268645160052712A /* AppTracking.m */,
+			);
+			path = TRACKing;
 			sourceTree = "<group>";
 		};
 		4AF440B526AC43B00008C169 /* TodayWidgetContentController */ = {
@@ -2308,6 +2350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A53A9BD26A46E60000700F2 /* WoLANRootController+Notification.m in Sources */,
+				4ACE80DA26C6868E00E962E1 /* WoLANDevice.m in Sources */,
 				4A99B5B926B5910D006F479F /* APPDelegate+Inner.m in Sources */,
 				4AC0B85826B9AAE500B2DA58 /* WifiInterfacesController+Inner.m in Sources */,
 				4A0E4E74268589E600A85517 /* SettingController+Notification.m in Sources */,
@@ -2447,6 +2490,7 @@
 				4A53AAC926A47403000700F2 /* DNSController.m in Sources */,
 				4A5D99DD26A4950B00E00610 /* CellularMoreController+Inner.m in Sources */,
 				4A53AA3F26A46F18000700F2 /* PingController+Theme.m in Sources */,
+				4ACE80DE26C6877F00E962E1 /* DeviceAwake.m in Sources */,
 				4A5D9A0126A4952B00E00610 /* WifiMoreController+Debug.m in Sources */,
 				4A53AA3E26A46F18000700F2 /* PingController+Signal.m in Sources */,
 				4A4553842686327B0050E736 /* TrackingController+Notification.m in Sources */,

@@ -159,7 +159,11 @@
    stWoLANCell = [aTableView dequeueReusableCellWithIdentifier:WoLANCell.reuseIdentifier
                                                   forIndexPath:aIndexPath];
 
-   // Configure the cell...
+#if __Debug__
+   [stWoLANCell.macTextField setText:@"FF:FF:FE:EE:EE:EE"];
+   [stWoLANCell.broadcastTextField setText:@"255.255.255.0"];
+   [stWoLANCell.portTextField setText:@"19"];
+#endif /* __Debug__ */
 
    __CATCH(nErr);
 

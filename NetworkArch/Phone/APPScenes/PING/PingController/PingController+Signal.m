@@ -15,10 +15,10 @@
 @implementation PingController (Signal)
 
 #if __Debug__
-@def_signal (self);
+@def_signal(self);
 #endif /* __Debug__ */
 
-@def_signal (startPing);
+@def_signal(startPing);
 
 @end
 

@@ -17,4 +17,26 @@
 @def_signal(self);
 #endif /* __Debug__ */
 
+@def_signal(start);
+
+@end
+
+#pragma mark - handleSignal
+@implementation DNSController (handleSignal)
+
+handleSignal(DNSController, startSignal) {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [self resignFirstResponder];
+   
+   LogDebug((@"-[DNSController startSignal:] : Signal : %@", aSignal));
+      
+   __CATCH(nErr);
+   
+   return;
+}
+
 @end

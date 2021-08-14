@@ -13,9 +13,16 @@
 
 #import "WoLANController.h"
 #import "WoLANController+Inner.h"
+#import "WoLANController+Debug.h"
+#import "WoLANController+Theme.h"
+#import "WoLANController+Signal.h"
+#import "WoLANController+Notification.h"
+
 #import "WoLANContentController+Inner.h"
 #import "WoLANContentController+Signal.h"
 #import "WoLANContentController+Notification.h"
+
+#import "DeviceAwake.h"
 
 @interface WoLANController ()
 
@@ -68,12 +75,11 @@
    int                            nErr                                     = EFAULT;
    
 #if MATERIAL_APP_BAR
+   NSLayoutConstraint            *stLayoutConstraint                       = nil;
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
-   
-   NSLayoutConstraint            *stLayoutConstraint                       = nil;
-   
+      
    __TRY;
    
    [super viewDidLoad];
@@ -95,6 +101,10 @@
    [self.appBar.navigationBar setAllowAnyTitleFontSize:YES];
    [self.appBar.navigationBar setEnableRippleBehavior:NO];
    
+   /// 关闭水波纹效果
+   [self.appBar.navigationBar setRippleColor:UIColor.clearColor];
+   [self.appBar.navigationBar setInkColor:UIColor.clearColor];
+
    [self.appBar.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
    [self.appBar.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
    [self.appBar.navigationBar setTitleFont:[APPFont regularFontOfSize:[APPFont appFontTitleSize]]];
@@ -136,10 +146,14 @@
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    
+#if __Debug__
+#else /* __Debug__ */
    [self.rightBarButtonItem setEnabled:NO];
+#endif /* !__Debug__ */
    
    [self.contentView setBackgroundColor:UIColor.clearColor];
    
+#if MATERIAL_APP_BAR
    /**
     调整 Layout
     contentView.top
@@ -152,6 +166,7 @@
       stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
       
    } /* End if () */
+#endif /* MATERIAL_APP_BAR */
    
    __CATCH(nErr);
    
@@ -298,6 +313,9 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
+   
+   [self postSignal:WoLANController.startSignal
+            onQueue:dispatch_get_main_queue()];
    
    __CATCH(nErr);
    

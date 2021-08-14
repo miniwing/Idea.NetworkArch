@@ -10,6 +10,8 @@
 
 #import <IDEAUIVendor/IDEAUIVendor.h>
 
+#import "APPTextField.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WhoisController : IDEAViewController
@@ -18,7 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * rightBarButtonItem;
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * searchView;
-@property (nonatomic, weak)   IBOutlet       UISearchBar                         * searchBar;
+@property (nonatomic, weak)   IBOutlet       APPTextField                        * textField;
+
+@property (nonatomic, weak)   IBOutlet       UITextView                          * textView;
+
+@property (nonatomic, weak)   IBOutlet       MDCActivityIndicator                * activityIndicator;
 
 @end
 

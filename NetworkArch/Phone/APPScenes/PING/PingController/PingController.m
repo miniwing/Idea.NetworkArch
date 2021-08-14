@@ -152,46 +152,32 @@
    // Dispose of any resources that can be recreated.
    /**
     调整 Layout
-    contentView.top
+    search.top
     */
    stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"search.top"
                                                               fromView:self.view];
-#endif /* MATERIAL_APP_BAR */
    
    if (nil != stLayoutConstraint) {
       
       stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
       
    } /* End if () */
-   
+#endif /* MATERIAL_APP_BAR */
+
    /**
-    Search Bar
+    UITextField
     */
    [self.searchView setBackgroundColor:UIColor.clearColor];
-   //   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
+//   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
    [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    [self.textField setCornerRadius:8 clipsToBounds:YES];
    
    [self.textField setFont:[APPFont regularFontOfSize:self.textField.font.pointSize]];
-   [self.textField setTextColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-      
-      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-         
-         return UIColor.whiteColor;
-         
-      } /* End if () */
-      else {
-         
-         return UIColor.labelColor;
-         
-      } /* End else */
-   }];
    
-   [self.textField setPlaceholderColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-      
-      return [IDEAColor colorWithKey:[IDEAColor lightText]];
-   }];
+   [self.textField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
 
+   [self.textField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   
    [self.textField setDelegate:self];
    [self.textField setPlaceholder:APP_STR(@"IP Address / Host Name")];
    

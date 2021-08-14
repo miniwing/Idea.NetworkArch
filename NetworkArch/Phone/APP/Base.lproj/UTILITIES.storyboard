@@ -542,24 +542,38 @@
                                     <constraint firstAttribute="trailing" secondItem="yH0-Ua-qqn" secondAttribute="trailing" constant="16" id="rp1-h6-yXY"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ezN-8i-buT">
-                                <rect key="frame" x="0.0" y="66" width="375" height="658"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ezN-8i-buT">
+                                <rect key="frame" x="16" y="66" width="343" height="650"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ih0-ca-F1X" customClass="MDCActivityIndicator">
+                                <rect key="frame" x="169.66666666666666" y="344" width="36" height="36"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Qyi-H2-bg0"/>
+                                    <constraint firstAttribute="width" constant="36" id="a2X-Uo-32h"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aQR-Ae-pME"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ezN-8i-buT" firstAttribute="leading" secondItem="z8y-cO-Orf" secondAttribute="leading" id="1MW-lC-NWS"/>
-                            <constraint firstAttribute="bottom" secondItem="ezN-8i-buT" secondAttribute="bottom" id="b28-Xz-SMA"/>
-                            <constraint firstItem="M8c-R4-5CW" firstAttribute="top" secondItem="aQR-Ae-pME" secondAttribute="top" id="fM0-Oc-0eT"/>
-                            <constraint firstItem="aQR-Ae-pME" firstAttribute="trailing" secondItem="M8c-R4-5CW" secondAttribute="trailing" id="php-xR-HYA"/>
+                            <constraint firstItem="ezN-8i-buT" firstAttribute="leading" secondItem="z8y-cO-Orf" secondAttribute="leading" constant="16" id="1MW-lC-NWS"/>
+                            <constraint firstItem="ih0-ca-F1X" firstAttribute="centerY" secondItem="z8y-cO-Orf" secondAttribute="centerY" identifier="activityIndicator.Center.Y" id="CTd-5y-unC"/>
+                            <constraint firstAttribute="bottom" secondItem="ezN-8i-buT" secondAttribute="bottom" constant="8" id="b28-Xz-SMA"/>
+                            <constraint firstItem="M8c-R4-5CW" firstAttribute="top" secondItem="z8y-cO-Orf" secondAttribute="top" identifier="search.top" id="fM0-Oc-0eT"/>
+                            <constraint firstItem="ih0-ca-F1X" firstAttribute="centerX" secondItem="z8y-cO-Orf" secondAttribute="centerX" id="ld6-yK-ucG"/>
+                            <constraint firstAttribute="trailing" secondItem="M8c-R4-5CW" secondAttribute="trailing" id="php-xR-HYA"/>
                             <constraint firstItem="ezN-8i-buT" firstAttribute="top" secondItem="M8c-R4-5CW" secondAttribute="bottom" constant="8" id="qwx-c3-uXO"/>
-                            <constraint firstAttribute="trailing" secondItem="ezN-8i-buT" secondAttribute="trailing" id="vXl-25-TqE"/>
+                            <constraint firstAttribute="trailing" secondItem="ezN-8i-buT" secondAttribute="trailing" constant="16" id="vXl-25-TqE"/>
                             <constraint firstItem="M8c-R4-5CW" firstAttribute="leading" secondItem="z8y-cO-Orf" secondAttribute="leading" id="wyz-dF-KWb"/>
                         </constraints>
                     </view>
@@ -579,8 +593,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="ih0-ca-F1X" id="7fH-EM-fpK"/>
                         <outlet property="leftBarButtonItem" destination="a3F-pm-yNe" id="1Bl-nM-ZQZ"/>
                         <outlet property="rightBarButtonItem" destination="c4b-qf-GZW" id="XXS-U5-Sd2"/>
+                        <outlet property="searchView" destination="M8c-R4-5CW" id="LE7-0f-AE3"/>
+                        <outlet property="textField" destination="yH0-Ua-qqn" id="1JI-Kq-45k"/>
+                        <outlet property="textView" destination="ezN-8i-buT" id="wSk-QX-PUH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gde-vk-CaY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -612,8 +630,65 @@
                     <view key="view" contentMode="scaleToFill" id="GzU-C2-FiP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytK-Vb-kqC" userLabel="输入框">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="IP Address / Host Name" textAlignment="natural" minimumFontSize="18" background="CLEAR-IMAGE" translatesAutoresizingMaskIntoConstraints="NO" id="DK3-t7-68P" customClass="APPTextField">
+                                        <rect key="frame" x="16" y="8" width="343" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="Ntc-D9-1kZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="QDr-rL-P4v" id="a9C-OQ-RNM"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DK3-t7-68P" secondAttribute="trailing" constant="16" id="Bq8-ZB-4N4"/>
+                                    <constraint firstItem="DK3-t7-68P" firstAttribute="leading" secondItem="ytK-Vb-kqC" secondAttribute="leading" constant="16" id="UQ9-Hu-JfJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="DK3-t7-68P" secondAttribute="bottom" constant="8" id="wNv-0r-gdP"/>
+                                    <constraint firstItem="DK3-t7-68P" firstAttribute="top" secondItem="ytK-Vb-kqC" secondAttribute="top" constant="8" id="xfM-s5-27K"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fBz-Mo-j0r">
+                                <rect key="frame" x="16" y="66" width="343" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ae-ls-DzW" customClass="MDCActivityIndicator">
+                                <rect key="frame" x="169.66666666666666" y="344" width="36" height="36"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="5Nm-Qv-I1g"/>
+                                    <constraint firstAttribute="height" constant="36" id="rIr-hk-MaP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Q5P-ly-nKQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fBz-Mo-j0r" firstAttribute="bottom" secondItem="GzU-C2-FiP" secondAttribute="bottom" constant="8" id="M73-uO-gJd"/>
+                            <constraint firstAttribute="trailing" secondItem="ytK-Vb-kqC" secondAttribute="trailing" id="N9w-tv-nVc"/>
+                            <constraint firstItem="ytK-Vb-kqC" firstAttribute="top" secondItem="GzU-C2-FiP" secondAttribute="top" identifier="search.top" id="QyH-Vo-bL8"/>
+                            <constraint firstItem="1ae-ls-DzW" firstAttribute="centerY" secondItem="GzU-C2-FiP" secondAttribute="centerY" identifier="activityIndicator.Center.Y" id="U8w-EA-vhx"/>
+                            <constraint firstItem="fBz-Mo-j0r" firstAttribute="leading" secondItem="GzU-C2-FiP" secondAttribute="leading" constant="16" id="Vkk-YR-uXE"/>
+                            <constraint firstItem="1ae-ls-DzW" firstAttribute="centerX" secondItem="GzU-C2-FiP" secondAttribute="centerX" id="Y4Y-bq-m88"/>
+                            <constraint firstAttribute="trailing" secondItem="fBz-Mo-j0r" secondAttribute="trailing" constant="16" id="hSB-en-A1f"/>
+                            <constraint firstItem="fBz-Mo-j0r" firstAttribute="top" secondItem="ytK-Vb-kqC" secondAttribute="bottom" constant="8" id="kQo-TJ-SHO"/>
+                            <constraint firstItem="ytK-Vb-kqC" firstAttribute="leading" secondItem="GzU-C2-FiP" secondAttribute="leading" id="myJ-wx-ZUB"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Nmn-Eh-f0r">
@@ -631,13 +706,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="1ae-ls-DzW" id="UZR-qb-vZE"/>
                         <outlet property="leftBarButtonItem" destination="J5j-RZ-rbq" id="sTP-Hd-AUo"/>
                         <outlet property="rightBarButtonItem" destination="Fkk-tA-0Fg" id="Xcf-qS-0yO"/>
+                        <outlet property="searchView" destination="ytK-Vb-kqC" id="buZ-h2-blS"/>
+                        <outlet property="textField" destination="DK3-t7-68P" id="vEn-lo-e12"/>
+                        <outlet property="textView" destination="fBz-Mo-j0r" id="EiQ-TR-SDW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNP-Aj-RBJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="1697"/>
+            <point key="canvasLocation" x="1080.8" y="1696.5517241379312"/>
         </scene>
         <!--DNS-ROOT-->
         <scene sceneID="eVG-MT-q87">
@@ -658,6 +737,14 @@
             <point key="canvasLocation" x="140" y="1697"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="1ae-ls-DzW">
+            <size key="intrinsicContentSize" width="26.5" height="26.5"/>
+        </designable>
+        <designable name="ih0-ca-F1X">
+            <size key="intrinsicContentSize" width="26.5" height="26.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="CLEAR-IMAGE" width="15" height="15"/>
         <image name="UIButtonBarArrowLeft" width="11.5" height="21"/>

@@ -74,8 +74,6 @@
       [stTextField setBackgroundColor:UIColor.clearColor];
       
       [stTextField setFont:[APPFont regularFontOfSize:stTextField.font.pointSize]];
-      [stTextField setTextColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
-      
       [stTextField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
 
 #pragma clang diagnostic push
@@ -86,7 +84,9 @@
 
       } /* End if () */
 #pragma clang diagnostic pop
-      
+
+      [stTextField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
       [stTextField setDelegate:self];
 
    } /* End for () */

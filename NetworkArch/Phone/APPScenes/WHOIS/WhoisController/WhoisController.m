@@ -13,6 +13,10 @@
 
 #import "WhoisController.h"
 #import "WhoisController+Inner.h"
+#import "WhoisController+Debug.h"
+#import "WhoisController+Theme.h"
+#import "WhoisController+Signal.h"
+#import "WhoisController+Notification.h"
 
 @interface WhoisController ()
 
@@ -65,6 +69,7 @@
    int                            nErr                                     = EFAULT;
    
 #if MATERIAL_APP_BAR
+   NSLayoutConstraint            *stLayoutConstraint                       = nil;
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
@@ -90,6 +95,10 @@
    [self.appBar.navigationBar setAllowAnyTitleFontSize:YES];
    [self.appBar.navigationBar setEnableRippleBehavior:NO];
    
+   /// 关闭水波纹效果
+   [self.appBar.navigationBar setRippleColor:UIColor.clearColor];
+   [self.appBar.navigationBar setInkColor:UIColor.clearColor];
+
    [self.appBar.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
    [self.appBar.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
    [self.appBar.navigationBar setTitleFont:[APPFont regularFontOfSize:[APPFont appFontTitleSize]]];
@@ -133,6 +142,86 @@
 
    [self.rightBarButtonItem setEnabled:NO];
 
+#if MATERIAL_APP_BAR
+   // Dispose of any resources that can be recreated.
+   /**
+    调整 Layout
+    search.top
+    */
+   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"search.top"
+                                                              fromView:self.view];
+   
+   if (nil != stLayoutConstraint) {
+      
+      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
+      
+   } /* End if () */
+#endif /* MATERIAL_APP_BAR */
+
+   /**
+    UITextField
+    */
+   [self.searchView setBackgroundColor:UIColor.clearColor];
+//   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
+   [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+   [self.textField setCornerRadius:8 clipsToBounds:YES];
+   
+   [self.textField setFont:[APPFont regularFontOfSize:self.textField.font.pointSize]];
+   
+   [self.textField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
+
+   [self.textField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   
+   [self.textField setDelegate:self];
+   [self.textField setPlaceholder:APP_STR(@"IP Address / Host Name")];
+
+   /**
+    UITextView
+    */
+   [self.textView setCornerRadius:8 clipsToBounds:YES];
+   [self.textView setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.textView setHidden:YES];
+
+   /**
+    MDCActivityIndicator
+    */
+   [self.activityIndicator setBackgroundColor:UIColor.clearColor];
+   [self.activityIndicator setIndicatorMode:MDCActivityIndicatorModeIndeterminate];
+   [self.activityIndicator setTrackEnabled:YES];
+   
+   if ([DKThemeVersionNormal isEqualToString:[DKNightVersionManager sharedManager].themeVersion]) {
+      
+      [self.activityIndicator setCycleColors:@[
+         [MDCPalette paletteGeneratedFromColor:UIColor.darkGrayColor].tint500, MDCPalette.greyPalette.tint500
+      ]];
+      
+   } /* End if () */
+   else {
+      
+      [self.activityIndicator setCycleColors:@[
+         [MDCPalette paletteGeneratedFromColor:UIColor.lightGrayColor].tint500, MDCPalette.greyPalette.tint500
+      ]];
+      
+   } /* End else */
+
+   [self.activityIndicator startAnimating];
+
+//#if MATERIAL_APP_BAR
+//   // Dispose of any resources that can be recreated.
+//   /**
+//    调整 Layout
+//    search.top
+//    */
+//   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"activityIndicator.Center.Y"
+//                                                              fromView:self.view];
+//
+//   if (nil != stLayoutConstraint) {
+//
+//      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
+//
+//   } /* End if () */
+//#endif /* MATERIAL_APP_BAR */
+
    __CATCH(nErr);
    
    return;
@@ -149,6 +238,21 @@
 
    __CATCH(nErr);
 
+   return;
+}
+
+- (void)viewDidLayoutSubviews {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [super viewDidLayoutSubviews];
+   
+   [self.activityIndicator setRadius:self.activityIndicator.height / 2];
+   
+   __CATCH(nErr);
+   
    return;
 }
 
@@ -272,7 +376,10 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-      
+   
+   [self postSignal:WhoisController.startSignal
+            onQueue:dispatch_get_main_queue()];
+   
    __CATCH(nErr);
    
    return;
