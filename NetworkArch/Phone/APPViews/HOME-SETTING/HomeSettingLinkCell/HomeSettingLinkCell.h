@@ -21,7 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+typedef void (^ AddLinkBlock )( NSIndexPath *aIndexPath );
+
 @interface HomeSettingLinkCell ()
+
+@property (nonatomic, copy)                  AddLinkBlock                          addLinkBlock;
 
 @end
 

@@ -96,4 +96,11 @@
    return;
 }
 
+- (void)setAddLinkBlock:(AddLinkBlock)aAddLinkBlock {
+   
+   _addLinkBlock  = [aAddLinkBlock copy];
+   
+   return;
+}
+
 @end
