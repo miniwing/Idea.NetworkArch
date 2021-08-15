@@ -30,10 +30,13 @@ def miniwing_pod(pod_name, file = pod_name, type = 'remote', branch = 'master', 
     when 'local'
       pod pod_name, :path => "../../MINIWING-PODs/#{file}",                :inhibit_warnings => false, :modular_headers => modular_headers
     when 'remote'
-      pod pod_name, :git  => "https://github.com/miniwing/#{file}.git", :branch => "#{branch}",     :modular_headers => modular_headers
+      pod pod_name, :git  => "git@github.com:miniwing/#{file}.git", :branch => "#{branch}",     :modular_headers => modular_headers
     else
   end
 end
+
+# git@github.com:miniwing/FoundationExtension.git
+# https://github.com/miniwing/#{file}.git
 
 workspace 'Idea.NetworkArch'
 
@@ -130,7 +133,7 @@ target 'NetworkArch' do
   pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
   pod 'IDEANetUtils'                    , :path => '../MINIWING-PODs/IDEANetUtils'
 #  pod 'IDEAThrottle'                    , :path => '../MINIWING-PODs/IDEAThrottle'
-  miniwing_pod('IDEAThrottle', file = 'IDEAThrottle', type = 'local', branch = 'develop', modular_headers = true)
+#  miniwing_pod('IDEAThrottle', file = 'IDEAThrottle', type = 'local', branch = 'develop', modular_headers = true)
 #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'IDEAEventKit'                    , :path => '../MINIWING-PODs/IDEAEventKit'
   pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
@@ -257,9 +260,9 @@ post_install do |installer|
       config.build_settings['WARNING_CFLAGS']                 = ['-Wdeprecated-declarations']
       
       if ENV['OLLVM'] == 'YES'
-#      config.build_settings['HEADER_SEARCH_PATHS']            = ["$(SRCROOT)/../ollvm-libs"];
-      config.build_settings['LIBRARY_SEARCH_PATHS']           = ["$(SRCROOT)/../ollvm-libs"];
-      config.build_settings['OTHER_LDFLAGS']                  = ["-l\"clang_rt.ios\""];
+#        config.build_settings['HEADER_SEARCH_PATHS']          = ["$(SRCROOT)/../ollvm-libs"];
+        config.build_settings['LIBRARY_SEARCH_PATHS']         = ["$(SRCROOT)/../ollvm-libs"];
+        config.build_settings['OTHER_LDFLAGS']                = ["-l\"clang_rt.ios\""];
       end # OLLVM
       
 #      config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'NO'

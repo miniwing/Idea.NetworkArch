@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[WiFiMoreContentController+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[WiFiMoreContentController onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
 

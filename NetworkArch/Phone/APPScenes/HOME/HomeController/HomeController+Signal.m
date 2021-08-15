@@ -17,4 +17,24 @@
 @def_signal(self);
 #endif /* __Debug__ */
 
+@def_signal(setting);
+
+@end
+
+#pragma mark - handleSignal
+@implementation HomeController (handleSignal)
+
+handleSignal(HomeController, settingSignal) {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+      
+   LogDebug((@"-[HomeController settingSignal:] : Signal : %@", aSignal));
+      
+   __CATCH(nErr);
+   
+   return;
+}
+
 @end

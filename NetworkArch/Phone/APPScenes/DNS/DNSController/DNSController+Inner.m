@@ -14,161 +14,16 @@
 
 @implementation DNSController (Inner)
 
-@end
+// "at_wa51HmNxHCpSNqTTi1UFv38wluCtf"
 
-#pragma mark - <UITextFieldDelegate>
-@implementation DNSController (UITextFieldDelegate)
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)aTextField {
++ (NSString *)DNSServiceURL {
    
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   __CATCH(nErr);
-   
-   return YES;
+   return [NSString stringWithFormat:@"https://www.whoisxmlapi.com/whoisserver/DNSService?apiKey=%@&type=_all&outputFormat=JSON", @"at_wa51HmNxHCpSNqTTi1UFv38wluCtf"];
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)aTextField {
++ (NSString *)DNSServiceURLWithKey:(NSString *)aKey {
    
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   LogDebug((@"-[DNSController textFieldDidBeginEditing:] : Text : %@", aTextField.text));
-
-   if (!kStringIsEmpty(aTextField.text)) {
-      
-      [self.rightBarButtonItem setEnabled:YES];
-      
-   } /* End if () */
-   else {
-      
-      [self.rightBarButtonItem setEnabled:NO];
-      
-   } /* End else */
-
-   __CATCH(nErr);
-   
-   return;
-}
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)aTextField {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   __CATCH(nErr);
-   
-   return YES;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)aTextField {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   __CATCH(nErr);
-   
-   return;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)aTextField reason:(UITextFieldDidEndEditingReason)aReason {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   __CATCH(nErr);
-   
-   return;
-}
-
-- (BOOL)textField:(UITextField *)aTextField shouldChangeCharactersInRange:(NSRange)aRange replacementString:(NSString *)aString {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   __CATCH(nErr);
-   
-   return YES;
-}
-
-- (void)textFieldDidChangeSelection:(UITextField *)aTextField {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   __CATCH(nErr);
-   
-   return;
-}
-
-- (BOOL)textFieldShouldClear:(UITextField *)aTextField {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   __CATCH(nErr);
-   
-   return YES;
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)aTextField {
-   
-   int                            nErr                                     = EFAULT;
-   
-   BOOL                           bShouldReturn                            = NO;
-   
-   __TRY;
-   
-   if (!kStringIsEmpty(aTextField.text)) {
-      
-      bShouldReturn  = YES;
-      
-      [self postSignal:DNSController.startSignal
-               onQueue:dispatch_get_main_queue()];
-
-   } /* End if () */
-   else {
-      
-      bShouldReturn  = NO;
-      
-   } /* End else */
-
-   __CATCH(nErr);
-   
-   return bShouldReturn;
-}
-
-- (void)textFieldTextDidChange:(NSNotification *)aSender {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   LogDebug((@"-[DNSController textFieldTextDidChange:] : Text : %@", self.textField.text));
-   
-   if (!kStringIsEmpty(self.textField.text)) {
-      
-      [self.rightBarButtonItem setEnabled:YES];
-      
-   } /* End if () */
-   else {
-      
-      [self.rightBarButtonItem setEnabled:NO];
-      
-   } /* End else */
-   
-   __CATCH(nErr);
-   
-   return;
+   return [NSString stringWithFormat:@"https://www.whoisxmlapi.com/whoisserver/DNSService?apiKey=%@&type=_all&outputFormat=JSON", aKey];
 }
 
 @end

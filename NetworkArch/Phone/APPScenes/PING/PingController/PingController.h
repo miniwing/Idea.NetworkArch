@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * leftBarButtonItem;
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * rightBarButtonItem;
 
-@property (nonatomic, weak)   IBOutlet       UIView                              * searchView;
+@property (nonatomic, weak)   IBOutlet       UIView                              * inputView;
 @property (nonatomic, weak)   IBOutlet       APPTextField                        * textField;
 
 @property (nonatomic, weak)   IBOutlet       UITableView                         * tableView;

@@ -12,6 +12,18 @@
 
 #import "HomeContentController.h"
 
+#import "HomeSettingRootController.h"
+#import "HomeSettingRootController+Theme.h"
+#import "HomeSettingRootController+Signal.h"
+#import "HomeSettingRootController+Notification.h"
+#import "HomeSettingRootController+Debug.h"
+
+#import "HomeSettingController.h"
+#import "HomeSettingController+Theme.h"
+#import "HomeSettingController+Signal.h"
+#import "HomeSettingController+Notification.h"
+#import "HomeSettingController+Debug.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeController () <CLLocationManagerDelegate>

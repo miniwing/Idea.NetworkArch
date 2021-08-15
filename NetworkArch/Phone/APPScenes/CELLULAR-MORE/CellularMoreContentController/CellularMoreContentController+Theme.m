@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[CellularMoreContentController+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[CellularMoreContentController onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
 

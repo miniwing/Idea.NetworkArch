@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * contentView;
 
-@property (nonatomic, weak)   IBOutlet       UIButton                            * throttleButton;
+@property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * rightBarButtonItem;
 
 @end
 

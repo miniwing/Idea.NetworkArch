@@ -18,6 +18,7 @@
 #endif /* __Debug__ */
 
 @def_signal(start);
+@def_signal(done);
 
 @end
 
@@ -33,7 +34,37 @@ handleSignal(DNSController, startSignal) {
    [self resignFirstResponder];
    
    LogDebug((@"-[DNSController startSignal:] : Signal : %@", aSignal));
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+handleSignal(DNSController, doneSignal) {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[WhoisController doneSignal:] : Signal : %@", aSignal));
+   
+   @weakify(self);
+   [self.activityIndicator setHidden:YES
+                            animated:YES
+                            complete:^{
       
+      @strongify(self);
+      [self.activityIndicator stopAnimating];
+
+      if (!kStringIsEmpty(self.textField.text)) {
+         
+         [self.rightBarButtonItem setEnabled:YES];
+
+      } /* End if () */
+
+      [self.textField setEnabled:YES];
+   }];
+   
    __CATCH(nErr);
    
    return;

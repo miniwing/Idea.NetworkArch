@@ -10,7 +10,7 @@
 #import "APPDelegate+APP.h"
 #import "APPDelegate+Kit.h"
 
-@implementation APPDelegate (Kit)
+@implementation APPDelegate (System)
 
 + (NSString *)version {
    
@@ -61,3 +61,20 @@
 }
 
 @end
+
+@implementation APPDelegate (Storage)
+
++ (NSString *)apiKey {
+   
+   return [NSUserDefaults stringForKey:@"apiKey"];
+}
+
++ (void)setApiKey:(NSString *)aApiKey {
+   
+   [NSUserDefaults setObject:aApiKey forKey:@"apiKey"];
+   
+   return;
+}
+
+@end
+

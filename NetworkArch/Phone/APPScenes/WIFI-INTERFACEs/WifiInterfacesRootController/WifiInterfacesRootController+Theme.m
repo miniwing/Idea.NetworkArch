@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[WifiInterfacesRootController+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[WifiInterfacesRootController onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
 

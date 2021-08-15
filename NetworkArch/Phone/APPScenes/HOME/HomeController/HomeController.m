@@ -11,6 +11,15 @@
 
 #import "HomeController.h"
 #import "HomeController+Inner.h"
+#import "HomeController+Theme.h"
+#import "HomeController+Signal.h"
+#import "HomeController+Notification.h"
+#import "HomeController+Debug.h"
+
+#import "HomeSettingRootController.h"
+#import "HomeSettingRootController+Inner.h"
+#import "HomeSettingRootController+Signal.h"
+#import "HomeSettingRootController+Notification.h"
 
 @interface HomeController ()
 
@@ -46,8 +55,8 @@
       [_appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
       [_appBar.headerViewController.headerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
       
-      //      [_appBar.headerViewController setShowsHairline:YES];
-      //      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
+//      [_appBar.headerViewController setShowsHairline:YES];
+//      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
       
       [_appBar.headerViewController setShowsHairline:NO];
       [_appBar.headerViewController setHairlineColor:UIColor.clearColor];
@@ -132,6 +141,9 @@
    
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
+   
+   [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarSetting"]];
    
    [self.contentView setBackgroundColor:UIColor.clearColor];
    
@@ -284,5 +296,27 @@
 
 #pragma mark - IBAction
 @implementation HomeController (Action)
+
+- (IBAction)onSetting:(id)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   HomeSettingRootController     *stHomeSettingRootController              = nil;
+   
+   __TRY;
+   
+   stHomeSettingRootController   = [UIStoryboard loadStoryboard:HomeSettingRootController.storyboard
+                                                     identifier:HomeSettingRootController.className];
+   
+   [self presentViewController:stHomeSettingRootController
+                      animated:YES
+                    completion:^{
+      
+   }];
+
+   __CATCH(nErr);
+   
+   return;
+}
 
 @end

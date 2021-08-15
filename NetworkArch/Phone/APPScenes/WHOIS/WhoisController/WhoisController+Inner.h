@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  The text field of search bar
  */
-@property (nonatomic, weak)                  UITextField                         * searchBarTextField;
+//@property (nonatomic, weak)                  UITextField                         * searchBarTextField;
 
 @end
 

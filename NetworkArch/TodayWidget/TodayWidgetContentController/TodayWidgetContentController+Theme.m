@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[TodayWidgetContentController+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[TodayWidgetContentController onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
 

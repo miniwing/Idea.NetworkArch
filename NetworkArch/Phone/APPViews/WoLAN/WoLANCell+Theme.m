@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[WoLANCell+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[WoLANCell onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
       

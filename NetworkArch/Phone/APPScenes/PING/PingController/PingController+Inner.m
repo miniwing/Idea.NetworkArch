@@ -303,7 +303,7 @@
 - (void)textFieldTextDidChange:(NSNotification *)aSender {
    
    int                            nErr                                     = EFAULT;
-   
+      
    __TRY;
    
    LogDebug((@"-[PingController textFieldTextDidChange:] : Text : %@", self.textField.text));

@@ -161,7 +161,7 @@
    /**
     UITextField
     */
-   [self.searchView setBackgroundColor:UIColor.clearColor];
+   [self.inputView setBackgroundColor:UIColor.clearColor];
 //   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
    [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    [self.textField setCornerRadius:8 clipsToBounds:YES];
@@ -173,7 +173,7 @@
    [self.textField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    
    [self.textField setDelegate:self];
-   [self.textField setPlaceholder:APP_STR(@"IP Address / Host Name")];
+   [self.textField setPlaceholder:APP_STR(@"Domain Name")];
 
    /**
     UITextView
@@ -219,6 +219,17 @@
 //
 //   } /* End if () */
 //#endif /* MATERIAL_APP_BAR */
+
+//   [self addNotificationName:UITextFieldTextDidChangeNotification
+//                    selector:@selector(textFieldTextDidChange:)
+//                      object:self.textField];
+   
+#if __Debug__
+   dispatch_async_on_main_queue(^{
+      
+      [self.textField setText:@"www.baidu.com"];
+   });
+#endif /* __Debug__ */
 
    __CATCH(nErr);
    
@@ -306,6 +317,26 @@
    return;
 }
 
+- (BOOL)resignFirstResponder {
+   
+   int                            nErr                                     = EFAULT;
+   BOOL                           bDone                                    = NO;
+   
+   __TRY;
+   
+   bDone = [self.textField resignFirstResponder];
+   
+   if (!bDone) {
+      
+      bDone = [super resignFirstResponder];
+      
+   } /* End if () */
+   
+   __CATCH(nErr);
+   
+   return bDone;
+}
+
 @end
 
 #pragma mark - UIStoryboard
@@ -375,9 +406,20 @@
    
    __TRY;
    
-   [self postSignal:DNSController.startSignal
-            onQueue:dispatch_get_main_queue()];
-   
+   [self.textField setEnabled:NO];
+   [self.rightBarButtonItem setEnabled:NO];
+   [self.activityIndicator startAnimating];
+
+   @weakify(self);
+   [self.activityIndicator setHidden:NO
+                            animated:YES
+                            complete:^{
+      
+      @strongify(self);
+      [self postSignal:DNSController.startSignal
+               onQueue:dispatch_get_main_queue()];
+   }];
+      
    __CATCH(nErr);
    
    return;

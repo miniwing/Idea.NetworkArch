@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[TodayWidgetCell+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[TodayWidgetCell onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
       

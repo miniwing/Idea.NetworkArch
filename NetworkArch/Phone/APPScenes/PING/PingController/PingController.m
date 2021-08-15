@@ -167,7 +167,7 @@
    /**
     UITextField
     */
-   [self.searchView setBackgroundColor:UIColor.clearColor];
+   [self.inputView setBackgroundColor:UIColor.clearColor];
 //   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
    [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    [self.textField setCornerRadius:8 clipsToBounds:YES];

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface APPDelegate (Kit)
+@interface APPDelegate (System)
 
 + (NSString *)version;
 + (void)setVersion:(NSString *)aVersion;
@@ -23,6 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)isTracking;
 + (void)setTracking:(BOOL)aTracking;
+
+@end
+
+@interface APPDelegate (Storage)
+
++ (NSString *)apiKey;
++ (void)setApiKey:(NSString *)aApiKey;
 
 @end
 

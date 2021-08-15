@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[WifiInterfacesCell+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[WifiInterfacesCell onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
       
