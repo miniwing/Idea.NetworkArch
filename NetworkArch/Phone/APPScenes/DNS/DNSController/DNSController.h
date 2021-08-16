@@ -22,9 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UIView                              * inputView;
 @property (nonatomic, weak)   IBOutlet       APPTextField                        * textField;
 
-@property (nonatomic, weak)   IBOutlet       UITextView                          * textView;
-
 @property (nonatomic, weak)   IBOutlet       MDCActivityIndicator                * activityIndicator;
+
+@property (nonatomic, weak)   IBOutlet       UIView                              * contentView;
 
 @end
 

@@ -177,6 +177,23 @@
 		4A745EED26C58E9D00DA644A /* WoLANCell+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A745EE626C58E9C00DA644A /* WoLANCell+Debug.m */; };
 		4A842C8026AC1C0B005DC131 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A842C7E26AC1C0B005DC131 /* InfoPlist.strings */; };
 		4A842C8126AC1C19005DC131 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B992685CD3400DC1DA2 /* Localizable.strings */; };
+		4A988A3F26CA433A0010650A /* WhoisManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A3E26CA433A0010650A /* WhoisManager.m */; };
+		4A988A4226CA45330010650A /* WhoisManager+Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A4126CA45330010650A /* WhoisManager+Singleton.m */; };
+		4A988A4626CA463C0010650A /* DNSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A4526CA463C0010650A /* DNSManager.m */; };
+		4A988A4926CA464F0010650A /* DNSManager+Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A4826CA464F0010650A /* DNSManager+Singleton.m */; };
+		4A988A6926CA5C190010650A /* DNSContentController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A6026CA5C190010650A /* DNSContentController+Theme.m */; };
+		4A988A6A26CA5C190010650A /* DNSContentController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A6126CA5C190010650A /* DNSContentController+Debug.m */; };
+		4A988A6B26CA5C190010650A /* DNSContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A6326CA5C190010650A /* DNSContentController.m */; };
+		4A988A6C26CA5C190010650A /* DNSContentController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A6426CA5C190010650A /* DNSContentController+Inner.m */; };
+		4A988A6D26CA5C190010650A /* DNSContentController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A6726CA5C190010650A /* DNSContentController+Notification.m */; };
+		4A988A6E26CA5C190010650A /* DNSContentController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A6826CA5C190010650A /* DNSContentController+Signal.m */; };
+		4A988A8E26CA5FDB0010650A /* DNSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A8226CA5FDA0010650A /* DNSCell.m */; };
+		4A988A8F26CA5FDB0010650A /* DNSCell+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A8426CA5FDA0010650A /* DNSCell+Signal.m */; };
+		4A988A9026CA5FDB0010650A /* DNSCell+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A8926CA5FDB0010650A /* DNSCell+Debug.m */; };
+		4A988A9126CA5FDB0010650A /* DNSCell+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A8A26CA5FDB0010650A /* DNSCell+Theme.m */; };
+		4A988A9226CA5FDB0010650A /* DNSCell+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A8C26CA5FDB0010650A /* DNSCell+Notification.m */; };
+		4A988A9326CA5FDB0010650A /* DNSCell+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A8D26CA5FDB0010650A /* DNSCell+Inner.m */; };
+		4A988A9726CA60D90010650A /* DNSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A988A9626CA60D90010650A /* DNSModel.m */; };
 		4A99B5B926B5910D006F479F /* APPDelegate+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D98EB26A47B1200E00610 /* APPDelegate+Inner.m */; };
 		4AAF697826B58E1300E68E32 /* APPDelegate+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF697726B58E1300E68E32 /* APPDelegate+Signal.m */; };
 		4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5C1D726859BB800B1639D /* HomeRootController.m */; };
@@ -693,6 +710,40 @@
 		4A842C7B26AC19D0005DC131 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		4A842C7F26AC1C0B005DC131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkArch.entitlements; sourceTree = "<group>"; };
+		4A988A3D26CA433A0010650A /* WhoisManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoisManager.h; sourceTree = "<group>"; };
+		4A988A3E26CA433A0010650A /* WhoisManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhoisManager.m; sourceTree = "<group>"; };
+		4A988A4026CA45330010650A /* WhoisManager+Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WhoisManager+Singleton.h"; sourceTree = "<group>"; };
+		4A988A4126CA45330010650A /* WhoisManager+Singleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WhoisManager+Singleton.m"; sourceTree = "<group>"; };
+		4A988A4426CA463C0010650A /* DNSManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNSManager.h; sourceTree = "<group>"; };
+		4A988A4526CA463C0010650A /* DNSManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNSManager.m; sourceTree = "<group>"; };
+		4A988A4726CA464F0010650A /* DNSManager+Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNSManager+Singleton.h"; sourceTree = "<group>"; };
+		4A988A4826CA464F0010650A /* DNSManager+Singleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DNSManager+Singleton.m"; sourceTree = "<group>"; };
+		4A988A5D26CA5C190010650A /* DNSContentController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNSContentController+Inner.h"; sourceTree = "<group>"; };
+		4A988A5E26CA5C190010650A /* DNSContentController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNSContentController+Debug.h"; sourceTree = "<group>"; };
+		4A988A5F26CA5C190010650A /* DNSContentController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNSContentController+Theme.h"; sourceTree = "<group>"; };
+		4A988A6026CA5C190010650A /* DNSContentController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSContentController+Theme.m"; sourceTree = "<group>"; };
+		4A988A6126CA5C190010650A /* DNSContentController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSContentController+Debug.m"; sourceTree = "<group>"; };
+		4A988A6226CA5C190010650A /* DNSContentController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNSContentController+Signal.h"; sourceTree = "<group>"; };
+		4A988A6326CA5C190010650A /* DNSContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSContentController.m; sourceTree = "<group>"; };
+		4A988A6426CA5C190010650A /* DNSContentController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSContentController+Inner.m"; sourceTree = "<group>"; };
+		4A988A6526CA5C190010650A /* DNSContentController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNSContentController+Notification.h"; sourceTree = "<group>"; };
+		4A988A6626CA5C190010650A /* DNSContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSContentController.h; sourceTree = "<group>"; };
+		4A988A6726CA5C190010650A /* DNSContentController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSContentController+Notification.m"; sourceTree = "<group>"; };
+		4A988A6826CA5C190010650A /* DNSContentController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSContentController+Signal.m"; sourceTree = "<group>"; };
+		4A988A8226CA5FDA0010650A /* DNSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSCell.m; sourceTree = "<group>"; };
+		4A988A8326CA5FDA0010650A /* DNSCell+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNSCell+Inner.h"; sourceTree = "<group>"; };
+		4A988A8426CA5FDA0010650A /* DNSCell+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSCell+Signal.m"; sourceTree = "<group>"; };
+		4A988A8526CA5FDB0010650A /* DNSCell+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNSCell+Signal.h"; sourceTree = "<group>"; };
+		4A988A8626CA5FDB0010650A /* DNSCell+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNSCell+Theme.h"; sourceTree = "<group>"; };
+		4A988A8726CA5FDB0010650A /* DNSCell+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNSCell+Debug.h"; sourceTree = "<group>"; };
+		4A988A8826CA5FDB0010650A /* DNSCell+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNSCell+Notification.h"; sourceTree = "<group>"; };
+		4A988A8926CA5FDB0010650A /* DNSCell+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSCell+Debug.m"; sourceTree = "<group>"; };
+		4A988A8A26CA5FDB0010650A /* DNSCell+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSCell+Theme.m"; sourceTree = "<group>"; };
+		4A988A8B26CA5FDB0010650A /* DNSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSCell.h; sourceTree = "<group>"; };
+		4A988A8C26CA5FDB0010650A /* DNSCell+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSCell+Notification.m"; sourceTree = "<group>"; };
+		4A988A8D26CA5FDB0010650A /* DNSCell+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNSCell+Inner.m"; sourceTree = "<group>"; };
+		4A988A9526CA60D90010650A /* DNSModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNSModel.h; sourceTree = "<group>"; };
+		4A988A9626CA60D90010650A /* DNSModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNSModel.m; sourceTree = "<group>"; };
 		4A98A6362684B50F00EEEB60 /* NetworkArch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkArch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAF697626B58E1300E68E32 /* APPDelegate+Signal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APPDelegate+Signal.h"; sourceTree = "<group>"; };
 		4AAF697726B58E1300E68E32 /* APPDelegate+Signal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "APPDelegate+Signal.m"; sourceTree = "<group>"; };
@@ -1111,6 +1162,7 @@
 		4A0E4E592685897400A85517 /* APPScenes */ = {
 			isa = PBXGroup;
 			children = (
+				4A5F9ED926CA0F4F00D15CC0 /* WKWebViewController */,
 				4A45537D2686327A0050E736 /* TRACKING */,
 				4A0E4E5C2685898E00A85517 /* HOME */,
 				4AE2178E26C8BD860047776D /* HOME-SETTING */,
@@ -1132,6 +1184,7 @@
 				4ACE80DB26C6874A00E962E1 /* TRACKing */,
 				4A7241AE26B3152400009443 /* PING */,
 				4ACE80D726C6867A00E962E1 /* WoLAN */,
+				4A988A9426CA60C30010650A /* DNS */,
 			);
 			path = APPModels;
 			sourceTree = "<group>";
@@ -1147,6 +1200,7 @@
 				4A22E9AD26B6C71A00ADC0F4 /* CELLULAR-MORE */,
 				4AF9C4ED26B1C5DE002A2ABC /* PING */,
 				4A745EC926C58E4D00DA644A /* WoLAN */,
+				4A988A6F26CA5FB40010650A /* DNSCell */,
 				4AB5C1E726859F3C00B1639D /* SETTING */,
 			);
 			path = APPViews;
@@ -1468,6 +1522,7 @@
 			children = (
 				4A53AAA426A47402000700F2 /* DNSRootController */,
 				4A53AAB126A47402000700F2 /* DNSController */,
+				4A988A4A26CA5BF10010650A /* DNSContentController */,
 			);
 			path = DNS;
 			sourceTree = "<group>";
@@ -1615,6 +1670,13 @@
 			path = CellularMoreController;
 			sourceTree = "<group>";
 		};
+		4A5F9ED926CA0F4F00D15CC0 /* WKWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WKWebViewController;
+			sourceTree = "<group>";
+		};
 		4A7241AE26B3152400009443 /* PING */ = {
 			isa = PBXGroup;
 			children = (
@@ -1700,6 +1762,75 @@
 				4A221F0026A44DA100C94F00 /* PingRootController+Theme.m */,
 			);
 			path = PingRootController;
+			sourceTree = "<group>";
+		};
+		4A988A3C26CA43260010650A /* WHOIS */ = {
+			isa = PBXGroup;
+			children = (
+				4A988A3D26CA433A0010650A /* WhoisManager.h */,
+				4A988A3E26CA433A0010650A /* WhoisManager.m */,
+				4A988A4026CA45330010650A /* WhoisManager+Singleton.h */,
+				4A988A4126CA45330010650A /* WhoisManager+Singleton.m */,
+			);
+			path = WHOIS;
+			sourceTree = "<group>";
+		};
+		4A988A4326CA45FF0010650A /* DNS */ = {
+			isa = PBXGroup;
+			children = (
+				4A988A4426CA463C0010650A /* DNSManager.h */,
+				4A988A4526CA463C0010650A /* DNSManager.m */,
+				4A988A4726CA464F0010650A /* DNSManager+Singleton.h */,
+				4A988A4826CA464F0010650A /* DNSManager+Singleton.m */,
+			);
+			path = DNS;
+			sourceTree = "<group>";
+		};
+		4A988A4A26CA5BF10010650A /* DNSContentController */ = {
+			isa = PBXGroup;
+			children = (
+				4A988A6626CA5C190010650A /* DNSContentController.h */,
+				4A988A6326CA5C190010650A /* DNSContentController.m */,
+				4A988A5D26CA5C190010650A /* DNSContentController+Inner.h */,
+				4A988A6426CA5C190010650A /* DNSContentController+Inner.m */,
+				4A988A5F26CA5C190010650A /* DNSContentController+Theme.h */,
+				4A988A6026CA5C190010650A /* DNSContentController+Theme.m */,
+				4A988A6226CA5C190010650A /* DNSContentController+Signal.h */,
+				4A988A6826CA5C190010650A /* DNSContentController+Signal.m */,
+				4A988A6526CA5C190010650A /* DNSContentController+Notification.h */,
+				4A988A6726CA5C190010650A /* DNSContentController+Notification.m */,
+				4A988A5E26CA5C190010650A /* DNSContentController+Debug.h */,
+				4A988A6126CA5C190010650A /* DNSContentController+Debug.m */,
+			);
+			path = DNSContentController;
+			sourceTree = "<group>";
+		};
+		4A988A6F26CA5FB40010650A /* DNSCell */ = {
+			isa = PBXGroup;
+			children = (
+				4A988A8B26CA5FDB0010650A /* DNSCell.h */,
+				4A988A8226CA5FDA0010650A /* DNSCell.m */,
+				4A988A8326CA5FDA0010650A /* DNSCell+Inner.h */,
+				4A988A8D26CA5FDB0010650A /* DNSCell+Inner.m */,
+				4A988A8626CA5FDB0010650A /* DNSCell+Theme.h */,
+				4A988A8A26CA5FDB0010650A /* DNSCell+Theme.m */,
+				4A988A8526CA5FDB0010650A /* DNSCell+Signal.h */,
+				4A988A8426CA5FDA0010650A /* DNSCell+Signal.m */,
+				4A988A8826CA5FDB0010650A /* DNSCell+Notification.h */,
+				4A988A8C26CA5FDB0010650A /* DNSCell+Notification.m */,
+				4A988A8726CA5FDB0010650A /* DNSCell+Debug.h */,
+				4A988A8926CA5FDB0010650A /* DNSCell+Debug.m */,
+			);
+			path = DNSCell;
+			sourceTree = "<group>";
+		};
+		4A988A9426CA60C30010650A /* DNS */ = {
+			isa = PBXGroup;
+			children = (
+				4A988A9526CA60D90010650A /* DNSModel.h */,
+				4A988A9626CA60D90010650A /* DNSModel.m */,
+			);
+			path = DNS;
 			sourceTree = "<group>";
 		};
 		4A98A62D2684B50F00EEEB60 = {
@@ -1902,6 +2033,8 @@
 			children = (
 				4ACE80D626C6865900E962E1 /* DEVICE-AWAKE */,
 				4ACE80D526C6862900E962E1 /* DATA-USAGE */,
+				4A988A3C26CA43260010650A /* WHOIS */,
+				4A988A4326CA45FF0010650A /* DNS */,
 			);
 			path = APPDriver;
 			sourceTree = "<group>";
@@ -2555,6 +2688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A988A6B26CA5C190010650A /* DNSContentController.m in Sources */,
 				4A53A9BD26A46E60000700F2 /* WoLANRootController+Notification.m in Sources */,
 				4ACE80DA26C6868E00E962E1 /* WoLANDevice.m in Sources */,
 				4A99B5B926B5910D006F479F /* APPDelegate+Inner.m in Sources */,
@@ -2567,6 +2701,7 @@
 				4AB997CD26C9534E00CD681F /* HomeSettingLinkCell+Debug.m in Sources */,
 				4A53AA6B26A46F52000700F2 /* WoLANController+Theme.m in Sources */,
 				4A53AAC726A47403000700F2 /* DNSController+Signal.m in Sources */,
+				4A988A8F26CA5FDB0010650A /* DNSCell+Signal.m in Sources */,
 				4A5D9A0526A4952B00E00610 /* WifiMoreController+Notification.m in Sources */,
 				4AE217ED26C8BE270047776D /* HomeSettingController+Notification.m in Sources */,
 				4A53AABF26A47403000700F2 /* DNSRootController+Inner.m in Sources */,
@@ -2595,6 +2730,7 @@
 				4AC0B88E26B9AB1A00B2DA58 /* WifiInterfacesRootController+Inner.m in Sources */,
 				4AC5441E26C3665100C0320B /* WifiInterfacesCell+Notification.m in Sources */,
 				4A745EC626C58C1F00DA644A /* WoLANContentController+Signal.m in Sources */,
+				4A988A9026CA5FDB0010650A /* DNSCell+Debug.m in Sources */,
 				4AE2182626C8C1F40047776D /* HomeSettingContentController.m in Sources */,
 				4A5D99E126A4950B00E00610 /* CellularMoreController+Theme.m in Sources */,
 				4A53A9EB26A46EA5000700F2 /* WhoisRootController+Signal.m in Sources */,
@@ -2618,6 +2754,7 @@
 				4AF9C4FE26B1C5F5002A2ABC /* PingResultCell.m in Sources */,
 				4A7241B126B3153A00009443 /* PingResult.m in Sources */,
 				4A0E0E3D26B6CDA5001AE345 /* CellularMoreCell+Inner.m in Sources */,
+				4A988A6C26CA5C190010650A /* DNSContentController+Inner.m in Sources */,
 				4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */,
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
 				4AAF697826B58E1300E68E32 /* APPDelegate+Signal.m in Sources */,
@@ -2634,6 +2771,8 @@
 				4A53AA4126A46F18000700F2 /* PingController+Debug.m in Sources */,
 				4A0E0E3A26B6CDA5001AE345 /* CellularMoreCell+Signal.m in Sources */,
 				4A5D9A0226A4952B00E00610 /* WifiMoreController+Theme.m in Sources */,
+				4A988A8E26CA5FDB0010650A /* DNSCell.m in Sources */,
+				4A988A6E26CA5C190010650A /* DNSContentController+Signal.m in Sources */,
 				4A0E4E72268589E500A85517 /* SettingContentController.m in Sources */,
 				4AC5442126C3665100C0320B /* WifiInterfacesCell+Inner.m in Sources */,
 				4A53AA1526A46EE2000700F2 /* WhoisController+Inner.m in Sources */,
@@ -2644,6 +2783,7 @@
 				4AC0B89126B9AB1A00B2DA58 /* WifiInterfacesRootController+Theme.m in Sources */,
 				4AC0B85A26B9AAE500B2DA58 /* WifiInterfacesController+Notification.m in Sources */,
 				4A0E0E0726B6CD51001AE345 /* WifiMoreCell+Inner.m in Sources */,
+				4A988A3F26CA433A0010650A /* WhoisManager.m in Sources */,
 				4A53AA1326A46EE2000700F2 /* WhoisController+Signal.m in Sources */,
 				4A53AA6C26A46F52000700F2 /* WoLANController.m in Sources */,
 				4A5D99E026A4950B00E00610 /* CellularMoreController+Debug.m in Sources */,
@@ -2697,11 +2837,14 @@
 				4AE2182926C8C1F40047776D /* HomeSettingContentController+Theme.m in Sources */,
 				4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */,
 				4A53A9C026A46E60000700F2 /* WoLANRootController.m in Sources */,
+				4A988A6926CA5C190010650A /* DNSContentController+Theme.m in Sources */,
+				4A988A4926CA464F0010650A /* DNSManager+Singleton.m in Sources */,
 				4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */,
 				4AB997CC26C9534E00CD681F /* HomeSettingLinkCell+Notification.m in Sources */,
 				4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */,
 				4AB9980926C953CA00CD681F /* HomeSettingApiKeyCell+Theme.m in Sources */,
 				4A5D99CD26A494FA00E00610 /* CellularMoreRootController+Theme.m in Sources */,
+				4A988A9226CA5FDB0010650A /* DNSCell+Notification.m in Sources */,
 				4AE217F126C8BE270047776D /* HomeSettingController+Debug.m in Sources */,
 				4A584B0626B59E83002A2E81 /* UIDevice+Network.m in Sources */,
 				4A4553862686327B0050E736 /* TrackingRootController.m in Sources */,
@@ -2709,10 +2852,13 @@
 				4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */,
 				4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */,
 				4AF9C51026B1C9A4002A2ABC /* PingGraphCell.m in Sources */,
+				4A988A6A26CA5C190010650A /* DNSContentController+Debug.m in Sources */,
 				4AC0B89326B9AB1A00B2DA58 /* WifiInterfacesRootController.m in Sources */,
 				4AE2182826C8C1F40047776D /* HomeSettingContentController+Signal.m in Sources */,
+				4A988A6D26CA5C190010650A /* DNSContentController+Notification.m in Sources */,
 				4AC5441C26C3665100C0320B /* WifiInterfacesCell+Signal.m in Sources */,
 				4A5D99DF26A4950B00E00610 /* CellularMoreController.m in Sources */,
+				4A988A9326CA5FDB0010650A /* DNSCell+Inner.m in Sources */,
 				4A0707FB26B64B5A00D3A1DC /* CellularMoreContentController+Notification.m in Sources */,
 				4A745EEC26C58E9D00DA644A /* WoLANCell+Inner.m in Sources */,
 				4AE217D426C8BE060047776D /* HomeSettingRootController+Inner.m in Sources */,
@@ -2741,10 +2887,12 @@
 				4A0E4E4D2685888F00A85517 /* APPDelegate+Kit.m in Sources */,
 				4A53AA1726A46EE2000700F2 /* WhoisController+Theme.m in Sources */,
 				4A53A9E926A46EA5000700F2 /* WhoisRootController.m in Sources */,
+				4A988A9126CA5FDB0010650A /* DNSCell+Theme.m in Sources */,
 				4A221F0526A44DA100C94F00 /* PingRootController+Signal.m in Sources */,
 				4A5D99D026A494FA00E00610 /* CellularMoreRootController+Inner.m in Sources */,
 				4A0E4E71268589E500A85517 /* SettingContentController+Theme.m in Sources */,
 				4AB9980826C953C900CD681F /* HomeSettingApiKeyCell+Signal.m in Sources */,
+				4A988A9726CA60D90010650A /* DNSModel.m in Sources */,
 				4A0707FA26B64B5A00D3A1DC /* CellularMoreContentController+Theme.m in Sources */,
 				4A0707FC26B64B5A00D3A1DC /* CellularMoreContentController+Debug.m in Sources */,
 				4AE217D126C8BE060047776D /* HomeSettingRootController+Notification.m in Sources */,
@@ -2752,8 +2900,10 @@
 				4AE217D226C8BE060047776D /* HomeSettingRootController+Theme.m in Sources */,
 				4A53AAC126A47403000700F2 /* DNSRootController+Signal.m in Sources */,
 				4A53A9BC26A46E60000700F2 /* WoLANRootController+Inner.m in Sources */,
+				4A988A4226CA45330010650A /* WhoisManager+Singleton.m in Sources */,
 				4A53AA6E26A46F52000700F2 /* WoLANController+Signal.m in Sources */,
 				4A0E0E0826B6CD51001AE345 /* WifiMoreCell+Notification.m in Sources */,
+				4A988A4626CA463C0010650A /* DNSManager.m in Sources */,
 				4A5D99F426A4951C00E00610 /* WifiMoreRootController+Debug.m in Sources */,
 				4A53A9EA26A46EA5000700F2 /* WhoisRootController+Notification.m in Sources */,
 				4A5D99EF26A4951C00E00610 /* WifiMoreRootController+Theme.m in Sources */,

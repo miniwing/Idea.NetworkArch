@@ -14,18 +14,6 @@
 
 @implementation WhoisController (Inner)
 
-// "at_wa51HmNxHCpSNqTTi1UFv38wluCtf"
-
-+ (NSString *)whoisURL {
-   
-   return [NSString stringWithFormat:@"https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=%@&outputFormat=JSON", @"at_wa51HmNxHCpSNqTTi1UFv38wluCtf"];
-}
-
-+ (NSString *)whoisURLWithKey:(NSString *)aKey {
-   
-   return [NSString stringWithFormat:@"https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=%@&outputFormat=JSON", aKey];
-}
-
 @end
 
 #pragma mark - <UITextFieldDelegate>

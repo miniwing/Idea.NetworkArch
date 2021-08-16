@@ -23,6 +23,9 @@
    
    // Custom dealloc
    
+   [self unobserveAllNotifications];
+   [self removeAllSignalResponders];
+
    __SUPER_DEALLOC;
    
    return;

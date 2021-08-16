@@ -18,5 +18,7 @@
 #endif /* __Debug__ */
 
 @def_signal(save);
+@def_signal(addLink);
 
 @end
+

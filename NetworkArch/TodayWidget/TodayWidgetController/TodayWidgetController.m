@@ -21,8 +21,11 @@
    
    // Custom dealloc
    
-   [self removeSignalResponder:self.contentController];
+//   [self removeSignalResponder:self.contentController];
    
+   [self removeAllSignalResponders];
+   [self unobserveAllNotifications];
+
    __SUPER_DEALLOC;
    
    return;
@@ -47,7 +50,7 @@
    [self.locationManager requestAlwaysAuthorization];
    [self addSignalResponder:self.contentController];
    
-   //   [self.extensionContext setWidgetLargestAvailableDisplayMode:NCWidgetDisplayModeExpanded];
+//   [self.extensionContext setWidgetLargestAvailableDisplayMode:NCWidgetDisplayModeExpanded];
    
    __CATCH(nErr);
    

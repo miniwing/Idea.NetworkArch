@@ -29,7 +29,10 @@
    // Custom dealloc
 
    [self removeAllNotification];
-   
+
+   [self removeAllSignalResponders];
+   [self unobserveAllNotifications];
+
    __SUPER_DEALLOC;
 
    return;
@@ -107,6 +110,8 @@
       dispatch_async_on_main_queue(^{
          
          [self.apiKeytextField setText:@"at_wa51HmNxHCpSNqTTi1UFv38wluCtf"];
+         
+         [self.apiKeytextField becomeFirstResponder];
       });
    }
 #endif /* __Debug__ */

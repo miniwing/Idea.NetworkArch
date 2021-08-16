@@ -30,6 +30,9 @@ const static NSTimeInterval   UIButtonAnimationDuraton   = 0.1f;
    
    // Custom dealloc
    
+   [self removeAllSignalResponders];
+   [self unobserveAllNotifications];
+
    __SUPER_DEALLOC;
    
    return;

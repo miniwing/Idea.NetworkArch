@@ -9,7 +9,9 @@
 //  TEL : +(852)53054612
 //
 
+#import "DNSController+Inner.h"
 #import "DNSController+Signal.h"
+#import "DNSController+Notification.h"
 
 @implementation DNSController (Signal)
 
@@ -28,15 +30,14 @@
 handleSignal(DNSController, startSignal) {
    
    int                            nErr                                     = EFAULT;
-   
+
    __TRY;
-   
-   [self resignFirstResponder];
-   
-   LogDebug((@"-[DNSController startSignal:] : Signal : %@", aSignal));
+      
+   LogDebug((@"-[DNSContentController startSignal:] : Signal : %@", aSignal));
+   LogDebug((@"-[DNSContentController startSignal:] : Domain : %@", aSignal.object));
    
    __CATCH(nErr);
-   
+
    return;
 }
 
@@ -46,8 +47,18 @@ handleSignal(DNSController, doneSignal) {
    
    __TRY;
    
-   LogDebug((@"-[WhoisController doneSignal:] : Signal : %@", aSignal));
+   LogDebug((@"-[DNSController doneSignal:] : Signal : %@", aSignal));
+   LogDebug((@"-[DNSController doneSignal:] : Error  : %@", aSignal.object));
    
+   if (nil != aSignal.object) {
+      
+      // occur some error.
+      
+   } /* End if () */
+   else {
+      
+   } /* End else */
+
    @weakify(self);
    [self.activityIndicator setHidden:YES
                             animated:YES
@@ -62,7 +73,17 @@ handleSignal(DNSController, doneSignal) {
 
       } /* End if () */
 
-      [self.textField setEnabled:YES];
+      [self.textField setEnabled:NO];
+
+      if (nil != aSignal.object) {
+         
+         // occur some error.
+         [self.textField becomeFirstResponder];
+         
+      } /* End if () */
+      else {
+         
+      } /* End else */
    }];
    
    __CATCH(nErr);

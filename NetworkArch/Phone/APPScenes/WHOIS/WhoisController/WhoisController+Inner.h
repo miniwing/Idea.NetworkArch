@@ -12,9 +12,18 @@
 
 #import "WhoisController.h"
 
+#import "WhoisManager.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WhoisController () <UITextFieldDelegate>
+@interface WhoisController () <UITextFieldDelegate> {
+
+   dispatch_once_t                          _firstResponder;
+}
+
+@end
+
+@interface WhoisController ()
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
 
@@ -26,9 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface WhoisController (Inner)
-
-+ (NSString *)whoisURL;
-+ (NSString *)whoisURLWithKey:(NSString *)aKey;
 
 @end
 

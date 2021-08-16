@@ -22,6 +22,9 @@
    __LOG_FUNCTION;
 
    // Custom dealloc
+   
+   [self removeAllSignalResponders];
+   [self unobserveAllNotifications];
 
    __SUPER_DEALLOC;
 

@@ -29,6 +29,9 @@
    __LOG_FUNCTION;
 
    // Custom dealloc
+   
+   [self unobserveAllNotifications];
+   [self removeAllSignalResponders];
 
    __SUPER_DEALLOC;
 
@@ -146,9 +149,9 @@
    // Dispose of any resources that can be recreated.
    /**
     调整 Layout
-    search.top
+    inputView.top
     */
-   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"search.top"
+   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"inputView.top"
                                                               fromView:self.view];
    
    if (nil != stLayoutConstraint) {
@@ -212,7 +215,7 @@
 //   // Dispose of any resources that can be recreated.
 //   /**
 //    调整 Layout
-//    search.top
+//    inputView.top
 //    */
 //   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"activityIndicator.Center.Y"
 //                                                              fromView:self.view];
@@ -224,6 +227,9 @@
 //   } /* End if () */
 //#endif /* MATERIAL_APP_BAR */
 
+   /**
+    监听输入
+    */
    [self addNotificationName:UITextFieldTextDidChangeNotification
                     selector:@selector(textFieldTextDidChange:)
                       object:self.textField];
@@ -283,15 +289,20 @@
 }
 
 - (void)viewDidAppear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidAppear:aAnimated];
-
+   
+   dispatch_once(&_firstResponder, ^{
+      
+      [self.textField becomeFirstResponder];
+   });
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -309,15 +320,17 @@
 }
 
 - (void)viewDidDisappear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidDisappear:aAnimated];
-
+   
+   _firstResponder   = 0;
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -414,6 +427,8 @@
    [self.textField setEnabled:NO];
    [self.rightBarButtonItem setEnabled:NO];
    [self.activityIndicator startAnimating];
+   
+   [self.textView setText:@""];
 
    @weakify(self);
    [self.activityIndicator setHidden:NO

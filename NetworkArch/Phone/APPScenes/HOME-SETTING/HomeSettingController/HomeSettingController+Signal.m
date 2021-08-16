@@ -39,37 +39,26 @@ handleSignal(HomeSettingContentController, saveSignal) {
    LogDebug((@"-[HomeSettingController saveSignal:] : API KEY : %@", aSignal.object));
    
 //   [CATransaction begin];
-//
 //   [self resignFirstResponder];
-//
 //   [CATransaction commit];
-//
 //   [CATransaction setCompletionBlock:^{
-//
 //      if ([self.navigationController isKindOfClass:HomeSettingRootController.class] || [self.rt_navigationController isKindOfClass:HomeSettingRootController.class]) {
-//
 //         [self dismissViewControllerAnimated:YES
 //                                  completion:^{
-//
 //         }];
-//
 //      } /* End if () */
 //      else {
-//
 //         [self.navigationController popViewControllerAnimated:YES
 //                                                   completion:nil];
-//
 //      } /* End else */
 //   }];
-
+   
    [self resignFirstResponder];
-
+   
    if ([self.navigationController isKindOfClass:HomeSettingRootController.class] || [self.rt_navigationController isKindOfClass:HomeSettingRootController.class]) {
       
       [self dismissViewControllerAnimated:YES
-                               completion:^{
-         
-      }];
+                               completion:nil];
       
    } /* End if () */
    else {
@@ -78,9 +67,23 @@ handleSignal(HomeSettingContentController, saveSignal) {
                                                 completion:nil];
       
    } /* End else */
-
+   
    [APPDelegate setApiKey:aSignal.object];
    
+   __CATCH(nErr);
+   
+   return;
+}
+
+handleSignal(HomeSettingContentController, addLinkSignal) {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[HomeSettingController addLinkSignal:] : Signal : %@", aSignal));
+   LogDebug((@"-[HomeSettingController addLinkSignal:] : API KEY : %@", aSignal.object));
+      
    __CATCH(nErr);
    
    return;

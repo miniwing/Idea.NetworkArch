@@ -38,8 +38,9 @@
    
    [[APPDelegate APP] removeSignalResponder:self];
 
-   [self removeAllNotification];
-   
+   [self unobserveAllNotifications];
+   [self removeAllSignalResponders];
+
    __SUPER_DEALLOC;
    
    return;

@@ -24,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DataUsage : NSObject
 
+@end
+
+@interface DataUsage (Singleton)
+
 @singleton( DataUsage );
 
 @end

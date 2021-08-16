@@ -46,8 +46,12 @@ NS_ASSUME_NONNULL_END
    __LOG_FUNCTION;
    
    // Custom dealloc
+   
    [self removeAllNotification];
    
+   [self unobserveAllNotifications];
+   [self removeAllSignalResponders];
+
    __SUPER_DEALLOC;
    
    return;

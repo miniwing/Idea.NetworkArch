@@ -11,6 +11,7 @@
 #import <IDEAUIVendor/IDEAUIVendor.h>
 
 #import "WhoisController.h"
+#import "WhoisManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

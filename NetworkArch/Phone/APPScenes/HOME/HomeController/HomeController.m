@@ -32,8 +32,12 @@
    __LOG_FUNCTION;
    
    // Custom dealloc
-   [self removeSignalResponder:self.contentController];
    
+//   [self removeSignalResponder:self.contentController];
+   
+   [self unobserveAllNotifications];
+   [self removeAllSignalResponders];
+
    __SUPER_DEALLOC;
    
    return;
@@ -163,9 +167,9 @@
 #endif /* MATERIAL_APP_BAR */
    
    [self.locationManager requestAlwaysAuthorization];
-   
+
    [self addSignalResponder:self.contentController];
-   
+
    __CATCH(nErr);
    
    return;
@@ -279,7 +283,7 @@
    if ([aSegue.identifier isEqualToString:HomeContentController.className]) {
       
       self.contentController  = aSegue.destinationViewController;
-      
+
    } /* End if () */
    
    __CATCH(nErr);

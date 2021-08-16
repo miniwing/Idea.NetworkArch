@@ -9,7 +9,9 @@
 //  TEL : +(852)53054612
 //
 
+#import "WhoisController+Inner.h"
 #import "WhoisController+Signal.h"
+#import "WhoisController+Notification.h"
 
 @implementation WhoisController (Signal)
 
@@ -29,14 +31,42 @@ handleSignal(WhoisController, startSignal) {
    
    int                            nErr                                     = EFAULT;
    
+   NSString                      *szDomain                                 = nil;
+   
+   __block NSError               *stError                                  = nil;
+   __block NSDictionary          *stWhois                                  = nil;
+   __block NSString              *szWhois                                  = nil;
+
    __TRY;
    
    [self resignFirstResponder];
    
    LogDebug((@"-[WhoisController startSignal:] : Signal : %@", aSignal));
-      
-   __CATCH(nErr);
    
+   szDomain = [self.textField text];
+   LogDebug((@"-[WhoisController startSignal:] : Domain : %@", szDomain));
+   
+   [WhoisManager fetchWhoisForDomain:szDomain
+                   completionHandler:^(NSData * _Nonnull aData, NSURLResponse * _Nonnull aResponse, NSError * _Nonnull aError) {
+
+      LogDebug((@"-[WhoisController startSignal:] : Response : %@", aResponse));
+
+      stWhois  = [NSJSONSerialization JSONObjectWithData:aData
+                                                 options:NSJSONReadingMutableContainers
+                                                   error:&stError];
+      
+      szWhois  = stWhois[@"WhoisRecord"][@"rawText"];
+            
+      [self postSignal:WhoisController.doneSignal
+            withObject:stError
+                 input:@{@"Whois" : szWhois}
+               onQueue:dispatch_get_main_queue()];
+   }];
+
+   __CATCH(nErr);
+
+   __RELEASE(stError);
+
    return;
 }
 
@@ -47,7 +77,19 @@ handleSignal(WhoisController, doneSignal) {
    __TRY;
    
    LogDebug((@"-[WhoisController doneSignal:] : Signal : %@", aSignal));
+   LogDebug((@"-[WhoisController doneSignal:] : Error  : %@", aSignal.object));
    
+   if (nil != aSignal.object) {
+      
+      // occur some error.
+      
+   } /* End if () */
+   else {
+      
+      [self.textView setText:aSignal.input[@"Whois"]];
+
+   } /* End else */
+
    @weakify(self);
    [self.activityIndicator setHidden:YES
                             animated:YES
@@ -62,7 +104,19 @@ handleSignal(WhoisController, doneSignal) {
 
       } /* End if () */
 
-      [self.textField setEnabled:YES];
+      [self.textField setEnabled:NO];
+
+      if (nil != aSignal.object) {
+         
+         // occur some error.
+         [self.textField becomeFirstResponder];
+         
+      } /* End if () */
+      else {
+         
+         [self.textView setHidden:NO animated:YES];
+
+      } /* End else */
    }];
    
    __CATCH(nErr);

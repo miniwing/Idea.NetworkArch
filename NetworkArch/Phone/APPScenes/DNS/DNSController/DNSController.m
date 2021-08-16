@@ -25,13 +25,18 @@
 @implementation DNSController
 
 - (void)dealloc {
-
+   
    __LOG_FUNCTION;
-
+   
    // Custom dealloc
-
+   
+   [self.contentController removeSignalResponder:self];
+   
+   [self unobserveAllNotifications];
+   [self removeAllSignalResponders];
+   
    __SUPER_DEALLOC;
-
+   
    return;
 }
 
@@ -73,7 +78,7 @@
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
-      
+   
    __TRY;
    
    [super viewDidLoad];
@@ -82,7 +87,7 @@
    LogDebug((@"[DNSController viewDidLoad] : VIEW : %@", self.view));
    
    [self.view setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-
+   
 #if MATERIAL_APP_BAR
    [self.navigationController setNavigationBarHidden:YES];
    
@@ -98,7 +103,7 @@
    /// 关闭水波纹效果
    [self.appBar.navigationBar setRippleColor:UIColor.clearColor];
    [self.appBar.navigationBar setInkColor:UIColor.clearColor];
-
+   
    [self.appBar.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
    [self.appBar.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
    [self.appBar.navigationBar setTitleFont:[APPFont regularFontOfSize:[APPFont appFontTitleSize]]];
@@ -139,16 +144,16 @@
    
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-
+   
    [self.rightBarButtonItem setEnabled:NO];
-
+   
 #if MATERIAL_APP_BAR
    // Dispose of any resources that can be recreated.
    /**
     调整 Layout
-    search.top
+    inputView.top
     */
-   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"search.top"
+   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"inputView.top"
                                                               fromView:self.view];
    
    if (nil != stLayoutConstraint) {
@@ -157,31 +162,30 @@
       
    } /* End if () */
 #endif /* MATERIAL_APP_BAR */
-
+   
    /**
     UITextField
     */
    [self.inputView setBackgroundColor:UIColor.clearColor];
-//   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
+   //   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
    [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    [self.textField setCornerRadius:8 clipsToBounds:YES];
    
    [self.textField setFont:[APPFont regularFontOfSize:self.textField.font.pointSize]];
    
    [self.textField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
-
+   
    [self.textField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    
    [self.textField setDelegate:self];
    [self.textField setPlaceholder:APP_STR(@"Domain Name")];
-
+   
    /**
-    UITextView
+    ContentView
     */
-   [self.textView setCornerRadius:8 clipsToBounds:YES];
-   [self.textView setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.textView setHidden:YES];
-
+   [self.contentView setCornerRadius:8 clipsToBounds:YES];
+   [self.contentView setHidden:YES];
+   
    /**
     MDCActivityIndicator
     */
@@ -203,26 +207,15 @@
       ]];
       
    } /* End else */
-
-//#if MATERIAL_APP_BAR
-//   // Dispose of any resources that can be recreated.
-//   /**
-//    调整 Layout
-//    search.top
-//    */
-//   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"activityIndicator.Center.Y"
-//                                                              fromView:self.view];
-//
-//   if (nil != stLayoutConstraint) {
-//
-//      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
-//
-//   } /* End if () */
-//#endif /* MATERIAL_APP_BAR */
-
-//   [self addNotificationName:UITextFieldTextDidChangeNotification
-//                    selector:@selector(textFieldTextDidChange:)
-//                      object:self.textField];
+   
+   [self.activityIndicator setHidden:YES];
+   
+   /**
+    监听输入
+    */
+   [self addNotificationName:UITextFieldTextDidChangeNotification
+                    selector:@selector(textFieldTextDidChange:)
+                      object:self.textField];
    
 #if __Debug__
    dispatch_async_on_main_queue(^{
@@ -230,23 +223,29 @@
       [self.textField setText:@"www.baidu.com"];
    });
 #endif /* __Debug__ */
-
+   
+   /**
+    注册消息响应
+    */
+   [self addSignalResponder:self.contentController];
+   [self.contentController addSignalResponder:self];
+   
    __CATCH(nErr);
    
    return;
 }
 
 - (void)didReceiveMemoryWarning {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super didReceiveMemoryWarning];
    // Dispose of any resources that can be recreated.
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -266,54 +265,61 @@
 }
 
 - (void)viewWillAppear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewWillAppear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewDidAppear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidAppear:aAnimated];
-
+   
+   dispatch_once(&_firstResponder, ^{
+      
+      [self.textField becomeFirstResponder];
+   });
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewWillDisappear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewWillDisappear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewDidDisappear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidDisappear:aAnimated];
-
+   
+   _firstResponder   = 0;
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -344,16 +350,22 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)aSegue sender:(id)aSender {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    // Get the new view controller using [aSegue destinationViewController].
    // Pass the selected object to the new view controller.
-
+   if ([aSegue.identifier isEqualToString:DNSContentController.className]) {
+      
+      self.contentController  = aSegue.destinationViewController;
+      //      [self.contentController addSignalResponder:self];
+      
+   } /* End if () */
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -376,11 +388,11 @@
    [CATransaction begin];
    
    [self resignFirstResponder];
-      
+   
    [CATransaction commit];
-
+   
    [CATransaction setCompletionBlock:^{
-
+      
       if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[DNSRootController class]])) {
          
          [self.navigationController popViewControllerAnimated:YES
@@ -394,7 +406,7 @@
          
       } /* End else */
    }];
-
+   
    __CATCH(nErr);
    
    return;
@@ -406,20 +418,23 @@
    
    __TRY;
    
+   [self resignFirstResponder];
+   
    [self.textField setEnabled:NO];
    [self.rightBarButtonItem setEnabled:NO];
    [self.activityIndicator startAnimating];
-
+   
+   [self.contentView setHidden:YES animated:YES];
+   
    @weakify(self);
    [self.activityIndicator setHidden:NO
                             animated:YES
                             complete:^{
       
       @strongify(self);
-      [self postSignal:DNSController.startSignal
-               onQueue:dispatch_get_main_queue()];
+      [self sendSignal:DNSController.startSignal withObject:self.textField.text];
    }];
-      
+   
    __CATCH(nErr);
    
    return;

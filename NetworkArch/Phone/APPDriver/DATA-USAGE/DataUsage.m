@@ -34,8 +34,6 @@
 
 @implementation DataUsage
 
-@def_singleton( DataUsage );
-
 - (void)dealloc {
    
    __LOG_FUNCTION;
@@ -192,5 +190,11 @@
    
    return @"en";
 }
+
+@end
+
+@implementation DataUsage (Singleton)
+
+@def_singleton( DataUsage );
 
 @end

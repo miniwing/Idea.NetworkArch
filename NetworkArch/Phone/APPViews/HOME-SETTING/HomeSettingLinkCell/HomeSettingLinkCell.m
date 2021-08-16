@@ -22,6 +22,9 @@
    __LOG_FUNCTION;
 
    // Custom dealloc
+   
+   [self removeAllSignalResponders];
+   [self unobserveAllNotifications];
 
    __SUPER_DEALLOC;
 
@@ -70,7 +73,7 @@
     */
    [self.addButton setBackgroundColor:UIColor.clearColor];
    [self.addButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-   [self.addButton.titleLabel setFont:[APPFont lightFontOfSize:self.addButton.titleLabel.font.pointSize]];
+   [self.addButton.titleLabel setFont:[APPFont regularFontOfSize:self.addButton.titleLabel.font.pointSize]];
 
    [self.separatorView setHidden:YES];
 //   [self.separatorView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor opaqueSeparator])];
@@ -99,6 +102,28 @@
 - (void)setAddLinkBlock:(AddLinkBlock)aAddLinkBlock {
    
    _addLinkBlock  = [aAddLinkBlock copy];
+   
+   return;
+}
+
+@end
+
+#pragma mark - IBAction
+@implementation HomeSettingLinkCell (Action)
+
+- (IBAction)onAddLink:(id)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+
+   if (nil != self.addLinkBlock) {
+      
+      self.addLinkBlock(self.indexPath);
+      
+   } /* End if () */
+
+   __CATCH(nErr);
    
    return;
 }

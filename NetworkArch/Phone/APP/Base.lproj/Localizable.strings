@@ -40,20 +40,38 @@
 /// SETTING
 "SETTING"                           = "SETTING";
 
-"APPEARANCE"                        = "外观";
+"APPEARANCE"                        = "APPEARANCE";
 
-"Appearance"                        = "外观";
-"Light"                             = "浅色";
-"Night"                             = "深色";
-"Auto"                              = "自动（跟随系统)";
+"Appearance"                        = "APPEARANCE";
+"Light"                             = "Light";
+"Night"                             = "Night";
+"Auto"                              = "Automatic";
 
-"Animation"                         = "动画";
+"Animation"                         = "Animation";
 
-"Rate on App Store"                 = "在App Store上评分";
+"Rate on App Store"                 = "Rate on App Store";
 
-"About"                             = "关于";
-"Follow on Weibo"                   = "关注微博";
-"Follow on Twitter"                 = "关注Twitter";
-"Follow on Facebook"                = "关注Facebook";
+"About"                             = "About";
+"Follow on Weibo"                   = "Follow on Weibo";
+"Follow on Twitter"                 = "Follow on Twitter";
+"Follow on Facebook"                = "Follow on Facebook";
 
-"Version"                           = "版本";
+"Version"                           = "Version";
+
+//"APPEARANCE"                        = "外观";
+//
+//"Appearance"                        = "外观";
+//"Light"                             = "浅色";
+//"Night"                             = "深色";
+//"Auto"                              = "自动（跟随系统)";
+//
+//"Animation"                         = "动画";
+//
+//"Rate on App Store"                 = "在App Store上评分";
+//
+//"About"                             = "关于";
+//"Follow on Weibo"                   = "关注微博";
+//"Follow on Twitter"                 = "关注Twitter";
+//"Follow on Facebook"                = "关注Facebook";
+//
+//"Version"                           = "版本";

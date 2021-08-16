@@ -30,7 +30,11 @@
    __LOG_FUNCTION;
 
    // Custom dealloc
-   [self removeSignalResponder:self.contentController];
+   
+   [self.contentController removeSignalResponder:self];
+   
+   [self unobserveAllNotifications];
+   [self removeAllSignalResponders];
 
    __SUPER_DEALLOC;
 
@@ -159,9 +163,9 @@
       
    } /* End if () */
 #endif /* MATERIAL_APP_BAR */
-      
-   [self addSignalResponder:self.contentController];
-   
+
+   [self.contentController addSignalResponder:self];
+
    __CATCH(nErr);
    
    return;
@@ -271,7 +275,7 @@
    if ([aSegue.identifier isEqualToString:HomeSettingContentController.className]) {
       
       self.contentController  = aSegue.destinationViewController;
-      
+
    } /* End if () */
 
    __CATCH(nErr);
@@ -324,9 +328,7 @@
    if ([self.navigationController isKindOfClass:HomeSettingRootController.class] || [self.rt_navigationController isKindOfClass:HomeSettingRootController.class]) {
       
       [self dismissViewControllerAnimated:YES
-                               completion:^{
-         
-      }];
+                               completion:nil];
       
    } /* End if () */
    else {

@@ -27,7 +27,10 @@
    // Custom dealloc
    
    [self removeAllNotification];
-   
+
+   [self unobserveAllNotifications];
+   [self removeAllSignalResponders];
+
    __SUPER_DEALLOC;
    
    return;
@@ -152,9 +155,9 @@
    // Dispose of any resources that can be recreated.
    /**
     调整 Layout
-    search.top
+    inputView.top
     */
-   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"search.top"
+   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"inputView.top"
                                                               fromView:self.view];
    
    if (nil != stLayoutConstraint) {
@@ -187,7 +190,7 @@
    
 #if __Debug__
    dispatch_async_on_main_queue(^{
-      
+
       [self.textField setText:@"www.baidu.com"];
    });
 #endif /* __Debug__ */
@@ -251,20 +254,7 @@
    
    dispatch_once(&_firstResponder, ^{
       
-      //      [self.textField becomeFirstResponder];
-      //
-      //#if __Debug__
-      //      [CATransaction begin];
-      //      [self.searchBar becomeFirstResponder];
-      //      [CATransaction commit];
-      //
-      //      [CATransaction setCompletionBlock:^{
-      //
-      //         [self.searchBar setText:@"www.baidu.com"];
-      //      }];
-      //#else
-      //      [self.searchBar becomeFirstResponder];
-      //#endif /* __Debug__ */
+      [self.textField becomeFirstResponder];
    });
    
    __CATCH(nErr);
@@ -292,6 +282,8 @@
    __TRY;
    
    [super viewDidDisappear:aAnimated];
+   
+   _firstResponder   = 0;
    
    __CATCH(nErr);
    
