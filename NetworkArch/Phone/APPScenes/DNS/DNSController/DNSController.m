@@ -167,7 +167,7 @@
     UITextField
     */
    [self.inputView setBackgroundColor:UIColor.clearColor];
-   //   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
+//   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
    [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    [self.textField setCornerRadius:8 clipsToBounds:YES];
    
@@ -360,7 +360,6 @@
    if ([aSegue.identifier isEqualToString:DNSContentController.className]) {
       
       self.contentController  = aSegue.destinationViewController;
-      //      [self.contentController addSignalResponder:self];
       
    } /* End if () */
    
