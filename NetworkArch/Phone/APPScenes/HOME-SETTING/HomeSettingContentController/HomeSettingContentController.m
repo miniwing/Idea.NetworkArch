@@ -14,10 +14,6 @@
 #import "HomeSettingContentController+Signal.h"
 #import "HomeSettingContentController+Notification.h"
 
-@interface HomeSettingContentController ()
-
-@end
-
 @implementation HomeSettingContentController
 
 - (void)dealloc {

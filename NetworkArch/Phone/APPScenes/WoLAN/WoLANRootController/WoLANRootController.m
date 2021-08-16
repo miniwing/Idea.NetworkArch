@@ -10,10 +10,9 @@
 //
 
 #import "WoLANRootController.h"
-
-@interface WoLANRootController ()
-
-@end
+#import "WoLANRootController+Inner.h"
+#import "WoLANRootController+Signal.h"
+#import "WoLANRootController+Notification.h"
 
 @implementation WoLANRootController
 

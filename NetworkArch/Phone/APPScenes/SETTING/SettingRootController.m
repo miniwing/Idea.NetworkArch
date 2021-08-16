@@ -11,10 +11,6 @@
 
 #import "SettingRootController.h"
 
-@interface SettingRootController ()
-
-@end
-
 @implementation SettingRootController
 
 - (void)dealloc {

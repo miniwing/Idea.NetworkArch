@@ -18,10 +18,6 @@
 #import "DNSController+Signal.h"
 #import "DNSController+Notification.h"
 
-@interface DNSController ()
-
-@end
-
 @implementation DNSController
 
 - (void)dealloc {
@@ -228,7 +224,7 @@
     注册消息响应
     */
    [self addSignalResponder:self.contentController];
-   [self.contentController addSignalResponder:self];
+//   [self.contentController addSignalResponder:self];
    
    __CATCH(nErr);
    
@@ -430,7 +426,12 @@
                             animated:YES
                             complete:^{
       
+      LogDebug((@"SELF : %@", self));
+      
       @strongify(self);
+
+      LogDebug((@"SELF : %@", self));
+
       [self sendSignal:DNSController.startSignal withObject:self.textField.text];
    }];
    

@@ -11,10 +11,6 @@
 
 #import "WifiMoreRootController.h"
 
-@interface WifiMoreRootController ()
-
-@end
-
 @implementation WifiMoreRootController
 
 - (void)dealloc {

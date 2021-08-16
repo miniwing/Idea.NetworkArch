@@ -18,10 +18,6 @@
 #import "WhoisController+Signal.h"
 #import "WhoisController+Notification.h"
 
-@interface WhoisController ()
-
-@end
-
 @implementation WhoisController
 
 - (void)dealloc {

@@ -21,10 +21,6 @@
 #import "HomeSettingRootController+Signal.h"
 #import "HomeSettingRootController+Notification.h"
 
-@interface HomeController ()
-
-@end
-
 @implementation HomeController
 
 - (void)dealloc {

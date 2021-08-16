@@ -13,12 +13,11 @@
 #import "UIDevice+Network.h"
 
 #import "CellularMoreContentController.h"
+#import "CellularMoreContentController+Inner.h"
+#import "CellularMoreContentController+Signal.h"
+#import "CellularMoreContentController+Notification.h"
 
 #import "DataUsage.h"
-
-@interface CellularMoreContentController ()
-
-@end
 
 @implementation CellularMoreContentController
 

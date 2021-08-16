@@ -1,26 +1,23 @@
 //
-//  HomeRootController.m
+//  WebViewController.m
 //  NetworkArch
 //
-//  Created by Harry on 2021/6/25.
+//  Created by Harry on 2021/8/16.
 //  Copyright © 2021 Harry. All rights reserved.
 //
 //  Mail: miniwing.hz@gmail.com
 //  TEL : +(852)53054612
 //
 
-#import "HomeRootController.h"
+#import "WebViewController.h"
 
-@implementation HomeRootController
+@implementation WebViewController
 
 - (void)dealloc {
 
    __LOG_FUNCTION;
 
    // Custom dealloc
-   
-   [self unobserveAllNotifications];
-   [self removeAllSignalResponders];
 
    __SUPER_DEALLOC;
 
@@ -128,7 +125,7 @@
 @end
 
 #pragma mark - UIStoryboard
-@implementation HomeRootController (UIStoryboard)
+@implementation WebViewController (UIStoryboard)
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)aSegue sender:(id)aSender {
@@ -147,7 +144,8 @@
 
 + (NSString *)storyboard {
    
-   return @"HOME";
+#warning Incomplete implementation, Name of the Stroyboard.
+   return @"";
 }
 
 @end

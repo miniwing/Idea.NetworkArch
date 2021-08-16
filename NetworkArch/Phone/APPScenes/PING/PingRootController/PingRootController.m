@@ -10,10 +10,9 @@
 //
 
 #import "PingRootController.h"
-
-@interface PingRootController ()
-
-@end
+#import "PingRootController+Inner.h"
+#import "PingRootController+Signal.h"
+#import "PingRootController+Notification.h"
 
 @implementation PingRootController
 

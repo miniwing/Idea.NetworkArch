@@ -16,10 +16,6 @@
 #import "HomeSettingApiKeyCell+Signal.h"
 #import "HomeSettingApiKeyCell+Notification.h"
 
-@interface HomeSettingApiKeyCell ()
-
-@end
-
 @implementation HomeSettingApiKeyCell
 
 - (void)dealloc {

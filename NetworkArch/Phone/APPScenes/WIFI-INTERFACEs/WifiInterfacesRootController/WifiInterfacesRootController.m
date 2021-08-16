@@ -10,10 +10,9 @@
 //
 
 #import "WifiInterfacesRootController.h"
-
-@interface WifiInterfacesRootController ()
-
-@end
+#import "WifiInterfacesRootController+Inner.h"
+#import "WifiInterfacesRootController+Signal.h"
+#import "WifiInterfacesRootController+Notification.h"
 
 @implementation WifiInterfacesRootController
 

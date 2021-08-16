@@ -14,10 +14,6 @@
 #import "WifiMoreController.h"
 #import "WifiMoreController+Inner.h"
 
-@interface WifiMoreController ()
-
-@end
-
 @implementation WifiMoreController
 
 - (void)dealloc {

@@ -10,10 +10,9 @@
 //
 
 #import "HomeSettingLinkCell.h"
-
-@interface HomeSettingLinkCell ()
-
-@end
+#import "HomeSettingLinkCell+Inner.h"
+#import "HomeSettingLinkCell+Signal.h"
+#import "HomeSettingLinkCell+Notification.h"
 
 @implementation HomeSettingLinkCell
 

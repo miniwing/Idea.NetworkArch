@@ -14,6 +14,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface HomeContentController () {
+   
+   dispatch_once_t   _viewDidLayoutToken;
+}
+
+@end
+
 @interface HomeContentController ()
 
 @property (nonatomic, strong)                NSString                            * SSID;

@@ -14,10 +14,6 @@
 #import "TrackingController.h"
 #import "AppTracking.h"
 
-@interface TrackingController ()
-
-@end
-
 @implementation TrackingController
 
 - (void)dealloc {

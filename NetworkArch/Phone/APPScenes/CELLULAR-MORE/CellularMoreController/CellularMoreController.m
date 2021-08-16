@@ -13,10 +13,8 @@
 
 #import "CellularMoreController.h"
 #import "CellularMoreController+Inner.h"
-
-@interface CellularMoreController ()
-
-@end
+#import "CellularMoreController+Signal.h"
+#import "CellularMoreController+Notification.h"
 
 @implementation CellularMoreController
 

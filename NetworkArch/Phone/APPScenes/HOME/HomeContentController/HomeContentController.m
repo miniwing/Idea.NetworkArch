@@ -22,12 +22,6 @@
 #import "WhoisController.h"
 #import "DNSController.h"
 
-@interface HomeContentController ()
-
-@property (nonatomic, assign)                dispatch_once_t                       viewDidLayoutToken;
-
-@end
-
 @implementation HomeContentController
 
 - (void)dealloc {

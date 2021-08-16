@@ -10,10 +10,9 @@
 //
 
 #import "DNSCell.h"
-
-@interface DNSCell ()
-
-@end
+#import "DNSCell+Inner.h"
+#import "DNSCell+Signal.h"
+#import "DNSCell+Notification.h"
 
 @implementation DNSCell
 

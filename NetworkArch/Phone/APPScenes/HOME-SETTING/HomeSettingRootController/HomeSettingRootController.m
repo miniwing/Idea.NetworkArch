@@ -11,10 +11,6 @@
 
 #import "HomeSettingRootController.h"
 
-@interface HomeSettingRootController ()
-
-@end
-
 @implementation HomeSettingRootController
 
 - (void)dealloc {

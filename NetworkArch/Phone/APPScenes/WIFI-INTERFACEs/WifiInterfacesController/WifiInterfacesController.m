@@ -11,10 +11,8 @@
 
 #import "WifiInterfacesController.h"
 #import "WifiInterfacesController+Inner.h"
-
-@interface WifiInterfacesController ()
-
-@end
+#import "WifiInterfacesController+Signal.h"
+#import "WifiInterfacesController+Notification.h"
 
 @implementation WifiInterfacesController
 

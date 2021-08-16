@@ -10,10 +10,9 @@
 //
 
 #import "DNSRootController.h"
-
-@interface DNSRootController ()
-
-@end
+#import "DNSRootController+Inner.h"
+#import "DNSRootController+Signal.h"
+#import "DNSRootController+Notification.h"
 
 @implementation DNSRootController
 

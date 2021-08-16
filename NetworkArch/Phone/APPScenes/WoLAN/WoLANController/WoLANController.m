@@ -18,15 +18,12 @@
 #import "WoLANController+Signal.h"
 #import "WoLANController+Notification.h"
 
+#import "WoLANContentController.h"
 #import "WoLANContentController+Inner.h"
 #import "WoLANContentController+Signal.h"
 #import "WoLANContentController+Notification.h"
 
 #import "DeviceAwake.h"
-
-@interface WoLANController ()
-
-@end
 
 @implementation WoLANController
 

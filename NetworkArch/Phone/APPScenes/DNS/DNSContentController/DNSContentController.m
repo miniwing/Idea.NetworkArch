@@ -10,10 +10,9 @@
 //
 
 #import "DNSContentController.h"
-
-@interface DNSContentController ()
-
-@end
+#import "DNSContentController+Inner.h"
+#import "DNSContentController+Signal.h"
+#import "DNSContentController+Notification.h"
 
 @implementation DNSContentController
 

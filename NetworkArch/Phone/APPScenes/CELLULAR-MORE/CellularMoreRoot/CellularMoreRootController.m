@@ -10,10 +10,9 @@
 //
 
 #import "CellularMoreRootController.h"
-
-@interface CellularMoreRootController ()
-
-@end
+#import "CellularMoreRootController+Inner.h"
+#import "CellularMoreRootController+Signal.h"
+#import "CellularMoreRootController+Notification.h"
 
 @implementation CellularMoreRootController
 

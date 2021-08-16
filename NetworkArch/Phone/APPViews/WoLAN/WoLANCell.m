@@ -11,6 +11,8 @@
 
 #import "WoLANCell.h"
 #import "WoLANCell+Inner.h"
+#import "WoLANCell+Signal.h"
+#import "WoLANCell+Notification.h"
 
 @implementation WoLANCell
 

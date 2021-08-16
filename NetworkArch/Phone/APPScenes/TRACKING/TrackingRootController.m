@@ -11,10 +11,6 @@
 
 #import "TrackingRootController.h"
 
-@interface TrackingRootController ()
-
-@end
-
 @implementation TrackingRootController
 
 - (void)dealloc {

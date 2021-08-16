@@ -22,10 +22,6 @@
 
 #import "DataUsage.h"
 
-@interface WiFiMoreContentController ()
-
-@end
-
 @implementation WiFiMoreContentController
 
 - (void)dealloc {

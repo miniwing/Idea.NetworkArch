@@ -10,10 +10,9 @@
 //
 
 #import "WifiMoreCell.h"
-
-@interface WifiMoreCell ()
-
-@end
+#import "WifiMoreCell+Inner.h"
+#import "WifiMoreCell+Signal.h"
+#import "WifiMoreCell+Notification.h"
 
 @implementation WifiMoreCell
 

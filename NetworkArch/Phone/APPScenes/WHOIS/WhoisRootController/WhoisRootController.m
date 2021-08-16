@@ -10,10 +10,9 @@
 //
 
 #import "WhoisRootController.h"
-
-@interface WhoisRootController ()
-
-@end
+#import "WhoisRootController+Inner.h"
+#import "WhoisRootController+Signal.h"
+#import "WhoisRootController+Notification.h"
 
 @implementation WhoisRootController
 

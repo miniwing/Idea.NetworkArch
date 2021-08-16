@@ -11,10 +11,6 @@
 
 #import "HomeContentCell.h"
 
-@interface HomeContentCell ()
-
-@end
-
 @implementation HomeContentCell
 
 - (void)dealloc {
