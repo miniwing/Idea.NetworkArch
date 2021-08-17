@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy)                  NSString                            * address;
 @property (nonatomic, copy)                  NSString                            * target;
+@property (nonatomic, copy)                  NSString                            * rawText;
 @property (nonatomic, copy)                  NSString                            * admin;
 @property (nonatomic, copy)                  NSString                            * host;
 @property (nonatomic, copy)                  NSString                            * expire;

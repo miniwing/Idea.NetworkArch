@@ -14,9 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeController : IDEAViewController
 
-@property (nonatomic, weak)   IBOutlet       UIView                              * contentView;
-
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * rightBarButtonItem;
+
+@property (nonatomic, weak)   IBOutlet       UIView                              * contentView;
 
 @end
 

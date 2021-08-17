@@ -18,6 +18,8 @@
 #import "HomeSettingRootController+Signal.h"
 #import "HomeSettingRootController+Notification.h"
 
+#import "HomeSettingAlertController+Inner.h"
+
 @implementation HomeSettingController (Signal)
 
 #if __Debug__
@@ -38,20 +40,20 @@ handleSignal(HomeSettingContentController, saveSignal) {
    LogDebug((@"-[HomeSettingController saveSignal:] : Signal : %@", aSignal));
    LogDebug((@"-[HomeSettingController saveSignal:] : API KEY : %@", aSignal.object));
    
-//   [CATransaction begin];
-//   [self resignFirstResponder];
-//   [CATransaction commit];
-//   [CATransaction setCompletionBlock:^{
-//      if ([self.navigationController isKindOfClass:HomeSettingRootController.class] || [self.rt_navigationController isKindOfClass:HomeSettingRootController.class]) {
-//         [self dismissViewControllerAnimated:YES
-//                                  completion:^{
-//         }];
-//      } /* End if () */
-//      else {
-//         [self.navigationController popViewControllerAnimated:YES
-//                                                   completion:nil];
-//      } /* End else */
-//   }];
+   //   [CATransaction begin];
+   //   [self resignFirstResponder];
+   //   [CATransaction commit];
+   //   [CATransaction setCompletionBlock:^{
+   //      if ([self.navigationController isKindOfClass:HomeSettingRootController.class] || [self.rt_navigationController isKindOfClass:HomeSettingRootController.class]) {
+   //         [self dismissViewControllerAnimated:YES
+   //                                  completion:^{
+   //         }];
+   //      } /* End if () */
+   //      else {
+   //         [self.navigationController popViewControllerAnimated:YES
+   //                                                   completion:nil];
+   //      } /* End else */
+   //   }];
    
    [self resignFirstResponder];
    
@@ -79,11 +81,23 @@ handleSignal(HomeSettingContentController, addLinkSignal) {
    
    int                            nErr                                     = EFAULT;
    
+   HomeSettingAlertController    *stHomeSettingAlertController             = nil;
+   
    __TRY;
    
    LogDebug((@"-[HomeSettingController addLinkSignal:] : Signal : %@", aSignal));
    LogDebug((@"-[HomeSettingController addLinkSignal:] : API KEY : %@", aSignal.object));
-      
+
+//   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://main.whoisxmlapi.com"]
+//                                      options:nil
+//                            completionHandler:^(BOOL success) {
+//
+//   }];
+
+   stHomeSettingAlertController  = [[HomeSettingAlertController alloc] init];
+   
+   [self popUp:stHomeSettingAlertController];
+   
    __CATCH(nErr);
    
    return;

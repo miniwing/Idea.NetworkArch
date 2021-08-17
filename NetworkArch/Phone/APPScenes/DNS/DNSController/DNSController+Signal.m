@@ -53,9 +53,12 @@ handleSignal(DNSContentController, doneSignal) {
    if (nil != aSignal.object) {
       
       // occur some error.
-      
+      [self.contentView setHidden:YES animated:YES];
+
    } /* End if () */
    else {
+      
+      [self.contentView setHidden:NO animated:YES];
       
    } /* End else */
 
@@ -73,7 +76,7 @@ handleSignal(DNSContentController, doneSignal) {
 
       } /* End if () */
 
-      [self.textField setEnabled:NO];
+      [self.textField setEnabled:YES];
 
       if (nil != aSignal.object) {
          

@@ -62,7 +62,7 @@
       break;
 
    } /* End if () */
-
+   
    if ([self.dnsType isEqualToString:@"SOA"]) {
 
 //      Text("Admin: \(admin)")
@@ -74,13 +74,13 @@
 //      Text(": \(serial)")
       
       NSMutableString   *stContent  = [NSMutableString string];
-      [stContent stringByAppendingFormat:@"Admin: %@", self.admin];
-      [stContent stringByAppendingFormat:@"Host: %@", self.host];
-      [stContent stringByAppendingFormat:@"Expire: %@", self.expire];
-      [stContent stringByAppendingFormat:@"Minimum: %@", self.minimum];
-      [stContent stringByAppendingFormat:@"Refresh: %@", self.refresh];
-      [stContent stringByAppendingFormat:@"Retry: %@", self.retry];
-      [stContent stringByAppendingFormat:@"Serial: %@", self.serial];
+      [stContent appendFormat:@"Admin: %@\n", self.admin];
+      [stContent appendFormat:@"Host: %@\n", self.host];
+      [stContent appendFormat:@"Expire: %@\n", self.expire];
+      [stContent appendFormat:@"Minimum: %@\n", self.minimum];
+      [stContent appendFormat:@"Refresh: %@\n", self.refresh];
+      [stContent appendFormat:@"Retry: %@\n", self.retry];
+      [stContent appendFormat:@"Serial: %@\n", self.serial];
 
       szContent   = stContent;
       
@@ -93,6 +93,16 @@
    if ([self.dnsType isEqualToString:@"MX"]) {
 
 //      stDNSModel.target = [stDNSModel.target stringByAppendingFormat:@"%@\nPriority:%@\n\n", stTemp.target, stTemp.priority];
+      szContent   = [self.target copy];
+
+      nErr  = noErr;
+      
+      break;
+
+   } /* End if () */
+
+   if ([self.dnsType isEqualToString:@"CNAME"]) {
+      
       szContent   = [self.target copy];
 
       nErr  = noErr;

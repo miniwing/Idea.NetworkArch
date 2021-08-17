@@ -84,7 +84,7 @@ handleSignal(DNSController, startSignal) {
                   
                   if ([stDNSModel.dnsType isEqualToString:@"A"]) {
                   
-                     stDNSModel.address = [stDNSModel.address stringByAppendingFormat:@"%@\n", stTemp.address];
+                     stDNSModel.address = [stDNSModel.address stringByAppendingFormat:@"\n%@", stTemp.address];
 
                      continue;
                      
@@ -92,7 +92,7 @@ handleSignal(DNSController, startSignal) {
                   
                   if ([stDNSModel.dnsType isEqualToString:@"AAAA"]) {
 
-                     stDNSModel.address = [stDNSModel.address stringByAppendingFormat:@"%@\n", stTemp.address];
+                     stDNSModel.address = [stDNSModel.address stringByAppendingFormat:@"\n%@", stTemp.address];
 
                      continue;
 
@@ -100,7 +100,7 @@ handleSignal(DNSController, startSignal) {
 
                   if ([stDNSModel.dnsType isEqualToString:@"NS"]) {
 
-                     stDNSModel.target = [stDNSModel.address stringByAppendingFormat:@"%@\n", stTemp.target];
+                     stDNSModel.target = [stDNSModel.target stringByAppendingFormat:@"\n%@", stTemp.target];
                      continue;
 
                   } /* End if () */
@@ -115,7 +115,7 @@ handleSignal(DNSController, startSignal) {
 
 //                     self.mxDNSTypeTarget.append(item["target"].stringValue + "\nPriority: " + String(item["priority"].intValue) + "\n\n")
 
-                     stDNSModel.target = [stDNSModel.target stringByAppendingFormat:@"%@\nPriority:%@\n\n", stTemp.target, stTemp.priority];
+                     stDNSModel.target = [stDNSModel.target stringByAppendingFormat:@"\n%@\nPriority:%@\n\n", stTemp.target, stTemp.priority];
 
                      continue;
 

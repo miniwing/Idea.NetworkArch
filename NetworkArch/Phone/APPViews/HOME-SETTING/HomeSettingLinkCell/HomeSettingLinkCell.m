@@ -73,6 +73,8 @@
    [self.addButton setBackgroundColor:UIColor.clearColor];
    [self.addButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
    [self.addButton.titleLabel setFont:[APPFont regularFontOfSize:self.addButton.titleLabel.font.pointSize]];
+//   [self.addButton addAction:@selector(onAddLink:) forControlEvents:UIControlEventTouchUpInside];
+//   [self.addButton addTarget:self action:@selector(onAddLink:) forControlEvents:UIControlEventTouchUpInside];
 
    [self.separatorView setHidden:YES];
 //   [self.separatorView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor opaqueSeparator])];

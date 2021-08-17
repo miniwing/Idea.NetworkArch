@@ -58,14 +58,14 @@
    dispatch_async_on_background_queue(^{
       
       szURL = [NSString stringWithFormat:@"%@&domainName=%@", [DNSManager DNSServiceURL], aDomain];
-      LogDebug((@"+[WhoisManager fetchIP:completionHandler:] : URL : %@", szURL));
+      LogDebug((@"+[DNSManager fetchIP:completionHandler:] : URL : %@", szURL));
       
       stURLSessionDataTask = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:szURL]
                                                          completionHandler:^(NSData * _Nullable aData, NSURLResponse * _Nullable aResponse, NSError * _Nullable aError) {
          
-         LogDebug((@"+[WhoisManager fetchIP:completionHandler:] : Error    : %@", aError));
-         LogDebug((@"+[WhoisManager fetchIP:completionHandler:] : Data     : %@", [NSString stringWithUTF8Data:aData]));
-         LogDebug((@"+[WhoisManager fetchIP:completionHandler:] : Response : %@", aResponse));
+         LogDebug((@"+[DNSManager fetchIP:completionHandler:] : Error    : %@", aError));
+         LogDebug((@"+[DNSManager fetchIP:completionHandler:] : Data     : %@", [NSString stringWithUTF8Data:aData]));
+         LogDebug((@"+[DNSManager fetchIP:completionHandler:] : Response : %@", aResponse));
          
          if (nil != aCompletionHandler) {
             

@@ -65,7 +65,7 @@
    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
    // [self.tableView setTableHeaderView:[UIView new]];
-   // [self.tableView setTableFooterView:[UIView new]];
+   [self.tableView setTableFooterView:[UIView new]];
    [self.tableView setEstimatedSectionFooterHeight:0];
    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
    [self.tableView setSeparatorColor:UIColor.clearColor];
@@ -163,7 +163,7 @@
    
    __TRY;
       
-   stDNSCell   = [aTableView dequeueReusableCellWithIdentifier:stDNSCell.reuseIdentifier
+   stDNSCell   = [aTableView dequeueReusableCellWithIdentifier:DNSCell.reuseIdentifier
                                                   forIndexPath:aIndexPath];
    
    // Configure the cell...
@@ -177,51 +177,25 @@
    return stDNSCell;
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)aTableView canEditRowAtIndexPath:(NSIndexPath *)aIndexPath {
- 
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
+- (nullable NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)aSection {
+   
+   int                            nErr                                     = EFAULT;
+   
+   NSString                      *szTitle                                  = nil;
+   NSArray                       *stKeys                                   = nil;
+   
+   __TRY;
+   
+   stKeys   = [self.dns allKeys];
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)aEditingStyle forRowAtIndexPath:(NSIndexPath *)aIndexPath {
- 
- if (aEditingStyle == UITableViewCellEditingStyleDelete) {
- 
- // Delete the row from the data source
- [aTableView deleteRowsAtIndexPaths:@[aIndexPath] withRowAnimation:UITableViewRowAnimationFade];
- 
- }
- else if (aEditingStyle == UITableViewCellEditingStyleInsert) {
- 
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- 
- return;
- }
- */
+   szTitle  = [NSString stringWithFormat:@"%@ RECORD", [stKeys objectAtIndex:aSection]];
 
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)aTableView moveRowAtIndexPath:(NSIndexPath *)aFromIndexPath toIndexPath:(NSIndexPath *)aToIndexPath {
- 
- return;
- }
- */
+   __CATCH(nErr);
+   
+   return szTitle;
+}
 
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)aIndexPath {
- 
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
+#pragma mark -
 - (void)startWithDomain:(NSString *)aDomain completion:(void (^ __nullable)(NSError  * _Nullable aError))aCompletion {
    
    int                            nErr                                     = EFAULT;

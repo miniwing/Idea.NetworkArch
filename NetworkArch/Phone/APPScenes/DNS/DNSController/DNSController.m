@@ -179,8 +179,9 @@
    /**
     ContentView
     */
-   [self.contentView setCornerRadius:8 clipsToBounds:YES];
+//   [self.contentView setCornerRadius:8 clipsToBounds:YES];
    [self.contentView setHidden:YES];
+   [self.contentView setBackgroundColor:UIColor.clearColor];
    
    /**
     MDCActivityIndicator

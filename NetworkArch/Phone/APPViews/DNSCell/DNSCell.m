@@ -54,7 +54,11 @@
    [super awakeFromNib];
    // Initialization code
 
+   [self setBackgroundColor:UIColor.clearColor];
+   [self.contentView setBackgroundColor:UIColor.clearColor];
+   
    [self.containerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+   [self.containerView setCornerRadius:8 clipsToBounds:YES];
 
    [self.domainLabel setBackgroundColor:UIColor.clearColor];
    [self.domainLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
@@ -62,7 +66,7 @@
 
    [self.ttlLabel setBackgroundColor:UIColor.clearColor];
    [self.ttlLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.ttlLabel setFont:[APPFont regularFontOfSize:self.ttlLabel.font.pointSize]];
+   [self.ttlLabel setFont:[APPFont lightFontOfSize:self.ttlLabel.font.pointSize]];
 
    [self.dnsLabel setBackgroundColor:UIColor.clearColor];
    [self.dnsLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
@@ -102,7 +106,7 @@
 //   @property (nonatomic, weak)   IBOutlet       UILabel                             * dnsLabel;
 
    [self.domainLabel setText:aDNSModel.name];
-   [self.ttlLabel setText:aDNSModel.ttl];
+   [self.ttlLabel setText:[NSString stringWithFormat:@"TTL: %@", aDNSModel.ttl]];
    
    [self.dnsLabel setText:[aDNSModel content]];
    
