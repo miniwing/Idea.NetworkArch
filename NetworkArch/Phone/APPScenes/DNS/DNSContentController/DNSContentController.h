@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DNSContentController ()
 
+- (void)startWithDomain:(NSString *)aDomain completion:(void (^ __nullable)(NSError * _Nullable aError))aCompletion;
+
 @end
 
 NS_ASSUME_NONNULL_END

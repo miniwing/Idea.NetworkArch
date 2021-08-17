@@ -216,7 +216,7 @@
 #if __Debug__
    dispatch_async_on_main_queue(^{
       
-      [self.textField setText:@"www.baidu.com"];
+      [self.textField setText:@"www.twitter.com"];
    });
 #endif /* __Debug__ */
    
@@ -224,7 +224,7 @@
     注册消息响应
     */
    [self addSignalResponder:self.contentController];
-//   [self.contentController addSignalResponder:self];
+   [self.contentController addSignalResponder:self];
    
    __CATCH(nErr);
    
@@ -425,14 +425,17 @@
    [self.activityIndicator setHidden:NO
                             animated:YES
                             complete:^{
-      
-      LogDebug((@"SELF : %@", self));
-      
+            
       @strongify(self);
 
-      LogDebug((@"SELF : %@", self));
-
       [self sendSignal:DNSController.startSignal withObject:self.textField.text];
+      
+//      [self.contentController startWithDomain:self.textField.text
+//                                   completion:^(NSError * _Nullable aError) {
+//
+//         LogDebug((@"-[DNSController onStart:] : startWithDomain : Error : %@", aError));
+//      }];
+
    }];
    
    __CATCH(nErr);

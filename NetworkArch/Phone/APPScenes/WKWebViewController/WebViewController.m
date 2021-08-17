@@ -144,8 +144,7 @@
 
 + (NSString *)storyboard {
    
-#warning Incomplete implementation, Name of the Stroyboard.
-   return @"";
+   return @"WEBVIEW";
 }
 
 @end

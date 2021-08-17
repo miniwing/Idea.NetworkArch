@@ -9,6 +9,8 @@
 //  TEL : +(852)53054612
 //
 
+#import "DNSController+Signal.h"
+
 #import "DNSContentController.h"
 #import "DNSContentController+Inner.h"
 #import "DNSContentController+Signal.h"
@@ -17,21 +19,21 @@
 @implementation DNSContentController
 
 - (void)dealloc {
-
+   
    __LOG_FUNCTION;
-
+   
    // Custom dealloc
-
+   
    [self unobserveAllNotifications];
    [self removeAllSignalResponders];
-
+   
    __SUPER_DEALLOC;
-
+   
    return;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aCoder {
-
+   
    int                            nErr                                     = EFAULT;
    
    __TRY;
@@ -39,7 +41,7 @@
    self  = [super initWithCoder:aCoder];
    
    if (self) {
-            
+      
    } /* End if () */
    
    __CATCH(nErr);
@@ -67,146 +69,185 @@
    [self.tableView setEstimatedSectionFooterHeight:0];
    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
    [self.tableView setSeparatorColor:UIColor.clearColor];
-      
+   
    __CATCH(nErr);
    
    return;
 }
 
 - (void)didReceiveMemoryWarning {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super didReceiveMemoryWarning];
    // Dispose of any resources that can be recreated.
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewWillAppear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewWillAppear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewDidAppear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidAppear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewWillDisappear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewWillDisappear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 - (void)viewDidDisappear:(BOOL)aAnimated {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [super viewDidDisappear:aAnimated];
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
-
-#warning Incomplete implementation, return the number of sections
-    return 0;
+   
+   return self.dns.count;
 }
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
-
-#warning Incomplete implementation, return the number of rows
-    return 0;
+   
+   return 1;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {
-
-   UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:aIndexPath];
-
-   // Configure the cell...
-
-   return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)aTableView canEditRowAtIndexPath:(NSIndexPath *)aIndexPath {
-
-   // Return NO if you do not want the specified item to be editable.
-   return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)aEditingStyle forRowAtIndexPath:(NSIndexPath *)aIndexPath {
-
-   if (aEditingStyle == UITableViewCellEditingStyleDelete) {
-
-      // Delete the row from the data source
-      [aTableView deleteRowsAtIndexPaths:@[aIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+   
+   int                            nErr                                     = EFAULT;
+   
+   DNSCell                       *stDNSCell                                = nil;
+   
+   NSArray                       *stKeys                                   = nil;
+   DNSModel                      *stDNSModel                               = nil;
+   
+   __TRY;
       
-   }
-   else if (aEditingStyle == UITableViewCellEditingStyleInsert) {
+   stDNSCell   = [aTableView dequeueReusableCellWithIdentifier:stDNSCell.reuseIdentifier
+                                                  forIndexPath:aIndexPath];
+   
+   // Configure the cell...
+   stKeys      = [self.dns allKeys];
+   stDNSModel  = [self.dns objectForKey:[stKeys objectAtIndex:aIndexPath.section]];
 
-      // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-   }
-
-   return;
+   [stDNSCell setDNSModel:stDNSModel];
+   
+   __CATCH(nErr);
+   
+   return stDNSCell;
 }
-*/
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)aTableView moveRowAtIndexPath:(NSIndexPath *)aFromIndexPath toIndexPath:(NSIndexPath *)aToIndexPath {
-
-   return;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)aTableView canEditRowAtIndexPath:(NSIndexPath *)aIndexPath {
+ 
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)aIndexPath {
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)aEditingStyle forRowAtIndexPath:(NSIndexPath *)aIndexPath {
+ 
+ if (aEditingStyle == UITableViewCellEditingStyleDelete) {
+ 
+ // Delete the row from the data source
+ [aTableView deleteRowsAtIndexPaths:@[aIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+ 
+ }
+ else if (aEditingStyle == UITableViewCellEditingStyleInsert) {
+ 
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ 
+ return;
+ }
+ */
 
-   // Return NO if you do not want the item to be re-orderable.
-   return YES;
+/*
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)aTableView moveRowAtIndexPath:(NSIndexPath *)aFromIndexPath toIndexPath:(NSIndexPath *)aToIndexPath {
+ 
+ return;
+ }
+ */
+
+/*
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)aIndexPath {
+ 
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
+
+- (void)startWithDomain:(NSString *)aDomain completion:(void (^ __nullable)(NSError  * _Nullable aError))aCompletion {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[DNSContentController startWithDomain:completion:] : Domain : %@", aDomain));
+   
+//   [self sendSignal:DNSController.startSignal withObject:aDomain];
+   
+   __CATCH(nErr);
+   
+   return;
 }
-*/
+
+#pragma mark - (NSMutableDictionary<NSString *, id> *)dns
+- (NSMutableDictionary<NSString *, DNSModel *> *)dns {
+   
+   if (nil == _dns) {
+      
+      _dns  = [NSMutableDictionary<NSString *, DNSModel *> dictionary];
+      
+   } /* End if () */
+   
+   return _dns;
+}
 
 @end
 
@@ -214,13 +255,13 @@
 @implementation DNSContentController (IBACTION)
 
 - (IBAction)onAction:(id)aSender {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -231,23 +272,22 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)aSegue sender:(id)aSender {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    // Get the new view controller using [aSegue destinationViewController].
    // Pass the selected object to the new view controller.
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
 + (NSString *)storyboard {
    
-#warning Incomplete implementation, Name of the Stroyboard.
-   return @"";
+   return @"UTILITIES";
 }
 
 @end

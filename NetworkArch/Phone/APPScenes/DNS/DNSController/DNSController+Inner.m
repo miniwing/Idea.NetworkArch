@@ -11,6 +11,11 @@
 
 #import "DNSController+Inner.h"
 #import "DNSController+Signal.h"
+#import "DNSController+Notification.h"
+
+#import "DNSContentController+Inner.h"
+#import "DNSContentController+Signal.h"
+#import "DNSContentController+Notification.h"
 
 @implementation DNSController (Inner)
 

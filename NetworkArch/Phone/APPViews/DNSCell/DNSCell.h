@@ -10,6 +10,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DNSModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DNSCell : UITableViewCell
@@ -24,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface DNSCell ()
+
+- (void)setDNSModel:(DNSModel *)aDNSModel;
 
 @end
 

@@ -56,6 +56,18 @@
 
    [self.containerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
 
+   [self.domainLabel setBackgroundColor:UIColor.clearColor];
+   [self.domainLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.domainLabel setFont:[APPFont regularFontOfSize:self.domainLabel.font.pointSize]];
+
+   [self.ttlLabel setBackgroundColor:UIColor.clearColor];
+   [self.ttlLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.ttlLabel setFont:[APPFont regularFontOfSize:self.ttlLabel.font.pointSize]];
+
+   [self.dnsLabel setBackgroundColor:UIColor.clearColor];
+   [self.dnsLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.dnsLabel setFont:[APPFont lightFontOfSize:self.dnsLabel.font.pointSize]];
+
    __CATCH(nErr);
 
    return;
@@ -73,6 +85,29 @@
 
    __CATCH(nErr);
    
+   return;
+}
+
+- (void)setDNSModel:(DNSModel *)aDNSModel {
+
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+
+   _DNSModel   = aDNSModel;
+   
+//   @property (nonatomic, weak)   IBOutlet       UILabel                             * domainLabel;
+//   @property (nonatomic, weak)   IBOutlet       UILabel                             * ttlLabel;
+//
+//   @property (nonatomic, weak)   IBOutlet       UILabel                             * dnsLabel;
+
+   [self.domainLabel setText:aDNSModel.name];
+   [self.ttlLabel setText:aDNSModel.ttl];
+   
+   [self.dnsLabel setText:[aDNSModel content]];
+   
+   __CATCH(nErr);
+
    return;
 }
 

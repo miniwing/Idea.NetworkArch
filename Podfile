@@ -144,6 +144,8 @@ target 'NetworkArch' do
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
   miniwing_pod('IDEATabBarControllerTransition', file = 'IDEATabBarControllerTransition', type = 'local', branch = 'develop', modular_headers = true)
   #-------------------------------------------------------------------------------------------------------------------------------#
+  miniwing_pod('IDEAEventBus', file = 'IDEAEventBus', type = 'local', branch = 'develop', modular_headers = true)
+  #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
   pod 'IDEAAppletDebugger'              , :path => '../MINIWING-PODs/Idea.Applets'            , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#

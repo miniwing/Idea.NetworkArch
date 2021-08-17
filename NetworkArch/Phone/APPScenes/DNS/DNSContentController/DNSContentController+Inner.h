@@ -17,15 +17,21 @@
 #import "DNSManager.h"
 #import "DNSManager+Singleton.h"
 
+#import "DNSModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DNSContentController ()
 
-@property (nonatomic, strong)                NSDictionary                        * dns;
+//@property (nonatomic, strong)                NSMutableArray<DNSModel *>          * dns;
+
+@property (nonatomic, strong)                NSMutableDictionary<NSString *, DNSModel *>  * dns;
 
 @end
 
 @interface DNSContentController (Inner)
+
+- (void)fetchDoneWithError:(NSError *)aError;
 
 @end
 

@@ -11,38 +11,121 @@
 
 #import "DNSModel.h"
 
-@interface DNSModel ()
+@interface DNSModel () <YYModel>
 
 @end
 
 @implementation DNSModel
 
-- (void)dealloc {
+//[stTemp.strings componentsJoinedByString:@"\n"]
+
+- (NSString *)content; {
    
-   __LOG_FUNCTION;
-
-   // Custom dealloc
-
-   __SUPER_DEALLOC;
-
-   return;
-}
-
-- (instancetype)init {
-
    int                            nErr                                     = EFAULT;
    
+   NSString                      *szContent                                = nil;
+   
    __TRY;
+
+   if ([self.dnsType isEqualToString:@"A"]) {
    
-   self  = [super init];
-   
-   if (self) {
-            
+//      stDNSModel.address = [stDNSModel.address stringByAppendingFormat:@"%@\n", stTemp.address];
+
+      szContent   = [self.address copy];
+      
+      nErr  = noErr;
+      
+      break;
+      
    } /* End if () */
    
+   if ([self.dnsType isEqualToString:@"AAAA"]) {
+
+//      stDNSModel.address = [stDNSModel.address stringByAppendingFormat:@"%@\n", stTemp.address];
+
+      szContent   = [self.address copy];
+
+      nErr  = noErr;
+      
+      break;
+
+   } /* End if () */
+
+   if ([self.dnsType isEqualToString:@"NS"]) {
+
+//      stDNSModel.target = [stDNSModel.address stringByAppendingFormat:@"%@\n", stTemp.target];
+
+      szContent   = [self.target copy];
+
+      nErr  = noErr;
+      
+      break;
+
+   } /* End if () */
+
+   if ([self.dnsType isEqualToString:@"SOA"]) {
+
+//      Text("Admin: \(admin)")
+//      Text("Host: \(host)")
+//      Text(": \(expire)")
+//      Text(": \(minimum)")
+//      Text(": \(refresh)")
+//      Text("Retry: \(retry)")
+//      Text(": \(serial)")
+      
+      NSMutableString   *stContent  = [NSMutableString string];
+      [stContent stringByAppendingFormat:@"Admin: %@", self.admin];
+      [stContent stringByAppendingFormat:@"Host: %@", self.host];
+      [stContent stringByAppendingFormat:@"Expire: %@", self.expire];
+      [stContent stringByAppendingFormat:@"Minimum: %@", self.minimum];
+      [stContent stringByAppendingFormat:@"Refresh: %@", self.refresh];
+      [stContent stringByAppendingFormat:@"Retry: %@", self.retry];
+      [stContent stringByAppendingFormat:@"Serial: %@", self.serial];
+
+      szContent   = stContent;
+      
+      nErr  = noErr;
+      
+      break;
+
+   } /* End if () */
+
+   if ([self.dnsType isEqualToString:@"MX"]) {
+
+//      stDNSModel.target = [stDNSModel.target stringByAppendingFormat:@"%@\nPriority:%@\n\n", stTemp.target, stTemp.priority];
+      szContent   = [self.target copy];
+
+      nErr  = noErr;
+      
+      break;
+
+   } /* End if () */
+
+   if ([self.dnsType isEqualToString:@"TXT"]) {
+
+      szContent   = [self.strings componentsJoinedByString:@"\n"];
+
+      nErr  = noErr;
+      
+      break;
+
+   } /* End if () */
+
    __CATCH(nErr);
    
-   return self;
+   return szContent;
+}
+
++ (NSDictionary *)modelCustomPropertyMapper {
+   
+   return @{ };
+}
+
++ (nullable NSDictionary*)modelContainerPropertyGenericClass {
+   
+   return @{
+      @"strings"  : NSString.class,
+   };
 }
 
 @end

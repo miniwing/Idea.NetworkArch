@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DNSCell ()
 
+@property (nonatomic, strong)                DNSModel                            * DNSModel;
+
 @end
 
 @interface DNSCell (Inner)
