@@ -150,7 +150,7 @@
       self.rootViewController = __cast(RootViewController *, self.window.rootViewController);
       
       self.splashViewController  = [UIStoryboard loadStoryboard:SplashViewController.storyboard
-                                                 viewController:[SplashViewController class]];
+                                                 viewController:SplashViewController.class];
       
    } /* End if () */
    else if ([self.window.rootViewController isKindOfClass:[SplashViewController class]]) {
@@ -158,7 +158,7 @@
       self.splashViewController  = __cast(SplashViewController *, self.window.rootViewController);
       
       self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
-                                              viewController:[RootViewController class]];
+                                              viewController:RootViewController.class];
       
    } /* End else */
    
@@ -378,7 +378,7 @@
    __TRY;
    
    self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
-                                           viewController:[RootViewController class]];
+                                           viewController:RootViewController.class];
    
    [UIView transitionFromView:self.splashViewController.view
                        toView:self.rootViewController.view

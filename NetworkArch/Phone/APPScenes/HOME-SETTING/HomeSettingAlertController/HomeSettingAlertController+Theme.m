@@ -101,7 +101,7 @@
 
    LogView((@"-[%@ modalPresentationStyle]", [self class]));
 
-   return UIModalPresentationFullScreen;
+   return UIModalPresentationCustom;
 }
 
 @end

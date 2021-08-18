@@ -502,7 +502,7 @@
       if (WifiDetailInterfaces == aIndexPath.row) {
          
          stWifiInterfacesController = [UIStoryboard loadStoryboard:WifiInterfacesController.storyboard
-                                                    viewController:[WifiInterfacesController class]];
+                                                    viewController:WifiInterfacesController.class];
          
          [self.navigationController pushViewController:stWifiInterfacesController
                                               animated:YES];

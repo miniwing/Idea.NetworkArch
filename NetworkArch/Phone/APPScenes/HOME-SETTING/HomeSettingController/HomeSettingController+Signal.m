@@ -81,7 +81,7 @@ handleSignal(HomeSettingContentController, addLinkSignal) {
    
    int                            nErr                                     = EFAULT;
    
-   HomeSettingAlertController    *stHomeSettingAlertController             = nil;
+   __block HomeSettingAlertController  *stHomeSettingAlertController       = nil;
    
    __TRY;
    
@@ -93,10 +93,22 @@ handleSignal(HomeSettingContentController, addLinkSignal) {
 //                            completionHandler:^(BOOL success) {
 //
 //   }];
-
-   stHomeSettingAlertController  = [[HomeSettingAlertController alloc] init];
    
-   [self popUp:stHomeSettingAlertController];
+   [CATransaction begin];
+   
+   [self resignFirstResponder];
+      
+   [CATransaction commit];
+
+   [CATransaction setCompletionBlock:^{
+
+      stHomeSettingAlertController  = [UIStoryboard loadStoryboard:HomeSettingAlertController.storyboard
+                                                    viewController:HomeSettingAlertController.class];
+         
+      [self popUp:stHomeSettingAlertController animated:YES completion:^{
+         
+      }];
+   }];
    
    __CATCH(nErr);
    

@@ -719,7 +719,7 @@
       if (HomeWifiMore == aIndexPath.row) {
          
          stWifiMoreController = [UIStoryboard loadStoryboard:WifiMoreController.storyboard
-                                              viewController:[WifiMoreController class]];
+                                              viewController:WifiMoreController.class];
          
          stViewController  = stWifiMoreController;
          
@@ -733,7 +733,7 @@
       if (HomeCellularMore == aIndexPath.row) {
          
          stCellularMoreController = [UIStoryboard loadStoryboard:CellularMoreController.storyboard
-                                              viewController:[CellularMoreController class]];
+                                              viewController:CellularMoreController.class];
          
          stViewController  = stCellularMoreController;
 
@@ -745,7 +745,7 @@
       if (HomeUtilitiesPing == aIndexPath.row) {
          
          stPingController  = [UIStoryboard loadStoryboard:PingController.storyboard
-                                           viewController:[PingController class]];
+                                           viewController:PingController.class];
 
          stViewController  = stPingController;
          
@@ -753,7 +753,7 @@
       else if (HomeUtilitiesWoL == aIndexPath.row) {
 
          stWoLANController = [UIStoryboard loadStoryboard:WoLANController.storyboard
-                                           viewController:[WoLANController class]];
+                                           viewController:WoLANController.class];
 
          stViewController  = stWoLANController;
 
@@ -761,7 +761,7 @@
       else if (HomeUtilitiesWhois == aIndexPath.row) {
 
          stWhoisController = [UIStoryboard loadStoryboard:WhoisController.storyboard
-                                           viewController:[WhoisController class]];
+                                           viewController:WhoisController.class];
 
          stViewController  = stWhoisController;
 
@@ -769,7 +769,7 @@
       else if (HomeUtilitiesDNS == aIndexPath.row) {
 
          stDNSController   = [UIStoryboard loadStoryboard:DNSController.storyboard
-                                           viewController:[DNSController class]];
+                                           viewController:DNSController.class];
 
          stViewController  = stDNSController;
 

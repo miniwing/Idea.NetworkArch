@@ -324,7 +324,7 @@ NS_ASSUME_NONNULL_END
    } /* End if () */
    
    stTrackingController  = [UIStoryboard loadStoryboard:TrackingController.storyboard
-                                         viewController:[TrackingController class]];
+                                         viewController:TrackingController.class];
    
    [self popUp:stTrackingController animated:aAnimated.boolValue completion:^{
       

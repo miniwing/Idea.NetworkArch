@@ -11,10 +11,6 @@
 
 #import "HomeSettingAlertController.h"
 
-@interface HomeSettingAlertController ()
-
-@end
-
 @implementation HomeSettingAlertController
 
 - (void)dealloc {
@@ -22,6 +18,9 @@
    __LOG_FUNCTION;
 
    // Custom dealloc
+   
+   [self unobserveAllNotifications];
+   [self removeAllSignalResponders];
 
    __SUPER_DEALLOC;
 
@@ -29,7 +28,7 @@
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aCoder {
-
+   
    int                            nErr                                     = EFAULT;
    
    __TRY;
@@ -37,7 +36,7 @@
    self  = [super initWithCoder:aCoder];
    
    if (self) {
-            
+      
    } /* End if () */
    
    __CATCH(nErr);
@@ -48,12 +47,27 @@
 - (void)viewDidLoad {
 
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
 
    [super viewDidLoad];
 
    // Do any additional setup after loading the view.
+   [self.view setBackgroundColor:UIColor.clearColor];
+   [self.view setBackgroundColorPicker:nil];
+   
+   [self.containerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+   [self.contentView setBackgroundColor:UIColor.clearColor];
+
+   [self.trackingTitleLabel setBackgroundColor:UIColor.clearColor];
+   [self.trackingSummaryLabel setBackgroundColor:UIColor.clearColor];
+
+   [self.imageView setCornerRadius:8 clipsToBounds:YES];
+   [self.containerView setCornerRadius:8 clipsToBounds:YES];
+   [self.continueButton setCornerRadius:4 clipsToBounds:YES];
+
+   [self.continueButton.titleLabel setFont:[APPFont regularFontOfSize:self.continueButton.titleLabel.font.pointSize]];
+   [self.continueButton setTitle:APP_STR(@"CONTINUE") forState:UIControlStateNormal];
 
    __CATCH(nErr);
 
@@ -127,12 +141,17 @@
 }
 
 #pragma mark - IDEAPresentationControllerDelegate
-- (NSValue *)frameOfPresented {
+- (CGRect)frameOfPresented {
+      
+   return CGRectMake(0,
+                     0,
+                     self.view.width,
+                     self.view.height);
+}
+
+- (BOOL)backgroundTouchToClose {
    
-   return @(CGRectMake(0,
-                       self.view.height - MAKE_GOLDEN_RATIO(self.view.height),
-                       self.view.width,
-                       MAKE_GOLDEN_RATIO(self.view.height)));
+   return YES;
 }
 
 @end
@@ -157,8 +176,28 @@
 
 + (NSString *)storyboard {
    
-#warning Incomplete implementation, Name of the Stroyboard.
-   return @"";
+   return @"HOME";
+}
+
+@end
+
+#pragma mark - IBAction
+@implementation HomeSettingAlertController (Action)
+
+- (IBAction)onContinue:(UIButton *)aButton {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [self dismissViewControllerAnimated:YES
+                            completion:^{
+      
+   }];
+   
+   __CATCH(nErr);
+   
+   return;
 }
 
 @end

@@ -10,6 +10,8 @@ install! 'cocoapods', :deterministic_uuids                => false
 
 # applet_webcore=YES pod update
 
+###################################################################################################################################
+
 ENV['OLLVM']                      = 'NO'
 
 ENV['IDEAFONT_HY']                = 'YES'
@@ -25,6 +27,8 @@ ENV['IDEA_FOUNDATION_EXTENSION']  = 'YES'
 
 ENV['IDEA_SERVICE_FILE_SYNC']   = 'NO'
 
+###################################################################################################################################
+
 def miniwing_pod(pod_name, file = pod_name, type = 'remote', branch = 'master', modular_headers = true)
   case type
     when 'local'
@@ -37,6 +41,8 @@ end
 
 # git@github.com:miniwing/FoundationExtension.git
 # https://github.com/miniwing/#{file}.git
+
+###################################################################################################################################
 
 workspace 'Idea.NetworkArch'
 
@@ -144,7 +150,7 @@ target 'NetworkArch' do
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
   miniwing_pod('IDEATabBarControllerTransition', file = 'IDEATabBarControllerTransition', type = 'local', branch = 'develop', modular_headers = true)
   #-------------------------------------------------------------------------------------------------------------------------------#
-  miniwing_pod('IDEAEventBus', file = 'IDEAEventBus', type = 'local', branch = 'develop', modular_headers = true)
+#  miniwing_pod('IDEAEventBus', file = 'IDEAEventBus', type = 'local', branch = 'develop', modular_headers = true)
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
   pod 'IDEAAppletDebugger'              , :path => '../MINIWING-PODs/Idea.Applets'            , :configurations => ['Debug']

@@ -306,14 +306,14 @@
    __TRY;
    
    stHomeSettingRootController   = [UIStoryboard loadStoryboard:HomeSettingRootController.storyboard
-                                                     identifier:HomeSettingRootController.className];
+                                                 viewController:HomeSettingRootController.class];
    
    [self presentViewController:stHomeSettingRootController
                       animated:YES
                     completion:^{
       
    }];
-
+   
    __CATCH(nErr);
    
    return;

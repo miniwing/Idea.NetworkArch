@@ -219,17 +219,17 @@
 }
 
 #pragma mark - IDEAPresentationControllerDelegate
-- (NSValue *)frameOfPresented {
+- (CGRect)frameOfPresented {
+   
+   return CGRectMake(0,
+                     0,
+                     self.view.width,
+                     self.view.height);
+}
 
-//   return @(CGRectMake(0,
-//                       MAKE_GOLDEN_RATIO_2(self.view.height),
-//                       self.view.width,
-//                       self.view.height - MAKE_GOLDEN_RATIO_2(self.view.height)));
-
-   return @(CGRectMake(0,
-                       0,
-                       self.view.width,
-                       self.view.height));
+- (BOOL)backgroundTouchToClose {
+   
+   return NO;
 }
 
 - (void)openTracking {
