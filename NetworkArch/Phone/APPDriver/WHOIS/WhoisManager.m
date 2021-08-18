@@ -91,7 +91,7 @@
 
 + (NSString *)whoisURL {
    
-   return [NSString stringWithFormat:@"https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=%@&outputFormat=JSON", @"at_wa51HmNxHCpSNqTTi1UFv38wluCtf"];
+   return [NSString stringWithFormat:@"https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=%@&outputFormat=JSON", [APPDATA xmlAPIKey]];
 }
 
 + (NSString *)whoisURLWithKey:(NSString *)aKey {

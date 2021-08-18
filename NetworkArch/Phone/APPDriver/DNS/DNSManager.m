@@ -91,7 +91,7 @@
 
 + (NSString *)DNSServiceURL {
    
-   return [NSString stringWithFormat:@"https://www.whoisxmlapi.com/whoisserver/DNSService?apiKey=%@&type=_all&outputFormat=JSON", @"at_wa51HmNxHCpSNqTTi1UFv38wluCtf"];
+   return [NSString stringWithFormat:@"https://www.whoisxmlapi.com/whoisserver/DNSService?apiKey=%@&type=_all&outputFormat=JSON",  [APPDATA xmlAPIKey]];
 }
 
 + (NSString *)DNSServiceURLWithKey:(NSString *)aKey {

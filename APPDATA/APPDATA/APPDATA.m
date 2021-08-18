@@ -70,7 +70,24 @@
 + (NSString *)trackingFile:(NSString *)aTrackingName {
    
    NSString    *szPath     = [self pathForName:aTrackingName];
-   LogDebug((@"-[APPDATA trackingPath:] : HTML : %@", szPath));
+   LogDebug((@"-[APPDATA trackingPath:] : JSON : %@", szPath));
+   
+   NSString     *szContent = [NSString stringWithContentsOfFile:szPath
+                                                       encoding:NSUTF8StringEncoding
+                                                          error:nil];
+   
+   return szContent;
+}
+
+#pragma mark - Introduction
++ (NSString *)introduction {
+   
+   return @"INTRODUCTION.json";
+}
++ (NSString *)introductionFile:(NSString *)aIntroductionName {
+   
+   NSString    *szPath     = [self pathForName:aIntroductionName];
+   LogDebug((@"-[APPDATA introductionPath:] : JSON : %@", szPath));
    
    NSString     *szContent = [NSString stringWithContentsOfFile:szPath
                                                        encoding:NSUTF8StringEncoding

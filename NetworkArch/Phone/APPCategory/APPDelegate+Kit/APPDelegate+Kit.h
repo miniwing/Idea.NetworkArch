@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isTracking;
 + (void)setTracking:(BOOL)aTracking;
 
++ (BOOL)isIntroduced;
++ (void)setIntroduced:(BOOL)aIntroduced;
+
 @end
 
 @interface APPDelegate (Storage)

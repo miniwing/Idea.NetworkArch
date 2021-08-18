@@ -201,8 +201,8 @@
    
    int                            nErr                                     = EFAULT;
 
-   __block UINavigationController*stNavigationController                   = nil;
-   __block WebViewController     *stWebViewController                      = nil;
+//   __block UINavigationController*stNavigationController                   = nil;
+//   __block WebViewController     *stWebViewController                      = nil;
    
    __TRY;
    
@@ -210,8 +210,8 @@
                             completion:^{
       
       
-      stNavigationController  = __cast(UINavigationController *, self.presentingViewController);
-      [stNavigationController pushViewController:[WebViewController new] animated:YES];
+//      stNavigationController  = __cast(UINavigationController *, self.presentingViewController);
+//      [stNavigationController pushViewController:[WebViewController new] animated:YES];
    }];
    
    __CATCH(nErr);

@@ -60,6 +60,18 @@
    return;
 }
 
++ (BOOL)isIntroduced {
+   
+   return [NSUserDefaults boolForKey:@"isIntroduced"];
+}
+
++ (void)setIntroduced:(BOOL)aIntroduced {
+   
+   [NSUserDefaults setBool:aIntroduced forKey:@"isIntroduced"];
+   
+   return;
+}
+
 @end
 
 @implementation APPDelegate (Storage)

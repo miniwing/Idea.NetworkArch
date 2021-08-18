@@ -105,7 +105,7 @@
    else {
       dispatch_async_on_main_queue(^{
          
-         [self.apiKeytextField setText:@"at_wa51HmNxHCpSNqTTi1UFv38wluCtf"];
+         [self.apiKeytextField setText:[APPDATA xmlAPIKey]];
          
          [self.apiKeytextField becomeFirstResponder];
       });

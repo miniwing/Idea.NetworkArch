@@ -16,6 +16,10 @@
 #import "RootViewController.h"
 
 #import "TrackingController.h"
+#import "TrackingController+Notification.h"
+
+#import "IntroductionController.h"
+#import "IntroductionController+Notification.h"
 
 #import "SettingController+Notification.h"
 
@@ -307,6 +311,34 @@ NS_ASSUME_NONNULL_END
    return;
 }
 
+- (void)openIntroduction:(NSNumber *)aAnimated {
+   
+   int                            nErr                                     = EFAULT;
+   
+   IntroductionController        *stIntroductionController                 = nil;
+   
+   __TRY;
+   
+   if ([APPDelegate isIntroduced]) {
+      
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+   
+   stIntroductionController   = [UIStoryboard loadStoryboard:IntroductionController.storyboard
+                                              viewController:IntroductionController.class];
+   
+   [self popUp:stIntroductionController animated:aAnimated.boolValue completion:^{
+      
+   }];
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
 - (void)openTracking:(NSNumber *)aAnimated {
    
    int                            nErr                                     = EFAULT;
@@ -342,8 +374,9 @@ NS_ASSUME_NONNULL_END
    
    __TRY;
    
-   UI_PERFORM_SELECTOR(self, @selector(openTracking:), @(YES), NO);
-   
+//   UI_PERFORM_SELECTOR(self, @selector(openTracking:), @(YES), NO);
+   UI_PERFORM_SELECTOR(self, @selector(openIntroduction:), @(YES), NO);
+
    __CATCH(nErr);
    
    return;

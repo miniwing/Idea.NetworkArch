@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)xmlAPIKey;
 
 + (NSString *)tracking;
++ (NSString *)introduction;
 
 @end
 
@@ -24,7 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)htmlFile:(NSString *)aHtmlName;
 
 + (NSString *)trackingFile:(NSString *)aTrackingName;
++ (NSString *)introductionFile:(NSString *)aIntroductionName;
 
 @end
 
 NS_ASSUME_NONNULL_END
+
+

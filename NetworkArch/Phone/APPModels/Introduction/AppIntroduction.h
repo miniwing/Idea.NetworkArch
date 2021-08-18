@@ -1,5 +1,5 @@
 //
-//  AppTracking.h
+//  AppIntroduction.h
 //  NetworkArch
 //
 //  Created by Harry on 2021/6/26.
@@ -11,24 +11,26 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Tracking : NSObject
+@interface Introduction : NSObject
 
 @property (nonatomic, strong)                NSString                            * icon;
-@property (nonatomic, strong)                NSString                            * content;
-
-@end
-
-@interface AppTracking : NSObject
 
 @property (nonatomic, strong)                NSString                            * title;
 @property (nonatomic, strong)                NSString                            * summary;
-@property (nonatomic, strong)                NSArray<Tracking *>                 * trackings;
 
 @end
 
-@interface AppTracking ()
+@interface AppIntroduction : NSObject
 
-+ (instancetype)appTracking;
+@property (nonatomic, strong)                NSString                            * title;
+@property (nonatomic, strong)                NSString                            * summary;
+@property (nonatomic, strong)                NSArray<Introduction *>             * introductions;
+
+@end
+
+@interface AppIntroduction ()
+
++ (instancetype)appIntroduction;
 
 @end
 

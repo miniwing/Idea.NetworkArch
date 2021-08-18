@@ -307,6 +307,11 @@
 		4AF4412826AC8C060008C169 /* BOTTOM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412526AC8C040008C169 /* BOTTOM.png */; };
 		4AF4412926AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
 		4AF4412A26AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
+		4AF6D27326CCE70B000EAA40 /* IntroductionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D26D26CCE70A000EAA40 /* IntroductionController.m */; };
+		4AF6D27426CCE70B000EAA40 /* IntroductionController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D26F26CCE70A000EAA40 /* IntroductionController+Notification.m */; };
+		4AF6D27526CCE70B000EAA40 /* IntroductionRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D27126CCE70A000EAA40 /* IntroductionRootController.m */; };
+		4AF6D27926CCE7A3000EAA40 /* AppIntroduction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D27726CCE7A3000EAA40 /* AppIntroduction.m */; };
+		4AF6D27F26CCEABC000EAA40 /* INTRODUCTION.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF6D27D26CCEABC000EAA40 /* INTRODUCTION.storyboard */; };
 		4AF9C4EB26B1C1E9002A2ABC /* APPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C4E326B1C1E9002A2ABC /* APPTextField.m */; };
 		4AF9C4FE26B1C5F5002A2ABC /* PingResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C4F626B1C5F5002A2ABC /* PingResultCell.m */; };
 		4AF9C51026B1C9A4002A2ABC /* PingGraphCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C50826B1C9A4002A2ABC /* PingGraphCell.m */; };
@@ -957,6 +962,15 @@
 		4AF4412426AC8AC90008C169 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AF4412526AC8C040008C169 /* BOTTOM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BOTTOM.png; sourceTree = "<group>"; };
 		4AF4412626AC8C050008C169 /* LAUNCH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LAUNCH.png; sourceTree = "<group>"; };
+		4AF6D26D26CCE70A000EAA40 /* IntroductionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionController.m; sourceTree = "<group>"; };
+		4AF6D26E26CCE70A000EAA40 /* IntroductionRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionRootController.h; sourceTree = "<group>"; };
+		4AF6D26F26CCE70A000EAA40 /* IntroductionController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IntroductionController+Notification.m"; sourceTree = "<group>"; };
+		4AF6D27026CCE70A000EAA40 /* IntroductionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionController.h; sourceTree = "<group>"; };
+		4AF6D27126CCE70A000EAA40 /* IntroductionRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionRootController.m; sourceTree = "<group>"; };
+		4AF6D27226CCE70A000EAA40 /* IntroductionController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IntroductionController+Notification.h"; sourceTree = "<group>"; };
+		4AF6D27726CCE7A3000EAA40 /* AppIntroduction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppIntroduction.m; sourceTree = "<group>"; };
+		4AF6D27826CCE7A3000EAA40 /* AppIntroduction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppIntroduction.h; sourceTree = "<group>"; };
+		4AF6D27E26CCEABC000EAA40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/INTRODUCTION.storyboard; sourceTree = "<group>"; };
 		4AF9C4DD26B1C1E9002A2ABC /* APPTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPTextField.h; sourceTree = "<group>"; };
 		4AF9C4E326B1C1E9002A2ABC /* APPTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPTextField.m; sourceTree = "<group>"; };
 		4AF9C4F026B1C5F5002A2ABC /* PingResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PingResultCell.h; sourceTree = "<group>"; };
@@ -1109,6 +1123,7 @@
 				4A0E4DE9268585C400A85517 /* ICON.xcassets */,
 				4AE51B952685C7C500DC1DA2 /* IMAGEs.xcassets */,
 				4A0E4EA326858ADC00A85517 /* TRACKING.storyboard */,
+				4AF6D27D26CCEABC000EAA40 /* INTRODUCTION.storyboard */,
 				4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */,
 				4AE51B9D2685CDFB00DC1DA2 /* MAIN.storyboard */,
 				4A3D46B226CCE09B00376D31 /* WEB.storyboard */,
@@ -1203,6 +1218,7 @@
 			children = (
 				4A5F9ED926CA0F4F00D15CC0 /* WKWebViewController */,
 				4A45537D2686327A0050E736 /* TRACKING */,
+				4AF6D26C26CCE6C4000EAA40 /* Introduction */,
 				4A0E4E5C2685898E00A85517 /* HOME */,
 				4AE2178E26C8BD860047776D /* HOME-SETTING */,
 				4A5D98EC26A493C600E00610 /* WIFI-MORE */,
@@ -1221,6 +1237,7 @@
 			isa = PBXGroup;
 			children = (
 				4ACE80DB26C6874A00E962E1 /* TRACKing */,
+				4AF6D27626CCE7A3000EAA40 /* Introduction */,
 				4A7241AE26B3152400009443 /* PING */,
 				4ACE80D726C6867A00E962E1 /* WoLAN */,
 				4A988A9426CA60C30010650A /* DNS */,
@@ -2273,6 +2290,28 @@
 			path = TodayWidgetCell;
 			sourceTree = "<group>";
 		};
+		4AF6D26C26CCE6C4000EAA40 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				4AF6D26E26CCE70A000EAA40 /* IntroductionRootController.h */,
+				4AF6D27126CCE70A000EAA40 /* IntroductionRootController.m */,
+				4AF6D27026CCE70A000EAA40 /* IntroductionController.h */,
+				4AF6D26D26CCE70A000EAA40 /* IntroductionController.m */,
+				4AF6D27226CCE70A000EAA40 /* IntroductionController+Notification.h */,
+				4AF6D26F26CCE70A000EAA40 /* IntroductionController+Notification.m */,
+			);
+			path = Introduction;
+			sourceTree = "<group>";
+		};
+		4AF6D27626CCE7A3000EAA40 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				4AF6D27826CCE7A3000EAA40 /* AppIntroduction.h */,
+				4AF6D27726CCE7A3000EAA40 /* AppIntroduction.m */,
+			);
+			path = Introduction;
+			sourceTree = "<group>";
+		};
 		4AF9C4DA26B1C1D2002A2ABC /* TextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -2518,6 +2557,7 @@
 				4AE51B9C2685CD3400DC1DA2 /* Localizable.strings in Resources */,
 				4AE51B9B2685CD3400DC1DA2 /* InfoPlist.strings in Resources */,
 				4A0E4DF9268585CF00A85517 /* SPLASH.storyboard in Resources */,
+				4AF6D27F26CCEABC000EAA40 /* INTRODUCTION.storyboard in Resources */,
 				4A0E4EA826858ADC00A85517 /* TRACKING.storyboard in Resources */,
 				4AE51B962685C7C500DC1DA2 /* IMAGEs.xcassets in Resources */,
 				4A0E4DED268585C500A85517 /* ICON.xcassets in Resources */,
@@ -2907,6 +2947,7 @@
 				4A5D99CC26A494FA00E00610 /* CellularMoreRootController+Debug.m in Sources */,
 				4A53AA3D26A46F18000700F2 /* PingController+Inner.m in Sources */,
 				4A221F0326A44DA100C94F00 /* PingRootController+Notification.m in Sources */,
+				4AF6D27426CCE70B000EAA40 /* IntroductionController+Notification.m in Sources */,
 				4A745EEA26C58E9D00DA644A /* WoLANCell+Theme.m in Sources */,
 				4A0707F826B64B5A00D3A1DC /* CellularMoreContentController.m in Sources */,
 				4A0707FD26B64B5A00D3A1DC /* CellularMoreContentController+Inner.m in Sources */,
@@ -2922,6 +2963,7 @@
 				4A988A4926CA464F0010650A /* DNSManager+Singleton.m in Sources */,
 				4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */,
 				4AB997CC26C9534E00CD681F /* HomeSettingLinkCell+Notification.m in Sources */,
+				4AF6D27526CCE70B000EAA40 /* IntroductionRootController.m in Sources */,
 				4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */,
 				4AB9980926C953CA00CD681F /* HomeSettingApiKeyCell+Theme.m in Sources */,
 				4A5D99CD26A494FA00E00610 /* CellularMoreRootController+Theme.m in Sources */,
@@ -2929,6 +2971,7 @@
 				4A988A9226CA5FDB0010650A /* DNSCell+Notification.m in Sources */,
 				4AE217F126C8BE270047776D /* HomeSettingController+Debug.m in Sources */,
 				4A584B0626B59E83002A2E81 /* UIDevice+Network.m in Sources */,
+				4AF6D27326CCE70B000EAA40 /* IntroductionController.m in Sources */,
 				4A9A150026CC283A006286C3 /* HomeSettingAlertController.m in Sources */,
 				4A4553862686327B0050E736 /* TrackingRootController.m in Sources */,
 				4A53AABE26A47403000700F2 /* DNSRootController+Debug.m in Sources */,
@@ -2944,6 +2987,7 @@
 				4A988A9326CA5FDB0010650A /* DNSCell+Inner.m in Sources */,
 				4A0707FB26B64B5A00D3A1DC /* CellularMoreContentController+Notification.m in Sources */,
 				4A745EEC26C58E9D00DA644A /* WoLANCell+Inner.m in Sources */,
+				4AF6D27926CCE7A3000EAA40 /* AppIntroduction.m in Sources */,
 				4AE217D426C8BE060047776D /* HomeSettingRootController+Inner.m in Sources */,
 				4A5D9A0426A4952B00E00610 /* WifiMoreController+Signal.m in Sources */,
 				4AFFEDBC268645160052712A /* AppTracking.m in Sources */,
@@ -3201,6 +3245,14 @@
 				4AE51B9E2685CDFB00DC1DA2 /* Base */,
 			);
 			name = MAIN.storyboard;
+			sourceTree = "<group>";
+		};
+		4AF6D27D26CCEABC000EAA40 /* INTRODUCTION.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AF6D27E26CCEABC000EAA40 /* Base */,
+			);
+			name = INTRODUCTION.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
