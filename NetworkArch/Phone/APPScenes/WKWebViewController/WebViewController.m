@@ -144,7 +144,7 @@
 
 + (NSString *)storyboard {
    
-   return @"WEBVIEW";
+   return @"WEB";
 }
 
 @end

@@ -72,6 +72,7 @@
 		4A25F19B26AED9A10075BE73 /* FleetingWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A25F18F26AED9A10075BE73 /* FleetingWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4A25F1A126AED9B20075BE73 /* libAPPBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0E4E21268587BE00A85517 /* libAPPBase.a */; };
 		4A275F6626C53C51005F0F37 /* DataUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A275F6526C53C51005F0F37 /* DataUsage.m */; };
+		4A3D46B426CCE09B00376D31 /* WEB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A3D46B226CCE09B00376D31 /* WEB.storyboard */; };
 		4A45536526862E4D0050E736 /* HomeContentController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535826862E4B0050E736 /* HomeContentController+Signal.m */; };
 		4A45536626862E4D0050E736 /* HomeContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535C26862E4B0050E736 /* HomeContentController.m */; };
 		4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45535E26862E4C0050E736 /* HomeContentController+Debug.m */; };
@@ -516,6 +517,7 @@
 		4A25F19826AED9A10075BE73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A275F6426C53C51005F0F37 /* DataUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataUsage.h; sourceTree = "<group>"; };
 		4A275F6526C53C51005F0F37 /* DataUsage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataUsage.m; sourceTree = "<group>"; };
+		4A3D46B326CCE09B00376D31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WEB.storyboard; sourceTree = "<group>"; };
 		4A421C0526AC0CC200935235 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		4A45535726862E4B0050E736 /* HomeContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentController.h; sourceTree = "<group>"; };
 		4A45535826862E4B0050E736 /* HomeContentController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeContentController+Signal.m"; sourceTree = "<group>"; };
@@ -1109,6 +1111,7 @@
 				4A0E4EA326858ADC00A85517 /* TRACKING.storyboard */,
 				4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */,
 				4AE51B9D2685CDFB00DC1DA2 /* MAIN.storyboard */,
+				4A3D46B226CCE09B00376D31 /* WEB.storyboard */,
 				4A0E4EA126858ADC00A85517 /* HOME.storyboard */,
 				4A5D9A0726A4965200E00610 /* WIFI.storyboard */,
 				4A5D9A0A26A4966400E00610 /* CELLULAR.storyboard */,
@@ -2519,6 +2522,7 @@
 				4AE51B962685C7C500DC1DA2 /* IMAGEs.xcassets in Resources */,
 				4A0E4DED268585C500A85517 /* ICON.xcassets in Resources */,
 				4AE51B942685C4DA00DC1DA2 /* SPONSOR.png in Resources */,
+				4A3D46B426CCE09B00376D31 /* WEB.storyboard in Resources */,
 				4A5D9A0F26A4968800E00610 /* UTILITIES.storyboard in Resources */,
 				4A0E4DF8268585CF00A85517 /* LAUNCH.storyboard in Resources */,
 				4AB5C1F026859F3C00B1639D /* THEME-BUTTON.xib in Resources */,
@@ -3091,6 +3095,14 @@
 				4A25F19626AED9A10075BE73 /* Base */,
 			);
 			name = FLEETING.storyboard;
+			sourceTree = "<group>";
+		};
+		4A3D46B226CCE09B00376D31 /* WEB.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A3D46B326CCE09B00376D31 /* Base */,
+			);
+			name = WEB.storyboard;
 			sourceTree = "<group>";
 		};
 		4A4A004726AEFDD4000D4708 /* InfoPlist.strings */ = {

@@ -18,14 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UIView                              * contentView;
 @property (nonatomic, weak)   IBOutlet       UIImageView                         * imageView;
 
-@property (nonatomic, weak)   IBOutlet       UILabel                             * trackingTitleLabel;
-@property (nonatomic, weak)   IBOutlet       UILabel                             * trackingSummaryLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * titleLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * contentLabel;
 
-@property (nonatomic, strong) IBOutletCollection(UIView)       NSArray<UIView *> * trackingViews;
-@property (nonatomic, strong) IBOutletCollection(UIImageView)  NSArray<UIImageView *>* trackingImageViews;
-@property (nonatomic, strong) IBOutletCollection(UILabel)      NSArray<UILabel *>* trackingLabels;
-
-@property (nonatomic, weak)   IBOutlet       UIButton                            * continueButton;
+@property (nonatomic, weak)   IBOutlet       UIButton                            * okButton;
+@property (nonatomic, weak)   IBOutlet       UIButton                            * cancelButton;
 
 @end
 

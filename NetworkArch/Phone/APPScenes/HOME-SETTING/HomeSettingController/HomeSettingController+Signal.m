@@ -18,7 +18,11 @@
 #import "HomeSettingRootController+Signal.h"
 #import "HomeSettingRootController+Notification.h"
 
-#import "HomeSettingAlertController+Inner.h"
+//#import "HomeSettingAlertController+Inner.h"
+//
+//#import "WebViewController+Inner.h"
+//#import "WebViewController+Signal.h"
+//#import "WebViewController+Notification.h"
 
 @implementation HomeSettingController (Signal)
 
@@ -81,18 +85,12 @@ handleSignal(HomeSettingContentController, addLinkSignal) {
    
    int                            nErr                                     = EFAULT;
    
-   __block HomeSettingAlertController  *stHomeSettingAlertController       = nil;
+//   __block WebViewController     *stWebViewController                      = nil;
    
    __TRY;
    
    LogDebug((@"-[HomeSettingController addLinkSignal:] : Signal : %@", aSignal));
    LogDebug((@"-[HomeSettingController addLinkSignal:] : API KEY : %@", aSignal.object));
-
-//   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://main.whoisxmlapi.com"]
-//                                      options:nil
-//                            completionHandler:^(BOOL success) {
-//
-//   }];
    
    [CATransaction begin];
    
@@ -102,11 +100,21 @@ handleSignal(HomeSettingContentController, addLinkSignal) {
 
    [CATransaction setCompletionBlock:^{
 
-      stHomeSettingAlertController  = [UIStoryboard loadStoryboard:HomeSettingAlertController.storyboard
-                                                    viewController:HomeSettingAlertController.class];
-         
-      [self popUp:stHomeSettingAlertController animated:YES completion:^{
-         
+//      stHomeSettingAlertController  = [UIStoryboard loadStoryboard:HomeSettingAlertController.storyboard
+//                                                    viewController:HomeSettingAlertController.class];
+//
+//      [self popUp:stHomeSettingAlertController animated:YES completion:^{
+//
+//      }];
+//
+//      stWebViewController  = [UIStoryboard loadStoryboard:WebViewController.storyboard
+//                                           viewController:WebViewController.class];
+//      [self.navigationController pushViewController:stWebViewController animated:YES];
+
+      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://main.whoisxmlapi.com"]
+                                         options:nil
+                               completionHandler:^(BOOL success) {
+
       }];
    }];
    

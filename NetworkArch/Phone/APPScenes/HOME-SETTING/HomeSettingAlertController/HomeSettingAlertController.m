@@ -11,6 +11,10 @@
 
 #import "HomeSettingAlertController.h"
 
+#import "WebViewController+Inner.h"
+#import "WebViewController+Signal.h"
+#import "WebViewController+Notification.h"
+
 @implementation HomeSettingAlertController
 
 - (void)dealloc {
@@ -56,18 +60,27 @@
    [self.view setBackgroundColor:UIColor.clearColor];
    [self.view setBackgroundColorPicker:nil];
    
-   [self.containerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-   [self.contentView setBackgroundColor:UIColor.clearColor];
-
-   [self.trackingTitleLabel setBackgroundColor:UIColor.clearColor];
-   [self.trackingSummaryLabel setBackgroundColor:UIColor.clearColor];
+   [self.containerView setBackgroundColor:UIColor.clearColor];
+   [self.contentView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+   [self.contentView setCornerRadius:8 clipsToBounds:YES];
 
    [self.imageView setCornerRadius:8 clipsToBounds:YES];
-   [self.containerView setCornerRadius:8 clipsToBounds:YES];
-   [self.continueButton setCornerRadius:4 clipsToBounds:YES];
 
-   [self.continueButton.titleLabel setFont:[APPFont regularFontOfSize:self.continueButton.titleLabel.font.pointSize]];
-   [self.continueButton setTitle:APP_STR(@"CONTINUE") forState:UIControlStateNormal];
+   [self.titleLabel setBackgroundColor:UIColor.clearColor];
+   [self.titleLabel setFont:[APPFont lightFontOfSize:self.titleLabel.font.pointSize]];
+   [self.titleLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   [self.contentLabel setBackgroundColor:UIColor.clearColor];
+   [self.contentLabel setFont:[APPFont regularFontOfSize:self.contentLabel.font.pointSize]];
+   [self.contentLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   [self.okButton setCornerRadius:4 clipsToBounds:YES];
+   [self.okButton.titleLabel setFont:[APPFont regularFontOfSize:self.okButton.titleLabel.font.pointSize]];
+   [self.okButton setTitle:APP_STR(@"OK") forState:UIControlStateNormal];
+
+   [self.cancelButton setCornerRadius:4 clipsToBounds:YES];
+   [self.cancelButton.titleLabel setFont:[APPFont regularFontOfSize:self.cancelButton.titleLabel.font.pointSize]];
+   [self.cancelButton setTitle:APP_STR(@"CANCEL") forState:UIControlStateNormal];
 
    __CATCH(nErr);
 
@@ -184,7 +197,29 @@
 #pragma mark - IBAction
 @implementation HomeSettingAlertController (Action)
 
-- (IBAction)onContinue:(UIButton *)aButton {
+- (IBAction)onOK:(UIButton *)aButton {
+   
+   int                            nErr                                     = EFAULT;
+
+   __block UINavigationController*stNavigationController                   = nil;
+   __block WebViewController     *stWebViewController                      = nil;
+   
+   __TRY;
+   
+   [self dismissViewControllerAnimated:YES
+                            completion:^{
+      
+      
+      stNavigationController  = __cast(UINavigationController *, self.presentingViewController);
+      [stNavigationController pushViewController:[WebViewController new] animated:YES];
+   }];
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (IBAction)onCancel:(UIButton *)aButton {
    
    int                            nErr                                     = EFAULT;
    

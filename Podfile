@@ -271,6 +271,7 @@ post_install do |installer|
 #        config.build_settings['HEADER_SEARCH_PATHS']          = ["$(SRCROOT)/../ollvm-libs"];
         config.build_settings['LIBRARY_SEARCH_PATHS']         = ["$(SRCROOT)/../ollvm-libs"];
         config.build_settings['OTHER_LDFLAGS']                = ["-l\"clang_rt.ios\""];
+        config.build_settings['OTHER_CFLAGS']                 = ["-mllvm -sub -mllvm -fla -mllvm -bcf"];
       end # OLLVM
       
 #      config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'NO'
