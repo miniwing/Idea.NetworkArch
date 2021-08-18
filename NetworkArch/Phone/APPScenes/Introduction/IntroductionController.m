@@ -107,18 +107,19 @@
 
       [self.introductionImageViews[H] setBackgroundColor:UIColor.clearColor];
 //      [self.introductionImageViews[H] setCornerRadius:4 clipsToBounds:YES];
+      [self.introductionImageViews[H] setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
       stIcon   = [UIImage imageNamed:stAppIntroduction.introductions[H].icon];
-      if (@available(iOS 13.0, *)) {
-         
-         stIcon   = [stIcon imageWithTintColor:UIColor.systemRedColor];
-
-      } /* End if () */
-      else {
-         
-         stIcon   = [stIcon imageRenderWithTintColor:UIColor.systemRedColor];
-
-      } /* End else */
+//      if (@available(iOS 13.0, *)) {
+//
+//         stIcon   = [stIcon imageWithTintColor:UIColor.systemRedColor];
+//
+//      } /* End if () */
+//      else {
+//
+//         stIcon   = [stIcon imageRenderWithTintColor:UIColor.systemRedColor];
+//
+//      } /* End else */
 
       [self.introductionImageViews[H] setImage:stIcon];
       
