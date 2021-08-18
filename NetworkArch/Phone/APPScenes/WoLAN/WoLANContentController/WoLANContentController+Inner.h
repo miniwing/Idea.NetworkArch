@@ -10,9 +10,19 @@
 
 #import "WoLANContentController.h"
 
+#import "WoLANDevice.h"
+#import "DeviceAwake.h"
+#import "WoLANPacket.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WoLANContentController ()
+
+@property (nonatomic, strong)                NSString                            * mac;
+@property (nonatomic, strong)                NSString                            * broadcastAddr;
+@property (nonatomic, strong)                NSString                            * port;
+
+@property (nonatomic, strong)                NSMutableArray<WoLANPacket *>       * packets;
 
 @end
 

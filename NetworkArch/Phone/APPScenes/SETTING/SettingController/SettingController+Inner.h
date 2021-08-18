@@ -19,8 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong)                SettingContentController            * contentController;
 
-//@property (nonatomic, assign)                dispatch_once_t                       willLayoutOnceToken;
-
 @end
 
 @interface SettingController (Inner)

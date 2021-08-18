@@ -139,7 +139,7 @@
    return;
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - <UITableViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
 
     return 1;
@@ -161,6 +161,13 @@
    stWoLANCell = [aTableView dequeueReusableCellWithIdentifier:WoLANCell.reuseIdentifier
                                                   forIndexPath:aIndexPath];
 
+   [stWoLANCell setTextChangeBlock:^(NSIndexPath * _Nonnull aIndexPath, WoLANCell * _Nonnull aWoLANCell) {
+      
+      self.mac             = [aWoLANCell.macTextField.text copy];
+      self.broadcastAddr   = [aWoLANCell.broadcastTextField.text copy];
+      self.port            = [aWoLANCell.portTextField.text copy];
+   }];
+   
 #if __Debug__
    [stWoLANCell.macTextField setText:@"FF:FF:FE:EE:EE:EE"];
    [stWoLANCell.broadcastTextField setText:@"255.255.255.0"];
@@ -172,50 +179,53 @@
    return stWoLANCell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)aTableView canEditRowAtIndexPath:(NSIndexPath *)aIndexPath {
+#pragma mark - <UITableViewDelegate>
+- (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)aIndexPath {
+   
+   int                            nErr                                     = EFAULT;
+   
+   CGFloat                        fHeight                                  = 0.0f;
 
-   // Return NO if you do not want the specified item to be editable.
-   return YES;
-}
-*/
+   __TRY;
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)aEditingStyle forRowAtIndexPath:(NSIndexPath *)aIndexPath {
+//   WoLANSectionDevice = 0,
+//   WoLANSectionPacket = 1,
+//   WoLANSectionNumber
 
-   if (aEditingStyle == UITableViewCellEditingStyleDelete) {
-
-      // Delete the row from the data source
-      [aTableView deleteRowsAtIndexPaths:@[aIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+   if (WoLANSectionDevice == aIndexPath.section) {
       
-   }
-   else if (aEditingStyle == UITableViewCellEditingStyleInsert) {
+      fHeight  = 132;
+      
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+   
+   if (WoLANSectionPacket == aIndexPath.section) {
+      
+      fHeight  = 44;
+      
+      nErr  = noErr;
 
-      // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-   }
+   } /* End if () */
+   
+   __CATCH(nErr);
 
-   return;
+   return fHeight;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)aTableView moveRowAtIndexPath:(NSIndexPath *)aFromIndexPath toIndexPath:(NSIndexPath *)aToIndexPath {
-
-   return;
+#pragma mark - (NSMutableArray<WoLANPacket *> *)packets
+- (NSMutableArray<WoLANPacket *> *)packets {
+   
+   if (nil == _packets) {
+      
+      _packets = [NSMutableArray<WoLANPacket *> array];
+      
+   } /* End if () */
+   
+   return _packets;
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)aIndexPath {
-
-   // Return NO if you do not want the item to be re-orderable.
-   return YES;
-}
-*/
 
 @end
 

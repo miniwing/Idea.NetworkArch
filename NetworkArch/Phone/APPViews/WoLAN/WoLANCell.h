@@ -28,7 +28,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+typedef void (^ WoLANTextChangeBlock )    ( NSIndexPath *aIndexPath, WoLANCell *aWoLANCell );
+
 @interface WoLANCell ()
+
+@property (nonatomic, copy)                  WoLANTextChangeBlock                  textChangeBlock;
 
 @end
 

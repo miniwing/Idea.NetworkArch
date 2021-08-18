@@ -14,6 +14,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+IDEA_ENUM(NSInteger, WoLANSection) {
+   
+   WoLANSectionDevice = 0,
+   WoLANSectionPacket = 1,
+   WoLANSectionNumber
+};
+
 @interface WoLANContentController : IDEATableViewController
 
 @end

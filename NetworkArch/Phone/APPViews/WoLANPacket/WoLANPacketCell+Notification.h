@@ -1,23 +1,21 @@
 //
-//  WoLANController+Signal.h
+//  WoLANPacketCell+Notification.h
 //  NetworkArch
 //
-//  Created by Harry on 2021/7/18.
+//  Created by Harry on 2021/8/19.
 //  Copyright © 2021 Harry. All rights reserved.
 //
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import <IDEAUIVendor/IDEAUIVendor.h>
-
-#import "WoLANController.h"
+#import "WoLANPacketCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WoLANController (Signal)
+@interface WoLANPacketCell (Notification)
 
 #if __Debug__
-@signal(self);
+@notification(self);
 #endif /* __Debug__ */
 
 @end

@@ -12,7 +12,7 @@ install! 'cocoapods', :deterministic_uuids                => false
 
 ###################################################################################################################################
 
-ENV['OLLVM']                      = 'YES'
+ENV['OLLVM']                      = 'NO'
 
 ENV['IDEAFONT_HY']                = 'YES'
 ENV['IDEAFONT_MSYH']              = 'NO'

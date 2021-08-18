@@ -164,20 +164,20 @@
    
    [super viewWillLayoutSubviews];
    
-   //   dispatch_once(&_willLayoutOnceToken, ^{
-   //
-   //   });
-   
-   //#if MATERIAL_APP_BAR
-   //      // Dispose of any resources that can be recreated.
-   //      [self.contentViewTop setConstant:self.appBar.headerViewController.headerView.height];
-   //#endif /* MATERIAL_APP_BAR */
-   //
-   //      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
-   ////      [self.leftBarButtonItem setWidth:40];
-   ////      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
-   //
-   [self.contentController viewWillLayoutSubviews];
+//   //   dispatch_once(&_willLayoutOnceToken, ^{
+//   //
+//   //   });
+//
+//   //#if MATERIAL_APP_BAR
+//   //      // Dispose of any resources that can be recreated.
+//   //      [self.contentViewTop setConstant:self.appBar.headerViewController.headerView.height];
+//   //#endif /* MATERIAL_APP_BAR */
+//   //
+//   //      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
+//   ////      [self.leftBarButtonItem setWidth:40];
+//   ////      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
+//   //
+//   [self.contentController viewWillLayoutSubviews];
    
    __CATCH(nErr);
    
@@ -204,7 +204,7 @@
    //      [self.leftBarButtonItem setWidth:40];
    //      LogDebug((@"-[SettingController viewWillLayoutSubviews] : Width : %.3f", self.leftBarButtonItem.width));
    
-   [self.contentController viewDidLayoutSubviews];
+//   [self.contentController viewDidLayoutSubviews];
    
    __CATCH(nErr);
    
@@ -220,7 +220,7 @@
    [super didReceiveMemoryWarning];
    // Dispose of any resources that can be recreated.
    
-   [self.contentController didReceiveMemoryWarning];
+//   [self.contentController didReceiveMemoryWarning];
    
    __CATCH(nErr);
    
@@ -329,17 +329,17 @@
    
    __TRY;
    
-   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[SettingRootController class]])) {
-      
-      [self.navigationController popViewControllerAnimated:YES
-                                                completion:nil];
-      
-   } /* End if () */
-   else {
+//   ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[SettingRootController class]]))
+   
+   if ([self.navigationController isKindOfClass:[SettingRootController class]] || [self.rt_navigationController isKindOfClass:[SettingRootController class]]) {
       
       [self dismissViewControllerAnimated:YES
                                completion:nil];
+   } /* End if () */
+   else {
       
+      [self.navigationController popViewControllerAnimated:YES
+                                                completion:nil];
    } /* End else */
    
    __CATCH(nErr);

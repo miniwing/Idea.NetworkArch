@@ -1,8 +1,8 @@
 //
-//  WoLANController+Signal.h
+//  WebViewRootController.h
 //  NetworkArch
 //
-//  Created by Harry on 2021/7/18.
+//  Created by Harry on 2021/8/19.
 //  Copyright © 2021 Harry. All rights reserved.
 //
 //  Mail: miniwing.hz@gmail.com
@@ -10,15 +10,13 @@
 
 #import <IDEAUIVendor/IDEAUIVendor.h>
 
-#import "WoLANController.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WoLANController (Signal)
+@interface WebViewRootController : IDEANavigationController
 
-#if __Debug__
-@signal(self);
-#endif /* __Debug__ */
+@end
+
+@interface WebViewRootController ()
 
 @end
 

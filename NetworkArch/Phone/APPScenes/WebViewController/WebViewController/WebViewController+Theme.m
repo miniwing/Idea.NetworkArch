@@ -1,5 +1,5 @@
 //
-//  DNSContentController+Theme.m
+//  WebViewController+Theme.m
 //  NetworkArch
 //
 //  Created by Harry on 2021/8/16.
@@ -9,10 +9,10 @@
 //  TEL : +(852)53054612
 //
 
-#import "DNSContentController+Theme.h"
+#import "WebViewController+Theme.h"
 
 #pragma mark - UITheme
-@implementation DNSContentController (Theme)
+@implementation WebViewController (Theme)
 
 // #if DK_NIGHT_VERSION
 // #endif // #if DK_NIGHT_VERSION
@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[DNSContentController onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[WebViewController onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
 

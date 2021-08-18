@@ -393,12 +393,12 @@
         <scene sceneID="75X-2v-NsW">
             <objects>
                 <tableViewController storyboardIdentifier="WoLANContentController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fZa-bN-cET" userLabel="WoLAN-CONTENT" customClass="WoLANContentController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="132" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ike-P2-SRM">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ike-P2-SRM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WoLANCell" id="RWY-OC-ObR" customClass="WoLANCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WoLANCell" rowHeight="132" id="RWY-OC-ObR" customClass="WoLANCell">
                                 <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RWY-OC-ObR" id="LAq-ja-jmp">
@@ -435,7 +435,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Port (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bs-KT-EYW" userLabel="PORT">
                                                     <rect key="frame" x="8" y="87" width="327" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -478,6 +478,65 @@
                                     <outletCollection property="textFields" destination="sjT-jx-dxb" id="IiS-qE-EsT"/>
                                     <outletCollection property="textFields" destination="atj-Qe-9Gd" id="gje-g4-gip"/>
                                     <outletCollection property="textFields" destination="5bs-KT-EYW" id="ICb-y0-6L7"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WoLANPacketCell" id="Edl-hn-KZ1" customClass="WoLANPacketCell">
+                                <rect key="frame" x="0.0" y="187.33333206176758" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Edl-hn-KZ1" id="Wno-Dc-ORv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1M-uJ-7DG" userLabel="容器">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="MAC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihl-Ib-VFF" userLabel="MAC">
+                                                    <rect key="frame" x="8" y="8.0000000000000018" width="31" height="27.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="SENT" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPc-mr-Qad" userLabel="SENT">
+                                                    <rect key="frame" x="303.66666666666669" y="8.0000000000000018" width="31.333333333333314" height="27.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvB-A7-XLv" userLabel="分割线">
+                                                    <rect key="frame" x="8" y="43.666666666666664" width="327" height="0.3333333333333357"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="W92-3b-qYi"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                            <constraints>
+                                                <constraint firstItem="ihl-Ib-VFF" firstAttribute="top" secondItem="l1M-uJ-7DG" secondAttribute="top" constant="8" id="Bpk-3e-QWG"/>
+                                                <constraint firstItem="xvB-A7-XLv" firstAttribute="top" secondItem="ihl-Ib-VFF" secondAttribute="bottom" constant="8" id="CuK-gQ-oHi"/>
+                                                <constraint firstAttribute="trailing" secondItem="EPc-mr-Qad" secondAttribute="trailing" constant="8" id="D1C-y4-LLL"/>
+                                                <constraint firstAttribute="bottom" secondItem="xvB-A7-XLv" secondAttribute="bottom" id="FpX-wd-NKt"/>
+                                                <constraint firstItem="EPc-mr-Qad" firstAttribute="bottom" secondItem="ihl-Ib-VFF" secondAttribute="bottom" id="UcV-cL-orW"/>
+                                                <constraint firstItem="xvB-A7-XLv" firstAttribute="leading" secondItem="l1M-uJ-7DG" secondAttribute="leading" constant="8" id="YRc-oN-DdC"/>
+                                                <constraint firstAttribute="trailing" secondItem="xvB-A7-XLv" secondAttribute="trailing" constant="8" id="hPQ-jY-xrX"/>
+                                                <constraint firstItem="ihl-Ib-VFF" firstAttribute="leading" secondItem="l1M-uJ-7DG" secondAttribute="leading" constant="8" id="hjx-Th-ZS4"/>
+                                                <constraint firstItem="EPc-mr-Qad" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ihl-Ib-VFF" secondAttribute="trailing" constant="8" symbolic="YES" id="jjB-I3-xF4"/>
+                                                <constraint firstItem="EPc-mr-Qad" firstAttribute="top" secondItem="ihl-Ib-VFF" secondAttribute="top" id="yxS-nB-KQG"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="l1M-uJ-7DG" secondAttribute="bottom" id="PWE-Li-VEj"/>
+                                        <constraint firstItem="l1M-uJ-7DG" firstAttribute="leading" secondItem="Wno-Dc-ORv" secondAttribute="leading" constant="16" id="mgz-Zg-uXt"/>
+                                        <constraint firstAttribute="trailing" secondItem="l1M-uJ-7DG" secondAttribute="trailing" constant="16" id="oFx-AA-gD3"/>
+                                        <constraint firstItem="l1M-uJ-7DG" firstAttribute="top" secondItem="Wno-Dc-ORv" secondAttribute="top" id="tdK-Pz-fe5"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="containerView" destination="l1M-uJ-7DG" id="7lN-VB-bUm"/>
+                                    <outlet property="macLabel" destination="ihl-Ib-VFF" id="za5-yR-c9H"/>
+                                    <outlet property="sentLabel" destination="EPc-mr-Qad" id="dyM-Mt-TLX"/>
+                                    <outlet property="separatorView" destination="xvB-A7-XLv" id="b5V-e1-uwe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

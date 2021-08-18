@@ -1,18 +1,18 @@
 //
-//  DNSCell+Theme.m
+//  WoLANPacketCell+Theme.m
 //  NetworkArch
 //
-//  Created by Harry on 2021/8/16.
+//  Created by Harry on 2021/8/19.
 //  Copyright © 2021 Harry. All rights reserved.
 //
 //  Mail: miniwing.hz@gmail.com
 //  TEL : +(852)53054612
 //
 
-#import "DNSCell+Theme.h"
+#import "WoLANPacketCell+Theme.h"
 
 #pragma mark - UITheme
-@implementation DNSCell (Theme)
+@implementation WoLANPacketCell (Theme)
 
 // #if DK_NIGHT_VERSION
 // #endif // #if DK_NIGHT_VERSION
@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[DNSCell onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[WoLANPacketCell onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
       

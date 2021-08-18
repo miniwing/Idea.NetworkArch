@@ -126,4 +126,11 @@
    return;
 }
 
+- (void)setTextChangeBlock:(WoLANTextChangeBlock)aTextChangeBlock {
+   
+   _textChangeBlock  = [aTextChangeBlock copy];
+   
+   return;
+}
+
 @end

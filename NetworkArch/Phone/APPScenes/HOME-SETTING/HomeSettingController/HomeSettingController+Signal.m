@@ -44,20 +44,20 @@ handleSignal(HomeSettingContentController, saveSignal) {
    LogDebug((@"-[HomeSettingController saveSignal:] : Signal : %@", aSignal));
    LogDebug((@"-[HomeSettingController saveSignal:] : API KEY : %@", aSignal.object));
    
-   //   [CATransaction begin];
-   //   [self resignFirstResponder];
-   //   [CATransaction commit];
-   //   [CATransaction setCompletionBlock:^{
-   //      if ([self.navigationController isKindOfClass:HomeSettingRootController.class] || [self.rt_navigationController isKindOfClass:HomeSettingRootController.class]) {
-   //         [self dismissViewControllerAnimated:YES
-   //                                  completion:^{
-   //         }];
-   //      } /* End if () */
-   //      else {
-   //         [self.navigationController popViewControllerAnimated:YES
-   //                                                   completion:nil];
-   //      } /* End else */
-   //   }];
+//   [CATransaction begin];
+//   [self resignFirstResponder];
+//   [CATransaction commit];
+//   [CATransaction setCompletionBlock:^{
+//      if ([self.navigationController isKindOfClass:HomeSettingRootController.class] || [self.rt_navigationController isKindOfClass:HomeSettingRootController.class]) {
+//         [self dismissViewControllerAnimated:YES
+//                                  completion:^{
+//         }];
+//      } /* End if () */
+//      else {
+//         [self.navigationController popViewControllerAnimated:YES
+//                                                   completion:nil];
+//      } /* End else */
+//   }];
    
    [self resignFirstResponder];
    
@@ -85,8 +85,6 @@ handleSignal(HomeSettingContentController, addLinkSignal) {
    
    int                            nErr                                     = EFAULT;
    
-//   __block WebViewController     *stWebViewController                      = nil;
-   
    __TRY;
    
    LogDebug((@"-[HomeSettingController addLinkSignal:] : Signal : %@", aSignal));
@@ -95,26 +93,15 @@ handleSignal(HomeSettingContentController, addLinkSignal) {
    [CATransaction begin];
    
    [self resignFirstResponder];
-      
+   
    [CATransaction commit];
-
+   
    [CATransaction setCompletionBlock:^{
-
-//      stHomeSettingAlertController  = [UIStoryboard loadStoryboard:HomeSettingAlertController.storyboard
-//                                                    viewController:HomeSettingAlertController.class];
-//
-//      [self popUp:stHomeSettingAlertController animated:YES completion:^{
-//
-//      }];
-//
-//      stWebViewController  = [UIStoryboard loadStoryboard:WebViewController.storyboard
-//                                           viewController:WebViewController.class];
-//      [self.navigationController pushViewController:stWebViewController animated:YES];
-
+      
       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://main.whoisxmlapi.com"]
                                          options:nil
                                completionHandler:^(BOOL success) {
-
+         
       }];
    }];
    

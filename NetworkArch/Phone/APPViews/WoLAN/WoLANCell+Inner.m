@@ -53,17 +53,12 @@
 
    } /* End else */
 
-//   if (!kStringIsEmpty(aTextField.text)) {
-//
-//      [self.rightBarButtonItem setEnabled:YES];
-//
-//   } /* End if () */
-//   else {
-//
-//      [self.rightBarButtonItem setEnabled:NO];
-//
-//   } /* End else */
-   
+   if (nil != self.textChangeBlock) {
+      
+      self.textChangeBlock(self.indexPath, self);
+
+   } /* End if () */
+
    __CATCH(nErr);
    
    return;
@@ -176,9 +171,17 @@
 - (void)textFieldTextDidChange:(NSNotification *)aSender {
    
    int                            nErr                                     = EFAULT;
-   
+      
    __TRY;
    
+   LogDebug((@"-[WoLANCell textFieldTextDidChange:] : NSNotification : %@", aSender.object));
+   
+   if (nil != self.textChangeBlock) {
+      
+      self.textChangeBlock(self.indexPath, self);
+      
+   } /* End if () */
+
    __CATCH(nErr);
    
    return;

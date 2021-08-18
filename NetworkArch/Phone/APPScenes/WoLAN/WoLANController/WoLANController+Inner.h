@@ -14,6 +14,7 @@
 
 #import "WoLANContentController.h"
 #import "WoLANContentController+Inner.h"
+#import "WoLANContentController+Notification.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

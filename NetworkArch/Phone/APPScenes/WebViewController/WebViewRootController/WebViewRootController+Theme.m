@@ -1,18 +1,18 @@
 //
-//  WebViewController+Theme.m
+//  WebViewRootController+Theme.m
 //  NetworkArch
 //
-//  Created by Harry on 2021/8/16.
+//  Created by Harry on 2021/8/19.
 //  Copyright © 2021 Harry. All rights reserved.
 //
 //  Mail: miniwing.hz@gmail.com
 //  TEL : +(852)53054612
 //
 
-#import "WebViewController+Theme.h"
+#import "WebViewRootController+Theme.h"
 
 #pragma mark - UITheme
-@implementation WebViewController (Theme)
+@implementation WebViewRootController (Theme)
 
 // #if DK_NIGHT_VERSION
 // #endif // #if DK_NIGHT_VERSION
@@ -22,7 +22,7 @@
    
    __TRY;
    
-   LogDebug((@"-[WebViewController+Theme onThemeUpdate:] : Notification : %@", aNotification));
+   LogDebug((@"-[WebViewRootController+Theme onThemeUpdate:] : Notification : %@", aNotification));
 
    if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
 

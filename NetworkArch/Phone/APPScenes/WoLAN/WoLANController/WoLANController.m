@@ -32,6 +32,9 @@
    __LOG_FUNCTION;
    
    // Custom dealloc
+   
+   [self.contentController removeAllSignalResponders];
+
    [self unobserveAllNotifications];
    [self removeAllSignalResponders];
 
@@ -167,6 +170,9 @@
    } /* End if () */
 #endif /* MATERIAL_APP_BAR */
    
+   [self.contentController addSignalResponder:self];
+   [self addSignalResponder:self.contentController];
+
    __CATCH(nErr);
    
    return;
@@ -312,9 +318,15 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
+      
+   [self resignFirstResponder];
    
-   [self postSignal:WoLANController.startSignal
-            onQueue:dispatch_get_main_queue()];
+//   [self postSignal:WoLANController.startSignal
+//            onQueue:dispatch_get_main_queue()];
+
+   [self.contentView setUserInteractionEnabled:NO];
+   
+   [self sendSignal:WoLANContentController.startSignal];
    
    __CATCH(nErr);
    
