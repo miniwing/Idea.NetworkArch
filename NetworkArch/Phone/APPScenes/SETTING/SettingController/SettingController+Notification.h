@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SettingController (Notification)
 
 //@property (class, nonatomic, readonly)       NSString                            * ANIMATION;
-@notification(tabAnimation);
+@ notification(tabAnimation);
 
 @end
 

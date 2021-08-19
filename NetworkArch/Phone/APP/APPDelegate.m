@@ -32,9 +32,7 @@
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : documentsPath   : %@", [UIApplication sharedApplication].documentsPath));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : identifierGroup : %@", [IDEAIdentifier identifierGroup]));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : pathGroup       : %@", [UIApplication groupPath:[IDEAIdentifier identifierGroup]]));
-   
-   NSLog(@"-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA : documentsPath   : %@", aApplication.documentsPath);
-   
+      
 #if AF_NETWORKING
    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 #endif /* AF_NETWORKING */
@@ -169,11 +167,6 @@
    
    [self splash];
    
-   /******************************************************************************************/
-   
-   //   [self monitorReachabilityStatus];
-   
-   /******************************************************************************************/
 //   /******************************************************************************************/
 //   /**
 //    监听网络状态

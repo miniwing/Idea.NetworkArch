@@ -11,14 +11,11 @@
 
 #import "SettingController+Notification.h"
 
+//IDEA_DUMMY_CLASS(SettingController_Notification);
+
 #pragma mark - NSNotification
 @implementation SettingController (Notification)
 
-//+ (NSString *)ANIMATION {
-//   
-//   return [[self class] notificationName:@"Setting.Animation"];
-//}
-
-@def_notification(tabAnimation);
+@ def_notification(tabAnimation);
 
 @end
