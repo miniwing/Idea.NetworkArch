@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SettingContentController (Signal)
 
+#if __Debug__
+@signal(self);
+#endif /* __Debug__ */
+
 @end
 
 NS_ASSUME_NONNULL_END

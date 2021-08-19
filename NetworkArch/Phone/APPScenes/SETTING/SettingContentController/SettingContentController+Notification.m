@@ -10,4 +10,8 @@
 
 @implementation SettingContentController (Notification)
 
+#if __Debug__
+@def_notification(self);
+#endif /* __Debug__ */
+
 @end

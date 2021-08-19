@@ -16,6 +16,10 @@
 #pragma mark - NSNotification
 @implementation SettingController (Notification)
 
-@ def_notification(tabAnimation);
+#if __Debug__
+@def_notification(self);
+#endif /* __Debug__ */
+
+@def_notification(tabAnimation);
 
 @end

@@ -101,11 +101,15 @@ NS_ASSUME_NONNULL_END
             
          } /* End if () */
       });
+
+      LogClass((SplashViewController.class));
       
       [self addNotificationName:SplashViewController.SPLASH_DONE
                        selector:@selector(onSplashDone:)
                          object:nil];
       
+      LogClass((SplashViewController.class));
+
    } /* End if () */
    
    __CATCH(nErr);

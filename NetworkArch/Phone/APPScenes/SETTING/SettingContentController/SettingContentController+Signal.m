@@ -10,4 +10,8 @@
 
 @implementation SettingContentController (Signal)
 
+#if __Debug__
+@def_signal(self);
+#endif /* __Debug__ */
+
 @end
