@@ -12,7 +12,7 @@ install! 'cocoapods', :deterministic_uuids                => false
 
 ###################################################################################################################################
 
-ENV['OLLVM']                      = 'YES'
+ENV['OLLVM']                      = 'NO'
 
 ENV['IDEAFONT_HY']                = 'YES'
 ENV['IDEAFONT_MSYH']              = 'NO'
@@ -48,8 +48,8 @@ workspace 'Idea.NetworkArch'
 
 project 'NetworkArch/NetworkArch.xcodeproj'
 
-use_frameworks!
-#use_modular_headers!
+#use_frameworks!
+use_modular_headers!
 inhibit_all_warnings!
 
 platform :ios, '10.0'
@@ -61,7 +61,7 @@ def library
   pod 'APPDATA'                         , :path => 'APPDATA'
 
   if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
-    miniwing_pod('FoundationExtension', file = 'FoundationExtension', type = 'remote', branch = 'master', modular_headers = true)
+    miniwing_pod('FoundationExtension'  , file = 'FoundationExtension', type = 'remote', branch = 'master', modular_headers = true)
   end # IDEA_FOUNDATION_EXTENSION
 
   miniwing_pod('UIKitExtension', file = 'FoundationExtension', type = 'remote', branch = 'master', modular_headers = true)

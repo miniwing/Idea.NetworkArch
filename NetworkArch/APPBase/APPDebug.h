@@ -13,10 +13,14 @@
 
 /***************************************************************************************************************/
 
+/* __AUTO__ */
+/* __ON__ */
+/* __OFF__ */
+
 //#define __DebugInfo__                              __AUTO__
 //#define __DebugDebug__                             __AUTO__
 //#define __DebugError__                             __AUTO__
-//#define __DebugFunc__                              __AUTO__  /* __AUTO__ */
+//#define __DebugFunc__                              __AUTO__
 //#define __HWDecodeDebug__                          __AUTO__
 
 /***************************************************************************************************************/
@@ -35,7 +39,7 @@
 /***************************************************************************************************************/
 
 #if (__Debug__ && TARGET_IPHONE_SIMULATOR)
-#  define __InjectionIII__                         (__ON__)
+#  define __InjectionIII__                         (__AUTO__)
 #else /* (__Debug__ && TARGET_IPHONE_SIMULATOR) */
 #  define __InjectionIII__                         (__OFF__)
 #endif /* !(__Debug__ && TARGET_IPHONE_SIMULATOR) */

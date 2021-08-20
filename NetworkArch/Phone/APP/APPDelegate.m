@@ -19,6 +19,27 @@
 
 #import "SettingController+Notification.h"
 
+
+//NS_INLINE void __TEST(const char *_cpcFormat, ...) {
+//
+//   va_list      args;
+//   va_start (args, _cpcFormat);
+//
+//   int nLen = snprintf( NULL, 0, _cpcFormat, args);
+//
+//   nLen  = nLen;
+//
+//   va_end (args);
+//
+//   va_start (args, _cpcFormat);
+//   nLen  = vsnprintf(NULL, 0, _cpcFormat, args);
+//   va_end (args);
+//
+//   nLen  = nLen;
+//
+//   return;
+//}
+
 @implementation APPDelegate
 
 - (BOOL)application:(UIApplication *)aApplication willFinishLaunchingWithOptions:(nullable NSDictionary<UIApplicationLaunchOptionsKey, id> *)aLaunchOptions {
@@ -46,6 +67,7 @@
    /**
     监听保存
     */
+//   __TEST("%s", "-[APPDelegate application:willFinishLaunchingWithOptions:]");
    
    /******************************************************************************************/
    
