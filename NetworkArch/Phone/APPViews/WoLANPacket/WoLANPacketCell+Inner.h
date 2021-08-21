@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WoLANPacketCell ()
 
+@property (nonatomic, assign)                UIRectCorner                          rectCorner;
+
+@property (nonatomic, strong)                WoLANPacket                         * packet;
+
 @end
 
 @interface WoLANPacketCell (Inner)

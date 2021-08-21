@@ -84,8 +84,8 @@
 //#  import <NetworkExtension/NetworkExtension.h>
 //#  import <WebKit/WebKit.h>
 
-#  import <AppTrackingTransparency/AppTrackingTransparency.h>
-#  import <AdSupport/AdSupport.h>
+//#  import <AppTrackingTransparency/AppTrackingTransparency.h>
+//#  import <AdSupport/AdSupport.h>
 #endif
 
 #ifdef __OBJC__
@@ -369,14 +369,14 @@ typedef FBLPromise Promise;
 #     define IDEA_SEARCH_CONTROLLER                                        (0)
 #  endif
 
-#  if __has_include(<IDEARoute/IDEARoute.h>)
-#     import <IDEARoute/IDEARoute.h>
-#     define IDEA_ROUTE                                                    (1)
-#  elif __has_include("IDEARoute/IDEARoute.h")
-#     import "IDEARoute/IDEARoute.h"
-#     define IDEA_ROUTE                                                    (1)
+#  if __has_include(<IDEARouter/IDEARouter.h>)
+#     import <IDEARouter/IDEARouter.h>
+#     define IDEA_ROUTER                                                   (1)
+#  elif __has_include("IDEARouter/IDEARouter.h")
+#     import "IDEARouter/IDEARouter.h"
+#     define IDEA_ROUTER                                                   (1)
 #  else
-#     define IDEA_ROUTE                                                    (0)
+#     define IDEA_ROUTER                                                   (0)
 #  endif
 
 #  if __has_include(<IDEAFONT/IDEAFONT.h>)
@@ -389,58 +389,68 @@ typedef FBLPromise Promise;
 #     define IDEA_FONT                                                     (0)
 #  endif
 #endif
-
 /****************************************************************************/
-
-#if __has_include("FloatingPanel-Swift.h")
-#  import "FloatingPanel-Swift.h"
-#  define IDEA_FLOATING_PANEL                                              (1)
-#else
-#  define IDEA_FLOATING_PANEL                                              (0)
-#endif
-
+#ifdef __OBJC__
+#  if __has_include("FloatingPanel-Swift.h")
+#     import "FloatingPanel-Swift.h"
+#     define IDEA_FLOATING_PANEL                                              (1)
+#  else
+#     define IDEA_FLOATING_PANEL                                              (0)
+#  endif
+#endif /* __OBJC__ */
 /****************************************************************************/
 
 //#import <MMKV/MMKV.h>
 
 /****************************************************************************/
-#if __has_include(<IDEAApplet/IDEAApplet.h>)
-#  import <IDEAApplet/IDEAApplet.h>
-#  import <IDEAApplet/IDEAAppletCore.h>
-#  import <IDEAApplet/IDEAAppletModel.h>
-#  import <IDEAApplet/IDEAAppletEvent.h>
-#  import <IDEAApplet/IDEAAppletService.h>
-#endif // __has_include(<IDEAApplet/IDEAApplet.h>)
+#ifdef __OBJC__
+#  if __has_include(<IDEAApplet/IDEAApplet.h>)
+#     import <IDEAApplet/IDEAApplet.h>
+#     import <IDEAApplet/IDEAAppletCore.h>
+#     import <IDEAApplet/IDEAAppletModel.h>
+#     import <IDEAApplet/IDEAAppletEvent.h>
+#     import <IDEAApplet/IDEAAppletService.h>
+#  endif // __has_include(<IDEAApplet/IDEAApplet.h>)
+#endif /* __OBJC__ */
 /****************************************************************************/
-#import <IDEAColor/IDEAColor.h>
-#import <IDEAColor/UIColor+System.h>
-#import <IDEAColor/UIColor+Dynamic.h>
+#ifdef __OBJC__
+#  import <IDEAColor/IDEAColor.h>
+#  import <IDEAColor/UIColor+System.h>
+#  import <IDEAColor/UIColor+Dynamic.h>
+#endif /* __OBJC__ */
 
 #import <IDEAKit/IDEALog.h>
 #import <IDEAKit/IDEADebug.h>
 #import <IDEAKit/IDEAKit.h>
 
-#import <IDEAUIKit/IDEAUIKit.h>
+#ifdef __OBJC__
+#  import <IDEAUIKit/IDEAUIKit.h>
+#  import <IDEAUIVendor/IDEAUIVendor.h>
+#endif /* __OBJC__ */
+/****************************************************************************/
+#ifdef __OBJC__
+#  if __has_include(<APPDEBUG/APPDEBUG.h>)
+#     import <APPDEBUG/APPDEBUG.h>
+#     import <APPDEBUG/APP_OBFUSCATION.h>
+#     define APP_DEBUG                                                        (1)
+#  else
+#     define APP_DEBUG                                                        (0)
+#  endif
+#endif /* __OBJC__ */
+/****************************************************************************/
+#ifdef __OBJC__
+#  import <APPDATA/APPDATA.h>
+#  import <IDEANetUtils/IDEANetUtils.h>
+#endif /* __OBJC__ */
+/****************************************************************************/
 
-#import <IDEAUIVendor/IDEAUIVendor.h>
-/****************************************************************************/
-#if __has_include(<APPDEBUG/APPDEBUG.h>)
-#  import <APPDEBUG/APPDEBUG.h>
-#  import <APPDEBUG/APP_OBFUSCATION.h>
-#  define APP_DEBUG                                                        (1)
-#else
-#  define APP_DEBUG                                                        (0)
-#endif
-/****************************************************************************/
-#import <APPDATA/APPDATA.h>
-#import <IDEANetUtils/IDEANetUtils.h>
-/****************************************************************************/
-
-#import "APPDef.h"
-#import "APPDebug.h"
-#import "APPFont.h"
-#import "APPHTTP.h"
-#import "APPUtils.h"
+#ifdef __OBJC__
+#  import "APPDef.h"
+#  import "APPDebug.h"
+#  import "APPFont.h"
+#  import "APPHTTP.h"
+#  import "APPUtils.h"
+#endif /* __OBJC__ */
 
 //NS_INLINE BOOL __isPlatformVersionAtLeast() {
 //

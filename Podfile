@@ -48,8 +48,8 @@ workspace 'Idea.NetworkArch'
 
 project 'NetworkArch/NetworkArch.xcodeproj'
 
-#use_frameworks!
-use_modular_headers!
+use_frameworks!
+#use_modular_headers!
 inhibit_all_warnings!
 
 platform :ios, '10.0'
@@ -131,12 +131,14 @@ target 'NetworkArch' do
 #  pod 'YKWoodpecker'                                                                          , :configurations => ['Debug']
   pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
+  pod 'LeetCode'                        , :path => 'LeetCode'                                 , :configurations => ['Debug']
+  #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'APPDEBUG'                        , :path => 'APPDEBUG'                                 , :configurations => ['Debug']
 #  pod 'Reveal-SDK'                      , :path => '../MINIWING-PODs/Reveal'                  , :configurations => ['Debug']
 #  pod 'AFNetworkActivityLogger'         , :path => '../MINIWING-PODs/AFNetworkActivityLogger' , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'IDEAPing'                        , :path => '../MINIWING-PODs/IDEAPing'
-  pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
+  pod 'IDEARouter'                      , :path => '../MINIWING-PODs/IDEARouter'
   pod 'IDEANetUtils'                    , :path => '../MINIWING-PODs/IDEANetUtils'
 #  pod 'IDEAThrottle'                    , :path => '../MINIWING-PODs/IDEAThrottle'
 #  miniwing_pod('IDEAThrottle', file = 'IDEAThrottle', type = 'local', branch = 'develop', modular_headers = true)
@@ -174,7 +176,7 @@ target 'TodayClip' do
   pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
 
-  pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
+  pod 'IDEARouter'                      , :path => '../MINIWING-PODs/IDEARouter'
   pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
 
   library
@@ -192,7 +194,7 @@ target 'TodayWidget' do
   pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
 
-  pod 'IDEARoute'                       , :path => '../MINIWING-PODs/IDEARoute'
+  pod 'IDEARouter'                      , :path => '../MINIWING-PODs/IDEARouter'
   pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
 
   library

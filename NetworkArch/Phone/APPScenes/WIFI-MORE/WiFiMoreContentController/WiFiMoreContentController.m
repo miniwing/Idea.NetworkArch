@@ -309,7 +309,7 @@
       
       if (WifiDetailStatus == aIndexPath.row) {
          
-         if ([IDEARoute isWifiConnected]) {
+         if ([IDEARouter isWifiConnected]) {
             
             [stTableViewCell.infoView setBackgroundColor:UIColor.systemGreenColor];
             [stTableViewCell.infoLabel setText:APP_STR(@"Connected")];
@@ -325,42 +325,42 @@
       } /* End if () */
       else if (WifiDetailSSID == aIndexPath.row) {
          
-         if (kStringIsEmpty([IDEARoute getSSID])) {
+         if (kStringIsEmpty([IDEARouter getSSID])) {
             
             [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
             
          } /* End if () */
          else {
             
-            [stTableViewCell.infoLabel setText:[IDEARoute getSSID]];
+            [stTableViewCell.infoLabel setText:[IDEARouter getSSID]];
             
          } /* End else */
          
       } /* End if () */
       else if (WifiDetailBSSID == aIndexPath.row) {
          
-         if (kStringIsEmpty([IDEARoute getBSSID])) {
+         if (kStringIsEmpty([IDEARouter getBSSID])) {
             
             [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
             
          } /* End if () */
          else {
             
-            [stTableViewCell.infoLabel setText:[IDEARoute getBSSID]];
+            [stTableViewCell.infoLabel setText:[IDEARouter getBSSID]];
             
          } /* End else */
          
       } /* End if () */
       else if (WifiDetailGateway == aIndexPath.row) {
          
-         if (kStringIsEmpty([IDEARoute getGatewayIP])) {
+         if (kStringIsEmpty([IDEARouter getGatewayIP])) {
             
             [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
             
          } /* End if () */
          else {
             
-            [stTableViewCell.infoLabel setText:[IDEARoute getGatewayIP]];
+            [stTableViewCell.infoLabel setText:[IDEARouter getGatewayIP]];
             
          } /* End else */
          
@@ -441,7 +441,7 @@
       } /* End if () */
       else if (WifiDetailExternalIPV4 == aIndexPath.row) {
          
-         if (NO == [IDEARoute isWifiConnected] || kStringIsEmpty(self.externalIPv4)) {
+         if (NO == [IDEARouter isWifiConnected] || kStringIsEmpty(self.externalIPv4)) {
             
             [stTableViewCell.infoLabel setText:APP_STR(@"N/A")];
             

@@ -141,42 +141,136 @@
 
 #pragma mark - <UITableViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
+   
+   int                            nErr                                     = EFAULT;
+   
+   NSInteger                      nNumber                                  = 1;
 
-    return 1;
+   __TRY;
+
+   if (self.packets.count) {
+      
+      nNumber  += 1;
+      
+   } /* End if () */
+
+   __CATCH(nErr);
+
+   return nNumber;
 }
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
+   
+   int                            nErr                                     = EFAULT;
+   
+   NSInteger                      nNumber                                  = 1;
 
-    return 1;
+   __TRY;
+
+//   WoLANSectionDevice = 0,
+//   WoLANSectionPacket = 1,
+//   WoLANSectionNumber
+
+   if (WoLANSectionPacket == aSection) {
+      
+      nNumber  = self.packets.count;
+      
+      nErr     = noErr;
+      
+      break;
+      
+   } /* End if () */
+   
+   if (WoLANSectionDevice == aSection) {
+      
+      nNumber  = 1;
+      
+      nErr     = noErr;
+      
+      break;
+      
+   } /* End if () */
+
+   __CATCH(nErr);
+
+   return nNumber;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {
 
    int                            nErr                                     = EFAULT;
 
+   UITableViewCell               *stTableViewCell                          = nil;
+   
    WoLANCell                     *stWoLANCell                              = nil;
+   WoLANPacketCell               *stWoLANPacketCell                        = nil;
+   
+   WoLANPacket                   *stWoLANPacket                            = nil;
    
    __TRY;
 
-   stWoLANCell = [aTableView dequeueReusableCellWithIdentifier:WoLANCell.reuseIdentifier
-                                                  forIndexPath:aIndexPath];
-
-   [stWoLANCell setTextChangeBlock:^(NSIndexPath * _Nonnull aIndexPath, WoLANCell * _Nonnull aWoLANCell) {
+   if (WoLANSectionPacket == aIndexPath.section) {
       
-      self.mac             = [aWoLANCell.macTextField.text copy];
-      self.broadcastAddr   = [aWoLANCell.broadcastTextField.text copy];
-      self.port            = [aWoLANCell.portTextField.text copy];
-   }];
-   
-#if __Debug__
-   [stWoLANCell.macTextField setText:@"FF:FF:FE:EE:EE:EE"];
-   [stWoLANCell.broadcastTextField setText:@"255.255.255.0"];
-   [stWoLANCell.portTextField setText:@"19"];
-#endif /* __Debug__ */
+      stWoLANPacketCell = [aTableView dequeueReusableCellWithIdentifier:WoLANPacketCell.reuseIdentifier
+                                                           forIndexPath:aIndexPath];
+      
+      stWoLANPacket     = [self.packets objectAtIndex:aIndexPath.row];
+      [stWoLANPacketCell setWoLANPacket:stWoLANPacket];
+      
+      if (0 == aIndexPath.row) {
+         
+         [stWoLANPacketCell.separatorView setHidden:NO];
+         [stWoLANPacketCell setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight];
 
+      } /* End if () */
+      else if (self.packets.count - 1 == aIndexPath.row) {
+         
+         [stWoLANPacketCell.separatorView setHidden:YES];
+         [stWoLANPacketCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
+
+      } /* End else */
+      else {
+         
+         [stWoLANPacketCell.separatorView setHidden:NO];
+         [stWoLANPacketCell setRectCorner:0];
+
+      } /* End else */
+      
+      if (1 == self.packets.count) {
+         
+         [stWoLANPacketCell.separatorView setHidden:YES];
+         [stWoLANPacketCell setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomLeft | UIRectCornerBottomRight];
+
+      } /* End if () */
+      
+      stTableViewCell   = stWoLANPacketCell;
+      
+   } /* End if () */
+   else if (WoLANSectionDevice == aIndexPath.section) {
+      
+      stWoLANCell = [aTableView dequeueReusableCellWithIdentifier:WoLANCell.reuseIdentifier
+                                                     forIndexPath:aIndexPath];
+
+      [stWoLANCell setTextChangeBlock:^(NSIndexPath * _Nonnull aIndexPath, WoLANCell * _Nonnull aWoLANCell) {
+         
+         self.mac             = [aWoLANCell.macTextField.text copy];
+         self.broadcastAddr   = [aWoLANCell.broadcastTextField.text copy];
+         self.port            = [aWoLANCell.portTextField.text copy];
+      }];
+      
+   #if __Debug__
+      [stWoLANCell.macTextField setText:@"FF:FF:FE:EE:EE:EE"];
+      [stWoLANCell.broadcastTextField setText:@"255.255.255.0"];
+      [stWoLANCell.portTextField setText:@"19"];
+   #endif /* __Debug__ */
+      
+      stTableViewCell   = stWoLANCell;
+
+   } /* End if () */
+   
    __CATCH(nErr);
 
-   return stWoLANCell;
+   return stTableViewCell;
 }
 
 #pragma mark - <UITableViewDelegate>

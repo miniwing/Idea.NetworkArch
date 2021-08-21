@@ -14,6 +14,9 @@
 #import "DeviceAwake.h"
 #import "WoLANPacket.h"
 
+#import "WoLANCell.h"
+#import "WoLANPacketCell.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WoLANContentController ()

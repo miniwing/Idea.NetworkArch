@@ -10,8 +10,6 @@
 
 #import "IDEATableViewController.h"
 
-#import "WoLANCell.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 IDEA_ENUM(NSInteger, WoLANSection) {

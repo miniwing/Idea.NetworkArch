@@ -36,8 +36,8 @@ handleSignal(TodayWidgetContentController, loadWifiInfoSignal) {
    
    __TRY;
    
-   szIP     = [IDEARoute getIPAddress];
-   szSSID   = [IDEARoute getSSID];
+   szIP     = [IDEARouter getIPAddress];
+   szSSID   = [IDEARouter getSSID];
    
    LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : IPV4 : %@", aSignal.name, szIP));
    LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : SSID : %@", aSignal.name, szSSID));
@@ -49,7 +49,7 @@ handleSignal(TodayWidgetContentController, loadWifiInfoSignal) {
 //      "SSID not available"                = "SSID not available";
 //      "Wi-Fi not connected"               = "Wi-Fi not connected";
       
-      if ([IDEARoute isWifiConnected]) {
+      if ([IDEARouter isWifiConnected]) {
                   
          szSSID   = APP_STR(@"SSID not available");
          szIP     = APP_STR(@"N/A");

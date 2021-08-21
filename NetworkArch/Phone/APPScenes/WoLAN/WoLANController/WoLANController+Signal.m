@@ -22,14 +22,29 @@
 #pragma mark - handleSignal
 @implementation WoLANController (handleSignal)
 
-handleSignal(WoLANController, doneSignal) {
+handleSignal(WoLANContentController, startSignal) {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+      
+   LogDebug((@"-[WoLANController startSignal:] : Signal : %@", aSignal));
+      
+   __CATCH(nErr);
+   
+   return;
+}
+
+handleSignal(WoLANContentController, doneSignal) {
    
    int                            nErr                                     = EFAULT;
    
    __TRY;
       
    LogDebug((@"-[WoLANController doneSignal:] : Signal : %@", aSignal));
-      
+
+   [self.contentView setUserInteractionEnabled:YES];
+
    __CATCH(nErr);
    
    return;

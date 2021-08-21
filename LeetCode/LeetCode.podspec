@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
-  spec.name         = "APPDEBUG"
+  spec.name         = "LeetCode"
   spec.version      = "1.0.0"
-  spec.summary      = "APPDEBUG"
-  spec.description  = "APPDEBUG"
+  spec.summary      = "LeetCode"
+  spec.description  = "LeetCode"
   spec.homepage     = "https://github.com/miniwing"
   spec.license      = "MIT"
   spec.author       = { "Harry" => "miniwing.hz@gmail.com" }
@@ -16,16 +16,16 @@ Pod::Spec.new do |spec|
   spec.tvos.deployment_target       = '10.0'
 
   spec.ios.pod_target_xcconfig      = {
-                                        'PRODUCT_BUNDLE_IDENTIFIER' => 'com.idea.APPDEBUG',
+                                        'PRODUCT_BUNDLE_IDENTIFIER' => 'com.idea.LeetCode',
                                         'ENABLE_BITCODE'            => 'NO',
                                         'SWIFT_VERSION'             => '5.0',
                                         'EMBEDDED_CONTENT_CONTAINS_SWIFT'       => 'NO',
                                         'ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES' => 'NO',
                                         'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
                                       }
-  spec.osx.pod_target_xcconfig      = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.idea.APPDEBUG' }
-  spec.watchos.pod_target_xcconfig  = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.idea.APPDEBUG-watchOS' }
-  spec.tvos.pod_target_xcconfig     = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.idea.APPDEBUG' }
+  spec.osx.pod_target_xcconfig      = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.idea.LeetCode' }
+  spec.watchos.pod_target_xcconfig  = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.idea.LeetCode-watchOS' }
+  spec.tvos.pod_target_xcconfig     = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.idea.LeetCode' }
   
   spec.frameworks                   = ['Foundation', 'UIKit', 'CoreGraphics', 'QuartzCore', 'CoreFoundation']
     
@@ -38,24 +38,22 @@ Pod::Spec.new do |spec|
                                       }
 
   spec.pod_target_xcconfig          = {
-    'GCC_PREPROCESSOR_DEFINITIONS'      => [ ' MODULE=\"APPDEBUG\" ' ]
+    'GCC_PREPROCESSOR_DEFINITIONS'      => [ ' MODULE=\"LeetCode\" ' ],
+    'CLANG_CXX_LIBRARY'                 => 'libc++',
                                       }
-
-  if ENV['IDEA_YYKIT'] == 'YES'
-    spec.dependency 'YYKit'
-  end # IDEA_YYKIT
   
   spec.dependency 'IDEAKit'
 
-  spec.public_header_files  = 'DEBUG/**/*.h'
-  spec.source_files         = 'DEBUG/**/*.{h,m}'
+  spec.public_header_files  = 'LeetCode/**/*.{h,hpp,hxx}'
+  spec.source_files         = 'LeetCode/**/*.{m,mm,c,cpp,cxx,h,hpp,hxx}',
+                              'TEST/**/*.{m,mm,c,cpp,cxx,h,hpp,hxx}'
 
   spec.resource_bundles     = {
-                                'APPDEBUG' => [
-                                            'DATA/*.plist',
-                                            'DATA/*.json',
-                                            'DATA/*.png'
-                                           ]
+                                'LeetCode' => [
+                                                'DATA/*.plist',
+                                                'DATA/*.json',
+                                                'DATA/*.png'
+                                              ]
                               }
   pch_app_kit = <<-EOS
 
@@ -133,22 +131,20 @@ Pod::Spec.new do |spec|
 
 /******************************************************************************************************/
 
-#ifdef __OBJC__
-
-#  if __has_include(<YYKit/YYKit.h>)
-#     import <YYKit/YYKit.h>
-#     define YY_KIT                                                        (1)
-#  elif __has_include("YYKit/YYKit.h")
-#     import "YYKit/YYKit.h"
-#     define YY_KIT                                                        (1)
-#  elif __has_include("YYKit.h")
-#     import "YYKit.h"
-#     define YY_KIT                                                        (1)
-#  else
-#     define YY_KIT                                                        (0)
-#  endif
-
-#endif /* __OBJC__ */
+#if defined(__cplusplus)
+#  define BEGIN_DECLS                              extern "C"     {
+#  define END_DECLS                                               }
+#  define BEGIN_NAMESPACE(name)                    namespace name {
+#  define END_NAMESPACE(name)                                     }
+#  define USE_NAMESPACE(name)                      using namespace name;
+#  define __INLINE                                 inline
+#  define LOCAL                                    static inline
+#else /* __cplusplus */
+#  define BEGIN_DECLS
+#  define END_DECLS
+#  define __INLINE                                 __inline__
+#  define LOCAL                                    static __inline__
+#endif /* !__cplusplus */
 
 /******************************************************************************************************/
 
@@ -178,50 +174,6 @@ Pod::Spec.new do |spec|
 #else
 #  define __AUTO__                                 (0)
 #  define __Debug__                                (0)
-#endif
-
-/******************************************************************************************************/
-
-#if (__has_include(<YYKit/YYKit.h>))
-#  import <YYKit/YYKit.h>
-#elif (__has_include("YYKit/YYKit.h"))
-#  import "YYKit/YYKit.h"
-#elif (__has_include("YYKit.h"))
-#  import "YYKit.h"
-#elif (__has_include("YYKit.h"))
-#  import "YYKit.h"
-#else /* YY_KIT */
-#  ifndef weakify
-#     if __has_feature(objc_arc)
-#        define weakify( x )                                               \\
-            _Pragma("clang diagnostic push")                               \\
-            _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
-            autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x;     \\
-            _Pragma("clang diagnostic pop")
-#     else
-#        define weakify( x )                                               \\
-            _Pragma("clang diagnostic push")                               \\
-            _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
-            autoreleasepool{} __block __typeof__(x) __block_##x##__ = x;   \\
-            _Pragma("clang diagnostic pop")
-#     endif
-#  endif /* !weakify */
-
-#  ifndef strongify
-#     if __has_feature(objc_arc)
-#        define strongify( x )                                             \\
-            _Pragma("clang diagnostic push")                               \\
-            _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
-            try{} @finally{} __typeof__(x) x = __weak_##x##__;             \\
-            _Pragma("clang diagnostic pop")
-#     else
-#        define strongify( x )                                             \\
-            _Pragma("clang diagnostic push")                               \\
-            _Pragma("clang diagnostic ignored \\"-Wshadow\\"")               \\
-            try{} @finally{} __typeof__(x) x = __block_##x##__;            \\
-            _Pragma("clang diagnostic pop")
-#     endif
-#  endif /* !strongify */
 #endif
 
 /******************************************************************************************************/

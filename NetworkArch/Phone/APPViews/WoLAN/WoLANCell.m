@@ -74,6 +74,7 @@
 
    for (UITextField *stTextField in self.textFields) {
       
+      [stTextField setBorderColor:UIColor.clearColor];
       [stTextField setBorderStyle:UITextBorderStyleNone];
 
       [stTextField setBackgroundColor:UIColor.clearColor];
@@ -101,7 +102,7 @@
 #if __DEBUG_COLOR__
       [stView setBackgroundColor:UIColor.systemOrangeColor];
 #else /* __DEBUG_COLOR__ */
-      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor opaqueSeparator])];
 #endif /* !__DEBUG_COLOR__ */
       
    } /* End for () */

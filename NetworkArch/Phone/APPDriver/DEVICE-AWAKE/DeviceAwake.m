@@ -66,6 +66,15 @@
 
    __TRY;
    
+   if ((nil == aDevice) || kStringIsEmpty(aDevice.mac) || kStringIsEmpty(aDevice.broadcastAddr)) {
+      
+      nErr  = EINVAL;
+      eErr  = SocketSetupFailed;
+      
+      break;
+      
+   } /* End if () */
+   
    stTarget.sin_family        = (sa_family_t)(AF_INET);
    stTarget.sin_addr.s_addr   = inet_addr([aDevice.broadcastAddr UTF8String]);
    

@@ -10,6 +10,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "WoLANPacket.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WoLANPacketCell : UITableViewCell
@@ -23,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface WoLANPacketCell ()
+
+- (void)setWoLANPacket:(WoLANPacket *)aWoLANPacket;
+- (void)setRectCorner:(UIRectCorner)aRectCorner;
 
 @end
 

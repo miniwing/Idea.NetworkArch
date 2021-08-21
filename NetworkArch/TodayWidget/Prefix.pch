@@ -136,7 +136,7 @@
 
 /****************************************************************************/
 
-#import <IDEARoute/IDEARoute.h>
+#import <IDEARouter/IDEARouter.h>
 
 #import <IDEAColor/IDEAColor.h>
 #import <IDEAColor/UIColor+System.h>

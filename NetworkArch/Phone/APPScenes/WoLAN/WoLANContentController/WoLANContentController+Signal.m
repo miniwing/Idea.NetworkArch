@@ -54,7 +54,7 @@ handleSignal(WoLANContentController, startSignal) {
    
    if (SocketNoError == eErr) {
       
-      stWoLANPacket  = [WoLANPacket packetWithMac:self.mac sent:NO];
+      stWoLANPacket  = [WoLANPacket packetWithMac:self.mac sent:YES];
             
    } /* End if () */
    else {

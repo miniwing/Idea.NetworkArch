@@ -232,82 +232,82 @@
    return NO;
 }
 
-- (void)openTracking {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   if (@available(iOS 14, *)) {
-      
-      // iOS14及以上版本需要先请求权限
-      [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus aStatus) {
-         
-         // 获取到权限后，依然使用老方法获取idfa
-         if (ATTrackingManagerAuthorizationStatusAuthorized == aStatus) {
-            
-            LogDebug((@"[TrackingController onContinue] : IDFA(iOS 14+) : %@", [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString]));
-            
-         } /* End if () */
-         else {
-            
-            LogDebug((@"请在设置-隐私-跟踪中允许App请求跟踪"));
-            
-            dispatch_async_on_main_queue(^{
-
-               [UIAlertController showAlertInViewController:self
-                                                  withTitle:@""
-                                                    message:APP_STR(@"Settings-Tracking-Tracking")
-                                          cancelButtonTitle:nil
-                                     destructiveButtonTitle:APP_STR(@"OK")
-                                          otherButtonTitles:nil
-                                                   tapBlock:^(UIAlertController *aController, UIAlertAction *aAction, NSInteger aButtonIndex) {
-
-                  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]
-                                                     options:nil
-                                           completionHandler:nil];
-               }];
-            });
-         } /* End else */
-      }];
-      
-   } /* @available(iOS 14, *) */
-   else {
-      
-      // iOS14以下版本依然使用老方法
-      // 判断在设置-隐私里用户是否打开了广告跟踪
-      if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
-         
-         LogDebug((@"[TrackingController onContinue] : IDFA(iOS 14-) : %@", [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString]));
-         
-      } /* End if () */
-      else {
-         
-         LogDebug((@"请在设置-隐私-广告中打开广告跟踪功能"));
-         
-//         dispatch_async_on_main_queue(^{
+//- (void)openTracking {
 //
-//            [UIAlertController showAlertInViewController:self
-//                                               withTitle:@""
-//                                                 message:APP_STR(@"Settings-Tracking-Tracking")
-//                                       cancelButtonTitle:nil
-//                                  destructiveButtonTitle:APP_STR(@"OK")
-//                                       otherButtonTitles:nil
-//                                                tapBlock:^(UIAlertController *aController, UIAlertAction *aAction, NSInteger aButtonIndex) {
+//   int                            nErr                                     = EFAULT;
 //
-//               [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]
-//                                                  options:nil
-//                                        completionHandler:nil];
-//            }];
-//         });
-      } /* End else */
-      
-   } /* End else */
-   
-   __CATCH(nErr);
-   
-   return;
-}
+//   __TRY;
+//
+//   if (@available(iOS 14, *)) {
+//
+//      // iOS14及以上版本需要先请求权限
+//      [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus aStatus) {
+//
+//         // 获取到权限后，依然使用老方法获取idfa
+//         if (ATTrackingManagerAuthorizationStatusAuthorized == aStatus) {
+//
+//            LogDebug((@"[TrackingController onContinue] : IDFA(iOS 14+) : %@", [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString]));
+//
+//         } /* End if () */
+//         else {
+//
+//            LogDebug((@"请在设置-隐私-跟踪中允许App请求跟踪"));
+//
+//            dispatch_async_on_main_queue(^{
+//
+//               [UIAlertController showAlertInViewController:self
+//                                                  withTitle:@""
+//                                                    message:APP_STR(@"Settings-Tracking-Tracking")
+//                                          cancelButtonTitle:nil
+//                                     destructiveButtonTitle:APP_STR(@"OK")
+//                                          otherButtonTitles:nil
+//                                                   tapBlock:^(UIAlertController *aController, UIAlertAction *aAction, NSInteger aButtonIndex) {
+//
+//                  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]
+//                                                     options:nil
+//                                           completionHandler:nil];
+//               }];
+//            });
+//         } /* End else */
+//      }];
+//
+//   } /* @available(iOS 14, *) */
+//   else {
+//
+//      // iOS14以下版本依然使用老方法
+//      // 判断在设置-隐私里用户是否打开了广告跟踪
+//      if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
+//
+//         LogDebug((@"[TrackingController onContinue] : IDFA(iOS 14-) : %@", [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString]));
+//
+//      } /* End if () */
+//      else {
+//
+//         LogDebug((@"请在设置-隐私-广告中打开广告跟踪功能"));
+//
+////         dispatch_async_on_main_queue(^{
+////
+////            [UIAlertController showAlertInViewController:self
+////                                               withTitle:@""
+////                                                 message:APP_STR(@"Settings-Tracking-Tracking")
+////                                       cancelButtonTitle:nil
+////                                  destructiveButtonTitle:APP_STR(@"OK")
+////                                       otherButtonTitles:nil
+////                                                tapBlock:^(UIAlertController *aController, UIAlertAction *aAction, NSInteger aButtonIndex) {
+////
+////               [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]
+////                                                  options:nil
+////                                        completionHandler:nil];
+////            }];
+////         });
+//      } /* End else */
+//
+//   } /* End else */
+//
+//   __CATCH(nErr);
+//
+//   return;
+//}
 
 @end
 
@@ -436,14 +436,14 @@
    
    __TRY;
    
-   @weakify(self);
+//   @weakify(self);
    [self dismissViewControllerAnimated:YES
                             completion:^{
       
-      [APPDelegate setTracking:YES];
-
-      @strongify(self);
-      UI_PERFORM_SELECTOR(self, @selector(openTracking), nil, NO);
+//      [APPDelegate setTracking:YES];
+//
+//      @strongify(self);
+//      UI_PERFORM_SELECTOR(self, @selector(openTracking), nil, NO);
    }];
    
    __CATCH(nErr);

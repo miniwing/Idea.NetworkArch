@@ -53,8 +53,8 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
    
    __TRY;
    
-   szIP     = [IDEARoute getIPAddress];
-   szSSID   = [IDEARoute getSSID];
+   szIP     = [IDEARouter getIPAddress];
+   szSSID   = [IDEARouter getSSID];
    
    LogDebug((@"-[HomeContentController handleSignal:networkStatusSignal:] : IPV4 : %@", szIP));
    LogDebug((@"-[HomeContentController handleSignal:networkStatusSignal:] : SSID : %@", szSSID));
@@ -66,7 +66,7 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
 //      "SSID not available"                = "SSID not available";
 //      "Wi-Fi not connected"               = "Wi-Fi not connected";
       
-      if ([IDEARoute isWifiConnected]) {
+      if ([IDEARouter isWifiConnected]) {
                   
          szSSID   = APP_STR(@"SSID not available");
          szIP     = APP_STR(@"N/A");
