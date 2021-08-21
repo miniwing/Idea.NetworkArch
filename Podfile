@@ -50,8 +50,8 @@ workspace 'Idea.NetworkArch'
 
 project 'NetworkArch/NetworkArch.xcodeproj'
 
-#use_frameworks!
-use_modular_headers!
+use_frameworks!
+#use_modular_headers!
 inhibit_all_warnings!
 
 platform :ios, '10.0'
@@ -135,7 +135,7 @@ target 'NetworkArch' do
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'LeetCode'                        , :path => 'LeetCode'                                 , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
-  pod 'APPDEBUG'                        , :path => 'APPDEBUG'                                 , :configurations => ['Debug']
+#  pod 'APPDEBUG'                        , :path => 'APPDEBUG'                                 , :configurations => ['Debug']
 #  pod 'Reveal-SDK'                      , :path => '../MINIWING-PODs/Reveal'                  , :configurations => ['Debug']
 #  pod 'AFNetworkActivityLogger'         , :path => '../MINIWING-PODs/AFNetworkActivityLogger' , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
