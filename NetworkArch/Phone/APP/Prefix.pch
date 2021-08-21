@@ -390,67 +390,63 @@ typedef FBLPromise Promise;
 #  endif
 #endif
 /****************************************************************************/
-#ifdef __OBJC__
-#  if __has_include("FloatingPanel-Swift.h")
-#     import "FloatingPanel-Swift.h"
-#     define IDEA_FLOATING_PANEL                                              (1)
-#  else
-#     define IDEA_FLOATING_PANEL                                              (0)
-#  endif
-#endif /* __OBJC__ */
+
+#if __has_include("FloatingPanel-Swift.h")
+#  import "FloatingPanel-Swift.h"
+#  define IDEA_FLOATING_PANEL                                              (1)
+#else
+#  define IDEA_FLOATING_PANEL                                              (0)
+#endif
+
 /****************************************************************************/
 
 //#import <MMKV/MMKV.h>
 
 /****************************************************************************/
-#ifdef __OBJC__
-#  if __has_include(<IDEAApplet/IDEAApplet.h>)
-#     import <IDEAApplet/IDEAApplet.h>
-#     import <IDEAApplet/IDEAAppletCore.h>
-#     import <IDEAApplet/IDEAAppletModel.h>
-#     import <IDEAApplet/IDEAAppletEvent.h>
-#     import <IDEAApplet/IDEAAppletService.h>
-#  endif // __has_include(<IDEAApplet/IDEAApplet.h>)
-#endif /* __OBJC__ */
+
+#if __has_include(<IDEAApplet/IDEAApplet.h>)
+#  import <IDEAApplet/IDEAApplet.h>
+#  import <IDEAApplet/IDEAAppletCore.h>
+#  import <IDEAApplet/IDEAAppletModel.h>
+#  import <IDEAApplet/IDEAAppletEvent.h>
+#  import <IDEAApplet/IDEAAppletService.h>
+#endif // __has_include(<IDEAApplet/IDEAApplet.h>)
+
 /****************************************************************************/
-#ifdef __OBJC__
-#  import <IDEAColor/IDEAColor.h>
-#  import <IDEAColor/UIColor+System.h>
-#  import <IDEAColor/UIColor+Dynamic.h>
-#endif /* __OBJC__ */
+
+#import <IDEAColor/IDEAColor.h>
+#import <IDEAColor/UIColor+System.h>
+#import <IDEAColor/UIColor+Dynamic.h>
 
 #import <IDEAKit/IDEALog.h>
 #import <IDEAKit/IDEADebug.h>
 #import <IDEAKit/IDEAKit.h>
 
-#ifdef __OBJC__
-#  import <IDEAUIKit/IDEAUIKit.h>
-#  import <IDEAUIVendor/IDEAUIVendor.h>
-#endif /* __OBJC__ */
-/****************************************************************************/
-#ifdef __OBJC__
-#  if __has_include(<APPDEBUG/APPDEBUG.h>)
-#     import <APPDEBUG/APPDEBUG.h>
-#     import <APPDEBUG/APP_OBFUSCATION.h>
-#     define APP_DEBUG                                                        (1)
-#  else
-#     define APP_DEBUG                                                        (0)
-#  endif
-#endif /* __OBJC__ */
-/****************************************************************************/
-#ifdef __OBJC__
-#  import <APPDATA/APPDATA.h>
-#  import <IDEANetUtils/IDEANetUtils.h>
-#endif /* __OBJC__ */
+#import <IDEAUIKit/IDEAUIKit.h>
+#import <IDEAUIVendor/IDEAUIVendor.h>
+
 /****************************************************************************/
 
-#ifdef __OBJC__
-#  import "APPDef.h"
-#  import "APPDebug.h"
-#  import "APPFont.h"
-#  import "APPHTTP.h"
-#  import "APPUtils.h"
-#endif /* __OBJC__ */
+#if __has_include(<APPDEBUG/APPDEBUG.h>)
+#  import <APPDEBUG/APPDEBUG.h>
+#  import <APPDEBUG/APP_OBFUSCATION.h>
+#  define APP_DEBUG                                                        (1)
+#else
+#  define APP_DEBUG                                                        (0)
+#endif
+
+/****************************************************************************/
+
+#import <APPDATA/APPDATA.h>
+#import <IDEANetUtils/IDEANetUtils.h>
+
+/****************************************************************************/
+
+#import "APPDef.h"
+#import "APPDebug.h"
+#import "APPFont.h"
+#import "APPHTTP.h"
+#import "APPUtils.h"
 
 //NS_INLINE BOOL __isPlatformVersionAtLeast() {
 //

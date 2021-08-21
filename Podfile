@@ -2,10 +2,12 @@
 # source 'https://cdn.cocoapods.org/'
 # source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
-install! 'cocoapods', :deterministic_uuids                => false
+install!  'cocoapods',
+          :deterministic_uuids                => false,
+          :generate_multiple_pod_projects     => false
+
 #install! 'cocoapods', :generate_multiple_pod_projects     => true
 #install! 'cocoapods', :warn_for_unused_master_specs_repo  => false
-
 #install! 'cocoapods', :deterministic_uuids => false, :warn_for_unused_master_specs_repo  => false
 
 # applet_webcore=YES pod update
@@ -48,8 +50,8 @@ workspace 'Idea.NetworkArch'
 
 project 'NetworkArch/NetworkArch.xcodeproj'
 
-use_frameworks!
-#use_modular_headers!
+#use_frameworks!
+use_modular_headers!
 inhibit_all_warnings!
 
 platform :ios, '10.0'
@@ -131,7 +133,7 @@ target 'NetworkArch' do
 #  pod 'YKWoodpecker'                                                                          , :configurations => ['Debug']
   pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
-  pod 'LeetCode'                        , :path => 'LeetCode'                                 , :configurations => ['Debug']
+#  pod 'LeetCode'                        , :path => 'LeetCode'                                 , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'APPDEBUG'                        , :path => 'APPDEBUG'                                 , :configurations => ['Debug']
 #  pod 'Reveal-SDK'                      , :path => '../MINIWING-PODs/Reveal'                  , :configurations => ['Debug']
