@@ -362,19 +362,19 @@
 			remoteGlobalIDString = 4A4D0A5F26AC0F56008A30E0;
 			remoteInfo = TodayWidget;
 		};
+		4A4F2E4926D1824B0082A5EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A98A62E2684B50F00EEEB60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ACD586C26AFB4AE009B1424;
+			remoteInfo = TodayClip;
+		};
 		4AB5C1F42685A06E00B1639D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4A98A62E2684B50F00EEEB60 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4A0E4E20268587BE00A85517;
 			remoteInfo = APPBase;
-		};
-		4ACD588426AFB4AF009B1424 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4A98A62E2684B50F00EEEB60 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4ACD586C26AFB4AE009B1424;
-			remoteInfo = TodayClip;
 		};
 		4AF4412126AC575F0008C169 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -2555,10 +2555,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				4A4F2E4A26D1824B0082A5EC /* PBXTargetDependency */,
 				4AB5C1F52685A06E00B1639D /* PBXTargetDependency */,
 				4A4D0A6B26AC0F56008A30E0 /* PBXTargetDependency */,
 				4A25F19A26AED9A10075BE73 /* PBXTargetDependency */,
-				4ACD588526AFB4AF009B1424 /* PBXTargetDependency */,
 			);
 			name = NetworkArch;
 			productName = NetworkArch;
@@ -3197,15 +3197,15 @@
 			target = 4A4D0A5F26AC0F56008A30E0 /* TodayWidget */;
 			targetProxy = 4A4D0A6A26AC0F56008A30E0 /* PBXContainerItemProxy */;
 		};
+		4A4F2E4A26D1824B0082A5EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ACD586C26AFB4AE009B1424 /* TodayClip */;
+			targetProxy = 4A4F2E4926D1824B0082A5EC /* PBXContainerItemProxy */;
+		};
 		4AB5C1F52685A06E00B1639D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4A0E4E20268587BE00A85517 /* APPBase */;
 			targetProxy = 4AB5C1F42685A06E00B1639D /* PBXContainerItemProxy */;
-		};
-		4ACD588526AFB4AF009B1424 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4ACD586C26AFB4AE009B1424 /* TodayClip */;
-			targetProxy = 4ACD588426AFB4AF009B1424 /* PBXContainerItemProxy */;
 		};
 		4AF4412226AC575F0008C169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
