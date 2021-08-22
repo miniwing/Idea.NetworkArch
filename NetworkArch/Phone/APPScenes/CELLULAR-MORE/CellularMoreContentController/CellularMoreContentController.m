@@ -393,10 +393,13 @@
             szCarrierName  = stCarrier.carrierName;
             
          } /* End else */
-         
 
          [stTableViewCell.infoLabel setText:szCarrierName];
-         
+
+#if TARGET_IPHONE_SIMULATOR
+         [stTableViewCell.infoLabel setText:@"Cellular Network"];
+#endif /* TARGET_IPHONE_SIMULATOR */
+
       } /* End if () */
       else if (CellularDetailISO == aIndexPath.row) {
          
@@ -405,7 +408,11 @@
             [stTableViewCell.infoLabel setText:stCarrier.isoCountryCode];
 
          } /* End if () */
-                  
+
+#if TARGET_IPHONE_SIMULATOR
+         [stTableViewCell.infoLabel setText:@"000"];
+#endif /* TARGET_IPHONE_SIMULATOR */
+
       } /* End if () */
       else if (CellularDetailCountry == aIndexPath.row) {
 
@@ -415,6 +422,10 @@
 
          } /* End if () */
 
+#if TARGET_IPHONE_SIMULATOR
+         [stTableViewCell.infoLabel setText:@"US"];
+#endif /* TARGET_IPHONE_SIMULATOR */
+
       } /* End if () */
       else if (CellularDetailNetwork == aIndexPath.row) {
 
@@ -423,6 +434,10 @@
             [stTableViewCell.infoLabel setText:stCarrier.mobileNetworkCode];
 
          } /* End if () */
+
+#if TARGET_IPHONE_SIMULATOR
+         [stTableViewCell.infoLabel setText:@"00"];
+#endif /* TARGET_IPHONE_SIMULATOR */
 
       } /* End if () */
       else if (CellularDetailRadio == aIndexPath.row) {
@@ -434,6 +449,10 @@
          } /* End if () */
 
          [stTableViewCell.infoLabel setText:[UIDevice radioTechnologyFor:szRadioAccess]];
+
+#if TARGET_IPHONE_SIMULATOR
+         [stTableViewCell.infoLabel setText:@"HSDPA"];
+#endif /* TARGET_IPHONE_SIMULATOR */
 
       } /* End if () */
       else if (CellularDetailIPV4 == aIndexPath.row) {
@@ -447,6 +466,10 @@
          } /* End if () */
 
          [stTableViewCell.infoLabel setText:szIP];
+
+#if TARGET_IPHONE_SIMULATOR
+         [stTableViewCell.infoLabel setText:@"10.8.8.8"];
+#endif /* TARGET_IPHONE_SIMULATOR */
 
       } /* End if () */
       else if (CellularDetailIPV6 == aIndexPath.row) {
@@ -475,6 +498,10 @@
 
          } /* End else */
          
+#if TARGET_IPHONE_SIMULATOR
+         [stTableViewCell.infoLabel setText:@"Yes"];
+#endif /* TARGET_IPHONE_SIMULATOR */
+
       } /* End if () */
       
    } /* End if () */

@@ -126,10 +126,10 @@
    [self.wifiSSIDLabel setBackgroundColor:UIColor.clearColor];
    [self.wifiSSIDLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.wifiSSIDLabel setFont:[APPFont regularFontOfSize:self.wifiSSIDLabel.font.pointSize]];
-   [self.wifiIPLabel setText:APP_STR(@"SSID not available")];
+   [self.wifiSSIDLabel setText:APP_STR(@"SSID not available")];
 
 #if TARGET_IPHONE_SIMULATOR
-   [self.wifiIPLabel setText:APP_STR(@"Wi-Fi: 4-2-202")];
+   [self.wifiSSIDLabel setText:APP_STR(@"Wi-Fi: 4-2-202")];
 #endif /* TARGET_IPHONE_SIMULATOR */
    
    [self.wifiSSIDIcon setBackgroundColor:UIColor.clearColor];

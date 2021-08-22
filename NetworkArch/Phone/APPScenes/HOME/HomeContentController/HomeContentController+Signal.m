@@ -90,6 +90,9 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       [self.wifiSSIDLabel setText:szSSID];
+#if TARGET_IPHONE_SIMULATOR
+      [self.wifiSSIDLabel setText:APP_STR(@"Wi-Fi: 4-2-202")];
+#endif /* TARGET_IPHONE_SIMULATOR */
    }
                    completion:nil];
    
@@ -98,6 +101,9 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       [self.wifiSSIDIcon setImage:[UIImage imageNamed:szIcon]];
+#if TARGET_IPHONE_SIMULATOR
+      [self.wifiSSIDIcon setImage:[UIImage imageNamed:@"WIFI-ON"]];
+#endif /* TARGET_IPHONE_SIMULATOR */
    }
                    completion:nil];
 
@@ -106,6 +112,9 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       [self.wifiIP setText:szIP];
+#if TARGET_IPHONE_SIMULATOR
+      [self.wifiIP setText:APP_STR(@"192.168.88.88")];
+#endif /* TARGET_IPHONE_SIMULATOR */
    }
                    completion:nil];
 
@@ -124,17 +133,17 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
    
    NSDictionary<NSString *, CTCarrier *>  *stCarriers                      = nil;
    CTCarrier                     *stCarrier                                = nil;
-
+   
    NSDictionary<NSString *, NSString *>   *stRadioAccesses                 = nil;
    NSString                      *szRadioAccess                            = nil;
    
    NSString                      *szCarrierName                            = nil;
    NSString                      *szIP                                     = nil;
-
+   
    __TRY;
    
    stTelephonyNetworkInfo  = [[CTTelephonyNetworkInfo alloc] init];
-      
+   
    if (@available(iOS 12.0, *)) {
       
       stCarriers  = stTelephonyNetworkInfo.serviceSubscriberCellularProviders;
@@ -143,28 +152,28 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
       
 #if __Debug__
       [stCarriers enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, CTCarrier * _Nonnull aObject, BOOL * _Nonnull aStop) {
-
+         
          LogDebug((@"-[HomeContentController handleSignal:loadCellularInfoSignal:] : Carrier : %@:%@", aKey, aObject));
-
+         
       }];
 #endif /* __Debug__ */
       
       stCarrier   = [stCarriers objectForKey:stCarriers.allKeys.firstObject];
-            
+      
       stRadioAccesses   = stTelephonyNetworkInfo.serviceCurrentRadioAccessTechnology;
       
       LogDebug((@"-[HomeContentController handleSignal:loadCellularInfoSignal:] : RadioAccesses : %@", stRadioAccesses));
-
+      
 #if __Debug__
       [stRadioAccesses enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, NSString * _Nonnull aObject, BOOL * _Nonnull aStop) {
-
+         
          LogDebug((@"-[HomeContentController handleSignal:loadCellularInfoSignal:] : RadioAccess : %@:%@", aKey, aObject));
-
+         
       }];
 #endif /* __Debug__ */
-
+      
       szRadioAccess  = [stRadioAccesses objectForKey:stRadioAccesses.allKeys.firstObject];
-
+      
    } /* End if () */
    else {
       
@@ -182,13 +191,13 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
       
       szCarrierName  = APP_STR(@"No service");
       szIcon         = @"CELLULAR-SLASH";
-
+      
    } /* End if () */
    else {
       
       szCarrierName  = stCarrier.carrierName;
       szIcon         = @"CELLULAR";
-
+      
    } /* End else */
    
    szIP  = [UIDevice ipv4:NetworkCellular];
@@ -196,7 +205,7 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
    if (kStringIsEmpty(szIP)) {
       
       szIP           = APP_STR(@"N/A");
-
+      
    } /* End if () */
    
    [UIView transitionWithView:self.cellularOperatorLabel
@@ -204,6 +213,10 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       [self.cellularOperatorLabel setText:szCarrierName];
+
+#if TARGET_IPHONE_SIMULATOR
+      [self.cellularOperatorLabel setText:APP_STR(@"Cellular Network")];
+#endif /* TARGET_IPHONE_SIMULATOR */
    }
                    completion:nil];
    
@@ -212,17 +225,23 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       [self.cellularOperatorIcon setImage:[UIImage imageNamed:szIcon]];
+#if TARGET_IPHONE_SIMULATOR
+      [self.cellularOperatorIcon setImage:[UIImage imageNamed:@"CELLULAR"]];
+#endif /* TARGET_IPHONE_SIMULATOR */
    }
                    completion:nil];
-
+   
    [UIView transitionWithView:self.cellularIP
                      duration:UIAViewAnimationDefaultDuraton
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       [self.cellularIP setText:szIP];
+#if TARGET_IPHONE_SIMULATOR
+      [self.cellularIP setText:APP_STR(@"10.8.8.8")];
+#endif /* TARGET_IPHONE_SIMULATOR */
    }
                    completion:nil];
-
+   
    __CATCH(nErr);
    
    return;

@@ -322,6 +322,11 @@
             
          } /* End else */
          
+#if TARGET_IPHONE_SIMULATOR
+         [stTableViewCell.infoView setBackgroundColor:UIColor.systemGreenColor];
+         [stTableViewCell.infoLabel setText:APP_STR(@"Connected")];
+#endif /* TARGET_IPHONE_SIMULATOR */
+
       } /* End if () */
       else if (WifiDetailSSID == aIndexPath.row) {
          
@@ -336,6 +341,10 @@
             
          } /* End else */
          
+#if TARGET_IPHONE_SIMULATOR
+         [stTableViewCell.infoLabel setText:@"Wi-Fi: 4-2-202"];
+#endif /* TARGET_IPHONE_SIMULATOR */
+
       } /* End if () */
       else if (WifiDetailBSSID == aIndexPath.row) {
          
@@ -364,6 +373,10 @@
             
          } /* End else */
          
+#if TARGET_IPHONE_SIMULATOR
+         [stTableViewCell.infoLabel setText:@"FF:FF:FF:FF:FF:FF"];
+#endif /* TARGET_IPHONE_SIMULATOR */
+
       } /* End if () */
       else if (WifiDetailSubnet == aIndexPath.row) {
          

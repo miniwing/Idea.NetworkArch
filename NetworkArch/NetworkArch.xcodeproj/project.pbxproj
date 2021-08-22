@@ -178,7 +178,6 @@
 		4A5D9A0F26A4968800E00610 /* UTILITIES.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D9A0D26A4968800E00610 /* UTILITIES.storyboard */; };
 		4A64D9CC26C41FDE00A9BBC0 /* libclang_rt.ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */; };
 		4A64D9CD26C41FE900A9BBC0 /* libclang_rt.ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */; };
-		4A64D9CE26C4201100A9BBC0 /* libclang_rt.ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */; };
 		4A7241B126B3153A00009443 /* PingResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7241B026B3153A00009443 /* PingResult.m */; };
 		4A745EA026C57A4E00DA644A /* APPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A745E9F26C57A4E00DA644A /* APPUtils.m */; };
 		4A745EC326C58C1F00DA644A /* WoLANContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A745EBA26C58C1F00DA644A /* WoLANContentController.m */; };
@@ -1053,7 +1052,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A64D9CE26C4201100A9BBC0 /* libclang_rt.ios.a in Frameworks */,
 				4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */,
 				506D8A02FA613EF46CFFD4A6 /* libPods-NetworkArch.a in Frameworks */,
 			);
@@ -3406,7 +3404,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Development: Cai Lu (PHD24T76XW)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2021.08222122;
+				CURRENT_PROJECT_VERSION = 2021.08230039;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3432,7 +3430,6 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-l\"clang_rt.ios\"";
 				SDKROOT = iphoneos;
 				WATCHOS_DEPLOYMENT_TARGET = 4.3;
 			};
@@ -3472,7 +3469,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Cai Lu (G8G9TAP4UN)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2021.08222122;
+				CURRENT_PROJECT_VERSION = 2021.08230039;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -3492,7 +3489,6 @@
 				MARKETING_VERSION = 0.9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = "-l\"clang_rt.ios\"";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 4.3;
@@ -3517,7 +3513,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.idea.NetworkArch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = Idea.NetworkArch;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -3539,7 +3535,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.idea.NetworkArch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = IdeaNetworkArch;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
