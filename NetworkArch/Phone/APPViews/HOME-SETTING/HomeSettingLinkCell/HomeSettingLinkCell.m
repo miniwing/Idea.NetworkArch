@@ -76,6 +76,8 @@
 //   [self.addButton addAction:@selector(onAddLink:) forControlEvents:UIControlEventTouchUpInside];
 //   [self.addButton addTarget:self action:@selector(onAddLink:) forControlEvents:UIControlEventTouchUpInside];
 
+   [self.addButton setTitle:APP_STR(@"Click To Get (FREE)") forState:UIControlStateNormal];
+   
    [self.separatorView setHidden:YES];
 //   [self.separatorView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor opaqueSeparator])];
    [self.separatorView setBackgroundColor:UIColor.whiteColor];

@@ -9,6 +9,9 @@
 //  TEL : +(852)53054612
 //
 
+#import "APPDelegate+APP.h"
+#import "APPDelegate+Kit.h"
+
 #import "DNSManager.h"
 
 @interface DNSManager ()
@@ -49,7 +52,9 @@
           completionHandler:(void (^)(NSData * aData, NSURLResponse * aResponse, NSError * aError))aCompletionHandler {
    
    int                            nErr                                     = EFAULT;
-   
+
+   __block NSString              *szAPIKey                                 = nil;
+
    __block NSString              *szURL                                    = nil;
    __block NSURLSessionDataTask  *stURLSessionDataTask                     = nil;
    
@@ -57,7 +62,20 @@
    
    dispatch_async_on_background_queue(^{
       
-      szURL = [NSString stringWithFormat:@"%@&domainName=%@", [DNSManager DNSServiceURL], aDomain];
+      szAPIKey = [APPDelegate apiKey];
+      
+      if (NO == kStringIsBlank(szAPIKey)) {
+         
+         szURL = [DNSManager DNSServiceURLWithKey:szAPIKey];
+         
+      } /* End if () */
+      else {
+         
+         szURL = [DNSManager DNSServiceURL];
+         
+      } /* End else */
+
+      szURL = [NSString stringWithFormat:@"%@&domainName=%@", szURL, aDomain];
       LogDebug((@"+[DNSManager fetchIP:completionHandler:] : URL : %@", szURL));
       
       stURLSessionDataTask = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:szURL]

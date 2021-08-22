@@ -9,9 +9,14 @@
 //  TEL : +(852)53054612
 //
 
+#import "APPDelegate+APP.h"
 #import "APPDelegate+Kit.h"
 
 #import "IntroductionController.h"
+
+#import "HomeController+Signal.h"
+#import "HomeController+Notification.h"
+
 #import "AppIntroduction.h"
 
 @implementation IntroductionController
@@ -369,6 +374,8 @@
    
    int                            nErr                                     = EFAULT;
    
+   __block NSString              *szAPI                                    = nil;
+   
    __TRY;
    
    [self dismissViewControllerAnimated:YES
@@ -378,6 +385,15 @@
 #else
       [APPDelegate setIntroduced:YES];
 #endif
+      
+      szAPI = [APPDelegate apiKey];
+      
+      if (kStringIsBlank(szAPI)) {
+         
+         [self postNotify:HomeController.settingNotification
+                  onQueue:dispatch_get_main_queue()];
+         
+      } /* End if () */
    }];
    
    __CATCH(nErr);

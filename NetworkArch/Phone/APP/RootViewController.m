@@ -21,6 +21,9 @@
 #import "IntroductionController.h"
 #import "IntroductionController+Notification.h"
 
+#import "HomeController+Signal.h"
+#import "HomeController+Notification.h"
+
 #import "SettingController+Notification.h"
 
 IDEA_ENUM(NSInteger, TransType) {
@@ -321,9 +324,20 @@ NS_ASSUME_NONNULL_END
    
    IntroductionController        *stIntroductionController                 = nil;
    
+   NSString                      *szAPI                                    = nil;
+   
    __TRY;
    
    if ([APPDelegate isIntroduced]) {
+      
+      szAPI = [APPDelegate apiKey];
+      
+      if (kStringIsBlank(szAPI)) {
+         
+         [self postNotify:HomeController.settingNotification
+                  onQueue:dispatch_get_main_queue()];
+
+      } /* End if () */
       
       nErr  = noErr;
       

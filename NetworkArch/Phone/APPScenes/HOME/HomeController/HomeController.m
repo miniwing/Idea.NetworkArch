@@ -63,7 +63,9 @@
       
       [self addChildViewController:_appBar.headerViewController];
 #endif /* MATERIAL_APP_BAR */
-      
+
+      [self observeNotification:HomeController.settingNotification];
+
    } /* End if () */
    
    __CATCH(nErr);
@@ -300,20 +302,11 @@
 - (IBAction)onSetting:(id)aSender {
    
    int                            nErr                                     = EFAULT;
-   
-   HomeSettingRootController     *stHomeSettingRootController              = nil;
-   
+      
    __TRY;
    
-   stHomeSettingRootController   = [UIStoryboard loadStoryboard:HomeSettingRootController.storyboard
-                                                 viewController:HomeSettingRootController.class];
-   
-   [self presentViewController:stHomeSettingRootController
-                      animated:YES
-                    completion:^{
+   [self notify:HomeController.settingNotification];
       
-   }];
-   
    __CATCH(nErr);
    
    return;

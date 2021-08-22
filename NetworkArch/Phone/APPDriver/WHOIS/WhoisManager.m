@@ -9,6 +9,9 @@
 //  TEL : +(852)53054612
 //
 
+#import "APPDelegate+APP.h"
+#import "APPDelegate+Kit.h"
+
 #import "WhoisManager.h"
 
 @interface WhoisManager ()
@@ -50,6 +53,7 @@
    
    int                            nErr                                     = EFAULT;
    
+   __block NSString              *szAPIKey                                 = nil;
    __block NSString              *szURL                                    = nil;
    __block NSURLSessionDataTask  *stURLSessionDataTask                     = nil;
    
@@ -57,7 +61,20 @@
    
    dispatch_async_on_background_queue(^{
       
-      szURL = [NSString stringWithFormat:@"%@&domainName=%@", [WhoisManager whoisURL], aDomain];
+      szAPIKey = [APPDelegate apiKey];
+      
+      if (NO == kStringIsBlank(szAPIKey)) {
+         
+         szURL = [WhoisManager whoisURLWithKey:szAPIKey];
+         
+      } /* End if () */
+      else {
+         
+         szURL = [WhoisManager whoisURL];
+         
+      } /* End else */
+      
+      szURL = [NSString stringWithFormat:@"%@&domainName=%@", szURL, aDomain];
       LogDebug((@"+[WhoisManager fetchWhoisForDomain:completionHandler:] : URL : %@", szURL));
       
       stURLSessionDataTask = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:szURL]

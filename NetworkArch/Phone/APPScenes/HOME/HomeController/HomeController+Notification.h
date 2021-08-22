@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @notification(self);
 #endif /* __Debug__ */
 
+@notification(setting);
+
 @end
 
 NS_ASSUME_NONNULL_END

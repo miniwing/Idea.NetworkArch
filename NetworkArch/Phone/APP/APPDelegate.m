@@ -392,8 +392,12 @@
    
    __TRY;
    
-   self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
-                                           viewController:RootViewController.class];
+   if (nil == self.rootViewController) {
+      
+      self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
+                                              viewController:RootViewController.class];
+
+   } /* End if () */
    
    [UIView transitionFromView:self.splashViewController.view
                        toView:self.rootViewController.view

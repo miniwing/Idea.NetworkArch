@@ -50,8 +50,8 @@ workspace 'Idea.NetworkArch'
 
 project 'NetworkArch/NetworkArch.xcodeproj'
 
-use_frameworks!
-#use_modular_headers!
+#use_frameworks!
+use_modular_headers!
 inhibit_all_warnings!
 
 platform :ios, '10.0'
@@ -125,7 +125,7 @@ target 'NetworkArch' do
   pod 'MaterialComponents/Palettes'
   pod 'MaterialComponents/AppBar'
   pod 'MaterialComponents/ActivityIndicator'
-
+  
 #  pod 'FloatingPanel'
 
   #-------------------------------------------------------------------------------------------------------------------------------#
@@ -171,19 +171,19 @@ end
 
 ###################################################################################################################################
 
-target 'TodayClip' do
-
-  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
-
-  pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
-  pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
-
-  pod 'IDEARouter'                      , :path => '../MINIWING-PODs/IDEARouter'
-  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
-
-  library
-  
-end
+#target 'TodayClip' do
+#
+#  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
+#
+#  pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
+#  pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
+#
+#  pod 'IDEARouter'                      , :path => '../MINIWING-PODs/IDEARouter'
+#  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
+#
+#  library
+#
+#end
 
 ###################################################################################################################################
 

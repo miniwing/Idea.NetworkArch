@@ -17,8 +17,6 @@
 @def_signal(self);
 #endif /* __Debug__ */
 
-@def_signal(setting);
-
 @end
 
 #pragma mark - handleSignal
