@@ -449,7 +449,7 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    
    __TRY;
    
-   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://weibo.com/MINIWING"]
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://weibo.com/u/1709110023"]
                                       options: nil // @{  UIApplicationOpenURLOptionUniversalLinksOnly : @YES }
                             completionHandler:^(BOOL success) {
       
@@ -467,7 +467,7 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    
    __TRY;
    
-   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/intent/user?screen_name=MINIWING"]
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/miniwinghz"]
                                       options: nil // @{  UIApplicationOpenURLOptionUniversalLinksOnly : @YES }
                             completionHandler:^(BOOL success) {
       
@@ -484,8 +484,8 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    int                            nErr                                     = EFAULT;
    
    __TRY;
-   
-   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://m.facebook.com"]
+
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://facebook.com/miniwing.hz"]
                                       options: nil // @{  UIApplicationOpenURLOptionUniversalLinksOnly : @YES }
                             completionHandler:^(BOOL success) {
       

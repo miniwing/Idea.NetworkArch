@@ -83,6 +83,11 @@ handleSignal(WhoisController, startSignal) {
                         onQueue:dispatch_get_main_queue()];
 
             } /* End if () */
+            else {
+               
+               [self.textField becomeFirstResponder];
+
+            } /* End else */
          }];
          
       } /* End if () */

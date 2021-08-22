@@ -109,7 +109,7 @@ target 'NetworkArch' do
 
 #  pod 'PromisesObjC'
 #  pod 'Masonry'
-#  pod 'Appirater'
+  pod 'Appirater'
 #  pod 'ZKCycleScrollView'
 #  pod 'NetUtils'
   

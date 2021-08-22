@@ -452,6 +452,7 @@
          }
                                                    tapBlock:^(UIAlertController *aController, UIAlertAction *aAction, NSInteger aButtonIndex) {
             
+            [self.textField setEnabled:YES];
             [self.activityIndicator setHidden:YES animated:YES];
             [self.activityIndicator stopAnimating];
             
@@ -461,6 +462,11 @@
                         onQueue:dispatch_get_main_queue()];
 
             } /* End if () */
+            else {
+               
+               [self.textField becomeFirstResponder];
+
+            } /* End else */
          }];
          
       } /* End if () */
