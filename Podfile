@@ -288,7 +288,9 @@ post_install do |installer|
       end
 #      config.build_settings['SWIFT_VERSION']                  = '5.0'
       config.build_settings['ENABLE_BITCODE']                 = 'NO'
-      config.build_settings['COMPILER_INDEX_STORE_ENABLE']    = 'NO'
+      if ENV['OLLVM'] == 'YES'
+        config.build_settings['COMPILER_INDEX_STORE_ENABLE']  = 'NO'
+      end # OLLVM
 
 #      config.build_settings['EMBEDDED_CONTENT_CONTAINS_SWIFT']                      = 'NO'
 #      config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES']                = 'NO'

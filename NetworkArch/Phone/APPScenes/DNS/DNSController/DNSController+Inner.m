@@ -133,12 +133,27 @@
    
    __TRY;
    
-   if (!kStringIsEmpty(aTextField.text)) {
+   if (!kStringIsBlank(aTextField.text)) {
       
-      bShouldReturn  = YES;
+      [self resignFirstResponder];
       
-      [self postSignal:DNSController.startSignal
-               onQueue:dispatch_get_main_queue()];
+      [self.textField setEnabled:NO];
+      [self.rightBarButtonItem setEnabled:NO];
+      [self.activityIndicator startAnimating];
+      
+      [self.contentView setHidden:YES animated:YES];
+      
+      @weakify(self);
+      [self.activityIndicator setHidden:NO
+                               animated:YES
+                               complete:^{
+               
+         @strongify(self);
+
+         [self sendSignal:DNSController.startSignal withObject:self.textField.text];
+//         [self postSignal:DNSController.startSignal
+//                  onQueue:dispatch_get_main_queue()];
+      }];
 
    } /* End if () */
    else {

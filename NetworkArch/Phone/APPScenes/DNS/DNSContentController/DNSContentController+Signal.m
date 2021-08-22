@@ -29,19 +29,19 @@
 handleSignal(DNSController, startSignal) {
    
    int                            nErr                                     = EFAULT;
-      
+   
    __block NSError               *stError                                  = nil;
    
    __block NSDictionary          *stDNS                                    = nil;
    
    __block DNSModel              *stDNSModel                               = nil;
    __block NSArray<DNSModel *>   *stDNSModels                              = nil;
-
+   
    __TRY;
-      
+   
    LogDebug((@"-[DNSContentController startSignal:] : Signal : %@", aSignal));
    LogDebug((@"-[DNSContentController startSignal:] : Domain : %@", aSignal.object));
-
+   
    dispatch_async_on_background_queue(^{
       
       [DNSManager fetchIP:aSignal.object
@@ -49,7 +49,7 @@ handleSignal(DNSController, startSignal) {
          
          LogDebug((@"-[DNSContentController startSignal:] : Error    : %@", aError));
          LogDebug((@"-[DNSContentController startSignal:] : Response : %@", aResponse));
-
+         
          if (nil == aError) {
             
             [self.dns removeAllObjects];
@@ -60,9 +60,9 @@ handleSignal(DNSController, startSignal) {
             
             stDNSModels = [NSArray modelArrayWithClass:DNSModel.class json:stDNS[@"DNSData"][@"dnsRecords"]];
             LogDebug((@"-[DNSContentController startSignal:] : DNSModels Count : %d", stDNSModels.count));
-
+            
             for (DNSModel *stTemp in stDNSModels) {
-
+               
                LogDebug((@"-[DNSContentController startSignal:] : dnsType : %@", stTemp.dnsType));
                
                stDNSModel  = [self.dns objectForKey:stTemp.dnsType];
@@ -78,61 +78,61 @@ handleSignal(DNSController, startSignal) {
 //                     continue;
 //
 //                  } /* End if () */
-
+                  
                } /* End if () */
                else {
                   
                   if ([stDNSModel.dnsType isEqualToString:@"A"]) {
-                  
+                     
                      stDNSModel.address = [stDNSModel.address stringByAppendingFormat:@"\n%@", stTemp.address];
-
+                     
                      continue;
                      
                   } /* End if () */
                   
                   if ([stDNSModel.dnsType isEqualToString:@"AAAA"]) {
-
+                     
                      stDNSModel.address = [stDNSModel.address stringByAppendingFormat:@"\n%@", stTemp.address];
-
+                     
                      continue;
-
+                     
                   } /* End if () */
-
+                  
                   if ([stDNSModel.dnsType isEqualToString:@"NS"]) {
-
+                     
                      stDNSModel.target = [stDNSModel.target stringByAppendingFormat:@"\n%@", stTemp.target];
                      continue;
-
+                     
                   } /* End if () */
-
+                  
                   if ([stDNSModel.dnsType isEqualToString:@"SOA"]) {
-
+                     
                      continue;
-
+                     
                   } /* End if () */
-
+                  
                   if ([stDNSModel.dnsType isEqualToString:@"MX"]) {
-
-//                     self.mxDNSTypeTarget.append(item["target"].stringValue + "\nPriority: " + String(item["priority"].intValue) + "\n\n")
-
+                     
+                     //                     self.mxDNSTypeTarget.append(item["target"].stringValue + "\nPriority: " + String(item["priority"].intValue) + "\n\n")
+                     
                      stDNSModel.target = [stDNSModel.target stringByAppendingFormat:@"\n%@\nPriority:%@\n\n", stTemp.target, stTemp.priority];
-
+                     
                      continue;
-
+                     
                   } /* End if () */
-
+                  
                   if ([stDNSModel.dnsType isEqualToString:@"TXT"]) {
-
-//                     stDNSModel.string = [stDNSModel.string stringByAppendingString:[stTemp.strings componentsJoinedByString:@"\n"]];
+                     
+                     //                     stDNSModel.string = [stDNSModel.string stringByAppendingString:[stTemp.strings componentsJoinedByString:@"\n"]];
                      NSMutableArray *stStrings  = [NSMutableArray arrayWithArray:stDNSModel.strings];
                      [stStrings addObjectsFromArray:stTemp.strings];
                      
                      stDNSModel.strings         = stStrings;
-
+                     
                      continue;
-
+                     
                   } /* End if () */
-
+                  
                } /* End else */
                
             } /* End for () */
@@ -140,16 +140,16 @@ handleSignal(DNSController, startSignal) {
          } /* End if () */
          
          LogDebug((@"-[DNSContentController startSignal:] : DNS Count : %d", self.dns.count));
-
+         
          UI_PERFORM_SELECTOR(self, @selector(fetchDoneWithError:), aError, NO);
       }];
    });
-
+   
    __CATCH(nErr);
-
+   
    __RELEASE(stDNSModels);
    __RELEASE(stError);
-
+   
    return;
 }
 

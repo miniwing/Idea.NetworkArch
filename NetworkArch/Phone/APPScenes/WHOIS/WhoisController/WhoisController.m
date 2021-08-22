@@ -166,18 +166,18 @@
    [self.textField setCornerRadius:8 clipsToBounds:YES];
    
    [self.textField setFont:[APPFont regularFontOfSize:self.textField.font.pointSize]];
-   
-   [self.textField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
-
-   [self.textField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   
+      
    [self.textField setDelegate:self];
    [self.textField setPlaceholder:APP_STR(@"IP / AS / Domain Name")];
+
+   [self.textField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
+   [self.textField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
    /**
     UITextView
     */
    [self.textView setCornerRadius:8 clipsToBounds:YES];
+   [self.textView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    [self.textView setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.textView setHidden:YES];
 
@@ -230,12 +230,12 @@
                     selector:@selector(textFieldTextDidChange:)
                       object:self.textField];
    
-#if __Debug__
-   dispatch_async_on_main_queue(^{
-      
-      [self.textField setText:@"www.baidu.com"];
-   });
-#endif /* __Debug__ */
+//#if __Debug__
+//   dispatch_async_on_main_queue(^{
+//      
+//      [self.textField setText:@"www.baidu.com"];
+//   });
+//#endif /* __Debug__ */
 
    __CATCH(nErr);
    

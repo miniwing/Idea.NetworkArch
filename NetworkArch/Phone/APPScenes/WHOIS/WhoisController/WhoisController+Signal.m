@@ -43,23 +43,33 @@ handleSignal(WhoisController, startSignal) {
    
    LogDebug((@"-[WhoisController startSignal:] : Signal : %@", aSignal));
    
-   szDomain = [self.textField text];
+   szDomain = self.textField.text;
    LogDebug((@"-[WhoisController startSignal:] : Domain : %@", szDomain));
    
    [WhoisManager fetchWhoisForDomain:szDomain
                    completionHandler:^(NSData * _Nonnull aData, NSURLResponse * _Nonnull aResponse, NSError * _Nonnull aError) {
 
+      LogDebug((@"-[WhoisController startSignal:] : Error    : %@", aError));
       LogDebug((@"-[WhoisController startSignal:] : Response : %@", aResponse));
 
-      stWhois  = [NSJSONSerialization JSONObjectWithData:aData
-                                                 options:NSJSONReadingMutableContainers
-                                                   error:&stError];
-      
-      szWhois  = stWhois[@"WhoisRecord"][@"rawText"];
-            
+      if (nil == aError) {
+         
+         stWhois  = [NSJSONSerialization JSONObjectWithData:aData
+                                                    options:NSJSONReadingMutableContainers
+                                                      error:&stError];
+         
+         szWhois  = stWhois[@"WhoisRecord"][@"rawText"];
+
+      } /* End if () */
+      else {
+         
+         stError  = aError;
+         
+      } /* End else */
+                  
       [self postSignal:WhoisController.doneSignal
             withObject:stError
-                 input:@{@"Whois" : szWhois}
+                 input:szWhois ? @{@"Whois" : szWhois} : nil
                onQueue:dispatch_get_main_queue()];
    }];
 
@@ -104,7 +114,7 @@ handleSignal(WhoisController, doneSignal) {
 
       } /* End if () */
 
-      [self.textField setEnabled:NO];
+      [self.textField setEnabled:YES];
 
       if (nil != aSignal.object) {
          

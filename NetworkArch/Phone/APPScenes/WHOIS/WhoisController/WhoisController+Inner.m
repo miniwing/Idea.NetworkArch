@@ -128,12 +128,25 @@
    
    __TRY;
    
-   if (!kStringIsEmpty(aTextField.text)) {
+   if (NO == kStringIsBlank(aTextField.text)) {
       
       bShouldReturn  = YES;
       
-      [self postSignal:WhoisController.startSignal
-               onQueue:dispatch_get_main_queue()];
+      [self.textField setEnabled:NO];
+      [self.rightBarButtonItem setEnabled:NO];
+      [self.activityIndicator startAnimating];
+      
+      [self.textView setText:@""];
+
+      @weakify(self);
+      [self.activityIndicator setHidden:NO
+                               animated:YES
+                               complete:^{
+         
+         @strongify(self);
+         [self postSignal:WhoisController.startSignal
+                  onQueue:dispatch_get_main_queue()];
+      }];
 
    } /* End if () */
    else {

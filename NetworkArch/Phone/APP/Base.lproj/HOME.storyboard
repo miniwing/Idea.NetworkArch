@@ -830,7 +830,7 @@
                                                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpT-R1-kAl" userLabel="容器">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="50"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="API KEY" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="WDI-8Y-Kna" customClass="APPTextField">
+                                                        <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="API KEY" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="WDI-8Y-Kna" customClass="APPTextField">
                                                             <rect key="frame" x="0.0" y="4" width="343" height="45.666666666666664"/>
                                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

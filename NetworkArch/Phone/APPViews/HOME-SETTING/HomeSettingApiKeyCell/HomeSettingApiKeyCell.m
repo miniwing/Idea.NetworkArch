@@ -106,7 +106,6 @@
       dispatch_async_on_main_queue(^{
          
          [self.apiKeytextField setText:[APPDATA xmlAPIKey]];
-         
          [self.apiKeytextField becomeFirstResponder];
       });
    }

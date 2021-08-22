@@ -11,9 +11,7 @@
 
 int main(int argc, char * argv[]) {
    
-#if __Debug__
    [UncaughtExceptionHandler installUncaughtExceptionHandler:YES showAlert:YES];
-#endif /* __Debug__ */
 
    @autoreleasepool {
       return UIApplicationMain(argc, argv, nil, NSStringFromClass([APPDelegate class]));
