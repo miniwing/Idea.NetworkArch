@@ -128,6 +128,10 @@
    [self.wifiSSIDLabel setFont:[APPFont regularFontOfSize:self.wifiSSIDLabel.font.pointSize]];
    [self.wifiIPLabel setText:APP_STR(@"SSID not available")];
 
+#if TARGET_IPHONE_SIMULATOR
+   [self.wifiIPLabel setText:APP_STR(@"Wi-Fi: 4-2-202")];
+#endif /* TARGET_IPHONE_SIMULATOR */
+   
    [self.wifiSSIDIcon setBackgroundColor:UIColor.clearColor];
    [self.wifiSSIDIcon setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       
@@ -144,6 +148,10 @@
    }];
    [self.wifiSSIDIcon setImage:[UIImage imageNamed:@"WIFI-SLASH"]];
 
+#if TARGET_IPHONE_SIMULATOR
+   [self.wifiSSIDIcon setImage:[UIImage imageNamed:@"WIFI-ON"]];
+#endif /* TARGET_IPHONE_SIMULATOR */
+
    [self.wifiIPLabel setBackgroundColor:UIColor.clearColor];
    [self.wifiIPLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.wifiIPLabel setFont:[APPFont lightFontOfSize:self.wifiIPLabel.font.pointSize]];
@@ -153,6 +161,10 @@
    [self.wifiIP setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.wifiIP setFont:[APPFont lightFontOfSize:self.wifiIP.font.pointSize]];
    [self.wifiIP setText:APP_STR(@"N/A")];
+
+#if TARGET_IPHONE_SIMULATOR
+   [self.wifiIP setText:APP_STR(@"192.168.88.88")];
+#endif /* TARGET_IPHONE_SIMULATOR */
 
    [self.wifiMoreLabel setBackgroundColor:UIColor.clearColor];
    [self.wifiMoreLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
@@ -186,6 +198,10 @@
    [self.cellularOperatorLabel setFont:[APPFont regularFontOfSize:self.wifiSSIDLabel.font.pointSize]];
    [self.cellularOperatorLabel setText:APP_STR(@"No Service")];
 
+#if TARGET_IPHONE_SIMULATOR
+   [self.cellularOperatorLabel setText:APP_STR(@"Cellular Network")];
+#endif /* TARGET_IPHONE_SIMULATOR */
+
    [self.cellularOperatorIcon setBackgroundColor:UIColor.clearColor];
    [self.cellularOperatorIcon setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       
@@ -203,6 +219,10 @@
 
    [self.cellularOperatorIcon setImage:[UIImage imageNamed:@"CELLULAR-SLASH"]];
    
+#if TARGET_IPHONE_SIMULATOR
+   [self.cellularOperatorIcon setImage:[UIImage imageNamed:@"CELLULAR"]];
+#endif /* TARGET_IPHONE_SIMULATOR */
+
    [self.cellularIPLabel setBackgroundColor:UIColor.clearColor];
    [self.cellularIPLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.cellularIPLabel setFont:[APPFont lightFontOfSize:self.cellularIPLabel.font.pointSize]];
@@ -212,6 +232,10 @@
    [self.cellularIP setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.cellularIP setFont:[APPFont lightFontOfSize:self.cellularIP.font.pointSize]];
    [self.cellularIP setText:APP_STR(@"N/A")];
+
+#if TARGET_IPHONE_SIMULATOR
+   [self.cellularIP setText:APP_STR(@"10.8.8.8")];
+#endif /* TARGET_IPHONE_SIMULATOR */
 
    [self.cellularMoreLabel setBackgroundColor:UIColor.clearColor];
    [self.cellularMoreLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];

@@ -59,7 +59,7 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
    LogDebug((@"-[HomeContentController handleSignal:networkStatusSignal:] : IPV4 : %@", szIP));
    LogDebug((@"-[HomeContentController handleSignal:networkStatusSignal:] : SSID : %@", szSSID));
 
-   szIcon   = @"WIFI-ON";
+//   szIcon   = @"WIFI-ON";
    
    if (kStringIsEmpty(szSSID)) {
       
@@ -134,9 +134,7 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
    __TRY;
    
    stTelephonyNetworkInfo  = [[CTTelephonyNetworkInfo alloc] init];
-   
-   szIcon   = @"CELLULAR";
-   
+      
    if (@available(iOS 12.0, *)) {
       
       stCarriers  = stTelephonyNetworkInfo.serviceSubscriberCellularProviders;
@@ -183,12 +181,14 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
    if ((nil == stCarrier) || (YES == kStringIsEmpty(stCarrier.carrierName))){
       
       szCarrierName  = APP_STR(@"No service");
-      
+      szIcon         = @"CELLULAR-SLASH";
+
    } /* End if () */
    else {
       
       szCarrierName  = stCarrier.carrierName;
-      
+      szIcon         = @"CELLULAR";
+
    } /* End else */
    
    szIP  = [UIDevice ipv4:NetworkCellular];
