@@ -9,6 +9,12 @@
 //  TEL : +(852)53054612
 //
 
+#import "APPDelegate+APP.h"
+#import "APPDelegate+Kit.h"
+
+#import "HomeController+Signal.h"
+#import "HomeController+Notification.h"
+
 #import "WhoisController+Inner.h"
 #import "WhoisController+Signal.h"
 #import "WhoisController+Notification.h"
@@ -31,46 +37,88 @@ handleSignal(WhoisController, startSignal) {
    
    int                            nErr                                     = EFAULT;
    
-   NSString                      *szDomain                                 = nil;
-   
+   NSString                      *szApiKey                                 = nil;
+   __block NSString              *szDomain                                 = nil;
+
    __block NSError               *stError                                  = nil;
    __block NSDictionary          *stWhois                                  = nil;
    __block NSString              *szWhois                                  = nil;
 
    __TRY;
    
-   [self resignFirstResponder];
-   
    LogDebug((@"-[WhoisController startSignal:] : Signal : %@", aSignal));
+
+   szApiKey = [APPDelegate apiKey];
+   LogDebug((@"-[WhoisController startSignal:] : ApiKey : %@", szApiKey));
+
+   [CATransaction begin];
+   [self resignFirstResponder];
+   [CATransaction commit];
    
-   szDomain = self.textField.text;
-   LogDebug((@"-[WhoisController startSignal:] : Domain : %@", szDomain));
-   
-   [WhoisManager fetchWhoisForDomain:szDomain
-                   completionHandler:^(NSData * _Nonnull aData, NSURLResponse * _Nonnull aResponse, NSError * _Nonnull aError) {
-
-      LogDebug((@"-[WhoisController startSignal:] : Error    : %@", aError));
-      LogDebug((@"-[WhoisController startSignal:] : Response : %@", aResponse));
-
-      if (nil == aError) {
+   [CATransaction setCompletionBlock:^{
+      
+      if (kStringIsBlank(szApiKey)) {
          
-         stWhois  = [NSJSONSerialization JSONObjectWithData:aData
-                                                    options:NSJSONReadingMutableContainers
-                                                      error:&stError];
-         
-         szWhois  = stWhois[@"WhoisRecord"][@"rawText"];
+         [UIAlertController showActionSheetInViewController:self
+                                                  withTitle:APP_STR(@"API Key Empty")
+                                                    message:APP_STR(@"PRESS OK TO GET (FREE).")
+                                          cancelButtonTitle:APP_STR(@"Cancel")
+                                     destructiveButtonTitle:APP_STR(@"OK")
+                                          otherButtonTitles:nil
+                         popoverPresentationControllerBlock:^(UIPopoverPresentationController *aPopover) {
+            
+         }
+                                                   tapBlock:^(UIAlertController *aController, UIAlertAction *aAction, NSInteger aButtonIndex) {
+            
+            [self.rightBarButtonItem setEnabled:!kStringIsBlank(self.textField.text)];
 
+            [self.textField setEnabled:YES];
+
+            [self.activityIndicator setHidden:YES animated:YES];
+            [self.activityIndicator stopAnimating];
+            
+            if ([[aAction title] isEqualToString:APP_STR(@"OK")]) {
+               
+               [self postNotify:HomeController.settingNotification
+                        onQueue:dispatch_get_main_queue()];
+
+            } /* End if () */
+         }];
+         
       } /* End if () */
       else {
          
-         stError  = aError;
+         szDomain = self.textField.text;
+         LogDebug((@"-[WhoisController startSignal:] : Domain : %@", szDomain));
+         
+         [WhoisManager fetchWhoisForDomain:szDomain
+                         completionHandler:^(NSData * _Nonnull aData, NSURLResponse * _Nonnull aResponse, NSError * _Nonnull aError) {
+            
+            LogDebug((@"-[WhoisController startSignal:] : Error    : %@", aError));
+            LogDebug((@"-[WhoisController startSignal:] : Response : %@", aResponse));
+            
+            if (nil == aError) {
+               
+               stWhois  = [NSJSONSerialization JSONObjectWithData:aData
+                                                          options:NSJSONReadingMutableContainers
+                                                            error:&stError];
+               
+               szWhois  = stWhois[@"WhoisRecord"][@"rawText"];
+               
+            } /* End if () */
+            else {
+               
+               stError  = aError;
+               
+            } /* End else */
+            
+            [self postSignal:WhoisController.doneSignal
+                  withObject:stError
+                       input:szWhois ? @{@"Whois" : szWhois} : nil
+                     onQueue:dispatch_get_main_queue()];
+         }];
          
       } /* End else */
-                  
-      [self postSignal:WhoisController.doneSignal
-            withObject:stError
-                 input:szWhois ? @{@"Whois" : szWhois} : nil
-               onQueue:dispatch_get_main_queue()];
    }];
 
    __CATCH(nErr);

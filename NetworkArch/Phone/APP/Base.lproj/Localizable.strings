@@ -21,11 +21,15 @@
 
 "Click To Get (FREE)"               = "Click To Get (FREE)";
 
+"API Key Empty"                     = "API Key Empty";
+"PRESS OK TO GET (FREE)."           = "PRESS OK TO GET (FREE).";
+"Cancel"                            = "Cancel";
+"OK"                                = "OK";
+
 /// Cellular Network
 "CELLULAR"                          = "Cellular Network";
 
 "No Service"                        = "No Service";
-
 
 "More Info"                         = "More Info";
 

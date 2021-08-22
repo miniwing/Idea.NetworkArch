@@ -226,7 +226,7 @@
 @end
 
 #pragma mark - IBAction
-@implementation DNSContentController (IBACTION)
+@implementation DNSContentController (Action)
 
 - (IBAction)onAction:(id)aSender {
    

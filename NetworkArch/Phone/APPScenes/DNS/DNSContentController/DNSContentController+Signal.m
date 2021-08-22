@@ -9,7 +9,13 @@
 //  TEL : +(852)53054612
 //
 
+#import "APPDelegate+APP.h"
+#import "APPDelegate+Kit.h"
+
 #import "DNSController+Signal.h"
+
+#import "HomeController+Signal.h"
+#import "HomeController+Notification.h"
 
 #import "DNSContentController+Inner.h"
 #import "DNSContentController+Signal.h"

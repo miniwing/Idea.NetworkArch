@@ -9,6 +9,12 @@
 //  TEL : +(852)53054612
 //
 
+#import "APPDelegate+APP.h"
+#import "APPDelegate+Kit.h"
+
+#import "HomeController+Signal.h"
+#import "HomeController+Notification.h"
+
 #import "DNSController+Inner.h"
 #import "DNSController+Signal.h"
 #import "DNSController+Notification.h"
@@ -131,37 +137,73 @@
    
    BOOL                           bShouldReturn                            = NO;
    
+   __block NSString              *szApiKey                                 = nil;
+   
    __TRY;
    
-   if (!kStringIsBlank(aTextField.text)) {
-      
-      [self resignFirstResponder];
-      
-      [self.textField setEnabled:NO];
-      [self.rightBarButtonItem setEnabled:NO];
-      [self.activityIndicator startAnimating];
-      
-      [self.contentView setHidden:YES animated:YES];
-      
-      @weakify(self);
-      [self.activityIndicator setHidden:NO
-                               animated:YES
-                               complete:^{
-               
-         @strongify(self);
-
-         [self sendSignal:DNSController.startSignal withObject:self.textField.text];
-//         [self postSignal:DNSController.startSignal
-//                  onQueue:dispatch_get_main_queue()];
-      }];
-
-   } /* End if () */
-   else {
+   if (kStringIsBlank(aTextField.text)) {
       
       bShouldReturn  = NO;
-      
-   } /* End else */
 
+      break;
+      
+   } /* End if () */
+
+   szApiKey = [APPDelegate apiKey];
+   LogDebug((@"-[DNSController textFieldShouldReturn:] : ApiKey : %@", szApiKey));
+
+   [CATransaction begin];
+   [self resignFirstResponder];
+   [CATransaction commit];
+
+   [CATransaction setCompletionBlock:^{
+      
+      if (kStringIsBlank(szApiKey)) {
+         
+         [UIAlertController showActionSheetInViewController:self
+                                                  withTitle:APP_STR(@"API Key Empty")
+                                                    message:APP_STR(@"PRESS OK TO GET (FREE).")
+                                          cancelButtonTitle:APP_STR(@"Cancel")
+                                     destructiveButtonTitle:APP_STR(@"OK")
+                                          otherButtonTitles:nil
+                         popoverPresentationControllerBlock:^(UIPopoverPresentationController *aPopover) {
+            
+         }
+                                                   tapBlock:^(UIAlertController *aController, UIAlertAction *aAction, NSInteger aButtonIndex) {
+            
+            [self.activityIndicator setHidden:YES animated:YES];
+            [self.activityIndicator stopAnimating];
+            
+            if ([[aAction title] isEqualToString:APP_STR(@"OK")]) {
+               
+               [self postNotify:HomeController.settingNotification
+                        onQueue:dispatch_get_main_queue()];
+
+            } /* End if () */
+         }];
+         
+      } /* End if () */
+      else {
+   
+         [self.textField setEnabled:NO];
+         [self.rightBarButtonItem setEnabled:NO];
+         [self.activityIndicator startAnimating];
+         
+         [self.contentView setHidden:YES animated:YES];
+         
+         @weakify(self);
+         [self.activityIndicator setHidden:NO
+                                  animated:YES
+                                  complete:^{
+                  
+            @strongify(self);
+
+            [self sendSignal:DNSController.startSignal withObject:self.textField.text];
+         }];
+
+      } /* End else */
+   }];
+   
    __CATCH(nErr);
    
    return bShouldReturn;
