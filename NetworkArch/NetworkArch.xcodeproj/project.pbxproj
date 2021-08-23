@@ -257,7 +257,6 @@
 		4AC0B89126B9AB1A00B2DA58 /* WifiInterfacesRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B88226B9AB1800B2DA58 /* WifiInterfacesRootController+Theme.m */; };
 		4AC0B89226B9AB1A00B2DA58 /* WifiInterfacesRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B88426B9AB1900B2DA58 /* WifiInterfacesRootController+Debug.m */; };
 		4AC0B89326B9AB1A00B2DA58 /* WifiInterfacesRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0B88726B9AB1900B2DA58 /* WifiInterfacesRootController.m */; };
-		4AC3ADD226CE020E00623C8C /* OLLVM-TEST.c in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3ADD126CE020D00623C8C /* OLLVM-TEST.c */; };
 		4AC5441C26C3665100C0320B /* WifiInterfacesCell+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5441026C3665100C0320B /* WifiInterfacesCell+Signal.m */; };
 		4AC5441D26C3665100C0320B /* WifiInterfacesCell+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5441126C3665100C0320B /* WifiInterfacesCell+Theme.m */; };
 		4AC5441E26C3665100C0320B /* WifiInterfacesCell+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5441226C3665100C0320B /* WifiInterfacesCell+Notification.m */; };
@@ -503,8 +502,6 @@
 		4A0EB7E82687268B00AA4366 /* HomeContentCell+Debug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeContentCell+Debug.m"; sourceTree = "<group>"; };
 		4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeContentCell.m; sourceTree = "<group>"; };
 		4A0EB7F02687268B00AA4366 /* HomeContentCell+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeContentCell+Debug.h"; sourceTree = "<group>"; };
-		4A104E7326D3A69800855B2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		4A104E7426D3A6E700855B2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		4A221EF626A44DA000C94F00 /* PingRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Inner.h"; sourceTree = "<group>"; };
 		4A221EF726A44DA000C94F00 /* PingRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingRootController.m; sourceTree = "<group>"; };
 		4A221EF826A44DA000C94F00 /* PingRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Signal.h"; sourceTree = "<group>"; };
@@ -524,6 +521,8 @@
 		4A25F19826AED9A10075BE73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A275F6426C53C51005F0F37 /* DataUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataUsage.h; sourceTree = "<group>"; };
 		4A275F6526C53C51005F0F37 /* DataUsage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataUsage.m; sourceTree = "<group>"; };
+		4A2E05DF26D3EFE4000A3354 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		4A2E05E026D3EFF0000A3354 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		4A35DDBD26D3300800A500CF /* SettingContentController+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SettingContentController+Debug.h"; sourceTree = "<group>"; };
 		4A35DDBE26D3300800A500CF /* SettingContentController+Debug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SettingContentController+Debug.m"; sourceTree = "<group>"; };
 		4A3D46B326CCE09B00376D31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WEB.storyboard; sourceTree = "<group>"; };
@@ -890,7 +889,6 @@
 		4AC0B88626B9AB1900B2DA58 /* WifiInterfacesRootController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiInterfacesRootController+Notification.h"; sourceTree = "<group>"; };
 		4AC0B88726B9AB1900B2DA58 /* WifiInterfacesRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiInterfacesRootController.m; sourceTree = "<group>"; };
 		4AC0B88D26B9AB1A00B2DA58 /* WifiInterfacesRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiInterfacesRootController.h; sourceTree = "<group>"; };
-		4AC3ADD126CE020D00623C8C /* OLLVM-TEST.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "OLLVM-TEST.c"; sourceTree = "<group>"; };
 		4AC5441026C3665100C0320B /* WifiInterfacesCell+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesCell+Signal.m"; sourceTree = "<group>"; };
 		4AC5441126C3665100C0320B /* WifiInterfacesCell+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesCell+Theme.m"; sourceTree = "<group>"; };
 		4AC5441226C3665100C0320B /* WifiInterfacesCell+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiInterfacesCell+Notification.m"; sourceTree = "<group>"; };
@@ -1163,7 +1161,6 @@
 			children = (
 				4A0E4E2E268587E700A85517 /* APPDef.h */,
 				4A0E4E33268587E800A85517 /* APPDebug.h */,
-				4AC3ADD126CE020D00623C8C /* OLLVM-TEST.c */,
 				4A0E4E2F268587E800A85517 /* APPFont */,
 				4A0E4E34268587E800A85517 /* APPHTTP */,
 				4A745E9D26C57A2700DA644A /* APPUtils */,
@@ -2784,7 +2781,6 @@
 			files = (
 				4A0E4E37268587E800A85517 /* APPFont.m in Sources */,
 				4A0E4E38268587E800A85517 /* APPHTTP.m in Sources */,
-				4AC3ADD226CE020E00623C8C /* OLLVM-TEST.c in Sources */,
 				4A275F6626C53C51005F0F37 /* DataUsage.m in Sources */,
 				4A745EA026C57A4E00DA644A /* APPUtils.m in Sources */,
 			);
@@ -3185,7 +3181,7 @@
 			children = (
 				4A4A004826AEFDD4000D4708 /* Base */,
 				4A4A004A26AEFE64000D4708 /* en */,
-				4A104E7426D3A6E700855B2D /* zh-Hans */,
+				4A2E05E026D3EFF0000A3354 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -3235,7 +3231,7 @@
 			children = (
 				4A842C7F26AC1C0B005DC131 /* Base */,
 				4AF4412426AC8AC90008C169 /* en */,
-				4A104E7326D3A69800855B2D /* zh-Hans */,
+				4A2E05DF26D3EFE4000A3354 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -3430,7 +3426,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Development: Cai Lu (PHD24T76XW)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2021.08231752;
+				CURRENT_PROJECT_VERSION = 2021.08240113;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3496,7 +3492,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Cai Lu (G8G9TAP4UN)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2021.08231752;
+				CURRENT_PROJECT_VERSION = 2021.08240113;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
