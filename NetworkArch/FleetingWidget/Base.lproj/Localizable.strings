@@ -1,0 +1,9 @@
+/* 
+  Localizations.strings
+  FleetingWidget
+
+  Created by Harry on 2021/6/7.
+  Copyright © 2021 Harry. All rights reserved.
+*/
+
+"Remaining"             = "%d年已过去";

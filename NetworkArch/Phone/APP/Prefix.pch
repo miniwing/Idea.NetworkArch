@@ -1,0 +1,458 @@
+//
+//  Prefix.pch
+//  NetworkArch
+//
+//  Created by Harry on 2021/6/24.
+//  Copyright © 2021 Harry. All rights reserved.
+//
+
+#ifdef DEBUG
+//#  pragma clang diagnostic ignored                 "-Wgnu"
+//#  pragma clang diagnostic ignored                 "-Wcomma"
+#  pragma clang diagnostic ignored                 "-Wformat"
+//#  pragma clang diagnostic ignored                 "-Wvarargs"
+//#  pragma clang diagnostic ignored                 "-Wvarargs"
+//#  pragma clang diagnostic ignored                 "-Wnonnull"
+//#  pragma clang diagnostic ignored                 "-Wuninitialized"
+#  pragma clang diagnostic ignored                 "-Wdocumentation"
+//#  pragma clang diagnostic ignored                 "-Wambiguous-macro"
+#  pragma clang diagnostic ignored                 "-Wdocumentation-html"
+//#  pragma clang diagnostic ignored                 "-Wpch-date-time"
+//#  pragma clang diagnostic ignored                 "-Wunused-variable"
+//#  pragma clang diagnostic ignored                 "-Wunused-function"
+//#  pragma clang diagnostic ignored                 "-Wwritable-strings"
+//#  pragma clang diagnostic ignored                 "-Wunreachable-code"
+//#  pragma clang diagnostic ignored                 "-Wshorten-64-to-32"
+//#  pragma clang diagnostic ignored                 "-Wwritable-strings"
+//#  pragma clang diagnostic ignored                 "-Wstrict-prototypes"
+//#  pragma clang diagnostic ignored                 "-Wobjc-method-access"
+//#  pragma clang diagnostic ignored                 "-Wimplicit-retain-self"
+//#  pragma clang diagnostic ignored                 "-Wunguarded-availability"
+//#  pragma clang diagnostic ignored                 "-Wunknown-warning-option"
+#  pragma clang diagnostic ignored                 "-Wdeprecated-declarations"
+#  pragma clang diagnostic ignored                 "-Wnullability-completeness"
+//#  pragma clang diagnostic ignored                 "-Wobjc-missing-super-calls"
+//#  pragma clang diagnostic ignored                 "-Wnonportable-include-path"
+#  pragma clang diagnostic ignored                 "-Wunguarded-availability-new"
+//#  pragma clang diagnostic ignored                 "-Wdeprecated-implementations"
+//#  pragma clang diagnostic ignored                 "-Wmismatched-parameter-types"
+//#  pragma clang diagnostic ignored                 "-Wobjc-redundant-literal-use"
+//#  pragma clang diagnostic ignored                 "-Wblock-capture-autoreleasing"
+//#  pragma clang diagnostic ignored                 "-Wtautological-pointer-compare"
+//#  pragma clang diagnostic ignored                 "-Wimplicit-function-declaration"
+//#  pragma clang diagnostic ignored                 "-Wnullability-completeness-on-arrays"
+//#  pragma clang diagnostic ignored                 "-Wquoted-include-in-framework-header"
+#endif /* DEBUG */
+
+//#  pragma clang diagnostic ignored                 "-Wundeclared-selector"
+
+#ifndef Prefix_pch
+#define Prefix_pch
+
+#import <sys/sysctl.h>
+#import <Availability.h>
+
+#ifndef __IPHONE_10_0
+#  warning "This project uses features only available in iOS SDK 10.0 and later."
+#endif
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wgnu"
+//#pragma clang diagnostic ignored "-Wdocumentation"
+//#pragma clang diagnostic pop
+
+#ifdef __OBJC__
+#  import <UIKit/UIKit.h>
+#  import <Foundation/Foundation.h>
+//#  import <AVFoundation/AVFoundation.h>
+//#  import <AssetsLibrary/AssetsLibrary.h>
+#  import <CoreLocation/CoreLocation.h>
+#  import <CoreTelephony/CTCarrier.h>
+#  import <CoreTelephony/CTTelephonyNetworkInfo.h>
+//#  import <MapKit/MapKit.h>
+//#  import <VideoToolbox/VideoToolbox.h>
+//#  import <AudioToolbox/AudioToolbox.h>
+#  import <LocalAuthentication/LocalAuthentication.h>
+#  import <AuthenticationServices/AuthenticationServices.h>
+#  import <sqlite3.h>
+#  import <CoreMotion/CoreMotion.h>
+
+//#  import <MessageUI/MessageUI.h>
+//#  import <NetworkExtension/NetworkExtension.h>
+//#  import <WebKit/WebKit.h>
+
+//#  import <AppTrackingTransparency/AppTrackingTransparency.h>
+//#  import <AdSupport/AdSupport.h>
+#endif
+
+#ifdef __OBJC__
+
+#  if __has_include(<FoundationExtension/FoundationExtension.h>)
+#     define FOUNDATION_EXTENSION                                          (1)
+#     import <FoundationExtension/FoundationExtension.h>
+#  elif __has_include("FoundationExtension/FoundationExtension.h")
+#     define FOUNDATION_EXTENSION                                          (1)
+#     import "FoundationExtension/FoundationExtension.h"
+#  else
+#     define FOUNDATION_EXTENSION                                          (0)
+#  endif
+
+#  if __has_include(<UIKitExtension/UIKitExtension.h>)
+#     define UIKIT_EXTENSION                                               (1)
+#     import <UIKitExtension/UIKitExtension.h>
+#  elif __has_include("UIKitExtension/UIKitExtension.h")
+#     define UIKIT_EXTENSION                                               (1)
+#     import "UIKitExtension/UIKitExtension.h"
+#  else
+#     define UIKIT_EXTENSION                                               (0)
+#  endif
+
+#  if __has_include(<FBLPromises/FBLPromises.h>)
+#     import <FBLPromises/FBLPromises.h>
+#     define PROMISES                                                      (1)
+//#     define Promise FBLPromise
+typedef FBLPromise Promise;
+#  elif __has_include("FBLPromises/FBLPromises.h")
+#     import "FBLPromises/FBLPromises.h"
+#     define PROMISES                                                      (1)
+typedef FBLPromise Promise;
+#  else
+#     define PROMISES                                                      (0)
+#  endif
+
+#  if __has_include(<AFNetworking/AFNetworking.h>)
+#     import <AFNetworking/AFNetworking.h>
+#     import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#     define AF_NETWORKING                                                 (1)
+#  elif __has_include("AFNetworking/AFNetworking.h")
+#     import "AFNetworking/AFNetworking.h"
+#     import "AFNetworking/AFNetworkActivityIndicatorManager.h"
+#     define AF_NETWORKING                                                 (1)
+#  else
+#     define AF_NETWORKING                                                 (0)
+#  endif
+
+#  import <AFNetworking/AFNetworkReachabilityManager.h>
+
+#  if __has_include(<AFNetworkActivityLogger/AFNetworkActivityLogger.h>)
+#     import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
+#     define AF_NETWORK_ACTIVITY_LOGGER                                    (1 && (1 == DEBUG))
+#  elif __has_include("AFNetworkActivityLogger/AFNetworkActivityLogger.h")
+#     import "AFNetworkActivityLogger/AFNetworkActivityLogger.h"
+#     define AF_NETWORK_ACTIVITY_LOGGER                                    (1 && (1 == DEBUG))
+#  elif __has_include("AFNetworkActivityLogger.h")
+#     import "AFNetworkActivityLogger.h"
+#     define AF_NETWORK_ACTIVITY_LOGGER                                    (1 && (1 == DEBUG))
+#  else
+#     define AF_NETWORK_ACTIVITY_LOGGER                                    (0)
+#  endif
+
+#  if __has_include(<RTRootNavigationController/RTRootNavigationController.h>)
+#     import <RTRootNavigationController/RTRootNavigationController.h>
+#     define RT_ROOT_NAVIGATIONCONTROLLER                                  (1)
+#  elif __has_include("RTRootNavigationController/RTRootNavigationController.h")
+#     import "RTRootNavigationController/RTRootNavigationController.h"
+#     define RT_ROOT_NAVIGATIONCONTROLLER                                  (1)
+#  else
+#     define rt_navigationController                                       navigationController
+#     define RT_ROOT_NAVIGATIONCONTROLLER                                  (0)
+#  endif
+
+#  if __has_include(<IDEAUIKit/UINavigationController+FullscreenPopGesture.h>)
+#     import <IDEAUIKit/UINavigationController+FullscreenPopGesture.h>
+#     define FULLSCREEN_POP_GESTURE                                        (1)
+#  elif __has_include("IDEAUIKit/UINavigationController+FullscreenPopGesture.h")
+#     import "IDEAUIKit/UINavigationController+FullscreenPopGesture.h"
+#     define FULLSCREEN_POP_GESTURE                                        (1)
+#  else
+#     define FULLSCREEN_POP_GESTURE                                        (0)
+#  endif
+
+#  if __has_include(<YYKit/YYKit.h>)
+#     import <YYKit/YYKit.h>
+#     define YY_KIT                                                        (1)
+#  else
+#     define YY_KIT                                                        (0)
+#  endif
+
+#  if __has_include(<pop/POP.h>)
+#     import <pop/POP.h>
+#     define POP                                                           (1)
+#  else
+#     define POP                                                           (0)
+#  endif
+
+#  if __has_include(<Lottie/Lottie.h>)
+#     import <Lottie/Lottie.h>
+#     define LOTTIE_IOS                                                    (1)
+#  else
+#     define LOTTIE_IOS                                                    (0)
+#  endif
+
+#  if __has_include(<MotionAnimator/MotionAnimator.h>)
+#     import <MotionAnimator/MotionAnimator.h>
+#     define MOTION_ANIMATOR                                               (1)
+#  else
+#     define MOTION_ANIMATOR                                               (0)
+#  endif
+
+#  if __has_include(<MDFInternationalization/MDFInternationalization.h>)
+#     import <MDFInternationalization/MDFInternationalization.h>
+#  endif
+
+#  if __has_include(<MDFTextAccessibility/MDFTextAccessibility.h>)
+#     import <MDFTextAccessibility/MDFTextAccessibility.h>
+#  endif
+
+#  if __has_include(<MaterialComponents/MaterialPalettes.h>)
+#     import <MaterialComponents/MaterialPalettes.h>
+#  endif
+
+#  if __has_include(<MaterialComponents/MaterialAppBar.h>)
+#     import <MaterialComponents/MaterialAppBar.h>
+#     import <MaterialComponents/MaterialFlexibleHeader.h>
+#     define MATERIAL_APP_BAR                                              (1)
+#  else
+#     define MATERIAL_APP_BAR                                              (0)
+#  endif
+
+#  if __has_include(<MaterialComponents/MaterialActivityIndicator.h>)
+#     import <MaterialComponents/MaterialPalettes.h>
+#     import <MaterialComponents/MaterialActivityIndicator.h>
+#     define MATERIAL_ACTIVITY_INDICATOR                                   (1)
+#  else
+#     define MATERIAL_ACTIVITY_INDICATOR                                   (0)
+#  endif
+
+#  if __has_include(<IDEANibBridge/IDEANibBridge.h>)
+#     import <IDEANibBridge/IDEANibBridge.h>
+#     define IDEA_NIB_BRIDGE                                               (1)
+#  elif __has_include("IDEANibBridge/IDEANibBridge.h")
+#     import "IDEANibBridge/IDEANibBridge.h"
+#     define IDEA_NIB_BRIDGE                                               (1)
+#  else
+#     define IDEA_NIB_BRIDGE                                               (0)
+#  endif
+
+#  if __has_include(<Appirater/Appirater.h>)
+#     import <Appirater/Appirater.h>
+#     define APP_RATER                                                     (1)
+#  elif __has_include("Appirater/Appirater.h")
+#     import "Appirater/Appirater.h"
+#     define APP_RATER                                                     (1)
+#  else
+#     define APP_RATER                                                     (0)
+#  endif
+
+#  if __has_include(<Masonry/Masonry.h>)
+#     import <Masonry/Masonry.h>
+#     define MASONRY                                                       (1)
+#  elif __has_include("Masonry/Masonry.h")
+#     import "Masonry/Masonry.h"
+#     define MASONRY                                                       (1)
+#  else
+#     define MASONRY                                                       (0)
+#  endif
+
+#  if __has_include(<IDEAPanModal/IDEAPanModal.h>)
+#     import <IDEAPanModal/IDEAPanModal.h>
+#     define IDEA_PAN_MODAL                                                (1)
+#  elif __has_include("IDEAPanModal/IDEAPanModal.h")
+#     import "IDEAPanModal/IDEAPanModal.h"
+#     define IDEA_PAN_MODAL                                                (1)
+#  else
+#     define IDEA_PAN_MODAL                                                (0)
+#  endif
+
+#  if __has_include(<IDEANavigationBar/WRNavigationBar.h>)
+#     import <IDEANavigationBar/WRNavigationBar.h>
+#     define IDEA_NAVIGATION_BAR                                           (1)
+#  elif __has_include("IDEANavigationBar/WRNavigationBar.h")
+#     import "IDEANavigationBar/WRNavigationBar.h"
+#     define IDEA_NAVIGATION_BAR                                           (1)
+#  else
+#     define IDEA_NAVIGATION_BAR                                           (0)
+#  endif
+
+#  if __has_include(<IDEAActivityIndicatorView/IDEAActivityIndicatorView.h>)
+#     import <IDEAActivityIndicatorView/IDEAActivityIndicatorView.h>
+#     define IDEA_ACTIVITY_INDICATOR                                       (1)
+#  elif __has_include("IDEAActivityIndicatorView/IDEAActivityIndicatorView.h")
+#     import "IDEAActivityIndicatorView/IDEAActivityIndicatorView.h"
+#     define IDEA_ACTIVITY_INDICATOR                                       (1)
+#  else
+#     define IDEA_ACTIVITY_INDICATOR                                       (0)
+#  endif
+
+#  if __has_include(<IDEAPalettes/IDEAPalettes.h>)
+#     import <IDEAPalettes/IDEAPalettes.h>
+#     define IDEA_PALETTES                                                 (1)
+#  elif __has_include("IDEAPalettes/IDEAPalettes.h")
+#     import "IDEAPalettes/IDEAPalettes.h"
+#     define IDEA_PALETTES                                                 (1)
+#  else
+#     define IDEA_PALETTES                                                 (0)
+#  endif
+
+#  if __has_include(<IDEANightVersion/DKNightVersion.h>)
+#     import <IDEANightVersion/DKNightVersion.h>
+#     define DK_NIGHT_VERSION                                              (1)
+#  elif __has_include("IDEANightVersion/DKNightVersion.h")
+#     import "IDEANightVersion/DKNightVersion.h"
+#     define DK_NIGHT_VERSION                                              (1)
+#  else
+#     define DK_NIGHT_VERSION                                              (0)
+#  endif
+
+#  if __has_include(<IDEARefresh/MJRefresh.h>)
+#     import <IDEARefresh/MJRefresh.h>
+#     define IDEA_REFRESH                                                  (1)
+#  elif __has_include("IDEARefresh/MJRefresh.h")
+#     import "IDEARefresh/MJRefresh.h"
+#     define IDEA_REFRESH                                                  (1)
+#  else
+#     define IDEA_REFRESH                                                  (0)
+#  endif
+
+#  if __has_include(<IDEAModalTransition/ModalTransitionAnimator.h>)
+#     import <IDEAModalTransition/ModalTransitionAnimator.h>
+#     define IDEA_MODAL_TRANSITION                                         (1)
+#  elif __has_include("IDEAModalTransition/ModalTransitionAnimator.h")
+#     import "IDEAModalTransition/ModalTransitionAnimator.h"
+#     define IDEA_MODAL_TRANSITION                                         (1)
+#  else
+#     define IDEA_MODAL_TRANSITION                                         (0)
+#  endif
+
+#  if __has_include(<IDEATabBarControllerTransition/IDEATabBarControllerTransition.h>)
+#     import <IDEATabBarControllerTransition/IDEATabBarControllerTransition.h>
+#     import <IDEATabBarControllerTransition/IDEATabBarControllerTransitionAnimation.h>
+#     define IDEA_TABBARCONTROLLER_TRANSITION                              (1)
+#  elif __has_include("IDEATabBarControllerTransition/IDEATabBarControllerTransition.h")
+#     import "IDEATabBarControllerTransition/IDEATabBarControllerTransition.h"
+#     import "IDEATabBarControllerTransition/IDEATabBarControllerTransitionAnimation.h"
+#     define IDEA_TABBARCONTROLLER_TRANSITION                              (1)
+#  else
+#     define IDEA_TABBARCONTROLLER_TRANSITION                              (0)
+#  endif
+
+#  if __has_include(<IDEAPhoto/IDEAPhotoTools.h>)
+#     import <IDEAPhoto/IDEAPhotoTools.h>
+#     define IDEA_PHOTO_TOOLS                                              (1)
+#  elif __has_include("IDEAPhoto/IDEAPhotoTools.h")
+#     import "IDEAPhoto/IDEAPhotoTools.h"
+#     define IDEA_PHOTO_TOOLS                                              (1)
+#  else
+#     define IDEA_PHOTO_TOOLS                                              (0)
+#  endif
+
+#  if __has_include(<IDEAStarRateView/IDEAStarRateView.h>)
+#     import <IDEAStarRateView/IDEAStarRateView.h>
+#     define IDEA_STAR_RATE                                                (1)
+#  elif __has_include("IDEAStarRateView/IDEAStarRateView.h")
+#     import "IDEAStarRateView/IDEAStarRateView.h"
+#     define IDEA_STAR_RATE                                                (1)
+#  else
+#     define IDEA_STAR_RATE                                                (0)
+#  endif
+
+#  if __has_include(<IDEASearchController/IDEASearchController.h>)
+#     import <IDEASearchController/IDEASearchController.h>
+#     define IDEA_SEARCH_CONTROLLER                                        (1)
+#  elif __has_include("IDEASearchController/IDEASearchController.h")
+#     import "IDEASearchController/IDEASearchController.h"
+#     define IDEA_SEARCH_CONTROLLER                                        (1)
+#  else
+#     define IDEA_SEARCH_CONTROLLER                                        (0)
+#  endif
+
+#  if __has_include(<IDEARouter/IDEARouter.h>)
+#     import <IDEARouter/IDEARouter.h>
+#     define IDEA_ROUTER                                                   (1)
+#  elif __has_include("IDEARouter/IDEARouter.h")
+#     import "IDEARouter/IDEARouter.h"
+#     define IDEA_ROUTER                                                   (1)
+#  else
+#     define IDEA_ROUTER                                                   (0)
+#  endif
+
+#  if __has_include(<IDEAFONT/IDEAFONT.h>)
+#     import <IDEAFONT/IDEAFONT.h>
+#     define IDEA_FONT                                                     (1)
+#  elif __has_include("IDEAFONT/IDEAFONT.h")
+#     import "IDEAFONT/IDEAFONT.h"
+#     define IDEA_FONT                                                     (1)
+#  else
+#     define IDEA_FONT                                                     (0)
+#  endif
+#endif
+/****************************************************************************/
+
+#if __has_include("FloatingPanel-Swift.h")
+#  import "FloatingPanel-Swift.h"
+#  define IDEA_FLOATING_PANEL                                              (1)
+#else
+#  define IDEA_FLOATING_PANEL                                              (0)
+#endif
+
+/****************************************************************************/
+
+//#import <MMKV/MMKV.h>
+
+/****************************************************************************/
+
+#if __has_include(<IDEAApplet/IDEAApplet.h>)
+#  import <IDEAApplet/IDEAApplet.h>
+#  import <IDEAApplet/IDEAAppletCore.h>
+#  import <IDEAApplet/IDEAAppletModel.h>
+#  import <IDEAApplet/IDEAAppletEvent.h>
+#  import <IDEAApplet/IDEAAppletService.h>
+#endif // __has_include(<IDEAApplet/IDEAApplet.h>)
+
+/****************************************************************************/
+
+#import <IDEAColor/IDEAColor.h>
+#import <IDEAColor/UIColor+System.h>
+#import <IDEAColor/UIColor+Dynamic.h>
+
+#import <IDEAKit/IDEALog.h>
+#import <IDEAKit/IDEADebug.h>
+#import <IDEAKit/IDEAKit.h>
+
+#import <IDEAUIKit/IDEAUIKit.h>
+#import <IDEAUIVendor/IDEAUIVendor.h>
+
+/****************************************************************************/
+
+#if __has_include(<APPDEBUG/APPDEBUG.h>)
+#  import <APPDEBUG/APPDEBUG.h>
+#  import <APPDEBUG/APP_OBFUSCATION.h>
+#  define APP_DEBUG                                                        (1)
+#else
+#  define APP_DEBUG                                                        (0)
+#endif
+
+/****************************************************************************/
+
+#import <APPDATA/APPDATA.h>
+#import <IDEANetUtils/IDEANetUtils.h>
+
+/****************************************************************************/
+
+#import "APPDef.h"
+#import "APPDebug.h"
+#import "APPFont.h"
+#import "APPHTTP.h"
+#import "APPUtils.h"
+
+//NS_INLINE BOOL __isPlatformVersionAtLeast() {
+//
+//   return YES;
+//}
+
+#define PING_STATISTICS_GRAPH                                              (0)
+
+#endif /* Prefix_pch */

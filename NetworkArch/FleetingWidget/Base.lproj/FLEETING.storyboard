@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FLEETING-WIDGET-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController storyboardIdentifier="FleetingWidgetController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M4Y-Lb-cyx" userLabel="FLEETING-WIDGET" customClass="FleetingWidgetController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNI-ja-fZc" userLabel="TITLE">
+                                <rect key="frame" x="40" y="4" width="264" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cp-fY-fBD" userLabel="TIME">
+                                <rect key="frame" x="40" y="40.5" width="264" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qP-tS-eAq" userLabel="COPYRIGHT">
+                                <rect key="frame" x="16" y="77" width="288" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                        <constraints>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="1cp-fY-fBD" secondAttribute="trailing" constant="16" id="2Zv-D4-4nH"/>
+                            <constraint firstItem="1cp-fY-fBD" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="40" id="4M0-6E-k8d"/>
+                            <constraint firstAttribute="trailing" secondItem="fNI-ja-fZc" secondAttribute="trailing" constant="16" id="EcI-yc-wFr"/>
+                            <constraint firstItem="1cp-fY-fBD" firstAttribute="top" secondItem="fNI-ja-fZc" secondAttribute="bottom" constant="4" id="LNi-TS-OiI"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="9qP-tS-eAq" secondAttribute="trailing" constant="16" id="Prc-m4-G5n"/>
+                            <constraint firstItem="9qP-tS-eAq" firstAttribute="top" secondItem="1cp-fY-fBD" secondAttribute="bottom" constant="4" id="TeN-8D-3Yv"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="9qP-tS-eAq" secondAttribute="bottom" constant="2" id="eUQ-ey-28J"/>
+                            <constraint firstItem="9qP-tS-eAq" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="16" id="ejh-dC-M7K"/>
+                            <constraint firstItem="fNI-ja-fZc" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="40" id="fg1-iG-RWA"/>
+                            <constraint firstItem="fNI-ja-fZc" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="4" id="mnI-Pf-fsd"/>
+                            <constraint firstItem="9qP-tS-eAq" firstAttribute="height" secondItem="1cp-fY-fBD" secondAttribute="height" multiplier="1:2" id="w2j-kB-xaZ"/>
+                            <constraint firstItem="1cp-fY-fBD" firstAttribute="height" secondItem="fNI-ja-fZc" secondAttribute="height" id="xNk-g4-Wef"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="95"/>
+                    <connections>
+                        <outlet property="copyrightLabel" destination="9qP-tS-eAq" id="27c-lY-kqd"/>
+                        <outlet property="progressLabel" destination="1cp-fY-fBD" id="OwL-Lq-xJI"/>
+                        <outlet property="titleLabel" destination="fNI-ja-fZc" id="ZLz-Ey-1US"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.73913043478262" y="113.83928571428571"/>
+        </scene>
+    </scenes>
+</document>
