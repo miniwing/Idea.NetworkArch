@@ -248,6 +248,9 @@
    
    [super viewDidDisappear:aAnimated];
    
+   [self.tableView clearSelectedRowsAnimated:YES];
+   [self.tableView reloadData];
+
    __CATCH(nErr);
    
    return;
