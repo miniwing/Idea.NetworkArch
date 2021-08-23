@@ -1,0 +1,66 @@
+/*
+  Localizable.strings
+  NetworkArch
+
+  Created by Harry on 2021/6/7.
+  Copyright © 2021 Harry. All rights reserved.
+*/
+
+/// HOME
+"HOME"                              = "HOME";
+
+/// Wi-Fi
+"WIFI"                              = "Wi-Fi";
+
+"IP Address"                        = "IP Address";
+
+"SSID not available"                = "SSID not available";
+"Wi-Fi not connected"               = "Wi-Fi not connected";
+
+"Interfaces"                        = "Interfaces";
+
+"Click To Get (FREE)"               = "Click To Get (FREE)";
+
+"API Key Empty"                     = "API Key Empty";
+"PRESS OK TO GET (FREE)."           = "PRESS OK TO GET (FREE).";
+"Cancel"                            = "Cancel";
+"OK"                                = "OK";
+"SAVE"                              = "Save";
+
+/// Cellular Network
+"CELLULAR"                          = "Cellular Network";
+
+"No Service"                        = "No Service";
+
+"More Info"                         = "More Info";
+
+/// Utilities
+"UTILITIES"                         = "Utilities";
+
+"Ping"                              = "Ping";
+"Wake on LAN"                       = "Wake on LAN";
+"Whois"                             = "Whois";
+"DNS Lookup"                        = "DNS Lookup";
+
+"IP Address / Host Name"            = "IP Address / Host Name";
+
+/// SETTING
+"SETTING"                           = "SETTING";
+
+"APPEARANCE"                        = "APPEARANCE";
+
+"Appearance"                        = "APPEARANCE";
+"Light"                             = "Light";
+"Night"                             = "Night";
+"Auto"                              = "Automatic";
+
+"Animation"                         = "Animation";
+
+"Rate on App Store"                 = "Rate on App Store";
+
+"About"                             = "About";
+"Follow on Weibo"                   = "Follow on Weibo";
+"Follow on Twitter"                 = "Follow on Twitter";
+"Follow on Facebook"                = "Follow on Facebook";
+
+"Version"                           = "Version";
