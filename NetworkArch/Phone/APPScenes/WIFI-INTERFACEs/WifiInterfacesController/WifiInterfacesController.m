@@ -68,7 +68,7 @@
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
-
+   
    __TRY;
 
    [super viewDidLoad];
@@ -78,7 +78,12 @@
    [self setTitle:APP_STR(@"Interfaces")];
    LogDebug((@"[WifiMoreController viewDidLoad] : VIEW : %@", self.view));
    
-   [self.view setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+   [self.view setBackgroundColor:UIColor.clearColor];
+   [self.tableView setTableHeaderView:[UIView new]];
+   [self.tableView setEstimatedSectionFooterHeight:0];
+   [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+   
+   [self.tableView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
 
 #if MATERIAL_APP_BAR
    [self.navigationController setNavigationBarHidden:YES];
@@ -151,6 +156,10 @@
    } /* End if () */
 #endif /* MATERIAL_APP_BAR */
 
+   self.interfaces   = [IDEANetUtils allInterfaces];
+   
+   [self.tableView reloadData];
+
    __CATCH(nErr);
 
    return;
@@ -220,6 +229,50 @@
    __CATCH(nErr);
 
    return;
+}
+
+#pragma mark - <UITableViewDelegate>
+
+#pragma mark - <UITableViewDataSource>
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
+   
+   return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
+   
+   int                            nErr                                     = EFAULT;
+   
+   NSInteger                      nNumberOfRows                            = 0;
+
+   __TRY;
+
+   nNumberOfRows  = self.interfaces.count;
+   
+   __CATCH(nErr);
+
+   return nNumberOfRows;
+}
+
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {
+   
+   int                            nErr                                     = EFAULT;
+   
+   WifiInterfacesCell            *stWifiInterfacesCell                     = nil;
+
+   __TRY;
+
+   stWifiInterfacesCell = [self.tableView dequeueReusableCellWithIdentifier:WifiInterfacesCell.reuseIdentifier
+                                                               forIndexPath:aIndexPath];
+   
+   
+   
+   __CATCH(nErr);
+
+   return stWifiInterfacesCell;
 }
 
 @end

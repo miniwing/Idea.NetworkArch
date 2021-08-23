@@ -12,11 +12,17 @@
 
 #import "WifiInterfacesController.h"
 
+#import "WifiInterfacesCell+Inner.h"
+#import "WifiInterfacesCell+Signal.h"
+#import "WifiInterfacesCell+Notification.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WifiInterfacesController ()
+@interface WifiInterfacesController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
+
+@property (nonatomic, strong)                NSArray<IDEANetInterface *>         * interfaces;
 
 @end
 

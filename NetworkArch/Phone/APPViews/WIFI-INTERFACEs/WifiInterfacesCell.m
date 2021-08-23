@@ -77,4 +77,17 @@
    return;
 }
 
+- (void)setInterface:(IDEANetInterface *)aNetInterface {
+   
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+
+   _interface  = aNetInterface;
+
+   __CATCH(nErr);
+   
+   return;
+}
+
 @end

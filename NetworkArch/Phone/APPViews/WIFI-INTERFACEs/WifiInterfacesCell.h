@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WifiInterfacesCell ()
 
+- (void)setInterface:(IDEANetInterface *)aNetInterface;
+
 @end
 
 NS_ASSUME_NONNULL_END
