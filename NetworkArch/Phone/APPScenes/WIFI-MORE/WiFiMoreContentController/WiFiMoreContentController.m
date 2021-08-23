@@ -517,6 +517,7 @@
    
    if (WifiSectionDetail == aIndexPath.section) {
       
+#if WIFI_INTERFACES
       if (WifiDetailInterfaces == aIndexPath.row) {
          
          stWifiInterfacesController = [UIStoryboard loadStoryboard:WifiInterfacesController.storyboard
@@ -526,6 +527,7 @@
                                               animated:YES];
          
       } /* End if () */
+#endif /* WIFI_INTERFACES */
       
    } /* End if () */
       

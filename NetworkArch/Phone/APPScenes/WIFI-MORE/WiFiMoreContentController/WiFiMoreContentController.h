@@ -22,6 +22,8 @@ IDEA_ENUM(NSInteger, WifiSection) {
    WifiSectionNumber
 };
 
+#define WIFI_INTERFACES          (__OFF__)
+
 IDEA_ENUM(NSInteger, WifiDetail) {
    
    WifiDetailStatus        = 0,
@@ -32,7 +34,9 @@ IDEA_ENUM(NSInteger, WifiDetail) {
    WifiDetailIPV4          = 5,
    WifiDetailIPV6          = 6,
    WifiDetailExternalIPV4  = 7,
+#if WIFI_INTERFACES
    WifiDetailInterfaces    = 8,
+#endif /* WIFI_INTERFACES */
    WifiDetailNumber
 };
 
