@@ -27,6 +27,11 @@
    
    __TRY;
    
+   dispatch_async_on_main_queue(^{
+      
+      [self.tableView reloadData];
+   });
+   
    __CATCH(nErr);
    
    return;

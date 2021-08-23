@@ -526,7 +526,9 @@
    else if (CellularSectionWarning == aIndexPath.section) {
       
       stTableViewCell   = self.warningCells[aIndexPath.row];
-      
+      [stTableViewCell.titleLabel setTextColorPicker:nil];
+      [stTableViewCell.titleLabel setTextColor:UIColor.labelColor];
+
    } /* End if () */
    
    if (nil != stTableViewCell) {

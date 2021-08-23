@@ -66,12 +66,20 @@ handleSignal(PingController, startPingSignal) {
          LogDebug((@"-[PingController startPingSignal:] : ping : HOST  : %@", aHostName));
          LogDebug((@"-[PingController startPingSignal:] : ping : IP    : %@", aIP));
          
+         if (nil != aError) {
+            
+            return;
+            
+         } /* End if () */
+         
          PingResult  *stPingResult  = [PingResult pingResultWithHostName:aHostName ip:aIP error:aError duration:aTime];
          
-         [self.pingResults addObject:stPingResult];
-
-         dispatch_async_on_main_queue(^{
+         if (nil != stPingResult) {
             
+            [self.pingResults addObject:stPingResult];
+
+            dispatch_async_on_main_queue(^{
+               
 //            [CATransaction begin];
 //
 //            [self.tableView insertRow:self.pingResults.count - 1
@@ -86,25 +94,30 @@ handleSignal(PingController, startPingSignal) {
 //                          atScrollPosition:UITableViewScrollPositionBottom
 //                                  animated:YES];
 //            }];
-            
-            [UIView transitionWithView:self.tableView
-                              duration:0.1
-                               options:UIViewAnimationOptionTransitionCrossDissolve
-                            animations:^{
+               
+               [UIView transitionWithView:self.tableView
+                                 duration:0.1
+                                  options:UIViewAnimationOptionTransitionCrossDissolve
+                               animations:^{
 
-               [self.tableView reloadData];
-            }
-                            completion:^(BOOL finished) {
+                  [self.tableView reloadData];
+               }
+                               completion:^(BOOL finished) {
 
-   //               [self.tableView scrollToRow:self.pingResults.count - 1
-   //                                 inSection:self.sections.count - 1 // PingSectionPing
-   //                          atScrollPosition:UITableViewScrollPositionBottom
-   //                                  animated:YES];
-            }];
-         });
+//               [self.tableView scrollToRow:self.pingResults.count - 1
+//                                 inSection:self.sections.count - 1 // PingSectionPing
+//                          atScrollPosition:UITableViewScrollPositionBottom
+//                                  animated:YES];
+               }];
+            });
+
+         } /* End if () */
       }
                                                        completed:^(NSString * _Nonnull aHostName, NSString * _Nonnull aIP) {
          
+         LogDebug((@"-[PingController startPingSignal:] : completed : HostName : %@", aHostName));
+         LogDebug((@"-[PingController startPingSignal:] : completed : IP : %@", aIP));
+
          dispatch_async_on_main_queue(^{
             
             [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
@@ -117,24 +130,21 @@ handleSignal(PingController, startPingSignal) {
                [self.sections insertObject:@(PingSectionStatistics)
                                    atIndex:PingSectionStatistics];
 
-               dispatch_async_on_main_queue(^{
-                  
-                  [UIView transitionWithView:self.tableView
-                                    duration:UIAViewAnimationDefaultDuraton
-                                     options:UIViewAnimationOptionTransitionCrossDissolve
-                                  animations:^{
+               [UIView transitionWithView:self.tableView
+                                 duration:UIAViewAnimationDefaultDuraton
+                                  options:UIViewAnimationOptionTransitionCrossDissolve
+                               animations:^{
 
-                     [self.tableView reloadData];
-                  }
-                                  completion:^(BOOL finished) {
+                  [self.tableView reloadData];
+               }
+                               completion:^(BOOL finished) {
 
-                     [self.tableView scrollToRow:0
-                                       inSection:PingSectionStatistics
-                                atScrollPosition:UITableViewScrollPositionTop
-                                        animated:YES];
-                  }];
-               });
-               
+                  [self.tableView scrollToRow:0
+                                    inSection:PingSectionStatistics
+                             atScrollPosition:UITableViewScrollPositionTop
+                                     animated:YES];
+               }];
+
             } /* End if () */
             else {
                

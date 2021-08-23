@@ -1,25 +1,22 @@
 //
-//  WiFiMoreContentController+Debug.m
+//  SettingContentController+Debug.m
 //  NetworkArch
 //
-//  Created by Harry on 2021/8/1.
+//  Created by Harry on 2021/8/23.
 //  Copyright © 2021 Harry. All rights reserved.
 //
-//  Mail: miniwing.hz@gmail.com
-//  TEL : +(852)53054612
-//
 
-#import "WiFiMoreContentController+Debug.h"
+#import "SettingContentController+Debug.h"
 
 #if __Debug__
-@implementation WiFiMoreContentController (Debug)
+@implementation SettingContentController (Debug)
 
 @end
 #endif /* __Debug__ */
 
 #if __InjectionIII__
 #pragma mark - InjectionIII
-@implementation WiFiMoreContentController (InjectionIII)
+@implementation SettingContentController (InjectionIII)
 
 - (void)injected {
    
