@@ -52,10 +52,10 @@ Pod::Spec.new do |spec|
 
   spec.resource_bundles     = {
                                 'APPDATA' => [
-                                              'PLISTs/*.plist',
-                                              'JSONs/*.json',
+#                                              'PLISTs/*.plist',
+                                              'JSONs/**/*.json',
 #                                              'DATA/*.png',
-                                              'HTMLs/*.html'
+#                                              'HTMLs/*.html'
                                              ]
                               }
   pch_app_kit = <<-EOS

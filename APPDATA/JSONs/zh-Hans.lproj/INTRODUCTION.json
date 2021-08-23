@@ -1,0 +1,21 @@
+{
+   "title"  : "欢迎 !!!",
+   "summary": "Networks+ 配备了各种工具，包括 ping、Wake on LAN、Whois 和 DNS Lookup.",
+   "introductions": [
+      {
+         "title"  : "Wi-Fi",
+         "summary": "关于 Wi-Fi 网络的详细信息。",
+         "icon"   : "INTRODUCTION-Antenna"
+      },
+      {
+         "title"  : "蜂窝网",
+         "summary": "关于蜂窝网络的详细信息。",
+         "icon"   : "INTRODUCTION-Gear"
+      },
+      {
+         "title"  : "工具",
+         "summary": "如 ping、WoLAN、Whois 和 DNS Lookup。",
+         "icon"   : "INTRODUCTION-WiFi"
+      }
+   ]
+}

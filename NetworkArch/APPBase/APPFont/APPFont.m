@@ -71,7 +71,7 @@
 #define __APP_FONT_BAR_BUTTON_ITEM_SIZE            (14)
 
 #define __APP_FONT_TAB_TITLE                       APP_FONT_ZEKTON_REGULAR
-#define __APP_FONT_TAB_TITLE_SIZE                  (14)
+#define __APP_FONT_TAB_TITLE_SIZE                  (12)
 
 #define __APP_FONT_SEARCH_BAR                      APP_FONT_ZEKTON_LIGHT
 #define __APP_FONT_SEARCH_BAR_SIZE                 (14)
