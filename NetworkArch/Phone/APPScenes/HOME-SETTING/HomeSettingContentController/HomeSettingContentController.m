@@ -73,6 +73,7 @@
    [self.saveButton setCornerRadius:8 clipsToBounds:YES];
    [self.saveButton setBackgroundColor:UIColor.systemRedColor];
    [self.saveButton.titleLabel setFont:[APPFont regularFontOfSize:self.saveButton.titleLabel.font.pointSize]];
+   [self.saveButton setTitle:APP_STR(@"SAVE") forState:UIControlStateNormal];
    
    __CATCH(nErr);
    

@@ -24,14 +24,26 @@
    return;
 }
 
++ (BOOL)isLaunched {
+   
+   return [NSUserDefaults boolForKey:@"isLaunched"];
+}
+
++ (void)setLaunched:(BOOL)aLaunched {
+   
+   [NSUserDefaults setBool:aLaunched forKey:@"isLaunched"];
+   
+   return;
+}
+
 + (BOOL)isTabbarAnimation {
    
    return [NSUserDefaults boolForKey:@"isTabbarAnimation"];
 }
 
-+ (void)setTabbarAnimation:(BOOL)aAutoTheme {
++ (void)setTabbarAnimation:(BOOL)aAnimation {
    
-   [NSUserDefaults setBool:aAutoTheme forKey:@"isTabbarAnimation"];
+   [NSUserDefaults setBool:aAnimation forKey:@"isTabbarAnimation"];
    
    return;
 }
@@ -75,6 +87,18 @@
 @end
 
 @implementation APPDelegate (Storage)
+
++ (BOOL)isApiKeyOpened {
+   
+   return [NSUserDefaults boolForKey:@"isApiKeyOpened"];
+}
+
++ (void)setApiKeyOpened:(BOOL)aApiKeyOpened {
+   
+   [NSUserDefaults setBool:aApiKeyOpened forKey:@"isApiKeyOpened"];
+   
+   return;
+}
 
 + (NSString *)apiKey {
    

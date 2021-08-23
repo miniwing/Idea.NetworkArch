@@ -332,11 +332,14 @@ NS_ASSUME_NONNULL_END
       
       szAPI = [APPDelegate apiKey];
       
-      if (kStringIsBlank(szAPI)) {
+      if (kStringIsBlank(szAPI) && (NO == [APPDelegate isApiKeyOpened])) {
          
          [self postNotify:HomeController.settingNotification
-                  onQueue:dispatch_get_main_queue()];
-
+                  onQueue:dispatch_get_main_queue()
+               completion:^{
+            
+            [APPDelegate setApiKeyOpened:YES];
+         }];
       } /* End if () */
       
       nErr  = noErr;

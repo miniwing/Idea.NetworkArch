@@ -761,6 +761,10 @@
 		4A745EE526C58E9C00DA644A /* WoLANCell+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WoLANCell+Inner.m"; sourceTree = "<group>"; };
 		4A745EE626C58E9C00DA644A /* WoLANCell+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WoLANCell+Debug.m"; sourceTree = "<group>"; };
 		4A745EE726C58E9C00DA644A /* WoLANCell+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WoLANCell+Inner.h"; sourceTree = "<group>"; };
+		4A76718526D375C900EC44B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4A76718626D3764900EC44B1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		4A76718826D3765100EC44B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4A76718926D3766200EC44B1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4A842C7B26AC19D0005DC131 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		4A842C7F26AC1C0B005DC131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkArch.entitlements; sourceTree = "<group>"; };
@@ -2521,6 +2525,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 4A98A62D2684B50F00EEEB60;
 			productRefGroup = 4A98A6372684B50F00EEEB60 /* Products */;
@@ -3229,6 +3234,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				4AE51B982685CD3400DC1DA2 /* Base */,
+				4A76718526D375C900EC44B1 /* en */,
+				4A76718626D3764900EC44B1 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -3237,6 +3244,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				4AE51B9A2685CD3400DC1DA2 /* Base */,
+				4A76718826D3765100EC44B1 /* en */,
+				4A76718926D3766200EC44B1 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -3380,6 +3389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -3410,7 +3420,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Development: Cai Lu (PHD24T76XW)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2021.08231029;
+				CURRENT_PROJECT_VERSION = 2021.08231549;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3445,6 +3455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -3475,7 +3486,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Cai Lu (G8G9TAP4UN)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2021.08231029;
+				CURRENT_PROJECT_VERSION = 2021.08231549;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;

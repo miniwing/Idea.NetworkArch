@@ -136,7 +136,6 @@ target 'NetworkArch' do
 #  pod 'LeetCode'                        , :path => 'LeetCode'                                 , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'APPDEBUG'                        , :path => 'APPDEBUG'                                 , :configurations => ['Debug']
-#  pod 'Reveal-SDK'                      , :path => '../MINIWING-PODs/Reveal'                  , :configurations => ['Debug']
 #  pod 'AFNetworkActivityLogger'         , :path => '../MINIWING-PODs/AFNetworkActivityLogger' , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'IDEAPing'                        , :path => '../MINIWING-PODs/IDEAPing'
@@ -197,7 +196,7 @@ target 'TodayWidget' do
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
 
   pod 'IDEARouter'                      , :path => '../MINIWING-PODs/IDEARouter'
-  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
+#  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
 
   library
   
@@ -208,6 +207,8 @@ end
 target 'FleetingWidget' do
 
   pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
+
+#  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
 
 #  pod 'MMKVAppExtension'
 

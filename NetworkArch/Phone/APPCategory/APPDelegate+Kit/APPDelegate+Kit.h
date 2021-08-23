@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)version;
 + (void)setVersion:(NSString *)aVersion;
 
++ (BOOL)isLaunched;
++ (void)setLaunched:(BOOL)aLaunched;
+
 + (BOOL)isTabbarAnimation;
 + (void)setTabbarAnimation:(BOOL)aAnimation;
 
@@ -30,6 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface APPDelegate (Storage)
+
++ (BOOL)isApiKeyOpened;
++ (void)setApiKeyOpened:(BOOL)aApiKeyOpened;
 
 + (NSString *)apiKey;
 + (void)setApiKey:(NSString *)aApiKey;
