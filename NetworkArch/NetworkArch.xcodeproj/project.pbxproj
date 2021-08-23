@@ -503,6 +503,8 @@
 		4A0EB7E82687268B00AA4366 /* HomeContentCell+Debug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeContentCell+Debug.m"; sourceTree = "<group>"; };
 		4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeContentCell.m; sourceTree = "<group>"; };
 		4A0EB7F02687268B00AA4366 /* HomeContentCell+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeContentCell+Debug.h"; sourceTree = "<group>"; };
+		4A104E7326D3A69800855B2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		4A104E7426D3A6E700855B2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		4A221EF626A44DA000C94F00 /* PingRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Inner.h"; sourceTree = "<group>"; };
 		4A221EF726A44DA000C94F00 /* PingRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingRootController.m; sourceTree = "<group>"; };
 		4A221EF826A44DA000C94F00 /* PingRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Signal.h"; sourceTree = "<group>"; };
@@ -3183,6 +3185,7 @@
 			children = (
 				4A4A004826AEFDD4000D4708 /* Base */,
 				4A4A004A26AEFE64000D4708 /* en */,
+				4A104E7426D3A6E700855B2D /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -3232,6 +3235,7 @@
 			children = (
 				4A842C7F26AC1C0B005DC131 /* Base */,
 				4AF4412426AC8AC90008C169 /* en */,
+				4A104E7326D3A69800855B2D /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -3426,7 +3430,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Development: Cai Lu (PHD24T76XW)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2021.08231549;
+				CURRENT_PROJECT_VERSION = 2021.08231752;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3492,7 +3496,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Cai Lu (G8G9TAP4UN)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2021.08231549;
+				CURRENT_PROJECT_VERSION = 2021.08231752;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;

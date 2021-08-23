@@ -6,15 +6,15 @@
   Copyright © 2021 Harry. All rights reserved.
 */
 
-CFBundleDisplayName              = "NetworkArch";
+CFBundleDisplayName     = "Network+";
 
-"NSLocationAlwaysAndWhenInUseUsageDescription"  = "Location permission is required to access Wi-Fi SSID/BSSID";
-"NSLocationAlwaysUsageDescription"              = "Location permission is required to access Wi-Fi SSID/BSSID";
-"NSLocationWhenInUseUsageDescription"           = "Location permission is required to access Wi-Fi SSID/BSSID";
+NSLocationAlwaysAndWhenInUseUsageDescription = "Location permission is required to access Wi-Fi SSID/BSSID";
+NSLocationAlwaysUsageDescription             = "Location permission is required to access Wi-Fi SSID/BSSID";
+NSLocationWhenInUseUsageDescription          = "Location permission is required to access Wi-Fi SSID/BSSID";
 
-//"NSMicrophoneUsageDescription"                  = "This lets you record videos, identify songs and more.";
-//"NSPhotoLibraryUsageDescription"                = "This lets you share from your camera roll, and enables other features for photos and videos.";
-//"NSPhotoLibraryAddUsageDescription"             = "This lets you save to your camera roll, and enables other features for photos and videos.";
-//"NSCameraUsageDescription"                      = "This will let you take photos and record video.";
-
-//"NSUserTrackingUsageDescription" = "This identifier will be used to deliver personalized ads to you.";
+//NSMicrophoneUsageDescription                 = "This lets you record videos, identify songs and more.";
+//NSPhotoLibraryUsageDescription               = "This lets you share from your camera roll, and enables other features for photos and videos.";
+//NSPhotoLibraryAddUsageDescription            = "This lets you save to your camera roll, and enables other features for photos and videos.";
+//NSCameraUsageDescription                     = "This will let you take photos and record video.";
+//
+//NSUserTrackingUsageDescription               = "This identifier will be used to deliver personalized ads to you.";
