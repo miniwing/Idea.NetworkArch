@@ -108,42 +108,6 @@
 
    } /* End if () */
 
-//   if (aAnimated) {
-//
-//      [UIView transitionWithView:self.selectedColorView
-//                        duration:UIAViewAnimationDefaultDuraton
-//                         options:UIViewAnimationOptionTransitionCrossDissolve
-//                      animations:^{
-//
-//         if (aHighlighted) {
-//
-//            [self.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
-//
-//         } /* End if () */
-//         else {
-//
-////            [self.selectedColorView setBackgroundColor:UIColor.clearColor];
-//
-//         } /* End else */
-//      }
-//                      completion:nil];
-//
-//   } /* End if () */
-//   else {
-//
-//      if (aHighlighted) {
-//
-//         [self.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
-//
-//      } /* End if () */
-//      else {
-//
-////         [self.selectedColorView setBackgroundColor:UIColor.clearColor];
-//
-//      } /* End else */
-//
-//   } /* End else */
-
    __CATCH(nErr);
    
    return;
@@ -188,42 +152,6 @@
       [self.selectedColorView setBackgroundColor:UIColor.clearColor];
 
    } /* End else */
-
-//   if (aAnimated) {
-//
-//      [UIView transitionWithView:self.selectedColorView
-//                        duration:UIAViewAnimationDefaultDuraton
-//                         options:UIViewAnimationOptionTransitionCrossDissolve
-//                      animations:^{
-//
-//         if (aSelected) {
-//
-//            [self.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
-//
-//         } /* End if () */
-//         else {
-//
-//            [self.selectedColorView setBackgroundColor:UIColor.clearColor];
-//
-//         } /* End else */
-//      }
-//                      completion:nil];
-//
-//   } /* End if () */
-//   else {
-//
-//      if (aSelected) {
-//
-//         [self.selectedColorView setBackgroundColor:UIColor.systemBlueColor];
-//
-//      } /* End if () */
-//      else {
-//
-//         [self.selectedColorView setBackgroundColor:UIColor.clearColor];
-//
-//      } /* End else */
-//
-//   } /* End else */
    
    __CATCH(nErr);
    

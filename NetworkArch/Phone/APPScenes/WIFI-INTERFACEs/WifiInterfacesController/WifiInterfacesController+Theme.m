@@ -9,6 +9,7 @@
 //  TEL : +(852)53054612
 //
 
+#import "WifiInterfacesController+Inner.h"
 #import "WifiInterfacesController+Theme.h"
 
 #pragma mark - UITheme
@@ -17,23 +18,45 @@
 // #if DK_NIGHT_VERSION
 // #endif // #if DK_NIGHT_VERSION
 - (void)onThemeUpdate:(NSNotification *)aNotification {
-
+   
    int                            nErr                                     = EFAULT;
    
+#if MATERIAL_APP_BAR
+#else /* MATERIAL_APP_BAR */
+   NSMutableDictionary           *stTitleAttributes                        = nil;
+#endif /* !MATERIAL_APP_BAR */
+
    __TRY;
    
-   LogDebug((@"-[WifiInterfacesController onThemeUpdate:] : Notification : %@", aNotification));
+   [super onThemeUpdate:aNotification];
+   
+   LogDebug((@"-[CellularMoreController onThemeUpdate:] : Notification : %@", aNotification));
 
-   if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
-
-      [super onThemeUpdate:aNotification];
+#if MATERIAL_APP_BAR
+   [self.appBar.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
+   [self.appBar.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
+   
+   [self.appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
+   [self.appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
+#else /* MATERIAL_APP_BAR */
+   if (nil == self.navigationController.navigationBar.titleTextAttributes) {
+      
+      stTitleAttributes = [NSMutableDictionary dictionary];
       
    } /* End if () */
+   else {
+      
+      stTitleAttributes = [self.navigationController.navigationBar.titleTextAttributes mutableCopy];
+      
+   } /* End else */
 
-   [self setNeedsStatusBarAppearanceUpdate];
-
+   [stTitleAttributes setObject:[IDEAColor colorWithKey:[IDEAColor label]]
+                         forKey:NSForegroundColorAttributeName];
+   [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
+#endif /* !MATERIAL_APP_BAR */
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
