@@ -6,5 +6,4 @@
   Copyright © 2021 Harry. All rights reserved.
 */
 
-"CFBundleName"          = "Fleeting";
-"CFBundleDisplayName"   = "Fleeting";
+CFBundleDisplayName     = "Fleeting+";

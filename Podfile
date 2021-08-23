@@ -16,7 +16,7 @@ install!  'cocoapods',
 
 ENV['OLLVM']                      = 'NO'
 
-ENV['IDEAFONT_HY']                = 'YES'
+ENV['IDEAFONT_HY']                = 'NO'
 ENV['IDEAFONT_MSYH']              = 'NO'
 ENV['IDEAFONT_ZEKTON']            = 'YES'
 ENV['IDEAFONT']                   = 'YES'

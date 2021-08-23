@@ -88,7 +88,7 @@
    
    NSString    *szPath     = [self pathForName:aIntroductionName];
    LogDebug((@"-[APPDATA introductionPath:] : JSON : %@", szPath));
-   
+      
    NSString     *szContent = [NSString stringWithContentsOfFile:szPath
                                                        encoding:NSUTF8StringEncoding
                                                           error:nil];

@@ -52,9 +52,9 @@
 "Appearance"                        = "外观";
 "Light"                             = "浅色";
 "Night"                             = "深色";
-"Auto"                              = "Automatic";
+"Auto"                              = "自动（跟随系统)";
 
-"Animation"                         = "自动（跟随系统)";
+"Animation"                         = "动画";
 
 "Rate on App Store"                 = "在App Store上评分";
 

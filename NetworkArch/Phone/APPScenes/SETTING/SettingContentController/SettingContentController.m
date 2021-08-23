@@ -564,7 +564,7 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    } /* End if () */
    if (SettingAnimation == aSection) {
       
-      szTitle  = APP_STR(@"Animation");
+//      szTitle  = APP_STR(@"Animation");
       
    } /* End if () */
    

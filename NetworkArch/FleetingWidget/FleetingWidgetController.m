@@ -51,7 +51,7 @@
    LogDebug((@"-[FleetingWidgetController viewDidLoad] : Remaining : ", APP_STR(@"Remaining")));
    [self.titleLabel setText:[NSString stringWithFormat:APP_STR(@"Remaining"), [OneYear sharedInstance].year]];
    
-   [self.progressLabel setFont:[UIFont HYRegularFontOfSize:self.progressLabel.font.pointSize]];
+   [self.progressLabel setFont:[UIFont monospacedDigitSystemFontOfSize:self.progressLabel.font.pointSize weight:UIFontWeightRegular]];
    [self.progressLabel setText:[OneYear sharedInstance].currentProgress];
 
    @weakify(self);

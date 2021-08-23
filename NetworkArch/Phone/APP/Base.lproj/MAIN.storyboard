@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="78d-RW-zss">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="78d-RW-zss">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +29,9 @@
         <scene sceneID="ZjF-n1-Bth">
             <objects>
                 <navigationController storyboardIdentifier="SettingRootController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bgJ-1x-kTo" userLabel="SETTING-ROOT" customClass="SettingRootController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hU3-Dp-RjH"/>
+                    <tabBarItem key="tabBarItem" title="SETTING" image="TAB-SETTING" selectedImage="TAB-SETTING+" id="hU3-Dp-RjH">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tq2-e0-RfY">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -56,7 +58,7 @@
         <scene sceneID="RvZ-Rp-CTv">
             <objects>
                 <navigationController storyboardIdentifier="HomeRootController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6SH-va-QmJ" userLabel="HOME-ROOT" customClass="HomeRootController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="HOOME" id="XZ0-Uu-iRS"/>
+                    <tabBarItem key="tabBarItem" title="HOME" image="TAB-HOME" selectedImage="TAB-HOME+" id="XZ0-Uu-iRS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3ei-al-baA">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -80,4 +82,10 @@
             <point key="canvasLocation" x="874" y="-389"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TAB-HOME" width="22" height="22"/>
+        <image name="TAB-HOME+" width="22" height="22"/>
+        <image name="TAB-SETTING" width="22" height="22"/>
+        <image name="TAB-SETTING+" width="21.5" height="21.5"/>
+    </resources>
 </document>

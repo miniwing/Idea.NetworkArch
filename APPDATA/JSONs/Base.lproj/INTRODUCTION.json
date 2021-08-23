@@ -1,0 +1,21 @@
+{
+   "title"  : "Welcome !!!",
+   "summary": "Networks+ is equipped with various tools, including ping, Wake on LAN, Whois and DNS Lookup",
+   "introductions": [
+      {
+         "title"  : "Wi-Fi Information",
+         "summary": "Detailed infomation about your Wi-Fi network.",
+         "icon"   : "INTRODUCTION-Antenna"
+      },
+      {
+         "title"  : "Cellular Informtion",
+         "summary": "Detailed infomation about your cellular network.",
+         "icon"   : "INTRODUCTION-Gear"
+      },
+      {
+         "title"  : "Utilites",
+         "summary": "Such as ping, WoLAN, Whois and DNS lookup.",
+         "icon"   : "INTRODUCTION-WiFi"
+      }
+   ]
+}
