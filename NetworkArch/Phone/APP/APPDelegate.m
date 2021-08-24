@@ -10,9 +10,11 @@
 //
 
 #import "APPDelegate.h"
-#import "APPDelegate+Inner.h"
 #import "APPDelegate+APP.h"
 #import "APPDelegate+Kit.h"
+
+#import "APPDelegate+Inner.h"
+#import "APPDelegate+Signal.h"
 
 #import "RootViewController.h"
 #import "SplashViewController.h"
@@ -189,6 +191,12 @@
    
    [self splash];
    
+   if (NO == [APPDelegate isApiKeySetting]) {
+      
+      [self sendSignal:APPDelegate.loadApiKeySignal];
+
+   } /* End if () */
+   
 //   /******************************************************************************************/
 //   /**
 //    监听网络状态
@@ -249,7 +257,12 @@
    __TRY;
    
    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-   
+   if (NO == [APPDelegate isApiKeySetting]) {
+      
+      [self sendSignal:APPDelegate.loadApiKeySignal];
+
+   } /* End if () */
+
    __CATCH(nErr);
    
    return;
@@ -362,6 +375,7 @@
          // 当前版本第一次进入
          // 可能需要升级数据。
          [APPDelegate setVersion:[UIApplication sharedApplication].appVersion];
+         [APPDelegate setApiKeySetting:NO];
          
       } /* End else */
       

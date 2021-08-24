@@ -22,7 +22,7 @@ IDEA_ENUM(NSInteger, WifiSection) {
    WifiSectionNumber
 };
 
-#define WIFI_INTERFACES          (__OFF__)
+#define WIFI_INTERFACES          (__ON__)
 
 IDEA_ENUM(NSInteger, WifiDetail) {
    

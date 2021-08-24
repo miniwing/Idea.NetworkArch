@@ -68,7 +68,7 @@
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
-
+   
    __TRY;
 
    [super viewDidLoad];
@@ -76,9 +76,14 @@
    // Do any additional setup after loading the view.
    
    [self setTitle:APP_STR(@"Interfaces")];
-   LogDebug((@"[WifiMoreController viewDidLoad] : VIEW : %@", self.view));
+   LogDebug((@"[WifiInterfacesController viewDidLoad] : VIEW : %@", self.view));
    
-   [self.view setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+   [self.view setBackgroundColor:UIColor.clearColor];
+   [self.tableView setTableHeaderView:[UIView new]];
+   [self.tableView setEstimatedSectionFooterHeight:0];
+   [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+   
+   [self.tableView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
 
 #if MATERIAL_APP_BAR
    [self.navigationController setNavigationBarHidden:YES];
@@ -142,7 +147,7 @@
     contentView.top
     */
    stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"tableView.top"
-                                                              fromView:self.tableView];
+                                                              fromView:self.view];
    
    if (nil != stLayoutConstraint) {
       
@@ -150,6 +155,14 @@
       
    } /* End if () */
 #endif /* MATERIAL_APP_BAR */
+   
+   self.tableView.delegate    = self;
+   self.tableView.dataSource  = self;
+
+   self.interfaces   = [IDEANetUtils allInterfaces];
+   LogDebug((@"[WifiInterfacesController viewDidLoad] : Interfaces : %d", self.interfaces.count));
+   
+   [self.tableView reloadData];
 
    __CATCH(nErr);
 
@@ -220,6 +233,52 @@
    __CATCH(nErr);
 
    return;
+}
+
+#pragma mark - <UITableViewDelegate>
+
+#pragma mark - <UITableViewDataSource>
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
+   
+   int                            nErr                                     = EFAULT;
+   
+   NSInteger                      nNumberOfSections                        = 0;
+
+   __TRY;
+
+   nNumberOfSections = self.interfaces.count;
+   
+   __CATCH(nErr);
+
+   return nNumberOfSections;
+}
+
+- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
+   
+   return 1;
+}
+
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {
+   
+   int                            nErr                                     = EFAULT;
+   
+   WifiInterfacesCell            *stWifiInterfacesCell                     = nil;
+   IDEANetInterface              *stNetInterface                           = nil;
+
+   __TRY;
+
+   stWifiInterfacesCell = [self.tableView dequeueReusableCellWithIdentifier:WifiInterfacesCell.reuseIdentifier
+                                                               forIndexPath:aIndexPath];
+   
+   stNetInterface = [self.interfaces objectAtIndex:aIndexPath.section];
+   [stWifiInterfacesCell setInterface:stNetInterface];
+   
+   __CATCH(nErr);
+
+   return stWifiInterfacesCell;
 }
 
 @end

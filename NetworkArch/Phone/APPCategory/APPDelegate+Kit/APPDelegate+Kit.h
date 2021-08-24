@@ -34,6 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPDelegate (Storage)
 
++ (BOOL)isApiKeySetting;
++ (void)setApiKeySetting:(BOOL)aApiKeySetting;
+
 + (BOOL)isApiKeyOpened;
 + (void)setApiKeyOpened:(BOOL)aApiKeyOpened;
 

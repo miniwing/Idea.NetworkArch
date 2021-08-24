@@ -43,9 +43,18 @@
 }
 
 #pragma mark - xmlApi
++ (NSArray<NSString *> *)xmlAPIKeys {
+
+   return @[
+            @"at_wa51HmNxHCpSNqTTi1UFv38wluCtf",   // iidioter@gmail.com
+            @"at_hEg6nadLZL7nmP2TwUbOVuaKsOtfE",   // uidioter@gmail.com
+            @"at_ODKJJ7LzdGPJlhVdGcRDscQ6Ck5iM",   // iidioter@qq.com
+           ];
+}
+
 + (NSString *)xmlAPIKey {
    
-   return @"at_wa51HmNxHCpSNqTTi1UFv38wluCtf";
+   return [[APPDATA xmlAPIKeys] objectAtIndex:(arc4random() % [APPDATA xmlAPIKeys].count)];
 }
 
 #pragma mark - HTML

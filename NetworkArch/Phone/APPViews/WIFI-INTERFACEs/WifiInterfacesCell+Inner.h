@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WifiInterfacesCell ()
 
+@property (nonatomic, strong)                IDEANetInterface                    * interface;
+
 @end
 
 @interface WifiInterfacesCell (Inner)
