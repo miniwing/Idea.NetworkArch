@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -75,17 +75,161 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="G8X-Ka-L3Y">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="66" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="G8X-Ka-L3Y">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WifiInterfacesCell" id="Cj7-7Z-Eop">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="WifiInterfacesCell" id="Cj7-7Z-Eop" customClass="WifiInterfacesCell">
+                                        <rect key="frame" x="0.0" y="49" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cj7-7Z-Eop" id="wbo-4X-Rcc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJe-Jc-evg" userLabel="容器">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="66"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygH-55-pqQ" userLabel="上">
+                                                            <rect key="frame" x="8" y="0.0" width="343" height="32.666666666666664"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2Y-64-8MN" userLabel="UP">
+                                                                    <rect key="frame" x="8" y="4" width="34.666666666666664" height="25"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mm-rr-6y1">
+                                                                            <rect key="frame" x="8.0000000000000018" y="4" width="18.666666666666671" height="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="6Mm-rr-6y1" firstAttribute="leading" secondItem="x2Y-64-8MN" secondAttribute="leading" constant="8" id="7Kp-Ut-Esm"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="6Mm-rr-6y1" secondAttribute="bottom" constant="4" id="ApJ-Th-qId"/>
+                                                                        <constraint firstItem="6Mm-rr-6y1" firstAttribute="top" secondItem="x2Y-64-8MN" secondAttribute="top" constant="4" id="UHo-44-blK"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="6Mm-rr-6y1" secondAttribute="trailing" constant="8" id="nrA-Hg-sYl"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSO-ZB-EBQ" userLabel="RUNing">
+                                                                    <rect key="frame" x="50.666666666666671" y="4" width="61" height="25"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Runing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENX-et-KLV">
+                                                                            <rect key="frame" x="8" y="4" width="45" height="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="ENX-et-KLV" secondAttribute="bottom" constant="4" id="Guc-8l-GtI"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="ENX-et-KLV" secondAttribute="trailing" constant="8" id="Zrd-4s-4lM"/>
+                                                                        <constraint firstItem="ENX-et-KLV" firstAttribute="leading" secondItem="iSO-ZB-EBQ" secondAttribute="leading" constant="8" id="gfh-Q2-BXi"/>
+                                                                        <constraint firstItem="ENX-et-KLV" firstAttribute="top" secondItem="iSO-ZB-EBQ" secondAttribute="top" constant="4" id="j2R-0Y-mda"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMU-ff-abJ" userLabel="DEVICE">
+                                                                    <rect key="frame" x="121.66666666666666" y="4" width="73.666666666666657" height="25"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="eh0/IPv4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3I-g9-EAG">
+                                                                            <rect key="frame" x="7.9999999999999964" y="4" width="57.666666666666657" height="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="T3I-g9-EAG" firstAttribute="top" secondItem="tMU-ff-abJ" secondAttribute="top" constant="4" id="11Z-Nx-Cqt"/>
+                                                                        <constraint firstItem="T3I-g9-EAG" firstAttribute="leading" secondItem="tMU-ff-abJ" secondAttribute="leading" constant="8" id="644-R4-gJt"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="T3I-g9-EAG" secondAttribute="trailing" constant="8" id="Vhv-If-oyH"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="T3I-g9-EAG" secondAttribute="bottom" constant="4" id="jr2-sk-lFR"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="tMU-ff-abJ" firstAttribute="leading" secondItem="iSO-ZB-EBQ" secondAttribute="trailing" constant="10" id="05J-Xe-RyU"/>
+                                                                <constraint firstItem="iSO-ZB-EBQ" firstAttribute="centerY" secondItem="ygH-55-pqQ" secondAttribute="centerY" id="CNF-Xt-Ufi"/>
+                                                                <constraint firstItem="iSO-ZB-EBQ" firstAttribute="leading" secondItem="x2Y-64-8MN" secondAttribute="trailing" constant="8" id="Fem-ee-rM4"/>
+                                                                <constraint firstItem="x2Y-64-8MN" firstAttribute="centerY" secondItem="ygH-55-pqQ" secondAttribute="centerY" id="Kmx-sf-n5n"/>
+                                                                <constraint firstItem="x2Y-64-8MN" firstAttribute="leading" secondItem="ygH-55-pqQ" secondAttribute="leading" constant="8" id="cU3-vI-us2"/>
+                                                                <constraint firstItem="tMU-ff-abJ" firstAttribute="centerY" secondItem="ygH-55-pqQ" secondAttribute="centerY" id="wdW-Up-cD3"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvj-AT-hup" userLabel="分割线">
+                                                            <rect key="frame" x="8" y="32.666666666666664" width="343" height="0.6666666666666643"/>
+                                                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="0.5" id="IyQ-XL-qbP"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHO-zi-Sxc" userLabel="下">
+                                                            <rect key="frame" x="8" y="33.333333333333343" width="343" height="32.666666666666657"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSf-ag-CUa">
+                                                                    <rect key="frame" x="8.0000000000000036" y="4.0000000000000018" width="56.333333333333343" height="24.666666666666671"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="127.0.0.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6op-UZ-C0c">
+                                                                    <rect key="frame" x="166" y="4.0000000000000018" width="169" height="24.666666666666671"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="6op-UZ-C0c" secondAttribute="trailing" constant="8" id="1V4-Fr-eZX"/>
+                                                                <constraint firstItem="6op-UZ-C0c" firstAttribute="width" secondItem="PSf-ag-CUa" secondAttribute="width" multiplier="3:1" id="8kB-aX-JLx"/>
+                                                                <constraint firstAttribute="bottom" secondItem="PSf-ag-CUa" secondAttribute="bottom" constant="4" id="GaY-Og-frD"/>
+                                                                <constraint firstItem="6op-UZ-C0c" firstAttribute="top" secondItem="kHO-zi-Sxc" secondAttribute="top" constant="4" id="HyS-SY-oEl"/>
+                                                                <constraint firstItem="PSf-ag-CUa" firstAttribute="top" secondItem="kHO-zi-Sxc" secondAttribute="top" constant="4" id="MDF-or-9L1"/>
+                                                                <constraint firstAttribute="bottom" secondItem="6op-UZ-C0c" secondAttribute="bottom" constant="4" id="Tmi-Oq-VHG"/>
+                                                                <constraint firstItem="PSf-ag-CUa" firstAttribute="leading" secondItem="kHO-zi-Sxc" secondAttribute="leading" constant="8" id="iET-ww-kKM"/>
+                                                                <constraint firstItem="6op-UZ-C0c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PSf-ag-CUa" secondAttribute="trailing" constant="8" id="xQQ-2S-w36"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ygH-55-pqQ" firstAttribute="top" secondItem="qJe-Jc-evg" secondAttribute="top" id="0VI-EK-XDr"/>
+                                                        <constraint firstItem="kHO-zi-Sxc" firstAttribute="leading" secondItem="qJe-Jc-evg" secondAttribute="leading" constant="8" id="0cG-Lq-hut"/>
+                                                        <constraint firstAttribute="bottom" secondItem="kHO-zi-Sxc" secondAttribute="bottom" id="8rz-4V-DJv"/>
+                                                        <constraint firstItem="ygH-55-pqQ" firstAttribute="leading" secondItem="qJe-Jc-evg" secondAttribute="leading" constant="8" id="9vg-Zf-g6H"/>
+                                                        <constraint firstItem="vvj-AT-hup" firstAttribute="leading" secondItem="qJe-Jc-evg" secondAttribute="leading" constant="8" id="Gzf-qk-Ahw"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ygH-55-pqQ" secondAttribute="trailing" constant="8" id="OKA-AH-XJJ"/>
+                                                        <constraint firstItem="kHO-zi-Sxc" firstAttribute="height" secondItem="ygH-55-pqQ" secondAttribute="height" id="SOC-IC-9sT"/>
+                                                        <constraint firstItem="vvj-AT-hup" firstAttribute="top" secondItem="ygH-55-pqQ" secondAttribute="bottom" id="XYx-Fm-yKa"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vvj-AT-hup" secondAttribute="trailing" constant="8" id="icr-tI-DhK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kHO-zi-Sxc" secondAttribute="trailing" constant="8" id="mDk-dY-1ul"/>
+                                                        <constraint firstItem="vvj-AT-hup" firstAttribute="bottom" secondItem="kHO-zi-Sxc" secondAttribute="top" id="qMN-1t-wCO"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qJe-Jc-evg" firstAttribute="leading" secondItem="wbo-4X-Rcc" secondAttribute="leading" constant="8" id="7kZ-Y6-KCh"/>
+                                                <constraint firstItem="qJe-Jc-evg" firstAttribute="top" secondItem="wbo-4X-Rcc" secondAttribute="top" id="8AW-KF-v2J"/>
+                                                <constraint firstAttribute="bottom" secondItem="qJe-Jc-evg" secondAttribute="bottom" id="Gcu-88-Qvj"/>
+                                                <constraint firstAttribute="trailing" secondItem="qJe-Jc-evg" secondAttribute="trailing" constant="8" id="pQf-04-W9P"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="PSf-ag-CUa" id="ezO-Xi-dU2"/>
+                                            <outlet property="bottomView" destination="kHO-zi-Sxc" id="hO3-SQ-H57"/>
+                                            <outlet property="containerView" destination="qJe-Jc-evg" id="n63-QO-Ao0"/>
+                                            <outlet property="deviceLabel" destination="T3I-g9-EAG" id="Tnx-nd-41k"/>
+                                            <outlet property="deviceView" destination="tMU-ff-abJ" id="hU6-fZ-36Y"/>
+                                            <outlet property="ipLabel" destination="6op-UZ-C0c" id="OXh-Pv-0lM"/>
+                                            <outlet property="runingLabel" destination="ENX-et-KLV" id="msK-Y9-upw"/>
+                                            <outlet property="runingView" destination="iSO-ZB-EBQ" id="pqD-Lm-0YI"/>
+                                            <outlet property="separatorView" destination="vvj-AT-hup" id="z7j-0j-hS5"/>
+                                            <outlet property="topView" destination="ygH-55-pqQ" id="6EZ-q5-tVu"/>
+                                            <outlet property="upLabel" destination="6Mm-rr-6y1" id="1rl-lx-NgH"/>
+                                            <outlet property="upView" destination="x2Y-64-8MN" id="LF0-7v-fgp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -116,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70F-Va-Xqx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="912"/>
+            <point key="canvasLocation" x="1080.8" y="911.82266009852219"/>
         </scene>
         <!--WiFi-MORE-CONTENT-->
         <scene sceneID="UwD-Ue-u31">
@@ -130,7 +274,7 @@
                             <tableViewSection headerTitle="Wi-Fi" id="VtN-IS-bPb">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="ruH-ve-Bvq" userLabel="1" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="49" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ruH-ve-Bvq" id="Mt7-Ry-e90">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -201,7 +345,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="KHI-Uy-RJn" userLabel="2" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="103.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="97" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KHI-Uy-RJn" id="RED-Lf-9f5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -260,7 +404,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="92V-Bm-Lvj" userLabel="3" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="151.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="145" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="92V-Bm-Lvj" id="SHY-Ja-5RR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -319,7 +463,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="cBP-vF-LQg" userLabel="4" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="199.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="193" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cBP-vF-LQg" id="oZK-EG-VJY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -378,7 +522,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="xa2-cD-DRW" userLabel="5" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="247.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="241" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xa2-cD-DRW" id="MUr-w9-M9X">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -437,7 +581,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="jt8-mR-spq" userLabel="6" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="295.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="289" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jt8-mR-spq" id="Qlj-gl-XBX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -496,7 +640,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="WpJ-oP-TJf" userLabel="7" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="343.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="337" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WpJ-oP-TJf" id="RPw-cF-j5Q">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -555,7 +699,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="BQd-5x-EAU" userLabel="8" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="391.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="385" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BQd-5x-EAU" id="1HL-Hl-vg4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -614,7 +758,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="48" id="gRD-2C-xaP" userLabel="9" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="439.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="433" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gRD-2C-xaP" id="LHh-vr-CrO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -686,7 +830,7 @@
                             <tableViewSection headerTitle="Data Usage" id="HqM-jd-SVF" userLabel="DATA-USAGE">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="rV0-nx-pdR" userLabel="1" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="543.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="530.66666603088379" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rV0-nx-pdR" id="sNW-cY-gbs">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -745,7 +889,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="QKQ-PP-Px2" userLabel="2" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="591.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="578.66666603088379" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QKQ-PP-Px2" id="P7V-gG-ego">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -808,7 +952,7 @@
                             <tableViewSection id="YOI-AJ-GR5" userLabel="WARNING">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="PnW-LS-Wlb" userLabel="1" customClass="WifiMoreCell">
-                                        <rect key="frame" x="0.0" y="675.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="662.66666603088379" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PnW-LS-Wlb" id="Fza-Y2-Kgb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -954,11 +1098,17 @@
         <image name="UIAccessoryButtonInfo" width="22" height="22"/>
         <image name="UIButtonBarArrowLeft" width="11.5" height="21"/>
         <image name="UTILITIES-RIGHT" width="16.333333969116211" height="28.666666030883789"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

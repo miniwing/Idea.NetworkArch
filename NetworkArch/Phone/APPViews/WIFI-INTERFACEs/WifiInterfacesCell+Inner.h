@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WifiInterfacesCell ()
 
-@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
 @property (nonatomic, strong)                IDEANetInterface                    * interface;
 
 @end

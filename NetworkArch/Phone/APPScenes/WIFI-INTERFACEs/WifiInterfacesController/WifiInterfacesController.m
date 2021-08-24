@@ -76,7 +76,7 @@
    // Do any additional setup after loading the view.
    
    [self setTitle:APP_STR(@"Interfaces")];
-   LogDebug((@"[WifiMoreController viewDidLoad] : VIEW : %@", self.view));
+   LogDebug((@"[WifiInterfacesController viewDidLoad] : VIEW : %@", self.view));
    
    [self.view setBackgroundColor:UIColor.clearColor];
    [self.tableView setTableHeaderView:[UIView new]];
@@ -147,7 +147,7 @@
     contentView.top
     */
    stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"tableView.top"
-                                                              fromView:self.tableView];
+                                                              fromView:self.view];
    
    if (nil != stLayoutConstraint) {
       
@@ -155,8 +155,12 @@
       
    } /* End if () */
 #endif /* MATERIAL_APP_BAR */
+   
+   self.tableView.delegate    = self;
+   self.tableView.dataSource  = self;
 
    self.interfaces   = [IDEANetUtils allInterfaces];
+   LogDebug((@"[WifiInterfacesController viewDidLoad] : Interfaces : %d", self.interfaces.count));
    
    [self.tableView reloadData];
 
@@ -236,22 +240,22 @@
 #pragma mark - <UITableViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
    
-   return 1;
+   int                            nErr                                     = EFAULT;
+   
+   NSInteger                      nNumberOfSections                        = 0;
+
+   __TRY;
+
+   nNumberOfSections = self.interfaces.count;
+   
+   __CATCH(nErr);
+
+   return nNumberOfSections;
 }
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
    
-   int                            nErr                                     = EFAULT;
-   
-   NSInteger                      nNumberOfRows                            = 0;
-
-   __TRY;
-
-   nNumberOfRows  = self.interfaces.count;
-   
-   __CATCH(nErr);
-
-   return nNumberOfRows;
+   return 1;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -262,13 +266,15 @@
    int                            nErr                                     = EFAULT;
    
    WifiInterfacesCell            *stWifiInterfacesCell                     = nil;
+   IDEANetInterface              *stNetInterface                           = nil;
 
    __TRY;
 
    stWifiInterfacesCell = [self.tableView dequeueReusableCellWithIdentifier:WifiInterfacesCell.reuseIdentifier
                                                                forIndexPath:aIndexPath];
    
-   
+   stNetInterface = [self.interfaces objectAtIndex:aIndexPath.section];
+   [stWifiInterfacesCell setInterface:stNetInterface];
    
    __CATCH(nErr);
 
