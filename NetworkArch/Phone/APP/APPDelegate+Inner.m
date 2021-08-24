@@ -6,6 +6,9 @@
 //  Copyright © 2021 Harry. All rights reserved.
 //
 
+#import "APPDelegate+APP.h"
+#import "APPDelegate+Kit.h"
+
 #import "APPDelegate+Inner.h"
 #import "APPDelegate+Signal.h"
 
@@ -48,6 +51,12 @@
       [self postSignal:APPDelegate.networkStatusSignal
             withObject:@(aStatus)
                onQueue:dispatch_get_main_queue()];
+      
+      if (NO == [APPDelegate isApiKeySetting]) {
+         
+         [self sendSignal:APPDelegate.loadApiKeySignal];
+
+      } /* End if () */
    }];
    
    //开启网络监听

@@ -12,7 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPDelegate (Signal)
 
-@signal  (networkStatus);
+@signal(networkStatus);
+
+@signal(loadApiKey);
+@signal(loadApiKeyDone);
+
+@signal(apiKeySetting);
 
 @end
 

@@ -88,6 +88,18 @@
 
 @implementation APPDelegate (Storage)
 
++ (BOOL)isApiKeySetting {
+   
+   return [NSUserDefaults boolForKey:@"isApiKeySetting"];
+}
+
++ (void)setApiKeySetting:(BOOL)aApiKeySetting {
+   
+   [NSUserDefaults setBool:aApiKeySetting forKey:@"isApiKeySetting"];
+   
+   return;
+}
+
 + (BOOL)isApiKeyOpened {
    
    return [NSUserDefaults boolForKey:@"isApiKeyOpened"];

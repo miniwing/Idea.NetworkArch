@@ -150,6 +150,7 @@
 #import <IDEAKit/IDEAKit.h>
 
 #import <APPDATA/APPDATA.h>
+#import <APPDATA/NetworkArch.h>
 
 #import "APPDef.h"
 #import "APPDebug.h"

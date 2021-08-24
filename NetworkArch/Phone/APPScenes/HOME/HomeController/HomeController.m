@@ -9,6 +9,10 @@
 //  TEL : +(852)53054612
 //
 
+#import "APPDelegate+APP.h"
+#import "APPDelegate+Kit.h"
+#import "APPDelegate+Signal.h"
+
 #import "HomeController.h"
 #import "HomeController+Inner.h"
 #import "HomeController+Theme.h"
@@ -31,6 +35,8 @@
    
 //   [self removeSignalResponder:self.contentController];
    
+   [[APPDelegate APP] removeSignalResponder:self];
+
    [self unobserveAllNotifications];
    [self removeAllSignalResponders];
 
@@ -143,9 +149,23 @@
    
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
-   
-   [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarSetting"]];
+      
+   if ([APPDelegate isApiKeySetting]) {
+      
+      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarSetting"]];
+
+      [self.rightBarButtonItem setEnabled:YES];
+      
+   } /* End if () */
+   else {
+
+//      [self.rightBarButtonItem setTintColor:UIColor.clearColor];
+//      [self.rightBarButtonItem setImage:nil];
+
+      [self.rightBarButtonItem setEnabled:NO];
+
+   } /* End else */
    
    [self.contentView setBackgroundColor:UIColor.clearColor];
    
@@ -166,6 +186,7 @@
    
    [self.locationManager requestAlwaysAuthorization];
 
+   [[APPDelegate APP] addSignalResponder:self];
    [self addSignalResponder:self.contentController];
 
    __CATCH(nErr);

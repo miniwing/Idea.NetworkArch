@@ -438,6 +438,7 @@ typedef FBLPromise Promise;
 /****************************************************************************/
 
 #import <APPDATA/APPDATA.h>
+#import <APPDATA/NetworkArch.h>
 #import <IDEANetUtils/IDEANetUtils.h>
 
 /****************************************************************************/

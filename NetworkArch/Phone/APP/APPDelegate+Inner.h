@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)                RootViewController                  * rootViewController;
 @property (nonatomic, strong)                SplashViewController                * splashViewController;
 
+@property (nonatomic, strong)                NetworkArch                         * networkArch;
+
 @property (nonatomic, strong)                AFNetworkReachabilityManager        * networkReachabilityManager;
 
 @end
