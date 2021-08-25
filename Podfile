@@ -34,9 +34,9 @@ ENV['IDEA_SERVICE_FILE_SYNC']   = 'NO'
 def miniwing_pod(pod_name, file = pod_name, type = 'remote', branch = 'master', modular_headers = true)
   case type
     when 'local'
-      pod pod_name, :path => "../../MINIWING-PODs/#{file}",                :inhibit_warnings => false, :modular_headers => modular_headers
+      pod pod_name, :path => "../../MINIWING-PODs/#{file}"        , :inhibit_warnings => false, :modular_headers => modular_headers
     when 'remote'
-      pod pod_name, :git  => "git@github.com:miniwing/#{file}.git", :branch => "#{branch}",     :modular_headers => modular_headers
+      pod pod_name, :git  => "git@github.com:miniwing/#{file}.git", :branch => "#{branch}"    ,     :modular_headers => modular_headers
     else
   end
 end
@@ -278,14 +278,9 @@ post_install do |installer|
       config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS']= 'NO'
 
       if ENV['OLLVM'] == 'YES'
-#        config.build_settings['HEADER_SEARCH_PATHS']          = ["$(SRCROOT)/../ollvm-libs"];
         config.build_settings['LIBRARY_SEARCH_PATHS']         = ["$(SRCROOT)/../ollvm-libs"];
         config.build_settings['OTHER_LDFLAGS']                = ["-l\"clang_rt.ios\""];
 #        config.build_settings['OTHER_CFLAGS']                 = ["-mllvm -sub -mllvm -fla -mllvm -bcf"];
-#        config.build_settings['OTHER_CFLAGS']                ||= [
-#                                                                    '$(inherited)',
-##                                                                    '-mllvm -sub -mllvm -fla -mllvm -bcf'
-#                                                                  ]
       end # OLLVM
       
 #      config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'NO'
