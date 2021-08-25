@@ -355,9 +355,9 @@
    szVersion   = [APPDelegate version];
    LogDebug((@"-[APPDelegate loadData] : version    : %@", szVersion));
    LogDebug((@"-[APPDelegate loadData] : appVersion : %@", [UIApplication sharedApplication].appVersion));
-   
+      
    // 第一次进入
-   if (kStringIsEmpty(szVersion)) {
+   if (kStringIsBlank(szVersion)) {
       
       [APPDelegate setVersion:[UIApplication sharedApplication].appVersion];
       [APPDelegate setTabbarAnimation:YES];

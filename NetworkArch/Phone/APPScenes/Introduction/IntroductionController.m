@@ -388,7 +388,7 @@
       
       szAPI = [APPDelegate apiKey];
       
-      if (kStringIsBlank(szAPI)) {
+      if ([APPDelegate isApiKeySetting] && kStringIsBlank(szAPI)) {
          
          [self postNotify:HomeController.settingNotification
                   onQueue:dispatch_get_main_queue()];

@@ -332,7 +332,7 @@ NS_ASSUME_NONNULL_END
       
       szAPI = [APPDelegate apiKey];
       
-      if (kStringIsBlank(szAPI) && (NO == [APPDelegate isApiKeyOpened])) {
+      if ([APPDelegate isApiKeySetting] && kStringIsBlank(szAPI) && (NO == [APPDelegate isApiKeyOpened])) {
          
          [self postNotify:HomeController.settingNotification
                   onQueue:dispatch_get_main_queue()
