@@ -69,14 +69,13 @@ def library
   miniwing_pod('UIKitExtension', file = 'FoundationExtension', type = 'remote', branch = 'master', modular_headers = true)
 
   if ENV['IDEA_YYKIT'] == 'YES'
-    pod 'YYKit'                         , :path => '../MINIWING-PODs/YYKit'
+    miniwing_pod('YYKit', file = 'YYKit', type = 'local', branch = 'master', modular_headers = true)
   end # IDEA_YYKIT
 
   if ENV['IDEA_AFNETWORKING'] == 'YES'
-    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'            , :configurations => ['Debug']
-#    pod 'AFNetworking'                  , :path => '../MINIWING-PODs/AFNetworking'
+    miniwing_pod('AFNetworking', file = 'AFNetworking', type = 'local', branch = 'master', modular_headers = true)
   else
-    pod 'AFNetworking/Reachability'     , :path => '../MINIWING-PODs/AFNetworking'
+    miniwing_pod('AFNetworking/Reachability', file = 'AFNetworking', type = 'local', branch = 'master', modular_headers = true)
   end # IDEA_AFNETWORKING
 
   if ENV['IDEAFONT'] == 'YES'
@@ -89,6 +88,9 @@ def library
 
   pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
 
+  if ENV['OLLVM'] == 'YES'
+    pod 'ollvm'                         , :path => '../MINIWING-PODs/ollvm'
+  end
 end
 
 ###################################################################################################################################
@@ -146,13 +148,10 @@ target 'NetworkArch' do
 #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'IDEAEventKit'                    , :path => '../MINIWING-PODs/IDEAEventKit'
   pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
-
-#  pod 'IDEANightVersion'                , :path => '../MINIWING-PODs/IDEANightVersion'
-  miniwing_pod('IDEANightVersion', file = 'IDEANightVersion', type = 'local', branch = 'develop', modular_headers = true)
-#  pod 'IDEASkeletonAnimated'            , :path => '../MINIWING-PODs/IDEASkeletonAnimated'
   pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
-  miniwing_pod('IDEATabBarControllerTransition', file = 'IDEATabBarControllerTransition', type = 'local', branch = 'develop', modular_headers = true)
   #-------------------------------------------------------------------------------------------------------------------------------#
+  miniwing_pod('IDEANightVersion', file = 'IDEANightVersion', type = 'remote', branch = 'develop', modular_headers = true)
+  miniwing_pod('IDEATabBarControllerTransition', file = 'IDEATabBarControllerTransition', type = 'local', branch = 'develop', modular_headers = true)
 #  miniwing_pod('IDEAEventBus', file = 'IDEAEventBus', type = 'local', branch = 'develop', modular_headers = true)
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
@@ -269,9 +268,15 @@ post_install do |installer|
 #                                                                ]
 #      end
 
-      config.build_settings['LD_RUNPATH_SEARCH_PATHS']        = ['$(FRAMEWORK_SEARCH_PATHS)']
-      config.build_settings['WARNING_CFLAGS']                 = ['-Wdeprecated-declarations']
-      
+      config.build_settings['LD_RUNPATH_SEARCH_PATHS']          = ['$(FRAMEWORK_SEARCH_PATHS)']
+      config.build_settings['WARNING_CFLAGS']                   = [
+                                                                    '-Wdeprecated-declarations',
+                                                                    '-Wdocumentation-html',
+                                                                    '-Wdocumentation',
+                                                                    '-Wstrict-prototypes'
+                                                                  ]
+      config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS']= 'NO'
+
       if ENV['OLLVM'] == 'YES'
 #        config.build_settings['HEADER_SEARCH_PATHS']          = ["$(SRCROOT)/../ollvm-libs"];
         config.build_settings['LIBRARY_SEARCH_PATHS']         = ["$(SRCROOT)/../ollvm-libs"];
