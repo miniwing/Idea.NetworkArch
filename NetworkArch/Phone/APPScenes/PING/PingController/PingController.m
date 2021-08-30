@@ -191,7 +191,7 @@
 #if __Debug__
    dispatch_async_on_main_queue(^{
 
-      [self.textField setText:@"www.baidu.com"];
+      [self.textField setText:@"Harrys-CRGT.local"];
    });
 #endif /* __Debug__ */
    
