@@ -63,17 +63,17 @@ def library
   pod 'APPDATA'                         , :path => 'APPDATA'
 
   if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
-    miniwing_pod('FoundationExtension'  , file = 'FoundationExtension', type = 'remote', branch = 'master', modular_headers = true)
+    miniwing_pod('FoundationExtension'  , file = 'FoundationExtension', type = 'remote', branch = 'develop', modular_headers = true)
   end # IDEA_FOUNDATION_EXTENSION
 
-  miniwing_pod('UIKitExtension', file = 'FoundationExtension', type = 'remote', branch = 'master', modular_headers = true)
+  miniwing_pod('UIKitExtension', file = 'FoundationExtension', type = 'remote', branch = 'develop', modular_headers = true)
 
   if ENV['IDEA_YYKIT'] == 'YES'
-    miniwing_pod('YYKit', file = 'YYKit', type = 'local', branch = 'master', modular_headers = true)
+    miniwing_pod('YYKit', file = 'YYKit', type = 'remote', branch = 'master', modular_headers = true)
   end # IDEA_YYKIT
 
   if ENV['IDEA_AFNETWORKING'] == 'YES'
-    miniwing_pod('AFNetworking', file = 'AFNetworking', type = 'local', branch = 'master', modular_headers = true)
+    miniwing_pod('AFNetworking', file = 'AFNetworking', type = 'remote', branch = 'develop', modular_headers = true)
   else
     miniwing_pod('AFNetworking/Reachability', file = 'AFNetworking', type = 'local', branch = 'master', modular_headers = true)
   end # IDEA_AFNETWORKING
