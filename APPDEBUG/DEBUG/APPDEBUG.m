@@ -43,19 +43,19 @@
 
 + (nullable UIImage *)imageNamed:(NSString *)aName {
    
-   UIImage     *stImage = [UIImage imageNamed:aName
-                                     inBundle:[APPDEBUG bundle]
-                compatibleWithTraitCollection:nil];
+   UIImage  *stImage = [UIImage imageNamed:aName
+                                  inBundle:[APPDEBUG bundle]
+             compatibleWithTraitCollection:nil];
    
    return stImage;
 }
 
 + (nullable UIImage *)imageWithContentsOfFile:(NSString *)aName {
    
-   NSString    *szPath  = [self pathForName:aName];
+   NSString *szPath  = [self pathForName:aName];
    LogDebug((@"PATH : %@", szPath));
    
-   UIImage     *stImage = [UIImage imageWithContentsOfFile:szPath];
+   UIImage  *stImage = [UIImage imageWithContentsOfFile:szPath];
    
    return stImage;
 }

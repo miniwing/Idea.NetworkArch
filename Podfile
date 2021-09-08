@@ -86,10 +86,8 @@ platform :ios, '10.0'
 
 def library
   
-  pod 'APPDATA'                         , :path => 'APPDATA'
-
   if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
-    github_pod('FoundationExtension'  , file = 'FoundationExtension', type = 'local', branch = 'develop')
+    github_pod('FoundationExtension', file = 'FoundationExtension', type = 'local', branch = 'develop')
   end # IDEA_FOUNDATION_EXTENSION
 
   if ENV['IDEA_UIKIT_EXTENSION'] == 'YES'
@@ -120,6 +118,9 @@ def library
   
   github_pod('IDEAApplet', file = 'IDEAApplet', type = 'local', branch = 'develop')
 
+  pod 'APPDATA' , :path => 'APPDATA'
+  pod 'APPDEBUG', :path => 'APPDEBUG', :configurations => ['Debug']
+
 end
 
 ###################################################################################################################################
@@ -142,7 +143,6 @@ target 'NetworkArch' do
 #  pod 'Masonry'
   pod 'Appirater'
 #  pod 'ZKCycleScrollView'
-#  pod 'NetUtils'
   
   pod 'RTRootNavigationController'
 
@@ -160,14 +160,10 @@ target 'NetworkArch' do
 #  pod 'FloatingPanel'
 
   #-------------------------------------------------------------------------------------------------------------------------------#
-#  pod 'DoraemonKit'                                                                           , :configurations => ['Debug']
-#  pod 'YKWoodpecker'                                                                          , :configurations => ['Debug']
-  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
+#  pod 'DoraemonKit', :configurations => ['Debug']
+#  pod 'YKWoodpecker', :configurations => ['Debug']
+  pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
-#  pod 'LeetCode'                        , :path => 'LeetCode'                                 , :configurations => ['Debug']
-  #-------------------------------------------------------------------------------------------------------------------------------#
-#  pod 'APPDEBUG'                        , :path => 'APPDEBUG'                                 , :configurations => ['Debug']
-#  pod 'AFNetworkActivityLogger'         , :path => '../MINIWING-PODs/AFNetworkActivityLogger' , :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
   miniwing_pod('IDEAPing', type = 'local', branch = 'develop')
   miniwing_pod('IDEARouter', type = 'local', branch = 'develop')
@@ -196,7 +192,7 @@ end
 
 #target 'TodayClip' do
 #
-#  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
+# pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
 #
 #  library
 #
@@ -206,7 +202,7 @@ end
 
 target 'TodayWidget' do
   
-  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
+  pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
 
 #  pod 'MMKVAppExtension'
 
@@ -223,11 +219,7 @@ end
 
 target 'FleetingWidget' do
 
-  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
-
-#  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
-
-#  pod 'MMKVAppExtension'
+  pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
 
   library
   
