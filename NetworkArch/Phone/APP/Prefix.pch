@@ -429,7 +429,6 @@ typedef FBLPromise Promise;
 
 #if __has_include(<APPDEBUG/APPDEBUG.h>)
 #  import <APPDEBUG/APPDEBUG.h>
-#  import <APPDEBUG/APP_OBFUSCATION.h>
 #  define APP_DEBUG                                                        (1)
 #else
 #  define APP_DEBUG                                                        (0)
