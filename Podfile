@@ -214,7 +214,6 @@ target 'TodayWidget' do
   miniwing_pod('IDEAUIVendor', type = 'local', branch = 'develop')
 
   miniwing_pod('IDEARouter', type = 'local', branch = 'develop')
-#  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
 
   library
   
