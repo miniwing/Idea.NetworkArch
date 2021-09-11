@@ -87,39 +87,43 @@ platform :ios, '10.0'
 def library
   
   if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
-    github_pod('FoundationExtension', file = 'FoundationExtension', type = 'remote', branch = 'develop')
+    github_pod('FoundationExtension', file = 'FoundationExtension', type = 'local', branch = 'develop')
   end # IDEA_FOUNDATION_EXTENSION
 
   if ENV['IDEA_UIKIT_EXTENSION'] == 'YES'
-    github_pod('UIKitExtension', file = 'FoundationExtension', type = 'remote', branch = 'develop')
+    github_pod('UIKitExtension', file = 'FoundationExtension', type = 'local', branch = 'develop')
   end # IDEA_FOUNDATION_EXTENSION
 
   if ENV['IDEA_YYKIT'] == 'YES'
-    github_pod('YYKit', file = 'YYKit', type = 'remote', branch = 'develop')
+    github_pod('YYKit', file = 'YYKit', type = 'local', branch = 'develop')
   end # IDEA_YYKIT
 
   if ENV['IDEA_AFNETWORKING'] == 'YES'
-    github_pod('AFNetworking', file = 'AFNetworking', type = 'remote', branch = 'develop')
+    github_pod('AFNetworking', file = 'AFNetworking', type = 'local', branch = 'develop')
   else
-    github_pod('AFNetworking/Reachability', file = 'AFNetworking', type = 'remote', branch = 'develop')
+    github_pod('AFNetworking/Reachability', file = 'AFNetworking', type = 'local', branch = 'develop')
   end # IDEA_AFNETWORKING
 
+  github_pod('IDEAApplet', file = 'IDEAApplet', type = 'local', branch = 'develop')
+
   if ENV['IDEAFONT'] == 'YES'
-    miniwing_pod('IDEAFONT', type = 'remote', branch = 'develop')
+    miniwing_pod('IDEAFONT', type = 'local', branch = 'develop')
   end # IDEAFONT
 
-  miniwing_pod('IDEAKit', type = 'remote', branch = 'develop')
-  miniwing_pod('IDEAColor', type = 'remote', branch = 'develop')
-  miniwing_pod('IDEAPalettes', type = 'remote', branch = 'develop')
+  miniwing_pod('IDEAKit', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAColor', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAPalettes', type = 'local', branch = 'develop')
+
+  miniwing_pod('IDEALanScan', type = 'local', branch = 'develop')
 
   if ENV['OLLVM'] == 'YES'
-    miniwing_pod('ollvm', type = 'remote', branch = 'develop')
+    miniwing_pod('ollvm', type = 'local', branch = 'develop')
   end # OLLVM
-  
-  github_pod('IDEAApplet', file = 'IDEAApplet', type = 'remote', branch = 'develop')
 
   pod 'APPDATA' , :path => 'APPDATA'
   pod 'APPDEBUG', :path => 'APPDEBUG', :configurations => ['Debug']
+
+#  pod 'MMLanScan'
 
 end
 
@@ -165,18 +169,18 @@ target 'NetworkArch' do
   pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
   #-------------------------------------------------------------------------------------------------------------------------------#
-  miniwing_pod('IDEAPing', type = 'remote', branch = 'develop')
-  miniwing_pod('IDEARouter', type = 'remote', branch = 'develop')
-  miniwing_pod('IDEANetUtils', type = 'remote', branch = 'develop')
+  miniwing_pod('IDEAPing', type = 'local', branch = 'develop')
+  miniwing_pod('IDEARouter', type = 'local', branch = 'develop')
+  miniwing_pod('IDEANetUtils', type = 'local', branch = 'develop')
 #-------------------------------------------------------------------------------------------------------------------------------#
-  miniwing_pod('IDEAUIKit', type = 'remote', branch = 'develop')
-  miniwing_pod('IDEAUIVendor', type = 'remote', branch = 'develop')
+  miniwing_pod('IDEAUIKit', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAUIVendor', type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
-  miniwing_pod('IDEANightVersion', type = 'remote', branch = 'develop')
-  miniwing_pod('IDEATabBarControllerTransition', type = 'remote', branch = 'develop')
+  miniwing_pod('IDEANightVersion', type = 'local', branch = 'develop')
+  miniwing_pod('IDEATabBarControllerTransition', type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
-#  github_pod('IDEAApplet', file = 'IDEAApplet', type = 'remote', branch = 'develop')
-  github_pod('IDEAAppletDebugger', file = 'IDEAApplet', type = 'remote', branch = 'develop', configurations = ['Debug'])
+#  github_pod('IDEAApplet', file = 'IDEAApplet', type = 'local', branch = 'develop')
+  github_pod('IDEAAppletDebugger', file = 'IDEAApplet', type = 'local', branch = 'develop', configurations = ['Debug'])
   #-------------------------------------------------------------------------------------------------------------------------------#
 
 #  pod 'GoogleAnalytics'
@@ -206,10 +210,10 @@ target 'TodayWidget' do
 
 #  pod 'MMKVAppExtension'
 
-  miniwing_pod('IDEAUIKit', type = 'remote', branch = 'develop')
-  miniwing_pod('IDEAUIVendor', type = 'remote', branch = 'develop')
+  miniwing_pod('IDEAUIKit', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAUIVendor', type = 'local', branch = 'develop')
 
-  miniwing_pod('IDEARouter', type = 'remote', branch = 'develop')
+  miniwing_pod('IDEARouter', type = 'local', branch = 'develop')
 
   library
   
