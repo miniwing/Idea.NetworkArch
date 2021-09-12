@@ -306,8 +306,9 @@
          [stWifiScanCell setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight];
 
       } /* End if () */
-      if (self.wifiScanResults.count - 1 == aIndexPath.row) {
+      else if (self.wifiScanResults.count - 1 == aIndexPath.row) {
          
+         [stWifiScanCell.separatorView setHidden:YES];
          [stWifiScanCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
 
       } /* End if () */
@@ -356,18 +357,27 @@
    
    self.scaning      = NO;
    
-   stWifiScanResults = [NSMutableArray<WifiScanResult *> array];
-   
-   for (MMDevice *stDevice in self.devices) {
+   if (MMLanScannerStatusFinished == aStatus) {
+
+      stWifiScanResults = [NSMutableArray<WifiScanResult *> array];
       
-      [stWifiScanResults addObject:[WifiScanResult scanResultWithDevice:stDevice]];
+      for (MMDevice *stDevice in self.devices) {
+         
+         LogDebug((@"-[WifiScanController lanScanDidFinishScanningWithStatus:] : Brand : %@", stDevice.brand));
+
+         [stWifiScanResults addObject:[WifiScanResult scanResultWithDevice:stDevice]];
+         
+      } /* End for () */
       
-   } /* End for () */
-   
-   stValueDescriptor = [[NSSortDescriptor alloc] initWithKey:@"device.ipAddress" ascending:YES];
-   
-   //Updating the array that holds the data. MainVC will be notified by KVO
-   self.wifiScanResults = [[stWifiScanResults sortedArrayUsingDescriptors:@[stValueDescriptor]] mutableCopy];
+      stValueDescriptor = [[NSSortDescriptor alloc] initWithKey:@"device.ipAddress" ascending:YES];
+      
+      //Updating the array that holds the data. MainVC will be notified by KVO
+      self.wifiScanResults = [[stWifiScanResults sortedArrayUsingDescriptors:@[stValueDescriptor]] mutableCopy];
+
+   } /* (MMLanScannerStatusFinished == aStatus) */
+   else if (MMLanScannerStatusCancelled == aStatus) {
+      
+   } /* (MMLanScannerStatusCancelled == aStatus) */
 
    dispatch_async_on_main_queue(^{
       
@@ -413,7 +423,7 @@
    return;
 }
 
--(void)lanScanDidFailedToScan {
+- (void)lanScanDidFailedToScan {
    
    int                            nErr                                     = EFAULT;
    

@@ -137,7 +137,6 @@
 //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.256.168.254") isIPAddress] ? @"YES" : @"NO"));
 //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"256.192.168.254") isIPAddress] ? @"YES" : @"NO"));
 
-   
    NSArray<NSString *>  *stIPV4s = [(@"192.168.2.22") IPV4s];
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IPV4s : %@", stIPV4s));
 
