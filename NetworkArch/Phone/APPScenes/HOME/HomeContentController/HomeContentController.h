@@ -17,8 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 IDEA_ENUM(NSInteger, HomeSection) {
    
    HomeSectionWifi      = 0,
-   HomeSectionCellular  = 1,
-   HomeSectionUtilities = 2,
+   HomeSectionScan      = 1,
+   HomeSectionCellular  = 2,
+   HomeSectionUtilities = 3,
 //   HomeSectionCopyright = 3,
    HomeSectionNumber
 };
@@ -61,6 +62,11 @@ IDEA_ENUM(NSInteger, HomeUtilities) {
 
 @property (nonatomic, weak)   IBOutlet       UILabel                             * wifiMoreLabel;
 @property (nonatomic, weak)   IBOutlet       UIImageView                         * wifiMoreIcon;
+
+@property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * scanCells;
+@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * scanCellContainerViews;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * scanLabel;
+@property (nonatomic, weak)   IBOutlet       UIImageView                         * scanIcon;
 
 @property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * cellularCells;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * cellularCellContainerViews;

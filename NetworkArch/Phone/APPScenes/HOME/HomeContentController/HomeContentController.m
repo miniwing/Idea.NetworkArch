@@ -16,6 +16,7 @@
 #import "HomeContentController+Signal.h"
 
 #import "WifiMoreController.h"
+#import "WifiScanController.h"
 #import "CellularMoreController.h"
 #import "PingController.h"
 #import "WoLANController.h"
@@ -99,7 +100,17 @@
 #endif /* !__DEBUG_COLOR__ */
       
    } /* End for () */
-   
+
+   for (UIView *stView in self.scanCellContainerViews) {
+      
+#if __DEBUG_COLOR__
+      [stView setBackgroundColor:UIColor.systemBlueColor];
+#else /* __DEBUG_COLOR__ */
+      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+#endif /* !__DEBUG_COLOR__ */
+      
+   } /* End for () */
+
    for (UIView *stView in self.cellularCellContainerViews) {
       
 #if __DEBUG_COLOR__
@@ -189,6 +200,31 @@
    self.wifiCells[HomeWifiSSID].canSelected  = NO;
    self.wifiCells[HomeWifiIP].canSelected    = NO;
    self.wifiCells[HomeWifiMore].canSelected  = YES;
+
+   /**
+    Scan
+    */
+   [self.scanLabel setBackgroundColor:UIColor.clearColor];
+   [self.scanLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.scanLabel setFont:[APPFont regularFontOfSize:self.scanLabel.font.pointSize]];
+   [self.scanLabel setText:APP_STR(@"SCAN")];
+
+   [self.scanIcon setBackgroundColor:UIColor.clearColor];
+   [self.scanIcon setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return UIColor.whiteColor;
+         
+      } /* End if () */
+      else {
+         
+         return UIColor.blackColor;
+         
+      }/* End else */
+   }];
+
+   self.scanCells[0].canSelected = YES;
 
    /**
     Cellular
@@ -400,6 +436,8 @@
    [self.wifiCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
    [self.wifiCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
    
+   [self.scanCellContainerViews.firstObject setCornerRadius:8 clipsToBounds:YES];
+   
    [self.cellularCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
    [self.cellularCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
    
@@ -495,7 +533,18 @@
       break;
       
    } /* End if () */
-   
+
+   if (HomeSectionScan == aSection) {
+      
+      nNumberOfRows  = self.scanCells.count;
+      LogDebug((@"-[HomeContentController tableView:numberOfRowsInSection:] : HomeSectionWifi : %d", nNumberOfRows));
+      
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+
    if (HomeSectionCellular == aSection) {
       
       nNumberOfRows  = self.cellularCells.count;
@@ -559,7 +608,17 @@
       break;
       
    } /* End if () */
-   
+
+   if (HomeSectionScan == aSection) {
+      
+      szTitle  = APP_STR(@"SCAN");
+      
+      nErr  = noErr;
+      
+      break;
+      
+   } /* End if () */
+
    if (HomeSectionCellular == aSection) {
       
       szTitle  = APP_STR(@"CELLULAR");
@@ -601,6 +660,11 @@
       
       stTableViewCell   = self.wifiCells[aIndexPath.row];
       
+   } /* End if () */
+   else if (HomeSectionScan == aIndexPath.section) {
+
+      stTableViewCell   = self.scanCells[aIndexPath.row];
+
    } /* End if () */
    else if (HomeSectionCellular == aIndexPath.section) {
       
@@ -699,6 +763,7 @@
    HomeContentCell               *stTableViewCell                          = nil;
    
    WifiMoreController            *stWifiMoreController                     = nil;
+   WifiScanController            *stWifiScanController                     = nil;
    CellularMoreController        *stCellularMoreController                 = nil;
    
    PingController                *stPingController                         = nil;
@@ -747,10 +812,16 @@
          
          stViewController  = stWifiMoreController;
          
-         LogDebug((@"canOpenURL : %d", [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"NetworkArch://"]]));
-
       } /* End if () */
       
+   } /* End if () */
+   else if (HomeSectionScan == aIndexPath.section) {
+
+      stWifiScanController = [UIStoryboard loadStoryboard:WifiScanController.storyboard
+                                           viewController:WifiScanController.class];
+      
+      stViewController     = stWifiScanController;
+
    } /* End if () */
    else if (HomeSectionCellular == aIndexPath.section) {
       

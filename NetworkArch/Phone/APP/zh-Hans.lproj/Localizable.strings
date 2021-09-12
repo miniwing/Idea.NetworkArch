@@ -11,6 +11,9 @@
 
 /// Wi-Fi
 "WIFI"                              = "Wi-Fi";
+"SCAN"                              = "扫描";
+"Scan LAN"                          = "扫描局域网";
+"SCAN EMPTY"                        = "未发现设备";
 
 "IP Address"                        = "IP 地址";
 

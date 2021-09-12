@@ -11,6 +11,9 @@
 
 /// Wi-Fi
 "WIFI"                              = "Wi-Fi";
+"SCAN"                              = "SCAN";
+"Scan LAN"                          = "Scan LAN";
+"SCAN EMPTY"                        = "No Device Found";
 
 "IP Address"                        = "IP Address";
 

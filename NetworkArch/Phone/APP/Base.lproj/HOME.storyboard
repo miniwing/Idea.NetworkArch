@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U4B-qG-a8E" userLabel="COPYRIGHT">
-                            <rect key="frame" x="0.0" y="665" width="375" height="30"/>
+                            <rect key="frame" x="0.0" y="769.33333206176758" width="375" height="30"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Copyright © 2021 Harry. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XQ-Ee-bt8" userLabel="TITLE">
@@ -253,10 +253,70 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Scan" id="wzq-oE-zhd" userLabel="Scan">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="48" id="zem-MK-Ksv" customClass="HomeContentCell">
+                                        <rect key="frame" x="0.0" y="255.33333206176758" width="375" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zem-MK-Ksv" id="Y8N-S9-7DC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5Y-Mc-EHk" userLabel="容器">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="48"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j37-kn-fQA" userLabel="选中">
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
+                                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Scan LAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3C-W6-h13" userLabel="Scan LAN">
+                                                            <rect key="frame" x="8" y="0.0" width="327" height="48"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UTILITIES-RIGHT" translatesAutoresizingMaskIntoConstraints="NO" id="0xF-H5-a3N" userLabel="ICON">
+                                                            <rect key="frame" x="327" y="0.0" width="8" height="48"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="8" id="4xu-kU-9IC"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="j37-kn-fQA" firstAttribute="top" secondItem="L5Y-Mc-EHk" secondAttribute="top" id="1zD-TB-Ne2"/>
+                                                        <constraint firstAttribute="trailing" secondItem="a3C-W6-h13" secondAttribute="trailing" constant="8" id="Ax9-T6-gZY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0xF-H5-a3N" secondAttribute="trailing" constant="8" id="B5w-zq-rv3"/>
+                                                        <constraint firstItem="j37-kn-fQA" firstAttribute="leading" secondItem="L5Y-Mc-EHk" secondAttribute="leading" id="Lee-yq-PSj"/>
+                                                        <constraint firstItem="a3C-W6-h13" firstAttribute="top" secondItem="L5Y-Mc-EHk" secondAttribute="top" id="N0v-Uo-kUV"/>
+                                                        <constraint firstItem="0xF-H5-a3N" firstAttribute="top" secondItem="L5Y-Mc-EHk" secondAttribute="top" id="S25-NU-fGR"/>
+                                                        <constraint firstItem="a3C-W6-h13" firstAttribute="leading" secondItem="L5Y-Mc-EHk" secondAttribute="leading" constant="8" id="SOz-AY-6No"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0xF-H5-a3N" secondAttribute="bottom" id="hlv-Dk-fIY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="j37-kn-fQA" secondAttribute="trailing" id="lyo-Bu-qWj"/>
+                                                        <constraint firstAttribute="bottom" secondItem="j37-kn-fQA" secondAttribute="bottom" id="u0X-UV-kZ1"/>
+                                                        <constraint firstAttribute="bottom" secondItem="a3C-W6-h13" secondAttribute="bottom" id="wgj-Rz-iLS"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="L5Y-Mc-EHk" secondAttribute="trailing" constant="16" id="98R-1p-Svj"/>
+                                                <constraint firstItem="L5Y-Mc-EHk" firstAttribute="top" secondItem="Y8N-S9-7DC" secondAttribute="top" id="Zha-zr-BL5"/>
+                                                <constraint firstItem="L5Y-Mc-EHk" firstAttribute="leading" secondItem="Y8N-S9-7DC" secondAttribute="leading" constant="16" id="fPA-jC-K1m"/>
+                                                <constraint firstAttribute="bottom" secondItem="L5Y-Mc-EHk" secondAttribute="bottom" id="pfA-ML-B5u"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="selectedColorView" destination="j37-kn-fQA" id="XcY-gd-XNR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Cellular Network" id="34Y-gF-ga7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="k5m-en-ECM" customClass="HomeContentCell">
-                                        <rect key="frame" x="0.0" y="255.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="359.33333206176758" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k5m-en-ECM" id="obB-XM-vDb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -300,7 +360,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="2x5-BP-Xzy" customClass="HomeContentCell">
-                                        <rect key="frame" x="0.0" y="303.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="407.33333206176758" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2x5-BP-Xzy" id="I6o-MF-L7m">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -344,7 +404,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="48" id="mJP-jH-VWp" customClass="HomeContentCell">
-                                        <rect key="frame" x="0.0" y="351.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="455.33333206176758" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mJP-jH-VWp" id="uuo-Tc-4EX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -413,7 +473,7 @@
                             <tableViewSection headerTitle="UTILITIES" id="bsA-fy-4mo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="cNT-DE-QT1" customClass="HomeContentCell">
-                                        <rect key="frame" x="0.0" y="455.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="559.33333206176758" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cNT-DE-QT1" id="niP-qd-grm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -426,7 +486,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
                                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="SSID not available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17M-KZ-vbn" userLabel="TITLE">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Ping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17M-KZ-vbn" userLabel="TITLE">
                                                             <rect key="frame" x="8" y="0.0" width="311" height="47.666666666666664"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
@@ -478,7 +538,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="A5N-ll-cS2" customClass="HomeContentCell">
-                                        <rect key="frame" x="0.0" y="503.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="607.33333206176758" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A5N-ll-cS2" id="OIn-Vv-iwa">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -491,7 +551,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
                                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="SSID not available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6e-cV-KvY" userLabel="TITLE">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Wake on LAN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6e-cV-KvY" userLabel="TITLE">
                                                             <rect key="frame" x="8" y="0.0" width="311" height="47.666666666666664"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
@@ -544,7 +604,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="UUT-l0-Lwy" customClass="HomeContentCell">
-                                        <rect key="frame" x="0.0" y="551.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="655.33333206176758" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UUT-l0-Lwy" id="R0S-QU-y8q">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -557,7 +617,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
                                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="SSID not available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAA-ZM-8LZ" userLabel="TITLE">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Whois" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAA-ZM-8LZ" userLabel="TITLE">
                                                             <rect key="frame" x="8" y="0.0" width="311" height="47.666666666666664"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
@@ -610,7 +670,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="48" id="31q-Dx-q9I" customClass="HomeContentCell">
-                                        <rect key="frame" x="0.0" y="599.33333206176758" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="703.33333206176758" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="31q-Dx-q9I" id="q1N-Tc-grc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -623,7 +683,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
                                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="SSID not available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycx-8Z-fWr" userLabel="TITLE">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="DNS Lookup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycx-8Z-fWr" userLabel="TITLE">
                                                             <rect key="frame" x="8" y="0.0" width="311" height="48"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
@@ -681,6 +741,8 @@
                         <outlet property="cellularOperatorLabel" destination="fCD-Qo-cmf" id="CHJ-g1-zBa"/>
                         <outlet property="copyrightLabel" destination="8XQ-Ee-bt8" id="Ff2-Nd-3XV"/>
                         <outlet property="copyrightView" destination="U4B-qG-a8E" id="Zr7-kw-ewn"/>
+                        <outlet property="scanIcon" destination="0xF-H5-a3N" id="8g7-vM-7JF"/>
+                        <outlet property="scanLabel" destination="a3C-W6-h13" id="gE3-ia-PaX"/>
                         <outlet property="utilitiesDNSLabel" destination="Ycx-8Z-fWr" id="xsr-nq-yDV"/>
                         <outlet property="utilitiesPingLabel" destination="17M-KZ-vbn" id="coi-EF-XKF"/>
                         <outlet property="utilitiesWakeOnLanLabel" destination="n6e-cV-KvY" id="Gse-CG-3eT"/>
@@ -720,6 +782,8 @@
                         <outletCollection property="cellRightImageViews" destination="jTX-bm-Mh1" id="Izf-XT-Jd2"/>
                         <outletCollection property="cellRightImageViews" destination="jUQ-3U-eqy" id="aXy-e8-cPw"/>
                         <outletCollection property="cellRightImageViews" destination="NiC-A3-19c" id="DAc-9V-ANx"/>
+                        <outletCollection property="scanCells" destination="zem-MK-Ksv" id="hAB-rA-2fB"/>
+                        <outletCollection property="scanCellContainerViews" destination="L5Y-Mc-EHk" id="hAI-cU-EXu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Upj-TP-CHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -791,7 +855,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4fa-Z2-DMe" userLabel="BOTTOM-VIEW">
-                            <rect key="frame" x="0.0" y="173" width="375" height="56"/>
+                            <rect key="frame" x="0.0" y="173.33333206176758" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SE0-il-yqa" userLabel="SAVE-BUTTON">
