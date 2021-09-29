@@ -1234,8 +1234,8 @@
 			children = (
 				4AF4412526AC8C040008C169 /* BOTTOM.png */,
 				4AF4412626AC8C050008C169 /* LAUNCH.png */,
-				4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */,
 				4AE51B932685C4DA00DC1DA2 /* SPONSOR.png */,
+				4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */,
 				4AE51B972685CD3400DC1DA2 /* InfoPlist.strings */,
 				4AE51B992685CD3400DC1DA2 /* Localizable.strings */,
 				4A0E4DEC268585C500A85517 /* main.m */,

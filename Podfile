@@ -74,7 +74,7 @@ end
 
 workspace 'Idea.NetworkArch'
 
-project 'NetworkArch/NetworkArch.xcodeproj'
+project   'NetworkArch/NetworkArch.xcodeproj'
 
 use_frameworks!
 #use_modular_headers!
@@ -124,6 +124,7 @@ def library
   pod 'APPDEBUG', :path => 'APPDEBUG', :configurations => ['Debug']
 
 #  pod 'MMLanScan'
+  pod 'PhoneNetSDK'
 
 end
 
@@ -145,7 +146,7 @@ target 'NetworkArch' do
 
 #  pod 'PromisesObjC'
 #  pod 'Masonry'
-  pod 'Appirater'
+#  pod 'Appirater'
 #  pod 'ZKCycleScrollView'
   
   pod 'RTRootNavigationController'
@@ -168,11 +169,10 @@ target 'NetworkArch' do
   #  pod 'YKWoodpecker', :configurations => ['Debug']
   pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
-  #-------------------------------------------------------------------------------------------------------------------------------#
   miniwing_pod('IDEAPing', type = 'local', branch = 'develop')
   miniwing_pod('IDEARouter', type = 'local', branch = 'develop')
   miniwing_pod('IDEANetUtils', type = 'local', branch = 'develop')
-#-------------------------------------------------------------------------------------------------------------------------------#
+  #-------------------------------------------------------------------------------------------------------------------------------#
   miniwing_pod('IDEAUIKit', type = 'local', branch = 'develop')
   miniwing_pod('IDEAUIVendor', type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
