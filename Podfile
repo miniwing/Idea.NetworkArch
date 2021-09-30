@@ -124,7 +124,7 @@ def library
   pod 'APPDEBUG', :path => 'APPDEBUG', :configurations => ['Debug']
 
 #  pod 'MMLanScan'
-  pod 'PhoneNetSDK'
+#  pod 'PhoneNetSDK'
 
 end
 
@@ -185,6 +185,11 @@ target 'NetworkArch' do
 
 #  pod 'GoogleAnalytics'
 #  pod 'Firebase'
+
+  #-------------------------------------------------------------------------------------------------------------------------------#
+
+#  pod 'MIApm'
+#  pod 'MISafeApp'
 
   #-------------------------------------------------------------------------------------------------------------------------------#
 
