@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32A5DD13D108E1DFDB7CDC54 /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB60FFC66B450AD74D6B5E2 /* Pods_TodayWidget.framework */; };
 		4A0332A926ECFD3A005F0157 /* WifiScanController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332A126ECFD38005F0157 /* WifiScanController+Signal.m */; };
 		4A0332AA26ECFD3A005F0157 /* WifiScanController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332A326ECFD38005F0157 /* WifiScanController+Debug.m */; };
 		4A0332AB26ECFD3A005F0157 /* WifiScanController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332A426ECFD38005F0157 /* WifiScanController+Theme.m */; };
@@ -338,9 +337,10 @@
 		4AF9C52226B1C9D6002A2ABC /* PingStatisticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C51A26B1C9D6002A2ABC /* PingStatisticsCell.m */; };
 		4AF9C53426B1D4BC002A2ABC /* PingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C52C26B1D4BC002A2ABC /* PingCell.m */; };
 		4AFFEDBC268645160052712A /* AppTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFEDBB268645160052712A /* AppTracking.m */; };
-		4DDF5FA3E40C2B91947EDA22 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79772B037DDD53A30729FA6A /* Pods_APPBase.framework */; };
-		56C5B35045CC2080E3785442 /* Pods_FleetingWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA208BB2468DABA80D1E8B02 /* Pods_FleetingWidget.framework */; };
-		69E8F6C26968F0E72FE33E99 /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D840BD14BBFC4E8BC8761EBF /* Pods_NetworkArch.framework */; };
+		733289A538CDC2192D33E650 /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CF4F7FB8855D83529BA808 /* Pods_NetworkArch.framework */; };
+		808441378C63E6FF39E9AE87 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB5EF0D8B7FC84EA6176388 /* Pods_APPBase.framework */; };
+		9F79633BF04AAD049762ED38 /* Pods_FleetingWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF8242553DA24C5FD723A05 /* Pods_FleetingWidget.framework */; };
+		C389E5917BEBEE11269F22FB /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4EC5642BF7EA7211382B262 /* Pods_TodayWidget.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -416,7 +416,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0DB60FFC66B450AD74D6B5E2 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CB5EF0D8B7FC84EA6176388 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF8242553DA24C5FD723A05 /* Pods_FleetingWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FleetingWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A03329D26ECFD36005F0157 /* WifiScanController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanController+Inner.h"; sourceTree = "<group>"; };
 		4A03329E26ECFD36005F0157 /* WifiScanController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanController+Debug.h"; sourceTree = "<group>"; };
 		4A03329F26ECFD37005F0157 /* WifiScanController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanController+Notification.h"; sourceTree = "<group>"; };
@@ -1057,13 +1058,12 @@
 		63DF92DFFC64AB4198E20875 /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
 		65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		6B7C763236D1A5B8A55DC1C2 /* Pods-TodayWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.debug.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		79772B037DDD53A30729FA6A /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9427FC1B9FB3144B40E0E517 /* Pods-FleetingWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetingWidget.debug.xcconfig"; path = "Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		A7CF4F7FB8855D83529BA808 /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90D912BF379DE28D323CFC9 /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
+		B4EC5642BF7EA7211382B262 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.release.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.release.xcconfig"; sourceTree = "<group>"; };
 		CC7F3049F2B28E17A49195A2 /* Pods-NetworkArch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.debug.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.debug.xcconfig"; sourceTree = "<group>"; };
-		D840BD14BBFC4E8BC8761EBF /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA208BB2468DABA80D1E8B02 /* Pods_FleetingWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FleetingWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BB361642C7C47D27E17358 /* Pods_TodayClip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayClip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1072,7 +1072,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DDF5FA3E40C2B91947EDA22 /* Pods_APPBase.framework in Frameworks */,
+				808441378C63E6FF39E9AE87 /* Pods_APPBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1082,7 +1082,7 @@
 			files = (
 				4A25F1A126AED9B20075BE73 /* libAPPBase.a in Frameworks */,
 				4A25F19026AED9A10075BE73 /* NotificationCenter.framework in Frameworks */,
-				56C5B35045CC2080E3785442 /* Pods_FleetingWidget.framework in Frameworks */,
+				9F79633BF04AAD049762ED38 /* Pods_FleetingWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1092,7 +1092,7 @@
 			files = (
 				4AF4412026AC575C0008C169 /* libAPPBase.a in Frameworks */,
 				4A4D0A6126AC0F56008A30E0 /* NotificationCenter.framework in Frameworks */,
-				32A5DD13D108E1DFDB7CDC54 /* Pods_TodayWidget.framework in Frameworks */,
+				C389E5917BEBEE11269F22FB /* Pods_TodayWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1101,7 +1101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */,
-				69E8F6C26968F0E72FE33E99 /* Pods_NetworkArch.framework in Frameworks */,
+				733289A538CDC2192D33E650 /* Pods_NetworkArch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2516,10 +2516,10 @@
 				4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */,
 				4A421C0526AC0CC200935235 /* NotificationCenter.framework */,
 				E2BB361642C7C47D27E17358 /* Pods_TodayClip.framework */,
-				79772B037DDD53A30729FA6A /* Pods_APPBase.framework */,
-				DA208BB2468DABA80D1E8B02 /* Pods_FleetingWidget.framework */,
-				D840BD14BBFC4E8BC8761EBF /* Pods_NetworkArch.framework */,
-				0DB60FFC66B450AD74D6B5E2 /* Pods_TodayWidget.framework */,
+				1CB5EF0D8B7FC84EA6176388 /* Pods_APPBase.framework */,
+				3AF8242553DA24C5FD723A05 /* Pods_FleetingWidget.framework */,
+				A7CF4F7FB8855D83529BA808 /* Pods_NetworkArch.framework */,
+				B4EC5642BF7EA7211382B262 /* Pods_TodayWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
