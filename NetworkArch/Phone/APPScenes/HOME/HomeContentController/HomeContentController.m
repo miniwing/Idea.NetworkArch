@@ -22,6 +22,7 @@
 #import "WoLANController.h"
 #import "WhoisController.h"
 #import "DNSController.h"
+#import "UtilitiesMoreController.h"
 
 @implementation HomeContentController
 
@@ -320,6 +321,11 @@
    [self.utilitiesDNSLabel setFont:[APPFont lightFontOfSize:self.utilitiesDNSLabel.font.pointSize]];
    [self.utilitiesDNSLabel setText:APP_STR(@"DNS Lookup")];
 
+   [self.utilitiesMoreLabel setBackgroundColor:UIColor.clearColor];
+   [self.utilitiesMoreLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.utilitiesMoreLabel setFont:[APPFont lightFontOfSize:self.utilitiesMoreLabel.font.pointSize]];
+   [self.utilitiesMoreLabel setText:APP_STR(@"More")];
+
    for (UIImageView *stICON in self.cellRightImageViews) {
       
       [stICON setBackgroundColor:UIColor.clearColor];
@@ -534,16 +540,16 @@
       
    } /* End if () */
 
-   if (HomeSectionScan == aSection) {
-      
-      nNumberOfRows  = self.scanCells.count;
-      LogDebug((@"-[HomeContentController tableView:numberOfRowsInSection:] : HomeSectionWifi : %d", nNumberOfRows));
-      
-      nErr  = noErr;
-      
-      break;
-      
-   } /* End if () */
+//   if (HomeSectionScan == aSection) {
+//
+//      nNumberOfRows  = self.scanCells.count;
+//      LogDebug((@"-[HomeContentController tableView:numberOfRowsInSection:] : HomeSectionWifi : %d", nNumberOfRows));
+//
+//      nErr  = noErr;
+//
+//      break;
+//
+//   } /* End if () */
 
    if (HomeSectionCellular == aSection) {
       
@@ -609,15 +615,15 @@
       
    } /* End if () */
 
-   if (HomeSectionScan == aSection) {
-      
-      szTitle  = APP_STR(@"SCAN");
-      
-      nErr  = noErr;
-      
-      break;
-      
-   } /* End if () */
+//   if (HomeSectionScan == aSection) {
+//
+//      szTitle  = APP_STR(@"SCAN");
+//
+//      nErr  = noErr;
+//
+//      break;
+//
+//   } /* End if () */
 
    if (HomeSectionCellular == aSection) {
       
@@ -661,11 +667,11 @@
       stTableViewCell   = self.wifiCells[aIndexPath.row];
       
    } /* End if () */
-   else if (HomeSectionScan == aIndexPath.section) {
-
-      stTableViewCell   = self.scanCells[aIndexPath.row];
-
-   } /* End if () */
+//   else if (HomeSectionScan == aIndexPath.section) {
+//
+//      stTableViewCell   = self.scanCells[aIndexPath.row];
+//
+//   } /* End if () */
    else if (HomeSectionCellular == aIndexPath.section) {
       
       stTableViewCell   = self.cellularCells[aIndexPath.row];
@@ -763,13 +769,14 @@
    HomeContentCell               *stTableViewCell                          = nil;
    
    WifiMoreController            *stWifiMoreController                     = nil;
-   WifiScanController            *stWifiScanController                     = nil;
+//   WifiScanController            *stWifiScanController                     = nil;
    CellularMoreController        *stCellularMoreController                 = nil;
    
    PingController                *stPingController                         = nil;
    WoLANController               *stWoLANController                        = nil;
    WhoisController               *stWhoisController                        = nil;
    DNSController                 *stDNSController                          = nil;
+   UtilitiesMoreController       *stUtilitiesMoreController                = nil;
    
    UIViewController              *stViewController                         = nil;
    
@@ -815,14 +822,14 @@
       } /* End if () */
       
    } /* End if () */
-   else if (HomeSectionScan == aIndexPath.section) {
-
-      stWifiScanController = [UIStoryboard loadStoryboard:WifiScanController.storyboard
-                                           viewController:WifiScanController.class];
-      
-      stViewController     = stWifiScanController;
-
-   } /* End if () */
+//   else if (HomeSectionScan == aIndexPath.section) {
+//
+//      stWifiScanController = [UIStoryboard loadStoryboard:WifiScanController.storyboard
+//                                           viewController:WifiScanController.class];
+//      
+//      stViewController     = stWifiScanController;
+//
+//   } /* End if () */
    else if (HomeSectionCellular == aIndexPath.section) {
       
       if (HomeCellularMore == aIndexPath.row) {
@@ -867,6 +874,14 @@
                                            viewController:DNSController.class];
 
          stViewController  = stDNSController;
+
+      } /* End else if () */
+      else if (HomeUtilitiesMore == aIndexPath.row) {
+
+         stUtilitiesMoreController  = [UIStoryboard loadStoryboard:UtilitiesMoreController.storyboard
+                                           viewController:UtilitiesMoreController.class];
+
+         stViewController  = stUtilitiesMoreController;
 
       } /* End else if () */
       else {

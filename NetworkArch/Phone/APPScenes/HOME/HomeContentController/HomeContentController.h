@@ -17,9 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 IDEA_ENUM(NSInteger, HomeSection) {
    
    HomeSectionWifi      = 0,
-   HomeSectionScan      = 1,
-   HomeSectionCellular  = 2,
-   HomeSectionUtilities = 3,
+//   HomeSectionScan      = 1,
+   HomeSectionCellular  = 1,
+   HomeSectionUtilities = 2,
 //   HomeSectionCopyright = 3,
    HomeSectionNumber
 };
@@ -46,6 +46,7 @@ IDEA_ENUM(NSInteger, HomeUtilities) {
    HomeUtilitiesWoL     = 1,
    HomeUtilitiesWhois   = 2,
    HomeUtilitiesDNS     = 3,
+   HomeUtilitiesMore    = 4,
    HomeUtilitiesNumber
 };
 
@@ -87,6 +88,8 @@ IDEA_ENUM(NSInteger, HomeUtilities) {
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesWakeOnLanLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesWhoisLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesDNSLabel;
+
+@property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesMoreLabel;
 
 //@property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * copyrightCells;
 //@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * copyrightCellContainerViews;

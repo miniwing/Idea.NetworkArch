@@ -1,34 +1,41 @@
 //
-//  CellularMoreController.m
+//  UtilitiesMoreController.m
 //  NetworkArch
 //
-//  Created by Harry on 2021/7/19.
+//  Created by Harry on 2021/10/8.
 //  Copyright © 2021 Harry. All rights reserved.
 //
 //  Mail: miniwing.hz@gmail.com
 //  TEL : +(852)53054612
 //
 
-#import "CellularMoreRootController.h"
+#import "UtilitiesMoreController.h"
+#import "UtilitiesMoreController+Inner.h"
+#import "UtilitiesMoreController+Theme.h"
+#import "UtilitiesMoreController+Signal.h"
+#import "UtilitiesMoreController+Notification.h"
 
-#import "CellularMoreController.h"
-#import "CellularMoreController+Inner.h"
-#import "CellularMoreController+Signal.h"
-#import "CellularMoreController+Notification.h"
+#import "UtilitiesMoreRootController.h"
 
-@implementation CellularMoreController
+@interface UtilitiesMoreController ()
+
+@end
+
+@implementation UtilitiesMoreController
 
 - (void)dealloc {
-
+   
    __LOG_FUNCTION;
-
+   
    // Custom dealloc
    
+   [self removeAllNotification];
+
    [self unobserveAllNotifications];
    [self removeAllSignalResponders];
 
    __SUPER_DEALLOC;
-
+   
    return;
 }
 
@@ -50,7 +57,7 @@
       
 //      [_appBar.headerViewController setShowsHairline:YES];
 //      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
-
+      
       [_appBar.headerViewController setShowsHairline:NO];
       [_appBar.headerViewController setHairlineColor:UIColor.clearColor];
 
@@ -73,13 +80,15 @@
 #else /* MATERIAL_APP_BAR */
    NSMutableDictionary           *stTitleAttributes                        = nil;
 #endif /* MATERIAL_APP_BAR */
-
+   
    __TRY;
    
    [super viewDidLoad];
    
-   [self setTitle:APP_STR(@"CELLULAR")];
-   LogDebug((@"[CellularMoreController viewDidLoad] : VIEW : %@", self.view));
+   [self setTitle:APP_STR(@"More")];
+   LogDebug((@"[UtilitiesMoreController viewDidLoad] : VIEW : %@", self.view));
+   
+   [self.view setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
    
 #if MATERIAL_APP_BAR
    [self.navigationController setNavigationBarHidden:YES];
@@ -96,7 +105,7 @@
    /// 关闭水波纹效果
    [self.appBar.navigationBar setRippleColor:UIColor.clearColor];
    [self.appBar.navigationBar setInkColor:UIColor.clearColor];
-
+   
    [self.appBar.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
    [self.appBar.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
    [self.appBar.navigationBar setTitleFont:[APPFont regularFontOfSize:[APPFont appFontTitleSize]]];
@@ -112,6 +121,7 @@
    [self.navigationController.navigationBar setBarTintColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    
    [self.navigationController.navigationBar setBackgroundImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
+      
       return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
    }
                                                        forBarMetrics:UIBarMetricsDefault];
@@ -136,23 +146,6 @@
 #endif /* !MATERIAL_APP_BAR */
    
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-
-   [self.contentView setBackgroundColor:UIColor.clearColor];
-
-#if MATERIAL_APP_BAR
-   /**
-    调整 Layout
-    contentView.top
-    */
-   stLayoutConstraint   = [NSLayoutConstraint constraintWithIdentifier:@"contentView.top"
-                                                              fromView:self.view];
-   
-   if (nil != stLayoutConstraint) {
-      
-      stLayoutConstraint.constant   = self.appBar.headerViewController.headerView.height;
-      
-   } /* End if () */
-#endif /* MATERIAL_APP_BAR */
 
    __CATCH(nErr);
    
@@ -228,7 +221,7 @@
 @end
 
 #pragma mark - UIStoryboard
-@implementation CellularMoreController (UIStoryboard)
+@implementation UtilitiesMoreController (UIStoryboard)
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)aSegue sender:(id)aSender {
@@ -240,12 +233,6 @@
    // Get the new view controller using [aSegue destinationViewController].
    // Pass the selected object to the new view controller.
 
-   if ([aSegue.identifier isEqualToString:CellularMoreContentController.className]) {
-      
-      self.moreContentController = aSegue.destinationViewController;
-      
-   } /* End if () */
-
    __CATCH(nErr);
 
    return;
@@ -253,13 +240,13 @@
 
 + (NSString *)storyboard {
    
-   return @"CELLULAR";
+   return @"UTILITIES";
 }
 
 @end
 
 #pragma mark - IBAction
-@implementation CellularMoreController (Action)
+@implementation UtilitiesMoreController (Action)
 
 - (IBAction)onBack:(id)aSender {
    
@@ -267,7 +254,7 @@
    
    __TRY;
    
-   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[CellularMoreRootController class]])) {
+   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[UtilitiesMoreRootController class]])) {
       
       [self.navigationController popViewControllerAnimated:YES
                                                 completion:nil];
@@ -279,7 +266,7 @@
                                completion:nil];
       
    } /* End else */
-   
+
    __CATCH(nErr);
    
    return;

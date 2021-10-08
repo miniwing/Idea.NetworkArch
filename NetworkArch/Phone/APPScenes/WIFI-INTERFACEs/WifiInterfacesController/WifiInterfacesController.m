@@ -46,9 +46,12 @@
       [_appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
       [_appBar.headerViewController.headerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
       
-      [_appBar.headerViewController setShowsHairline:YES];
-      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
-      
+//      [_appBar.headerViewController setShowsHairline:YES];
+//      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
+
+      [_appBar.headerViewController setShowsHairline:NO];
+      [_appBar.headerViewController setHairlineColor:UIColor.clearColor];
+
       [self addChildViewController:_appBar.headerViewController];
 #endif /* MATERIAL_APP_BAR */
       

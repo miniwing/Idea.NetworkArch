@@ -124,7 +124,7 @@ def library
   pod 'APPDEBUG', :path => 'APPDEBUG', :configurations => ['Debug']
 
 #  pod 'MMLanScan'
-  pod 'PhoneNetSDK'
+#  pod 'PhoneNetSDK'
 
 end
 
@@ -169,7 +169,7 @@ target 'NetworkArch' do
   #  pod 'YKWoodpecker', :configurations => ['Debug']
   pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
-#  miniwing_pod('IDEAPing', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAPing', type = 'local', branch = 'develop')
   miniwing_pod('IDEARouter', type = 'local', branch = 'develop')
   miniwing_pod('IDEANetUtils', type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
@@ -190,6 +190,8 @@ target 'NetworkArch' do
 
   pod 'MIApm'
   pod 'MISafeApp'
+
+  pod 'PhoneNetSDK'
 
   #-------------------------------------------------------------------------------------------------------------------------------#
 
