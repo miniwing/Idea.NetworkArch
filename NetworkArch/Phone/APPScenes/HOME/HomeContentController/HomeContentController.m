@@ -22,7 +22,8 @@
 #import "WoLANController.h"
 #import "WhoisController.h"
 #import "DNSController.h"
-#import "UtilitiesMoreController.h"
+#import "TracerouteController.h"
+#import "PortScanController.h"
 
 @implementation HomeContentController
 
@@ -93,16 +94,6 @@
 //   });
    
    for (UIView *stView in self.wifiCellContainerViews) {
-      
-#if __DEBUG_COLOR__
-      [stView setBackgroundColor:UIColor.systemBlueColor];
-#else /* __DEBUG_COLOR__ */
-      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-#endif /* !__DEBUG_COLOR__ */
-      
-   } /* End for () */
-
-   for (UIView *stView in self.scanCellContainerViews) {
       
 #if __DEBUG_COLOR__
       [stView setBackgroundColor:UIColor.systemBlueColor];
@@ -203,31 +194,6 @@
    self.wifiCells[HomeWifiMore].canSelected  = YES;
 
    /**
-    Scan
-    */
-   [self.scanLabel setBackgroundColor:UIColor.clearColor];
-   [self.scanLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.scanLabel setFont:[APPFont regularFontOfSize:self.scanLabel.font.pointSize]];
-   [self.scanLabel setText:APP_STR(@"SCAN")];
-
-   [self.scanIcon setBackgroundColor:UIColor.clearColor];
-   [self.scanIcon setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-      
-      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-         
-         return UIColor.whiteColor;
-         
-      } /* End if () */
-      else {
-         
-         return UIColor.blackColor;
-         
-      }/* End else */
-   }];
-
-   self.scanCells[0].canSelected = YES;
-
-   /**
     Cellular
     */
    [self.cellularOperatorLabel setBackgroundColor:UIColor.clearColor];
@@ -320,11 +286,6 @@
    [self.utilitiesDNSLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.utilitiesDNSLabel setFont:[APPFont lightFontOfSize:self.utilitiesDNSLabel.font.pointSize]];
    [self.utilitiesDNSLabel setText:APP_STR(@"DNS Lookup")];
-
-   [self.utilitiesMoreLabel setBackgroundColor:UIColor.clearColor];
-   [self.utilitiesMoreLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.utilitiesMoreLabel setFont:[APPFont lightFontOfSize:self.utilitiesMoreLabel.font.pointSize]];
-   [self.utilitiesMoreLabel setText:APP_STR(@"More")];
 
    for (UIImageView *stICON in self.cellRightImageViews) {
       
@@ -441,9 +402,7 @@
 
    [self.wifiCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
    [self.wifiCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
-   
-   [self.scanCellContainerViews.firstObject setCornerRadius:8 clipsToBounds:YES];
-   
+      
    [self.cellularCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
    [self.cellularCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
    
@@ -776,7 +735,8 @@
    WoLANController               *stWoLANController                        = nil;
    WhoisController               *stWhoisController                        = nil;
    DNSController                 *stDNSController                          = nil;
-   UtilitiesMoreController       *stUtilitiesMoreController                = nil;
+   TracerouteController          *stTracerouteController                   = nil;
+   PortScanController            *stPortScanController                     = nil;
    
    UIViewController              *stViewController                         = nil;
    
@@ -876,12 +836,20 @@
          stViewController  = stDNSController;
 
       } /* End else if () */
-      else if (HomeUtilitiesMore == aIndexPath.row) {
+      else if (HomeUtilitiesTraceroute == aIndexPath.row) {
 
-         stUtilitiesMoreController  = [UIStoryboard loadStoryboard:UtilitiesMoreController.storyboard
-                                           viewController:UtilitiesMoreController.class];
+         stTracerouteController  = [UIStoryboard loadStoryboard:TracerouteController.storyboard
+                                           viewController:TracerouteController.class];
 
-         stViewController  = stUtilitiesMoreController;
+         stViewController  = stTracerouteController;
+
+      } /* End else if () */
+      else if (HomeUtilitiesPortScan == aIndexPath.row) {
+
+         stPortScanController    = [UIStoryboard loadStoryboard:PortScanController.storyboard
+                                           viewController:PortScanController.class];
+
+         stViewController  = stPortScanController;
 
       } /* End else if () */
       else {

@@ -16,37 +16,38 @@ NS_ASSUME_NONNULL_BEGIN
 
 IDEA_ENUM(NSInteger, HomeSection) {
    
-   HomeSectionWifi      = 0,
-//   HomeSectionScan      = 1,
-   HomeSectionCellular  = 1,
-   HomeSectionUtilities = 2,
-//   HomeSectionCopyright = 3,
+   HomeSectionWifi         = 0,
+//   HomeSectionScan        = 1,
+   HomeSectionCellular     = 1,
+   HomeSectionUtilities    = 2,
+//   HomeSectionCopyright   = 3,
    HomeSectionNumber
 };
 
 IDEA_ENUM(NSInteger, HomeWifi) {
    
-   HomeWifiSSID         = 0,
-   HomeWifiIP           = 1,
-   HomeWifiMore         = 2,
+   HomeWifiSSID            = 0,
+   HomeWifiIP              = 1,
+   HomeWifiMore            = 2,
    HomeWifiNumber
 };
 
 IDEA_ENUM(NSInteger, HomeCellular) {
    
-   HomeCellularOperator = 0,
-   HomeCellularIP       = 1,
-   HomeCellularMore     = 2,
+   HomeCellularOperator    = 0,
+   HomeCellularIP          = 1,
+   HomeCellularMore        = 2,
    HomeCellularNumber
 };
 
 IDEA_ENUM(NSInteger, HomeUtilities) {
    
-   HomeUtilitiesPing    = 0,
-   HomeUtilitiesWoL     = 1,
-   HomeUtilitiesWhois   = 2,
-   HomeUtilitiesDNS     = 3,
-   HomeUtilitiesMore    = 4,
+   HomeUtilitiesPing       = 0,
+   HomeUtilitiesWoL        = 1,
+   HomeUtilitiesWhois      = 2,
+   HomeUtilitiesDNS        = 3,
+   HomeUtilitiesTraceroute = 4,
+   HomeUtilitiesPortScan   = 5,
    HomeUtilitiesNumber
 };
 
@@ -63,11 +64,6 @@ IDEA_ENUM(NSInteger, HomeUtilities) {
 
 @property (nonatomic, weak)   IBOutlet       UILabel                             * wifiMoreLabel;
 @property (nonatomic, weak)   IBOutlet       UIImageView                         * wifiMoreIcon;
-
-@property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * scanCells;
-@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * scanCellContainerViews;
-@property (nonatomic, weak)   IBOutlet       UILabel                             * scanLabel;
-@property (nonatomic, weak)   IBOutlet       UIImageView                         * scanIcon;
 
 @property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * cellularCells;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * cellularCellContainerViews;
@@ -89,7 +85,8 @@ IDEA_ENUM(NSInteger, HomeUtilities) {
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesWhoisLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesDNSLabel;
 
-@property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesMoreLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesTracerouteLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesPortScanLabel;
 
 //@property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * copyrightCells;
 //@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * copyrightCellContainerViews;
