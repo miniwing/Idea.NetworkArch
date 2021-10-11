@@ -9,7 +9,13 @@
 //  TEL : +(852)53054612
 //
 
+#import "PortScanRootController.h"
+
 #import "PortScanController.h"
+#import "PortScanController+Inner.h"
+#import "PortScanController+Theme.h"
+#import "PortScanController+Signal.h"
+#import "PortScanController+Notification.h"
 
 @interface PortScanController ()
 
@@ -149,6 +155,55 @@
 + (NSString *)storyboard {
    
    return @"UTILITIES";
+}
+
+@end
+
+#pragma mark - IBAction
+@implementation PortScanController (Action)
+
+- (IBAction)onBack:(id)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [CATransaction begin];
+   
+   [self resignFirstResponder];
+   
+   [CATransaction commit];
+   
+   [CATransaction setCompletionBlock:^{
+      
+      if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[PortScanRootController class]])) {
+         
+         [self.navigationController popViewControllerAnimated:YES
+                                                   completion:nil];
+         
+      } /* End if () */
+      else {
+         
+         [self dismissViewControllerAnimated:YES
+                                  completion:nil];
+         
+      } /* End else */
+   }];
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (IBAction)onStart:(id)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
 }
 
 @end

@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TracerouteController ()
+@interface TracerouteController () <UITextFieldDelegate>
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
 
@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TracerouteController ()
 
+@property (nonatomic, strong)                PNUdpTraceroute                     * udpTraceroute;
 @property (nonatomic, strong)                NSMutableArray<NSNumber *>          * sections;
 
 @end

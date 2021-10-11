@@ -9,7 +9,13 @@
 //  TEL : +(852)53054612
 //
 
+#import "LanScanRootController.h"
+
 #import "LanScanController.h"
+#import "LanScanController+Inner.h"
+#import "LanScanController+Theme.h"
+#import "LanScanController+Signal.h"
+#import "LanScanController+Notification.h"
 
 @interface LanScanController ()
 
@@ -149,6 +155,55 @@
 + (NSString *)storyboard {
    
    return @"UTILITIES";
+}
+
+@end
+
+#pragma mark - IBAction
+@implementation LanScanController (Action)
+
+- (IBAction)onBack:(id)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   [CATransaction begin];
+   
+   [self resignFirstResponder];
+   
+   [CATransaction commit];
+   
+   [CATransaction setCompletionBlock:^{
+      
+      if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[LanScanRootController class]])) {
+         
+         [self.navigationController popViewControllerAnimated:YES
+                                                   completion:nil];
+         
+      } /* End if () */
+      else {
+         
+         [self dismissViewControllerAnimated:YES
+                                  completion:nil];
+         
+      } /* End else */
+   }];
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (IBAction)onStart:(id)aSender {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+   
+   return;
 }
 
 @end

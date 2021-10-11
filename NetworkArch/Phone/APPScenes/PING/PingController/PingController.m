@@ -13,7 +13,6 @@
 
 #import "PingController.h"
 #import "PingController+Inner.h"
-#import "PingController+Debug.h"
 #import "PingController+Theme.h"
 #import "PingController+Signal.h"
 #import "PingController+Notification.h"

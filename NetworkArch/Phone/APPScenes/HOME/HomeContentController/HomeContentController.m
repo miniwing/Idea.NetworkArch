@@ -24,6 +24,7 @@
 #import "DNSController.h"
 #import "TracerouteController.h"
 #import "PortScanController.h"
+#import "LanScanController.h"
 
 @implementation HomeContentController
 
@@ -286,6 +287,21 @@
    [self.utilitiesDNSLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.utilitiesDNSLabel setFont:[APPFont lightFontOfSize:self.utilitiesDNSLabel.font.pointSize]];
    [self.utilitiesDNSLabel setText:APP_STR(@"DNS Lookup")];
+
+   [self.utilitiesTracerouteLabel setBackgroundColor:UIColor.clearColor];
+   [self.utilitiesTracerouteLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.utilitiesTracerouteLabel setFont:[APPFont lightFontOfSize:self.utilitiesTracerouteLabel.font.pointSize]];
+   [self.utilitiesTracerouteLabel setText:APP_STR(@"Traceroute")];
+
+   [self.utilitiesPortScanLabel setBackgroundColor:UIColor.clearColor];
+   [self.utilitiesPortScanLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.utilitiesPortScanLabel setFont:[APPFont lightFontOfSize:self.utilitiesPortScanLabel.font.pointSize]];
+   [self.utilitiesPortScanLabel setText:APP_STR(@"Port Scan")];
+
+   [self.utilitiesLanScanLabel setBackgroundColor:UIColor.clearColor];
+   [self.utilitiesLanScanLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.utilitiesLanScanLabel setFont:[APPFont lightFontOfSize:self.utilitiesLanScanLabel.font.pointSize]];
+   [self.utilitiesLanScanLabel setText:APP_STR(@"LAN Scan")];
 
    for (UIImageView *stICON in self.cellRightImageViews) {
       
@@ -737,6 +753,7 @@
    DNSController                 *stDNSController                          = nil;
    TracerouteController          *stTracerouteController                   = nil;
    PortScanController            *stPortScanController                     = nil;
+   LanScanController             *stLanScanController                      = nil;
    
    UIViewController              *stViewController                         = nil;
    
@@ -850,6 +867,14 @@
                                            viewController:PortScanController.class];
 
          stViewController  = stPortScanController;
+
+      } /* End else if () */
+      else if (HomeUtilitiesLanScan == aIndexPath.row) {
+
+         stLanScanController     = [UIStoryboard loadStoryboard:LanScanController.storyboard
+                                           viewController:LanScanController.class];
+
+         stViewController  = stLanScanController;
 
       } /* End else if () */
       else {

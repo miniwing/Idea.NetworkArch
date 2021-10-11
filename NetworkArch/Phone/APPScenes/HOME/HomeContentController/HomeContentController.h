@@ -48,6 +48,7 @@ IDEA_ENUM(NSInteger, HomeUtilities) {
    HomeUtilitiesDNS        = 3,
    HomeUtilitiesTraceroute = 4,
    HomeUtilitiesPortScan   = 5,
+   HomeUtilitiesLanScan    = 6,
    HomeUtilitiesNumber
 };
 
@@ -87,6 +88,7 @@ IDEA_ENUM(NSInteger, HomeUtilities) {
 
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesTracerouteLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesPortScanLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesLanScanLabel;
 
 //@property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * copyrightCells;
 //@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * copyrightCellContainerViews;

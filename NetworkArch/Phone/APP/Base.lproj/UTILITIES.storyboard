@@ -880,7 +880,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmx-m4-sB7" userLabel="输入框">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="IP Address / Host Name" textAlignment="natural" minimumFontSize="18" background="CLEAR-IMAGE" translatesAutoresizingMaskIntoConstraints="NO" id="1P1-0B-XZj" customClass="APPTextField">
                                         <rect key="frame" x="16" y="8" width="343" height="42"/>
@@ -894,17 +894,35 @@
                                             <outlet property="delegate" destination="P36-h3-d0t" id="OXi-d1-e6m"/>
                                         </connections>
                                     </textField>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VTd-Ds-6vP">
+                                        <rect key="frame" x="302" y="54" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="onICMP:" destination="P36-h3-d0t" eventType="valueChanged" id="qmM-pd-aL3"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable ICMP traceroute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBV-h3-bkg">
+                                        <rect key="frame" x="24" y="54" width="274" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="1P1-0B-XZj" secondAttribute="trailing" constant="16" id="1gI-Cs-5Ka"/>
+                                    <constraint firstItem="VTd-Ds-6vP" firstAttribute="leading" secondItem="kBV-h3-bkg" secondAttribute="trailing" constant="4" id="57o-dd-laW"/>
+                                    <constraint firstAttribute="bottom" secondItem="VTd-Ds-6vP" secondAttribute="bottom" constant="8" id="QVZ-EJ-Vi9"/>
+                                    <constraint firstItem="VTd-Ds-6vP" firstAttribute="bottom" secondItem="kBV-h3-bkg" secondAttribute="bottom" id="SVg-u1-lfq"/>
+                                    <constraint firstItem="VTd-Ds-6vP" firstAttribute="top" secondItem="kBV-h3-bkg" secondAttribute="top" id="XK6-vW-UpJ"/>
                                     <constraint firstItem="1P1-0B-XZj" firstAttribute="leading" secondItem="wmx-m4-sB7" secondAttribute="leading" constant="16" id="b3u-aW-1Uq"/>
+                                    <constraint firstItem="VTd-Ds-6vP" firstAttribute="top" secondItem="1P1-0B-XZj" secondAttribute="bottom" constant="4" id="beV-qa-S8Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="1P1-0B-XZj" secondAttribute="trailing" constant="16" id="jVT-mD-DFR"/>
                                     <constraint firstItem="1P1-0B-XZj" firstAttribute="top" secondItem="wmx-m4-sB7" secondAttribute="top" constant="8" id="nif-Pe-aBC"/>
-                                    <constraint firstAttribute="bottom" secondItem="1P1-0B-XZj" secondAttribute="bottom" constant="8" id="sjH-JA-MSQ"/>
+                                    <constraint firstItem="kBV-h3-bkg" firstAttribute="leading" secondItem="wmx-m4-sB7" secondAttribute="leading" constant="24" id="s7A-3K-o4L"/>
+                                    <constraint firstAttribute="trailing" secondItem="VTd-Ds-6vP" secondAttribute="trailing" constant="24" id="xhZ-Oq-N2o"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="DgQ-FT-Q6z">
-                                <rect key="frame" x="0.0" y="58" width="375" height="666"/>
+                                <rect key="frame" x="0.0" y="93" width="375" height="631"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PingStatisticsCell" id="csL-i1-b1G" customClass="PingStatisticsCell">
@@ -1165,17 +1183,18 @@
                                 <action selector="onBack:" destination="P36-h3-d0t" id="KuR-Ct-8VM"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="UIButtonBarPlay" id="PIe-A4-AaX">
+                        <barButtonItem key="rightBarButtonItem" image="UIButtonBarPlay" id="Dp1-8N-KP1">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="onStart:" destination="P36-h3-d0t" id="7hj-ic-fF3"/>
+                                <action selector="onStart:" destination="P36-h3-d0t" id="vGD-QE-bOo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="icmpSwitch" destination="VTd-Ds-6vP" id="K2a-Kl-m0N"/>
                         <outlet property="inputView" destination="wmx-m4-sB7" id="z8l-Tb-VpL"/>
                         <outlet property="leftBarButtonItem" destination="O9b-Sx-DTc" id="kNW-en-p7K"/>
-                        <outlet property="rightBarButtonItem" destination="PIe-A4-AaX" id="U5n-Mn-IHG"/>
+                        <outlet property="rightBarButtonItem" destination="Dp1-8N-KP1" id="mXG-na-gwi"/>
                         <outlet property="tableView" destination="DgQ-FT-Q6z" id="e3x-Fw-fbs"/>
                         <outlet property="textField" destination="1P1-0B-XZj" id="DDe-CL-lIH"/>
                     </connections>
@@ -1865,6 +1884,14 @@
             <point key="canvasLocation" x="140" y="4215"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="1ae-ls-DzW">
+            <size key="intrinsicContentSize" width="26.5" height="26.5"/>
+        </designable>
+        <designable name="ih0-ca-F1X">
+            <size key="intrinsicContentSize" width="26.5" height="26.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="CLEAR-IMAGE" width="15" height="15"/>
         <image name="UIButtonBarArrowLeft" width="11.5" height="21"/>
