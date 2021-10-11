@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface APPDelegate (APP)
+@interface APPDelegate (ICMP)
 
 + (BOOL)isICMPEnable;
 + (void)setICMPEnable:(BOOL)aICMPEnable;

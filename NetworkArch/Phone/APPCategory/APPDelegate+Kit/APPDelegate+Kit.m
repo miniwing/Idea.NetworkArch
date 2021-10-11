@@ -126,7 +126,7 @@
 
 @end
 
-@implementation APPDelegate (APP)
+@implementation APPDelegate (ICMP)
 
 + (BOOL)isICMPEnable {
    

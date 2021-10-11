@@ -32,6 +32,8 @@ ENV['IDEA_YYKIT']                 = 'YES'
 
 ENV['IDEA_SERVICE_FILE_SYNC']     = 'NO'
 
+ENV['RTRootNavigationController'] = 'YES'
+
 ###################################################################################################################################
 
 def github_pod(pod_name, file = pod_name, type = 'remote', branch = 'master', configurations = ['Debug', 'Release'], modular_headers = true)
@@ -149,7 +151,9 @@ target 'NetworkArch' do
 #  pod 'Appirater'
 #  pod 'ZKCycleScrollView'
   
-  pod 'RTRootNavigationController'
+  if ENV['RTRootNavigationController'] == 'YES'
+    pod 'RTRootNavigationController'
+  end # RTRootNavigationController
 
   if ENV['IDEA_MATERIAL_COMPONENTS'] == 'YES'
 #    pod 'MaterialComponents'
