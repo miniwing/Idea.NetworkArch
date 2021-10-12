@@ -9,6 +9,8 @@
 //  TEL : +(852)53054612
 //
 
+#import "APPDelegate+APP.h"
+
 #import "PingRootController.h"
 
 #import "PingController.h"
@@ -258,6 +260,8 @@
       
       [self.textField becomeFirstResponder];
    });
+   
+   LogDebug((@"[APPDelegate APP].window.rootViewController : %@", [APPDelegate APP].window.rootViewController));
    
    __CATCH(nErr);
    

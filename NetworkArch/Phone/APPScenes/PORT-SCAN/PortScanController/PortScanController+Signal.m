@@ -72,6 +72,15 @@ handleSignal(PortScanController, startScanSignal) {
    } /* End if () */
    LogDebug((@"-[PortScanController startScanSignal:] : EndPort : %ld", nEndPort));
 
+   [[PhoneNetManager shareInstance] netPortScan:szHost
+                                      beginPort:nBeginPort
+                                        endPort:nEndPort
+                                completeHandler:^(NSString * _Nullable port, BOOL isOpen, PNError * _Nullable sdkError) {
+      dispatch_async(dispatch_get_main_queue(), ^{
+          self.scaningPortTL.text = port;
+      });
+   }];
+   
    __CATCH(nErr);
    
    return;

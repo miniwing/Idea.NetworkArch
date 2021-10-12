@@ -60,6 +60,8 @@ handleSignal(PingController, startPingSignal) {
       self.pingClient   = [IDEAPingClient pingClientWithHostName:self.textField.text
                                                             ping:^(NSString * _Nonnull aHostName, NSString * _Nullable aIP, NSTimeInterval aTime, NSError * _Nullable aError) {
          
+         PingResult     *stPingResult        = nil;
+         
          @strongify(self);
          LogDebug((@"-[PingController startPingSignal:] : ping : Error : %@", aError));
          LogDebug((@"-[PingController startPingSignal:] : ping : Time  : %.3f", aTime));
@@ -68,33 +70,21 @@ handleSignal(PingController, startPingSignal) {
          
          if (nil != aError) {
             
-            return;
-            
+            stPingResult  = [PingResult pingResultWithHostName:aHostName ip:aIP error:aError duration:aTime];
+                        
          } /* End if () */
-         
-         PingResult  *stPingResult  = [PingResult pingResultWithHostName:aHostName ip:aIP error:aError duration:aTime];
+         else {
+
+            stPingResult  = [PingResult pingResultWithHostName:aHostName ip:aIP error:aError duration:aTime];
+
+         } /* End else */
          
          if (nil != stPingResult) {
             
             [self.pingResults addObject:stPingResult];
 
             dispatch_async_on_main_queue(^{
-               
-//            [CATransaction begin];
-//
-//            [self.tableView insertRow:self.pingResults.count - 1
-//                            inSection:self.sections.count - 1
-//                     withRowAnimation:UITableViewRowAnimationFade];
-//
-//            [CATransaction commit];
-//
-//            [CATransaction setCompletionBlock:^{
-//               [self.tableView scrollToRow:self.pingResults.count - 1
-//                                 inSection:self.sections.count - 1
-//                          atScrollPosition:UITableViewScrollPositionBottom
-//                                  animated:YES];
-//            }];
-               
+                              
                [UIView transitionWithView:self.tableView
                                  duration:0.1
                                   options:UIViewAnimationOptionTransitionCrossDissolve

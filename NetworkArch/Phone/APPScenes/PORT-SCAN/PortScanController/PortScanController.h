@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       APPTextField                        * toPortTextField;
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * portView;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * portScanLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * portScaningLabel;
 
 @property (nonatomic, weak)   IBOutlet       UITextView                          * textView;

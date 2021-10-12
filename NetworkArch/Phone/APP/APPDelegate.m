@@ -169,23 +169,23 @@
       
       self.rootViewController = __cast(RootViewController *, self.window.rootViewController);
       
-//      self.splashViewController  = [UIStoryboard loadStoryboard:SplashViewController.storyboard
-//                                                 viewController:SplashViewController.class];
+      self.splashViewController  = [UIStoryboard loadStoryboard:SplashViewController.storyboard
+                                                 viewController:SplashViewController.class];
       
    } /* End if () */
    else if ([self.window.rootViewController isKindOfClass:[SplashViewController class]]) {
       
       self.splashViewController  = __cast(SplashViewController *, self.window.rootViewController);
       
-//      self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
-//                                              viewController:RootViewController.class];
+      self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
+                                              viewController:RootViewController.class];
       
    } /* End else */
    
-   //   [self.window setRootViewController:self.splashViewController];
+//   [self.window setRootViewController:self.splashViewController];
    [self.window makeKeyAndVisible];
    
-   //   [self.window addSubview:self.splashViewController.view];
+//   [self.window addSubview:self.splashViewController.view];
    
    [self splash];
    
@@ -400,17 +400,56 @@
    
    int                            nErr                                     = EFAULT;
    
-   //   NSTimeInterval                 fDuration                                = UIAViewAnimationDefaultDuraton;
-   
    __TRY;
-   
+
    if (nil == self.rootViewController) {
-      
+
       self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
                                               viewController:RootViewController.class];
 
    } /* End if () */
-   
+
+   if (@available(iOS 15, *)) {
+      
+      [self.window setRootViewController:self.rootViewController];
+
+   } /* End if () */
+
+//   [CATransaction begin];
+//
+////   [self.rootViewController loadView];
+////   [self.rootViewController viewDidLoad];
+////   [self.rootViewController.view setHidden:NO];
+//
+//   LogDebug((@"-[APPDelegate splashing] : rootViewController.isViewLoaded : %d", self.rootViewController.isViewLoaded));
+//
+//   if (@available(iOS 15, *)) {
+//
+//      [self.window setRootViewController:self.rootViewController];
+//
+//   } /* End if () */
+//
+//   [CATransaction setAnimationDuration:0.5];
+//   [CATransaction setCompletionBlock:^{
+//
+//      LogDebug((@"-[APPDelegate splashing] : rootViewController.isViewLoaded : %d", self.rootViewController.isViewLoaded));
+//
+//      [UIView transitionFromView:self.splashViewController.view
+//                          toView:self.rootViewController.view
+//#if __Debug__
+//                        duration:UIAViewAnimationDefaultDuraton * 2
+//#else /* __Debug__ */
+//                        duration:UIAViewAnimationDefaultDuraton
+//#endif /* !__Debug__ */
+//                         options:UIViewAnimationOptionTransitionCrossDissolve
+//                      completion:^(BOOL aFinished) {
+//
+//         UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
+//      }];
+//   }];
+//
+//   [CATransaction commit];
+
    [UIView transitionFromView:self.splashViewController.view
                        toView:self.rootViewController.view
 #if __Debug__
@@ -420,26 +459,10 @@
 #endif /* !__Debug__ */
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    completion:^(BOOL aFinished) {
-      
+
       UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
    }];
-   
-//#if __Debug__
-//   fDuration   = UIAViewAnimationDefaultDuraton * 5;
-//#endif /* __Debug__ */
-//
-//   [UIView animateWithDuration:fDuration
-//                    animations:^{
-//
-//      self.splashViewController.view.alpha   = 0;
-//   }
-//                    completion:^(BOOL finished) {
-//
-//      [self.splashViewController.view removeFromSuperview];
-//
-//      UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
-//   }];
-   
+
    __CATCH(nErr);
    
    return;
@@ -452,8 +475,15 @@
    
    __TRY;
    
-   [self.window setRootViewController:self.rootViewController];
-   
+   if (@available(iOS 15, *)) {
+      
+   } /* End if () */
+   else {
+
+      [self.window setRootViewController:self.rootViewController];
+
+   } /* End else */
+
    [self postNotificationName:SplashViewController.SPLASH_DONE
                        object:nil];
    

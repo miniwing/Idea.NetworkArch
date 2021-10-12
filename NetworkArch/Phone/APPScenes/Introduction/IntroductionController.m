@@ -381,10 +381,10 @@
    [self dismissViewControllerAnimated:YES
                             completion:^{
       
-#if __Debug__
-#else
+//#if __Debug__
+//#else
       [APPDelegate setIntroduced:YES];
-#endif
+//#endif
       
       szAPI = [APPDelegate apiKey];
       
