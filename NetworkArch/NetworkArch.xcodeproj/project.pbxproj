@@ -295,6 +295,13 @@
 		4AE2182826C8C1F40047776D /* HomeSettingContentController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2181F26C8C1F10047776D /* HomeSettingContentController+Signal.m */; };
 		4AE2182926C8C1F40047776D /* HomeSettingContentController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2182026C8C1F20047776D /* HomeSettingContentController+Theme.m */; };
 		4AE2182A26C8C1F40047776D /* HomeSettingContentController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2182426C8C1F30047776D /* HomeSettingContentController+Debug.m */; };
+		4AE2DEA42715972D0081173D /* LanScanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DE9A2715972A0081173D /* LanScanCell.m */; };
+		4AE2DED42715A2250081173D /* LanScanDeviceController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DEC92715A2210081173D /* LanScanDeviceController+Inner.m */; };
+		4AE2DED52715A2250081173D /* LanScanDeviceController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DECD2715A2230081173D /* LanScanDeviceController+Theme.m */; };
+		4AE2DED62715A2250081173D /* LanScanDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DECE2715A2230081173D /* LanScanDeviceController.m */; };
+		4AE2DED72715A2250081173D /* LanScanDeviceController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DECF2715A2240081173D /* LanScanDeviceController+Notification.m */; };
+		4AE2DED82715A2250081173D /* LanScanDeviceController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DED02715A2240081173D /* LanScanDeviceController+Signal.m */; };
+		4AE2DED92715A2250081173D /* LanScanDeviceController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DED12715A2240081173D /* LanScanDeviceController+Debug.m */; };
 		4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B812685C39400DC1DA2 /* HomeController+Notification.m */; };
 		4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B842685C39400DC1DA2 /* HomeController+Debug.m */; };
 		4AE51B8F2685C39400DC1DA2 /* HomeController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B852685C39400DC1DA2 /* HomeController+Theme.m */; };
@@ -1020,6 +1027,20 @@
 		4AE2182226C8C1F30047776D /* HomeSettingContentController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeSettingContentController+Signal.h"; sourceTree = "<group>"; };
 		4AE2182326C8C1F30047776D /* HomeSettingContentController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeSettingContentController+Theme.h"; sourceTree = "<group>"; };
 		4AE2182426C8C1F30047776D /* HomeSettingContentController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeSettingContentController+Debug.m"; sourceTree = "<group>"; };
+		4AE2DE9A2715972A0081173D /* LanScanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanScanCell.m; sourceTree = "<group>"; };
+		4AE2DE9D2715972B0081173D /* LanScanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanScanCell.h; sourceTree = "<group>"; };
+		4AE2DEC82715A2210081173D /* LanScanDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanScanDeviceController.h; sourceTree = "<group>"; };
+		4AE2DEC92715A2210081173D /* LanScanDeviceController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanDeviceController+Inner.m"; sourceTree = "<group>"; };
+		4AE2DECA2715A2220081173D /* LanScanDeviceController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanDeviceController+Inner.h"; sourceTree = "<group>"; };
+		4AE2DECB2715A2220081173D /* LanScanDeviceController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanDeviceController+Notification.h"; sourceTree = "<group>"; };
+		4AE2DECC2715A2230081173D /* LanScanDeviceController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanDeviceController+Theme.h"; sourceTree = "<group>"; };
+		4AE2DECD2715A2230081173D /* LanScanDeviceController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanDeviceController+Theme.m"; sourceTree = "<group>"; };
+		4AE2DECE2715A2230081173D /* LanScanDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanScanDeviceController.m; sourceTree = "<group>"; };
+		4AE2DECF2715A2240081173D /* LanScanDeviceController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanDeviceController+Notification.m"; sourceTree = "<group>"; };
+		4AE2DED02715A2240081173D /* LanScanDeviceController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanDeviceController+Signal.m"; sourceTree = "<group>"; };
+		4AE2DED12715A2240081173D /* LanScanDeviceController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanDeviceController+Debug.m"; sourceTree = "<group>"; };
+		4AE2DED22715A2250081173D /* LanScanDeviceController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanDeviceController+Signal.h"; sourceTree = "<group>"; };
+		4AE2DED32715A2250081173D /* LanScanDeviceController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanDeviceController+Debug.h"; sourceTree = "<group>"; };
 		4AE51B812685C39400DC1DA2 /* HomeController+Notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeController+Notification.m"; sourceTree = "<group>"; };
 		4AE51B822685C39400DC1DA2 /* HomeController+Inner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeController+Inner.h"; sourceTree = "<group>"; };
 		4AE51B832685C39400DC1DA2 /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
@@ -1497,6 +1518,7 @@
 				4A745EC926C58E4D00DA644A /* WoLAN */,
 				4A50A81226CD6CA500D58008 /* WoLANPacket */,
 				4A988A6F26CA5FB40010650A /* DNSCell */,
+				4AE2DE80271596F50081173D /* LAN-SCAN */,
 				4AB5C1E726859F3C00B1639D /* SETTING */,
 			);
 			path = APPViews;
@@ -2508,6 +2530,34 @@
 			path = "HOME-SETTING";
 			sourceTree = "<group>";
 		};
+		4AE2DE80271596F50081173D /* LAN-SCAN */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2DE9D2715972B0081173D /* LanScanCell.h */,
+				4AE2DE9A2715972A0081173D /* LanScanCell.m */,
+			);
+			path = "LAN-SCAN";
+			sourceTree = "<group>";
+		};
+		4AE2DEB12715A1F00081173D /* LanScanDeviceController */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2DEC82715A2210081173D /* LanScanDeviceController.h */,
+				4AE2DECE2715A2230081173D /* LanScanDeviceController.m */,
+				4AE2DECA2715A2220081173D /* LanScanDeviceController+Inner.h */,
+				4AE2DEC92715A2210081173D /* LanScanDeviceController+Inner.m */,
+				4AE2DECC2715A2230081173D /* LanScanDeviceController+Theme.h */,
+				4AE2DECD2715A2230081173D /* LanScanDeviceController+Theme.m */,
+				4AE2DECB2715A2220081173D /* LanScanDeviceController+Notification.h */,
+				4AE2DECF2715A2240081173D /* LanScanDeviceController+Notification.m */,
+				4AE2DED22715A2250081173D /* LanScanDeviceController+Signal.h */,
+				4AE2DED02715A2240081173D /* LanScanDeviceController+Signal.m */,
+				4AE2DED32715A2250081173D /* LanScanDeviceController+Debug.h */,
+				4AE2DED12715A2240081173D /* LanScanDeviceController+Debug.m */,
+			);
+			path = LanScanDeviceController;
+			sourceTree = "<group>";
+		};
 		4AEA46FB27114EB0005AAEDF /* PORT-SCAN */ = {
 			isa = PBXGroup;
 			children = (
@@ -2607,6 +2657,7 @@
 			children = (
 				4AEA47F527117F82005AAEDF /* LanScanRootController */,
 				4AEA47F427117F79005AAEDF /* LanScanController */,
+				4AE2DEB12715A1F00081173D /* LanScanDeviceController */,
 			);
 			path = "LAN-SCAN";
 			sourceTree = "<group>";
@@ -3184,6 +3235,7 @@
 				4A53A9BE26A46E60000700F2 /* WoLANRootController+Signal.m in Sources */,
 				4A5D99E226A4950B00E00610 /* CellularMoreController+Signal.m in Sources */,
 				4A50A83B26CD6CF500D58008 /* WoLANPacketCell+Notification.m in Sources */,
+				4AE2DED82715A2250081173D /* LanScanDeviceController+Signal.m in Sources */,
 				4A221F0426A44DA100C94F00 /* PingRootController+Debug.m in Sources */,
 				4A0332A926ECFD3A005F0157 /* WifiScanController+Signal.m in Sources */,
 				4A53AAC326A47403000700F2 /* DNSRootController.m in Sources */,
@@ -3233,6 +3285,7 @@
 				4AEA474127114F69005AAEDF /* PortScanRootController+Signal.m in Sources */,
 				4A988A6C26CA5C190010650A /* DNSContentController+Inner.m in Sources */,
 				4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */,
+				4AE2DED52715A2250081173D /* LanScanDeviceController+Theme.m in Sources */,
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
 				4AEA483327117FDB005AAEDF /* LanScanRootController+Signal.m in Sources */,
 				4AAF697826B58E1300E68E32 /* APPDelegate+Signal.m in Sources */,
@@ -3289,6 +3342,8 @@
 				4A45536826862E4D0050E736 /* HomeContentController+Theme.m in Sources */,
 				4AE51B902685C39400DC1DA2 /* HomeController+Inner.m in Sources */,
 				4A0332AB26ECFD3A005F0157 /* WifiScanController+Theme.m in Sources */,
+				4AE2DED92715A2250081173D /* LanScanDeviceController+Debug.m in Sources */,
+				4AE2DEA42715972D0081173D /* LanScanCell.m in Sources */,
 				4A9A14FF26CC283A006286C3 /* HomeSettingAlertController+Debug.m in Sources */,
 				4A53AA1826A46EE2000700F2 /* WhoisController.m in Sources */,
 				4A5D99F326A4951C00E00610 /* WifiMoreRootController+Signal.m in Sources */,
@@ -3340,6 +3395,7 @@
 				4AE2182926C8C1F40047776D /* HomeSettingContentController+Theme.m in Sources */,
 				4A9A14FC26CC283A006286C3 /* HomeSettingAlertController+Signal.m in Sources */,
 				4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */,
+				4AE2DED42715A2250081173D /* LanScanDeviceController+Inner.m in Sources */,
 				4A53A9C026A46E60000700F2 /* WoLANRootController.m in Sources */,
 				4A988A6926CA5C190010650A /* DNSContentController+Theme.m in Sources */,
 				4A988A4926CA464F0010650A /* DNSManager+Singleton.m in Sources */,
@@ -3370,9 +3426,11 @@
 				4AE2182826C8C1F40047776D /* HomeSettingContentController+Signal.m in Sources */,
 				4A988A6D26CA5C190010650A /* DNSContentController+Notification.m in Sources */,
 				4AC5441C26C3665100C0320B /* WifiInterfacesCell+Signal.m in Sources */,
+				4AE2DED72715A2250081173D /* LanScanDeviceController+Notification.m in Sources */,
 				4A5D99DF26A4950B00E00610 /* CellularMoreController.m in Sources */,
 				4A988A9326CA5FDB0010650A /* DNSCell+Inner.m in Sources */,
 				4A0707FB26B64B5A00D3A1DC /* CellularMoreContentController+Notification.m in Sources */,
+				4AE2DED62715A2250081173D /* LanScanDeviceController.m in Sources */,
 				4A745EEC26C58E9D00DA644A /* WoLANCell+Inner.m in Sources */,
 				4AF6D27926CCE7A3000EAA40 /* AppIntroduction.m in Sources */,
 				4AE217D426C8BE060047776D /* HomeSettingRootController+Inner.m in Sources */,

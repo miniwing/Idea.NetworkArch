@@ -47,6 +47,7 @@ handleSignal(TracerouteController, startScanSignal) {
    [self.icmpSwitch setEnabled:NO];
 
    self.traceDetails = nil;
+   [self.textView setText:nil];
    
    // 按钮状态变更。
    if (self.icmpSwitch.isOn) {

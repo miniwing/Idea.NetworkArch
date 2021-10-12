@@ -10,8 +10,6 @@
 
 #import <IDEAUIVendor/IDEAUIVendor.h>
 
-#import "APPTextField.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LanScanController : IDEAViewController
@@ -19,8 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * leftBarButtonItem;
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * rightBarButtonItem;
 
-@property (nonatomic, weak)   IBOutlet       UIView                              * inputView;
-@property (nonatomic, weak)   IBOutlet       APPTextField                        * textField;
+@property (nonatomic, weak)   IBOutlet       UIView                              * infoView;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * ssidLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * ipLabel;
 
 @property (nonatomic, weak)   IBOutlet       UITableView                         * tableView;
 

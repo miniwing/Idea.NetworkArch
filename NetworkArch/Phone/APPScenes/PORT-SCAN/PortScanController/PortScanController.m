@@ -85,6 +85,7 @@
    
    [super viewDidLoad];
          
+   [self setTitle:APP_STR(@"Port Scan")];
    LogDebug((@"[PortScanController viewDidLoad] : VIEW : %@", self.view));
    
    [self.view setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
@@ -180,7 +181,6 @@
    [self.textField setFont:[APPFont regularFontOfSize:self.textField.font.pointSize]];
    
    [self.textField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
-
    [self.textField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    
    [self.textField setDelegate:self];
@@ -218,7 +218,7 @@
    [self.fromPortTextField setCornerRadius:4 clipsToBounds:YES];
    [self.fromPortTextField setFont:[APPFont regularFontOfSize:self.fromPortTextField.font.pointSize]];
    
-//   [self.fromPortTextField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
+   [self.fromPortTextField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
    [self.fromPortTextField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
    [self.portAndLabel setText:APP_STR(@" And ")];
@@ -245,7 +245,7 @@
    [self.toPortTextField setCornerRadius:4 clipsToBounds:YES];
    [self.toPortTextField setFont:[APPFont regularFontOfSize:self.toPortTextField.font.pointSize]];
    
-//   [self.toPortTextField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
+   [self.toPortTextField setPlaceholderColorPicker:DKColorPickerWithKey([IDEAColor placeholderText])];
    [self.toPortTextField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
    /**
@@ -258,6 +258,12 @@
    [self.portScanLabel setCornerRadius:6 clipsToBounds:YES];
    [self.portScanLabel setFont:[APPFont regularFontOfSize:self.portScanLabel.font.pointSize]];
    [self.portScanLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+   [self.portScaningLabel setText:APP_STR(@"Scaning Port : ")];
+   [self.portScaningLabel setCornerRadius:6 clipsToBounds:YES];
+   [self.portScaningLabel setFont:[APPFont regularFontOfSize:self.portScaningLabel.font.pointSize]];
+   [self.portScaningLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.portScaningLabel setText:nil];
 
    [self.textView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    [self.textView setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
@@ -447,7 +453,7 @@
       
       [self postSignal:PortScanController.stopScanSignal
                onQueue:dispatch_get_main_queue()];
-      
+
    } /* End else */
    
    __CATCH(nErr);

@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PortScanController ()
 
+@property (nonatomic, strong)                NSMutableString                     * portScanRes;
+
 @end
 
 @interface PortScanController (Inner)
