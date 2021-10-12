@@ -78,8 +78,8 @@ workspace 'Idea.NetworkArch'
 
 project   'NetworkArch/NetworkArch.xcodeproj'
 
-use_frameworks!
-#use_modular_headers!
+#use_frameworks!
+use_modular_headers!
 inhibit_all_warnings!
 
 platform :ios, '10.0'
@@ -194,8 +194,8 @@ target 'NetworkArch' do
 
   #-------------------------------------------------------------------------------------------------------------------------------#
 
-  pod 'MIApm'
-  pod 'MISafeApp'
+#  pod 'MIApm'
+#  pod 'MISafeApp'
 
 #  pod 'PhoneNetSDK'
 

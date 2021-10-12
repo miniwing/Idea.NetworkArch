@@ -295,16 +295,9 @@
 
    [CATransaction setCompletionBlock:^{
 
-      if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[WoLANRootController class]])) {
+      [self.navigationController popViewControllerAnimated:YES
+                                                completion:nil];
 
-         [self.navigationController popViewControllerAnimated:YES
-                                                   completion:nil];
-      } /* End if () */
-      else {
-
-         [self dismissViewControllerAnimated:YES
-                                  completion:nil];
-      } /* End else */
    }];
 
    [self resignFirstResponder];
@@ -313,17 +306,9 @@
    
 #else /* APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
    
-   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[WoLANRootController class]])) {
-      
-      [self.navigationController popViewControllerAnimated:YES
-                                                completion:nil];
-   } /* End if () */
-   else {
-      
-      [self dismissViewControllerAnimated:YES
-                               completion:nil];
-   } /* End else */
-   
+   [self.navigationController popViewControllerAnimated:YES
+                                             completion:nil];
+
 #endif /* !APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
 
    __CATCH(nErr);

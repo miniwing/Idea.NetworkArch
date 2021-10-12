@@ -398,34 +398,20 @@
 
    [CATransaction setCompletionBlock:^{
 
-      if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[PortScanRootController class]])) {
-
-         [self.navigationController popViewControllerAnimated:YES
-                                                   completion:nil];
-      } /* End if () */
-      else {
-
-         [self dismissViewControllerAnimated:YES
-                                  completion:nil];
-      } /* End else */
+      [self.navigationController popViewControllerAnimated:YES
+                                                completion:nil];
    }];
 
    [CATransaction commit];
 
 #else /* APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
 
-   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[PortScanRootController class]])) {
-      
-      [self.navigationController popViewControllerAnimated:YES
-                                                completion:nil];
-   } /* End if () */
-   else {
-      
-      [self dismissViewControllerAnimated:YES
-                               completion:nil];
-   } /* End else */
+   [self.navigationController popViewControllerAnimated:YES
+                                             completion:nil];
 
 #endif /* !APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
+
+   [self sendSignal:PortScanController.stopScanSignal];
 
    __CATCH(nErr);
    

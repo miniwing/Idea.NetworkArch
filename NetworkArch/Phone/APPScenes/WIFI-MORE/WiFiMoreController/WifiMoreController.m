@@ -267,19 +267,19 @@
    
    __TRY;
    
-   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[WifiMoreRootController class]])) {
-      
-      [self.navigationController popViewControllerAnimated:YES
-                                                completion:nil];
-      
-   } /* End if () */
-   else {
+   if ([self.navigationController isKindOfClass:WifiMoreRootController.class] || [self.rt_navigationController isKindOfClass:WifiMoreRootController.class]) {
       
       [self dismissViewControllerAnimated:YES
                                completion:nil];
       
+   } /* End if () */
+   else {
+      
+      [self.navigationController popViewControllerAnimated:YES
+                                                completion:nil];
+      
    } /* End else */
-   
+
    __CATCH(nErr);
    
    return;

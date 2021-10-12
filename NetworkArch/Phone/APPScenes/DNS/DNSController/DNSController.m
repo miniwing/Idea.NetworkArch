@@ -396,16 +396,8 @@
 
    [CATransaction setCompletionBlock:^{
 
-      if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[DNSRootController class]])) {
-
-         [self.navigationController popViewControllerAnimated:YES
-                                                   completion:nil];
-      } /* End if () */
-      else {
-
-         [self dismissViewControllerAnimated:YES
-                                  completion:nil];
-      } /* End else */
+      [self.navigationController popViewControllerAnimated:YES
+                                                completion:nil];
    }];
 
    [self resignFirstResponder];
@@ -414,16 +406,8 @@
 
 #else /* APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
 
-   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[DNSRootController class]])) {
-      
-      [self.navigationController popViewControllerAnimated:YES
-                                                completion:nil];
-   } /* End if () */
-   else {
-      
-      [self dismissViewControllerAnimated:YES
-                               completion:nil];
-   } /* End else */
+   [self.navigationController popViewControllerAnimated:YES
+                                             completion:nil];
 
 #endif /* !APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
 

@@ -9,7 +9,9 @@
 //  TEL : +(852)53054612
 //
 
+#import "LanScanController+Inner.h"
 #import "LanScanController+Signal.h"
+#import "LanScanController+Notification.h"
 
 @implementation LanScanController (Signal)
 
@@ -46,6 +48,9 @@ handleSignal(LanScanController, startScanSignal) {
    
    [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarStop"]];
    
+   [self.activeIPs removeAllObjects];
+   [self.tableView reloadData];
+
    [[PNetMLanScanner shareInstance] scan];
 
    __CATCH(nErr);

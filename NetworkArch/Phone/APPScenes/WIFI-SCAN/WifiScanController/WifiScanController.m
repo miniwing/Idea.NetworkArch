@@ -9,6 +9,8 @@
 //  TEL : +(852)53054612
 //
 
+#import "WifiScanRootController.h"
+
 #import "WifiScanController.h"
 #import "WifiScanController+Inner.h"
 #import "WifiScanController+Signal.h"

@@ -55,7 +55,7 @@ handleSignal(PortScanController, startScanSignal) {
    [self.fromPortTextField setEnabled:NO];
    [self.toPortTextField setEnabled:NO];
    
-   self.portScanRes  = nil;
+   __RELEASE(self.portScanRes);
    [self.textView setText:nil];
    
    szHost      = [aSignal.input objectForKey:@"ip"];

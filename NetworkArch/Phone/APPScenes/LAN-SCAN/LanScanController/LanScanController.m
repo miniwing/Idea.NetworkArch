@@ -157,7 +157,7 @@
    
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    
-   [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
+   [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarPlay"]];
    
    [self.rightBarButtonItem setEnabled:YES];
@@ -411,18 +411,8 @@
 
    [CATransaction setCompletionBlock:^{
 
-      if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[LanScanRootController class]])) {
-
-         [self.navigationController popViewControllerAnimated:YES
-                                                   completion:nil];
-
-      } /* End if () */
-      else {
-
-         [self dismissViewControllerAnimated:YES
-                                  completion:nil];
-
-      } /* End else */
+      [self.navigationController popViewControllerAnimated:YES
+                                                completion:nil];
    }];
 
    [self resignFirstResponder];
@@ -431,18 +421,12 @@
 
 #else /* APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
 
-   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[LanScanRootController class]])) {
-      
-      [self.navigationController popViewControllerAnimated:YES
-                                                completion:nil];
-   } /* End if () */
-   else {
-      
-      [self dismissViewControllerAnimated:YES
-                               completion:nil];
-   } /* End else */
+   [self.navigationController popViewControllerAnimated:YES
+                                             completion:nil];
 
 #endif /* !APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
+
+   [self sendSignal:LanScanController.stopScanSignal];
 
    __CATCH(nErr);
    

@@ -267,19 +267,9 @@
    
    __TRY;
    
-   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[CellularMoreRootController class]])) {
-      
-      [self.navigationController popViewControllerAnimated:YES
-                                                completion:nil];
-      
-   } /* End if () */
-   else {
-      
-      [self dismissViewControllerAnimated:YES
-                               completion:nil];
-      
-   } /* End else */
-   
+   [self.navigationController popViewControllerAnimated:YES
+                                             completion:nil];
+
    __CATCH(nErr);
    
    return;
