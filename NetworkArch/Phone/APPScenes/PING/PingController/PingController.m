@@ -663,27 +663,43 @@
    
    __TRY;
    
+#if APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR
+   
    [CATransaction begin];
-   
-   [self resignFirstResponder];
-   
-   [CATransaction commit];
-   
+
    [CATransaction setCompletionBlock:^{
-      
+
       if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[PingRootController class]])) {
-         
+
          [self.navigationController popViewControllerAnimated:YES
                                                    completion:nil];
-         
       } /* End if () */
       else {
-         
+
          [self dismissViewControllerAnimated:YES
                                   completion:nil];
-         
       } /* End else */
    }];
+
+   [self resignFirstResponder];
+
+   [CATransaction commit];
+   
+#else /* APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
+   
+   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[PingRootController class]])) {
+      
+      [self.navigationController popViewControllerAnimated:YES
+                                                completion:nil];
+      
+   } /* End if () */
+   else {
+      
+      [self dismissViewControllerAnimated:YES
+                               completion:nil];
+   } /* End else */
+   
+#endif /* !APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
    
    __CATCH(nErr);
    

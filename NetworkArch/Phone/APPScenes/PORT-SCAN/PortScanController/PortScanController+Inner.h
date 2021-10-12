@@ -14,15 +14,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PortScanController ()
+@interface PortScanController () <UITextFieldDelegate>
 
 @property (nonatomic, strong)                MDCAppBar                           * appBar;
 
 @end
 
 @interface PortScanController ()
-
-@property (nonatomic, strong)                NSMutableArray<NSNumber *>          * sections;
 
 @end
 

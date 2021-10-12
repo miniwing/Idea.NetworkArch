@@ -100,14 +100,9 @@
 
    } /* End else */
    
-   LogDebug((@"[PingController viewDidLoad] : VIEW : %@", self.view));
+   LogDebug((@"[TracerouteController viewDidLoad] : VIEW : %@", self.view));
    
    [self.view setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-   
-   [self.tableView setBackgroundColor:UIColor.clearColor];
-   [self.tableView setTableFooterView:[UIView new]];
-   [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-   [self.tableView setSeparatorColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
    
 #if MATERIAL_APP_BAR
    [self.navigationController setNavigationBarHidden:YES];
@@ -208,6 +203,27 @@
                     selector:@selector(textFieldTextDidChange:)
                       object:self.textField];
    
+   [self.icmpLabel setFont:[APPFont regularFontOfSize:self.icmpLabel.font.pointSize]];
+   [self.icmpLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor lightText])];
+   [self.icmpLabel setTextColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return [IDEAColor colorWithKey:[IDEAColor lightText]];
+         
+      } /* End if () */
+      else {
+
+         return [IDEAColor colorWithKey:[IDEAColor darkGray]];
+
+      } /* End else */
+   }];
+
+   [self.textView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+   [self.textView setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.textView setCornerRadius:6 clipsToBounds:YES];
+   [self.textView setText:nil];
+
 #if __Debug__
    dispatch_async_on_main_queue(^{
 
@@ -306,50 +322,6 @@
    return bDone;
 }
 
-#pragma mark - <UITableViewDataSource>
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
-   
-   return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
-   
-   int                            nErr                                     = EFAULT;
-   
-   NSInteger                      nNumberOfRows                            = 0;
-   
-   __TRY;
-      
-   __CATCH(nErr);
-   
-   return nNumberOfRows;
-}
-
-- (nullable NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)aSection {
-   
-   int                            nErr                                     = EFAULT;
-      
-   NSString                      *szTitle                                  = nil;
-   
-   __TRY;
-      
-   __CATCH(nErr);
-   
-   return szTitle;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {
-   
-   int                            nErr                                     = EFAULT;
-         
-   __TRY;
-      
-   __CATCH(nErr);
-   
-   return nil;
-}
-
-
 @end
 
 #pragma mark - UIStoryboard
@@ -386,28 +358,46 @@
    
    __TRY;
    
+#if APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR
+
    [CATransaction begin];
-   
-   [self resignFirstResponder];
-   
-   [CATransaction commit];
-   
+
    [CATransaction setCompletionBlock:^{
-      
+
       if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[TracerouteRootController class]])) {
-         
+
          [self.navigationController popViewControllerAnimated:YES
                                                    completion:nil];
-         
       } /* End if () */
       else {
-         
+
          [self dismissViewControllerAnimated:YES
                                   completion:nil];
-         
       } /* End else */
    }];
-   
+
+   [self resignFirstResponder];
+
+   [CATransaction commit];
+
+#else /* APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
+
+   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[TracerouteRootController class]])) {
+      
+      [self.navigationController popViewControllerAnimated:YES
+                                                completion:nil];
+   } /* End if () */
+   else {
+      
+      [self dismissViewControllerAnimated:YES
+                               completion:nil];
+   } /* End else */
+
+#endif /* !APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
+
+   [self postSignal:TracerouteController.stopScanSignal
+            onQueue:dispatch_get_main_queue()];
+
    __CATCH(nErr);
    
    return;
@@ -417,12 +407,42 @@
    
    int                            nErr                                     = EFAULT;
    
+   BOOL                           bStart                                   = NO;
+   
    __TRY;
 
-   [self postSignal:TracerouteController.startScanSignal
-         withObject:self.textField.text
-            onQueue:dispatch_get_main_queue()];
+   if (self.icmpSwitch.isOn) {
 
+      if (NO == [[PhoneNetManager shareInstance] isDoingTraceroute]) {
+         
+         bStart   = YES;
+         
+      } /* End if () */
+   }
+   else {
+      
+      if (NO == [self.udpTraceroute isDoingUdpTraceroute]) {
+         
+         bStart   = YES;
+
+      } /* End if () */
+      
+   } /* End else */
+
+   if (bStart) {
+      
+      [self postSignal:TracerouteController.startScanSignal
+            withObject:self.textField.text
+               onQueue:dispatch_get_main_queue()];
+
+   } /* End if () */
+   else {
+
+      [self postSignal:TracerouteController.stopScanSignal
+               onQueue:dispatch_get_main_queue()];
+
+   } /* End else */
+   
    __CATCH(nErr);
    
    return;

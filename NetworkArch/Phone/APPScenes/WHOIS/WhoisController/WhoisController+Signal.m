@@ -52,8 +52,6 @@ handleSignal(WhoisController, startSignal) {
    LogDebug((@"-[WhoisController startSignal:] : ApiKey : %@", szApiKey));
 
    [CATransaction begin];
-   [self resignFirstResponder];
-   [CATransaction commit];
    
    [CATransaction setCompletionBlock:^{
       
@@ -125,6 +123,10 @@ handleSignal(WhoisController, startSignal) {
          
       } /* End else */
    }];
+
+   [self resignFirstResponder];
+
+   [CATransaction commit];
 
    __CATCH(nErr);
 

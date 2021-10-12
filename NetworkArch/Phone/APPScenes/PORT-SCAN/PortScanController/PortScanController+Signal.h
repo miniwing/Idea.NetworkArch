@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 @signal(self);
 #endif /* __Debug__ */
 
+@signal(startScan);
+@signal(stopScan);
+
 @end
 
 NS_ASSUME_NONNULL_END

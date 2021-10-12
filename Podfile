@@ -176,6 +176,8 @@ target 'NetworkArch' do
   miniwing_pod('IDEAPing', type = 'local', branch = 'develop')
   miniwing_pod('IDEARouter', type = 'local', branch = 'develop')
   miniwing_pod('IDEANetUtils', type = 'local', branch = 'develop')
+  
+  miniwing_pod('PhoneNetSDK', type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
   miniwing_pod('IDEAUIKit', type = 'local', branch = 'develop')
   miniwing_pod('IDEAUIVendor', type = 'local', branch = 'develop')
@@ -195,7 +197,7 @@ target 'NetworkArch' do
   pod 'MIApm'
   pod 'MISafeApp'
 
-  pod 'PhoneNetSDK'
+#  pod 'PhoneNetSDK'
 
   #-------------------------------------------------------------------------------------------------------------------------------#
 

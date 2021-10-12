@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TracerouteController ()
 
 @property (nonatomic, strong)                PNUdpTraceroute                     * udpTraceroute;
-@property (nonatomic, strong)                NSMutableArray<NSNumber *>          * sections;
+@property (nonatomic, strong)                NSMutableString                     * traceDetails;
 
 @end
 
