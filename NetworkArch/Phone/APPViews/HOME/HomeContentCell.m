@@ -64,8 +64,6 @@
    [self.selectedBackgroundView setBackgroundColor:UIColor.clearColor];
    [self.selectedBackgroundView setClipsToBounds:YES];
 
-   [self.selectedColorView setBackgroundColor:UIColor.clearColor];
-
    [self.selectedColorView setClipsToBounds:YES];
    [self.selectedColorView setBackgroundColor:UIColor.clearColor];
 

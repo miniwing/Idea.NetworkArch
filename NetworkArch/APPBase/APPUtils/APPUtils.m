@@ -42,7 +42,7 @@
       
       if (0 == nUnitIndex) {
          
-         szFormat = [NSString stringWithFormat:@"%ld %@", (NSInteger)dBytes, aUnits[nUnitIndex]];
+         szFormat = [NSString stringWithFormat:@"%ld %@", (long)dBytes, aUnits[nUnitIndex]];
          
       } /* End if () */
       else {

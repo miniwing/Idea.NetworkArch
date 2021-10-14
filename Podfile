@@ -23,35 +23,63 @@ ENV['IDEAFONT']                   = 'YES'
 
 #ENV['IDEA_MATERIAL_COMPONENTS']   = 'YES'
 
-ENV['IDEA_YYKIT']                 = 'YES'
 ENV['IDEA_AFNETWORKING']          = 'NO'
-ENV['IDEA_FOUNDATION_EXTENSION']  = 'YES'
 
-ENV['IDEA_SERVICE_FILE_SYNC']   = 'NO'
+ENV['IDEA_FOUNDATION_EXTENSION']  = 'YES'
+ENV['IDEA_UIKIT_EXTENSION']       = 'YES'
+
+ENV['IDEA_YYKIT']                 = 'YES'
+
+ENV['IDEA_SERVICE_FILE_SYNC']     = 'NO'
+
+ENV['RTRootNavigationController'] = 'YES'
 
 ###################################################################################################################################
 
-def miniwing_pod(pod_name, file = pod_name, type = 'remote', branch = 'master', modular_headers = true)
+def github_pod(pod_name, file = pod_name, type = 'remote', branch = 'master', configurations = ['Debug', 'Release'], modular_headers = true)
+#  puts "github_pod :: pod_name : #{pod_name} +++ configurations : #{configurations}"
   case type
     when 'local'
-      pod pod_name, :path => "../../MINIWING-PODs/#{file}"        , :inhibit_warnings => false, :modular_headers => modular_headers
+      pod pod_name, :path   => "../../MINIWING-PODs/#{file}",
+                    :inhibit_warnings => true,
+#                    :modular_headers  => modular_headers,
+                    :configurations   => configurations
     when 'remote'
-      pod pod_name, :git  => "git@github.com:miniwing/#{file}.git", :branch => "#{branch}"    ,     :modular_headers => modular_headers
+      pod pod_name, :git    => "git@github.com:miniwing/#{file}.git",
+                    :branch => "#{branch}",
+                    :inhibit_warnings => true,
+#                    :modular_headers  => modular_headers,
+                    :configurations   => configurations
     else
   end
 end
 
-# git@github.com:miniwing/FoundationExtension.git
-# https://github.com/miniwing/#{file}.git
+def miniwing_pod(pod_name, type = 'remote', branch = 'master', configurations = ['Debug', 'Release'], modular_headers = true)
+#  puts "miniwing_pod :: pod_name : #{pod_name} +++ configurations : #{configurations}"
+  case type
+    when 'local'
+      pod pod_name, :path   => "../../MINIWING-PODs/#{pod_name}",
+                    :inhibit_warnings => true,
+#                    :modular_headers  => modular_headers,
+                    :configurations   => configurations
+    when 'remote'
+      pod pod_name, :git    => "git@github.com:miniwing/MINIWING-PODs.git",
+                    :branch => "#{branch}",
+                    :inhibit_warnings => true,
+#                    :modular_headers  => modular_headers,
+                    :configurations   => configurations
+    else
+  end
+end
 
 ###################################################################################################################################
 
 workspace 'Idea.NetworkArch'
 
-project 'NetworkArch/NetworkArch.xcodeproj'
+project   'NetworkArch/NetworkArch.xcodeproj'
 
-use_frameworks!
-#use_modular_headers!
+#use_frameworks!
+use_modular_headers!
 inhibit_all_warnings!
 
 platform :ios, '10.0'
@@ -60,37 +88,46 @@ platform :ios, '10.0'
 
 def library
   
-  pod 'APPDATA'                         , :path => 'APPDATA'
-
   if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
-    miniwing_pod('FoundationExtension'  , file = 'FoundationExtension', type = 'remote', branch = 'master', modular_headers = true)
+    github_pod('FoundationExtension', file = 'FoundationExtension', type = 'local', branch = 'develop')
   end # IDEA_FOUNDATION_EXTENSION
 
-  miniwing_pod('UIKitExtension', file = 'FoundationExtension', type = 'remote', branch = 'master', modular_headers = true)
+  if ENV['IDEA_UIKIT_EXTENSION'] == 'YES'
+    github_pod('UIKitExtension', file = 'FoundationExtension', type = 'local', branch = 'develop')
+  end # IDEA_FOUNDATION_EXTENSION
 
   if ENV['IDEA_YYKIT'] == 'YES'
-    miniwing_pod('YYKit', file = 'YYKit', type = 'local', branch = 'master', modular_headers = true)
+    github_pod('YYKit', file = 'YYKit', type = 'local', branch = 'develop')
   end # IDEA_YYKIT
 
   if ENV['IDEA_AFNETWORKING'] == 'YES'
-    miniwing_pod('AFNetworking', file = 'AFNetworking', type = 'local', branch = 'master', modular_headers = true)
+    github_pod('AFNetworking', file = 'AFNetworking', type = 'local', branch = 'develop')
   else
-    miniwing_pod('AFNetworking/Reachability', file = 'AFNetworking', type = 'local', branch = 'master', modular_headers = true)
+    github_pod('AFNetworking/Reachability', file = 'AFNetworking', type = 'local', branch = 'develop')
   end # IDEA_AFNETWORKING
 
+  github_pod('IDEAApplet', file = 'IDEAApplet', type = 'local', branch = 'develop')
+
   if ENV['IDEAFONT'] == 'YES'
-    pod 'IDEAFONT'                      , :path => '../MINIWING-PODs/IDEAFONT'
+    miniwing_pod('IDEAFONT', type = 'local', branch = 'develop')
   end # IDEAFONT
 
-  pod 'IDEAKit'                         , :path => '../MINIWING-PODs/IDEAKit'
-  pod 'IDEAColor'                       , :path => '../MINIWING-PODs/IDEAColor'
-  pod 'IDEAPalettes'                    , :path => '../MINIWING-PODs/IDEAPalettes'
+  miniwing_pod('IDEAKit', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAColor', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAPalettes', type = 'local', branch = 'develop')
 
-  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
+  miniwing_pod('IDEALanScan', type = 'local', branch = 'develop')
 
   if ENV['OLLVM'] == 'YES'
-    pod 'ollvm'                         , :path => '../MINIWING-PODs/ollvm'
-  end
+    miniwing_pod('ollvm', type = 'local', branch = 'develop')
+  end # OLLVM
+
+  pod 'APPDATA' , :path => 'APPDATA'
+  pod 'APPDEBUG', :path => 'APPDEBUG', :configurations => ['Debug']
+
+#  pod 'MMLanScan'
+#  pod 'PhoneNetSDK'
+
 end
 
 ###################################################################################################################################
@@ -111,11 +148,12 @@ target 'NetworkArch' do
 
 #  pod 'PromisesObjC'
 #  pod 'Masonry'
-  pod 'Appirater'
+#  pod 'Appirater'
 #  pod 'ZKCycleScrollView'
-#  pod 'NetUtils'
   
-  pod 'RTRootNavigationController'
+  if ENV['RTRootNavigationController'] == 'YES'
+    pod 'RTRootNavigationController'
+  end # RTRootNavigationController
 
   if ENV['IDEA_MATERIAL_COMPONENTS'] == 'YES'
 #    pod 'MaterialComponents'
@@ -131,35 +169,35 @@ target 'NetworkArch' do
 #  pod 'FloatingPanel'
 
   #-------------------------------------------------------------------------------------------------------------------------------#
-#  pod 'DoraemonKit'                                                                           , :configurations => ['Debug']
-#  pod 'YKWoodpecker'                                                                          , :configurations => ['Debug']
-  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
+  #  pod 'DoraemonKit', :configurations => ['Debug']
+  #  pod 'YKWoodpecker', :configurations => ['Debug']
+  pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
-#  pod 'LeetCode'                        , :path => 'LeetCode'                                 , :configurations => ['Debug']
+  miniwing_pod('IDEAPing', type = 'local', branch = 'develop')
+  miniwing_pod('IDEARouter', type = 'local', branch = 'develop')
+  miniwing_pod('IDEANetUtils', type = 'local', branch = 'develop')
+  
+  miniwing_pod('PhoneNetSDK', type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
-#  pod 'APPDEBUG'                        , :path => 'APPDEBUG'                                 , :configurations => ['Debug']
-#  pod 'AFNetworkActivityLogger'         , :path => '../MINIWING-PODs/AFNetworkActivityLogger' , :configurations => ['Debug']
+  miniwing_pod('IDEAUIKit', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAUIVendor', type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
-  pod 'IDEAPing'                        , :path => '../MINIWING-PODs/IDEAPing'
-  pod 'IDEARouter'                      , :path => '../MINIWING-PODs/IDEARouter'
-  pod 'IDEANetUtils'                    , :path => '../MINIWING-PODs/IDEANetUtils'
-#  pod 'IDEAThrottle'                    , :path => '../MINIWING-PODs/IDEAThrottle'
-#  miniwing_pod('IDEAThrottle', file = 'IDEAThrottle', type = 'local', branch = 'develop', modular_headers = true)
-#-------------------------------------------------------------------------------------------------------------------------------#
-#  pod 'IDEAEventKit'                    , :path => '../MINIWING-PODs/IDEAEventKit'
-  pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
-  pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
+  miniwing_pod('IDEANightVersion', type = 'local', branch = 'develop')
+  miniwing_pod('IDEATabBarControllerTransition', type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
-  miniwing_pod('IDEANightVersion', file = 'IDEANightVersion', type = 'remote', branch = 'develop', modular_headers = true)
-  miniwing_pod('IDEATabBarControllerTransition', file = 'IDEATabBarControllerTransition', type = 'local', branch = 'develop', modular_headers = true)
-#  miniwing_pod('IDEAEventBus', file = 'IDEAEventBus', type = 'local', branch = 'develop', modular_headers = true)
-  #-------------------------------------------------------------------------------------------------------------------------------#
-#  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
-  pod 'IDEAAppletDebugger'              , :path => '../MINIWING-PODs/Idea.Applets'            , :configurations => ['Debug']
+#  github_pod('IDEAApplet', file = 'IDEAApplet', type = 'local', branch = 'develop')
+  github_pod('IDEAAppletDebugger', file = 'IDEAApplet', type = 'local', branch = 'develop', configurations = ['Debug'])
   #-------------------------------------------------------------------------------------------------------------------------------#
 
 #  pod 'GoogleAnalytics'
 #  pod 'Firebase'
+
+  #-------------------------------------------------------------------------------------------------------------------------------#
+
+#  pod 'MIApm'
+#  pod 'MISafeApp'
+
+#  pod 'PhoneNetSDK'
 
   #-------------------------------------------------------------------------------------------------------------------------------#
 
@@ -171,13 +209,7 @@ end
 
 #target 'TodayClip' do
 #
-#  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
-#
-#  pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
-#  pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
-#
-#  pod 'IDEARouter'                      , :path => '../MINIWING-PODs/IDEARouter'
-#  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
+# pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
 #
 #  library
 #
@@ -187,15 +219,14 @@ end
 
 target 'TodayWidget' do
   
-  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
+  pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
 
 #  pod 'MMKVAppExtension'
 
-  pod 'IDEAUIKit'                       , :path => '../MINIWING-PODs/IDEAUIKit'
-  pod 'IDEAUIVendor'                    , :path => '../MINIWING-PODs/IDEAUIVendor'
+  miniwing_pod('IDEAUIKit', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAUIVendor', type = 'local', branch = 'develop')
 
-  pod 'IDEARouter'                      , :path => '../MINIWING-PODs/IDEARouter'
-#  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
+  miniwing_pod('IDEARouter', type = 'local', branch = 'develop')
 
   library
   
@@ -205,11 +236,7 @@ end
 
 target 'FleetingWidget' do
 
-  pod 'Reveal-SDK'                      , '~> 24'                                             , :configurations => ['Debug']
-
-#  pod 'IDEAApplet'                      , :path => '../MINIWING-PODs/Idea.Applets'
-
-#  pod 'MMKVAppExtension'
+  pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
 
   library
   

@@ -59,9 +59,12 @@
       [_appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
       [_appBar.headerViewController.headerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
       
-      [_appBar.headerViewController setShowsHairline:YES];
-      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
-      
+//      [_appBar.headerViewController setShowsHairline:YES];
+//      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
+
+      [_appBar.headerViewController setShowsHairline:NO];
+      [_appBar.headerViewController setHairlineColor:UIColor.clearColor];
+
       [self addChildViewController:_appBar.headerViewController];
 #endif /* MATERIAL_APP_BAR */
       
@@ -286,28 +289,28 @@
    
    __TRY;
    
+#if APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR
+   
    [CATransaction begin];
-   
+
+   [CATransaction setCompletionBlock:^{
+
+      [self.navigationController popViewControllerAnimated:YES
+                                                completion:nil];
+
+   }];
+
    [self resignFirstResponder];
-   
+
    [CATransaction commit];
    
-   [CATransaction setCompletionBlock:^{
-      
-      if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[WoLANRootController class]])) {
-         
-         [self.navigationController popViewControllerAnimated:YES
-                                                   completion:nil];
-         
-      } /* End if () */
-      else {
-         
-         [self dismissViewControllerAnimated:YES
-                                  completion:nil];
-         
-      } /* End else */
-   }];
+#else /* APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
    
+   [self.navigationController popViewControllerAnimated:YES
+                                             completion:nil];
+
+#endif /* !APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
+
    __CATCH(nErr);
    
    return;

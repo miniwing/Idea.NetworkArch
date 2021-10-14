@@ -295,30 +295,6 @@
    
    __TRY;
    
-//   [CATransaction begin];
-//
-//   [self resignFirstResponder];
-//
-//   [CATransaction commit];
-//
-//   [CATransaction setCompletionBlock:^{
-//
-//      if ([self.navigationController isKindOfClass:HomeSettingRootController.class] || [self.rt_navigationController isKindOfClass:HomeSettingRootController.class]) {
-//
-//         [self dismissViewControllerAnimated:YES
-//                                  completion:^{
-//
-//         }];
-//
-//      } /* End if () */
-//      else {
-//
-//         [self.navigationController popViewControllerAnimated:YES
-//                                                   completion:nil];
-//
-//      } /* End else */
-//   }];
-
    [self resignFirstResponder];
 
    if ([self.navigationController isKindOfClass:HomeSettingRootController.class] || [self.rt_navigationController isKindOfClass:HomeSettingRootController.class]) {

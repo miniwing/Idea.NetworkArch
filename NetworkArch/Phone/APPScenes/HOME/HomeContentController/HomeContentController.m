@@ -16,11 +16,15 @@
 #import "HomeContentController+Signal.h"
 
 #import "WifiMoreController.h"
+#import "WifiScanController.h"
 #import "CellularMoreController.h"
 #import "PingController.h"
 #import "WoLANController.h"
 #import "WhoisController.h"
 #import "DNSController.h"
+#import "TracerouteController.h"
+#import "PortScanController.h"
+#import "LanScanController.h"
 
 @implementation HomeContentController
 
@@ -99,7 +103,7 @@
 #endif /* !__DEBUG_COLOR__ */
       
    } /* End for () */
-   
+
    for (UIView *stView in self.cellularCellContainerViews) {
       
 #if __DEBUG_COLOR__
@@ -284,6 +288,21 @@
    [self.utilitiesDNSLabel setFont:[APPFont lightFontOfSize:self.utilitiesDNSLabel.font.pointSize]];
    [self.utilitiesDNSLabel setText:APP_STR(@"DNS Lookup")];
 
+   [self.utilitiesTracerouteLabel setBackgroundColor:UIColor.clearColor];
+   [self.utilitiesTracerouteLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.utilitiesTracerouteLabel setFont:[APPFont lightFontOfSize:self.utilitiesTracerouteLabel.font.pointSize]];
+   [self.utilitiesTracerouteLabel setText:APP_STR(@"Traceroute")];
+
+   [self.utilitiesPortScanLabel setBackgroundColor:UIColor.clearColor];
+   [self.utilitiesPortScanLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.utilitiesPortScanLabel setFont:[APPFont lightFontOfSize:self.utilitiesPortScanLabel.font.pointSize]];
+   [self.utilitiesPortScanLabel setText:APP_STR(@"Port Scan")];
+
+   [self.utilitiesLanScanLabel setBackgroundColor:UIColor.clearColor];
+   [self.utilitiesLanScanLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.utilitiesLanScanLabel setFont:[APPFont lightFontOfSize:self.utilitiesLanScanLabel.font.pointSize]];
+   [self.utilitiesLanScanLabel setText:APP_STR(@"LAN Scan")];
+
    for (UIImageView *stICON in self.cellRightImageViews) {
       
       [stICON setBackgroundColor:UIColor.clearColor];
@@ -399,7 +418,7 @@
 
    [self.wifiCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
    [self.wifiCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
-   
+      
    [self.cellularCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
    [self.cellularCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
    
@@ -495,7 +514,18 @@
       break;
       
    } /* End if () */
-   
+
+//   if (HomeSectionScan == aSection) {
+//
+//      nNumberOfRows  = self.scanCells.count;
+//      LogDebug((@"-[HomeContentController tableView:numberOfRowsInSection:] : HomeSectionWifi : %d", nNumberOfRows));
+//
+//      nErr  = noErr;
+//
+//      break;
+//
+//   } /* End if () */
+
    if (HomeSectionCellular == aSection) {
       
       nNumberOfRows  = self.cellularCells.count;
@@ -559,7 +589,17 @@
       break;
       
    } /* End if () */
-   
+
+//   if (HomeSectionScan == aSection) {
+//
+//      szTitle  = APP_STR(@"SCAN");
+//
+//      nErr  = noErr;
+//
+//      break;
+//
+//   } /* End if () */
+
    if (HomeSectionCellular == aSection) {
       
       szTitle  = APP_STR(@"CELLULAR");
@@ -602,6 +642,11 @@
       stTableViewCell   = self.wifiCells[aIndexPath.row];
       
    } /* End if () */
+//   else if (HomeSectionScan == aIndexPath.section) {
+//
+//      stTableViewCell   = self.scanCells[aIndexPath.row];
+//
+//   } /* End if () */
    else if (HomeSectionCellular == aIndexPath.section) {
       
       stTableViewCell   = self.cellularCells[aIndexPath.row];
@@ -699,12 +744,16 @@
    HomeContentCell               *stTableViewCell                          = nil;
    
    WifiMoreController            *stWifiMoreController                     = nil;
+//   WifiScanController            *stWifiScanController                     = nil;
    CellularMoreController        *stCellularMoreController                 = nil;
    
    PingController                *stPingController                         = nil;
    WoLANController               *stWoLANController                        = nil;
    WhoisController               *stWhoisController                        = nil;
    DNSController                 *stDNSController                          = nil;
+   TracerouteController          *stTracerouteController                   = nil;
+   PortScanController            *stPortScanController                     = nil;
+   LanScanController             *stLanScanController                      = nil;
    
    UIViewController              *stViewController                         = nil;
    
@@ -747,11 +796,17 @@
          
          stViewController  = stWifiMoreController;
          
-         LogDebug((@"canOpenURL : %d", [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"NetworkArch://"]]));
-
       } /* End if () */
       
    } /* End if () */
+//   else if (HomeSectionScan == aIndexPath.section) {
+//
+//      stWifiScanController = [UIStoryboard loadStoryboard:WifiScanController.storyboard
+//                                           viewController:WifiScanController.class];
+//      
+//      stViewController     = stWifiScanController;
+//
+//   } /* End if () */
    else if (HomeSectionCellular == aIndexPath.section) {
       
       if (HomeCellularMore == aIndexPath.row) {
@@ -796,6 +851,30 @@
                                            viewController:DNSController.class];
 
          stViewController  = stDNSController;
+
+      } /* End else if () */
+      else if (HomeUtilitiesTraceroute == aIndexPath.row) {
+
+         stTracerouteController  = [UIStoryboard loadStoryboard:TracerouteController.storyboard
+                                           viewController:TracerouteController.class];
+
+         stViewController  = stTracerouteController;
+
+      } /* End else if () */
+      else if (HomeUtilitiesPortScan == aIndexPath.row) {
+
+         stPortScanController    = [UIStoryboard loadStoryboard:PortScanController.storyboard
+                                           viewController:PortScanController.class];
+
+         stViewController  = stPortScanController;
+
+      } /* End else if () */
+      else if (HomeUtilitiesLanScan == aIndexPath.row) {
+
+         stLanScanController     = [UIStoryboard loadStoryboard:LanScanController.storyboard
+                                           viewController:LanScanController.class];
+
+         stViewController  = stLanScanController;
 
       } /* End else if () */
       else {

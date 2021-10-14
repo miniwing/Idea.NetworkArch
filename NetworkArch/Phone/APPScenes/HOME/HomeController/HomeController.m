@@ -149,24 +149,26 @@
    
    [self.navigationController.navigationBar setTitleTextAttributes:stTitleAttributes];
 #endif /* !MATERIAL_APP_BAR */
-      
+
    if ([APPDelegate isApiKeySetting]) {
       
       [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
       [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarSetting"]];
 
       [self.rightBarButtonItem setEnabled:YES];
-      
+      [self.appBar.navigationBar.rightBarButtonItem setEnabled:YES];
+
    } /* End if () */
    else {
 
-//      [self.rightBarButtonItem setTintColor:UIColor.clearColor];
-//      [self.rightBarButtonItem setImage:nil];
+      [self.rightBarButtonItem setTintColor:UIColor.clearColor];
+      [self.rightBarButtonItem setImage:nil];
 
       [self.rightBarButtonItem setEnabled:NO];
+      [self.appBar.navigationBar.rightBarButtonItem setEnabled:NO];
 
    } /* End else */
-   
+
    [self.contentView setBackgroundColor:UIColor.clearColor];
    
 #if MATERIAL_APP_BAR
@@ -216,8 +218,27 @@
    
    [super viewWillAppear:aAnimated];
    
-   //   [self.contentController viewWillAppear:aAnimated];
+//   [self.contentController viewWillAppear:aAnimated];
    
+   if ([APPDelegate isApiKeySetting]) {
+      
+      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarSetting"]];
+
+      [self.rightBarButtonItem setEnabled:YES];
+      [self.appBar.navigationBar.rightBarButtonItem setEnabled:YES];
+
+   } /* End if () */
+   else {
+
+      [self.rightBarButtonItem setTintColor:UIColor.clearColor];
+      [self.rightBarButtonItem setImage:nil];
+
+      [self.rightBarButtonItem setEnabled:NO];
+      [self.appBar.navigationBar.rightBarButtonItem setEnabled:NO];
+
+   } /* End else */
+
    __CATCH(nErr);
    
    return;

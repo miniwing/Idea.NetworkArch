@@ -40,17 +40,19 @@ handleSignal(APPDelegate, apiKeySettingSignal) {
       [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarSetting"]];
 
       [self.rightBarButtonItem setEnabled:YES];
-      
+      [self.appBar.navigationBar.rightBarButtonItem setEnabled:YES];
+
    } /* End if () */
    else {
 
       [self.rightBarButtonItem setTintColor:UIColor.clearColor];
       [self.rightBarButtonItem setImage:nil];
 
-      [self.rightBarButtonItem setEnabled:YES];
+      [self.rightBarButtonItem setEnabled:NO];
+      [self.appBar.navigationBar.rightBarButtonItem setEnabled:NO];
 
    } /* End else */
-   
+
    __CATCH(nErr);
    
    return;

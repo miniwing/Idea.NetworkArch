@@ -48,17 +48,24 @@
 /**
  推荐列表 => 更多
  */
-#define APP_BOOK_RECOM_LIST_MORE                   (0)
+#define APP_BOOK_RECOM_LIST_MORE                   (__OFF__)
 
 /**
  分类封面自动刷新
  */
-#define APP_BOOK_CLASSIFY_CELL_COVER_AUTO          (0)
+#define APP_BOOK_CLASSIFY_CELL_COVER_AUTO          (__OFF__)
 
 /**
  阅读界面加载动画
  */
-#define BOOK_READ_LOAD_ANIMATED_IMAGE              (0)
+#define BOOK_READ_LOAD_ANIMATED_IMAGE              (__OFF__)
+
+/***************************************************************************************************************/
+
+/**
+ 视图关闭前，关闭键盘。
+ */
+#define APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR   (__OFF__)
 
 /***************************************************************************************************************/
 

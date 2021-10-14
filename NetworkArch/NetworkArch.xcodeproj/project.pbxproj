@@ -7,7 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0100B73B43C89D02292BB26A /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C929DC9919D3505E2033D2FA /* Pods_APPBase.framework */; };
+		1688C801371EFB51520C167B /* libPods-NetworkArch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEDFE3E9BC682808F9ABA87 /* libPods-NetworkArch.a */; };
+		243382A47AE50850C71B68E1 /* libPods-TodayWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B49408CB6284BE5B52B394AE /* libPods-TodayWidget.a */; };
+		251910D9A9C72571F93B0263 /* libPods-APPBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F34AAABB40EF7A521F9987D /* libPods-APPBase.a */; };
+		4A0332A926ECFD3A005F0157 /* WifiScanController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332A126ECFD38005F0157 /* WifiScanController+Signal.m */; };
+		4A0332AA26ECFD3A005F0157 /* WifiScanController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332A326ECFD38005F0157 /* WifiScanController+Debug.m */; };
+		4A0332AB26ECFD3A005F0157 /* WifiScanController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332A426ECFD38005F0157 /* WifiScanController+Theme.m */; };
+		4A0332AC26ECFD3A005F0157 /* WifiScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332A526ECFD39005F0157 /* WifiScanController.m */; };
+		4A0332AD26ECFD3A005F0157 /* WifiScanController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332A626ECFD39005F0157 /* WifiScanController+Inner.m */; };
+		4A0332AE26ECFD3A005F0157 /* WifiScanController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332A826ECFD39005F0157 /* WifiScanController+Notification.m */; };
+		4A0332E726ECFE30005F0157 /* WifiScanRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332DB26ECFE2A005F0157 /* WifiScanRootController+Debug.m */; };
+		4A0332E826ECFE30005F0157 /* WifiScanRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332DD26ECFE2B005F0157 /* WifiScanRootController+Theme.m */; };
+		4A0332E926ECFE30005F0157 /* WifiScanRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332E026ECFE2D005F0157 /* WifiScanRootController.m */; };
+		4A0332EA26ECFE30005F0157 /* WifiScanRootController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332E226ECFE2E005F0157 /* WifiScanRootController+Notification.m */; };
+		4A0332EB26ECFE30005F0157 /* WifiScanRootController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332E426ECFE2E005F0157 /* WifiScanRootController+Inner.m */; };
+		4A0332EC26ECFE30005F0157 /* WifiScanRootController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0332E626ECFE2F005F0157 /* WifiScanRootController+Signal.m */; };
+		4A03332426ECFEEB005F0157 /* SCAN.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A03332226ECFEEB005F0157 /* SCAN.storyboard */; };
+		4A03335526ED93BF005F0157 /* WifiScanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A03334F26ED93BF005F0157 /* WifiScanCell.m */; };
+		4A03336526ED94B5005F0157 /* WifiScanResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A03336426ED94B5005F0157 /* WifiScanResult.m */; };
 		4A0707F826B64B5A00D3A1DC /* CellularMoreContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0707ED26B64B5900D3A1DC /* CellularMoreContentController.m */; };
 		4A0707F926B64B5A00D3A1DC /* CellularMoreContentController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0707F026B64B5A00D3A1DC /* CellularMoreContentController+Signal.m */; };
 		4A0707FA26B64B5A00D3A1DC /* CellularMoreContentController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0707F126B64B5A00D3A1DC /* CellularMoreContentController+Theme.m */; };
@@ -57,6 +74,7 @@
 		4A0E4EA926858ADC00A85517 /* ONBOARDING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0E4EA526858ADC00A85517 /* ONBOARDING.storyboard */; };
 		4A0EB7F22687268B00AA4366 /* HomeContentCell+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EB7E82687268B00AA4366 /* HomeContentCell+Debug.m */; };
 		4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */; };
+		4A1B847C2715B5EE008710F6 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1B847B2715B5EE008710F6 /* libc++.tbd */; };
 		4A221F0226A44DA100C94F00 /* PingRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221EF726A44DA000C94F00 /* PingRootController.m */; };
 		4A221F0326A44DA100C94F00 /* PingRootController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221EFA26A44DA100C94F00 /* PingRootController+Notification.m */; };
 		4A221F0426A44DA100C94F00 /* PingRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A221EFB26A44DA100C94F00 /* PingRootController+Debug.m */; };
@@ -281,6 +299,13 @@
 		4AE2182826C8C1F40047776D /* HomeSettingContentController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2181F26C8C1F10047776D /* HomeSettingContentController+Signal.m */; };
 		4AE2182926C8C1F40047776D /* HomeSettingContentController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2182026C8C1F20047776D /* HomeSettingContentController+Theme.m */; };
 		4AE2182A26C8C1F40047776D /* HomeSettingContentController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2182426C8C1F30047776D /* HomeSettingContentController+Debug.m */; };
+		4AE2DEA42715972D0081173D /* LanScanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DE9A2715972A0081173D /* LanScanCell.m */; };
+		4AE2DED42715A2250081173D /* LanScanDeviceController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DEC92715A2210081173D /* LanScanDeviceController+Inner.m */; };
+		4AE2DED52715A2250081173D /* LanScanDeviceController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DECD2715A2230081173D /* LanScanDeviceController+Theme.m */; };
+		4AE2DED62715A2250081173D /* LanScanDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DECE2715A2230081173D /* LanScanDeviceController.m */; };
+		4AE2DED72715A2250081173D /* LanScanDeviceController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DECF2715A2240081173D /* LanScanDeviceController+Notification.m */; };
+		4AE2DED82715A2250081173D /* LanScanDeviceController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DED02715A2240081173D /* LanScanDeviceController+Signal.m */; };
+		4AE2DED92715A2250081173D /* LanScanDeviceController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2DED12715A2240081173D /* LanScanDeviceController+Debug.m */; };
 		4AE51B8D2685C39400DC1DA2 /* HomeController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B812685C39400DC1DA2 /* HomeController+Notification.m */; };
 		4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B842685C39400DC1DA2 /* HomeController+Debug.m */; };
 		4AE51B8F2685C39400DC1DA2 /* HomeController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE51B852685C39400DC1DA2 /* HomeController+Theme.m */; };
@@ -292,6 +317,42 @@
 		4AE51B9B2685CD3400DC1DA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B972685CD3400DC1DA2 /* InfoPlist.strings */; };
 		4AE51B9C2685CD3400DC1DA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B992685CD3400DC1DA2 /* Localizable.strings */; };
 		4AE51B9F2685CDFB00DC1DA2 /* MAIN.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B9D2685CDFB00DC1DA2 /* MAIN.storyboard */; };
+		4AEA473D27114F69005AAEDF /* PortScanRootController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA473227114F65005AAEDF /* PortScanRootController+Inner.m */; };
+		4AEA473E27114F69005AAEDF /* PortScanRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA473327114F66005AAEDF /* PortScanRootController.m */; };
+		4AEA473F27114F69005AAEDF /* PortScanRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA473727114F67005AAEDF /* PortScanRootController+Debug.m */; };
+		4AEA474027114F69005AAEDF /* PortScanRootController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA473927114F68005AAEDF /* PortScanRootController+Notification.m */; };
+		4AEA474127114F69005AAEDF /* PortScanRootController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA473A27114F68005AAEDF /* PortScanRootController+Signal.m */; };
+		4AEA474227114F69005AAEDF /* PortScanRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA473C27114F69005AAEDF /* PortScanRootController+Theme.m */; };
+		4AEA475727114F91005AAEDF /* PortScanController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA474D27114F8E005AAEDF /* PortScanController+Theme.m */; };
+		4AEA475827114F91005AAEDF /* PortScanController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA474F27114F8F005AAEDF /* PortScanController+Signal.m */; };
+		4AEA475927114F91005AAEDF /* PortScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA475127114F8F005AAEDF /* PortScanController.m */; };
+		4AEA475A27114F91005AAEDF /* PortScanController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA475227114F90005AAEDF /* PortScanController+Inner.m */; };
+		4AEA475B27114F91005AAEDF /* PortScanController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA475427114F90005AAEDF /* PortScanController+Notification.m */; };
+		4AEA475C27114F91005AAEDF /* PortScanController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA475527114F90005AAEDF /* PortScanController+Debug.m */; };
+		4AEA47A127117286005AAEDF /* TracerouteRootController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA479627117283005AAEDF /* TracerouteRootController+Signal.m */; };
+		4AEA47A227117286005AAEDF /* TracerouteRootController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA479827117284005AAEDF /* TracerouteRootController+Inner.m */; };
+		4AEA47A327117286005AAEDF /* TracerouteRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA479B27117285005AAEDF /* TracerouteRootController.m */; };
+		4AEA47A427117286005AAEDF /* TracerouteRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA479D27117285005AAEDF /* TracerouteRootController+Debug.m */; };
+		4AEA47A527117286005AAEDF /* TracerouteRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA479F27117286005AAEDF /* TracerouteRootController+Theme.m */; };
+		4AEA47A627117286005AAEDF /* TracerouteRootController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA47A027117286005AAEDF /* TracerouteRootController+Notification.m */; };
+		4AEA47B7271172A7005AAEDF /* TracerouteController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA47AF271172A5005AAEDF /* TracerouteController+Theme.m */; };
+		4AEA47B8271172A7005AAEDF /* TracerouteController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA47B0271172A6005AAEDF /* TracerouteController+Notification.m */; };
+		4AEA47B9271172A7005AAEDF /* TracerouteController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA47B1271172A6005AAEDF /* TracerouteController+Signal.m */; };
+		4AEA47BA271172A7005AAEDF /* TracerouteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA47B2271172A6005AAEDF /* TracerouteController.m */; };
+		4AEA47BB271172A7005AAEDF /* TracerouteController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA47B4271172A6005AAEDF /* TracerouteController+Debug.m */; };
+		4AEA47BC271172A7005AAEDF /* TracerouteController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA47B5271172A7005AAEDF /* TracerouteController+Inner.m */; };
+		4AEA483227117FDB005AAEDF /* LanScanRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA482A27117FD8005AAEDF /* LanScanRootController.m */; };
+		4AEA483327117FDB005AAEDF /* LanScanRootController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA482B27117FD9005AAEDF /* LanScanRootController+Signal.m */; };
+		4AEA483427117FDB005AAEDF /* LanScanRootController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA482D27117FDA005AAEDF /* LanScanRootController+Theme.m */; };
+		4AEA483527117FDB005AAEDF /* LanScanRootController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA482F27117FDA005AAEDF /* LanScanRootController+Inner.m */; };
+		4AEA483627117FDB005AAEDF /* LanScanRootController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA483027117FDB005AAEDF /* LanScanRootController+Debug.m */; };
+		4AEA483727117FDB005AAEDF /* LanScanRootController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA483127117FDB005AAEDF /* LanScanRootController+Notification.m */; };
+		4AEA484827117FF8005AAEDF /* LanScanController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA483D27117FF5005AAEDF /* LanScanController+Signal.m */; };
+		4AEA484927117FF8005AAEDF /* LanScanController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA483E27117FF5005AAEDF /* LanScanController+Notification.m */; };
+		4AEA484A27117FF8005AAEDF /* LanScanController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA484127117FF6005AAEDF /* LanScanController+Debug.m */; };
+		4AEA484B27117FF8005AAEDF /* LanScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA484327117FF7005AAEDF /* LanScanController.m */; };
+		4AEA484C27117FF8005AAEDF /* LanScanController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA484427117FF7005AAEDF /* LanScanController+Inner.m */; };
+		4AEA484D27117FF8005AAEDF /* LanScanController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEA484727117FF8005AAEDF /* LanScanController+Theme.m */; };
 		4AF440AF26AC42310008C169 /* TodayWidgetController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF440AE26AC42310008C169 /* TodayWidgetController+Inner.m */; };
 		4AF440E726AC447B0008C169 /* TodayWidgetContentController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF440DB26AC447A0008C169 /* TodayWidgetContentController+Theme.m */; };
 		4AF440E826AC447B0008C169 /* TodayWidgetContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF440DC26AC447B0008C169 /* TodayWidgetContentController.m */; };
@@ -323,9 +384,7 @@
 		4AF9C52226B1C9D6002A2ABC /* PingStatisticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C51A26B1C9D6002A2ABC /* PingStatisticsCell.m */; };
 		4AF9C53426B1D4BC002A2ABC /* PingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9C52C26B1D4BC002A2ABC /* PingCell.m */; };
 		4AFFEDBC268645160052712A /* AppTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFEDBB268645160052712A /* AppTracking.m */; };
-		64ADF24C3D88790B65E78B4B /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ADF320C169C4CA521A914E /* Pods_TodayWidget.framework */; };
-		A9120FF552E34ABF3C591EDF /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CA66574F3747BCB66A4162 /* Pods_NetworkArch.framework */; };
-		E23172242F92793FCD484C89 /* Pods_FleetingWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAB257ED3A65F7DB23DF3EC /* Pods_FleetingWidget.framework */; };
+		6330762E07F65D855AF2DEE5 /* libPods-FleetingWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 164445754F8E0142BA8EF5D6 /* libPods-FleetingWidget.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -401,6 +460,37 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		164445754F8E0142BA8EF5D6 /* libPods-FleetingWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FleetingWidget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FEDFE3E9BC682808F9ABA87 /* libPods-NetworkArch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetworkArch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A03329D26ECFD36005F0157 /* WifiScanController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanController+Inner.h"; sourceTree = "<group>"; };
+		4A03329E26ECFD36005F0157 /* WifiScanController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanController+Debug.h"; sourceTree = "<group>"; };
+		4A03329F26ECFD37005F0157 /* WifiScanController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanController+Notification.h"; sourceTree = "<group>"; };
+		4A0332A026ECFD37005F0157 /* WifiScanController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanController+Signal.h"; sourceTree = "<group>"; };
+		4A0332A126ECFD38005F0157 /* WifiScanController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiScanController+Signal.m"; sourceTree = "<group>"; };
+		4A0332A226ECFD38005F0157 /* WifiScanController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanController+Theme.h"; sourceTree = "<group>"; };
+		4A0332A326ECFD38005F0157 /* WifiScanController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiScanController+Debug.m"; sourceTree = "<group>"; };
+		4A0332A426ECFD38005F0157 /* WifiScanController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiScanController+Theme.m"; sourceTree = "<group>"; };
+		4A0332A526ECFD39005F0157 /* WifiScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiScanController.m; sourceTree = "<group>"; };
+		4A0332A626ECFD39005F0157 /* WifiScanController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiScanController+Inner.m"; sourceTree = "<group>"; };
+		4A0332A726ECFD39005F0157 /* WifiScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiScanController.h; sourceTree = "<group>"; };
+		4A0332A826ECFD39005F0157 /* WifiScanController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiScanController+Notification.m"; sourceTree = "<group>"; };
+		4A0332DB26ECFE2A005F0157 /* WifiScanRootController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiScanRootController+Debug.m"; sourceTree = "<group>"; };
+		4A0332DC26ECFE2B005F0157 /* WifiScanRootController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanRootController+Theme.h"; sourceTree = "<group>"; };
+		4A0332DD26ECFE2B005F0157 /* WifiScanRootController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiScanRootController+Theme.m"; sourceTree = "<group>"; };
+		4A0332DE26ECFE2C005F0157 /* WifiScanRootController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanRootController+Debug.h"; sourceTree = "<group>"; };
+		4A0332DF26ECFE2C005F0157 /* WifiScanRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiScanRootController.h; sourceTree = "<group>"; };
+		4A0332E026ECFE2D005F0157 /* WifiScanRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiScanRootController.m; sourceTree = "<group>"; };
+		4A0332E126ECFE2D005F0157 /* WifiScanRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanRootController+Inner.h"; sourceTree = "<group>"; };
+		4A0332E226ECFE2E005F0157 /* WifiScanRootController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiScanRootController+Notification.m"; sourceTree = "<group>"; };
+		4A0332E326ECFE2E005F0157 /* WifiScanRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanRootController+Signal.h"; sourceTree = "<group>"; };
+		4A0332E426ECFE2E005F0157 /* WifiScanRootController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiScanRootController+Inner.m"; sourceTree = "<group>"; };
+		4A0332E526ECFE2F005F0157 /* WifiScanRootController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WifiScanRootController+Notification.h"; sourceTree = "<group>"; };
+		4A0332E626ECFE2F005F0157 /* WifiScanRootController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WifiScanRootController+Signal.m"; sourceTree = "<group>"; };
+		4A03332326ECFEEB005F0157 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SCAN.storyboard; sourceTree = "<group>"; };
+		4A03334B26ED93BE005F0157 /* WifiScanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiScanCell.h; sourceTree = "<group>"; };
+		4A03334F26ED93BF005F0157 /* WifiScanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiScanCell.m; sourceTree = "<group>"; };
+		4A03336326ED94B5005F0157 /* WifiScanResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WifiScanResult.h; sourceTree = "<group>"; };
+		4A03336426ED94B5005F0157 /* WifiScanResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WifiScanResult.m; sourceTree = "<group>"; };
 		4A0707EC26B64B5900D3A1DC /* CellularMoreContentController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreContentController+Inner.h"; sourceTree = "<group>"; };
 		4A0707ED26B64B5900D3A1DC /* CellularMoreContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellularMoreContentController.m; sourceTree = "<group>"; };
 		4A0707EE26B64B5900D3A1DC /* CellularMoreContentController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CellularMoreContentController+Notification.h"; sourceTree = "<group>"; };
@@ -498,6 +588,7 @@
 		4A0EB7E82687268B00AA4366 /* HomeContentCell+Debug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeContentCell+Debug.m"; sourceTree = "<group>"; };
 		4A0EB7ED2687268B00AA4366 /* HomeContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeContentCell.m; sourceTree = "<group>"; };
 		4A0EB7F02687268B00AA4366 /* HomeContentCell+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeContentCell+Debug.h"; sourceTree = "<group>"; };
+		4A1B847B2715B5EE008710F6 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		4A221EF626A44DA000C94F00 /* PingRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Inner.h"; sourceTree = "<group>"; };
 		4A221EF726A44DA000C94F00 /* PingRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingRootController.m; sourceTree = "<group>"; };
 		4A221EF826A44DA000C94F00 /* PingRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PingRootController+Signal.h"; sourceTree = "<group>"; };
@@ -938,6 +1029,20 @@
 		4AE2182226C8C1F30047776D /* HomeSettingContentController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeSettingContentController+Signal.h"; sourceTree = "<group>"; };
 		4AE2182326C8C1F30047776D /* HomeSettingContentController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeSettingContentController+Theme.h"; sourceTree = "<group>"; };
 		4AE2182426C8C1F30047776D /* HomeSettingContentController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeSettingContentController+Debug.m"; sourceTree = "<group>"; };
+		4AE2DE9A2715972A0081173D /* LanScanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanScanCell.m; sourceTree = "<group>"; };
+		4AE2DE9D2715972B0081173D /* LanScanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanScanCell.h; sourceTree = "<group>"; };
+		4AE2DEC82715A2210081173D /* LanScanDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanScanDeviceController.h; sourceTree = "<group>"; };
+		4AE2DEC92715A2210081173D /* LanScanDeviceController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanDeviceController+Inner.m"; sourceTree = "<group>"; };
+		4AE2DECA2715A2220081173D /* LanScanDeviceController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanDeviceController+Inner.h"; sourceTree = "<group>"; };
+		4AE2DECB2715A2220081173D /* LanScanDeviceController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanDeviceController+Notification.h"; sourceTree = "<group>"; };
+		4AE2DECC2715A2230081173D /* LanScanDeviceController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanDeviceController+Theme.h"; sourceTree = "<group>"; };
+		4AE2DECD2715A2230081173D /* LanScanDeviceController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanDeviceController+Theme.m"; sourceTree = "<group>"; };
+		4AE2DECE2715A2230081173D /* LanScanDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanScanDeviceController.m; sourceTree = "<group>"; };
+		4AE2DECF2715A2240081173D /* LanScanDeviceController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanDeviceController+Notification.m"; sourceTree = "<group>"; };
+		4AE2DED02715A2240081173D /* LanScanDeviceController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanDeviceController+Signal.m"; sourceTree = "<group>"; };
+		4AE2DED12715A2240081173D /* LanScanDeviceController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanDeviceController+Debug.m"; sourceTree = "<group>"; };
+		4AE2DED22715A2250081173D /* LanScanDeviceController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanDeviceController+Signal.h"; sourceTree = "<group>"; };
+		4AE2DED32715A2250081173D /* LanScanDeviceController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanDeviceController+Debug.h"; sourceTree = "<group>"; };
 		4AE51B812685C39400DC1DA2 /* HomeController+Notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeController+Notification.m"; sourceTree = "<group>"; };
 		4AE51B822685C39400DC1DA2 /* HomeController+Inner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeController+Inner.h"; sourceTree = "<group>"; };
 		4AE51B832685C39400DC1DA2 /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
@@ -955,6 +1060,78 @@
 		4AE51B982685CD3400DC1DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AE51B9A2685CD3400DC1DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4AE51B9E2685CDFB00DC1DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MAIN.storyboard; sourceTree = "<group>"; };
+		4AEA473127114F65005AAEDF /* PortScanRootController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PortScanRootController+Debug.h"; sourceTree = "<group>"; };
+		4AEA473227114F65005AAEDF /* PortScanRootController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PortScanRootController+Inner.m"; sourceTree = "<group>"; };
+		4AEA473327114F66005AAEDF /* PortScanRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortScanRootController.m; sourceTree = "<group>"; };
+		4AEA473427114F66005AAEDF /* PortScanRootController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PortScanRootController+Theme.h"; sourceTree = "<group>"; };
+		4AEA473527114F66005AAEDF /* PortScanRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PortScanRootController+Signal.h"; sourceTree = "<group>"; };
+		4AEA473627114F67005AAEDF /* PortScanRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortScanRootController.h; sourceTree = "<group>"; };
+		4AEA473727114F67005AAEDF /* PortScanRootController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PortScanRootController+Debug.m"; sourceTree = "<group>"; };
+		4AEA473827114F68005AAEDF /* PortScanRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PortScanRootController+Inner.h"; sourceTree = "<group>"; };
+		4AEA473927114F68005AAEDF /* PortScanRootController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PortScanRootController+Notification.m"; sourceTree = "<group>"; };
+		4AEA473A27114F68005AAEDF /* PortScanRootController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PortScanRootController+Signal.m"; sourceTree = "<group>"; };
+		4AEA473B27114F69005AAEDF /* PortScanRootController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PortScanRootController+Notification.h"; sourceTree = "<group>"; };
+		4AEA473C27114F69005AAEDF /* PortScanRootController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PortScanRootController+Theme.m"; sourceTree = "<group>"; };
+		4AEA474B27114F8E005AAEDF /* PortScanController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PortScanController+Theme.h"; sourceTree = "<group>"; };
+		4AEA474C27114F8E005AAEDF /* PortScanController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PortScanController+Debug.h"; sourceTree = "<group>"; };
+		4AEA474D27114F8E005AAEDF /* PortScanController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PortScanController+Theme.m"; sourceTree = "<group>"; };
+		4AEA474E27114F8E005AAEDF /* PortScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortScanController.h; sourceTree = "<group>"; };
+		4AEA474F27114F8F005AAEDF /* PortScanController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PortScanController+Signal.m"; sourceTree = "<group>"; };
+		4AEA475027114F8F005AAEDF /* PortScanController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PortScanController+Inner.h"; sourceTree = "<group>"; };
+		4AEA475127114F8F005AAEDF /* PortScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortScanController.m; sourceTree = "<group>"; };
+		4AEA475227114F90005AAEDF /* PortScanController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PortScanController+Inner.m"; sourceTree = "<group>"; };
+		4AEA475327114F90005AAEDF /* PortScanController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PortScanController+Notification.h"; sourceTree = "<group>"; };
+		4AEA475427114F90005AAEDF /* PortScanController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PortScanController+Notification.m"; sourceTree = "<group>"; };
+		4AEA475527114F90005AAEDF /* PortScanController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PortScanController+Debug.m"; sourceTree = "<group>"; };
+		4AEA475627114F91005AAEDF /* PortScanController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PortScanController+Signal.h"; sourceTree = "<group>"; };
+		4AEA479527117283005AAEDF /* TracerouteRootController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TracerouteRootController+Theme.h"; sourceTree = "<group>"; };
+		4AEA479627117283005AAEDF /* TracerouteRootController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TracerouteRootController+Signal.m"; sourceTree = "<group>"; };
+		4AEA479727117284005AAEDF /* TracerouteRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TracerouteRootController+Signal.h"; sourceTree = "<group>"; };
+		4AEA479827117284005AAEDF /* TracerouteRootController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TracerouteRootController+Inner.m"; sourceTree = "<group>"; };
+		4AEA479927117284005AAEDF /* TracerouteRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TracerouteRootController+Inner.h"; sourceTree = "<group>"; };
+		4AEA479A27117285005AAEDF /* TracerouteRootController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TracerouteRootController+Debug.h"; sourceTree = "<group>"; };
+		4AEA479B27117285005AAEDF /* TracerouteRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TracerouteRootController.m; sourceTree = "<group>"; };
+		4AEA479C27117285005AAEDF /* TracerouteRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TracerouteRootController.h; sourceTree = "<group>"; };
+		4AEA479D27117285005AAEDF /* TracerouteRootController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TracerouteRootController+Debug.m"; sourceTree = "<group>"; };
+		4AEA479E27117286005AAEDF /* TracerouteRootController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TracerouteRootController+Notification.h"; sourceTree = "<group>"; };
+		4AEA479F27117286005AAEDF /* TracerouteRootController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TracerouteRootController+Theme.m"; sourceTree = "<group>"; };
+		4AEA47A027117286005AAEDF /* TracerouteRootController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TracerouteRootController+Notification.m"; sourceTree = "<group>"; };
+		4AEA47AB271172A5005AAEDF /* TracerouteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TracerouteController.h; sourceTree = "<group>"; };
+		4AEA47AC271172A5005AAEDF /* TracerouteController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TracerouteController+Notification.h"; sourceTree = "<group>"; };
+		4AEA47AD271172A5005AAEDF /* TracerouteController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TracerouteController+Signal.h"; sourceTree = "<group>"; };
+		4AEA47AE271172A5005AAEDF /* TracerouteController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TracerouteController+Theme.h"; sourceTree = "<group>"; };
+		4AEA47AF271172A5005AAEDF /* TracerouteController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TracerouteController+Theme.m"; sourceTree = "<group>"; };
+		4AEA47B0271172A6005AAEDF /* TracerouteController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TracerouteController+Notification.m"; sourceTree = "<group>"; };
+		4AEA47B1271172A6005AAEDF /* TracerouteController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TracerouteController+Signal.m"; sourceTree = "<group>"; };
+		4AEA47B2271172A6005AAEDF /* TracerouteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TracerouteController.m; sourceTree = "<group>"; };
+		4AEA47B3271172A6005AAEDF /* TracerouteController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TracerouteController+Inner.h"; sourceTree = "<group>"; };
+		4AEA47B4271172A6005AAEDF /* TracerouteController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TracerouteController+Debug.m"; sourceTree = "<group>"; };
+		4AEA47B5271172A7005AAEDF /* TracerouteController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TracerouteController+Inner.m"; sourceTree = "<group>"; };
+		4AEA47B6271172A7005AAEDF /* TracerouteController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TracerouteController+Debug.h"; sourceTree = "<group>"; };
+		4AEA482627117FD6005AAEDF /* LanScanRootController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanRootController+Signal.h"; sourceTree = "<group>"; };
+		4AEA482727117FD7005AAEDF /* LanScanRootController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanRootController+Notification.h"; sourceTree = "<group>"; };
+		4AEA482827117FD7005AAEDF /* LanScanRootController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanRootController+Theme.h"; sourceTree = "<group>"; };
+		4AEA482927117FD8005AAEDF /* LanScanRootController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanRootController+Debug.h"; sourceTree = "<group>"; };
+		4AEA482A27117FD8005AAEDF /* LanScanRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanScanRootController.m; sourceTree = "<group>"; };
+		4AEA482B27117FD9005AAEDF /* LanScanRootController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanRootController+Signal.m"; sourceTree = "<group>"; };
+		4AEA482C27117FD9005AAEDF /* LanScanRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanScanRootController.h; sourceTree = "<group>"; };
+		4AEA482D27117FDA005AAEDF /* LanScanRootController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanRootController+Theme.m"; sourceTree = "<group>"; };
+		4AEA482E27117FDA005AAEDF /* LanScanRootController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanRootController+Inner.h"; sourceTree = "<group>"; };
+		4AEA482F27117FDA005AAEDF /* LanScanRootController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanRootController+Inner.m"; sourceTree = "<group>"; };
+		4AEA483027117FDB005AAEDF /* LanScanRootController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanRootController+Debug.m"; sourceTree = "<group>"; };
+		4AEA483127117FDB005AAEDF /* LanScanRootController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanRootController+Notification.m"; sourceTree = "<group>"; };
+		4AEA483C27117FF5005AAEDF /* LanScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanScanController.h; sourceTree = "<group>"; };
+		4AEA483D27117FF5005AAEDF /* LanScanController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanController+Signal.m"; sourceTree = "<group>"; };
+		4AEA483E27117FF5005AAEDF /* LanScanController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanController+Notification.m"; sourceTree = "<group>"; };
+		4AEA483F27117FF5005AAEDF /* LanScanController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanController+Notification.h"; sourceTree = "<group>"; };
+		4AEA484027117FF6005AAEDF /* LanScanController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanController+Inner.h"; sourceTree = "<group>"; };
+		4AEA484127117FF6005AAEDF /* LanScanController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanController+Debug.m"; sourceTree = "<group>"; };
+		4AEA484227117FF6005AAEDF /* LanScanController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanController+Debug.h"; sourceTree = "<group>"; };
+		4AEA484327117FF7005AAEDF /* LanScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanScanController.m; sourceTree = "<group>"; };
+		4AEA484427117FF7005AAEDF /* LanScanController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanController+Inner.m"; sourceTree = "<group>"; };
+		4AEA484527117FF7005AAEDF /* LanScanController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanController+Signal.h"; sourceTree = "<group>"; };
+		4AEA484627117FF8005AAEDF /* LanScanController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LanScanController+Theme.h"; sourceTree = "<group>"; };
+		4AEA484727117FF8005AAEDF /* LanScanController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LanScanController+Theme.m"; sourceTree = "<group>"; };
 		4AF440AD26AC42310008C169 /* TodayWidgetController+Inner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodayWidgetController+Inner.h"; sourceTree = "<group>"; };
 		4AF440AE26AC42310008C169 /* TodayWidgetController+Inner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TodayWidgetController+Inner.m"; sourceTree = "<group>"; };
 		4AF440DB26AC447A0008C169 /* TodayWidgetContentController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TodayWidgetContentController+Theme.m"; sourceTree = "<group>"; };
@@ -1012,15 +1189,13 @@
 		63DF92DFFC64AB4198E20875 /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
 		65C6BCC4362D32238D7A8D58 /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		6B7C763236D1A5B8A55DC1C2 /* Pods-TodayWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.debug.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		74ADF320C169C4CA521A914E /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F34AAABB40EF7A521F9987D /* libPods-APPBase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APPBase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9427FC1B9FB3144B40E0E517 /* Pods-FleetingWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetingWidget.debug.xcconfig"; path = "Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		99CA66574F3747BCB66A4162 /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90D912BF379DE28D323CFC9 /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
+		B49408CB6284BE5B52B394AE /* libPods-TodayWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TodayWidget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.release.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.release.xcconfig"; sourceTree = "<group>"; };
-		C929DC9919D3505E2033D2FA /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7F3049F2B28E17A49195A2 /* Pods-NetworkArch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.debug.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.debug.xcconfig"; sourceTree = "<group>"; };
 		E2BB361642C7C47D27E17358 /* Pods_TodayClip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayClip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECAB257ED3A65F7DB23DF3EC /* Pods_FleetingWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FleetingWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1028,7 +1203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0100B73B43C89D02292BB26A /* Pods_APPBase.framework in Frameworks */,
+				251910D9A9C72571F93B0263 /* libPods-APPBase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1038,7 +1213,7 @@
 			files = (
 				4A25F1A126AED9B20075BE73 /* libAPPBase.a in Frameworks */,
 				4A25F19026AED9A10075BE73 /* NotificationCenter.framework in Frameworks */,
-				E23172242F92793FCD484C89 /* Pods_FleetingWidget.framework in Frameworks */,
+				6330762E07F65D855AF2DEE5 /* libPods-FleetingWidget.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1048,7 +1223,7 @@
 			files = (
 				4AF4412026AC575C0008C169 /* libAPPBase.a in Frameworks */,
 				4A4D0A6126AC0F56008A30E0 /* NotificationCenter.framework in Frameworks */,
-				64ADF24C3D88790B65E78B4B /* Pods_TodayWidget.framework in Frameworks */,
+				243382A47AE50850C71B68E1 /* libPods-TodayWidget.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,14 +1231,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1B847C2715B5EE008710F6 /* libc++.tbd in Frameworks */,
 				4AB5C1F62685A07300B1639D /* libAPPBase.a in Frameworks */,
-				A9120FF552E34ABF3C591EDF /* Pods_NetworkArch.framework in Frameworks */,
+				1688C801371EFB51520C167B /* libPods-NetworkArch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A03328226ECFCB8005F0157 /* WIFI-SCAN */ = {
+			isa = PBXGroup;
+			children = (
+				4A0332BC26ECFE01005F0157 /* WifiScanRootController */,
+				4A0332BB26ECFDE9005F0157 /* WifiScanController */,
+			);
+			path = "WIFI-SCAN";
+			sourceTree = "<group>";
+		};
+		4A0332BB26ECFDE9005F0157 /* WifiScanController */ = {
+			isa = PBXGroup;
+			children = (
+				4A0332A726ECFD39005F0157 /* WifiScanController.h */,
+				4A0332A526ECFD39005F0157 /* WifiScanController.m */,
+				4A03329D26ECFD36005F0157 /* WifiScanController+Inner.h */,
+				4A0332A626ECFD39005F0157 /* WifiScanController+Inner.m */,
+				4A0332A226ECFD38005F0157 /* WifiScanController+Theme.h */,
+				4A0332A426ECFD38005F0157 /* WifiScanController+Theme.m */,
+				4A0332A026ECFD37005F0157 /* WifiScanController+Signal.h */,
+				4A0332A126ECFD38005F0157 /* WifiScanController+Signal.m */,
+				4A03329F26ECFD37005F0157 /* WifiScanController+Notification.h */,
+				4A0332A826ECFD39005F0157 /* WifiScanController+Notification.m */,
+				4A03329E26ECFD36005F0157 /* WifiScanController+Debug.h */,
+				4A0332A326ECFD38005F0157 /* WifiScanController+Debug.m */,
+			);
+			path = WifiScanController;
+			sourceTree = "<group>";
+		};
+		4A0332BC26ECFE01005F0157 /* WifiScanRootController */ = {
+			isa = PBXGroup;
+			children = (
+				4A0332DF26ECFE2C005F0157 /* WifiScanRootController.h */,
+				4A0332E026ECFE2D005F0157 /* WifiScanRootController.m */,
+				4A0332E126ECFE2D005F0157 /* WifiScanRootController+Inner.h */,
+				4A0332E426ECFE2E005F0157 /* WifiScanRootController+Inner.m */,
+				4A0332DC26ECFE2B005F0157 /* WifiScanRootController+Theme.h */,
+				4A0332DD26ECFE2B005F0157 /* WifiScanRootController+Theme.m */,
+				4A0332E326ECFE2E005F0157 /* WifiScanRootController+Signal.h */,
+				4A0332E626ECFE2F005F0157 /* WifiScanRootController+Signal.m */,
+				4A0332E526ECFE2F005F0157 /* WifiScanRootController+Notification.h */,
+				4A0332E226ECFE2E005F0157 /* WifiScanRootController+Notification.m */,
+				4A0332DE26ECFE2C005F0157 /* WifiScanRootController+Debug.h */,
+				4A0332DB26ECFE2A005F0157 /* WifiScanRootController+Debug.m */,
+			);
+			path = WifiScanRootController;
+			sourceTree = "<group>";
+		};
+		4A03332926ED932C005F0157 /* WIFI-SCAN */ = {
+			isa = PBXGroup;
+			children = (
+				4A03334B26ED93BE005F0157 /* WifiScanCell.h */,
+				4A03334F26ED93BF005F0157 /* WifiScanCell.m */,
+			);
+			path = "WIFI-SCAN";
+			sourceTree = "<group>";
+		};
+		4A03335E26ED9495005F0157 /* WIFI-SCAN */ = {
+			isa = PBXGroup;
+			children = (
+				4A03336326ED94B5005F0157 /* WifiScanResult.h */,
+				4A03336426ED94B5005F0157 /* WifiScanResult.m */,
+			);
+			path = "WIFI-SCAN";
+			sourceTree = "<group>";
+		};
 		4A0707C626B64AE000D3A1DC /* WiFiMoreContentController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1125,8 +1366,8 @@
 			children = (
 				4AF4412526AC8C040008C169 /* BOTTOM.png */,
 				4AF4412626AC8C050008C169 /* LAUNCH.png */,
-				4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */,
 				4AE51B932685C4DA00DC1DA2 /* SPONSOR.png */,
+				4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */,
 				4AE51B972685CD3400DC1DA2 /* InfoPlist.strings */,
 				4AE51B992685CD3400DC1DA2 /* Localizable.strings */,
 				4A0E4DEC268585C500A85517 /* main.m */,
@@ -1143,6 +1384,7 @@
 				4A3D46B226CCE09B00376D31 /* WEB.storyboard */,
 				4A0E4EA126858ADC00A85517 /* HOME.storyboard */,
 				4A5D9A0726A4965200E00610 /* WIFI.storyboard */,
+				4A03332226ECFEEB005F0157 /* SCAN.storyboard */,
 				4A5D9A0A26A4966400E00610 /* CELLULAR.storyboard */,
 				4A5D9A0D26A4968800E00610 /* UTILITIES.storyboard */,
 				4A0E4E5D268589CA00A85517 /* SETTING.storyboard */,
@@ -1236,12 +1478,16 @@
 				4A0E4E5C2685898E00A85517 /* HOME */,
 				4AE2178E26C8BD860047776D /* HOME-SETTING */,
 				4A5D98EC26A493C600E00610 /* WIFI-MORE */,
+				4A03328226ECFCB8005F0157 /* WIFI-SCAN */,
 				4AC0B81C26B9AA7F00B2DA58 /* WIFI-INTERFACEs */,
 				4A5D98ED26A493D600E00610 /* CELLULAR-MORE */,
 				4A221EE326A44D5F00C94F00 /* PING */,
 				4AC5B95D26A46CFA002AAB48 /* WoLAN */,
 				4A53A97226A46E39000700F2 /* WHOIS */,
 				4A53AA7526A473C3000700F2 /* DNS */,
+				4AEA46FC27114EBC005AAEDF /* TRACEROUTE */,
+				4AEA46FB27114EB0005AAEDF /* PORT-SCAN */,
+				4AEA47F327117F6D005AAEDF /* LAN-SCAN */,
 				4A0E4E62268589E500A85517 /* SETTING */,
 			);
 			path = APPScenes;
@@ -1252,6 +1498,7 @@
 			children = (
 				4ACE80DB26C6874A00E962E1 /* TRACKing */,
 				4AF6D27626CCE7A3000EAA40 /* Introduction */,
+				4A03335E26ED9495005F0157 /* WIFI-SCAN */,
 				4A7241AE26B3152400009443 /* PING */,
 				4AD4C68C26D4203000BF374F /* WiFiInterface */,
 				4ACE80D726C6867A00E962E1 /* WoLAN */,
@@ -1267,12 +1514,14 @@
 				4A0EB7E42687266200AA4366 /* HOME */,
 				4AE2183526C8C2610047776D /* HOME-SETTING */,
 				4A22E9AC26B6C70F00ADC0F4 /* WIFI-MORE */,
+				4A03332926ED932C005F0157 /* WIFI-SCAN */,
 				4AC543FD26C365DF00C0320B /* WIFI-INTERFACEs */,
 				4A22E9AD26B6C71A00ADC0F4 /* CELLULAR-MORE */,
 				4AF9C4ED26B1C5DE002A2ABC /* PING */,
 				4A745EC926C58E4D00DA644A /* WoLAN */,
 				4A50A81226CD6CA500D58008 /* WoLANPacket */,
 				4A988A6F26CA5FB40010650A /* DNSCell */,
+				4AE2DE80271596F50081173D /* LAN-SCAN */,
 				4AB5C1E726859F3C00B1639D /* SETTING */,
 			);
 			path = APPViews;
@@ -2284,6 +2533,176 @@
 			path = "HOME-SETTING";
 			sourceTree = "<group>";
 		};
+		4AE2DE80271596F50081173D /* LAN-SCAN */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2DE9D2715972B0081173D /* LanScanCell.h */,
+				4AE2DE9A2715972A0081173D /* LanScanCell.m */,
+			);
+			path = "LAN-SCAN";
+			sourceTree = "<group>";
+		};
+		4AE2DEB12715A1F00081173D /* LanScanDeviceController */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2DEC82715A2210081173D /* LanScanDeviceController.h */,
+				4AE2DECE2715A2230081173D /* LanScanDeviceController.m */,
+				4AE2DECA2715A2220081173D /* LanScanDeviceController+Inner.h */,
+				4AE2DEC92715A2210081173D /* LanScanDeviceController+Inner.m */,
+				4AE2DECC2715A2230081173D /* LanScanDeviceController+Theme.h */,
+				4AE2DECD2715A2230081173D /* LanScanDeviceController+Theme.m */,
+				4AE2DECB2715A2220081173D /* LanScanDeviceController+Notification.h */,
+				4AE2DECF2715A2240081173D /* LanScanDeviceController+Notification.m */,
+				4AE2DED22715A2250081173D /* LanScanDeviceController+Signal.h */,
+				4AE2DED02715A2240081173D /* LanScanDeviceController+Signal.m */,
+				4AE2DED32715A2250081173D /* LanScanDeviceController+Debug.h */,
+				4AE2DED12715A2240081173D /* LanScanDeviceController+Debug.m */,
+			);
+			path = LanScanDeviceController;
+			sourceTree = "<group>";
+		};
+		4AEA46FB27114EB0005AAEDF /* PORT-SCAN */ = {
+			isa = PBXGroup;
+			children = (
+				4AEA46FF27114F11005AAEDF /* PortScanRootController */,
+				4AEA470027114F23005AAEDF /* PortScanController */,
+			);
+			path = "PORT-SCAN";
+			sourceTree = "<group>";
+		};
+		4AEA46FC27114EBC005AAEDF /* TRACEROUTE */ = {
+			isa = PBXGroup;
+			children = (
+				4AEA46FD27114F03005AAEDF /* TracerouteRootController */,
+				4AEA46FE27114F07005AAEDF /* TracerouteController */,
+			);
+			path = TRACEROUTE;
+			sourceTree = "<group>";
+		};
+		4AEA46FD27114F03005AAEDF /* TracerouteRootController */ = {
+			isa = PBXGroup;
+			children = (
+				4AEA479C27117285005AAEDF /* TracerouteRootController.h */,
+				4AEA479B27117285005AAEDF /* TracerouteRootController.m */,
+				4AEA479927117284005AAEDF /* TracerouteRootController+Inner.h */,
+				4AEA479827117284005AAEDF /* TracerouteRootController+Inner.m */,
+				4AEA479527117283005AAEDF /* TracerouteRootController+Theme.h */,
+				4AEA479F27117286005AAEDF /* TracerouteRootController+Theme.m */,
+				4AEA479E27117286005AAEDF /* TracerouteRootController+Notification.h */,
+				4AEA47A027117286005AAEDF /* TracerouteRootController+Notification.m */,
+				4AEA479727117284005AAEDF /* TracerouteRootController+Signal.h */,
+				4AEA479627117283005AAEDF /* TracerouteRootController+Signal.m */,
+				4AEA479A27117285005AAEDF /* TracerouteRootController+Debug.h */,
+				4AEA479D27117285005AAEDF /* TracerouteRootController+Debug.m */,
+			);
+			path = TracerouteRootController;
+			sourceTree = "<group>";
+		};
+		4AEA46FE27114F07005AAEDF /* TracerouteController */ = {
+			isa = PBXGroup;
+			children = (
+				4AEA47AB271172A5005AAEDF /* TracerouteController.h */,
+				4AEA47B2271172A6005AAEDF /* TracerouteController.m */,
+				4AEA47B3271172A6005AAEDF /* TracerouteController+Inner.h */,
+				4AEA47B5271172A7005AAEDF /* TracerouteController+Inner.m */,
+				4AEA47AE271172A5005AAEDF /* TracerouteController+Theme.h */,
+				4AEA47AF271172A5005AAEDF /* TracerouteController+Theme.m */,
+				4AEA47AC271172A5005AAEDF /* TracerouteController+Notification.h */,
+				4AEA47B0271172A6005AAEDF /* TracerouteController+Notification.m */,
+				4AEA47AD271172A5005AAEDF /* TracerouteController+Signal.h */,
+				4AEA47B1271172A6005AAEDF /* TracerouteController+Signal.m */,
+				4AEA47B6271172A7005AAEDF /* TracerouteController+Debug.h */,
+				4AEA47B4271172A6005AAEDF /* TracerouteController+Debug.m */,
+			);
+			path = TracerouteController;
+			sourceTree = "<group>";
+		};
+		4AEA46FF27114F11005AAEDF /* PortScanRootController */ = {
+			isa = PBXGroup;
+			children = (
+				4AEA473627114F67005AAEDF /* PortScanRootController.h */,
+				4AEA473327114F66005AAEDF /* PortScanRootController.m */,
+				4AEA473827114F68005AAEDF /* PortScanRootController+Inner.h */,
+				4AEA473227114F65005AAEDF /* PortScanRootController+Inner.m */,
+				4AEA473427114F66005AAEDF /* PortScanRootController+Theme.h */,
+				4AEA473C27114F69005AAEDF /* PortScanRootController+Theme.m */,
+				4AEA473B27114F69005AAEDF /* PortScanRootController+Notification.h */,
+				4AEA473927114F68005AAEDF /* PortScanRootController+Notification.m */,
+				4AEA473527114F66005AAEDF /* PortScanRootController+Signal.h */,
+				4AEA473A27114F68005AAEDF /* PortScanRootController+Signal.m */,
+				4AEA473127114F65005AAEDF /* PortScanRootController+Debug.h */,
+				4AEA473727114F67005AAEDF /* PortScanRootController+Debug.m */,
+			);
+			path = PortScanRootController;
+			sourceTree = "<group>";
+		};
+		4AEA470027114F23005AAEDF /* PortScanController */ = {
+			isa = PBXGroup;
+			children = (
+				4AEA474E27114F8E005AAEDF /* PortScanController.h */,
+				4AEA475127114F8F005AAEDF /* PortScanController.m */,
+				4AEA475027114F8F005AAEDF /* PortScanController+Inner.h */,
+				4AEA475227114F90005AAEDF /* PortScanController+Inner.m */,
+				4AEA474B27114F8E005AAEDF /* PortScanController+Theme.h */,
+				4AEA474D27114F8E005AAEDF /* PortScanController+Theme.m */,
+				4AEA475327114F90005AAEDF /* PortScanController+Notification.h */,
+				4AEA475427114F90005AAEDF /* PortScanController+Notification.m */,
+				4AEA475627114F91005AAEDF /* PortScanController+Signal.h */,
+				4AEA474F27114F8F005AAEDF /* PortScanController+Signal.m */,
+				4AEA474C27114F8E005AAEDF /* PortScanController+Debug.h */,
+				4AEA475527114F90005AAEDF /* PortScanController+Debug.m */,
+			);
+			path = PortScanController;
+			sourceTree = "<group>";
+		};
+		4AEA47F327117F6D005AAEDF /* LAN-SCAN */ = {
+			isa = PBXGroup;
+			children = (
+				4AEA47F527117F82005AAEDF /* LanScanRootController */,
+				4AEA47F427117F79005AAEDF /* LanScanController */,
+				4AE2DEB12715A1F00081173D /* LanScanDeviceController */,
+			);
+			path = "LAN-SCAN";
+			sourceTree = "<group>";
+		};
+		4AEA47F427117F79005AAEDF /* LanScanController */ = {
+			isa = PBXGroup;
+			children = (
+				4AEA483C27117FF5005AAEDF /* LanScanController.h */,
+				4AEA484327117FF7005AAEDF /* LanScanController.m */,
+				4AEA484027117FF6005AAEDF /* LanScanController+Inner.h */,
+				4AEA484427117FF7005AAEDF /* LanScanController+Inner.m */,
+				4AEA484627117FF8005AAEDF /* LanScanController+Theme.h */,
+				4AEA484727117FF8005AAEDF /* LanScanController+Theme.m */,
+				4AEA483F27117FF5005AAEDF /* LanScanController+Notification.h */,
+				4AEA483E27117FF5005AAEDF /* LanScanController+Notification.m */,
+				4AEA484527117FF7005AAEDF /* LanScanController+Signal.h */,
+				4AEA483D27117FF5005AAEDF /* LanScanController+Signal.m */,
+				4AEA484227117FF6005AAEDF /* LanScanController+Debug.h */,
+				4AEA484127117FF6005AAEDF /* LanScanController+Debug.m */,
+			);
+			path = LanScanController;
+			sourceTree = "<group>";
+		};
+		4AEA47F527117F82005AAEDF /* LanScanRootController */ = {
+			isa = PBXGroup;
+			children = (
+				4AEA482C27117FD9005AAEDF /* LanScanRootController.h */,
+				4AEA482A27117FD8005AAEDF /* LanScanRootController.m */,
+				4AEA482E27117FDA005AAEDF /* LanScanRootController+Inner.h */,
+				4AEA482F27117FDA005AAEDF /* LanScanRootController+Inner.m */,
+				4AEA482827117FD7005AAEDF /* LanScanRootController+Theme.h */,
+				4AEA482D27117FDA005AAEDF /* LanScanRootController+Theme.m */,
+				4AEA482727117FD7005AAEDF /* LanScanRootController+Notification.h */,
+				4AEA483127117FDB005AAEDF /* LanScanRootController+Notification.m */,
+				4AEA482627117FD6005AAEDF /* LanScanRootController+Signal.h */,
+				4AEA482B27117FD9005AAEDF /* LanScanRootController+Signal.m */,
+				4AEA482927117FD8005AAEDF /* LanScanRootController+Debug.h */,
+				4AEA483027117FDB005AAEDF /* LanScanRootController+Debug.m */,
+			);
+			path = LanScanRootController;
+			sourceTree = "<group>";
+		};
 		4AF440B526AC43B00008C169 /* TodayWidgetContentController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2400,13 +2819,14 @@
 		BC9F1E42789CEDD6C11BF75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A1B847B2715B5EE008710F6 /* libc++.tbd */,
 				4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */,
 				4A421C0526AC0CC200935235 /* NotificationCenter.framework */,
 				E2BB361642C7C47D27E17358 /* Pods_TodayClip.framework */,
-				C929DC9919D3505E2033D2FA /* Pods_APPBase.framework */,
-				ECAB257ED3A65F7DB23DF3EC /* Pods_FleetingWidget.framework */,
-				99CA66574F3747BCB66A4162 /* Pods_NetworkArch.framework */,
-				74ADF320C169C4CA521A914E /* Pods_TodayWidget.framework */,
+				7F34AAABB40EF7A521F9987D /* libPods-APPBase.a */,
+				164445754F8E0142BA8EF5D6 /* libPods-FleetingWidget.a */,
+				3FEDFE3E9BC682808F9ABA87 /* libPods-NetworkArch.a */,
+				B49408CB6284BE5B52B394AE /* libPods-TodayWidget.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2440,6 +2860,7 @@
 				4A25F18B26AED9A10075BE73 /* Sources */,
 				4A25F18C26AED9A10075BE73 /* Frameworks */,
 				4A25F18D26AED9A10075BE73 /* Resources */,
+				70464DA74253B38E7FBB4BCD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2459,6 +2880,7 @@
 				4A4D0A5C26AC0F56008A30E0 /* Sources */,
 				4A4D0A5D26AC0F56008A30E0 /* Frameworks */,
 				4A4D0A5E26AC0F56008A30E0 /* Resources */,
+				A8ADCAAD3BA1840257C8E21C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2482,6 +2904,7 @@
 				4A9D71C62685751300AFA3BB /* ShellScript */,
 				4A421C1526AC0CC200935235 /* Embed App Extensions */,
 				4ACD588726AFB4AF009B1424 /* Embed App Clips */,
+				1444DF257F5AF27AD9F77987 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2572,6 +2995,7 @@
 				4AF4412926AC8C060008C169 /* LAUNCH.png in Resources */,
 				4A5D9A0C26A4966400E00610 /* CELLULAR.storyboard in Resources */,
 				4A0E4E5F268589CA00A85517 /* SETTING.storyboard in Resources */,
+				4A03332426ECFEEB005F0157 /* SCAN.storyboard in Resources */,
 				4A0E4EA726858ADC00A85517 /* HOME.storyboard in Resources */,
 				4AE51B9C2685CD3400DC1DA2 /* Localizable.strings in Resources */,
 				4AE51B9B2685CD3400DC1DA2 /* InfoPlist.strings in Resources */,
@@ -2616,6 +3040,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1444DF257F5AF27AD9F77987 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetworkArch/Pods-NetworkArch-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetworkArch/Pods-NetworkArch-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetworkArch/Pods-NetworkArch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		153E5A5450165EBBB075360C /* [CP] Check Pods Manifest.lock */ = {
@@ -2674,6 +3115,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\n#                      ICON_BADGE_BACKGROUND_COLOR ICON_BADGE_TEXT_COLOR   底部 APP 信息参数\n# $SRCROOT/ICON-DEBUG.sh \"rgba(255,255,255,1.0)\"     \"rgba(255,0,0,1.0)\"     \"NO\"\n\necho \"CONFIGURATION_BUILD_DIR：${CONFIGURATION_BUILD_DIR}/FloatingPanel/Swift Compatibility Header\"\n";
 		};
+		70464DA74253B38E7FBB4BCD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7291B919E30B3AEFCDCB6FB7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2694,6 +3152,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8ADCAAD3BA1840257C8E21C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodayWidget/Pods-TodayWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodayWidget/Pods-TodayWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodayWidget/Pods-TodayWidget-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F01D9982C5DA9857ADE108B8 /* [CP] Check Pods Manifest.lock */ = {
@@ -2774,14 +3249,18 @@
 				4A53A9BD26A46E60000700F2 /* WoLANRootController+Notification.m in Sources */,
 				4ACE80DA26C6868E00E962E1 /* WoLANDevice.m in Sources */,
 				4A99B5B926B5910D006F479F /* APPDelegate+Inner.m in Sources */,
+				4AEA475A27114F91005AAEDF /* PortScanController+Inner.m in Sources */,
 				4AC0B85826B9AAE500B2DA58 /* WifiInterfacesController+Inner.m in Sources */,
 				4A0E4E74268589E600A85517 /* SettingController+Notification.m in Sources */,
 				4A45536926862E4D0050E736 /* HomeContentController+Notification.m in Sources */,
+				4AEA473F27114F69005AAEDF /* PortScanRootController+Debug.m in Sources */,
 				4A5D99CE26A494FA00E00610 /* CellularMoreRootController.m in Sources */,
 				4A53A9BF26A46E60000700F2 /* WoLANRootController+Theme.m in Sources */,
 				4A50A83D26CD6CF500D58008 /* WoLANPacketCell+Debug.m in Sources */,
 				4A53AA4226A46F18000700F2 /* PingController+Notification.m in Sources */,
+				4A0332E826ECFE30005F0157 /* WifiScanRootController+Theme.m in Sources */,
 				4AB997CD26C9534E00CD681F /* HomeSettingLinkCell+Debug.m in Sources */,
+				4AEA47BB271172A7005AAEDF /* TracerouteController+Debug.m in Sources */,
 				4A53AA6B26A46F52000700F2 /* WoLANController+Theme.m in Sources */,
 				4A53AAC726A47403000700F2 /* DNSController+Signal.m in Sources */,
 				4A988A8F26CA5FDB0010650A /* DNSCell+Signal.m in Sources */,
@@ -2789,16 +3268,20 @@
 				4A5D9A0526A4952B00E00610 /* WifiMoreController+Notification.m in Sources */,
 				4AE217ED26C8BE270047776D /* HomeSettingController+Notification.m in Sources */,
 				4AB8915B26CAAC0A007C0999 /* WebViewController+Notification.m in Sources */,
+				4AEA475827114F91005AAEDF /* PortScanController+Signal.m in Sources */,
 				4A9A14FE26CC283A006286C3 /* HomeSettingAlertController+Theme.m in Sources */,
 				4A53AABF26A47403000700F2 /* DNSRootController+Inner.m in Sources */,
 				4A0E4E462685888500A85517 /* APPDelegate+APP.m in Sources */,
 				4A53A9BB26A46E60000700F2 /* WoLANRootController+Debug.m in Sources */,
 				4A0E4E77268589E600A85517 /* SettingRootController.m in Sources */,
 				4A45536A26862E4D0050E736 /* HomeContentController+Inner.m in Sources */,
+				4AEA475B27114F91005AAEDF /* PortScanController+Notification.m in Sources */,
 				4AF9C53426B1D4BC002A2ABC /* PingCell.m in Sources */,
 				4A50A84D26CD700F00D58008 /* WoLANPacket.m in Sources */,
+				4AEA47A427117286005AAEDF /* TracerouteRootController+Debug.m in Sources */,
 				4A5D9A0626A4952B00E00610 /* WifiMoreController.m in Sources */,
 				4A07080F26B64B6E00D3A1DC /* WiFiMoreContentController+Theme.m in Sources */,
+				4AEA474227114F69005AAEDF /* PortScanRootController+Theme.m in Sources */,
 				4A50A7E326CD684500D58008 /* SettingController+Signal.m in Sources */,
 				4A53AA6D26A46F52000700F2 /* WoLANController+Inner.m in Sources */,
 				4AB9980626C953C900CD681F /* HomeSettingApiKeyCell+Inner.m in Sources */,
@@ -2810,8 +3293,11 @@
 				4A53A9BE26A46E60000700F2 /* WoLANRootController+Signal.m in Sources */,
 				4A5D99E226A4950B00E00610 /* CellularMoreController+Signal.m in Sources */,
 				4A50A83B26CD6CF500D58008 /* WoLANPacketCell+Notification.m in Sources */,
+				4AE2DED82715A2250081173D /* LanScanDeviceController+Signal.m in Sources */,
 				4A221F0426A44DA100C94F00 /* PingRootController+Debug.m in Sources */,
+				4A0332A926ECFD3A005F0157 /* WifiScanController+Signal.m in Sources */,
 				4A53AAC326A47403000700F2 /* DNSRootController.m in Sources */,
+				4A03335526ED93BF005F0157 /* WifiScanCell.m in Sources */,
 				4AB9980426C953C900CD681F /* HomeSettingApiKeyCell+Notification.m in Sources */,
 				4A0E4E75268589E600A85517 /* SettingController+Theme.m in Sources */,
 				4AC5441D26C3665100C0320B /* WifiInterfacesCell+Theme.m in Sources */,
@@ -2827,17 +3313,24 @@
 				4A745EED26C58E9D00DA644A /* WoLANCell+Debug.m in Sources */,
 				4A53AA6926A46F52000700F2 /* WoLANController+Notification.m in Sources */,
 				4A5D99F126A4951C00E00610 /* WifiMoreRootController+Notification.m in Sources */,
+				4AEA47B8271172A7005AAEDF /* TracerouteController+Notification.m in Sources */,
+				4AEA47BC271172A7005AAEDF /* TracerouteController+Inner.m in Sources */,
 				4A50A7DB26CD681F00D58008 /* SettingContentController+Notification.m in Sources */,
 				4A53AAC026A47403000700F2 /* DNSRootController+Notification.m in Sources */,
 				4A9A14FD26CC283A006286C3 /* HomeSettingAlertController+Inner.m in Sources */,
 				4A50A8AB26CD759C00D58008 /* WebViewRootController+Notification.m in Sources */,
+				4A0332AD26ECFD3A005F0157 /* WifiScanController+Inner.m in Sources */,
 				4AC5442026C3665100C0320B /* WifiInterfacesCell+Debug.m in Sources */,
 				4A07080E26B64B6E00D3A1DC /* WiFiMoreContentController+Debug.m in Sources */,
 				4AE2182726C8C1F40047776D /* HomeSettingContentController+Inner.m in Sources */,
 				4A0E0E0A26B6CD51001AE345 /* WifiMoreCell+Signal.m in Sources */,
+				4A0332E926ECFE30005F0157 /* WifiScanRootController.m in Sources */,
+				4AEA484A27117FF8005AAEDF /* LanScanController+Debug.m in Sources */,
 				4A5D99F226A4951C00E00610 /* WifiMoreRootController+Inner.m in Sources */,
+				4AEA473D27114F69005AAEDF /* PortScanRootController+Inner.m in Sources */,
 				4AF9C4EB26B1C1E9002A2ABC /* APPTextField.m in Sources */,
 				4AE217D526C8BE060047776D /* HomeSettingRootController+Signal.m in Sources */,
+				4A0332EB26ECFE30005F0157 /* WifiScanRootController+Inner.m in Sources */,
 				4AE217EF26C8BE270047776D /* HomeSettingController+Signal.m in Sources */,
 				4A745EC826C58C1F00DA644A /* WoLANContentController+Inner.m in Sources */,
 				4AB9980526C953C900CD681F /* HomeSettingApiKeyCell.m in Sources */,
@@ -2847,9 +3340,12 @@
 				4AF9C4FE26B1C5F5002A2ABC /* PingResultCell.m in Sources */,
 				4A7241B126B3153A00009443 /* PingResult.m in Sources */,
 				4A0E0E3D26B6CDA5001AE345 /* CellularMoreCell+Inner.m in Sources */,
+				4AEA474127114F69005AAEDF /* PortScanRootController+Signal.m in Sources */,
 				4A988A6C26CA5C190010650A /* DNSContentController+Inner.m in Sources */,
 				4A45536726862E4D0050E736 /* HomeContentController+Debug.m in Sources */,
+				4AE2DED52715A2250081173D /* LanScanDeviceController+Theme.m in Sources */,
 				4A0E4E9E26858A0200A85517 /* UIApplication+Notification.m in Sources */,
+				4AEA483327117FDB005AAEDF /* LanScanRootController+Signal.m in Sources */,
 				4AAF697826B58E1300E68E32 /* APPDelegate+Signal.m in Sources */,
 				4A53A9EC26A46EA5000700F2 /* WhoisRootController+Debug.m in Sources */,
 				4A5D99F026A4951C00E00610 /* WifiMoreRootController.m in Sources */,
@@ -2863,11 +3359,13 @@
 				4A745EE926C58E9D00DA644A /* WoLANCell+Signal.m in Sources */,
 				4A53AA4126A46F18000700F2 /* PingController+Debug.m in Sources */,
 				4A0E0E3A26B6CDA5001AE345 /* CellularMoreCell+Signal.m in Sources */,
+				4AEA483627117FDB005AAEDF /* LanScanRootController+Debug.m in Sources */,
 				4A5D9A0226A4952B00E00610 /* WifiMoreController+Theme.m in Sources */,
 				4A50A83E26CD6CF500D58008 /* WoLANPacketCell+Signal.m in Sources */,
 				4A988A8E26CA5FDB0010650A /* DNSCell.m in Sources */,
 				4A988A6E26CA5C190010650A /* DNSContentController+Signal.m in Sources */,
 				4A0E4E72268589E500A85517 /* SettingContentController.m in Sources */,
+				4AEA47A127117286005AAEDF /* TracerouteRootController+Signal.m in Sources */,
 				4AC5442126C3665100C0320B /* WifiInterfacesCell+Inner.m in Sources */,
 				4AB8915F26CAAC0A007C0999 /* WebViewController+Inner.m in Sources */,
 				4A53AA1526A46EE2000700F2 /* WhoisController+Inner.m in Sources */,
@@ -2876,6 +3374,7 @@
 				4AB997D126C9534E00CD681F /* HomeSettingLinkCell+Theme.m in Sources */,
 				4A0E4DBF268584C100A85517 /* RootViewController.m in Sources */,
 				4AC0B89126B9AB1A00B2DA58 /* WifiInterfacesRootController+Theme.m in Sources */,
+				4AEA47B9271172A7005AAEDF /* TracerouteController+Signal.m in Sources */,
 				4AB8916026CAAC0A007C0999 /* WebViewController+Signal.m in Sources */,
 				4AC0B85A26B9AAE500B2DA58 /* WifiInterfacesController+Notification.m in Sources */,
 				4A0E0E0726B6CD51001AE345 /* WifiMoreCell+Inner.m in Sources */,
@@ -2889,6 +3388,7 @@
 				4AB5C1F126859F3C00B1639D /* ThemeButton.m in Sources */,
 				4AC0B89226B9AB1A00B2DA58 /* WifiInterfacesRootController+Debug.m in Sources */,
 				4A53AAC226A47403000700F2 /* DNSRootController+Theme.m in Sources */,
+				4AEA473E27114F69005AAEDF /* PortScanRootController.m in Sources */,
 				4A07080B26B64B6E00D3A1DC /* WiFiMoreContentController+Inner.m in Sources */,
 				4AE217D026C8BE060047776D /* HomeSettingRootController+Debug.m in Sources */,
 				4A0E0E3B26B6CDA5001AE345 /* CellularMoreCell+Theme.m in Sources */,
@@ -2899,22 +3399,30 @@
 				4AB8915C26CAAC0A007C0999 /* WebViewController.m in Sources */,
 				4A45536826862E4D0050E736 /* HomeContentController+Theme.m in Sources */,
 				4AE51B902685C39400DC1DA2 /* HomeController+Inner.m in Sources */,
+				4A0332AB26ECFD3A005F0157 /* WifiScanController+Theme.m in Sources */,
+				4AE2DED92715A2250081173D /* LanScanDeviceController+Debug.m in Sources */,
+				4AE2DEA42715972D0081173D /* LanScanCell.m in Sources */,
 				4A9A14FF26CC283A006286C3 /* HomeSettingAlertController+Debug.m in Sources */,
 				4A53AA1826A46EE2000700F2 /* WhoisController.m in Sources */,
 				4A5D99F326A4951C00E00610 /* WifiMoreRootController+Signal.m in Sources */,
 				4AE217F026C8BE270047776D /* HomeSettingController+Inner.m in Sources */,
+				4A0332EC26ECFE30005F0157 /* WifiScanRootController+Signal.m in Sources */,
+				4AEA47A627117286005AAEDF /* TracerouteRootController+Notification.m in Sources */,
 				4AC0B85926B9AAE500B2DA58 /* WifiInterfacesController+Signal.m in Sources */,
 				4A0E0E0B26B6CD51001AE345 /* WifiMoreCell+Theme.m in Sources */,
 				4A745EC326C58C1F00DA644A /* WoLANContentController.m in Sources */,
 				4AC0B85526B9AAE500B2DA58 /* WifiInterfacesController+Theme.m in Sources */,
 				4AC0B85726B9AAE500B2DA58 /* WifiInterfacesController+Debug.m in Sources */,
+				4AEA47A527117286005AAEDF /* TracerouteRootController+Theme.m in Sources */,
 				4A07080D26B64B6E00D3A1DC /* WiFiMoreContentController+Notification.m in Sources */,
+				4A0332AC26ECFD3A005F0157 /* WifiScanController.m in Sources */,
 				4AB997CF26C9534E00CD681F /* HomeSettingLinkCell.m in Sources */,
 				4AE217EE26C8BE270047776D /* HomeSettingController+Theme.m in Sources */,
 				4A0E0E3F26B6CDA5001AE345 /* CellularMoreCell+Notification.m in Sources */,
 				4A50A7D326CD680D00D58008 /* SettingContentController+Signal.m in Sources */,
 				4A53A9ED26A46EA5000700F2 /* WhoisRootController+Theme.m in Sources */,
 				4A0E4DEF268585C500A85517 /* main.m in Sources */,
+				4AEA483227117FDB005AAEDF /* LanScanRootController.m in Sources */,
 				4A745EC526C58C1F00DA644A /* WoLANContentController+Theme.m in Sources */,
 				4AE51B8F2685C39400DC1DA2 /* HomeController+Theme.m in Sources */,
 				4AE51B912685C39400DC1DA2 /* HomeController.m in Sources */,
@@ -2929,18 +3437,23 @@
 				4A0707F926B64B5A00D3A1DC /* CellularMoreContentController+Signal.m in Sources */,
 				4A5D99CC26A494FA00E00610 /* CellularMoreRootController+Debug.m in Sources */,
 				4A53AA3D26A46F18000700F2 /* PingController+Inner.m in Sources */,
+				4AEA475927114F91005AAEDF /* PortScanController.m in Sources */,
 				4A221F0326A44DA100C94F00 /* PingRootController+Notification.m in Sources */,
 				4AF6D27426CCE70B000EAA40 /* IntroductionController+Notification.m in Sources */,
 				4A745EEA26C58E9D00DA644A /* WoLANCell+Theme.m in Sources */,
 				4A0707F826B64B5A00D3A1DC /* CellularMoreContentController.m in Sources */,
 				4A0707FD26B64B5A00D3A1DC /* CellularMoreContentController+Inner.m in Sources */,
 				4A53A9E826A46EA5000700F2 /* WhoisRootController+Inner.m in Sources */,
+				4AEA474027114F69005AAEDF /* PortScanRootController+Notification.m in Sources */,
+				4AEA484C27117FF8005AAEDF /* LanScanController+Inner.m in Sources */,
 				4A53AAC426A47403000700F2 /* DNSController+Debug.m in Sources */,
 				4A53AAC626A47403000700F2 /* DNSController+Notification.m in Sources */,
 				4A45536626862E4D0050E736 /* HomeContentController.m in Sources */,
+				4A0332EA26ECFE30005F0157 /* WifiScanRootController+Notification.m in Sources */,
 				4AE2182926C8C1F40047776D /* HomeSettingContentController+Theme.m in Sources */,
 				4A9A14FC26CC283A006286C3 /* HomeSettingAlertController+Signal.m in Sources */,
 				4AB5C1DF26859BB800B1639D /* HomeRootController.m in Sources */,
+				4AE2DED42715A2250081173D /* LanScanDeviceController+Inner.m in Sources */,
 				4A53A9C026A46E60000700F2 /* WoLANRootController.m in Sources */,
 				4A988A6926CA5C190010650A /* DNSContentController+Theme.m in Sources */,
 				4A988A4926CA464F0010650A /* DNSManager+Singleton.m in Sources */,
@@ -2950,13 +3463,18 @@
 				4A0EB7F52687268B00AA4366 /* HomeContentCell.m in Sources */,
 				4AB9980926C953CA00CD681F /* HomeSettingApiKeyCell+Theme.m in Sources */,
 				4A5D99CD26A494FA00E00610 /* CellularMoreRootController+Theme.m in Sources */,
+				4AEA47A327117286005AAEDF /* TracerouteRootController.m in Sources */,
+				4AEA484D27117FF8005AAEDF /* LanScanController+Theme.m in Sources */,
+				4AEA47BA271172A7005AAEDF /* TracerouteController.m in Sources */,
 				4A9A14FB26CC283A006286C3 /* HomeSettingAlertController+Notification.m in Sources */,
 				4A988A9226CA5FDB0010650A /* DNSCell+Notification.m in Sources */,
 				4AE217F126C8BE270047776D /* HomeSettingController+Debug.m in Sources */,
 				4A584B0626B59E83002A2E81 /* UIDevice+Network.m in Sources */,
 				4AF6D27326CCE70B000EAA40 /* IntroductionController.m in Sources */,
 				4A9A150026CC283A006286C3 /* HomeSettingAlertController.m in Sources */,
+				4A0332E726ECFE30005F0157 /* WifiScanRootController+Debug.m in Sources */,
 				4A4553862686327B0050E736 /* TrackingRootController.m in Sources */,
+				4A03336526ED94B5005F0157 /* WifiScanResult.m in Sources */,
 				4A53AABE26A47403000700F2 /* DNSRootController+Debug.m in Sources */,
 				4AE51B8E2685C39400DC1DA2 /* HomeController+Debug.m in Sources */,
 				4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */,
@@ -2966,9 +3484,11 @@
 				4AE2182826C8C1F40047776D /* HomeSettingContentController+Signal.m in Sources */,
 				4A988A6D26CA5C190010650A /* DNSContentController+Notification.m in Sources */,
 				4AC5441C26C3665100C0320B /* WifiInterfacesCell+Signal.m in Sources */,
+				4AE2DED72715A2250081173D /* LanScanDeviceController+Notification.m in Sources */,
 				4A5D99DF26A4950B00E00610 /* CellularMoreController.m in Sources */,
 				4A988A9326CA5FDB0010650A /* DNSCell+Inner.m in Sources */,
 				4A0707FB26B64B5A00D3A1DC /* CellularMoreContentController+Notification.m in Sources */,
+				4AE2DED62715A2250081173D /* LanScanDeviceController.m in Sources */,
 				4A745EEC26C58E9D00DA644A /* WoLANCell+Inner.m in Sources */,
 				4AF6D27926CCE7A3000EAA40 /* AppIntroduction.m in Sources */,
 				4AE217D426C8BE060047776D /* HomeSettingRootController+Inner.m in Sources */,
@@ -2981,16 +3501,23 @@
 				4A50A8AC26CD759C00D58008 /* WebViewRootController+Signal.m in Sources */,
 				4A50A83C26CD6CF500D58008 /* WoLANPacketCell+Inner.m in Sources */,
 				4A53AA3F26A46F18000700F2 /* PingController+Theme.m in Sources */,
+				4AEA47B7271172A7005AAEDF /* TracerouteController+Theme.m in Sources */,
 				4ACE80DE26C6877F00E962E1 /* DeviceAwake.m in Sources */,
 				4A5D9A0126A4952B00E00610 /* WifiMoreController+Debug.m in Sources */,
+				4AEA47A227117286005AAEDF /* TracerouteRootController+Inner.m in Sources */,
 				4A53AA3E26A46F18000700F2 /* PingController+Signal.m in Sources */,
 				4A4553842686327B0050E736 /* TrackingController+Notification.m in Sources */,
 				4A53AAC826A47403000700F2 /* DNSController+Theme.m in Sources */,
 				4A53AA1626A46EE2000700F2 /* WhoisController+Debug.m in Sources */,
+				4AEA484927117FF8005AAEDF /* LanScanController+Notification.m in Sources */,
 				4A53AA4026A46F18000700F2 /* PingController.m in Sources */,
+				4AEA483527117FDB005AAEDF /* LanScanRootController+Inner.m in Sources */,
+				4A0332AE26ECFD3A005F0157 /* WifiScanController+Notification.m in Sources */,
 				4A53AA6A26A46F52000700F2 /* WoLANController+Debug.m in Sources */,
+				4AEA475727114F91005AAEDF /* PortScanController+Theme.m in Sources */,
 				4AB5C1EF26859F3C00B1639D /* SettingHeader.m in Sources */,
 				4A0E0E3C26B6CDA5001AE345 /* CellularMoreCell+Debug.m in Sources */,
+				4AEA475C27114F91005AAEDF /* PortScanController+Debug.m in Sources */,
 				4A4553852686327B0050E736 /* TrackingController.m in Sources */,
 				4A745EE826C58E9D00DA644A /* WoLANCell+Notification.m in Sources */,
 				4A221F0226A44DA100C94F00 /* PingRootController.m in Sources */,
@@ -3005,6 +3532,7 @@
 				4A76718C26D39B7400EC44B1 /* SettingController+Debug.m in Sources */,
 				4A221F0526A44DA100C94F00 /* PingRootController+Signal.m in Sources */,
 				4A5D99D026A494FA00E00610 /* CellularMoreRootController+Inner.m in Sources */,
+				4AEA483727117FDB005AAEDF /* LanScanRootController+Notification.m in Sources */,
 				4A0E4E71268589E500A85517 /* SettingContentController+Theme.m in Sources */,
 				4AB9980826C953C900CD681F /* HomeSettingApiKeyCell+Signal.m in Sources */,
 				4A988A9726CA60D90010650A /* DNSModel.m in Sources */,
@@ -3014,6 +3542,7 @@
 				4A50A8A926CD759C00D58008 /* WebViewRootController+Debug.m in Sources */,
 				4AB997D026C9534E00CD681F /* HomeSettingLinkCell+Signal.m in Sources */,
 				4AE217D226C8BE060047776D /* HomeSettingRootController+Theme.m in Sources */,
+				4AEA484B27117FF8005AAEDF /* LanScanController.m in Sources */,
 				4A53AAC126A47403000700F2 /* DNSRootController+Signal.m in Sources */,
 				4A53A9BC26A46E60000700F2 /* WoLANRootController+Inner.m in Sources */,
 				4A988A4226CA45330010650A /* WhoisManager+Singleton.m in Sources */,
@@ -3023,7 +3552,10 @@
 				4A988A4626CA463C0010650A /* DNSManager.m in Sources */,
 				4A5D99F426A4951C00E00610 /* WifiMoreRootController+Debug.m in Sources */,
 				4A53A9EA26A46EA5000700F2 /* WhoisRootController+Notification.m in Sources */,
+				4AEA483427117FDB005AAEDF /* LanScanRootController+Theme.m in Sources */,
 				4A5D99EF26A4951C00E00610 /* WifiMoreRootController+Theme.m in Sources */,
+				4AEA484827117FF8005AAEDF /* LanScanController+Signal.m in Sources */,
+				4A0332AA26ECFD3A005F0157 /* WifiScanController+Debug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3058,6 +3590,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4A03332226ECFEEB005F0157 /* SCAN.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A03332326ECFEEB005F0157 /* Base */,
+			);
+			name = SCAN.storyboard;
+			sourceTree = "<group>";
+		};
 		4A0E4DF3268585CE00A85517 /* LAUNCH.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -3372,7 +3912,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Development: Cai Lu (PHD24T76XW)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2021.08250002;
+				CURRENT_PROJECT_VERSION = 2021.10121220;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3393,11 +3933,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 0.9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lc++";
 				SDKROOT = iphoneos;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.3;
 			};
 			name = Debug;
@@ -3437,7 +3980,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Cai Lu (G8G9TAP4UN)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2021.08250002;
+				CURRENT_PROJECT_VERSION = 2021.10121220;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -3453,10 +3996,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 0.9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-lc++";
 				SDKROOT = iphoneos;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 4.3;
 			};

@@ -46,9 +46,12 @@
       [_appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
       [_appBar.headerViewController.headerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
       
-      [_appBar.headerViewController setShowsHairline:YES];
-      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
-      
+//      [_appBar.headerViewController setShowsHairline:YES];
+//      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
+
+      [_appBar.headerViewController setShowsHairline:NO];
+      [_appBar.headerViewController setHairlineColor:UIColor.clearColor];
+
       [self addChildViewController:_appBar.headerViewController];
 #endif /* MATERIAL_APP_BAR */
       
@@ -264,19 +267,19 @@
    
    __TRY;
    
-   if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[WifiMoreRootController class]])) {
-      
-      [self.navigationController popViewControllerAnimated:YES
-                                                completion:nil];
-      
-   } /* End if () */
-   else {
+   if ([self.navigationController isKindOfClass:WifiMoreRootController.class] || [self.rt_navigationController isKindOfClass:WifiMoreRootController.class]) {
       
       [self dismissViewControllerAnimated:YES
                                completion:nil];
       
+   } /* End if () */
+   else {
+      
+      [self.navigationController popViewControllerAnimated:YES
+                                                completion:nil];
+      
    } /* End else */
-   
+
    __CATCH(nErr);
    
    return;

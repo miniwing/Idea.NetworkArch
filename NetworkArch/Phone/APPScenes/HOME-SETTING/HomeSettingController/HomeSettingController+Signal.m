@@ -91,11 +91,7 @@ handleSignal(HomeSettingContentController, addLinkSignal) {
    LogDebug((@"-[HomeSettingController addLinkSignal:] : API KEY : %@", aSignal.object));
    
    [CATransaction begin];
-   
-   [self resignFirstResponder];
-   
-   [CATransaction commit];
-   
+      
    [CATransaction setCompletionBlock:^{
       
       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://main.whoisxmlapi.com"]
@@ -105,6 +101,10 @@ handleSignal(HomeSettingContentController, addLinkSignal) {
       }];
    }];
    
+   [self resignFirstResponder];
+   
+   [CATransaction commit];
+
    __CATCH(nErr);
    
    return;

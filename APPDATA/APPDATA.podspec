@@ -144,9 +144,9 @@ Pod::Spec.new do |spec|
 #  elif __has_include("YYKit/YYKit.h")
 #     import "YYKit/YYKit.h"
 #     define YY_KIT                                                        (1)
-#  elif __has_include("YYKit.h")
-#     import "YYKit.h"
-#     define YY_KIT                                                        (1)
+// #  elif __has_include("YYKit.h")
+// #     import "YYKit.h"
+// #     define YY_KIT                                                        (1)
 #  else
 #     define YY_KIT                                                        (0)
 #  endif

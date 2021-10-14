@@ -153,8 +153,6 @@
    LogDebug((@"-[DNSController textFieldShouldReturn:] : ApiKey : %@", szApiKey));
 
    [CATransaction begin];
-   [self resignFirstResponder];
-   [CATransaction commit];
 
    [CATransaction setCompletionBlock:^{
       
@@ -204,6 +202,10 @@
       } /* End else */
    }];
    
+   [self resignFirstResponder];
+
+   [CATransaction commit];
+
    __CATCH(nErr);
    
    return bShouldReturn;

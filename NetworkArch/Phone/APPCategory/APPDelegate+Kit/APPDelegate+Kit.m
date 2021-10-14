@@ -126,3 +126,18 @@
 
 @end
 
+@implementation APPDelegate (ICMP)
+
++ (BOOL)isICMPEnable {
+   
+   return [NSUserDefaults boolForKey:@"isApiKeySetting"];
+}
+
++ (void)setICMPEnable:(BOOL)aICMPEnable {
+   
+   [NSUserDefaults setBool:aICMPEnable forKey:@"isApiKeySetting"];
+   
+   return;
+}
+
+@end

@@ -381,14 +381,14 @@
    [self dismissViewControllerAnimated:YES
                             completion:^{
       
-#if __Debug__
-#else
+//#if __Debug__
+//#else
       [APPDelegate setIntroduced:YES];
-#endif
+//#endif
       
       szAPI = [APPDelegate apiKey];
       
-      if (kStringIsBlank(szAPI)) {
+      if ([APPDelegate isApiKeySetting] && kStringIsBlank(szAPI)) {
          
          [self postNotify:HomeController.settingNotification
                   onQueue:dispatch_get_main_queue()];

@@ -10,6 +10,8 @@
 
 #import <IDEAUIVendor/IDEAUIVendor.h>
 
+#import <IDEAPing/IDEAPing.h>
+
 #import <IDEAPing/IDEAPingClient.h>
 
 #import "PingController.h"

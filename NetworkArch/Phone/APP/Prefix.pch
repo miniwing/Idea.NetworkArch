@@ -257,6 +257,16 @@ typedef FBLPromise Promise;
 #     define MASONRY                                                       (0)
 #  endif
 
+#  if __has_include(<PhoneNetSDK/PhoneNetSDK.h>)
+#     import <PhoneNetSDK/PhoneNetSDK.h>
+#     define PHONE_NET_SDK                                                 (1)
+#  elif __has_include("PhoneNetSDK/PhoneNetSDK.h")
+#     import "PhoneNetSDK/PhoneNetSDK.h"
+#     define PHONE_NET_SDK                                                 (1)
+#  else
+#     define PHONE_NET_SDK                                                 (0)
+#  endif
+
 #  if __has_include(<IDEAPanModal/IDEAPanModal.h>)
 #     import <IDEAPanModal/IDEAPanModal.h>
 #     define IDEA_PAN_MODAL                                                (1)
@@ -429,7 +439,6 @@ typedef FBLPromise Promise;
 
 #if __has_include(<APPDEBUG/APPDEBUG.h>)
 #  import <APPDEBUG/APPDEBUG.h>
-#  import <APPDEBUG/APP_OBFUSCATION.h>
 #  define APP_DEBUG                                                        (1)
 #else
 #  define APP_DEBUG                                                        (0)

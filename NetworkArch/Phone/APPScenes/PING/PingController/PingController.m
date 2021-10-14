@@ -9,11 +9,12 @@
 //  TEL : +(852)53054612
 //
 
+#import "APPDelegate+APP.h"
+
 #import "PingRootController.h"
 
 #import "PingController.h"
 #import "PingController+Inner.h"
-#import "PingController+Debug.h"
 #import "PingController+Theme.h"
 #import "PingController+Signal.h"
 #import "PingController+Notification.h"
@@ -52,9 +53,12 @@
       [_appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
       [_appBar.headerViewController.headerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
       
-      [_appBar.headerViewController setShowsHairline:YES];
-      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
-      
+//      [_appBar.headerViewController setShowsHairline:YES];
+//      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
+
+      [_appBar.headerViewController setShowsHairline:NO];
+      [_appBar.headerViewController setHairlineColor:UIColor.clearColor];
+
       [self addChildViewController:_appBar.headerViewController];
 #endif /* MATERIAL_APP_BAR */
       
@@ -191,7 +195,7 @@
 #if __Debug__
    dispatch_async_on_main_queue(^{
 
-      [self.textField setText:@"www.baidu.com"];
+      [self.textField setText:@"Harrys-CRGT.local"];
    });
 #endif /* __Debug__ */
    
@@ -256,6 +260,8 @@
       
       [self.textField becomeFirstResponder];
    });
+   
+   LogDebug((@"[APPDelegate APP].window.rootViewController : %@", [APPDelegate APP].window.rootViewController));
    
    __CATCH(nErr);
    
@@ -661,27 +667,27 @@
    
    __TRY;
    
+#if APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR
+   
    [CATransaction begin];
-   
+
+   [CATransaction setCompletionBlock:^{
+
+      [self.navigationController popViewControllerAnimated:YES
+                                                completion:nil];
+
+   }];
+
    [self resignFirstResponder];
-   
+
    [CATransaction commit];
    
-   [CATransaction setCompletionBlock:^{
-      
-      if ((nil != self.navigationController) || (![self.navigationController isKindOfClass:[PingRootController class]])) {
-         
-         [self.navigationController popViewControllerAnimated:YES
-                                                   completion:nil];
-         
-      } /* End if () */
-      else {
-         
-         [self dismissViewControllerAnimated:YES
-                                  completion:nil];
-         
-      } /* End else */
-   }];
+#else /* APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
+   
+   [self.navigationController popViewControllerAnimated:YES
+                                             completion:nil];
+
+#endif /* !APP_CLOSE_KEYBOARD_BEFORE_VIEW_DISAPPEAR */
    
    __CATCH(nErr);
    

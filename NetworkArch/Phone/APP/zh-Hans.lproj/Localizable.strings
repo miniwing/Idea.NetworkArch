@@ -11,6 +11,9 @@
 
 /// Wi-Fi
 "WIFI"                              = "Wi-Fi";
+"SCAN"                              = "扫描";
+"Scan LAN"                          = "扫描局域网";
+"SCAN EMPTY"                        = "未发现设备";
 
 "IP Address"                        = "IP 地址";
 
@@ -33,6 +36,7 @@
 "No Service"                        = "无服务";
 
 "More Info"                         = "更多";
+"More"                              = "更多";
 
 /// Utilities
 "UTILITIES"                         = "工具集";
