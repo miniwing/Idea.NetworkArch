@@ -415,20 +415,7 @@
    [self.window addSubview:self.splashViewController.view];
    [self.window bringSubviewToFront:self.splashViewController.view];
    self.rootViewController.view.alpha  = 1;
-   
-//   [UIView transitionFromView:self.splashViewController.view
-//                       toView:self.rootViewController.view
-//#if __Debug__
-//                     duration:UIAViewAnimationDefaultDuraton * 2
-//#else /* __Debug__ */
-//                     duration:UIAViewAnimationDefaultDuraton
-//#endif /* !__Debug__ */
-//                      options:UIViewAnimationOptionTransitionCrossDissolve
-//                   completion:^(BOOL aFinished) {
-//
-//      UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
-//   }];
-   
+      
    [self.rootViewController setNeedsStatusBarAppearanceUpdate];
    
    [UIView animateWithDuration:UIAViewAnimationDefaultDuraton
@@ -453,15 +440,6 @@
    
    __TRY;
    
-   if (@available(iOS 15, *)) {
-      
-   } /* End if () */
-   else {
-
-      [self.window setRootViewController:self.rootViewController];
-
-   } /* End else */
-
    [self postNotificationName:SplashViewController.SPLASH_DONE
                        object:nil];
    
