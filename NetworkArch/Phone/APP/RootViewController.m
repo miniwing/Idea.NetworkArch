@@ -510,6 +510,12 @@ NS_ASSUME_NONNULL_END
    
    LogDebug((@"[%@ preferredStatusBarStyle]", [self class]));
    
+   if (nil != [APPDelegate splashViewController]) {
+      
+      return [APPDelegate splashViewController].preferredStatusBarStyle;
+      
+   } /* End if () */
+   
    return UIStatusBarStyleLightContent;
 }
 //

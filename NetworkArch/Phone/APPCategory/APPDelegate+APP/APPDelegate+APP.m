@@ -9,6 +9,9 @@
 #import "APPDelegate+Inner.h"
 #import "APPDelegate+APP.h"
 
+#import "RootViewController.h"
+#import "SplashViewController.h"
+
 @implementation APPDelegate (APP)
 
 + (APPDelegate *)APP {

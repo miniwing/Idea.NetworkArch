@@ -409,57 +409,35 @@
 
    } /* End if () */
 
-   if (@available(iOS 15, *)) {
-      
-      [self.window setRootViewController:self.rootViewController];
+   [self.window setRootViewController:self.rootViewController];
+   self.rootViewController.view.alpha  = 0;
 
-   } /* End if () */
-
-//   [CATransaction begin];
-//
-////   [self.rootViewController loadView];
-////   [self.rootViewController viewDidLoad];
-////   [self.rootViewController.view setHidden:NO];
-//
-//   LogDebug((@"-[APPDelegate splashing] : rootViewController.isViewLoaded : %d", self.rootViewController.isViewLoaded));
-//
-//   if (@available(iOS 15, *)) {
-//
-//      [self.window setRootViewController:self.rootViewController];
-//
-//   } /* End if () */
-//
-//   [CATransaction setAnimationDuration:0.5];
-//   [CATransaction setCompletionBlock:^{
-//
-//      LogDebug((@"-[APPDelegate splashing] : rootViewController.isViewLoaded : %d", self.rootViewController.isViewLoaded));
-//
-//      [UIView transitionFromView:self.splashViewController.view
-//                          toView:self.rootViewController.view
+   [self.window addSubview:self.splashViewController.view];
+   [self.window bringSubviewToFront:self.splashViewController.view];
+   self.rootViewController.view.alpha  = 1;
+   
+//   [UIView transitionFromView:self.splashViewController.view
+//                       toView:self.rootViewController.view
 //#if __Debug__
-//                        duration:UIAViewAnimationDefaultDuraton * 2
+//                     duration:UIAViewAnimationDefaultDuraton * 2
 //#else /* __Debug__ */
-//                        duration:UIAViewAnimationDefaultDuraton
+//                     duration:UIAViewAnimationDefaultDuraton
 //#endif /* !__Debug__ */
-//                         options:UIViewAnimationOptionTransitionCrossDissolve
-//                      completion:^(BOOL aFinished) {
+//                      options:UIViewAnimationOptionTransitionCrossDissolve
+//                   completion:^(BOOL aFinished) {
 //
-//         UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
-//      }];
+//      UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
 //   }];
-//
-//   [CATransaction commit];
-
-   [UIView transitionFromView:self.splashViewController.view
-                       toView:self.rootViewController.view
-#if __Debug__
-                     duration:UIAViewAnimationDefaultDuraton * 2
-#else /* __Debug__ */
-                     duration:UIAViewAnimationDefaultDuraton
-#endif /* !__Debug__ */
-                      options:UIViewAnimationOptionTransitionCrossDissolve
-                   completion:^(BOOL aFinished) {
-
+   
+   [self.rootViewController setNeedsStatusBarAppearanceUpdate];
+   
+   [UIView animateWithDuration:UIAViewAnimationDefaultDuraton
+                    animations:^{
+      self.splashViewController.view.alpha   = 0;
+   }
+                    completion:^(BOOL finished) {
+      [self.splashViewController.view removeFromSuperview];
+      __RELEASE(self.splashViewController);
       UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
    }];
 
