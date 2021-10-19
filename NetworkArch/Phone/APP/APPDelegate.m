@@ -420,9 +420,11 @@
    
    [UIView animateWithDuration:UIAViewAnimationDefaultDuraton
                     animations:^{
+      
       self.splashViewController.view.alpha   = 0;
    }
                     completion:^(BOOL finished) {
+      
       [self.splashViewController.view removeFromSuperview];
       __RELEASE(self.splashViewController);
       UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
