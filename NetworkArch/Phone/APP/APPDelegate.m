@@ -157,6 +157,8 @@
 
 #endif /* __Debug__ */
    
+   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
+
    __CATCH(nErr);
    
    return SUCCESS == nErr; //YES;
@@ -209,6 +211,8 @@
 //   [self monitorReachabilityStatus];
 //   /******************************************************************************************/
    
+   LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
+
    __CATCH(nErr);
    
    return SUCCESS == nErr; //YES;
@@ -309,6 +313,32 @@
    
    // Add any custom logic here.
    return bDone;
+}
+
+- (void)applicationProtectedDataWillBecomeUnavailable:(UIApplication *)aApplication {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+
+   LogDebug((@"-[APPDelegate applicationProtectedDataWillBecomeUnavailable:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
+
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)applicationProtectedDataDidBecomeAvailable:(UIApplication *)aApplication {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+
+   LogDebug((@"-[APPDelegate applicationProtectedDataDidBecomeAvailable:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
+
+   __CATCH(nErr);
+   
+   return;
 }
 
 - (BOOL)canOpenURL:(NSURL *)aURL {
