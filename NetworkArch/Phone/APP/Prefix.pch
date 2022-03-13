@@ -123,6 +123,16 @@ typedef FBLPromise Promise;
 #     define PROMISES                                                      (0)
 #  endif
 
+#  if __has_include(<CocoaLumberjack/CocoaLumberjack.h>)
+#     import <CocoaLumberjack/CocoaLumberjack.h>
+#     define COCOA_LUMBERJACK                                              (1)
+#  elif __has_include("CocoaLumberjack/CocoaLumberjack.h")
+#     import "CocoaLumberjack/CocoaLumberjack.h"
+#     define COCOA_LUMBERJACK                                              (1)
+#  else
+#     define COCOA_LUMBERJACK                                              (0)
+#  endif
+
 #  if __has_include(<AFNetworking/AFNetworking.h>)
 #     import <AFNetworking/AFNetworking.h>
 #     import <AFNetworking/AFNetworkActivityIndicatorManager.h>
