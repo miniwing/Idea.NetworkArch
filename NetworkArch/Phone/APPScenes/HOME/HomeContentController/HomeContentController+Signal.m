@@ -27,16 +27,16 @@
 @implementation HomeContentController (HandleSignal)
 
 handleSignal(APPDelegate, networkStatusSignal) {
-
+   
    int                            nErr                                     = EFAULT;
-      
+   
    __TRY;
-
+   
    LogDebug((@"-[HomeContentController handleSignal:networkStatusSignal:] : status : %@", aSignal.object));
-
+   
    [self sendSignal:HomeContentController.loadWifiInfoSignal];
    [self sendSignal:HomeContentController.loadCellularInfoSignal];
-
+   
    __CATCH(nErr);
    
    return;
@@ -58,16 +58,16 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
    
    LogDebug((@"-[HomeContentController handleSignal:networkStatusSignal:] : IPV4 : %@", szIP));
    LogDebug((@"-[HomeContentController handleSignal:networkStatusSignal:] : SSID : %@", szSSID));
-
-//   szIcon   = @"WIFI-ON";
+   
+   //   szIcon   = @"WIFI-ON";
    
    if (kStringIsEmpty(szSSID)) {
       
-//      "SSID not available"                = "SSID not available";
-//      "Wi-Fi not connected"               = "Wi-Fi not connected";
+      //      "SSID not available"                = "SSID not available";
+      //      "Wi-Fi not connected"               = "Wi-Fi not connected";
       
       if ([IDEARouter isWifiConnected]) {
-                  
+         
          szSSID   = APP_STR(@"SSID not available");
          szIP     = APP_STR(@"N/A");
          
@@ -75,16 +75,16 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
          
       } /* End if () */
       else {
-
+         
          szSSID   = APP_STR(@"Wi-Fi not connected");
          szIP     = APP_STR(@"N/A");
-
+         
          szIcon   = @"WIFI-SLASH";
-
+         
       } /* End else */
-
+      
    } /* End if () */
-
+   
    [UIView transitionWithView:self.wifiSSIDLabel
                      duration:UIAViewAnimationDefaultDuraton
                       options:UIViewAnimationOptionTransitionCrossDissolve
@@ -106,7 +106,7 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
 #endif /* TARGET_IPHONE_SIMULATOR */
    }
                    completion:nil];
-
+   
    [UIView transitionWithView:self.wifiIP
                      duration:UIAViewAnimationDefaultDuraton
                       options:UIViewAnimationOptionTransitionCrossDissolve
@@ -117,7 +117,7 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
 #endif /* TARGET_IPHONE_SIMULATOR */
    }
                    completion:nil];
-
+   
    __CATCH(nErr);
    
    return;
@@ -213,7 +213,7 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       [self.cellularOperatorLabel setText:szCarrierName];
-
+      
 #if TARGET_IPHONE_SIMULATOR
       [self.cellularOperatorLabel setText:APP_STR(@"Cellular Network")];
 #endif /* TARGET_IPHONE_SIMULATOR */
