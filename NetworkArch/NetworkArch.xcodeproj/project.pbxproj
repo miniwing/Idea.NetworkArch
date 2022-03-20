@@ -370,9 +370,7 @@
 		4AF4411F26AC536F0008C169 /* IMAGEs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B952685C7C500DC1DA2 /* IMAGEs.xcassets */; };
 		4AF4412026AC575C0008C169 /* libAPPBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0E4E21268587BE00A85517 /* libAPPBase.a */; };
 		4AF4412726AC8C060008C169 /* BOTTOM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412526AC8C040008C169 /* BOTTOM.png */; };
-		4AF4412826AC8C060008C169 /* BOTTOM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412526AC8C040008C169 /* BOTTOM.png */; };
 		4AF4412926AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
-		4AF4412A26AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
 		4AF6D27326CCE70B000EAA40 /* IntroductionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D26D26CCE70A000EAA40 /* IntroductionController.m */; };
 		4AF6D27426CCE70B000EAA40 /* IntroductionController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D26F26CCE70A000EAA40 /* IntroductionController+Notification.m */; };
 		4AF6D27526CCE70B000EAA40 /* IntroductionRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D27126CCE70A000EAA40 /* IntroductionRootController.m */; };
@@ -2982,8 +2980,6 @@
 				4A4D0A6826AC0F56008A30E0 /* TODAY.storyboard in Resources */,
 				4AF4411F26AC536F0008C169 /* IMAGEs.xcassets in Resources */,
 				4A842C8126AC1C19005DC131 /* Localizable.strings in Resources */,
-				4AF4412826AC8C060008C169 /* BOTTOM.png in Resources */,
-				4AF4412A26AC8C060008C169 /* LAUNCH.png in Resources */,
 				4A842C8026AC1C0B005DC131 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
