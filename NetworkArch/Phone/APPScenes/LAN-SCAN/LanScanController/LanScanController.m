@@ -31,7 +31,7 @@
    
    // Custom dealloc
    
-   [self removeAllNotification];
+   [self removeAllNotifications];
 
    [self unobserveAllNotifications];
    [self removeAllSignalResponders];

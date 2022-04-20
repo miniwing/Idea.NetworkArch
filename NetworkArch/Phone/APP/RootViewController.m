@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_END
    
    // Custom dealloc
    
-   [self removeAllNotification];
+   [self removeAllNotifications];
    
    [self unobserveAllNotifications];
    [self removeAllSignalResponders];

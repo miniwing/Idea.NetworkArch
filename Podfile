@@ -21,7 +21,7 @@ ENV['IDEAFONT_MSYH']              = 'NO'
 ENV['IDEAFONT_ZEKTON']            = 'YES'
 ENV['IDEAFONT']                   = 'YES'
 
-#ENV['IDEA_MATERIAL_COMPONENTS']   = 'YES'
+ENV['IDEA_MATERIAL_COMPONENTS']   = 'YES'
 
 ENV['IDEA_AFNETWORKING']          = 'NO'
 
@@ -181,6 +181,7 @@ target 'NetworkArch' do
   
   miniwing_pod('PhoneNetSDK', type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
+  miniwing_pod('IDEANibBridge',                   type = 'local', branch = 'develop')
   miniwing_pod('IDEAUIKit', type = 'local', branch = 'develop')
   miniwing_pod('IDEAUIVendor', type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#

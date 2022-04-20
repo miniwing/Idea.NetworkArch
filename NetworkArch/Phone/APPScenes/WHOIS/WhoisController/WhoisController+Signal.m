@@ -44,6 +44,8 @@ handleSignal(WhoisController, startSignal) {
    __block NSDictionary          *stWhois                                  = nil;
    __block NSString              *szWhois                                  = nil;
 
+   __block UIUserInterfaceStyle   eUserInterfaceStyle                      = UIUserInterfaceStyleLight;
+
    __TRY;
    
    LogDebug((@"-[WhoisController startSignal:] : Signal : %@", aSignal));
@@ -56,8 +58,20 @@ handleSignal(WhoisController, startSignal) {
    [CATransaction setCompletionBlock:^{
       
       if (kStringIsBlank(szApiKey)) {
-         
+
+         if ([[DKNightVersionManager sharedManager].themeVersion isEqualToString:DKThemeVersionNight]) {
+
+            eUserInterfaceStyle  = UIUserInterfaceStyleDark;
+
+         } /* End if () */
+         else { // if ([[DKNightVersionManager sharedManager].themeVersion isEqualToString:DKThemeVersionNormal])
+
+            eUserInterfaceStyle  = UIUserInterfaceStyleLight;
+
+         } /* End if () */
+
          [UIAlertController showActionSheetInViewController:self
+                                         userInterfaceStyle:eUserInterfaceStyle
                                                   withTitle:APP_STR(@"API Key Empty")
                                                     message:APP_STR(@"PRESS OK TO GET (FREE).")
                                           cancelButtonTitle:APP_STR(@"Cancel")

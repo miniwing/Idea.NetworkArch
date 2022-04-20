@@ -47,7 +47,7 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    
    // Custom dealloc
    
-   [self removeAllNotification];
+   [self removeAllNotifications];
 
    [self removeAllSignalResponders];
    [self unobserveAllNotifications];
