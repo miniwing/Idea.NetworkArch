@@ -175,18 +175,18 @@ target 'NetworkArch' do
   #  pod 'YKWoodpecker', :configurations => ['Debug']
   pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
-  miniwing_pod('IDEAPing', type = 'local', branch = 'develop')
-  miniwing_pod('IDEARouter', type = 'local', branch = 'develop')
-  miniwing_pod('IDEANetUtils', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAPing',      type = 'local', branch = 'develop')
+  miniwing_pod('IDEARouter',    type = 'local', branch = 'develop')
+  miniwing_pod('IDEANetUtils',  type = 'local', branch = 'develop')
   
-  miniwing_pod('PhoneNetSDK', type = 'local', branch = 'develop')
+  miniwing_pod('PhoneNetSDK',   type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
-  miniwing_pod('IDEANibBridge',                   type = 'local', branch = 'develop')
-  miniwing_pod('IDEAUIKit', type = 'local', branch = 'develop')
-  miniwing_pod('IDEAUIVendor', type = 'local', branch = 'develop')
+  miniwing_pod('IDEANibBridge', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAUIKit',     type = 'local', branch = 'develop')
+  miniwing_pod('IDEAUIVendor',  type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
-  miniwing_pod('IDEANightVersion', type = 'local', branch = 'develop')
-  miniwing_pod('IDEATabBarControllerTransition', type = 'local', branch = 'develop')
+  miniwing_pod('IDEANightVersion',                type = 'local', branch = 'develop')
+  miniwing_pod('IDEATabBarControllerTransition',  type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  github_pod('IDEAApplet', file = 'IDEAApplet', type = 'local', branch = 'develop')
   github_pod('IDEAAppletDebugger', file = 'IDEAApplet', type = 'local', branch = 'develop', configurations = ['Debug'])
@@ -226,10 +226,12 @@ target 'TodayWidget' do
 
 #  pod 'MMKVAppExtension'
 
-  miniwing_pod('IDEAUIKit', type = 'local', branch = 'develop')
-  miniwing_pod('IDEAUIVendor', type = 'local', branch = 'develop')
+  miniwing_pod('IDEANibBridge',   type = 'local',   branch = 'develop')
 
-  miniwing_pod('IDEARouter', type = 'local', branch = 'develop')
+  miniwing_pod('IDEAUIKit',       type = 'local',   branch = 'develop')
+  miniwing_pod('IDEAUIVendor',    type = 'local',   branch = 'develop')
+
+  miniwing_pod('IDEARouter',      type = 'local',   branch = 'develop')
 
   library
   
