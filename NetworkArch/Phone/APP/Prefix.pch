@@ -435,8 +435,8 @@ typedef FBLPromise Promise;
 /****************************************************************************/
 
 #import <IDEAColor/IDEAColor.h>
-#import <IDEAColor/UIColor+System.h>
-#import <IDEAColor/UIColor+Dynamic.h>
+#import <IDEAColor/UIColorX+System.h>
+#import <IDEAColor/UIColorX+Dynamic.h>
 
 #import <IDEAKit/IDEALog.h>
 #import <IDEAKit/IDEADebug.h>

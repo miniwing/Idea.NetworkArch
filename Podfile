@@ -225,6 +225,9 @@ target 'TodayWidget' do
   pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
 
 #  pod 'MMKVAppExtension'
+if ENV['RTRootNavigationController'] == 'YES'
+  pod 'RTRootNavigationController'
+end # RTRootNavigationController
 
   miniwing_pod('IDEANibBridge',   type = 'local',   branch = 'develop')
 

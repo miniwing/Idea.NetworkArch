@@ -139,8 +139,8 @@
 #import <IDEARouter/IDEARouter.h>
 
 #import <IDEAColor/IDEAColor.h>
-#import <IDEAColor/UIColor+System.h>
-#import <IDEAColor/UIColor+Dynamic.h>
+#import <IDEAColor/UIColorX+System.h>
+#import <IDEAColor/UIColorX+Dynamic.h>
 
 #import <IDEAUIKit/IDEAUIKit.h>
 #import <IDEAUIVendor/IDEAUIVendor.h>
