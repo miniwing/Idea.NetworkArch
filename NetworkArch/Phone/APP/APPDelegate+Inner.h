@@ -11,8 +11,6 @@
 #import "RootViewController.h"
 #import "SplashViewController.h"
 
-#import "UIDevice+Network.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APPDelegate ()
@@ -22,13 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong)                NetworkArch                         * networkArch;
 
-@property (nonatomic, strong)                AFNetworkReachabilityManager        * networkReachabilityManager;
-
 @end
 
 @interface APPDelegate (Inner)
-
-- (void)monitorReachabilityStatus;
 
 @end
 

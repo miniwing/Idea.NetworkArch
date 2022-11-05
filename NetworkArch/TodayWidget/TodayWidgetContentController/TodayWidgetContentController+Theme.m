@@ -24,13 +24,7 @@
    
    LogDebug((@"-[TodayWidgetContentController onThemeUpdate:] : Notification : %@", aNotification));
 
-   if ([super respondsToSelector:@selector(onThemeUpdate:)]) {
-
-      [super onThemeUpdate:aNotification];
-      
-   } /* End if () */
-
-   [self setNeedsStatusBarAppearanceUpdate];
+   [super onThemeUpdate:aNotification];
 
    __CATCH(nErr);
 

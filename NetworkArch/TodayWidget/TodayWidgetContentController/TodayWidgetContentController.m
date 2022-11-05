@@ -67,7 +67,7 @@
    [self.tableView setTableFooterView:[UIView new]];
    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
    
-   //   [self.tableView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
+//   [self.tableView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
    [self.tableView setBackgroundColorPicker:nil];
    [self.tableView setBackgroundColor:UIColor.clearColor];
    
@@ -109,7 +109,8 @@
     */
    [self.wifiSSIDLabel setBackgroundColor:UIColor.clearColor];
    [self.wifiSSIDLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.wifiSSIDLabel setFont:[APPFont regularFontOfSize:self.wifiSSIDLabel.font.pointSize]];
+   [self.wifiSSIDLabel setFont:[UIFont systemFontOfSize:self.wifiSSIDLabel.font.pointSize
+                                                 weight:UIFontWeightLight]];
    [self.wifiIPLabel setText:APP_STR(@"SSID not available")];
    
    [self.wifiSSIDIcon setBackgroundColor:UIColor.clearColor];
@@ -130,17 +131,20 @@
    
    [self.wifiIPLabel setBackgroundColor:UIColor.clearColor];
    [self.wifiIPLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.wifiIPLabel setFont:[APPFont lightFontOfSize:self.wifiIPLabel.font.pointSize]];
+   [self.wifiIPLabel setFont:[UIFont systemFontOfSize:self.wifiIPLabel.font.pointSize
+                                               weight:UIFontWeightLight]];
    [self.wifiIPLabel setText:APP_STR(@"IP Address")];
    
    [self.wifiIP setBackgroundColor:UIColor.clearColor];
    [self.wifiIP setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.wifiIP setFont:[APPFont lightFontOfSize:self.wifiIP.font.pointSize]];
+   [self.wifiIP setFont:[UIFont systemFontOfSize:self.wifiIP.font.pointSize
+                                          weight:UIFontWeightLight]];
    [self.wifiIP setText:APP_STR(@"N/A")];
    
    [self.wifiMoreLabel setBackgroundColor:UIColor.clearColor];
    [self.wifiMoreLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.wifiMoreLabel setFont:[APPFont regularFontOfSize:self.wifiMoreLabel.font.pointSize]];
+   [self.wifiMoreLabel setFont:[UIFont systemFontOfSize:self.wifiMoreLabel.font.pointSize
+                                                 weight:UIFontWeightLight]];
    [self.wifiMoreLabel setText:APP_STR(@"More Info")];
    
    [self.wifiMoreIcon setBackgroundColor:UIColor.clearColor];
@@ -167,7 +171,9 @@
     */
    [self.cellularOperatorLabel setBackgroundColor:UIColor.clearColor];
    [self.cellularOperatorLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.cellularOperatorLabel setFont:[APPFont regularFontOfSize:self.wifiSSIDLabel.font.pointSize]];
+   [self.cellularOperatorLabel setFont:[UIFont systemFontOfSize:self.cellularOperatorLabel.font.pointSize
+                                                         weight:UIFontWeightLight]];
+
    [self.cellularOperatorLabel setText:APP_STR(@"No Service")];
    
    [self.cellularOperatorIcon setBackgroundColor:UIColor.clearColor];
@@ -188,17 +194,20 @@
    
    [self.cellularIPLabel setBackgroundColor:UIColor.clearColor];
    [self.cellularIPLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.cellularIPLabel setFont:[APPFont lightFontOfSize:self.cellularIPLabel.font.pointSize]];
+   [self.cellularIPLabel setFont:[UIFont systemFontOfSize:self.cellularIPLabel.font.pointSize
+                                                   weight:UIFontWeightLight]];
    [self.cellularIPLabel setText:APP_STR(@"IP Address")];
    
    [self.cellularIP setBackgroundColor:UIColor.clearColor];
    [self.cellularIP setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.cellularIP setFont:[APPFont lightFontOfSize:self.cellularIP.font.pointSize]];
+   [self.cellularIP setFont:[UIFont systemFontOfSize:self.cellularIP.font.pointSize
+                                              weight:UIFontWeightLight]];
    [self.cellularIP setText:APP_STR(@"N/A")];
    
    [self.cellularMoreLabel setBackgroundColor:UIColor.clearColor];
    [self.cellularMoreLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.cellularMoreLabel setFont:[APPFont regularFontOfSize:self.cellularMoreLabel.font.pointSize]];
+   [self.cellularMoreLabel setFont:[UIFont systemFontOfSize:self.cellularMoreLabel.font.pointSize
+                                                     weight:UIFontWeightLight]];
    [self.cellularMoreLabel setText:APP_STR(@"More Info")];
    
    [self.cellularMoreIcon setBackgroundColor:UIColor.clearColor];
@@ -225,22 +234,26 @@
     */
    [self.utilitiesPingLabel setBackgroundColor:UIColor.clearColor];
    [self.utilitiesPingLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.utilitiesPingLabel setFont:[APPFont lightFontOfSize:self.utilitiesPingLabel.font.pointSize]];
+   [self.utilitiesPingLabel setFont:[UIFont systemFontOfSize:self.utilitiesPingLabel.font.pointSize
+                                                     weight:UIFontWeightLight]];
    [self.utilitiesPingLabel setText:APP_STR(@"Ping")];
    
    [self.utilitiesWakeOnLanLabel setBackgroundColor:UIColor.clearColor];
    [self.utilitiesWakeOnLanLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.utilitiesWakeOnLanLabel setFont:[APPFont lightFontOfSize:self.utilitiesWakeOnLanLabel.font.pointSize]];
+   [self.utilitiesWakeOnLanLabel setFont:[UIFont systemFontOfSize:self.utilitiesWakeOnLanLabel.font.pointSize
+                                                     weight:UIFontWeightLight]];
    [self.utilitiesWakeOnLanLabel setText:APP_STR(@"Wake on LAN")];
    
    [self.utilitiesWhoisLabel setBackgroundColor:UIColor.clearColor];
    [self.utilitiesWhoisLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.utilitiesWhoisLabel setFont:[APPFont lightFontOfSize:self.utilitiesWhoisLabel.font.pointSize]];
+   [self.utilitiesWhoisLabel setFont:[UIFont systemFontOfSize:self.utilitiesWhoisLabel.font.pointSize
+                                                       weight:UIFontWeightLight]];
    [self.utilitiesWhoisLabel setText:APP_STR(@"Whois")];
    
    [self.utilitiesDNSLabel setBackgroundColor:UIColor.clearColor];
    [self.utilitiesDNSLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.utilitiesDNSLabel setFont:[APPFont lightFontOfSize:self.utilitiesDNSLabel.font.pointSize]];
+   [self.utilitiesDNSLabel setFont:[UIFont systemFontOfSize:self.utilitiesDNSLabel.font.pointSize
+                                                     weight:UIFontWeightLight]];
    [self.utilitiesDNSLabel setText:APP_STR(@"DNS Lookup")];
    
    for (UIImageView *stICON in self.cellRightImageViews) {
@@ -284,7 +297,7 @@
    /**
     Load Wi-Fi, Cellular
     */
-   //   [self postSignal:TodayWidgetContentController.loadWifiInfoSignal onQueue:dispatch_get_main_queue()];
+   //   [self postSignal:TodayWidgetContentController.loadWifiInfoSignal onQueue:DISPATCH_GET_MAIN_QUEUE()];
    [self sendSignal:TodayWidgetContentController.loadWifiInfoSignal];
    [self sendSignal:TodayWidgetContentController.loadCellularInfoSignal];
    
@@ -488,7 +501,7 @@
    } /* End if () */
    
    //   [UIView transitionWithView:stTableViewCell.selectedColorView
-   //                     duration:UIAViewAnimationDefaultDuraton
+   //                     duration:[UIView animationDefaultDuraton]
    //                      options:UIViewAnimationOptionTransitionCrossDissolve
    //                   animations:^{
    //      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];

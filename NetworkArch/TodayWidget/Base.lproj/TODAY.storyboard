@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -156,7 +154,7 @@
                                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNY-qC-vfL" userLabel="分割线">
-                                                            <rect key="frame" x="0.0" y="0.0" width="288" height="0.33333333333333331"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="288" height="0.5"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="0.40000000000000002" id="mWj-o8-AgC"/>
@@ -169,8 +167,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UTILITIES-RIGHT" translatesAutoresizingMaskIntoConstraints="NO" id="5de-2l-wOY" userLabel="ICON">
-                                                            <rect key="frame" x="272" y="0.33333333333333215" width="8" height="34.666666666666671"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UIButtonBarArrowRightLandscape" translatesAutoresizingMaskIntoConstraints="NO" id="5de-2l-wOY" userLabel="ICON">
+                                                            <rect key="frame" x="272" y="0.5" width="8" height="34.5"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="8" id="RqW-Ri-Oop"/>
@@ -314,7 +312,7 @@
                                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4s-fI-8kK" userLabel="分割线">
-                                                            <rect key="frame" x="0.0" y="0.0" width="288" height="0.33333333333333331"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="288" height="0.5"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="0.40000000000000002" id="w3S-br-TDO"/>
@@ -326,8 +324,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UTILITIES-RIGHT" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-FU-4mX" userLabel="ICON">
-                                                            <rect key="frame" x="272" y="0.33333333333333215" width="8" height="34.666666666666671"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UIButtonBarArrowRightLandscape" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-FU-4mX" userLabel="ICON">
+                                                            <rect key="frame" x="272" y="0.5" width="8" height="34.5"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="8" id="Y1m-Gy-ZuD"/>
@@ -407,7 +405,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="UTILITIES-RIGHT" width="16.333333969116211" height="28.666666030883789"/>
+        <image name="UIButtonBarArrowRightLandscape" width="128" height="128"/>
         <image name="WIFI-ON" width="36.333332061767578" height="26.333333969116211"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

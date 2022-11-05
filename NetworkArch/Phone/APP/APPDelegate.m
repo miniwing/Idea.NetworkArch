@@ -9,38 +9,19 @@
 //  TEL : +(852)53054612
 //
 
-#import "APPDelegate.h"
-#import "APPDelegate+APP.h"
-#import "APPDelegate+Kit.h"
+#import <SettingProvider/SettingProvider.h>
+#import <NetworkService/INetworkService.h>
+#import <IDEAKit/UIDevice+Network.h>
 
+#import <APPDATA/NetworkArch.h>
+#import <APPDATA/NetworkArch+Storage.h>
+
+#import "APPDelegate.h"
 #import "APPDelegate+Inner.h"
 #import "APPDelegate+Signal.h"
 
 #import "RootViewController.h"
 #import "SplashViewController.h"
-
-#import "SettingController+Notification.h"
-
-
-//NS_INLINE void __TEST(const char *_cpcFormat, ...) {
-//
-//   va_list      args;
-//   va_start (args, _cpcFormat);
-//
-//   int nLen = snprintf( NULL, 0, _cpcFormat, args);
-//
-//   nLen  = nLen;
-//
-//   va_end (args);
-//
-//   va_start (args, _cpcFormat);
-//   nLen  = vsnprintf(NULL, 0, _cpcFormat, args);
-//   va_end (args);
-//
-//   nLen  = nLen;
-//
-//   return;
-//}
 
 @implementation APPDelegate
 
@@ -77,16 +58,24 @@
    //
    //      [APPDelegate setTabbarAnimation:[aNotification.object boolValue]];
    //   });
-   
-   self.onNotification(SettingController.tabAnimationNotification, ^(NSNotification *aNotification) {
-      
-      LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : tabAnimation : %@", SettingController.tabAnimationNotification));
-      
-      [APPDelegate setTabbarAnimation:[aNotification.object boolValue]];
-   });
-   
    //   [self observeNotification:SettingController.tabAnimationNotification];
-   
+   /******************************************************************************************/
+   /**
+    监听网络状态
+    */
+   @weakify(self);
+   self.onNotification(SettingProvider.appRateOnStore, ^(NSNotification *aNotification) {
+
+      @strongify(self);
+      
+      LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : appRateOnStore : %@", aNotification));
+      LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : strongify : %@", self));
+
+#if APP_RATER
+      [Appirater rateApp];
+#endif /* APP_RATER */
+      return;
+   });
    /******************************************************************************************/
    
 #if __InjectionIII__
@@ -143,12 +132,7 @@
    LogDebug((@"----------------------------------------------------"));
 
    /******************************************************************************************/
-   
-   NSString *szAA = [NSString stringWithFormat:@"123456"];
-   LogDebug((@"AA : %@", szAA));
-
-   /******************************************************************************************/
-   
+      
 //   dispatch_sync(dispatch_get_main_queue(), ^{
 //      NSLog(@"死锁。。。。。。。");
 //   });
@@ -170,47 +154,81 @@
    
    __TRY;
    
-   LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : UIApplication : %@", aApplication));
+   LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : UIApplication  : %@", aApplication));
+   LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : Window         : %@", self.window));
+   LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : TraitCollection: %@", self.window.traitCollection));
+
    /******************************************************************************************/
-   
-   // Override point for customization after application launch.
-   if ([self.window.rootViewController isKindOfClass:[RootViewController class]]) {
+   // setup appearance
+   if (@available(iOS 15.0, *)) {
       
-      self.rootViewController = __cast(RootViewController *, self.window.rootViewController);
+      UINavigationBarAppearance  *stAppearance  = [[UINavigationBarAppearance alloc] init];
+      [stAppearance configureWithOpaqueBackground];
+      [stAppearance setBackgroundColor:UIColor.clearColor];
+      [stAppearance setShadowColor:UIColor.clearColor];
+      [stAppearance setShadowImage:[UIImage new]];
       
-      self.splashViewController  = [UIStoryboard loadStoryboard:SplashViewController.storyboard
-                                                 viewController:SplashViewController.class];
+      NSMutableDictionary  *stTitleAttributes   = nil;
+      
+      if (nil == stAppearance.titleTextAttributes) {
+         
+         stTitleAttributes = [NSMutableDictionary dictionary];
+         
+      } /* End if () */
+      else {
+         
+         stTitleAttributes = [stAppearance.titleTextAttributes mutableCopy];
+         
+      } /* End else */
+      
+      [stTitleAttributes setObject:UIColorX.labelColor
+                            forKey:NSForegroundColorAttributeName];
+      [stTitleAttributes setObject:[UIFont systemFontOfSize:16 weight:UIFontWeightRegular]
+                            forKey:NSFontAttributeName];
+      
+      [stAppearance setTitleTextAttributes:stTitleAttributes];
+      
+      [UINavigationBar appearance].standardAppearance    = stAppearance;
+      [UINavigationBar appearance].scrollEdgeAppearance  = [UINavigationBar appearance].standardAppearance;
       
    } /* End if () */
-   else if ([self.window.rootViewController isKindOfClass:[SplashViewController class]]) {
+   else {
+      
+      // Fallback on earlier versions
+      
+   } /* End else */
+   /******************************************************************************************/
+
+   LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : appVersion : %@", [UIApplication sharedApplication].appVersion));
+   
+   /******************************************************************************************/
+
+   // Override point for customization after application launch.
+   if ([self.window.rootViewController isKindOfClass:RootViewController.class]) {
+      
+      self.rootViewController    = __cast(RootViewController *, self.window.rootViewController);
+      
+//      self.splashViewController  = [UIStoryboard loadStoryboard:SplashViewController.storyboard
+//                                                 viewController:SplashViewController.class];
+   } /* End if () */
+   else if ([self.window.rootViewController isKindOfClass:SplashViewController.class]) {
       
       self.splashViewController  = __cast(SplashViewController *, self.window.rootViewController);
       
-      self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
-                                              viewController:RootViewController.class];
-      
+//      self.rootViewController    = [UIStoryboard loadStoryboard:RootViewController.storyboard
+//                                                 viewController:RootViewController.class];
    } /* End else */
    
-//   [self.window setRootViewController:self.splashViewController];
    [self.window makeKeyAndVisible];
    
-//   [self.window addSubview:self.splashViewController.view];
+   /******************************************************************************************/
+   
+   LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
    
    [self splash];
    
-   if (NO == [APPDelegate isApiKeySetting]) {
-      
-      [self sendSignal:APPDelegate.loadApiKeySignal];
+   /******************************************************************************************/
 
-   } /* End if () */
-   
-//   /******************************************************************************************/
-//   /**
-//    监听网络状态
-//    */
-//   [self monitorReachabilityStatus];
-//   /******************************************************************************************/
-   
    LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
 
    __CATCH(nErr);
@@ -253,6 +271,7 @@
    __TRY;
    
    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+   [Appirater appEnteredForeground:YES];
    
    __CATCH(nErr);
    
@@ -266,11 +285,11 @@
    __TRY;
    
    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-   if (NO == [APPDelegate isApiKeySetting]) {
-      
-      [self sendSignal:APPDelegate.loadApiKeySignal];
-
-   } /* End if () */
+//   if (NO == [APPDelegate isApiKeySetting]) {
+//
+//      [self sendSignal:APPDelegate.loadApiKeySignal];
+//
+//   } /* End if () */
 
    __CATCH(nErr);
    
@@ -367,7 +386,7 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-      
+
    BG_PERFORM_SELECTOR(self, @selector(loadData), nil);
    
    __CATCH(nErr);
@@ -387,16 +406,21 @@
    sleep(1.5);
 #endif /* __Debug__ */
    
-   szVersion   = [APPDelegate version];
+   szVersion   = [SettingProvider version];
    LogDebug((@"-[APPDelegate loadData] : version    : %@", szVersion));
    LogDebug((@"-[APPDelegate loadData] : appVersion : %@", [UIApplication sharedApplication].appVersion));
       
    // 第一次进入
    if (kStringIsBlank(szVersion)) {
       
-      [APPDelegate setVersion:[UIApplication sharedApplication].appVersion];
-      [APPDelegate setTabbarAnimation:YES];
-      
+      [SettingProvider setVersion:[UIApplication sharedApplication].appVersion];
+#if __Debug__
+      [SettingProvider setTabbarAnimation:NO];
+#else
+      [SettingProvider setTabbarAnimation:YES];
+#endif
+      [NetworkArch setApiKeySetting:NO];
+
    } /* End if () */
    else {
       
@@ -409,8 +433,8 @@
          
          // 当前版本第一次进入
          // 可能需要升级数据。
-         [APPDelegate setVersion:[UIApplication sharedApplication].appVersion];
-         [APPDelegate setApiKeySetting:NO];
+         [SettingProvider setVersion:[UIApplication sharedApplication].appVersion];
+         [NetworkArch setApiKeySetting:NO];
          
       } /* End else */
       
@@ -419,10 +443,9 @@
    LogDebug((@"[UIDevice ipv4:NetworkCellular] : %@", [UIDevice ipv4:NetworkCellular]));
 
    /******************************************************************************************/
-   /**
-    监听网络状态
-    */
-   [self monitorReachabilityStatus];
+
+   [self postSignal:APPDelegate.loadApiKeySignal onQueue:DISPATCH_GET_BACKGROUND_QUEUE()];
+
    /******************************************************************************************/
 
    UI_PERFORM_SELECTOR(self, @selector(splashing), nil, NO);
@@ -438,35 +461,35 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-
+   
    if (nil == self.rootViewController) {
-
-      self.rootViewController = [UIStoryboard loadStoryboard:RootViewController.storyboard
-                                              viewController:RootViewController.class];
-
+      
+      self.rootViewController    = [UIStoryboard loadStoryboard:RootViewController.storyboard
+                                                 viewController:RootViewController.class];
    } /* End if () */
-
+   
    [self.window setRootViewController:self.rootViewController];
    self.rootViewController.view.alpha  = 0;
-
+   
    [self.window addSubview:self.splashViewController.view];
    [self.window bringSubviewToFront:self.splashViewController.view];
    self.rootViewController.view.alpha  = 1;
-      
-   [self.rootViewController setNeedsStatusBarAppearanceUpdate];
    
-   [UIView animateWithDuration:UIAViewAnimationDefaultDuraton
-                    animations:^{
+   [self.rootViewController setNeedsStatusBarAppearanceUpdate];
+
+   [UIView animateWithDuration:[UIView animationDefaultDuration]
+                    animations:^(void) {
       
       self.splashViewController.view.alpha   = 0;
    }
-                    completion:^(BOOL finished) {
+                    completion:^(BOOL aFinished) {
       
       [self.splashViewController.view removeFromSuperview];
+      
       __RELEASE(self.splashViewController);
       UI_PERFORM_SELECTOR(self, @selector(splashDone), nil, NO);
    }];
-
+   
    __CATCH(nErr);
    
    return;
@@ -479,40 +502,29 @@
    
    __TRY;
    
+   /******************************************************************************************/
+#if APP_RATER
+   [Appirater setAppId:[IDEAIdentifier appId]];
+   [Appirater setDaysUntilPrompt:7];
+   [Appirater setUsesUntilPrompt:5];
+   [Appirater setSignificantEventsUntilPrompt:-1];
+   [Appirater setTimeBeforeReminding:2];
+   [Appirater setDebug:__Debug__];
+   /******************************************************************************************/
+#  if __Debug__
+#  else
+   [Appirater appLaunched:YES];
+#  endif
+#endif /* APP_RATER */
+
+   /******************************************************************************************/
+
    [self postNotificationName:SplashViewController.SPLASH_DONE
                        object:nil];
    
    __CATCH(nErr);
    
    return;
-}
-
-//#pragma mark - handleNotification(SettingController, tabAnimationNotification)
-//handleNotification(SettingController, notificationName(tabAnimation)) {
-//
-//   int                            nErr                                     = EFAULT;
-//
-//   __TRY;
-//
-//   LogDebug((@"-[APPDelegate handleNotification:] : tabAnimation : %@", SettingController.tabAnimationNotification));
-//
-//   [APPDelegate setTabbarAnimation:[aNotification.object boolValue]];
-//
-//   __CATCH(nErr);
-//
-//   return;
-//}
-
-#pragma mark - (AFNetworkReachabilityManager *)networkReachabilityManager
-- (AFNetworkReachabilityManager *)networkReachabilityManager {
-   
-   if (nil == _networkReachabilityManager) {
-      
-      _networkReachabilityManager   = [AFNetworkReachabilityManager manager];
-      
-   } /* End if () */
-   
-   return _networkReachabilityManager;
 }
 
 @end

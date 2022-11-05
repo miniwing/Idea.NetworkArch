@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RootViewController : IDEATabBarControllerTransition
+@interface RootViewController : IDEATabBarControllerTransition <UITabBarControllerDelegate>
 
 @end
 

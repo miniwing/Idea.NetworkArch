@@ -9,42 +9,14 @@
 //  TEL : +(852)53054612
 //
 
-#import "APPDelegate+APP.h"
-#import "APPDelegate+Kit.h"
+#import <SettingProvider/SettingProvider.h>
+#import <SettingProvider/UISetting.h>
+
+#import "RootViewController.h"
+#import "RootViewController+Inner.h"
+#import "RootViewController+Theme.h"
 
 #import "SplashViewController.h"
-#import "RootViewController.h"
-
-#import "TrackingController.h"
-#import "TrackingController+Notification.h"
-
-#import "IntroductionController.h"
-#import "IntroductionController+Notification.h"
-
-#import "HomeController+Signal.h"
-#import "HomeController+Notification.h"
-
-#import "SettingController+Notification.h"
-
-IDEA_ENUM(NSInteger, TransType) {
-   
-   TransTypeNone  = -1,
-   TransTypeMove  = 0,
-   TransTypeFade  = 1,
-   TransTypeScale = 2,
-   TransTypeCustom= 3
-};
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface RootViewController ()
-
-@property (nonatomic, weak, nullable)        id<UITabBarControllerDelegate>        originalDelegate;
-@property (nonatomic, assign)                TransType                             type;
-
-@end
-
-NS_ASSUME_NONNULL_END
 
 @implementation RootViewController
 
@@ -74,44 +46,60 @@ NS_ASSUME_NONNULL_END
    
    if (self) {
       
-      self.originalDelegate   = self.delegate;
-      
-      self.type   = TransTypeMove;
-      
-//      @weakify(self);
-      /******************************************************************************************/
-      self.onNotification(SettingController.tabAnimationNotification, ^(NSNotification *aNotification) {
-         
-//         @strongify(self);
-         LogDebug((@"-[RootViewController onNotification : %@] : %@ : %@", aNotification.name, aNotification.name, aNotification.object));
-         
-         if (nil != self) {
-            
-            if ([aNotification.object boolValue]) {
-               
-               if (TransTypeNone != self.type) {
-                  
-                  self.delegate  = self;
-                  
-               } /* End if () */
-               
-            } /* End if () */
-            else {
-               
-               self.delegate     = self.originalDelegate;
-               
-            } /* End else */
-            
-         } /* End if () */
-      });
+      self.delegate  = self;
+      self.type      = TransTypeMove;
 
-      LogClass((SplashViewController.class));
+      [self addNotificationName:DKNightVersionThemeChangingNotification
+                       selector:@selector(onThemeUpdate:)
+                         object:nil];
       
       [self addNotificationName:SplashViewController.SPLASH_DONE
                        selector:@selector(onSplashDone:)
                          object:nil];
+
+      /******************************************************************************************/
+      @weakify(self);
+#if IDEA_TABBARCONTROLLER_TRANSITION
+      [self addNotificationName:IDEATabBarControllerTransitionBeginNotification
+                       selector:@selector(__onIDEATabBarControllerTransitionBeginNotification:)
+                         object:nil];
       
-      LogClass((SplashViewController.class));
+      [self addNotificationName:IDEATabBarControllerTransitionEndNotification
+                       selector:@selector(__onIDEATabBarControllerTransitionEndNotification:)
+                         object:nil];
+      
+      self.onNotification(SettingProvider.tabAnimationNotification, ^(NSNotification *aNotification) {
+         
+         @strongify(self);
+         LogDebug((@"-[RootViewController onNotification : %@] : strongify : %@", aNotification.name, self));
+         LogDebug((@"-[RootViewController onNotification : %@] : %@ : %@", aNotification.name, aNotification.name, aNotification.object));
+         
+      });
+#endif /* IDEA_TABBARCONTROLLER_TRANSITION */
+      
+      _titles        = @[ APP_STR(@"HOME"),
+                          APP_STR(@"SETTING") ];
+      
+      _images        = @[ @"TAB-HOME",
+                          @"TAB-SETTING" ];
+      
+      _imageSelecteds= @[ @"TAB-HOME+",
+                          @"TAB-SETTING+" ];
+
+      [IDEAUIRouter registerURLPattern:@"query/tabbar/height"
+                             toHandler:^(NSString *aURL, NSDictionary *aRouter, IDEAUIRouterCompletion aCompletion) {
+         
+         LogDebug((@"RootViewController:: URL     : %@", aURL));
+         LogDebug((@"RootViewController:: Router  : %@", aRouter));
+         
+         if (nil != aCompletion) {
+            
+            aCompletion(aURL, nil, @(self.tabBar.height));
+            
+         } /* End if () */
+
+         return;
+      }];
 
    } /* End if () */
    
@@ -124,83 +112,100 @@ NS_ASSUME_NONNULL_END
    
    int                            nErr                                     = EFAULT;
    
-   NSDictionary                  *stAttributes                             = nil;
-   NSArray<NSString *>           *stTitles                                 = nil;
+   NSDictionary                        *stAttributes                       = nil;
+   NSDictionary                        *stSelectedAttributes               = nil;
+      
+   NSMutableArray<UIViewController *>  *stViewControllers                  = nil;
+
+   UIView                              *stLine                             = nil;
    
    __TRY;
    
    [super viewDidLoad];
-   
-   if (TransTypeNone != self.type && [APPDelegate isTabbarAnimation]) {
-      
-      self.delegate  = self;
-      
-   } /* End if () */
-   
-#  if DK_NIGHT_VERSION
+
+#  if IDEA_NIGHT_VERSION_MANAGER
    [self.tabBar setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.tabBar setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor appTabbarBackground])];
    [self.tabBar setBarTintColorPicker:DKColorPickerWithKey([IDEAColor appTabbarBackground])];
    [self.tabBar setBackgroundImage:[UIImage new]];
    [self.tabBar setShadowImage:[UIImage new]];
-   //   [self.tabBar setShadowImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
-   //
-   //      return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor separator]] size:CGSizeMake(1, 0.5)];
-   //   }];
-#  else /* DK_NIGHT_VERSION */
-#  endif /* !DK_NIGHT_VERSION */
+#  else /* IDEA_NIGHT_VERSION_MANAGER */
+#  endif /* !IDEA_NIGHT_VERSION_MANAGER */
+
+   stViewControllers = [NSMutableArray<UIViewController *> array];
    
-   //   Icons_Tabbar_Discovery
-   //   Icons_Tabbar_Trend
-   //   Icons_Tabbar_Checkin
-   //   Icons_Tabbar_Diary
-   
-   // Do any additional setup after loading the view.
-   stTitles       = @[ APP_STR(@"HOME"),
-                       APP_STR(@"SETTING")];
-   
+   [IDEAUIRouter openURL:@"HOME/create"
+              completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+      
+      if (nil != aViewController) {
+         
+         LogDebug((@"-[RootViewController viewDidLoad] : %@ : %@", aURL, aViewController));
+         [stViewControllers addObject:aViewController];
+
+      } /* End if () */
+   }];
+
+   [IDEAUIRouter openURL:@"UISETTING/create"
+              completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+      
+      if (nil != aViewController) {
+         
+         LogDebug((@"-[RootViewController viewDidLoad] : %@ : %@", aURL, aViewController));
+         [stViewControllers addObject:aViewController];
+
+      } /* End if () */
+   }];
+
+   self.viewControllers = stViewControllers;
+
    stAttributes   = @{
-      NSFontAttributeName : [APPFont lightFontOfSize:[APPFont appFontTabTitleSize]]
+      
+      NSFontAttributeName : [UIFont systemFontOfSize:[IDEATypeFace tabTitleSize] weight:UIFontWeightLight]
    };
-   
+
+   LogDebug((@"-[RootViewController viewDidLoad] : [UISetting mainColor] : %@", [UISetting mainColor]));
+   LogDebug((@"-[RootViewController viewDidLoad] : [UISetting mainColor] : %@", [IDEAColor colorWithKey:[UISetting mainColor]]));
+
+   stSelectedAttributes = @{
+
+      NSFontAttributeName : [UIFont systemFontOfSize:[IDEATypeFace tabTitleSize] weight:UIFontWeightLight]
+   };
+
    for (NSInteger H = 0; H < [self.tabBar.items count]; ++H) {
       
-      [self.tabBar.items[H] setTitle:stTitles[H]];
+      [self.tabBar.items[H] setTitle:self.titles[H]];
+      
       [self.tabBar.items[H] setTitleTextAttributes:stAttributes
                                           forState:UIControlStateNormal];
-      [self.tabBar.items[H] setTitleTextAttributes:stAttributes
+      [self.tabBar.items[H] setTitleTextAttributes:stSelectedAttributes
                                           forState:UIControlStateSelected];
+      
+      [self.tabBar.items[H] setImage:[UIImage imageNamed:self.images[H]]];
+      [self.tabBar.items[H] setSelectedImage:[UIImage imageNamed:self.imageSelecteds[H]]];
+      
    } /* End for () */
+
+   /**
+    * Tabbar 顶部分割线，为修复 IDEA_TABBARCONTROLLER_TRANSITION 动画有问题。
+    */
+   stLine   = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 0.25f)];
+   [stLine setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor opaqueSeparator])];
+   [self.tabBar addSubview:stLine];
+
+#if __Debug__
+   [self setSelectedIndex:TabIdHome];
    
-   //   [self.tabBar setShadowColor:UIColor.clearColor];
-   //   [self.tabBar setShadowImage:[UIImage new]];
-   //   [self.tabBar setBackgroundImage:[UIImage new]];
-   //
-   //   if (@available(iOS 13, *)) {
-   //
-   //      UITabBarAppearance   *stAppearance = [self.tabBar.standardAppearance copy];
-   //      stAppearance.backgroundImage  = [UIImage imageWithColor:[UIColor clearColor]];
-   //      stAppearance.shadowImage      = [UIImage imageWithColor:[UIColor clearColor]];
-   //
-   //      // 官方文档写的是 重置背景和阴影为透明
-   //      [stAppearance configureWithTransparentBackground];
-   //      self.tabBar.standardAppearance = stAppearance;
-   //
-   //   } /* End if () */
-   //   else {
-   //
-   //      self.tabBar.backgroundImage   = [UIImage new];
-   //      self.tabBar.shadowImage       = [UIImage new];
-   //
-   //   }/* End else */
-   
-   //   [self.tabBar setBackgroundImage:[UIImage imageWithColor:UIColor.systemRedColor]];
-   
-   //   [self.tabBar setBackgroundImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
-   //
-   //      return [UIImage imageWithColor:[IDEAColor colorWithKey:[IDEAColor systemGroupedBackground]]];
-   //   }];
-   
+   if (TransTypeNone != self.type && [SettingProvider isTabbarAnimation]) {
+
+      DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
+
+         self.delegate  = self;
+         
+         return;
+      });
+   } /* End if () */
+#endif /* __Debug__ */
+
    __CATCH(nErr);
    
    return;
@@ -229,20 +234,7 @@ NS_ASSUME_NONNULL_END
    [super viewWillAppear:aAnimated];
    
    LogDebug((@"-[RootViewController viewWillAppear:] : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"));
-   
-   //   if (nil != self.onboardingController) {
-   //
-   //      [self presentViewController:self.onboardingController
-   //                         animated:NO
-   //                       completion:^{
-   //
-   //         self.onboardingController  = nil;
-   //      }];
-   //
-   //   } /* End if () */
-   
-   //   UI_PERFORM_SELECTOR(self, @selector(openTracking:), @(NO), NO);
-   
+      
    __CATCH(nErr);
    
    return;
@@ -296,7 +288,7 @@ NS_ASSUME_NONNULL_END
    
    if (@available(iOS 13, *)) {
       
-      if ([APPDelegate isAutoTheme]) {
+      if ([SettingProvider isAutoTheme]) {
          
          if (UIUserInterfaceStyleDark == self.traitCollection.userInterfaceStyle) {
             
@@ -321,39 +313,8 @@ NS_ASSUME_NONNULL_END
 - (void)openIntroduction:(NSNumber *)aAnimated {
    
    int                            nErr                                     = EFAULT;
-   
-   IntroductionController        *stIntroductionController                 = nil;
-   
-   NSString                      *szAPI                                    = nil;
-   
-   __TRY;
-   
-   if ([APPDelegate isIntroduced]) {
-      
-      szAPI = [APPDelegate apiKey];
-      
-      if ([APPDelegate isApiKeySetting] && kStringIsBlank(szAPI) && (NO == [APPDelegate isApiKeyOpened])) {
          
-         [self postNotify:HomeController.settingNotification
-                  onQueue:dispatch_get_main_queue()
-               completion:^{
-            
-            [APPDelegate setApiKeyOpened:YES];
-         }];
-      } /* End if () */
-      
-      nErr  = noErr;
-      
-      break;
-      
-   } /* End if () */
-   
-   stIntroductionController   = [UIStoryboard loadStoryboard:IntroductionController.storyboard
-                                              viewController:IntroductionController.class];
-   
-   [self popUp:stIntroductionController animated:aAnimated.boolValue completion:^{
-      
-   }];
+   __TRY;
    
    __CATCH(nErr);
    
@@ -363,26 +324,28 @@ NS_ASSUME_NONNULL_END
 - (void)openTracking:(NSNumber *)aAnimated {
    
    int                            nErr                                     = EFAULT;
-   
-   TrackingController             *stTrackingController                      = nil;
-   
+      
    __TRY;
    
-   if ([APPDelegate isTracking]) {
+   if (![SettingProvider isPrivacy]) {
       
-      nErr  = noErr;
-      
-      break;
-      
+      [IDEAUIRouter openURL:@"PRIVACY/create"
+                 completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+
+         if (nil != aViewController) {
+
+            LogDebug((@"-[RootViewController onSplashDone:] : %@ : %@", aURL, aViewController));
+
+            [self popUp:aViewController animated:YES completion:^{
+
+               [SettingProvider setPrivacy:YES];
+
+            }];
+         } /* End if () */
+      }];
+               
    } /* End if () */
-   
-   stTrackingController  = [UIStoryboard loadStoryboard:TrackingController.storyboard
-                                         viewController:TrackingController.class];
-   
-   [self popUp:stTrackingController animated:aAnimated.boolValue completion:^{
-      
-   }];
-   
+
    __CATCH(nErr);
    
    return;
@@ -396,9 +359,23 @@ NS_ASSUME_NONNULL_END
    __TRY;
    
 //   UI_PERFORM_SELECTOR(self, @selector(openTracking:), @(YES), NO);
-   UI_PERFORM_SELECTOR(self, @selector(openIntroduction:), @(YES), NO);
+//   UI_PERFORM_SELECTOR(self, @selector(openIntroduction:), @(YES), NO);
 
    __CATCH(nErr);
+   
+   return;
+}
+
+- (void)__onIDEATabBarControllerTransitionBeginNotification:(NSNotification *)aNotification {
+      
+//   self.view.layer.opacity = 0;
+      
+   return;
+}
+
+- (void)__onIDEATabBarControllerTransitionEndNotification:(NSNotification *)aNotification {
+      
+//   self.view.layer.opacity = 1;
    
    return;
 }
@@ -408,57 +385,47 @@ NS_ASSUME_NONNULL_END
    
    LogView((@"-[RootViewController childViewControllerForStatusBarStyle]"));
    
-   //   if ((nil != [APPDelegate splashViewController]) && (YES == [[APPDelegate splashViewController] splashing])) {
-   //
-   //      return [APPDelegate splashViewController];
-   //
-   //   } /* End if () */
-   
-   //   if (0 < self.childViewControllers.count)
-   //   {
-   //      return self.childViewControllers.lastObject;
-   //
-   //   } /* End if () */
-   
    if (nil != self.selectedViewController) {
       
       return self.selectedViewController;
       
    } /* End if () */
    
-   return self.viewControllers[0];
+   if (0 < self.viewControllers.count) {
+      
+      return self.viewControllers[0];
+
+   } /* End if () */
+
+   return nil;
 }
 
 - (UIViewController *)childViewControllerForStatusBarHidden {
    
    LogView((@"-[RootViewController childViewControllerForStatusBarHidden]"));
    
-   //   if ((nil != [APPDelegate splashViewController]) && (YES == [[APPDelegate splashViewController] splashing])) {
-   //
-   //      return [APPDelegate splashViewController];
-   //
-   //   } /* End if () */
-   
-   //   if (0 < self.childViewControllers.count)
-   //   {
-   //      return self.childViewControllers.lastObject;
-   //
-   //   } /* End if () */
-   
    if (nil != self.selectedViewController) {
       
       return self.selectedViewController;
       
    } /* End if () */
    
-   return self.viewControllers[0];
+   if (0 < self.viewControllers.count) {
+      
+      return self.viewControllers[0];
+
+   } /* End if () */
+
+   return nil;
 }
 
-- (CFTimeInterval) transitionDuration {
-   
+- (CFTimeInterval)transitionDuration {
+
+#if __Debug__
+   return 0.4;
+#else /* __Debug__ */
    return 0.35;
-   //   return 1;
-   //   return 4;
+#endif /* !__Debug__ */
 }
 
 - (CAMediaTimingFunction *)transitionTimingFunction {
@@ -467,8 +434,15 @@ NS_ASSUME_NONNULL_END
 }
 
 - (BOOL)tabBarController:(UITabBarController *)aTabBarController shouldSelectViewController:(UIViewController *)aViewController {
-   
-   return [self animateTransition:aTabBarController shouldSelect:aViewController];
+#if IDEA_TABBARCONTROLLER_TRANSITION
+   if ([SettingProvider isTabbarAnimation]) {
+      
+      return [self animateTransition:aTabBarController shouldSelect:aViewController];
+
+   } /* End if () */
+#endif /* IDEA_TABBARCONTROLLER_TRANSITION */
+
+   return YES;
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
@@ -477,8 +451,14 @@ NS_ASSUME_NONNULL_END
    
    __TRY;
    
-   //   [UISelectionFeedbackGenerator selectionChanged];
-   [UIImpactFeedbackGenerator impactOccurredWithStyle:UIImpactFeedbackStyleMedium];
+   LogDebug((@"-[RootViewController tabBarController:didSelectViewController:] : SelectedIndex : %d", self.selectedIndex));
+
+//   [UISelectionFeedbackGenerator selectionChanged];
+   if ([SettingProvider isHaptics]) {
+      
+      [UIImpactFeedbackGenerator impactOccurredWithStyle:UIImpactFeedbackStyleMedium];
+
+   } /* End if () */
    
    __CATCH(nErr);
    
@@ -508,17 +488,33 @@ NS_ASSUME_NONNULL_END
 #pragma mark - UIStatusBar
 - (UIStatusBarStyle)preferredStatusBarStyle {
    
-   LogDebug((@"[%@ preferredStatusBarStyle]", [self class]));
+   LogView((@"-[%@ preferredStatusBarStyle]", [self class]));
    
-   if (nil != [APPDelegate splashViewController]) {
-      
-      return [APPDelegate splashViewController].preferredStatusBarStyle;
+//   if (nil != [APPDelegate splashViewController]) {
+//
+//      return [APPDelegate splashViewController].preferredStatusBarStyle;
+//
+//   } /* End if () */
+
+   if ([[DKNightVersionManager sharedManager].themeVersion isEqualToString:DKThemeVersionNight]) {
+
+      return UIStatusBarStyleLightContent;
       
    } /* End if () */
-   
-   return UIStatusBarStyleLightContent;
+   else { // if ([[DKNightVersionManager sharedManager].themeVersion isEqualToString:DKThemeVersionNormal])
+
+      if (@available(iOS 13, *)) {
+
+         // 系统版本高于 13.0
+         return UIStatusBarStyleDarkContent;
+         
+      } /* End if () */
+      
+      return UIStatusBarStyleDefault;
+
+   } /* End if () */
 }
-//
+
 //- (BOOL)prefersStatusBarHidden
 //{
 //   LogDebug((@"[%@ prefersStatusBarHidden]", [self class]));
@@ -563,14 +559,3 @@ NS_ASSUME_NONNULL_END
 //}
 
 @end
-
-#pragma mark - UIStoryboard
-@implementation RootViewController (UIStoryboard)
-
-+ (NSString *)storyboard {
-   
-   return @"MAIN";
-}
-
-@end
-

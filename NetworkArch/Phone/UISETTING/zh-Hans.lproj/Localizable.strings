@@ -1,0 +1,36 @@
+/*
+  Localizable.strings
+  SETTING
+
+  Created by Harry on 2021/6/7.
+  Copyright © 2021 Harry. All rights reserved.
+*/
+
+/// SETTING
+"Setting"                           = "设置";
+"SETTING"                           = "设置";
+
+"Appearance"                        = "外观";
+"APPEARANCE"                        = "外观";
+
+"Light"                             = "浅色";
+"Night"                             = "深色";
+"Auto"                              = "跟随系统";
+
+"Animation"                         = "动画";
+
+"Haptics"                           = "触感反馈";
+
+"Rate on App Store"                 = "在 App Store 上评分";
+
+"About"                             = "关于";
+"Follow on Weibo"                   = "Follow on Weibo";
+"Follow on Twitter"                 = "Follow on Twitter";
+"Follow on Facebook"                = "Follow on Facebook";
+
+"Version"                           = "版本";
+
+/// 权限
+"Permission Title"                  = "无权限";
+"No Permission"                     = "允许访问共享或发送照片和视频。 您可以随时在设备设置中更改此设置。";
+"Allow Access"                      = "允许访问";

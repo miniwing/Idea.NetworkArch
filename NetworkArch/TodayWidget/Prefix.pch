@@ -149,11 +149,4 @@
 #import <IDEAKit/IDEADebug.h>
 #import <IDEAKit/IDEAKit.h>
 
-#import <APPDATA/APPDATA.h>
-#import <APPDATA/NetworkArch.h>
-
-#import "APPDef.h"
-#import "APPDebug.h"
-#import "APPFont.h"
-
 #endif /* Prefix_pch */

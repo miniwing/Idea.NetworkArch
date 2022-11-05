@@ -57,7 +57,7 @@
    } /* End else if () */
    
    [UIView transitionWithView:self.contentController.tableView
-                     duration:UIAViewAnimationDefaultDuraton
+                     duration:[UIView animationDefaultDuration]
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       
@@ -67,12 +67,6 @@
       
    }];
    
-//   [UIView animateWithDuration:UIAViewAnimationDefaultDuraton
-//                    animations:^{
-//
-//      [self.contentController.tableView reloadData];
-//   }];
-
    __CATCH(nErr);
    
    return;

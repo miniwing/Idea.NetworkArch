@@ -37,9 +37,19 @@ Pod::Spec.new do |spec|
                                             ]
                                       }
 
+#  spec.pod_target_xcconfig          = {
+#    'GCC_PREPROCESSOR_DEFINITIONS'      => [ ' MODULE=\"APPDATA\" ' ]
+#                                      }
   spec.pod_target_xcconfig          = {
-    'GCC_PREPROCESSOR_DEFINITIONS'      => [ ' MODULE=\"APPDATA\" ' ]
+    'GCC_PREPROCESSOR_DEFINITIONS'      => [
+                                              ' MODULE=\"APPDATA\" ',
+                                              ' BUNDLE=\"DATAs\" '
+                                            ]
                                       }
+
+  if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
+    spec.dependency 'FoundationExtension'
+  end # IDEA_FOUNDATION_EXTENSION
 
   if ENV['IDEA_YYKIT'] == 'YES'
     spec.dependency 'YYKit'
@@ -53,12 +63,14 @@ Pod::Spec.new do |spec|
                               'NetworkArch/*.{h,m}'
 
   spec.resource_bundles     = {
-                                'APPDATA' => [
+#                                'APPDATA' => [
 #                                              'PLISTs/*.plist',
+#                                              'JSONs/**/*.json'
+#                                             ],
+                                'DATAs' => [
+                                              'PLISTs/*.plist',
                                               'JSONs/**/*.json',
-#                                              'DATA/*.png',
-#                                              'HTMLs/*.html'
-                                             ]
+                                            ]
                               }
   pch_app_kit = <<-EOS
   
@@ -488,7 +500,7 @@ __END_DECLS
 
 /******************************************************************************************************/
 
-// #import <IDEAKit/IDEAKit.h>
+#import <IDEAKit/IDEAKit.h>
 
 /******************************************************************************************************/
 

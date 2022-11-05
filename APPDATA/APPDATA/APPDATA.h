@@ -22,6 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPDATA ()
 
++ (BOOL)whoisXmlApi;
+
+@end
+
+@interface APPDATA ()
+
 + (NSString *)htmlFile:(NSString *)aHtmlName;
 
 + (NSString *)trackingFile:(NSString *)aTrackingName;

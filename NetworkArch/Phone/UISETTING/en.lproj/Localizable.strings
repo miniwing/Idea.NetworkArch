@@ -1,0 +1,36 @@
+/*
+  Localizable.strings
+  SETTING
+
+  Created by Harry on 2021/6/7.
+  Copyright © 2021 Harry. All rights reserved.
+*/
+
+/// SETTING
+"Setting"                           = "Setting";
+"SETTING"                           = "SETTING";
+
+"Appearance"                        = "Appearance";
+"APPEARANCE"                        = "APPEARANCE";
+
+"Light"                             = "Light";
+"Night"                             = "Night";
+"Auto"                              = "Automatic";
+
+"Animation"                         = "Animation";
+
+"Haptics"                           = "Haptics";
+
+"Rate on App Store"                 = "Rate on App Store";
+
+"About"                             = "About";
+"Follow on Weibo"                   = "Follow on Weibo";
+"Follow on Twitter"                 = "Follow on Twitter";
+"Follow on Facebook"                = "Follow on Facebook";
+
+"Version"                           = "Version";
+
+/// 权限
+"Permission Title"                  = "No Permission";
+"No Permission"                     = "Allow Access to share or send photos and videos. you can always change this in your devices settings.";
+"Allow Access"                      = "Allow Access";

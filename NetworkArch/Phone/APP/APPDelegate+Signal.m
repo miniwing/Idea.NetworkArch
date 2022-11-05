@@ -6,20 +6,18 @@
 //  Copyright © 2021 Harry. All rights reserved.
 //
 
-#import "APPDelegate+APP.h"
-#import "APPDelegate+Kit.h"
+#import <SettingProvider/SettingProvider.h>
+#import <APPDATA/NetworkArch+Storage.h>
+
+#import <HomeController+Notification.h>
 
 #import "APPDelegate+Inner.h"
 #import "APPDelegate+Signal.h"
 
 @implementation APPDelegate (Signal)
 
-@def_signal(networkStatus);
-
 @def_signal(loadApiKey);
 @def_signal(loadApiKeyDone);
-
-@def_signal(apiKeySetting);
 
 @end
 
@@ -46,7 +44,7 @@ handleSignal(APPDelegate, loadApiKeySignal) {
       
       [self postSignal:APPDelegate.loadApiKeyDoneSignal
             withObject:aData
-               onQueue:dispatch_get_main_queue()];
+               onQueue:DISPATCH_GET_BACKGROUND_QUEUE()];
       
    }];
    
@@ -65,8 +63,10 @@ handleSignal(APPDelegate, loadApiKeyDoneSignal) {
    
    int                            nErr                                     = EFAULT;
 
-   NSDictionary                  *stJson                                   = nil;
    NSError                       *stError                                  = nil;
+
+   NSDictionary                  *stJson                                   = nil;
+   NSDictionary                  *stVersion                                = nil;
    
    __TRY;
    
@@ -79,9 +79,19 @@ handleSignal(APPDelegate, loadApiKeyDoneSignal) {
                                                  options:NSJSONReadingMutableContainers
                                                    error:&stError];
       
-      self.networkArch  = [NetworkArch modelWithJSON:stJson];
+      if (nil != stJson) {
+         
+         stVersion   = [stJson objectForKey:[UIApplication sharedApplication].appVersion];
+         
+      } /* End if () */
       
-      [APPDelegate setApiKeySetting:self.networkArch.apiKey];
+      if (nil != stVersion) {
+         
+         self.networkArch  = [NetworkArch modelWithJSON:stVersion];
+
+      } /* End if () */
+            
+      [NetworkArch setApiKeySetting:self.networkArch.apiKey];
 
    } /* End if () */
    else {
@@ -90,7 +100,8 @@ handleSignal(APPDelegate, loadApiKeyDoneSignal) {
       
    } /* End else */
    
-   [self postSignal:APPDelegate.apiKeySettingSignal onQueue:dispatch_get_main_queue()];
+   [self postNotify:HomeController.apiKeySettingNotification
+            onQueue:DISPATCH_GET_MAIN_QUEUE()];
    
    __CATCH(nErr);
    

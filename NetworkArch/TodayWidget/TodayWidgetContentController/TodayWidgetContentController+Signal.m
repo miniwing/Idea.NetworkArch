@@ -69,7 +69,7 @@ handleSignal(TodayWidgetContentController, loadWifiInfoSignal) {
    } /* End if () */
 
    [UIView transitionWithView:self.wifiSSIDLabel
-                     duration:UIAViewAnimationDefaultDuraton
+                     duration:[UIView animationDefaultDuration]
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       [self.wifiSSIDLabel setText:szSSID];
@@ -77,7 +77,7 @@ handleSignal(TodayWidgetContentController, loadWifiInfoSignal) {
                    completion:nil];
    
    [UIView transitionWithView:self.wifiSSIDIcon
-                     duration:UIAViewAnimationDefaultDuraton
+                     duration:[UIView animationDefaultDuration]
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       [self.wifiSSIDIcon setImage:[UIImage imageNamed:szIcon]];
@@ -85,7 +85,7 @@ handleSignal(TodayWidgetContentController, loadWifiInfoSignal) {
                    completion:nil];
 
    [UIView transitionWithView:self.wifiIP
-                     duration:UIAViewAnimationDefaultDuraton
+                     duration:[UIView animationDefaultDuration]
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       [self.wifiIP setText:szIP];

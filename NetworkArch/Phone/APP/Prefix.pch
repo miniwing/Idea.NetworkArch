@@ -225,6 +225,10 @@ typedef FBLPromise Promise;
 #     import <MaterialComponents/MaterialAppBar.h>
 #     import <MaterialComponents/MaterialFlexibleHeader.h>
 #     define MATERIAL_APP_BAR                                              (1)
+#  elif __has_include("MaterialComponents/MaterialAppBar.h")
+#     import "MaterialComponents/MaterialAppBar.h"
+#     import "MaterialComponents/MaterialFlexibleHeader.h"
+#     define MATERIAL_APP_BAR                                              (1)
 #  else
 #     define MATERIAL_APP_BAR                                              (0)
 #  endif
@@ -319,12 +323,12 @@ typedef FBLPromise Promise;
 
 #  if __has_include(<IDEANightVersion/DKNightVersion.h>)
 #     import <IDEANightVersion/DKNightVersion.h>
-#     define DK_NIGHT_VERSION                                              (1)
+#     define IDEA_NIGHT_VERSION_MANAGER                                    (1)
 #  elif __has_include("IDEANightVersion/DKNightVersion.h")
 #     import "IDEANightVersion/DKNightVersion.h"
-#     define DK_NIGHT_VERSION                                              (1)
+#     define IDEA_NIGHT_VERSION_MANAGER                                    (1)
 #  else
-#     define DK_NIGHT_VERSION                                              (0)
+#     define IDEA_NIGHT_VERSION_MANAGER                                    (0)
 #  endif
 
 #  if __has_include(<IDEARefresh/MJRefresh.h>)
@@ -399,14 +403,14 @@ typedef FBLPromise Promise;
 #     define IDEA_ROUTER                                                   (0)
 #  endif
 
-#  if __has_include(<IDEAFONT/IDEAFONT.h>)
-#     import <IDEAFONT/IDEAFONT.h>
-#     define IDEA_FONT                                                     (1)
-#  elif __has_include("IDEAFONT/IDEAFONT.h")
-#     import "IDEAFONT/IDEAFONT.h"
-#     define IDEA_FONT                                                     (1)
+#  if __has_include(<IDEATypeFace/IDEATypeFace.h>)
+#     import <IDEATypeFace/IDEATypeFace.h>
+#     define IDEA_TYPE_FACE                                                (1)
+#  elif __has_include("IDEATypeFace/IDEATypeFace.h")
+#     import "IDEATypeFace/IDEATypeFace.h"
+#     define IDEA_TYPE_FACE                                                (1)
 #  else
-#     define IDEA_FONT                                                     (0)
+#     define IDEA_TYPE_FACE                                                (0)
 #  endif
 #endif
 /****************************************************************************/
@@ -430,6 +434,8 @@ typedef FBLPromise Promise;
 #  import <IDEAApplet/IDEAAppletModel.h>
 #  import <IDEAApplet/IDEAAppletEvent.h>
 #  import <IDEAApplet/IDEAAppletService.h>
+#  import <IDEAApplet/IDEAAppletNotificationBus.h>
+#  import <IDEAApplet/IDEAAppletSignalBus.h>
 #endif // __has_include(<IDEAApplet/IDEAApplet.h>)
 
 /****************************************************************************/
@@ -461,17 +467,6 @@ typedef FBLPromise Promise;
 #import <IDEANetUtils/IDEANetUtils.h>
 
 /****************************************************************************/
-
-#import "APPDef.h"
-#import "APPDebug.h"
-#import "APPFont.h"
-#import "APPHTTP.h"
-#import "APPUtils.h"
-
-//NS_INLINE BOOL __isPlatformVersionAtLeast() {
-//
-//   return YES;
-//}
 
 #define PING_STATISTICS_GRAPH                                              (0)
 

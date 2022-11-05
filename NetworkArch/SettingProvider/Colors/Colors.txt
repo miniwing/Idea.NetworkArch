@@ -1,0 +1,7 @@
+NAME                             NORMAL      NIGHT
+
+////////////////////////////////////////////////////////
+
+// mainColor                       #185E84FF   #185E84FF
+
+mainColor                       #225FFFFF   #007AFFFF

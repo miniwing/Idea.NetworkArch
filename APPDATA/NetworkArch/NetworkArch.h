@@ -1,6 +1,6 @@
 //
 //  NetworkArch.h
-//  Pods
+//  APPDATA
 //
 //  Created by Harry on 2021/8/24.
 //
@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NetworkArch : NSObject
 
 @property (nonatomic, assign)                BOOL                                  apiKey;
-@property (nonatomic, copy)                  NSString                            * version;
 @property (nonatomic, copy)                  NSString                            * build;
 
 @end

@@ -13,7 +13,7 @@
 #pragma mark - Bundle
 + (NSString *)bundleName {
    
-   return @"APPDATA";
+   return @(BUNDLE);
 }
 
 + (NSBundle *)bundle {
@@ -27,7 +27,8 @@
    static   dispatch_once_t stOnceToken;
    
    dispatch_once(&stOnceToken, ^{
-      NSBundle *stBaseBundle  = [NSBundle bundleForClass:[APPDATA class]];
+      
+      NSBundle *stBaseBundle  = [NSBundle bundleForClass:APPDATA.class];
       NSString *szBundlePath  = [stBaseBundle pathForResource:aBundleName ofType:@"bundle"];
       g_BUNDLE = [NSBundle bundleWithPath:szBundlePath];
    });
@@ -42,6 +43,12 @@
    return [stBundle pathForResource:aName ofType:nil];
 }
 
+//#define WHOIS_XML_API                              (__OFF__)
++ (BOOL)whoisXmlApi {
+   
+   return NO;
+}
+
 #pragma mark - xmlApi
 + (NSArray<NSString *> *)xmlAPIKeys {
 
@@ -53,19 +60,19 @@
 }
 
 + (NSString *)xmlAPIKey {
-   
+
    return [[APPDATA xmlAPIKeys] objectAtIndex:(arc4random() % [APPDATA xmlAPIKeys].count)];
 }
 
 #pragma mark - HTML
 + (NSString *)htmlFile:(NSString *)aHtmlName {
    
-   NSString    *szPath     = [self pathForName:aHtmlName];
+   NSString *szPath     = [self pathForName:aHtmlName];
    LogDebug((@"-[APPDATA htmlFile:] : HTML : %@", szPath));
    
-   NSString     *szContent = [NSString stringWithContentsOfFile:szPath
-                                                       encoding:NSUTF8StringEncoding
-                                                          error:nil];
+   NSString *szContent  = [NSString stringWithContentsOfFile:szPath
+                                                    encoding:NSUTF8StringEncoding
+                                                       error:nil];
    
    return szContent;
 }
@@ -103,6 +110,18 @@
                                                           error:nil];
    
    return szContent;
+}
+
++ (NSString *)apiKey {
+   
+   return [NSUserDefaults stringForKey:@"apiKey"];
+}
+
++ (void)setApiKey:(NSString *)aApiKey {
+   
+   [NSUserDefaults setObject:aApiKey forKey:@"apiKey"];
+   
+   return;
 }
 
 @end
