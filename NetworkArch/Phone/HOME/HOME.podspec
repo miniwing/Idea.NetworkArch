@@ -102,6 +102,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'ImageProvider'
   spec.dependency 'SettingProvider'
   spec.dependency 'NetworkService'
+  spec.dependency 'PhoneNetSDK'
   
   spec.dependency 'IDEARouter'
   spec.dependency 'IDEANetUtils'

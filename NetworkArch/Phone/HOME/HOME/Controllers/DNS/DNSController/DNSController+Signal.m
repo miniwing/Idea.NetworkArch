@@ -22,9 +22,6 @@
 @def_signal(self);
 #endif /* __Debug__ */
 
-@def_signal(start);
-@def_signal(done);
-
 @end
 
 #pragma mark - handleSignal
@@ -45,56 +42,22 @@ handleSignal(DNSController, selfSignal) {
 }
 #endif /* __Debug__ */
 
-handleSignal(DNSContentController, doneSignal) {
-   
+handleSignal(DNSController, keyEmptySignal) {
+
    int                            nErr                                     = EFAULT;
-   
+
    __TRY;
+
+   LogDebug((@"-[DNSController startSignal:] : Signal : %@", aSignal));
+
+   [self.textField setEnabled:YES];
+   [self.activityIndicator setHidden:YES animated:YES];
+   [self.activityIndicator stopAnimating];
    
-   LogDebug((@"-[DNSController doneSignal:] : Signal : %@", aSignal));
-   LogDebug((@"-[DNSController doneSignal:] : Error  : %@", aSignal.object));
-   
-   if (nil != aSignal.object) {
-      
-      // occur some error.
-      [self.contentView setHidden:YES animated:YES];
+   [self.textField becomeFirstResponder];
 
-   } /* End if () */
-   else {
-      
-      [self.contentView setHidden:NO animated:YES];
-      
-   } /* End else */
-
-   @weakify(self);
-   [self.activityIndicator setHidden:YES
-                            animated:YES
-                            complete:^{
-      
-      @strongify(self);
-      [self.activityIndicator stopAnimating];
-
-      if (!kStringIsEmpty(self.textField.text)) {
-         
-         [self.rightBarButtonItem setEnabled:YES];
-
-      } /* End if () */
-
-      [self.textField setEnabled:YES];
-
-      if (nil != aSignal.object) {
-         
-         // occur some error.
-         [self.textField becomeFirstResponder];
-         
-      } /* End if () */
-      else {
-         
-      } /* End else */
-   }];
-   
    __CATCH(nErr);
-   
+
    return;
 }
 

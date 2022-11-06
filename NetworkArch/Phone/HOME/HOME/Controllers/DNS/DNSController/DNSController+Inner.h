@@ -73,8 +73,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)textFieldShouldClear:(UITextField *)aTextField;               // called when clear button pressed. return NO to ignore (no notifications)
 - (BOOL)textFieldShouldReturn:(UITextField *)aTextField;              // called when 'return' key pressed. return NO to ignore.
 
-- (void)textFieldTextDidChange:(NSNotification *)aSender;
-
 @end
 
 NS_ASSUME_NONNULL_END

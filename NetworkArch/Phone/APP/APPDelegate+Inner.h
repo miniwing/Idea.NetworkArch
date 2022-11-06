@@ -18,8 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)                RootViewController                  * rootViewController;
 @property (nonatomic, strong, nullable)      SplashViewController                * splashViewController;
 
-@property (nonatomic, strong)                NetworkArch                         * networkArch;
-
 @end
 
 @interface APPDelegate (Inner)

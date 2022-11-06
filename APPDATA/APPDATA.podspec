@@ -58,8 +58,10 @@ Pod::Spec.new do |spec|
   spec.dependency 'IDEAKit'
 
   spec.public_header_files  = 'APPDATA/*.h',
+                              'APPSetting/*.h',
                               'NetworkArch/*.h'
   spec.source_files         = 'APPDATA/*.{h,m}',
+                              'APPSetting/*.{h,m}',
                               'NetworkArch/*.{h,m}'
 
   spec.resource_bundles     = {

@@ -21,6 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)fetchIP:(NSString *)aDomain
 completionHandler:(void (^)(NSData * aData, NSURLResponse * aResponse, NSError * aError))aCompletionHandler;
 
++ (void)fetchIP:(NSString *)aDomain
+     withApiKey:(NSString *)aXmlApikey
+completionHandler:(void (^)(NSData * aData, NSURLResponse * aResponse, NSError * aError))aCompletionHandler;
+
 + (NSString *)DNSServiceURL;
 + (NSString *)DNSServiceURLWithKey:(NSString *)aKey;
 

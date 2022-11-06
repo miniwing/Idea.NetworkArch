@@ -57,29 +57,39 @@ handleSignal(PingController, startPingSignal) {
    // 按钮状态变更。
    if (nil == self.pingClient) {
       
-      [self.rightBarButton setImage:[ImageProvider imageNamed:@"UIButtonBarStop"]
-                           forState:UIControlStateNormal];
-//      [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarStop"] imageRenderWithTintColor:UIColor.systemGrayColor]
-//                           forState:UIControlStateSelected];
-//      [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarStop"] imageRenderWithTintColor:UIColor.systemGrayColor]
-//                           forState:UIControlStateHighlighted];
-      
-      [self.rightBarButton setTintColorPicker:DKColorPickerWithKey([IDEAColor systemRed])];
-            
-      [self.textField setEnabled:NO];
-      
-      [self.pingResults removeAllObjects];
-      
-      [self.sections removeAllObjects];
-
-      [UIView transitionWithView:self.tableView
+      [UIView transitionWithView:self.navigationBarX
                         duration:[UIView animationDefaultDuration]
                          options:UIViewAnimationOptionTransitionCrossDissolve
                       animations:^{
 
+         [self.rightBarButton setImage:[ImageProvider imageNamed:@"UIButtonBarStop"]
+                              forState:UIControlStateNormal];
+   //      [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarStop"] imageRenderWithTintColor:UIColor.systemGrayColor]
+   //                           forState:UIControlStateSelected];
+   //      [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarStop"] imageRenderWithTintColor:UIColor.systemGrayColor]
+   //                           forState:UIControlStateHighlighted];
+         
+         [self.rightBarButton setTintColorPicker:DKColorPickerWithKey([IDEAColor systemRed])];
+
          [self.tableView reloadData];
       }
-                      completion:nil];
+                      completion:^(BOOL finished) {
+
+         [self.textField setEnabled:NO];
+         
+         [self.pingResults removeAllObjects];
+         
+         [self.sections removeAllObjects];
+
+      }];
+            
+//      [UIView transitionWithView:self.tableView
+//                        duration:[UIView animationDefaultDuration]
+//                         options:UIViewAnimationOptionTransitionCrossDissolve
+//                      animations:^{
+//
+//      }
+//                      completion:nil];
 
       @weakify(self);
       self.pingClient   = [IDEAPingClient pingClientWithHostName:self.textField.text
@@ -109,10 +119,6 @@ handleSignal(PingController, startPingSignal) {
             
             [self.pingResults addObject:stPingResult];
 
-//            DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
-//
-//            });
-
             [UIView transitionWithView:self.tableView
                               duration:[UIView animationDefaultDuration]
                                options:UIViewAnimationOptionTransitionCrossDissolve
@@ -132,15 +138,24 @@ handleSignal(PingController, startPingSignal) {
 
          DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
             
-            [self.rightBarButton setImage:[ImageProvider imageNamed:@"UIButtonBarPlay"]
-                                 forState:UIControlStateNormal];
-//            [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
-//                                 forState:UIControlStateSelected];
-//            [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
-//                                 forState:UIControlStateHighlighted];
-            [self.rightBarButton setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
-            
-            [self.textField setEnabled:YES];
+            [UIView transitionWithView:self.tableView
+                              duration:[UIView animationDefaultDuration]
+                               options:UIViewAnimationOptionTransitionCrossDissolve
+                            animations:^{
+
+               [self.rightBarButton setImage:[ImageProvider imageNamed:@"UIButtonBarPlay"]
+                                    forState:UIControlStateNormal];
+   //            [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
+   //                                 forState:UIControlStateSelected];
+   //            [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
+   //                                 forState:UIControlStateHighlighted];
+               [self.rightBarButton setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
+               
+            }
+                            completion:^(BOOL finished) {
+
+               [self.textField setEnabled:YES];
+            }];
 
             if (0 < self.pingResults.count) {
                
@@ -187,16 +202,24 @@ handleSignal(PingController, startPingSignal) {
       } /* End if () */
       else {
          
-         [self.rightBarButton setImage:[ImageProvider imageNamed:@"UIButtonBarPlay"]
-                              forState:UIControlStateNormal];
-//         [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
-//                              forState:UIControlStateSelected];
-//         [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
-//                              forState:UIControlStateHighlighted];
-         [self.rightBarButton setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
-         
-         [self.textField setEnabled:YES];
+         [UIView transitionWithView:self.navigationBarX
+                           duration:[UIView animationDefaultDuration]
+                            options:UIViewAnimationOptionTransitionCrossDissolve
+                         animations:^{
 
+            [self.rightBarButton setImage:[ImageProvider imageNamed:@"UIButtonBarPlay"]
+                                 forState:UIControlStateNormal];
+   //         [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
+   //                              forState:UIControlStateSelected];
+   //         [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
+   //                              forState:UIControlStateHighlighted];
+            [self.rightBarButton setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
+         }
+                         completion:^(BOOL finished) {
+
+            [self.textField setEnabled:YES];
+         }];
+         
       } /* End else */
             
    } /* End else */

@@ -493,12 +493,48 @@
       } /* End else if () */
       else if (HomeUtilitiesTraceroute == aIndexPath.row) {
          
+         [IDEAUIRouter openURL:@"TRACEROUTE/create"
+                    completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+
+            if (nil != aViewController) {
+
+               LogDebug((@"-[HomeContentController tableView:didSelectRowAtIndexPath:] : %@ : %@", aURL, aViewController));
+
+               stViewController  = aViewController;
+               
+            } /* End if () */
+         }];
+         
       } /* End else if () */
       else if (HomeUtilitiesPortScan == aIndexPath.row) {
-         
+
+         [IDEAUIRouter openURL:@"PORTSCAN/create"
+                    completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+
+            if (nil != aViewController) {
+
+               LogDebug((@"-[HomeContentController tableView:didSelectRowAtIndexPath:] : %@ : %@", aURL, aViewController));
+
+               stViewController  = aViewController;
+               
+            } /* End if () */
+         }];
+
       } /* End else if () */
       else if (HomeUtilitiesLanScan == aIndexPath.row) {
          
+         [IDEAUIRouter openURL:@"LANSCAN/create"
+                    completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+
+            if (nil != aViewController) {
+
+               LogDebug((@"-[HomeContentController tableView:didSelectRowAtIndexPath:] : %@ : %@", aURL, aViewController));
+
+               stViewController  = aViewController;
+               
+            } /* End if () */
+         }];
+
       } /* End else if () */
       else {
 //      Error

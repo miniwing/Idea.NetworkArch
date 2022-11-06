@@ -49,7 +49,9 @@
    self  = [super initWithCoder:aCoder];
    
    if (self) {
-            
+
+      [self observeNotification:DNSContentController.doneNotification];
+      
    } /* End if () */
    
    __CATCH(nErr);
@@ -163,8 +165,16 @@
     UITextField
     */
    [self.inputView setBackgroundColor:UIColor.clearColor];
-//   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
-   [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+   [self.textField setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemGroupedBackground]];
+         
+      } /* End if () */
+
+      return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
+   }];
    [self.textField setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
    
    [self.textField setFont:[UIFont systemFontOfSize:self.textField.font.pointSize weight:UIFontWeightLight]];
@@ -225,8 +235,8 @@
    /**
     注册消息响应
     */
-   [self addSignalResponder:self.contentController];
-   [self.contentController addSignalResponder:self];
+//   [self addSignalResponder:self.contentController];
+//   [self.contentController addSignalResponder:self];
    
    __CATCH(nErr);
    

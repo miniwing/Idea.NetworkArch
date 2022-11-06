@@ -44,9 +44,9 @@
    __TRY;
       
    [self postSignal:HomeContentController.loadWifiInfoSignal
-            onQueue:dispatch_get_main_queue()];
+            onQueue:DISPATCH_GET_MAIN_QUEUE()];
    
-//   [self postSignal:HomeContentController.loadCellularInfoSignal onQueue:dispatch_get_main_queue()];
+//   [self postSignal:HomeContentController.loadCellularInfoSignal onQueue:DISPATCH_GET_MAIN_QUEUE()];
 
    __CATCH(nErr);
    

@@ -46,7 +46,7 @@
 //#define WHOIS_XML_API                              (__OFF__)
 + (BOOL)whoisXmlApi {
    
-   return NO;
+   return YES;
 }
 
 #pragma mark - xmlApi
@@ -110,18 +110,6 @@
                                                           error:nil];
    
    return szContent;
-}
-
-+ (NSString *)apiKey {
-   
-   return [NSUserDefaults stringForKey:@"apiKey"];
-}
-
-+ (void)setApiKey:(NSString *)aApiKey {
-   
-   [NSUserDefaults setObject:aApiKey forKey:@"apiKey"];
-   
-   return;
 }
 
 @end

@@ -19,8 +19,6 @@
 #pragma mark - UITheme
 @implementation DNSController (Theme)
 
-// #if DK_NIGHT_VERSION
-// #endif // #if DK_NIGHT_VERSION
 - (void)onThemeUpdate:(NSNotification *)aNotification {
    
    int                            nErr                                     = EFAULT;
@@ -30,6 +28,25 @@
    [super onThemeUpdate:aNotification];
    
    LogDebug((@"-[DNSController onThemeUpdate:] : Notification : %@", aNotification));
+
+   [self.navigationBarX.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
+   [self.navigationBarX.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
+
+   if ([DKThemeVersionNormal isEqualToString:[DKNightVersionManager sharedManager].themeVersion]) {
+      
+      [self.activityIndicator setCycleColors:@[
+         
+         [MDCPalette paletteGeneratedFromColor:UIColor.darkGrayColor].tint500, MDCPalette.greyPalette.tint500
+      ]];
+      
+   } /* End if () */
+   else {
+      
+      [self.activityIndicator setCycleColors:@[
+         [MDCPalette paletteGeneratedFromColor:UIColor.lightGrayColor].tint500, MDCPalette.greyPalette.tint500
+      ]];
+      
+   } /* End else */
 
    __CATCH(nErr);
    

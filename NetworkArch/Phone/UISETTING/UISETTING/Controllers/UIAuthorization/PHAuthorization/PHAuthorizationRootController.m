@@ -9,6 +9,7 @@
 //
 
 #import "PHAuthorizationRootController.h"
+#import "PHAuthorizationRootController+Inner.h"
 
 @interface PHAuthorizationRootController ()
 
@@ -131,8 +132,8 @@
 
 @end
 
-#pragma mark - UIStoryboard
-@implementation PHAuthorizationRootController (UIStoryboard)
+#pragma mark - UIStoryboardSegue
+@implementation PHAuthorizationRootController (UIStoryboardSegue)
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)aSegue sender:(id)aSender {
@@ -147,16 +148,6 @@
    __CATCH(nErr);
 
    return;
-}
-
-+ (NSString *)storyboard {
-   
-   return @"AUTHORIZATION";
-}
-
-+ (NSString *)bundle {
-
-   return @(BUNDLE);
 }
 
 @end

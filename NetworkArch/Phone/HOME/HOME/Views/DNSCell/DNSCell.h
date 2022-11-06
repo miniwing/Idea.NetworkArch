@@ -14,9 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DNSCell : UITableViewCell
-
-@property (nonatomic, weak)   IBOutlet       UIView                              * containerView;
+@interface DNSCell : UITableViewCellX
 
 @property (nonatomic, weak)   IBOutlet       UILabel                             * domainLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * ttlLabel;

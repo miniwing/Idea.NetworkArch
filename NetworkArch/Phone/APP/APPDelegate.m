@@ -13,8 +13,8 @@
 #import <NetworkService/INetworkService.h>
 #import <IDEAKit/UIDevice+Network.h>
 
+#import <APPDATA/APPDATA.h>
 #import <APPDATA/NetworkArch.h>
-#import <APPDATA/NetworkArch+Storage.h>
 
 #import "APPDelegate.h"
 #import "APPDelegate+Inner.h"
@@ -64,7 +64,7 @@
     监听网络状态
     */
    @weakify(self);
-   self.onNotification(SettingProvider.appRateOnStore, ^(NSNotification *aNotification) {
+   self.onNotification(SettingProvider.appRateOnStoreNotification, ^(NSNotification *aNotification) {
 
       @strongify(self);
       
@@ -415,7 +415,7 @@
       
       [SettingProvider setVersion:[UIApplication sharedApplication].appVersion];
       [SettingProvider setTabbarAnimation:YES];
-      [NetworkArch setApiKeySetting:NO];
+      [SettingProvider setApiKeySetting:NO];
 
    } /* End if () */
    else {
@@ -430,8 +430,8 @@
          // 当前版本第一次进入
          // 可能需要升级数据。
          [SettingProvider setVersion:[UIApplication sharedApplication].appVersion];
-         [NetworkArch setApiKeySetting:NO];
-         
+         [SettingProvider setApiKeySetting:NO];
+
       } /* End else */
       
    } /* End else */

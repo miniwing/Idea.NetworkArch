@@ -219,6 +219,78 @@
    return;
 }
 
++ (BOOL)isApiKeySetting {
+   
+   return [[SettingProvider sharedInstance] isApiKeySetting];
+}
+
+- (BOOL)isApiKeySetting {
+   
+   return [NSUserDefaults boolForKey:@"isApiKeySetting"];
+}
+
++ (void)setApiKeySetting:(BOOL)aApiKeyOpened {
+   
+   [[SettingProvider sharedInstance] setApiKeySetting:aApiKeyOpened];
+   
+   return;
+}
+
+- (void)setApiKeySetting:(BOOL)aApiKeyOpened {
+   
+   [NSUserDefaults setBool:aApiKeyOpened forKey:@"isApiKeySetting"];
+   
+   return;
+}
+
++ (BOOL)isICMPEnable {
+   
+   return [[SettingProvider sharedInstance] isICMPEnable];
+}
+
+- (BOOL)isICMPEnable {
+   
+   return [NSUserDefaults boolForKey:@"isICMPEnable"];
+}
+
++ (void)setICMPEnable:(BOOL)aICMPEnable {
+   
+   [[SettingProvider sharedInstance] setICMPEnable:aICMPEnable];
+
+   return;
+}
+
+- (void)setICMPEnable:(BOOL)aICMPEnable {
+   
+   [NSUserDefaults setBool:aICMPEnable forKey:@"isICMPEnable"];
+   
+   return;
+}
+
++ (NSString *)xmlApiKey {
+   
+   return [[SettingProvider sharedInstance] xmlApiKey];
+}
+
+- (NSString *)xmlApiKey {
+   
+   return [NSUserDefaults stringForKey:@"xmlApiKey"];
+}
+
++ (void)setXmlApiKey:(NSString *)aXmlApiKey {
+   
+   [[SettingProvider sharedInstance] setXmlApiKey:aXmlApiKey];
+
+   return;
+}
+
+- (void)setXmlApiKey:(NSString *)aXmlApiKey {
+   
+   [NSUserDefaults setObject:aXmlApiKey forKey:@"xmlApiKey"];
+   
+   return;
+}
+
 @end
 
 @implementation SettingProvider (Locale)
@@ -281,9 +353,14 @@
    return @"haptics@SettingProvider";
 }
 
-+ (NSString *)appRateOnStore {
++ (NSString *)appRateOnStoreNotification {
    
-   return @"rateOnStore@SettingProvider";
+   return @"appRateOnStore@SettingProvider";
+}
+
++ (NSString *)apiKeySettingNotification {
+   
+   return @"apiKeySetting@SettingProvider";
 }
 
 @end

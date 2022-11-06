@@ -127,8 +127,8 @@
 
 @end
 
-#pragma mark - UIStoryboard
-@implementation WifiMoreRootController (UIStoryboard)
+#pragma mark - UIStoryboardSegue
+@implementation WifiMoreRootController (UIStoryboardSegue)
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)aSegue sender:(id)aSender {

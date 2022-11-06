@@ -177,8 +177,6 @@
     */
    [self.inputView setBackgroundColor:UIColor.clearColor];
 
-//   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
-//   [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    [self.textField setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       
       if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
@@ -353,8 +351,8 @@
 
 @end
 
-#pragma mark - UIStoryboard
-@implementation PingController (UIStoryboard)
+#pragma mark - UIStoryboardSegue
+@implementation PingController (UIStoryboardSegue)
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)aSegue sender:(id)aSender {

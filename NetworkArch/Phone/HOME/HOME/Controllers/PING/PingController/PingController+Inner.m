@@ -449,7 +449,7 @@
          } /* End if () */
          else {
             
-            [stPingCell setRectCorner:0];
+            [stPingCell setRectCorner:UIRectCornerNone];
 
          } /* End else */
 
@@ -472,7 +472,7 @@
          } /* End if () */
          else {
             
-            [stPingCell setRectCorner:0];
+            [stPingCell setRectCorner:UIRectCornerNone];
 
          } /* End else */
 #else /* PING_STATISTICS_GRAPH */
@@ -523,10 +523,10 @@
       [stPingResultCell setPingResult:stPingResult];
       
       if (1 == self.pingResults.count) {
+         
          /**
           * 只有一个项目
           */
-         
          if (@available(iOS 13, *)) {
 
          } /* End if () */

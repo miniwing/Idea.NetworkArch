@@ -17,4 +17,6 @@
 @def_notification(self);
 #endif /* __Debug__ */
 
+@def_notification(done);
+
 @end

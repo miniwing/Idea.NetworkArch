@@ -314,7 +314,7 @@
    /**
     Load Wi-Fi, Cellular
     */
-//   [self postSignal:HomeContentController.loadWifiInfoSignal onQueue:dispatch_get_main_queue()];
+//   [self postSignal:HomeContentController.loadWifiInfoSignal onQueue:DISPATCH_GET_MAIN_QUEUE()];
    [self sendSignal:HomeContentController.loadWifiInfoSignal];
    [self sendSignal:HomeContentController.loadCellularInfoSignal];
    
@@ -420,8 +420,8 @@
 
 @end
 
-#pragma mark - UIStoryboard
-@implementation HomeContentController (UIStoryboard)
+#pragma mark - UIStoryboardSegue
+@implementation HomeContentController (UIStoryboardSegue)
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)aSegue sender:(id)aSender {

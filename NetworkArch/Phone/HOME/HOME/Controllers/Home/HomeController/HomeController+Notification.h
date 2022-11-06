@@ -19,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 #endif /* __Debug__ */
 
 @notification(setting);
-@notification(apiKeySetting);
 
 @end
 

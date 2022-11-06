@@ -13,14 +13,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkArch : NSObject
 
-@property (nonatomic, assign)                BOOL                                  apiKey;
-@property (nonatomic, copy)                  NSString                            * build;
++ (instancetype)sharedInstance;
 
 @end
 
 @interface NetworkArch ()
 
 + (NSString *)networkArchApi;
+
+/**
+ * 用户自定义 apiKey 开关
+ * 1. 用于审核检查。
+ * 2. 方便用户主定义参数。
+ */
++ (BOOL)apiKey;
+
+/**
+ * 服务器配置 apiKey
+ * 1. 用于审核检查。
+ */
++ (NSString *)xmlApiKey;
 
 @end
 

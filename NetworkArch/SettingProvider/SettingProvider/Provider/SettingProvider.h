@@ -31,6 +31,21 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isHaptics;
 + (void)setHaptics:(BOOL)aHaptics;
 
++ (BOOL)isApiKeySetting;
++ (void)setApiKeySetting:(BOOL)aApiKeyOpened;
+
++ (BOOL)isICMPEnable;
++ (void)setICMPEnable:(BOOL)aICMPEnable;
+
+/**
+ * 用户自定义 xmlApiKey
+ */
++ (NSString *)xmlApiKey;
+/**
+ * 保存用户自定义 xmlApiKey
+ */
++ (void)setXmlApiKey:(NSString *)aXmlApiKey;
+
 @end
 
 @interface SettingProvider ()
@@ -60,7 +75,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)tabAnimationNotification;
 + (NSString *)hapticsNotification;
-+ (NSString *)appRateOnStore;
++ (NSString *)appRateOnStoreNotification;
+
++ (NSString *)apiKeySettingNotification;
 
 @end
 

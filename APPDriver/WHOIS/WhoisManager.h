@@ -19,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WhoisManager ()
 
 + (void)fetchWhoisForDomain:(NSString *)aDomain
+                 withApiKey:(NSString *)aXmlApikey
+          completionHandler:(void (^)(NSData * aData, NSURLResponse * aResponse, NSError * aError))aCompletionHandler;
+
++ (void)fetchWhoisForDomain:(NSString *)aDomain
           completionHandler:(void (^)(NSData * aData, NSURLResponse * aResponse, NSError * aError))aCompletionHandler;
 
 + (NSString *)whoisURL;

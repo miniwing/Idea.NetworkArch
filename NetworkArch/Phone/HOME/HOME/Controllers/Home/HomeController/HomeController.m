@@ -10,7 +10,9 @@
 //
 
 #import <NetworkService/INetworkService.h>
-#import <APPDATA/NetworkArch+Storage.h>
+
+#import <APPDATA/APPDATA.h>
+#import <APPDATA/NetworkArch.h>
 
 #import "HomeContentController+Inner.h"
 #import "HomeContentController+Signal.h"
@@ -49,8 +51,6 @@
    self  = [super initWithCoder:aCoder];
    
    if (self) {
-
-      [self observeNotification:HomeController.apiKeySettingNotification];
       
       @weakify(self);
       self.onNotification(SERVICE(INetworkService).networkStatusNotification, ^(NSNotification *aNotification) {
@@ -64,6 +64,32 @@
          return;
       });
 
+      self.onNotification(SettingProvider.apiKeySettingNotification, ^(NSNotification *aNotification) {
+
+         LogDebug((@"-[HomeController initWithCoder:] : networkStatusNotification : %@", aNotification));
+
+         @strongify(self);
+         [UIView transitionWithView:self.navigationBarX
+                           duration:[UIView animationDefaultDuration]
+                            options:UIViewAnimationOptionTransitionCrossDissolve
+                         animations:^{
+
+            if ([SettingProvider isApiKeySetting]) {
+
+               [self.navigationBarX.navigationBar setRightBarButtonItem:self.rightBarButtonItem];
+
+            } /* End if () */
+            else {
+
+               [self.navigationBarX.navigationBar setRightBarButtonItem:nil];
+
+            } /* End else */
+         }
+                         completion:nil];
+
+         return;
+      });
+      
    } /* End if () */
    
    __CATCH(nErr);
@@ -110,7 +136,7 @@
    [self.navigationBarX setNavigationBarTopInset:[UIWindow topSafeAreaInset]];
    [self.navigationBarX.navigationBarXHeight setConstant:[self.navigationBarX.navigationBar intrinsicContentSize].height + [UIWindow topSafeAreaInset]];
 
-   if ([NetworkArch isApiKeySetting]) {
+   if ([SettingProvider isApiKeySetting]) {
       
       [self.navigationBarX.navigationBar setRightBarButtonItem:self.rightBarButtonItem];
 

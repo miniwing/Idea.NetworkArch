@@ -264,7 +264,7 @@
    } /* End if () */
    else if (SettingRate == aIndexPath.section) {
       
-      [self postNotify:SettingProvider.appRateOnStore
+      [self postNotify:SettingProvider.appRateOnStoreNotification
                onQueue:DISPATCH_GET_MAIN_QUEUE()];
             
    } /* End if () */

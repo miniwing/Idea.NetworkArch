@@ -66,8 +66,16 @@
    [self setTitle:__LOCALIZED_STRING(self.class, @"Whois")];
    LogDebug((@"-[WhoisController viewDidLoad] : Title : %@", __LOCALIZED_STRING(self.class, @"Whois")));
 
-   [self.view setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-   
+   [self.view setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
+         
+      } /* End if () */
+      
+      return [IDEAColor colorWithKey:[IDEAColor systemGroupedBackground]];
+   }];
    [self.navigationController setNavigationBarHidden:YES];
    
 #if FULLSCREEN_POP_GESTURE
@@ -149,8 +157,16 @@
     UITextField
     */
    [self.inputView setBackgroundColor:UIColor.clearColor];
-//   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
-   [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+   [self.textField setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemGroupedBackground]];
+         
+      } /* End if () */
+
+      return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
+   }];
    [self.textField setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
    [self.textField setEdgeX:[UISetting textFieldEdgeX] edgeY:[UISetting textFieldEdgeY]];
 
@@ -167,9 +183,21 @@
     UITextView
     */
    [self.textView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
-   [self.textView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+   [self.textView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemGroupedBackground]];
+         
+      } /* End if () */
+
+      return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
+   }];
    [self.textView setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.textView setHidden:YES];
+   [self.textView setFont:[UIFont systemFontOfSize:self.textView.font.pointSize
+                                            weight:UIFontWeightLight]];
+   [self.textView setEditable:NO];
 
    /**
     MDCActivityIndicator
@@ -330,8 +358,8 @@
 
 @end
 
-#pragma mark - UIStoryboard
-@implementation WhoisController (UIStoryboard)
+#pragma mark - UIStoryboardSegue
+@implementation WhoisController (UIStoryboardSegue)
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)aSegue sender:(id)aSender {

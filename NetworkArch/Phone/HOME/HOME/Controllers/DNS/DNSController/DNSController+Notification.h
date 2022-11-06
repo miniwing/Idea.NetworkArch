@@ -8,8 +8,6 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import <IDEAUIVendor/IDEAUIVendor.h>
-
 #import "DNSController.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -19,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 #if __Debug__
 @notification(self);
 #endif /* __Debug__ */
+
+- (void)textFieldTextDidChange:(NSNotification *)aSender;
 
 @end
 

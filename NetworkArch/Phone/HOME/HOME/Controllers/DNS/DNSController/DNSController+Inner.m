@@ -10,7 +10,7 @@
 //
 
 #import <APPDATA/APPDATA.h>
-#import <APPDATA/NetworkArch+Storage.h>
+#import <APPDATA/NetworkArch.h>
 
 #import "DNSController+Action.h"
 #import "DNSController+Inner.h"
@@ -166,7 +166,7 @@
       
    } /* End if () */
 
-   szApiKey = [NetworkArch apiKey];
+//   szApiKey = [NetworkArch apiKey];
    LogDebug((@"-[DNSController textFieldShouldReturn:] : ApiKey : %@", szApiKey));
 
    [CATransaction begin];
@@ -221,8 +221,9 @@
                                   complete:^{
                   
             @strongify(self);
-
-            [self sendSignal:DNSController.startSignal withObject:self.textField.text];
+            [self.contentController postSignal:DNSContentController.startSignal
+                                    withObject:self.textField.text
+                                       onQueue:DISPATCH_GET_MAIN_QUEUE()];
          }];
 
       } /* End else */
@@ -235,30 +236,6 @@
    __CATCH(nErr);
    
    return bShouldReturn;
-}
-
-- (void)textFieldTextDidChange:(NSNotification *)aSender {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-   
-   LogDebug((@"-[DNSController textFieldTextDidChange:] : Text : %@", self.textField.text));
-   
-   if (!kStringIsEmpty(self.textField.text)) {
-      
-      [self.rightBarButtonItem setEnabled:YES];
-      
-   } /* End if () */
-   else {
-      
-      [self.rightBarButtonItem setEnabled:NO];
-      
-   } /* End else */
-   
-   __CATCH(nErr);
-   
-   return;
 }
 
 @end

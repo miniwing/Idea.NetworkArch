@@ -39,6 +39,7 @@ IDEA_ENUM(NSInteger, PingSection) {
 @interface PingController ()
 
 @property (nonatomic, weak)   IBOutlet       UINavigationBarX                    * navigationBarX;
+
 @property (nonatomic, strong) IBOutlet       UIBarButtonItem                     * leftBarButtonItem;
 @property (nonatomic, strong) IBOutlet       UIButton                            * leftBarButton;
 

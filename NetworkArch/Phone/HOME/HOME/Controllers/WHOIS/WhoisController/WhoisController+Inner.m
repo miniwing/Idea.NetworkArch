@@ -165,7 +165,7 @@
          
          @strongify(self);
          [self postSignal:WhoisController.startSignal
-                  onQueue:dispatch_get_main_queue()];
+                  onQueue:DISPATCH_GET_MAIN_QUEUE()];
       }];
 
    } /* End if () */

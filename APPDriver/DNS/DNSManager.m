@@ -11,7 +11,6 @@
 
 #import <APPDATA/APPDATA.h>
 #import <APPDATA/NetworkArch.h>
-#import <APPDATA/NetworkArch+Storage.h>
 
 #import "DNSManager.h"
 
@@ -50,7 +49,7 @@
 }
 
 + (void)fetchIP:(NSString *)aDomain
-          completionHandler:(void (^)(NSData * aData, NSURLResponse * aResponse, NSError * aError))aCompletionHandler {
+completionHandler:(void (^)(NSData * aData, NSURLResponse * aResponse, NSError * aError))aCompletionHandler {
    
    int                            nErr                                     = EFAULT;
 
@@ -65,11 +64,73 @@
       
       DISPATCH_ASYNC_ON_BACKGROUND_QUEUE(^{
          
-         szAPIKey = [NetworkArch apiKey];
+//         szAPIKey = [NetworkArch apiKey];
          
          if (NO == kStringIsBlank(szAPIKey)) {
             
             szURL = [DNSManager DNSServiceURLWithKey:szAPIKey];
+            
+         } /* End if () */
+         else {
+            
+            szURL = [DNSManager DNSServiceURL];
+            
+         } /* End else */
+
+         szURL = [NSString stringWithFormat:@"%@&domainName=%@", szURL, aDomain];
+         LogDebug((@"+[DNSManager fetchIP:completionHandler:] : URL : %@", szURL));
+         
+         stURLSessionDataTask = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:szURL]
+                                                            completionHandler:^(NSData * _Nullable aData, NSURLResponse * _Nullable aResponse, NSError * _Nullable aError) {
+            
+            LogDebug((@"+[DNSManager fetchIP:completionHandler:] : Error    : %@", aError));
+            LogDebug((@"+[DNSManager fetchIP:completionHandler:] : Data     : %@", [NSString stringWithUTF8Data:aData]));
+            LogDebug((@"+[DNSManager fetchIP:completionHandler:] : Response : %@", aResponse));
+            
+            if (nil != aCompletionHandler) {
+               
+               aCompletionHandler(aData, aResponse, aError);
+               
+            } /* End if () */
+         }];
+         
+         if (nil != stURLSessionDataTask) {
+            
+            [stURLSessionDataTask resume];
+            
+         } /* End if () */
+      });
+
+   } /* End if () */
+   else {
+      
+      
+      
+   } /* End else */
+      
+   __CATCH(nErr);
+   
+   return;
+}
+
++ (void)fetchIP:(NSString *)aDomain
+     withApiKey:(NSString *)aXmlApikey
+completionHandler:(void (^)(NSData * aData, NSURLResponse * aResponse, NSError * aError))aCompletionHandler {
+   
+   int                            nErr                                     = EFAULT;
+
+   __block NSString              *szURL                                    = nil;
+   __block NSURLSessionDataTask  *stURLSessionDataTask                     = nil;
+   
+   __TRY;
+   
+   if ([APPDATA whoisXmlApi]) {
+      
+      DISPATCH_ASYNC_ON_BACKGROUND_QUEUE(^{
+                  
+         if (NO == kStringIsBlank(aXmlApikey)) {
+            
+            szURL = [DNSManager DNSServiceURLWithKey:aXmlApikey];
             
          } /* End if () */
          else {

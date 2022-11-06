@@ -7,7 +7,9 @@
 //
 
 #import <SettingProvider/SettingProvider.h>
-#import <APPDATA/NetworkArch+Storage.h>
+
+#import <APPDATA/APPDATA.h>
+#import <APPDATA/NetworkArch.h>
 
 #import <HomeController+Notification.h>
 
@@ -87,20 +89,20 @@ handleSignal(APPDelegate, loadApiKeyDoneSignal) {
       
       if (nil != stVersion) {
          
-         self.networkArch  = [NetworkArch modelWithJSON:stVersion];
+         [[NetworkArch sharedInstance] modelSetWithDictionary:stVersion];
 
       } /* End if () */
-            
-      [NetworkArch setApiKeySetting:self.networkArch.apiKey];
+      
+      LogDebug((@"-[APPDelegate loadApiKeyDoneSignal:] : NetworkArch : %@", [[NetworkArch sharedInstance] modelToJSONString]));
 
+      [SettingProvider setApiKeySetting:[NetworkArch apiKey]];
+      
    } /* End if () */
    else {
-      
-      self.networkArch  = nil;
-      
+
    } /* End else */
    
-   [self postNotify:HomeController.apiKeySettingNotification
+   [self postNotify:SettingProvider.apiKeySettingNotification
             onQueue:DISPATCH_GET_MAIN_QUEUE()];
    
    __CATCH(nErr);
