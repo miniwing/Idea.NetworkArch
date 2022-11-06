@@ -22,3 +22,23 @@
 #endif /* __Debug__ */
 
 @end
+
+#pragma mark - handleSignal
+@implementation PingRootController (handleSignal)
+
+#if __Debug__
+handleSignal(PingRootController, selfSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[PingRootController selfSignal:] : Signal : %@", aSignal));
+
+   __CATCH(nErr);
+
+   return;
+}
+#endif /* __Debug__ */
+
+@end

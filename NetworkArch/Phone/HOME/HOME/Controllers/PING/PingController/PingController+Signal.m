@@ -29,6 +29,21 @@
 #pragma mark - handleSignal
 @implementation PingController (handleSignal)
 
+#if __Debug__
+handleSignal(PingController, selfSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[PingController selfSignal:] : Signal : %@", aSignal));
+
+   __CATCH(nErr);
+
+   return;
+}
+#endif /* __Debug__ */
+
 handleSignal(PingController, startPingSignal) {
    
    int                            nErr                                     = EFAULT;

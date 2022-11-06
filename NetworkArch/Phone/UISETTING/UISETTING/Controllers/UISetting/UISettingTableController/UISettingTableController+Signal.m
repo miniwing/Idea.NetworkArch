@@ -15,3 +15,23 @@
 #endif /* __Debug__ */
 
 @end
+
+#pragma mark - handleSignal
+@implementation UISettingTableController (handleSignal)
+
+#if __Debug__
+handleSignal(UISettingTableController, selfSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[UISettingTableController selfSignal:] : Signal : %@", aSignal));
+
+   __CATCH(nErr);
+
+   return;
+}
+#endif /* __Debug__ */
+
+@end

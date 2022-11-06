@@ -397,16 +397,6 @@ Pod::Spec.new do |spec|
 #     define IDEA_COUNT_DOWN_TIMER                                         (0)
 #  endif
 
-#  if __has_include(<IDEAFONT/IDEAFONT.h>)
-#     import <IDEAFONT/IDEAFONT.h>
-#     define IDEA_FONT                                                     (1)
-#  elif __has_include("IDEAFONT/IDEAFONT.h")
-#     import "IDEAFONT/IDEAFONT.h"
-#     define IDEA_FONT                                                     (1)
-#  else
-#     define IDEA_FONT                                                     (0)
-#  endif
-
 #  if __has_include(<IDEAApplet/IDEAApplet.h>)
 #     import <IDEAApplet/IDEAApplet.h>
 #     import <IDEAApplet/IDEAAppletCore.h>

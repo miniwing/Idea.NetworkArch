@@ -18,3 +18,23 @@
 #endif /* __Debug__ */
 
 @end
+
+#pragma mark - handleSignal
+@implementation WifiMoreCell (handleSignal)
+
+#if __Debug__
+handleSignal(WifiMoreCell, selfSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[WifiMoreCell selfSignal:] : Signal : %@", aSignal));
+
+   __CATCH(nErr);
+
+   return;
+}
+#endif /* __Debug__ */
+
+@end

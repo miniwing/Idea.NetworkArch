@@ -39,7 +39,7 @@ ENV['IDEA_NAVIGATION_BAR']              = 'NO'
 ENV['IDEA_PAN_MODAL']                   = 'YES'
 
 ENV['IDEA_FULLSCREEN_POP_GESTURE']      = 'YES'
-ENV['ROOT_NAVIGATION_CONTROLLER']       = 'NO'
+ENV['IDEA_ROOT_NAVIGATION_CONTROLLER']  = 'NO'
 
 ENV['OpenSSL']                          = 'NO'
 
@@ -150,10 +150,10 @@ target 'NetworkArch' do
 #  platform :ios, '10.0'
 #  plugin 'cocoapods-hmap-prebuilt'
     
-  if ENV['ROOT_NAVIGATION_CONTROLLER'] == 'YES'
+  if ENV['IDEA_ROOT_NAVIGATION_CONTROLLER'] == 'YES'
     pod 'RTRootNavigationController'
     pod "RTInteractivePush"
-  end # RTRootNavigationController
+  end # IDEA_ROOT_NAVIGATION_CONTROLLER
 
   if ENV['IDEA_MATERIAL_COMPONENTS'] == 'YES'
     pod 'MaterialComponents'
@@ -199,7 +199,9 @@ target 'NetworkArch' do
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'APPDriver',          :path => 'APPDriver'
   pod 'APPDATA' ,           :path => 'APPDATA'
-  pod 'APPDEBUG',           :path => 'APPDEBUG', :configurations => ['Debug']
+  pod 'APPDEBUG',           :path => 'APPDEBUG',                            :configurations => ['Debug']
+  #-------------------------------------------------------------------------------------------------------------------------------#
+  pod 'Reveal-SDK', '~> 24' ,                                               :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'Appirater'
 #  pod 'PhoneNetSDK'
@@ -210,7 +212,6 @@ target 'NetworkArch' do
 #  pod 'MISafeApp'
 #  pod 'DoraemonKit', :configurations => ['Debug']
 #  pod 'YKWoodpecker', :configurations => ['Debug']
-  pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
 
   library
@@ -231,19 +232,21 @@ end
 
 target 'TodayWidget' do
   
-  pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
-
-#  pod 'MMKVAppExtension'
-if ENV['RTRootNavigationController'] == 'YES'
-  pod 'RTRootNavigationController'
-end # RTRootNavigationController
+  if ENV['ROOT_NAVIGATION_CONTROLLER'] == 'YES'
+    pod 'RTRootNavigationController'
+    pod "RTInteractivePush"
+  end # IDEA_ROOT_NAVIGATION_CONTROLLER
 
   miniwing_pod('IDEANibBridge',   type = 'local',   branch = 'develop')
-
+  
   miniwing_pod('IDEAUIKit',       type = 'local',   branch = 'develop')
   miniwing_pod('IDEAUIVendor',    type = 'local',   branch = 'develop')
-
+  
   miniwing_pod('IDEARouter',      type = 'local',   branch = 'develop')
+  
+  #-------------------------------------------------------------------------------------------------------------------------------#
+  pod 'Reveal-SDK', '~> 24' ,                                               :configurations => ['Debug']
+  #-------------------------------------------------------------------------------------------------------------------------------#
 
   library
   
@@ -253,7 +256,9 @@ end
 
 target 'FleetingWidget' do
 
-  pod 'Reveal-SDK', '~> 24', :configurations => ['Debug']
+  #-------------------------------------------------------------------------------------------------------------------------------#
+  pod 'Reveal-SDK', '~> 24' ,                                               :configurations => ['Debug']
+  #-------------------------------------------------------------------------------------------------------------------------------#
 
   library
   

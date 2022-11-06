@@ -22,3 +22,23 @@
 #endif /* __Debug__ */
 
 @end
+
+#pragma mark - handleSignal
+@implementation DNSRootController (handleSignal)
+
+#if __Debug__
+handleSignal(DNSRootController, selfSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[DNSRootController selfSignal:] : Signal : %@", aSignal));
+
+   __CATCH(nErr);
+
+   return;
+}
+#endif /* __Debug__ */
+
+@end

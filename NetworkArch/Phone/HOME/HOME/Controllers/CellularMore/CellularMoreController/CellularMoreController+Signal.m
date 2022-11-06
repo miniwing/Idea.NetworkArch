@@ -23,3 +23,23 @@
 #endif /* __Debug__ */
 
 @end
+
+#pragma mark - handleSignal
+@implementation CellularMoreController (handleSignal)
+
+#if __Debug__
+handleSignal(CellularMoreController, selfSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[CellularMoreController selfSignal:] : Signal : %@", aSignal));
+
+   __CATCH(nErr);
+
+   return;
+}
+#endif /* __Debug__ */
+
+@end

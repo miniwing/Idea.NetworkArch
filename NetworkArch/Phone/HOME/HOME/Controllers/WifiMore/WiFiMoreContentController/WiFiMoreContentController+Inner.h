@@ -20,6 +20,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WiFiMoreContentController ()
 
+@property (nonatomic, strong) IBOutletCollection(WifiMoreCell)    NSArray<WifiMoreCell *>    * detailCells;
+@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * detailCellContainerViews;
+@property (nonatomic, weak)   IBOutlet       UIImageView                                     * interfacesImageView;
+
+@property (nonatomic, strong) IBOutletCollection(WifiMoreCell)    NSArray<WifiMoreCell *>    * dataUsageCells;
+@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * dataUsageCellContainerViews;
+
+@property (nonatomic, strong) IBOutletCollection(WifiMoreCell)    NSArray<WifiMoreCell *>    * warningCells;
+@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * warningCellContainerViews;
+@property (nonatomic, weak)   IBOutlet       UIImageView                                     * warningImageView;
+@property (nonatomic, weak)   IBOutlet       UIButton                                        * warningButton;
+
+@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * separatorViews;
+
+@end
+
+@interface WiFiMoreContentController ()
+
 @property (nonatomic, strong)                NSTimer                             * timer;
 
 @property (nonatomic, strong)                NSString                            * externalIPv4;

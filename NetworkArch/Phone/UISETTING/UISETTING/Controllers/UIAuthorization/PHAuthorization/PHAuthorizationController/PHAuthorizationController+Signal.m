@@ -28,6 +28,8 @@ handleSignal(PHAuthorizationController, selfSignal) {
    
    __TRY;
    
+   LogDebug((@"-[PHAuthorizationController selfSignal:] : Signal : %@", aSignal));
+
    __CATCH(nErr);
    
    return;

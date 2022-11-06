@@ -414,11 +414,7 @@
    if (kStringIsBlank(szVersion)) {
       
       [SettingProvider setVersion:[UIApplication sharedApplication].appVersion];
-#if __Debug__
-      [SettingProvider setTabbarAnimation:NO];
-#else
       [SettingProvider setTabbarAnimation:YES];
-#endif
       [NetworkArch setApiKeySetting:NO];
 
    } /* End if () */

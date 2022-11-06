@@ -30,19 +30,20 @@
 #pragma mark - handleSignal
 @implementation DNSController (handleSignal)
 
-//handleSignal(DNSContentController, startSignal) {
-//
-//   int                            nErr                                     = EFAULT;
-//
-//   __TRY;
-//
-//   LogDebug((@"-[DNSController startSignal:] : Signal : %@", aSignal));
-//   LogDebug((@"-[DNSController startSignal:] : Domain : %@", aSignal.object));
-//
-//   __CATCH(nErr);
-//
-//   return;
-//}
+#if __Debug__
+handleSignal(DNSController, selfSignal) {
+
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+
+   LogDebug((@"-[DNSController selfSignal:] : Signal : %@", aSignal));
+
+   __CATCH(nErr);
+
+   return;
+}
+#endif /* __Debug__ */
 
 handleSignal(DNSContentController, doneSignal) {
    

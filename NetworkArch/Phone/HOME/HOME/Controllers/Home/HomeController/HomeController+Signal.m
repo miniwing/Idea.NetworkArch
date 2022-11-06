@@ -23,4 +23,19 @@
 #pragma mark - handleSignal
 @implementation HomeController (handleSignal)
 
+#if __Debug__
+handleSignal(HomeController, selfSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[HomeController selfSignal:] : Signal : %@", aSignal));
+
+   __CATCH(nErr);
+
+   return;
+}
+#endif /* __Debug__ */
+
 @end

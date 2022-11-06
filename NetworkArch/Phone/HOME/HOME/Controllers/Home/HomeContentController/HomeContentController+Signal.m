@@ -30,21 +30,20 @@
 #pragma mark - handleSignal
 @implementation HomeContentController (HandleSignal)
 
-handleSignal(APPDelegate, networkStatusSignal) {
-   
+#if __Debug__
+handleSignal(HomeContentController, selfSignal) {
+      
    int                            nErr                                     = EFAULT;
    
    __TRY;
    
-   LogDebug((@"-[HomeContentController handleSignal:networkStatusSignal:] : status : %@", aSignal.object));
-   
-   [self sendSignal:HomeContentController.loadWifiInfoSignal];
-   [self sendSignal:HomeContentController.loadCellularInfoSignal];
-   
+   LogDebug((@"-[HomeContentController selfSignal:] : Signal : %@", aSignal));
+
    __CATCH(nErr);
-   
+
    return;
 }
+#endif /* __Debug__ */
 
 handleSignal(HomeContentController, loadWifiInfoSignal) {
    

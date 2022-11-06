@@ -135,26 +135,23 @@ typedef FBLPromise Promise;
 
 #  if __has_include(<AFNetworking/AFNetworking.h>)
 #     import <AFNetworking/AFNetworking.h>
+#     import <AFNetworking/AFNetworkReachabilityManager.h>
 #     import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 #     define AF_NETWORKING                                                 (1)
 #  elif __has_include("AFNetworking/AFNetworking.h")
 #     import "AFNetworking/AFNetworking.h"
+#     import "AFNetworking/AFNetworkReachabilityManager.h"
 #     import "AFNetworking/AFNetworkActivityIndicatorManager.h"
 #     define AF_NETWORKING                                                 (1)
 #  else
 #     define AF_NETWORKING                                                 (0)
 #  endif
 
-#  import <AFNetworking/AFNetworkReachabilityManager.h>
-
 #  if __has_include(<AFNetworkActivityLogger/AFNetworkActivityLogger.h>)
 #     import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
 #     define AF_NETWORK_ACTIVITY_LOGGER                                    (1 && (1 == DEBUG))
 #  elif __has_include("AFNetworkActivityLogger/AFNetworkActivityLogger.h")
 #     import "AFNetworkActivityLogger/AFNetworkActivityLogger.h"
-#     define AF_NETWORK_ACTIVITY_LOGGER                                    (1 && (1 == DEBUG))
-#  elif __has_include("AFNetworkActivityLogger.h")
-#     import "AFNetworkActivityLogger.h"
 #     define AF_NETWORK_ACTIVITY_LOGGER                                    (1 && (1 == DEBUG))
 #  else
 #     define AF_NETWORK_ACTIVITY_LOGGER                                    (0)
@@ -184,6 +181,9 @@ typedef FBLPromise Promise;
 #  if __has_include(<YYKit/YYKit.h>)
 #     import <YYKit/YYKit.h>
 #     define YY_KIT                                                        (1)
+#  elif __has_include("YYKit/YYKit.h")
+#     import "YYKit/YYKit.h"
+#     define YY_KIT                                                        (1)
 #  else
 #     define YY_KIT                                                        (0)
 #  endif
@@ -191,12 +191,18 @@ typedef FBLPromise Promise;
 #  if __has_include(<pop/POP.h>)
 #     import <pop/POP.h>
 #     define POP                                                           (1)
+#  elif __has_include("pop/POP.h")
+#     import "pop/POP.h"
+#     define POP                                                           (1)
 #  else
 #     define POP                                                           (0)
 #  endif
 
 #  if __has_include(<Lottie/Lottie.h>)
-#     import <Lottie/Lottie.h>
+#     import "Lottie/Lottie.h"
+#     define LOTTIE_IOS                                                    (1)
+#  elif __has_include(<Lottie/Lottie.h>)
+#     import "Lottie/Lottie.h"
 #     define LOTTIE_IOS                                                    (1)
 #  else
 #     define LOTTIE_IOS                                                    (0)
@@ -205,20 +211,29 @@ typedef FBLPromise Promise;
 #  if __has_include(<MotionAnimator/MotionAnimator.h>)
 #     import <MotionAnimator/MotionAnimator.h>
 #     define MOTION_ANIMATOR                                               (1)
+#  elif __has_include("MotionAnimator/MotionAnimator.h")
+#     import "MotionAnimator/MotionAnimator.h"
+#     define MOTION_ANIMATOR                                               (1)
 #  else
 #     define MOTION_ANIMATOR                                               (0)
 #  endif
 
 #  if __has_include(<MDFInternationalization/MDFInternationalization.h>)
 #     import <MDFInternationalization/MDFInternationalization.h>
+#  elif __has_include("MDFInternationalization/MDFInternationalization.h")
+#     import "MDFInternationalization/MDFInternationalization.h"
 #  endif
 
 #  if __has_include(<MDFTextAccessibility/MDFTextAccessibility.h>)
+#     import <MDFTextAccessibility/MDFTextAccessibility.h>
+#  elif __has_include(<MDFTextAccessibility/MDFTextAccessibility.h>)
 #     import <MDFTextAccessibility/MDFTextAccessibility.h>
 #  endif
 
 #  if __has_include(<MaterialComponents/MaterialPalettes.h>)
 #     import <MaterialComponents/MaterialPalettes.h>
+#  elif __has_include("MaterialComponents/MaterialPalettes.h")
+#     import "MaterialComponents/MaterialPalettes.h"
 #  endif
 
 #  if __has_include(<MaterialComponents/MaterialAppBar.h>)
@@ -289,16 +304,6 @@ typedef FBLPromise Promise;
 #     define IDEA_PAN_MODAL                                                (1)
 #  else
 #     define IDEA_PAN_MODAL                                                (0)
-#  endif
-
-#  if __has_include(<IDEANavigationBar/WRNavigationBar.h>)
-#     import <IDEANavigationBar/WRNavigationBar.h>
-#     define IDEA_NAVIGATION_BAR                                           (1)
-#  elif __has_include("IDEANavigationBar/WRNavigationBar.h")
-#     import "IDEANavigationBar/WRNavigationBar.h"
-#     define IDEA_NAVIGATION_BAR                                           (1)
-#  else
-#     define IDEA_NAVIGATION_BAR                                           (0)
 #  endif
 
 #  if __has_include(<IDEAActivityIndicatorView/IDEAActivityIndicatorView.h>)

@@ -117,10 +117,8 @@
 //   [self.leftBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarArrowLeft"] imageRenderWithTintColor:UIColor.systemGrayColor]
 //                        forState:UIControlStateHighlighted];
    
-   
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
-   
    /**
     * Right
     */

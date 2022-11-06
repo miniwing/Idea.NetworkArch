@@ -59,6 +59,14 @@ Pod::Spec.new do |spec|
   if ENV['IDEA_UIKIT_EXTENSION'] == 'YES'
     spec.dependency 'UIKitExtension'
   end # IDEA_UIKIT_EXTENSION
+  
+  if ENV['IDEA_FULLSCREEN_POP_GESTURE'] == 'YES'
+    spec.dependency 'IDEAFullscreenPopGesture'
+  end # IDEA_FULLSCREEN_POP_GESTURE
+
+  if ENV['IDEA_PAN_MODAL'] == 'YES'
+    spec.dependency 'IDEAPanModal'
+  end # IDEA_PAN_MODAL
 
 #  spec.dependency 'PromisesObjC'
   spec.dependency 'MBProgressHUD'
@@ -72,14 +80,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'IDEANightVersion'
 #  spec.dependency 'IDEACountDownTimer'
   spec.dependency 'IDEAUIRouter'
-  
-  if ENV['IDEA_FULLSCREEN_POP_GESTURE'] == 'YES'
-    spec.dependency 'IDEAFullscreenPopGesture'
-  end # IDEA_FULLSCREEN_POP_GESTURE
-
-  if ENV['IDEA_PAN_MODAL'] == 'YES'
-    spec.dependency 'IDEAPanModal'
-  end # IDEA_PAN_MODAL
 
 #  spec.dependency 'IDEANibBridge'
 

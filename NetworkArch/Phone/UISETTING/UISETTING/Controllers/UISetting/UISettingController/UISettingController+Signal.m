@@ -19,4 +19,19 @@
 #pragma mark - handleSignal
 @implementation UISettingController (handleSignal)
 
+#if __Debug__
+handleSignal(UISettingController, selfSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[UISettingController selfSignal:] : Signal : %@", aSignal));
+
+   __CATCH(nErr);
+
+   return;
+}
+#endif /* __Debug__ */
+
 @end
