@@ -199,7 +199,7 @@
    
    [self.textField setDelegate:self];
    [self.textField setPlaceholder:__LOCALIZED_STRING(self.class, @"IP Address / Host Name")];
-   [self.textField setEdgeX:10 edgeY:0];
+   [self.textField setEdgeX:[UISetting textFieldEdgeX] edgeY:[UISetting textFieldEdgeY]];
 
    [self addNotificationName:UITextFieldTextDidChangeNotification
                     selector:@selector(textFieldTextDidChange:)

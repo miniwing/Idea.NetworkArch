@@ -56,9 +56,7 @@
    __TRY;
    
    [super viewDidLoad];
-   
-   [self.tableView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
-   
+
    // Uncomment the following line to preserve selection between presentations.
    self.clearsSelectionOnViewWillAppear = NO;
    

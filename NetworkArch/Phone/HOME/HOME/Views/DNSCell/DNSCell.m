@@ -57,8 +57,8 @@
    [self setBackgroundColor:UIColor.clearColor];
    [self.contentView setBackgroundColor:UIColor.clearColor];
    
-   [self.containerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-   [self.containerView setCornerRadius:8 clipsToBounds:YES];
+//   [self.containerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+//   [self.containerView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
 
    [self.domainLabel setBackgroundColor:UIColor.clearColor];
    [self.domainLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];

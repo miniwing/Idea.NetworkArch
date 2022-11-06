@@ -88,6 +88,7 @@ handleSignal(PingController, startPingSignal) {
          PingResult     *stPingResult        = nil;
          
          @strongify(self);
+         
          LogDebug((@"-[PingController startPingSignal:] : ping : Error : %@", aError));
          LogDebug((@"-[PingController startPingSignal:] : ping : Time  : %.3f", aTime));
          LogDebug((@"-[PingController startPingSignal:] : ping : HOST  : %@", aHostName));
@@ -108,23 +109,19 @@ handleSignal(PingController, startPingSignal) {
             
             [self.pingResults addObject:stPingResult];
 
-            DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
-                              
-               [UIView transitionWithView:self.tableView
-                                 duration:0.1
-                                  options:UIViewAnimationOptionTransitionCrossDissolve
-                               animations:^{
+//            DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
+//
+//            });
 
-                  [self.tableView reloadData];
-               }
-                               completion:^(BOOL finished) {
+            [UIView transitionWithView:self.tableView
+                              duration:[UIView animationDefaultDuration]
+                               options:UIViewAnimationOptionTransitionCrossDissolve
+                            animations:^{
 
-//               [self.tableView scrollToRow:self.pingResults.count - 1
-//                                 inSection:self.sections.count - 1 // PingSectionPing
-//                          atScrollPosition:UITableViewScrollPositionBottom
-//                                  animated:YES];
-               }];
-            });
+               [self.tableView reloadData];
+            }
+                            completion:^(BOOL finished) {
+            }];
 
          } /* End if () */
       }
@@ -137,10 +134,10 @@ handleSignal(PingController, startPingSignal) {
             
             [self.rightBarButton setImage:[ImageProvider imageNamed:@"UIButtonBarPlay"]
                                  forState:UIControlStateNormal];
-            [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
-                                 forState:UIControlStateSelected];
-            [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
-                                 forState:UIControlStateHighlighted];
+//            [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
+//                                 forState:UIControlStateSelected];
+//            [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
+//                                 forState:UIControlStateHighlighted];
             [self.rightBarButton setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
             
             [self.textField setEnabled:YES];
@@ -192,10 +189,10 @@ handleSignal(PingController, startPingSignal) {
          
          [self.rightBarButton setImage:[ImageProvider imageNamed:@"UIButtonBarPlay"]
                               forState:UIControlStateNormal];
-         [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
-                              forState:UIControlStateSelected];
-         [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
-                              forState:UIControlStateHighlighted];
+//         [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
+//                              forState:UIControlStateSelected];
+//         [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarPlay"] imageRenderWithTintColor:UIColor.systemGrayColor]
+//                              forState:UIControlStateHighlighted];
          [self.rightBarButton setTintColorPicker:DKColorPickerWithKey([IDEAColor systemGreen])];
          
          [self.textField setEnabled:YES];

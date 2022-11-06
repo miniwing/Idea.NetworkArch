@@ -73,8 +73,8 @@
    stFromVC.view.transform    = CGAffineTransformMakeScale(fScale, fScale);
    
    [stFromVC.view setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight
-                         radius:8];
-//   [stFromVC.view setCornerRadius:8 clipsToBounds:YES];
+                         radius:[UISetting cornerRadiusBig]];
+//   [stFromVC.view setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
 
    [UIView commitAnimations];
 
@@ -87,7 +87,7 @@
 //      CGFloat fScale             = 1 - fStatusBarHeight * 2 / CGRectGetHeight(stFromVC.view.bounds);
 //      stFromVC.view.transform    = CGAffineTransformMakeScale(fScale, fScale);
 //
-//      [stFromVC.view setCornerRadius:8 clipsToBounds:YES];
+//      [stFromVC.view setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
 //   }
 //                    completion:^(BOOL aFinished) {
 //

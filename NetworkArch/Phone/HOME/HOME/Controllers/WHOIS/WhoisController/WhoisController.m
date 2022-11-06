@@ -152,8 +152,8 @@
 //   [self.textField setBackground:[UIImage imageNamed:@"CLEAR-IMAGE"]];
    [self.textField setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    [self.textField setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
-   [self.textField setEdgeX:10 edgeY:0];
-   
+   [self.textField setEdgeX:[UISetting textFieldEdgeX] edgeY:[UISetting textFieldEdgeY]];
+
    [self.textField setFont:[UIFont systemFontOfSize:self.textField.font.pointSize
                                              weight:UIFontWeightLight]];
       

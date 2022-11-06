@@ -78,7 +78,7 @@
 
    if (nil != self.infoView) {
       
-      [self.infoView setCornerRadius:4 clipsToBounds:YES];
+      [self.infoView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
    
       [self.infoLabel setTextColor:UIColor.whiteColor];
 

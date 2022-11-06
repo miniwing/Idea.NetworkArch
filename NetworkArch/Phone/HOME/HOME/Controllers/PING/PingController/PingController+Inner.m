@@ -423,8 +423,16 @@
          stPingCell  = stPingStatisticsCell;
          
          [stPingCell.separatorView setHidden:NO];
-         [stPingCell setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight];
          
+         if (@available(iOS 13, *)) {
+                        
+         } /* End if () */
+         else {
+            
+            [stPingCell setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight];
+
+         } /* End else */
+                  
       } /* End if () */
       else if (PingStatisticsAverage == aIndexPath.row) {
          
@@ -436,6 +444,15 @@
          
          stPingCell  = stPingStatisticsCell;
          
+         if (@available(iOS 13, *)) {
+                        
+         } /* End if () */
+         else {
+            
+            [stPingCell setRectCorner:0];
+
+         } /* End else */
+
       } /* End else if () */
       else if (PingStatisticsMaximum == aIndexPath.row) {
          
@@ -450,8 +467,23 @@
          [stPingCell.separatorView setHidden:YES];
          
 #if PING_STATISTICS_GRAPH
+         if (@available(iOS 13, *)) {
+                        
+         } /* End if () */
+         else {
+            
+            [stPingCell setRectCorner:0];
+
+         } /* End else */
 #else /* PING_STATISTICS_GRAPH */
-         [stPingCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
+         if (@available(iOS 13, *)) {
+                        
+         } /* End if () */
+         else {
+            
+            [stPingCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
+
+         } /* End else */
 #endif /* !PING_STATISTICS_GRAPH */
          
       } /* End else if () */
@@ -461,11 +493,19 @@
          stPingGraphCell      = [aTableView dequeueReusableCellWithIdentifier:PingGraphCell.reuseIdentifier
                                                                  forIndexPath:aIndexPath];
          
-         stPingCell  = stPingGraphCell;
+         stPingCell           = stPingGraphCell;
          
          [stPingCell.separatorView setHidden:YES];
-         [stPingCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
          
+         if (@available(iOS 13, *)) {
+                        
+         } /* End if () */
+         else {
+            
+            [stPingCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
+
+         } /* End else */
+
       } /* End else if () */
       
 #endif /* PING_STATISTICS_GRAPH */
@@ -478,36 +518,68 @@
       stPingResultCell  = [aTableView dequeueReusableCellWithIdentifier:PingResultCell.reuseIdentifier
                                                            forIndexPath:aIndexPath];
       
+      stPingCell        = stPingResultCell;
+      
       [stPingResultCell setPingResult:stPingResult];
       
-      stPingCell  = stPingResultCell;
-      
-      [stPingCell setRectCorner:0];
-      
       if (1 == self.pingResults.count) {
+         /**
+          * 只有一个项目
+          */
          
-         [stPingCell setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomLeft | UIRectCornerBottomRight];
-         
+         if (@available(iOS 13, *)) {
+
+         } /* End if () */
+         else {
+
+            [stPingCell setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomLeft | UIRectCornerBottomRight];
+
+         } /* End else */
+
          [stPingCell.separatorView setHidden:YES];
          
       } /* End if () */
       else {
-         
+
          if (0 == aIndexPath.row) {
             
-            [stPingCell setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight];
+            if (@available(iOS 13, *)) {
+                           
+            } /* End if () */
+            else {
+               
+               [stPingCell setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight];
+
+            } /* End else */
+
             [stPingCell.separatorView setHidden:NO];
             
          } /* End if () */
          else if (self.pingResults.count - 1 == aIndexPath.row) {
             
-            [stPingCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
+            if (@available(iOS 13, *)) {
+                           
+            } /* End if () */
+            else {
+               
+               [stPingCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
+
+            } /* End else */
+
             [stPingCell.separatorView setHidden:YES];
             
          } /* End else if () */
          else {
             
-            [stPingCell setRectCorner:0];
+            if (@available(iOS 13, *)) {
+                           
+            } /* End if () */
+            else {
+               
+               [stPingCell setRectCorner:UIRectCornerNone];
+
+            } /* End else */
+
             [stPingCell.separatorView setHidden:NO];
             
          } /* End else */
@@ -515,7 +587,7 @@
       } /* End else */
       
    } /* End else */
-   
+      
    __CATCH(nErr);
    
    return stPingCell;

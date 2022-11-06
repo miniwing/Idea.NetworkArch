@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (class, nonatomic, readonly)       CGFloat                               cornerRadiusBig;
 @property (class, nonatomic, readonly)       CGFloat                               cornerRadiusSmall;
 
+@property (class, nonatomic, readonly)       CGFloat                               textFieldEdgeX;
+@property (class, nonatomic, readonly)       CGFloat                               textFieldEdgeY;
+
 @end
 
 @interface UISetting (BarButton)

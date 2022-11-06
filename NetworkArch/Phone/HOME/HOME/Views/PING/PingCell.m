@@ -66,6 +66,8 @@
    [self.selectedBackgroundView setBackgroundColor:UIColor.clearColor];
    [self.selectedBackgroundView setClipsToBounds:YES];
 
+   [self.separatorView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
+
    LogDebug((@"-[PingCell awakeFromNib] : selectionStyle : %d", self.selectionStyle));
 
    __CATCH(nErr);

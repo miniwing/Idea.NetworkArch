@@ -14,9 +14,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WoLANPacketCell : UITableViewCell
+@interface WoLANPacketCell : UITableViewCellX
 
-@property (nonatomic, weak)   IBOutlet       UIView                              * containerView;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * macLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * sentLabel;
 
@@ -27,7 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WoLANPacketCell ()
 
 - (void)setWoLANPacket:(WoLANPacket *)aWoLANPacket;
-- (void)setRectCorner:(UIRectCorner)aRectCorner;
 
 @end
 

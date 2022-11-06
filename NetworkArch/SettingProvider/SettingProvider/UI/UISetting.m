@@ -21,6 +21,16 @@
    return 4.0f;
 }
 
++ (CGFloat)textFieldEdgeX {
+   
+   return 10.0f;
+}
+
++ (CGFloat)textFieldEdgeY {
+   
+   return 0.0f;
+}
+
 @end
 
 @implementation UISetting (Notification)

@@ -12,10 +12,6 @@
 #import "WoLANPacketCell.h"
 #import "WoLANPacketCell+Inner.h"
 
-@interface WoLANPacketCell ()
-
-@end
-
 @implementation WoLANPacketCell
 
 - (void)dealloc {
@@ -63,10 +59,9 @@
    [self.selectedBackgroundView setBackgroundColor:UIColor.clearColor];
    [self.selectedBackgroundView setClipsToBounds:YES];
 
-   [self.containerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+//   [self.containerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
 
-//   [self.containerView setCornerRadius:8 clipsToBounds:YES];
-      
+//   [self.containerView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
 
    [self.macLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
@@ -93,15 +88,6 @@
 
    __CATCH(nErr);
    
-   return;
-}
-
-- (void)setRectCorner:(UIRectCorner)aRectCorner {
-   
-   _rectCorner = aRectCorner;
-   
-   [self setNeedsDisplay];
-
    return;
 }
 
@@ -139,30 +125,6 @@
 
    __CATCH(nErr);
    
-   return;
-}
-
-- (void)drawRect:(CGRect)aRect {
-   
-   int                            nErr                                     = EFAULT;
-
-   __TRY;
-   
-   [super drawRect:aRect];
-   
-   if (0 != self.rectCorner) {
-      
-      [self.containerView setRectCorner:self.rectCorner radius:8];
-
-   } /* End if () */
-   else {
-
-      self.containerView.layer.mask = nil;
-
-   } /* End else */
-   
-   __CATCH(nErr);
-
    return;
 }
 

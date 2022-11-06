@@ -93,9 +93,9 @@
    [self.addressLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.ipLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    
-   [self.upView setCornerRadius:4 clipsToBounds:YES];
-   [self.runingView setCornerRadius:4 clipsToBounds:YES];
-   [self.deviceView setCornerRadius:4 clipsToBounds:YES];
+   [self.upView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
+   [self.runingView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
+   [self.deviceView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
 
    __CATCH(nErr);
    

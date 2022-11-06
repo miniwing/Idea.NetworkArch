@@ -202,7 +202,7 @@
 
    if (WoLANSectionDevice == aIndexPath.section) {
       
-      fHeight  = 132;
+      fHeight  = 144;
       
       nErr  = noErr;
       
@@ -212,7 +212,7 @@
    
    if (WoLANSectionPacket == aIndexPath.section) {
       
-      fHeight  = 44;
+      fHeight  = 48;
       
       nErr  = noErr;
 

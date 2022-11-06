@@ -60,7 +60,7 @@
    [super awakeFromNib];
    // Initialization code
    
-   [self.statusView setCornerRadius:4 clipsToBounds:YES];
+   [self.statusView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
 
    [self.statusLabel setBackgroundColor:UIColor.clearColor];
    [self.statusLabel setTextColor:UIColor.whiteColor];

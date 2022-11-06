@@ -175,12 +175,12 @@
    
    [self.textField setDelegate:self];
    [self.textField setPlaceholder:__LOCALIZED_STRING(self.class, @"Domain Name")];
-   [self.textField setEdgeX:10 edgeY:0];
+   [self.textField setEdgeX:[UISetting textFieldEdgeX] edgeY:[UISetting textFieldEdgeY]];
 
    /**
     ContentView
     */
-//   [self.contentView setCornerRadius:8 clipsToBounds:YES];
+//   [self.contentView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
    [self.contentView setHidden:YES];
    [self.contentView setBackgroundColor:UIColor.clearColor];
    
