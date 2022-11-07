@@ -420,11 +420,11 @@
 }
 
 - (CFTimeInterval)transitionDuration {
-
+   
 #if __Debug__
-   return 0.4;
+   return 0.7f;
 #else /* __Debug__ */
-   return 0.35;
+   return 0.35f;
 #endif /* !__Debug__ */
 }
 

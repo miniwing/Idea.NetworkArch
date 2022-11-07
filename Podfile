@@ -161,6 +161,7 @@ target 'NetworkArch' do
 #    pod 'MaterialComponents/Palettes'
 #    pod 'MaterialComponents/NavigationBar'
 #    pod 'MaterialComponents/ActivityIndicator'
+    pod 'MotionInterchange'
   end # IDEA_MATERIAL_COMPONENTS
   
   #-------------------------------------------------------------------------------------------------------------------------------#

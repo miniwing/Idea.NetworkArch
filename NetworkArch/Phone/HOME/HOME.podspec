@@ -57,6 +57,7 @@ Pod::Spec.new do |spec|
 #    spec.dependency 'MaterialComponents/Palettes'
 #    spec.dependency 'MaterialComponents/NavigationBar'
 #    spec.dependency 'MaterialComponents/ActivityIndicator'
+    spec.dependency 'MotionInterchange'
   end # IDEA_MATERIAL_COMPONENTS
 
   if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
