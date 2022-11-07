@@ -42,6 +42,7 @@ ENV['IDEA_FULLSCREEN_POP_GESTURE']      = 'YES'
 ENV['IDEA_ROOT_NAVIGATION_CONTROLLER']  = 'NO'
 
 ENV['OpenSSL']                          = 'NO'
+ENV['SSZipArchive']                     = 'NO'
 
 ENV['ios.deployment_target']            = '12.0'
 ENV['watchos.deployment_target']        = '5.0'

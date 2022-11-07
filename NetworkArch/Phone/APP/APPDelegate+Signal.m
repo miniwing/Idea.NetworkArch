@@ -11,7 +11,8 @@
 #import <APPDATA/APPDATA.h>
 #import <APPDATA/NetworkArch.h>
 
-#import <HomeController+Notification.h>
+//#import "HOME/HomeController.h"
+//#import "HomeController+Notification.h"
 
 #import "APPDelegate+Inner.h"
 #import "APPDelegate+Signal.h"
@@ -48,6 +49,7 @@ handleSignal(APPDelegate, loadApiKeySignal) {
             withObject:aData
                onQueue:DISPATCH_GET_BACKGROUND_QUEUE()];
       
+      return;
    }];
    
    if (nil != stURLSessionDataTask) {

@@ -48,8 +48,13 @@ Pod::Spec.new do |spec|
     spec.dependency 'YYKit'
   end # IDEA_YYKIT
   
-  spec.dependency 'FoundationExtension'
-  spec.dependency 'SSZipArchive'
+  if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
+    spec.dependency 'FoundationExtension'
+  end # IDEA_FOUNDATION_EXTENSION
+
+  if ENV['SSZipArchive'] == 'YES'
+    spec.dependency 'SSZipArchive'
+  end # SSZipArchive
 
   spec.dependency 'IDEAKit'
   spec.dependency 'IDEAColor'

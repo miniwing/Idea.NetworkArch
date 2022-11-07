@@ -77,10 +77,13 @@ Pod::Spec.new do |spec|
     spec.dependency 'IDEAPanModal'
   end # IDEA_PAN_MODAL
 
+  if ENV['SSZipArchive'] == 'YES'
+    spec.dependency 'SSZipArchive'
+  end # SSZipArchive
+
 #  spec.dependency 'PromisesObjC'
   spec.dependency 'MBProgressHUD'
 #  spec.dependency 'SharkORM'
-  spec.dependency 'SSZipArchive'
 
 #  spec.dependency 'IDEAPhotoPicker'
 #  spec.dependency 'IDEARefresh'
@@ -111,8 +114,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'APPDATA'
   spec.dependency 'APPDriver'
 
-  spec.public_header_files  = 'HOME/Controllers/*{Controller,+Notification}.h',
-                              'HOME/Controllers/Home/HomeController/*{Controller,+Notification}.h'
+  spec.public_header_files  = 'HOME/Controllers/**/*{Controller,+Notification}.h'
   spec.source_files         = 'HOME/**/*.{h,hpp,hxx,m,mm,m++,c,cpp,cxx}'
   
   spec.requires_arc         = true

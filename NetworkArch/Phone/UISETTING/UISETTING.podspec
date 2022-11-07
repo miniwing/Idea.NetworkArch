@@ -68,6 +68,10 @@ Pod::Spec.new do |spec|
     spec.dependency 'IDEAPanModal'
   end # IDEA_PAN_MODAL
 
+#  if ENV['SSZipArchive'] == 'YES'
+#    spec.dependency 'SSZipArchive'
+#  end # SSZipArchive
+
 #  spec.dependency 'PromisesObjC'
   spec.dependency 'MBProgressHUD'
 #  spec.dependency 'SSZipArchive'

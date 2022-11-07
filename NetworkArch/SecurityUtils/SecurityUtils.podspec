@@ -58,8 +58,10 @@ Pod::Spec.new do |spec|
     spec.dependency 'OpenSSL-Universal'
   end # OpenSSL
   
-  spec.dependency 'SSZipArchive'
-  
+  if ENV['SSZipArchive'] == 'YES'
+    spec.dependency 'SSZipArchive'
+  end # SSZipArchive
+
   spec.public_header_files  = 'SecurityUtils/*.h'
   spec.source_files         = 'SecurityUtils/**/*.{h,hpp,hxx,m,c,cpp,cxx}'
 
