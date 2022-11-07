@@ -43,23 +43,23 @@ Pod::Spec.new do |spec|
                                               ' BUNDLE=\"HOME\" '
                                             ]
                                       }
-
+  
   if ENV['IDEA_YYKIT'] == 'YES'
     spec.dependency 'YYKit'
   end # IDEA_YYKIT
-
+  
   if ENV['IDEA_AFNETWORKING'] == 'YES'
     spec.dependency 'AFNetworking'
   end # if IDEA_AFNETWORKING
-
+  
   if ENV['IDEA_MATERIAL_COMPONENTS'] == 'YES'
     spec.dependency 'MaterialComponents'
-#    spec.dependency 'MaterialComponents/Palettes'
-#    spec.dependency 'MaterialComponents/NavigationBar'
-#    spec.dependency 'MaterialComponents/ActivityIndicator'
+    #    spec.dependency 'MaterialComponents/Palettes'
+    #    spec.dependency 'MaterialComponents/NavigationBar'
+    #    spec.dependency 'MaterialComponents/ActivityIndicator'
     spec.dependency 'MotionInterchange'
   end # IDEA_MATERIAL_COMPONENTS
-
+  
   if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
     spec.dependency 'FoundationExtension'
   end # IDEA_FOUNDATION_EXTENSION
@@ -67,25 +67,25 @@ Pod::Spec.new do |spec|
   if ENV['IDEA_UIKIT_EXTENSION'] == 'YES'
     spec.dependency 'UIKitExtension'
   end # IDEA_UIKIT_EXTENSION
-
+  
   if ENV['IDEA_FULLSCREEN_POP_GESTURE'] == 'YES'
     spec.dependency 'IDEAFullscreenPopGesture'
   end # IDEA_FULLSCREEN_POP_GESTURE
-
-#  spec.dependency 'IDEANibBridge'
-
+  
+  #  spec.dependency 'IDEANibBridge'
+  
   if ENV['IDEA_PAN_MODAL'] == 'YES'
     spec.dependency 'IDEAPanModal'
   end # IDEA_PAN_MODAL
-
+  
   if ENV['SSZipArchive'] == 'YES'
     spec.dependency 'SSZipArchive'
   end # SSZipArchive
-
+  
 #  spec.dependency 'PromisesObjC'
   spec.dependency 'MBProgressHUD'
 #  spec.dependency 'SharkORM'
-
+  
 #  spec.dependency 'IDEAPhotoPicker'
 #  spec.dependency 'IDEARefresh'
 

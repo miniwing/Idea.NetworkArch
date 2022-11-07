@@ -422,7 +422,7 @@
 - (CFTimeInterval)transitionDuration {
    
 #if __Debug__
-   return 0.7f;
+   return 5.0f;
 #else /* __Debug__ */
    return 0.35f;
 #endif /* !__Debug__ */
@@ -434,6 +434,7 @@
 }
 
 - (BOOL)tabBarController:(UITabBarController *)aTabBarController shouldSelectViewController:(UIViewController *)aViewController {
+   
 #if IDEA_TABBARCONTROLLER_TRANSITION
    if ([SettingProvider isTabbarAnimation]) {
       
@@ -456,7 +457,7 @@
 //   [UISelectionFeedbackGenerator selectionChanged];
    if ([SettingProvider isHaptics]) {
       
-      [UIImpactFeedbackGenerator impactOccurredWithStyle:UIImpactFeedbackStyleMedium];
+      [UIImpactFeedbackGenerator impactOccurredWithStyle:UIImpactFeedbackStyleLight];
 
    } /* End if () */
    

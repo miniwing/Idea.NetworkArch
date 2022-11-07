@@ -85,7 +85,7 @@
    
    if (0 >= stCurrentDate.year) {
       
-      _year = 2018;
+      _year = [NSDate date].year;
       
    } /* End if () */
    else {

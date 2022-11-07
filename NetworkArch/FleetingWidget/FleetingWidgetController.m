@@ -60,6 +60,8 @@
                                                    block:^(NSTimer * _Nonnull timer) {
       @strongify(self);
       [self.progressLabel setText:[OneYear sharedInstance].currentProgress];
+      
+      return;
    }];
 
    [[NSRunLoop currentRunLoop] addTimer:self.timer
