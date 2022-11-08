@@ -14,44 +14,46 @@ install!  'cocoapods',
 
 ###################################################################################################################################
 
-ENV['OLLVM']                            = 'NO'
+ENV['OLLVM']                              = 'NO'
 
-ENV['IDEAFONT_HY']                      = 'NO'
-ENV['IDEAFONT_MSYH']                    = 'NO'
-ENV['IDEAFONT_ZEKTON']                  = 'NO'
-ENV['IDEAFONT']                         = 'NO'
+ENV['IDEAFONT_HY']                        = 'NO'
+ENV['IDEAFONT_MSYH']                      = 'NO'
+ENV['IDEAFONT_ZEKTON']                    = 'NO'
+ENV['IDEAFONT']                           = 'NO'
 
-ENV['IDEA_MATERIAL_COMPONENTS']         = 'YES'
-ENV['IDEA_MATERIAL_NAVIGATION_BAR']     = 'YES'
+ENV['IDEA_MATERIAL_COMPONENTS']           = 'YES'
+ENV['IDEA_MATERIAL_NAVIGATION_BAR']       = 'YES'
 
-ENV['IDEA_AFNETWORKING']                = 'YES'
+ENV['IDEA_TABBAR_CONTROLLER_TRANSITION']  = 'NO'
 
-ENV['IDEA_FOUNDATION_EXTENSION']        = 'YES'
-ENV['IDEA_UIKIT_EXTENSION']             = 'YES'
+ENV['IDEA_AFNETWORKING']                  = 'YES'
 
-ENV['IDEA_YYKIT']                       = 'YES'
-ENV['IDEA_EVENT_KIT']                   = 'NO'
+ENV['IDEA_FOUNDATION_EXTENSION']          = 'YES'
+ENV['IDEA_UIKIT_EXTENSION']               = 'YES'
 
-ENV['IDEA_SERVICE_FILE_SYNC']           = 'NO'
+ENV['IDEA_YYKIT']                         = 'YES'
+ENV['IDEA_EVENT_KIT']                     = 'NO'
 
-ENV['IDEA_NAVIGATION_BAR']              = 'NO'
+ENV['IDEA_SERVICE_FILE_SYNC']             = 'NO'
 
-ENV['IDEA_PAN_MODAL']                   = 'YES'
+ENV['IDEA_NAVIGATION_BAR']                = 'NO'
 
-ENV['IDEA_FULLSCREEN_POP_GESTURE']      = 'YES'
-ENV['IDEA_ROOT_NAVIGATION_CONTROLLER']  = 'NO'
+ENV['IDEA_PAN_MODAL']                     = 'YES'
 
-ENV['OpenSSL']                          = 'NO'
-ENV['SSZipArchive']                     = 'NO'
+ENV['IDEA_FULLSCREEN_POP_GESTURE']        = 'YES'
+ENV['IDEA_ROOT_NAVIGATION_CONTROLLER']    = 'NO'
 
-ENV['ios.deployment_target']            = '12.0'
-ENV['watchos.deployment_target']        = '5.0'
-ENV['osx.deployment_target']            = '10.10'
-ENV['tvos.deployment_target']           = '12.0'
+ENV['OpenSSL']                            = 'NO'
+ENV['SSZipArchive']                       = 'NO'
 
-ENV['Debug.Keyboard']                   = 'NO'
-ENV['IDEA_APPLET_DEBUG']                = 'YES'
-#ENV['IM_HOST']                          = 'T450'
+ENV['ios.deployment_target']              = '12.0'
+ENV['watchos.deployment_target']          = '5.0'
+ENV['osx.deployment_target']              = '10.10'
+ENV['tvos.deployment_target']             = '12.0'
+
+ENV['Debug.Keyboard']                     = 'NO'
+ENV['IDEA_APPLET_DEBUG']                  = 'YES'
+#ENV['IM_HOST']                            = 'T450'
 
 ###################################################################################################################################
 
@@ -176,6 +178,9 @@ target 'NetworkArch' do
   if ENV['IDEA_PAN_MODAL'] == 'YES'
     miniwing_pod('IDEAPanModal',                  type = 'local',   branch = 'develop')
   end # IDEA_PAN_MODAL
+  if ENV['IDEA_TABBAR_CONTROLLER_TRANSITION'] == 'YES'
+    miniwing_pod('IDEATabBarControllerTransition',  type = 'local', branch = 'develop')
+  end # IDEA_TABBAR_CONTROLLER_TRANSITION
   #-------------------------------------------------------------------------------------------------------------------------------#
   miniwing_pod('IDEANibBridge',                   type = 'local', branch = 'develop')
   miniwing_pod('IDEAUIKit',                       type = 'local', branch = 'develop')
@@ -184,7 +189,6 @@ target 'NetworkArch' do
   miniwing_pod('IDEAStartUp',                     type = 'local', branch = 'develop')
   miniwing_pod('IDEAServiceManager',              type = 'local', branch = 'develop')
   miniwing_pod('IDEANightVersion',                type = 'local', branch = 'develop')
-  miniwing_pod('IDEATabBarControllerTransition',  type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
   miniwing_pod('IDEAPing',                        type = 'local', branch = 'develop')
   miniwing_pod('IDEARouter',                      type = 'local', branch = 'develop')
@@ -238,12 +242,11 @@ target 'TodayWidget' do
     pod 'RTRootNavigationController'
     pod "RTInteractivePush"
   end # IDEA_ROOT_NAVIGATION_CONTROLLER
-
-  miniwing_pod('IDEANibBridge',   type = 'local',   branch = 'develop')
   
   miniwing_pod('IDEAUIKit',       type = 'local',   branch = 'develop')
   miniwing_pod('IDEAUIVendor',    type = 'local',   branch = 'develop')
-  
+  miniwing_pod('IDEANibBridge',   type = 'local',   branch = 'develop')
+
   miniwing_pod('IDEARouter',      type = 'local',   branch = 'develop')
   
   #-------------------------------------------------------------------------------------------------------------------------------#

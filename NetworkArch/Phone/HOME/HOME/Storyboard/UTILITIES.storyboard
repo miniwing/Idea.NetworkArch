@@ -1107,10 +1107,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fh-O8-4YW" userLabel="SSID+IP">
-                                <rect key="frame" x="0.0" y="110" width="375" height="74"/>
+                                <rect key="frame" x="16" y="118" width="343" height="74"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SSID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7p8-iG-2aO" userLabel="SSID">
-                                        <rect key="frame" x="16" y="2" width="343" height="42"/>
+                                        <rect key="frame" x="16" y="2" width="311" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="Jwe-N4-Ol4"/>
                                         </constraints>
@@ -1119,7 +1119,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local IP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWy-Wu-hbt" userLabel="IP">
-                                        <rect key="frame" x="16" y="46" width="343" height="24"/>
+                                        <rect key="frame" x="16" y="46" width="311" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="2QK-BW-ZVe"/>
                                         </constraints>
@@ -1140,7 +1140,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" allowsSelection="NO" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="0hb-hG-8W3">
-                                <rect key="frame" x="0.0" y="184" width="375" height="628"/>
+                                <rect key="frame" x="0.0" y="192" width="375" height="620"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LanScanCell" rowHeight="48" id="lf9-do-cEq" customClass="LanScanCell">
                                         <rect key="frame" x="16" y="55.333332061767578" width="343" height="48"/>
@@ -1227,10 +1227,10 @@
                             <constraint firstAttribute="bottom" secondItem="0hb-hG-8W3" secondAttribute="bottom" id="SvN-oI-HNm"/>
                             <constraint firstAttribute="trailing" secondItem="5Xs-Bp-SRj" secondAttribute="trailing" id="Vzp-s5-04l"/>
                             <constraint firstItem="5Xs-Bp-SRj" firstAttribute="leading" secondItem="x9T-bi-jRc" secondAttribute="leading" id="c64-dc-Hyw"/>
-                            <constraint firstItem="1Fh-O8-4YW" firstAttribute="leading" secondItem="x9T-bi-jRc" secondAttribute="leading" id="fq3-Xl-Qgm"/>
+                            <constraint firstItem="1Fh-O8-4YW" firstAttribute="leading" secondItem="x9T-bi-jRc" secondAttribute="leading" constant="16" id="fq3-Xl-Qgm"/>
                             <constraint firstItem="0hb-hG-8W3" firstAttribute="leading" secondItem="x9T-bi-jRc" secondAttribute="leading" id="vD6-kb-Zg5"/>
-                            <constraint firstAttribute="trailing" secondItem="1Fh-O8-4YW" secondAttribute="trailing" id="vId-vd-1Fd"/>
-                            <constraint firstItem="1Fh-O8-4YW" firstAttribute="top" secondItem="5Xs-Bp-SRj" secondAttribute="bottom" identifier="infoView.top" id="wth-Ir-01v"/>
+                            <constraint firstAttribute="trailing" secondItem="1Fh-O8-4YW" secondAttribute="trailing" constant="16" id="vId-vd-1Fd"/>
+                            <constraint firstItem="1Fh-O8-4YW" firstAttribute="top" secondItem="5Xs-Bp-SRj" secondAttribute="bottom" constant="8" identifier="infoView.top" id="wth-Ir-01v"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

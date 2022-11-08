@@ -27,7 +27,7 @@
                                       options: nil // @{  UIApplicationOpenURLOptionUniversalLinksOnly : @YES }
                             completionHandler:^(BOOL success) {
       
-      LogDebug((@"UISettingTableController::followWeibo"));
+      LogDebug((@"-[UISettingTableController followWeibo]"));
    }];
    
    __CATCH(nErr);
@@ -45,7 +45,7 @@
                                       options: nil // @{  UIApplicationOpenURLOptionUniversalLinksOnly : @YES }
                             completionHandler:^(BOOL success) {
       
-      LogDebug((@"UISettingTableController::followWeibo"));
+      LogDebug((@"-[UISettingTableController followTwitter]"));
    }];
    
    __CATCH(nErr);
@@ -63,7 +63,7 @@
                                       options: nil // @{  UIApplicationOpenURLOptionUniversalLinksOnly : @YES }
                             completionHandler:^(BOOL success) {
       
-      LogDebug((@"UISettingTableController::followWeibo"));
+      LogDebug((@"-[UISettingTableController followFacebook]"));
    }];
    
    __CATCH(nErr);
@@ -102,11 +102,13 @@
       } /* End else */
       
    } /* End if () */
+#if TAB_ANIMATE
    else if (SettingAnimation == aSection) {
       
       nNumber  = 1;
       
    } /* End if () */
+#endif /* TAB_ANIMATE */
    else if (SettingHaptics == aSection) {
       
       nNumber  = 1;
@@ -119,7 +121,7 @@
    } /* End if () */
    else if (SettingAbout == aSection) {
       
-      nNumber  = 4;
+      nNumber  = SettingAboutNumber;
       
    } /* End if () */
    
@@ -141,11 +143,13 @@
       szTitle  = __LOCALIZED_STRING(self.class, @"Appearance");
       
    } /* End if () */
-   if (SettingAnimation == aSection) {
+#if TAB_ANIMATE
+   else if (SettingAnimation == aSection) {
       
-//      szTitle  = __LOCALIZED_STRING(self.class, @"Animation");
+      szTitle  = __LOCALIZED_STRING(self.class, @"Animation");
       
    } /* End if () */
+#endif /* TAB_ANIMATE */
    
    __CATCH(nErr);
    
@@ -162,29 +166,47 @@
    
    if (SettingAppearance == aIndexPath.section) {
       
+      LogDebug((@"-[UISettingTableController tableView:cellForRowAtIndexPath:] : SettingAppearance : %d, %d", aIndexPath.section, aIndexPath.row));
+
       stTableViewCell   = self.cellUIs[aIndexPath.row];
       
    } /* End if () */
-   if (SettingAnimation == aIndexPath.section) {
-      
+#if TAB_ANIMATE
+   else if (SettingAnimation == aIndexPath.section) {
+
+      LogDebug((@"-[UISettingTableController tableView:cellForRowAtIndexPath:] : SettingAnimation : %d, %d", aIndexPath.section, aIndexPath.row));
+
       stTableViewCell   = self.cellAnimates[aIndexPath.row];
       
    } /* End if () */
-   if (SettingHaptics == aIndexPath.section) {
-      
+#endif /* TAB_ANIMATE */
+   else if (SettingHaptics == aIndexPath.section) {
+
+      LogDebug((@"-[UISettingTableController tableView:cellForRowAtIndexPath:] : SettingHaptics : %d, %d", aIndexPath.section, aIndexPath.row));
+
       stTableViewCell   = self.cellHapticses[aIndexPath.row];
       
    } /* End if () */
    else if (SettingRate == aIndexPath.section) {
       
+      LogDebug((@"-[UISettingTableController tableView:cellForRowAtIndexPath:] : SettingRate : %d, %d", aIndexPath.section, aIndexPath.row));
+
       stTableViewCell   = self.cellRates[aIndexPath.row];
       
    } /* End if () */
-   if (SettingAbout == aIndexPath.section) {
+   else if (SettingAbout == aIndexPath.section) {
       
+      LogDebug((@"-[UISettingTableController tableView:cellForRowAtIndexPath:] : SettingAbout : %d, %d", aIndexPath.section, aIndexPath.row));
+
       stTableViewCell   = self.cellAbouts[aIndexPath.row];
       
    } /* End if () */
+   else {
+      
+//      stTableViewCell   = self.cellAbouts[0];
+      LogDebug((@"-[UISettingTableController tableView:cellForRowAtIndexPath:] : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"));
+
+   } /* End else */
    
    if (nil != stTableViewCell) {
       
@@ -252,11 +274,13 @@
       LogDebug((@"UISettingTableController::tableView:didSelectRowAtIndexPath : SettingAppearance"));
       
    } /* End if () */
+#if TAB_ANIMATE
    else if (SettingAnimation == aIndexPath.section) {
       
       LogDebug((@"UISettingTableController::tableView:didSelectRowAtIndexPath : SettingAnimation"));
       
    } /* End if () */
+#endif /* TAB_ANIMATE */
    else if (SettingHaptics == aIndexPath.section) {
       
       LogDebug((@"UISettingTableController::tableView:didSelectRowAtIndexPath : SettingHaptics"));
@@ -274,8 +298,8 @@
          
          LogDebug((@"UISettingTableController::tableView:didSelectRowAtIndexPath : SettingAboutWeibo"));
          
-         DISPATCH_ASYNC_ON_MAIN_QUEUE(^(void)
-                                      {
+         DISPATCH_ASYNC_ON_MAIN_QUEUE(^(void) {
+            
             [self followWeibo];
          });
       } /* End if () */
@@ -283,8 +307,8 @@
          
          LogDebug((@"UISettingTableController::tableView:didSelectRowAtIndexPath : SettingAboutTwitter"));
          
-         DISPATCH_ASYNC_ON_MAIN_QUEUE(^(void)
-                                      {
+         DISPATCH_ASYNC_ON_MAIN_QUEUE(^(void) {
+            
             [self followTwitter];
          });
       } /* End if () */
@@ -292,8 +316,8 @@
          
          LogDebug((@"UISettingTableController::tableView:didSelectRowAtIndexPath : SettingAboutFacebook"));
          
-         DISPATCH_ASYNC_ON_MAIN_QUEUE(^(void)
-                                      {
+         DISPATCH_ASYNC_ON_MAIN_QUEUE(^(void) {
+            
             [self followFacebook];
          });
       } /* End if () */

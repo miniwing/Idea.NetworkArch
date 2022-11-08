@@ -56,7 +56,13 @@ handleSignal(PingController, startPingSignal) {
    
    // 按钮状态变更。
    if (nil == self.pingClient) {
+
+      [self.textField setEnabled:NO];
       
+      [self.pingResults removeAllObjects];
+      
+      [self.sections removeAllObjects];
+
       [UIView transitionWithView:self.navigationBarX
                         duration:[UIView animationDefaultDuration]
                          options:UIViewAnimationOptionTransitionCrossDissolve
@@ -73,15 +79,7 @@ handleSignal(PingController, startPingSignal) {
 
          [self.tableView reloadData];
       }
-                      completion:^(BOOL finished) {
-
-         [self.textField setEnabled:NO];
-         
-         [self.pingResults removeAllObjects];
-         
-         [self.sections removeAllObjects];
-
-      }];
+                      completion:nil];
             
 //      [UIView transitionWithView:self.tableView
 //                        duration:[UIView animationDefaultDuration]
@@ -119,15 +117,20 @@ handleSignal(PingController, startPingSignal) {
             
             [self.pingResults addObject:stPingResult];
 
-            [UIView transitionWithView:self.tableView
-                              duration:[UIView animationDefaultDuration]
-                               options:UIViewAnimationOptionTransitionCrossDissolve
-                            animations:^{
+            DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
 
-               [self.tableView reloadData];
-            }
-                            completion:^(BOOL finished) {
-            }];
+               [UIView transitionWithView:self.tableView
+                                 duration:[UIView animationDefaultDuration]
+                                  options:UIViewAnimationOptionTransitionCrossDissolve
+                               animations:^{
+
+                  [self.tableView reloadData];
+               }
+                               completion:^(BOOL finished) {
+               }];
+               
+               return;
+            });
 
          } /* End if () */
       }
@@ -135,6 +138,7 @@ handleSignal(PingController, startPingSignal) {
          
          LogDebug((@"-[PingController startPingSignal:] : completed : HostName : %@", aHostName));
          LogDebug((@"-[PingController startPingSignal:] : completed : IP : %@", aIP));
+         LogDebug((@"-[PingController startPingSignal:] : self.pingResults : %d", self.pingResults.count));
 
          DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
             

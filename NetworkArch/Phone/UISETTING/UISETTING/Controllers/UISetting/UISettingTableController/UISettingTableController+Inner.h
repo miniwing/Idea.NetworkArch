@@ -18,10 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
 IDEA_ENUM(NSInteger, SettingSection) {
    
    SettingAppearance = 0,
-   SettingAnimation  = 1,
-   SettingHaptics    = 2,
-   SettingRate       = 3,
-   SettingAbout      = 4,
+   
+#if TAB_ANIMATE
+   SettingAnimation,
+#endif /* TAB_ANIMATE */
+   
+   SettingHaptics,
+   SettingRate,
+   SettingAbout,
    SettingNumber
 };
 
@@ -30,6 +34,7 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
    SettingAboutWeibo    = 0,
    SettingAboutTwitter  = 1,
    SettingAboutFacebook = 2,
+   SettingAboutVersion  = 3,
    SettingAboutNumber
 };
 

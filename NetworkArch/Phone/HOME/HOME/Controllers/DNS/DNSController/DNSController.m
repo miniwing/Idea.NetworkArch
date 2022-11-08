@@ -79,12 +79,12 @@
 #endif /* !FULLSCREEN_POP_GESTURE */
    
    [self.navigationBarX.navigationBar setTitle:__LOCALIZED_STRING(self.class, @"DNS Lookup")];
-   [self.navigationBarX setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+//   [self.navigationBarX setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    
    [self.navigationBarX.navigationBar setAllowAnyTitleFontSize:YES];
    [self.navigationBarX.navigationBar setEnableRippleBehavior:NO];
    
-   [self.navigationBarX showLine:YES];
+//   [self.navigationBarX showLine:YES];
    
    /// 关闭水波纹效果
    [self.navigationBarX.navigationBar setRippleColor:UIColor.clearColor];

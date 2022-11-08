@@ -352,11 +352,13 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
       
    } /* End for () */
    
-   [self.view setNeedsLayout];
-   [self.view layoutIfNeeded];
+//   [self.view setNeedsLayout];
+//   [self.view layoutIfNeeded];
+
+   LogDebug((@"-[UISettingTableController viewDidLoad] : Section : %d", [self.tableView numberOfSections]));
 
    [self.tableView setNeedsLayout];
-   [self.tableView layoutIfNeeded];
+   [self.tableView setNeedsUpdateConstraints];
 
    if (@available(iOS 13.0, *)) {
 
@@ -389,7 +391,7 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
 
    } /* End else */
    
-   [self.tableView reloadData];
+//   [self.tableView reloadData];
    
    __CATCH(nErr);
    
@@ -417,7 +419,6 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
    __TRY;
    
    [super viewDidLayoutSubviews];
-   
    
    __CATCH(nErr);
    

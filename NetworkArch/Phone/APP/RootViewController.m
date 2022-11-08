@@ -47,7 +47,10 @@
    if (self) {
       
       self.delegate  = self;
+      
+#if IDEA_TABBARCONTROLLER_TRANSITION
       self.type      = TransTypeMove;
+#endif /* IDEA_TABBARCONTROLLER_TRANSITION */
 
       [self addNotificationName:DKNightVersionThemeChangingNotification
                        selector:@selector(onThemeUpdate:)
@@ -58,8 +61,8 @@
                          object:nil];
 
       /******************************************************************************************/
-      @weakify(self);
 #if IDEA_TABBARCONTROLLER_TRANSITION
+      @weakify(self);
       [self addNotificationName:IDEATabBarControllerTransitionBeginNotification
                        selector:@selector(__onIDEATabBarControllerTransitionBeginNotification:)
                          object:nil];
@@ -194,7 +197,8 @@
 
 #if __Debug__
    [self setSelectedIndex:TabIdHome];
-   
+
+#  if IDEA_TABBARCONTROLLER_TRANSITION
    if (TransTypeNone != self.type && [SettingProvider isTabbarAnimation]) {
 
       DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
@@ -204,6 +208,7 @@
          return;
       });
    } /* End if () */
+#  endif /* IDEA_TABBARCONTROLLER_TRANSITION */
 #endif /* __Debug__ */
 
    __CATCH(nErr);
@@ -419,6 +424,7 @@
    return nil;
 }
 
+#if IDEA_TABBARCONTROLLER_TRANSITION
 - (CFTimeInterval)transitionDuration {
    
 #if __Debug__
@@ -432,6 +438,7 @@
    
    return [CAMediaTimingFunction easeInOut];
 }
+#endif /* IDEA_TABBARCONTROLLER_TRANSITION */
 
 - (BOOL)tabBarController:(UITabBarController *)aTabBarController shouldSelectViewController:(UIViewController *)aViewController {
    

@@ -82,12 +82,12 @@
    
    [self.navigationBarX.navigationBar setTitle:__LOCALIZED_STRING(self.class, @"LAN Scan")];
    LogDebug((@"-[TracerouteController viewDidLoad] : Title : %@", __LOCALIZED_STRING(self.class, @"LAN Scan")));
-   [self.navigationBarX setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+//   [self.navigationBarX setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    
    [self.navigationBarX.navigationBar setAllowAnyTitleFontSize:YES];
    [self.navigationBarX.navigationBar setEnableRippleBehavior:NO];
    
-   [self.navigationBarX showLine:YES];
+//   [self.navigationBarX showLine:YES];
    
    /// 关闭水波纹效果
    [self.navigationBarX.navigationBar setRippleColor:UIColor.clearColor];
@@ -178,16 +178,27 @@
       return [IDEAColor colorWithKey:[IDEAColor systemGroupedBackground]];
    }];
 
-   [self.infoView setBackgroundColor:UIColor.clearColor];
-   
+//   [self.infoView setBackgroundColor:UIColor.clearColor];
+   [self.infoView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemGroupedBackground]];
+         
+      } /* End if () */
+      
+      return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
+   }];
+   [self.infoView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
+
    [self.ssidLabel setText:__LOCALIZED_STRING(self.class, @"SSID")];
    [self.ssidLabel setFont:[UIFont systemFontOfSize:self.ssidLabel.font.pointSize
-                                             weight:UIFontWeightLight]];
+                                             weight:UIFontWeightRegular]];
    [self.ssidLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
    [self.ipLabel setText:__LOCALIZED_STRING(self.class, @"Local IP")];
    [self.ipLabel setFont:[UIFont systemFontOfSize:self.ipLabel.font.pointSize
-                                           weight:UIFontWeightLight]];
+                                           weight:UIFontWeightRegular]];
    [self.ipLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
    [PNetMLanScanner shareInstance].delegate = self;
