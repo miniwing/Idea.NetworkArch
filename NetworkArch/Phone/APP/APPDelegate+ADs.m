@@ -27,14 +27,18 @@
 
       if (aError) {
 
-         LogDebug((@"-[APPDelegate requestAppOpenAd] : Failed to load app open ad: %@", error);
+         LogDebug((@"-[APPDelegate requestAppOpenAd] : Failed to load app open ad: %@", aError));
 
          return;
+
       } /* End if () */
 
-      self.appOpenAd = appOpenAd;
+      self.appOpenAd = aAppOpenAd;
+      self.appOpenAd.fullScreenContentDelegate = self;
+      
+      self.loadTime  = [NSDate date];
    }];
-   
+      
    __CATCH(nErr);
       
    return;
@@ -60,8 +64,19 @@
    } /* End else */
    
    __CATCH(nErr);
-   
+      
    return;
+}
+
+- (BOOL)wasLoadTimeLessThanNHoursAgo:(int)n {
+   
+   NSDate         *stNow                              = [NSDate date];
+   NSTimeInterval  timeIntervalBetweenNowAndLoadTime  = [stNow timeIntervalSinceDate:self.loadTime];
+   
+   double          secondsPerHour                     = 3600.0;
+   double          intervalInHours                    = timeIntervalBetweenNowAndLoadTime / secondsPerHour;
+   
+   return intervalInHours < n;
 }
 
 #pragma mark - GADFullScreenContentDelegate

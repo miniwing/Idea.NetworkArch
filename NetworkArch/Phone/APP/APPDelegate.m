@@ -232,6 +232,12 @@
 
    LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
 
+   [GADMobileAds.sharedInstance startWithCompletionHandler:nil];
+   
+   [self requestAppOpenAd];
+
+   /******************************************************************************************/
+
    __CATCH(nErr);
    
    return SUCCESS == nErr; //YES;

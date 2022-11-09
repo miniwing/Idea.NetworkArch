@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable)      SplashViewController                * splashViewController;
 
 @property (nonatomic, strong)                GADAppOpenAd                        * appOpenAd;
+@property (nonatomic, weak)                  NSDate                              * loadTime;
 
 @end
 

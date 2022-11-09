@@ -45,46 +45,54 @@
 
 + (NSDictionary *)admobs {
    
-   NSString *szPath     = [self pathForName:@"Admob.json"];
-   LogDebug((@"+[AD admobs:] : ADMOB : %@", szPath));
+   static dispatch_once_t   onceToken;
+   static NSDictionary     *stAdmobs   = nil;
    
-   NSData   *stJSON     = [NSData dataWithContentsOfFile:szPath];
+   dispatch_once(&onceToken, ^(void) {
+      
+      NSString *szPath     = [self pathForName:@"Admob.json"];
+      LogDebug((@"+[AD admobs:] : ADMOB : %@", szPath));
+      
+      NSData   *stJSON     = [NSData dataWithContentsOfFile:szPath];
+      NSError  *stError    = nil;
+      
+      stAdmobs = [NSJSONSerialization JSONObjectWithData:stJSON
+                                                 options:NSJSONReadingMutableContainers
+                                                   error:&stError];
+      if (nil != stError) {
+         
+         LogDebug((@"+[AD admobs:] : json解析失败：%@", stError));
+         
+      } /* End if () */
+   });
    
-   NSError        *stError = nil;
-   NSDictionary   *stAdmob = [NSJSONSerialization JSONObjectWithData:stJSON
-                                                             options:NSJSONReadingMutableContainers
-                                                               error:&stError];
-   if (nil != stError) {
-      
-      LogDebug((@"+[AD admobs:] : json解析失败：%@", stError));
-      
-      return nil;
-      
-   } /* End if () */
-   
-   return stAdmob;
+   return stAdmobs;
 }
 
 + (NSDictionary *)fbans {
    
-   NSString *szPath     = [self pathForName:@"FBAN.json"];
-   LogDebug((@"+[AD admobs:] : ADMOB : %@", szPath));
+   static dispatch_once_t   onceToken;
+   static NSDictionary     *stFBANs    = nil;
    
-   NSData   *stJSON     = [NSData dataWithContentsOfFile:szPath];
-   
-   NSError        *stError = nil;
-   NSDictionary   *stAdmob = [NSJSONSerialization JSONObjectWithData:stJSON
-                                                             options:NSJSONReadingMutableContainers
-                                                               error:&stError];
-   if (nil != stError) {
+   dispatch_once(&onceToken, ^(void) {
       
-      LogDebug((@"+[AD admobs:] : json解析失败：%@", stError));
+      NSString *szPath     = [self pathForName:@"FBAN.json"];
+      LogDebug((@"+[AD fbans:] : FBAN : %@", szPath));
       
-      return nil;
+      NSData   *stJSON     = [NSData dataWithContentsOfFile:szPath];
+      NSError  *stError    = nil;
+      
+      stFBANs  = [NSJSONSerialization JSONObjectWithData:stJSON
+                                                 options:NSJSONReadingMutableContainers
+                                                   error:&stError];
+      if (nil != stError) {
+         
+         LogDebug((@"+[AD fbans:] : json解析失败：%@", stError));
+                  
+      } /* End if () */
+   });
    
-   } /* End if () */
-   
-   return stAdmob;
+   return stFBANs;
 }
 
 @end
