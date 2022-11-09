@@ -74,6 +74,9 @@
                         <rect key="frame" x="-23" y="-15" width="83" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="onSetting:" destination="q25-V3-PS6" eventType="touchUpInside" id="YJQ-84-y7i"/>
+                        </connections>
                     </button>
                 </barButtonItem>
             </objects>
@@ -1039,9 +1042,9 @@
         <!--HOME-SETTING-ROOT-->
         <scene sceneID="Ely-Od-b8v">
             <objects>
-                <navigationController storyboardIdentifier="HomeSettingRootController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mZZ-lM-QAo" userLabel="HOME-SETTING-ROOT" customClass="HomeSettingRootController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeSettingRootController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="mZZ-lM-QAo" userLabel="HOME-SETTING-ROOT" customClass="HomeSettingRootController" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xdp-DG-BA7">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1057,11 +1060,18 @@
             <objects>
                 <viewController storyboardIdentifier="HomeSettingController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EQ3-B6-eqc" userLabel="HOME-SETTING" customClass="HomeSettingController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8A8-Q0-0bH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMv-yZ-NwS" userLabel="NavigationBarX" customClass="UINavigationBarX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Ifz-PZ-6uY"/>
+                                </constraints>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFS-II-0Te" userLabel="CONTENT-VIEW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="702"/>
                                 <connections>
                                     <segue destination="eCr-Fb-Uhz" kind="embed" identifier="HomeSettingContentController" id="vFS-ou-G63"/>
                                 </connections>
@@ -1071,24 +1081,34 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="eFS-II-0Te" secondAttribute="trailing" id="1bl-EC-Pqn"/>
-                            <constraint firstItem="eFS-II-0Te" firstAttribute="top" secondItem="8A8-Q0-0bH" secondAttribute="top" identifier="contentView.top" id="RAk-5C-RGs"/>
+                            <constraint firstItem="LMv-yZ-NwS" firstAttribute="top" secondItem="8A8-Q0-0bH" secondAttribute="top" id="IZq-3T-UCw"/>
+                            <constraint firstItem="eFS-II-0Te" firstAttribute="top" secondItem="LMv-yZ-NwS" secondAttribute="bottom" identifier="contentView.top" id="RAk-5C-RGs"/>
+                            <constraint firstAttribute="trailing" secondItem="LMv-yZ-NwS" secondAttribute="trailing" id="XwW-Om-9MY"/>
+                            <constraint firstItem="LMv-yZ-NwS" firstAttribute="leading" secondItem="8A8-Q0-0bH" secondAttribute="leading" id="cPy-PK-Wc2"/>
                             <constraint firstAttribute="bottom" secondItem="eFS-II-0Te" secondAttribute="bottom" id="cZL-iC-8re"/>
                             <constraint firstItem="eFS-II-0Te" firstAttribute="leading" secondItem="8A8-Q0-0bH" secondAttribute="leading" id="qXL-lF-VpS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ePQ-Vn-hGh">
-                        <barButtonItem key="rightBarButtonItem" image="UIButtonBarClose" id="wYY-5v-YbA">
-                            <connections>
-                                <action selector="onClose:" destination="EQ3-B6-eqc" id="3w6-h7-qK0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="ePQ-Vn-hGh"/>
                     <connections>
                         <outlet property="contentView" destination="eFS-II-0Te" id="zAf-fC-iFe"/>
-                        <outlet property="rightBarButtonItem" destination="wYY-5v-YbA" id="bRd-qr-AkP"/>
+                        <outlet property="navigationBarX" destination="LMv-yZ-NwS" id="H6Z-w5-X7b"/>
+                        <outlet property="rightBarButton" destination="ZpY-un-s2N" id="au2-rZ-dwF"/>
+                        <outlet property="rightBarButtonItem" destination="JXK-js-EO9" id="a0q-Ji-mZk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ktv-Pg-H4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <barButtonItem style="plain" id="JXK-js-EO9">
+                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ZpY-un-s2N">
+                        <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="onClose:" destination="EQ3-B6-eqc" eventType="touchUpInside" id="SDm-2f-ISt"/>
+                            <action selector="onSetting:" destination="q25-V3-PS6" eventType="touchUpInside" id="0GA-aj-NPg"/>
+                        </connections>
+                    </button>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="1554" y="912"/>
         </scene>
@@ -1097,7 +1117,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="HomeSettingContentController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eCr-Fb-Uhz" userLabel="HOME-SETTING-CONTENT" customClass="HomeSettingContentController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="jvs-rO-CZR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="tableFooterView" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4fa-Z2-DMe" userLabel="BOTTOM-VIEW">
                             <rect key="frame" x="0.0" y="173.33333206176758" width="375" height="56"/>
@@ -1349,7 +1369,6 @@
     <resources>
         <image name="CELLULAR" width="52" height="45.5"/>
         <image name="UIButtonBarArrowRightLandscape" width="9" height="16"/>
-        <image name="UIButtonBarClose" width="16" height="16"/>
         <image name="WIFI-ON" width="54.5" height="39.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

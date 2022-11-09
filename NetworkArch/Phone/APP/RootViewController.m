@@ -18,6 +18,9 @@
 
 #import "SplashViewController.h"
 
+#import <PRIVACY/PrivacyController+Notification.h>
+#import <INTRODUCTION/IntroductionController+Notification.h>
+
 @implementation RootViewController
 
 - (void)dealloc {
@@ -61,8 +64,8 @@
                          object:nil];
 
       /******************************************************************************************/
-#if IDEA_TABBARCONTROLLER_TRANSITION
       @weakify(self);
+#if IDEA_TABBARCONTROLLER_TRANSITION
       [self addNotificationName:IDEATabBarControllerTransitionBeginNotification
                        selector:@selector(__onIDEATabBarControllerTransitionBeginNotification:)
                          object:nil];
@@ -77,28 +80,67 @@
          LogDebug((@"-[RootViewController onNotification : %@] : strongify : %@", aNotification.name, self));
          LogDebug((@"-[RootViewController onNotification : %@] : %@ : %@", aNotification.name, aNotification.name, aNotification.object));
          
+         return;
       });
 #endif /* IDEA_TABBARCONTROLLER_TRANSITION */
+
+      self.onNotification(IntroductionController.introductionDoneNotification, ^(NSNotification *aNotification) {
+         
+         LogDebug((@"-[RootViewController onNotification:] : introductionDoneNotification : %@", aNotification.name));
+
+         @strongify(self);
+         if (![SettingProvider isPrivacy]) {
+
+            [IDEAUIRouter openURL:@"PRIVACY/create"
+                       completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+
+               if (nil != aViewController) {
+
+                  LogDebug((@"-[RootViewController openPrivacy:] : %@ : %@", aURL, aViewController));
+
+                  [self popUp:aViewController animated:YES completion:^{
+
+                     [SettingProvider setPrivacy:!__Debug__];
+
+                     return;
+                  }];
+               } /* End if () */
+
+               return;
+            }];
+                     
+         } /* End if () */
+
+         return;
+      });
+
+      self.onNotification(PrivacyController.trackingDoneNotification, ^(NSNotification *aNotification) {
+
+         LogDebug((@"-[RootViewController onNotification:] : trackingDoneNotification : %@", aNotification.name));
+         @strongify(self);
+
+         return;
+      });
       
-      _titles        = @[ APP_STR(@"HOME"),
-                          APP_STR(@"SETTING") ];
+      _titles           = @[ APP_STR(@"HOME"),
+                             APP_STR(@"SETTING") ];
       
-      _images        = @[ @"TAB-HOME",
-                          @"TAB-SETTING" ];
+      _images           = @[ @"TAB-HOME",
+                             @"TAB-SETTING" ];
       
-      _imageSelecteds= @[ @"TAB-HOME+",
-                          @"TAB-SETTING+" ];
+      _imageSelecteds   = @[ @"TAB-HOME+",
+                             @"TAB-SETTING+" ];
 
       [IDEAUIRouter registerURLPattern:@"query/tabbar/height"
                              toHandler:^(NSString *aURL, NSDictionary *aRouter, IDEAUIRouterCompletion aCompletion) {
          
          LogDebug((@"RootViewController:: URL     : %@", aURL));
          LogDebug((@"RootViewController:: Router  : %@", aRouter));
-         
+
          if (nil != aCompletion) {
-            
+
             aCompletion(aURL, nil, @(self.tabBar.height));
-            
+
          } /* End if () */
 
          return;
@@ -114,13 +156,13 @@
 - (void)viewDidLoad {
    
    int                            nErr                                     = EFAULT;
-   
-   NSDictionary                        *stAttributes                       = nil;
-   NSDictionary                        *stSelectedAttributes               = nil;
+
+   NSDictionary                  *stAttributes                             = nil;
+   NSDictionary                  *stSelectedAttributes                     = nil;
       
    NSMutableArray<UIViewController *>  *stViewControllers                  = nil;
 
-   UIView                              *stLine                             = nil;
+   UIView                        *stLine                                   = nil;
    
    __TRY;
    
@@ -146,6 +188,8 @@
          [stViewControllers addObject:aViewController];
 
       } /* End if () */
+
+      return;
    }];
 
    [IDEAUIRouter openURL:@"UISETTING/create"
@@ -157,6 +201,8 @@
          [stViewControllers addObject:aViewController];
 
       } /* End if () */
+
+      return;
    }];
 
    self.viewControllers = stViewControllers;
@@ -237,9 +283,7 @@
    __TRY;
    
    [super viewWillAppear:aAnimated];
-   
-   LogDebug((@"-[RootViewController viewWillAppear:] : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"));
-      
+         
    __CATCH(nErr);
    
    return;
@@ -318,38 +362,45 @@
 - (void)openIntroduction:(NSNumber *)aAnimated {
    
    int                            nErr                                     = EFAULT;
-         
+   
    __TRY;
+   
+   LogDebug((@"-[RootViewController openIntroduction:] : Animated : %@", aAnimated));
+   
+   if (![SettingProvider isIntroduction]) {
+      
+      [IDEAUIRouter openURL:@"INTRODUCTION/create"
+                 completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+         
+         if (nil != aViewController) {
+            
+            LogDebug((@"-[RootViewController openIntroduction:] : %@ : %@", aURL, aViewController));
+            
+            [self popUp:aViewController animated:[aAnimated boolValue] completion:^{
+               
+               [SettingProvider setIntroduction:!__Debug__];
+               
+               return;
+            }];
+         } /* End if () */
+         
+         return;
+      }];
+      
+   } /* End if () */
    
    __CATCH(nErr);
    
    return;
 }
 
-- (void)openTracking:(NSNumber *)aAnimated {
+- (void)openPrivacy:(NSNumber *)aAnimated {
    
    int                            nErr                                     = EFAULT;
-      
+
    __TRY;
    
-   if (![SettingProvider isPrivacy]) {
-      
-      [IDEAUIRouter openURL:@"PRIVACY/create"
-                 completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
-
-         if (nil != aViewController) {
-
-            LogDebug((@"-[RootViewController onSplashDone:] : %@ : %@", aURL, aViewController));
-
-            [self popUp:aViewController animated:YES completion:^{
-
-               [SettingProvider setPrivacy:YES];
-
-            }];
-         } /* End if () */
-      }];
-               
-   } /* End if () */
+   LogDebug((@"-[RootViewController openPrivacy:] : Animated : %@", aAnimated));
 
    __CATCH(nErr);
    
@@ -362,25 +413,11 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-   
-//   UI_PERFORM_SELECTOR(self, @selector(openTracking:), @(YES), NO);
-//   UI_PERFORM_SELECTOR(self, @selector(openIntroduction:), @(YES), NO);
+
+//   UI_PERFORM_SELECTOR(self, @selector(openPrivacy:), @(YES), NO);
+   UI_PERFORM_SELECTOR(self, @selector(openIntroduction:), @(YES), NO);
 
    __CATCH(nErr);
-   
-   return;
-}
-
-- (void)__onIDEATabBarControllerTransitionBeginNotification:(NSNotification *)aNotification {
-      
-//   self.view.layer.opacity = 0;
-      
-   return;
-}
-
-- (void)__onIDEATabBarControllerTransitionEndNotification:(NSNotification *)aNotification {
-      
-//   self.view.layer.opacity = 1;
    
    return;
 }
@@ -425,6 +462,23 @@
 }
 
 #if IDEA_TABBARCONTROLLER_TRANSITION
+- (void)__onIDEATabBarControllerTransitionBeginNotification:(NSNotification *)aNotification {
+      
+//   self.view.layer.opacity = 0;
+   LogDebug((@"-[RootViewController __onIDEATabBarControllerTransitionBeginNotification:] : NSNotification : " + aNotification));
+
+   return;
+}
+
+- (void)__onIDEATabBarControllerTransitionEndNotification:(NSNotification *)aNotification {
+      
+//   self.view.layer.opacity = 1;
+
+   LogDebug((@"-[RootViewController __onIDEATabBarControllerTransitionEndNotification:] : NSNotification : " + aNotification));
+
+   return;
+}
+
 - (CFTimeInterval)transitionDuration {
    
 #if __Debug__
@@ -515,7 +569,7 @@
 
          // 系统版本高于 13.0
          return UIStatusBarStyleDarkContent;
-         
+
       } /* End if () */
       
       return UIStatusBarStyleDefault;

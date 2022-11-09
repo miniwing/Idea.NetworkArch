@@ -416,6 +416,7 @@
       [SettingProvider setVersion:[UIApplication sharedApplication].appVersion];
       [SettingProvider setTabbarAnimation:NO];
       [SettingProvider setApiKeySetting:NO];
+      [SettingProvider setPrivacy:NO];
 
    } /* End if () */
    else {
@@ -431,6 +432,7 @@
          // 可能需要升级数据。
          [SettingProvider setVersion:[UIApplication sharedApplication].appVersion];
          [SettingProvider setApiKeySetting:NO];
+         [SettingProvider setPrivacy:NO];
 
       } /* End else */
       

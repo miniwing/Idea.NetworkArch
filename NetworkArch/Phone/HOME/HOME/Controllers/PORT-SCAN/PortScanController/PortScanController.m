@@ -19,10 +19,6 @@
 #import "PortScanController+Theme.h"
 #import "PortScanController+Debug.h"
 
-@interface PortScanController ()
-
-@end
-
 @implementation PortScanController
 
 - (void)dealloc {

@@ -17,4 +17,4 @@ NSLocationWhenInUseUsageDescription          = "Location permission is required 
 // NSPhotoLibraryAddUsageDescription            = "This lets you save to your camera roll, and enables other features for photos and videos.";
 // NSCameraUsageDescription                     = "This will let you take photos and record video.";
 //
-// NSUserTrackingUsageDescription               = "This identifier will be used to deliver personalized ads to you.";
+NSUserTrackingUsageDescription               = "This identifier will be used to deliver personalized ads to you.";

@@ -122,7 +122,7 @@
    
    [self.navigationBarX.navigationBar setAllowAnyTitleFontSize:YES];
    [self.navigationBarX.navigationBar setEnableRippleBehavior:NO];
-      
+
 //   [self.navigationBarX showLine:YES];
    
    /// 关闭水波纹效果

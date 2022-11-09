@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)version;
 + (void)setVersion:(NSString *)aVersion;
 
++ (BOOL)isIntroduction;
++ (void)setIntroduction:(BOOL)aIntroduction;
+
 + (BOOL)isPrivacy;
 + (void)setPrivacy:(BOOL)aPrivacy;
 
@@ -77,6 +80,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)hapticsNotification;
 + (NSString *)appRateOnStoreNotification;
 
+/**
+ * 配置的 apiKey 相关的参数
+ */
 + (NSString *)apiKeySettingNotification;
 
 @end

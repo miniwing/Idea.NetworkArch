@@ -114,6 +114,7 @@ Pod::Spec.new do |spec|
   
   spec.dependency 'APPDATA'
   spec.dependency 'APPDriver'
+  spec.dependency 'PRIVACY'
 
   spec.public_header_files  = 'HOME/Controllers/**/*{Controller,+Notification}.h'
   spec.source_files         = 'HOME/**/*.{h,hpp,hxx,m,mm,m++,c,cpp,cxx}'

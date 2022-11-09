@@ -19,10 +19,6 @@
 #import "LanScanController+Theme.h"
 #import "LanScanController+Debug.h"
 
-@interface LanScanController ()
-
-@end
-
 @implementation LanScanController
 
 - (void)dealloc {

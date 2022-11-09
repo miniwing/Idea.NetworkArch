@@ -1,0 +1,19 @@
+/*
+  Localizable.strings
+  PRIVACY
+
+  Created by Harry on 2021/6/7.
+  Copyright © 2021 Harry. All rights reserved.
+*/
+
+"PRIVACY"                           = "PRIVACY";
+
+"PRIVACY_TITLE_FORMAT"              = "You're on iOS %@";
+"PRIVACY_DESCRIPT"                  = "This version of iOS requires us to ask for permission to track som data from this device to improve your ads. Learn how we limit the use of this information if you don't turn on this device setting.  We use information about your activity received  from other apps and websites to :";
+
+"CONTINUE"                          = "Continue";
+"OK"                                = "Ok";
+"Cancel"                            = "Cancel";
+"Setting"                           = "Setting";
+
+"Settings-Privacy-Tracking"         = "Please allow App to request tracking in Settings-Privacy-Tracking";

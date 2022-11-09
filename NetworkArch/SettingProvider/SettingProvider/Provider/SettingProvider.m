@@ -99,6 +99,30 @@
    return;
 }
 
++ (BOOL)isIntroduction {
+   
+   return [[SettingProvider sharedInstance] isIntroduction];
+}
+
+- (BOOL)isIntroduction {
+   
+   return [NSUserDefaults boolForKey:@"isIntroduction"];
+}
+
++ (void)setIntroduction:(BOOL)aIntroduction {
+   
+   [[SettingProvider sharedInstance] setIntroduction:aIntroduction];
+
+   return;
+}
+
+- (void)setIntroduction:(BOOL)aIntroduction {
+   
+   [NSUserDefaults setBool:aIntroduction forKey:@"isIntroduction"];
+
+   return;
+}
+
 + (BOOL)isPrivacy {
    
    return [[SettingProvider sharedInstance] isPrivacy];

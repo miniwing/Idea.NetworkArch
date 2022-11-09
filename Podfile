@@ -196,6 +196,9 @@ target 'NetworkArch' do
   miniwing_pod('PhoneNetSDK',                     type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'NetworkService',     :path => 'NetworkArch/Phone/NetworkService'
+  pod 'INTRODUCTION',       :path => 'NetworkArch/Phone/INTRODUCTION'
+  pod 'PRIVACY',            :path => 'NetworkArch/Phone/PRIVACY'
+  
   pod 'UISETTING',          :path => 'NetworkArch/Phone/UISETTING'
   pod 'HOME',               :path => 'NetworkArch/Phone/HOME'
   #-------------------------------------------------------------------------------------------------------------------------------#
