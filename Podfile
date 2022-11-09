@@ -99,7 +99,7 @@ workspace 'Idea.NetworkArch'
 
 project   'NetworkArch/NetworkArch.xcodeproj'
 
-use_frameworks!
+#use_frameworks!
 use_modular_headers!
 inhibit_all_warnings!
 
@@ -214,13 +214,18 @@ target 'NetworkArch' do
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'Appirater'
 #  pod 'PhoneNetSDK'
-#  pod 'GoogleAnalytics'
-#  pod 'Firebase'
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'MIApm'
 #  pod 'MISafeApp'
 #  pod 'DoraemonKit', :configurations => ['Debug']
 #  pod 'YKWoodpecker', :configurations => ['Debug']
+  #-------------------------------------------------------------------------------------------------------------------------------#
+
+#  pod 'GoogleAnalytics'
+#  pod 'Firebase'
+#  pod 'Google-Mobile-Ads-SDK'
+#  pod 'GoogleMobileAdsMediationFacebook'
+  
   #-------------------------------------------------------------------------------------------------------------------------------#
 
   library

@@ -161,6 +161,7 @@
 
    [self.imageView setImage:[ImageProvider imageNamed:@"SPONSOR"]];
 
+//   [self.continueButton setBackgroundColor:UIColorX.systemRedColor];
    [self.continueButton setBackgroundColorPicker:DKColorPickerWithKey([UISetting mainColor])];
    [self.continueButton.titleLabel setFont:[UIFont systemFontOfSize:self.continueButton.titleLabel.font.pointSize
                                                              weight:UIFontWeightRegular]];
