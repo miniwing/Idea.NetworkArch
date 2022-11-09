@@ -14,6 +14,7 @@
 //#import "HOME/HomeController.h"
 //#import "HomeController+Notification.h"
 
+#import "APPDelegate+ADs.h"
 #import "APPDelegate+Inner.h"
 #import "APPDelegate+Signal.h"
 

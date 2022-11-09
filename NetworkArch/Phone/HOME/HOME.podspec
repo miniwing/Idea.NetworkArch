@@ -112,6 +112,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'IDEANetUtils'
   spec.dependency 'IDEAPing'
   
+  spec.dependency 'ADs'
   spec.dependency 'APPDATA'
   spec.dependency 'APPDriver'
   spec.dependency 'PRIVACY'

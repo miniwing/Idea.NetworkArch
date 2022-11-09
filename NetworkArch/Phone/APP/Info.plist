@@ -36,7 +36,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2021 Harry. All rights reserved.</string>
+	<string>Copyright © 2021-2022 Harry. All rights reserved.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
 	<key>UILaunchStoryboardName</key>
@@ -67,5 +67,14 @@
 	</array>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>$(NSUserTrackingUsageDescription)</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-9965972454053205~1908143384</string>
+   <key>SKAdNetworkItems</key>
+     <array>
+       <dict>
+         <key>SKAdNetworkIdentifier</key>
+         <string>cstr6suwn9.skadnetwork</string>
+       </dict>
+     </array>
 </dict>
 </plist>

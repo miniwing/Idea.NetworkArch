@@ -34,6 +34,7 @@
 		4A4D0A6526AC0F56008A30E0 /* TodayWidgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D0A6426AC0F56008A30E0 /* TodayWidgetController.m */; };
 		4A4D0A6826AC0F56008A30E0 /* TODAY.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D0A6626AC0F56008A30E0 /* TODAY.storyboard */; };
 		4A4D0A6C26AC0F56008A30E0 /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A4D0A6026AC0F56008A30E0 /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4A6C2155291C261C005417F8 /* APPDelegate+ADs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C2154291C261C005417F8 /* APPDelegate+ADs.m */; };
 		4A842C8026AC1C0B005DC131 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A842C7E26AC1C0B005DC131 /* InfoPlist.strings */; };
 		4A842C8126AC1C19005DC131 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B992685CD3400DC1DA2 /* Localizable.strings */; };
 		4A99B5B926B5910D006F479F /* APPDelegate+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D98EB26A47B1200E00610 /* APPDelegate+Inner.m */; };
@@ -160,6 +161,8 @@
 		4A4D0A6926AC0F56008A30E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A5D98EB26A47B1200E00610 /* APPDelegate+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APPDelegate+Inner.m"; sourceTree = "<group>"; };
 		4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libclang_rt.ios.a; path = ../libs/libclang_rt.ios.a; sourceTree = "<group>"; };
+		4A6C2153291C261C005417F8 /* APPDelegate+ADs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APPDelegate+ADs.h"; sourceTree = "<group>"; };
+		4A6C2154291C261C005417F8 /* APPDelegate+ADs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "APPDelegate+ADs.m"; sourceTree = "<group>"; };
 		4A76718526D375C900EC44B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4A76718626D3764900EC44B1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		4A76718826D3765100EC44B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 			children = (
 				4A0E4DBC268584C100A85517 /* APPDelegate.h */,
 				4A0E4DBD268584C100A85517 /* APPDelegate.m */,
+				4A6C2153291C261C005417F8 /* APPDelegate+ADs.h */,
+				4A6C2154291C261C005417F8 /* APPDelegate+ADs.m */,
 				4A0E4E50268588E300A85517 /* APPDelegate+Inner.h */,
 				4A5D98EB26A47B1200E00610 /* APPDelegate+Inner.m */,
 				4AAF697626B58E1300E68E32 /* APPDelegate+Signal.h */,
@@ -785,6 +790,7 @@
 				4A0E4DEF268585C500A85517 /* main.m in Sources */,
 				4A0E4DC1268584C100A85517 /* SplashViewController.m in Sources */,
 				4A303579290EA6D80019FA8C /* ServiceManager.m in Sources */,
+				4A6C2155291C261C005417F8 /* APPDelegate+ADs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

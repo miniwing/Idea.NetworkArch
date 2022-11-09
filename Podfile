@@ -99,7 +99,7 @@ workspace 'Idea.NetworkArch'
 
 project   'NetworkArch/NetworkArch.xcodeproj'
 
-#use_frameworks!
+use_frameworks!
 use_modular_headers!
 inhibit_all_warnings!
 
@@ -206,6 +206,8 @@ target 'NetworkArch' do
   pod 'SecurityUtils',      :path => 'NetworkArch/SecurityUtils'
   pod 'SettingProvider',    :path => 'NetworkArch/SettingProvider'
   #-------------------------------------------------------------------------------------------------------------------------------#
+  pod 'ADs',                :path => 'ADs'
+  
   pod 'APPDriver',          :path => 'APPDriver'
   pod 'APPDATA' ,           :path => 'APPDATA'
   pod 'APPDEBUG',           :path => 'APPDEBUG',                            :configurations => ['Debug']
@@ -213,23 +215,20 @@ target 'NetworkArch' do
   pod 'Reveal-SDK', '~> 24' ,                                               :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'Appirater'
-#  pod 'PhoneNetSDK'
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'MIApm'
 #  pod 'MISafeApp'
-#  pod 'DoraemonKit', :configurations => ['Debug']
-#  pod 'YKWoodpecker', :configurations => ['Debug']
+#  pod 'DoraemonKit',                                                        :configurations => ['Debug']
+#  pod 'YKWoodpecker',                                                       :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
-
 #  pod 'GoogleAnalytics'
 #  pod 'Firebase'
-#  pod 'Google-Mobile-Ads-SDK'
-#  pod 'GoogleMobileAdsMediationFacebook'
-  
+  pod 'Google-Mobile-Ads-SDK'
+  pod 'GoogleMobileAdsMediationFacebook'
   #-------------------------------------------------------------------------------------------------------------------------------#
 
   library
-  
+
 end
 
 ###################################################################################################################################

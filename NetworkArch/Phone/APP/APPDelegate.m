@@ -17,6 +17,7 @@
 #import <APPDATA/NetworkArch.h>
 
 #import "APPDelegate.h"
+#import "APPDelegate+ADs.h"
 #import "APPDelegate+Inner.h"
 #import "APPDelegate+Signal.h"
 
@@ -291,6 +292,8 @@
 //
 //   } /* End if () */
 
+   [self tryToPresentAd];
+   
    __CATCH(nErr);
    
    return;
