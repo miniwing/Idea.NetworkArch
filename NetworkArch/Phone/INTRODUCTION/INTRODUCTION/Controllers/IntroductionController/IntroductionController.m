@@ -81,7 +81,7 @@
    LogDebug((@"-[IntroductionController viewDidLoad] : AppIntroduction : %@", stAppIntroduction));
    
    [self.titleLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.titleLabel setFont:[UIFont systemFontOfSize:self.titleLabel.font.pointSize weight:UIFontWeightLight]];
+//   [self.titleLabel setFont:[UIFont systemFontOfSize:self.titleLabel.font.pointSize weight:UIFontWeightLight]];
    
    [self.titleLabel setText:[NSString stringWithFormat:stAppIntroduction.title, [UIDevice getOSVersion]]];
    
@@ -90,7 +90,7 @@
    [stAttributedString setAlignment:NSTextAlignmentLeft];
 
    [self.summaryLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.summaryLabel setFont:[UIFont systemFontOfSize:self.summaryLabel.font.pointSize weight:UIFontWeightLight]];
+//   [self.summaryLabel setFont:[UIFont systemFontOfSize:self.summaryLabel.font.pointSize weight:UIFontWeightLight]];
    [self.summaryLabel setAttributedText:stAttributedString];
 
    for (UIView *stIntroductionView in self.introductionViews) {
@@ -142,7 +142,7 @@
       [self.introductionLabels[H] setBackgroundColor:UIColor.clearColor];
       
       [self.introductionLabels[H] setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-      [self.introductionLabels[H] setFont:[UIFont systemFontOfSize:self.introductionLabels[H].font.pointSize weight:UIFontWeightLight]];
+//      [self.introductionLabels[H] setFont:[UIFont systemFontOfSize:self.introductionLabels[H].font.pointSize weight:UIFontWeightLight]];
       
       [self.introductionLabels[H] setText:stAppIntroduction.introductions[H].title];
 
@@ -153,7 +153,7 @@
       [self.introductionSummaryLabels[H] setBackgroundColor:UIColor.clearColor];
       
       [self.introductionSummaryLabels[H] setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-      [self.introductionSummaryLabels[H] setFont:[UIFont systemFontOfSize:self.introductionLabels[H].font.pointSize weight:UIFontWeightLight]];
+//      [self.introductionSummaryLabels[H] setFont:[UIFont systemFontOfSize:self.introductionLabels[H].font.pointSize weight:UIFontWeightLight]];
       
       [self.introductionSummaryLabels[H] setText:stAppIntroduction.introductions[H].summary];
 
@@ -161,7 +161,10 @@
 
    [self.imageView setImage:[ImageProvider imageNamed:@"SPONSOR"]];
 
-   [self.continueButton.titleLabel setFont:[UIFont systemFontOfSize:self.continueButton.titleLabel.font.pointSize weight:UIFontWeightRegular]];
+   [self.continueButton setBackgroundColorPicker:DKColorPickerWithKey([UISetting mainColor])];
+   [self.continueButton.titleLabel setFont:[UIFont systemFontOfSize:self.continueButton.titleLabel.font.pointSize
+                                                             weight:UIFontWeightRegular]];
+   [self.continueButton.titleLabel setText:__LOCALIZED_STRING(self.class, @"OK")];
    [self.continueButton setTitle:__LOCALIZED_STRING(self.class, @"OK") forState:UIControlStateNormal];
 
    __CATCH(nErr);
@@ -233,20 +236,6 @@
    __CATCH(nErr);
 
    return;
-}
-
-#pragma mark - IDEAPresentationControllerDelegate
-- (CGRect)frameOfPresented {
-   
-   return CGRectMake(0,
-                     0,
-                     self.view.width,
-                     self.view.height);
-}
-
-- (BOOL)backgroundTouchToClose {
-   
-   return NO;
 }
 
 @end

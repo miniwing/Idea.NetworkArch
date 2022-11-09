@@ -22,10 +22,6 @@ IDEA_ENUM(NSInteger, TabId) {
 
 @interface RootViewController ()
 
-#if IDEA_TABBARCONTROLLER_TRANSITION
-@property (nonatomic, assign)                TransType                             type;
-#endif /* IDEA_TABBARCONTROLLER_TRANSITION */
-
 @property (nonatomic, strong)                NSArray<NSString *>                 * titles;
 @property (nonatomic, strong)                NSArray<NSString *>                 * images;
 @property (nonatomic, strong)                NSArray<NSString *>                 * imageSelecteds;

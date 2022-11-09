@@ -148,9 +148,9 @@
    LogDebug((@"-[PrivacyController frameOfPresented] : presentedViewController : %@", self.presentedViewController));
 
    return CGRectMake(0,
-                     [UIWindow topSafeAreaInset] + 56 + 10,
+                     [UIWindow topSafeAreaInset] + [self intrinsicNavigationBarSize].height,
                      self.view.width,
-                     self.view.height - ([UIWindow topSafeAreaInset] + 56 + 10) - ([(UITabBarController *)UIApplication.sharedApplication.delegate.window.rootViewController tabBar].height + 10));
+                     self.view.height - ([UIWindow topSafeAreaInset] + [self intrinsicNavigationBarSize].height) - ([(UITabBarController *)UIApplication.sharedApplication.delegate.window.rootViewController tabBar].height));
 }
 
 - (BOOL)backgroundTouchToClose {

@@ -1,0 +1,25 @@
+/*
+  Localizable.strings
+  PRIVACY
+
+  Created by Harry on 2021/6/7.
+  Copyright © 2021 Harry. All rights reserved.
+*/
+
+"PRIVACY"                           = "隐私";
+
+"PRIVACY_TITLE_FORMAT"              = "系统版本 %@";
+"PRIVACY_DESCRIPT"                  = "此版本的 iOS 要求我们请求许可才能跟踪此设备中的某些数据，以改进您的广告。 了解如果您不开启此设备设置，我们将如何限制使用此信息。 我们使用从其他应用程序和网站收到的有关您的活动的信息来：";
+
+"PRIVACY_1"                         = "向您展示更加个性化的广告";
+"PRIVACY_2"                         = "帮助保持应用程序免费";
+"PRIVACY_3"                         = "支持依赖广告吸引客户的企业";
+
+"CONTINUE"                          = "继续";
+"Continue"                          = "继续";
+"OK"                                = "确定";
+"Cancel"                            = "取消";
+"Setting"                           = "设置";
+
+"Settings-Privacy-Tracking"         = "请允许应用在『设置-隐私-跟踪』中请求跟踪";
+

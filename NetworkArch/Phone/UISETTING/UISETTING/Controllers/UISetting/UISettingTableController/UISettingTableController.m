@@ -135,8 +135,8 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
       
    } /* End else */
 
-//   [self.annimateCellContainerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-   [self.annimateCellContainerView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+//   [self.animateCellContainerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+   [self.animateCellContainerView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       
       if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
          
@@ -370,7 +370,7 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
 
       [self.uiCellContainerViews.firstObject setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
 
-      [self.annimateCellContainerView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
+      [self.animateCellContainerView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
       [self.hapticsCellContainerView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
       [self.rateCellContainerView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
 

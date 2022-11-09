@@ -51,10 +51,6 @@
       
       self.delegate  = self;
       
-#if IDEA_TABBARCONTROLLER_TRANSITION
-      self.type      = TransTypeMove;
-#endif /* IDEA_TABBARCONTROLLER_TRANSITION */
-
       [self addNotificationName:DKNightVersionThemeChangingNotification
                        selector:@selector(onThemeUpdate:)
                          object:nil];
@@ -89,35 +85,45 @@
          LogDebug((@"-[RootViewController onNotification:] : introductionDoneNotification : %@", aNotification.name));
 
          @strongify(self);
-         if (![SettingProvider isPrivacy]) {
+         
+         if (@available(iOS 14, *)) {
+            
+            if (![SettingProvider isPrivacy]) {
 
-            [IDEAUIRouter openURL:@"PRIVACY/create"
-                       completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+               [IDEAUIRouter openURL:@"PRIVACY/create"
+                          completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
 
-               if (nil != aViewController) {
+                  if (nil != aViewController) {
 
-                  LogDebug((@"-[RootViewController openPrivacy:] : %@ : %@", aURL, aViewController));
+                     LogDebug((@"-[RootViewController openPrivacy:] : %@ : %@", aURL, aViewController));
 
-                  [self popUp:aViewController animated:YES completion:^{
+                     [self popUp:aViewController animated:YES completion:^{
 
-                     [SettingProvider setPrivacy:!__Debug__];
+                        [SettingProvider setPrivacy:!__Debug__];
 
-                     return;
-                  }];
-               } /* End if () */
+                        return;
+                     }];
+                  } /* End if () */
 
-               return;
-            }];
-                     
+                  return;
+               }];
+
+            } /* End if () */
+
          } /* End if () */
+         else {
+            
+            [self postNotify:[PrivacyController trackingDoneNotification]];
 
+         } /* End else */
+         
          return;
       });
 
       self.onNotification(PrivacyController.trackingDoneNotification, ^(NSNotification *aNotification) {
 
          LogDebug((@"-[RootViewController onNotification:] : trackingDoneNotification : %@", aNotification.name));
-         @strongify(self);
+//         @strongify(self);
 
          return;
       });
@@ -245,7 +251,7 @@
    [self setSelectedIndex:TabIdHome];
 
 #  if IDEA_TABBARCONTROLLER_TRANSITION
-   if (TransTypeNone != self.type && [SettingProvider isTabbarAnimation]) {
+   if (TransTypeNone != [self transType] && [SettingProvider isTabbarAnimation]) {
 
       DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
 
@@ -465,7 +471,7 @@
 - (void)__onIDEATabBarControllerTransitionBeginNotification:(NSNotification *)aNotification {
       
 //   self.view.layer.opacity = 0;
-   LogDebug((@"-[RootViewController __onIDEATabBarControllerTransitionBeginNotification:] : NSNotification : " + aNotification));
+   LogDebug((@"-[RootViewController __onIDEATabBarControllerTransitionBeginNotification:] : NSNotification : %@", aNotification));
 
    return;
 }
@@ -474,15 +480,20 @@
       
 //   self.view.layer.opacity = 1;
 
-   LogDebug((@"-[RootViewController __onIDEATabBarControllerTransitionEndNotification:] : NSNotification : " + aNotification));
+   LogDebug((@"-[RootViewController __onIDEATabBarControllerTransitionEndNotification:] : NSNotification : %@", aNotification));
 
    return;
+}
+
+- (TransType)transType {
+   
+   return TransTypeMove;
 }
 
 - (CFTimeInterval)transitionDuration {
    
 #if __Debug__
-   return 5.0f;
+   return 0.5f;
 #else /* __Debug__ */
    return 0.35f;
 #endif /* !__Debug__ */
@@ -492,20 +503,19 @@
    
    return [CAMediaTimingFunction easeInOut];
 }
-#endif /* IDEA_TABBARCONTROLLER_TRANSITION */
 
 - (BOOL)tabBarController:(UITabBarController *)aTabBarController shouldSelectViewController:(UIViewController *)aViewController {
    
-#if IDEA_TABBARCONTROLLER_TRANSITION
-   if ([SettingProvider isTabbarAnimation]) {
+   if (TransTypeNone != [self transType] && [SettingProvider isTabbarAnimation]) {
       
       return [self animateTransition:aTabBarController shouldSelect:aViewController];
-
+      
    } /* End if () */
-#endif /* IDEA_TABBARCONTROLLER_TRANSITION */
-
+   
    return YES;
 }
+
+#endif /* IDEA_TABBARCONTROLLER_TRANSITION */
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
    

@@ -18,10 +18,6 @@
 #import "PrivacyController+Notification.h"
 #import "PrivacyController+Theme.h"
 
-@interface PrivacyController ()
-
-@end
-
 @implementation PrivacyController
 
 - (void)dealloc {
@@ -84,7 +80,7 @@
    [self.continueButton.titleLabel setText:__LOCALIZED_STRING(self.class, @"CONTINUE")];
    [self.continueButton setTitle:__LOCALIZED_STRING(self.class, @"CONTINUE") forState:UIControlStateNormal];
    [self.continueButton.titleLabel setFont:[UIFont systemFontOfSize:self.continueButton.titleLabel.font.pointSize
-                                                             weight:UIFontWeightLight]];
+                                                             weight:UIFontWeightRegular]];
 
    [self.containerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor tertiarySystemGroupedBackground])];
    
@@ -111,36 +107,38 @@
 //      } /* End else */
 //   }];
 
-   [self.view1 setBackgroundColor:UIColor.clearColor];
-   [self.imageView1 setBackgroundColor:UIColor.clearColor];
-   [self.imageView1 setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
-   [self.label1 setBackgroundColor:UIColor.clearColor];
-   [self.label1 setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-
-   [self.view2 setBackgroundColor:UIColor.clearColor];
-   [self.imageView2 setBackgroundColor:UIColor.clearColor];
-   [self.imageView2 setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
-   [self.label2 setBackgroundColor:UIColor.clearColor];
-   [self.label2 setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-
-   [self.view3 setBackgroundColor:UIColor.clearColor];
-   [self.imageView3 setBackgroundColor:UIColor.clearColor];
-   [self.imageView3 setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
-   [self.label3 setBackgroundColor:UIColor.clearColor];
-   [self.label3 setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-
    /**
     * 初始化内容
     */
    [self.titleLabel setText:[NSString stringWithFormat:__LOCALIZED_STRING(self.class, @"PRIVACY_TITLE_FORMAT"), [UIDevice getOSVersion]]];
    LogDebug((@"-[PrivacyController viewDidLoad] : PRIVACY_TITLE : %@", [NSString stringWithFormat:__LOCALIZED_STRING(self.class, @"PRIVACY_TITLE_FORMAT"), [UIDevice getOSVersion]]));
-   
+
    [self.descLabel setText:__LOCALIZED_STRING(self.class, @"PRIVACY_DESCRIPT")];
    LogDebug((@"-[PrivacyController viewDidLoad] : PRIVACY_DESCRIPT : %@", __LOCALIZED_STRING(self.class, @"PRIVACY_DESCRIPT")));
 
+   [self.view1 setBackgroundColor:UIColor.clearColor];
+   [self.imageView1 setBackgroundColor:UIColor.clearColor];
+   [self.imageView1 setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.imageView1 setImage:[ImageProvider imageNamed:@"UIButtonBarGrid"]];
+   [self.label1 setBackgroundColor:UIColor.clearColor];
+   [self.label1 setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.label1 setText:__LOCALIZED_STRING(self.class, @"PRIVACY_1")];
+
+   [self.view2 setBackgroundColor:UIColor.clearColor];
+   [self.imageView2 setBackgroundColor:UIColor.clearColor];
+   [self.imageView2 setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.imageView2 setImage:[ImageProvider imageNamed:@"UIButtonBarGrid"]];
+   [self.label2 setBackgroundColor:UIColor.clearColor];
+   [self.label2 setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.label2 setText:__LOCALIZED_STRING(self.class, @"PRIVACY_2")];
+
+   [self.view3 setBackgroundColor:UIColor.clearColor];
+   [self.imageView3 setBackgroundColor:UIColor.clearColor];
+   [self.imageView3 setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.imageView3 setImage:[ImageProvider imageNamed:@"UIButtonBarGrid"]];
+   [self.label3 setBackgroundColor:UIColor.clearColor];
+   [self.label3 setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.label3 setText:__LOCALIZED_STRING(self.class, @"PRIVACY_3")];
 
    __CATCH(nErr);
 

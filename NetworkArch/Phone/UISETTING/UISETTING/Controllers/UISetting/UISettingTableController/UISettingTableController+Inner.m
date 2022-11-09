@@ -73,6 +73,21 @@
 
 @end
 
+#pragma mark - UIStoryboard
+@implementation UISettingTableController (UIStoryboard)
+
++ (NSString *)storyboard {
+   
+   return @(MODULE);
+}
+
++ (NSString *)bundle {
+
+   return @(BUNDLE);
+}
+
+@end
+
 #pragma mark - UITableViewDataSource
 @implementation UISettingTableController (UITableViewDataSource)
 
@@ -92,12 +107,12 @@
       
       if (@available(iOS 13.0, *)) {
          
-         nNumber  = 2;
+         nNumber  = SettingAppearanceNumber;
          
       } /* End if () */
       else {
          
-         nNumber  = 1;
+         nNumber  = SettingAppearanceNumber - 1;
          
       } /* End else */
       
@@ -150,6 +165,11 @@
       
    } /* End if () */
 #endif /* TAB_ANIMATE */
+   else {
+      
+      szTitle  = @"";
+      
+   } /* End else */
    
    __CATCH(nErr);
    
@@ -231,10 +251,10 @@
 #pragma mark - UITableViewDelegate
 @implementation UISettingTableController (UITableViewDelegate)
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)aSection
-//{
-//   return 32.0;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)aSection {
+   
+   return 32.0;
+}
 
 - (UIView *)tableView:(UITableView *)aTableView viewForHeaderInSection:(NSInteger)aSection {
    
@@ -261,6 +281,26 @@
    __CATCH(nErr);
    
    return stSettingHeader;
+}
+
+- (UIView *)tableView:(UITableView *)aTableView heightForFooterInSection:(NSInteger)aSection {
+   
+   return [[UIView alloc] init];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)aIndexPath {
+   
+   if (SettingAppearance == aIndexPath.section) {
+      
+      if (SettingAppearanceTheme == aIndexPath.row) {
+         
+         return 190;
+         
+      } /* End if () */
+      
+   } /* End if () */
+   
+   return 52.0;
 }
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)aIndexPath {
@@ -327,22 +367,6 @@
    __CATCH(nErr);
    
    return;
-}
-
-@end
-
-
-#pragma mark - UIStoryboard
-@implementation UISettingTableController (UIStoryboard)
-
-+ (NSString *)storyboard {
-   
-   return @(MODULE);
-}
-
-+ (NSString *)bundle {
-
-   return @(BUNDLE);
 }
 
 @end

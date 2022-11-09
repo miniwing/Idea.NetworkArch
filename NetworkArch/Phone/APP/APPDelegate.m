@@ -410,7 +410,7 @@
    LogDebug((@"-[APPDelegate loadData] : version    : %@", szVersion));
    LogDebug((@"-[APPDelegate loadData] : appVersion : %@", [UIApplication sharedApplication].appVersion));
       
-   // 第一次进入
+   // 安装之后第一次进入
    if (kStringIsBlank(szVersion)) {
       
       [SettingProvider setVersion:[UIApplication sharedApplication].appVersion];
@@ -428,9 +428,10 @@
       } /* End if () */
       else {
          
-         // 当前版本第一次进入
+         // 版本更新后第一次进入
          // 可能需要升级数据。
          [SettingProvider setVersion:[UIApplication sharedApplication].appVersion];
+         [SettingProvider setTabbarAnimation:NO];
          [SettingProvider setApiKeySetting:NO];
          [SettingProvider setPrivacy:NO];
 

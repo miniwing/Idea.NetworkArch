@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)xmlAPIKey;
 
-+ (NSString *)tracking;
++ (NSString *)privacy;
 + (NSString *)introduction;
 
 @end
@@ -28,9 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPDATA ()
 
-+ (NSString *)htmlFile:(NSString *)aHtmlName;
-
-+ (NSString *)trackingFile:(NSString *)aTrackingName;
 + (NSString *)introductionFile:(NSString *)aIntroductionName;
 
 @end

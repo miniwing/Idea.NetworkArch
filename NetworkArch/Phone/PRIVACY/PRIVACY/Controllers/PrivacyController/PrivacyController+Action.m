@@ -26,7 +26,7 @@
       
       LogDebug((@"-[PrivacyController onContinue:] : dismissCompletion"));
 
-      [SettingProvider setPrivacy:YES];
+      [SettingProvider setPrivacy:!__Debug__];
       
       LogDebug((@"-[PrivacyController onContinue:] : isTracking : %d", [SettingProvider isTracking]));
 

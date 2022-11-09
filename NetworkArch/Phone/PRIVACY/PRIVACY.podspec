@@ -88,6 +88,9 @@ Pod::Spec.new do |spec|
   spec.dependency 'ImageProvider'
   spec.dependency 'SettingProvider'
 
+  spec.dependency 'APPDATA'
+  spec.dependency 'APPDriver'
+
   spec.public_header_files  = 'PRIVACY/Controllers/**/*{Controller,+Notification}.h'
   spec.source_files         = 'PRIVACY/**/*.{h,hpp,hxx,m,mm,m++,c,cpp,cxx}'
   

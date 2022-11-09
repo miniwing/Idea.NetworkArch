@@ -181,7 +181,7 @@
    /// 关闭水波纹效果
    [self.navigationBarX.navigationBar setRippleColor:UIColor.clearColor];
    [self.navigationBarX.navigationBar setInkColor:UIColor.clearColor];
-   
+
    [self.navigationBarX.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
    [self.navigationBarX.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
 

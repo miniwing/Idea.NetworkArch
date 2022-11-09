@@ -1,18 +1,0 @@
-{
-  "summary": "This version of iOS requires us to ask for permission to track som data from this device to improve your ads. Learn how we limit the use of this information if you don't turn on this device setting.  We use information about your activity received  from other apps and websites to :",
-  "title": "You're on iOS %@",
-  "trackings": [
-    {
-      "content": "黄金战甲",
-      "icon": "UIBarButtonItemGrid"
-    },
-    {
-      "content": "黄金战甲",
-      "icon": "UIBarButtonItemGrid"
-    },
-    {
-      "content": "黄金战甲",
-      "icon": "UIBarButtonItemGrid"
-    }
-  ]
-}

@@ -77,24 +77,6 @@
    return szContent;
 }
 
-#pragma mark - Tracking
-+ (NSString *)tracking {
-   
-   return @"TRACKING.json";
-}
-
-+ (NSString *)trackingFile:(NSString *)aTrackingName {
-   
-   NSString    *szPath     = [self pathForName:aTrackingName];
-   LogDebug((@"-[APPDATA trackingPath:] : JSON : %@", szPath));
-   
-   NSString     *szContent = [NSString stringWithContentsOfFile:szPath
-                                                       encoding:NSUTF8StringEncoding
-                                                          error:nil];
-   
-   return szContent;
-}
-
 #pragma mark - Introduction
 + (NSString *)introduction {
    

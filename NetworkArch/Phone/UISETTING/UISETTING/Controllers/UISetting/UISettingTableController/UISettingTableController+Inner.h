@@ -29,6 +29,13 @@ IDEA_ENUM(NSInteger, SettingSection) {
    SettingNumber
 };
 
+IDEA_ENUM(NSInteger, SettingAppearanceRow) {
+   
+   SettingAppearanceTheme  = 0,
+   SettingAppearanceAuto   = 1,
+   SettingAppearanceNumber
+};
+
 IDEA_ENUM(NSInteger, SettingAboutRow) {
    
    SettingAboutWeibo    = 0,
@@ -51,9 +58,9 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
 @property (nonatomic, weak)   IBOutlet       UIView                                 * uiSeparatorView;
 
 @property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray           * cellAnimates;
-@property (nonatomic, weak)   IBOutlet       UIView                                 * annimateCellContainerView;
+@property (nonatomic, weak)   IBOutlet       UIView                                 * animateCellContainerView;
 @property (nonatomic, weak)   IBOutlet       UIView                                 * animateSeparatorView;
-//@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *> * annimateCellContainerViews;
+//@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *> * animateCellContainerViews;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                                * cellAnimateTitle;
 @property (nonatomic, weak)   IBOutlet       UISwitch                               * cellAnimateSwitch;
