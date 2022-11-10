@@ -232,9 +232,10 @@
 
    LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
 
+#if GOOGLE_MOBILE_ADS
    [GADMobileAds.sharedInstance startWithCompletionHandler:nil];
-   
    [self requestAppOpenAd];
+#endif /* GOOGLE_MOBILE_ADS */
 
    /******************************************************************************************/
 
@@ -298,7 +299,10 @@
 //
 //   } /* End if () */
 
+#if GOOGLE_MOBILE_ADS
    [self tryToPresentAd];
+   [self tryToPresentAd];
+#endif /* GOOGLE_MOBILE_ADS */
    
    __CATCH(nErr);
    

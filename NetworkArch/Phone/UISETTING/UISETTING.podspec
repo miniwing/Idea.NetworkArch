@@ -342,6 +342,16 @@ Pod::Spec.new do |spec|
 #     import <IDEAApplet/IDEAAppletDebug.h>
 #  endif // __has_include(<IDEAApplet/IDEAAppletDebug.h>)
 
+#  if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
+#     import <GoogleMobileAds/GoogleMobileAds.h>
+#     define GOOGLE_MOBILE_ADS                                             (1)
+#  elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
+#     import "GoogleMobileAds/GoogleMobileAds.h"
+#     define GOOGLE_MOBILE_ADS                                             (1)
+#  else
+#     define GOOGLE_MOBILE_ADS                                             (0)
+#  endif
+
 #endif /* __OBJC__ */
 
 #import <IDEAStartUp/IDEAStartUp.h>

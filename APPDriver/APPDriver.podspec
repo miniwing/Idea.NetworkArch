@@ -498,16 +498,14 @@ __END_DECLS
 
 #define __DebugFunc__                              (__AUTO__)
 #define __DebugDebug__                             (__AUTO__)
+#define __DebugWarn__                              (__AUTO__)
+#define __DebugError__                             (__AUTO__)
 #define __DebugColor__                             (__AUTO__)
 #define __DebugView__                              (__AUTO__)
 
-/******************************************************************************************************/
+#define __DebugKeyboard__                          (__OFF__)
 
-#if __DebugInfo__
-#  define LogInfo(x)                               ____LoggerInfo x
-#else
-#  define LogInfo(x)
-#endif
+/******************************************************************************************************/
 
 #if __DebugDebug__
 #  define LogDebug(x)                              ____LoggerDebug x
@@ -533,17 +531,19 @@ __END_DECLS
 #  define LogFunc(x)
 #endif
 
-#if __DebugFunc__
-#  define LogFunc(x)                               ____LoggerInfo x
-#else
-#  define LogFunc(x)
-#endif
-
 #if __DebugView__
 #  define LogView(x)                               ____LoggerInfo x
 #else
 #  define LogView(x)
 #endif
+
+#if __DebugKeyboard__
+#  define LogKeyboard(x)                           ____LoggerInfo x
+#else
+#  define LogKeyboard(x)
+#endif
+
+/******************************************************************************************************/
 
 #define  __Function_Start()                        LogFunc(((@"%s - Enter!") , I_FUNCTION));
 #define  __Function_End(_Return)                                                                                              \\

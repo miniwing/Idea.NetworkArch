@@ -46,6 +46,8 @@ ENV['IDEA_ROOT_NAVIGATION_CONTROLLER']    = 'NO'
 ENV['OpenSSL']                            = 'NO'
 ENV['SSZipArchive']                       = 'NO'
 
+ENV['GOOGLE_MOBILE_ADS']                  = 'YES'
+
 ENV['ios.deployment_target']              = '12.0'
 ENV['watchos.deployment_target']          = '5.0'
 ENV['osx.deployment_target']              = '10.10'
@@ -223,8 +225,10 @@ target 'NetworkArch' do
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'GoogleAnalytics'
 #  pod 'Firebase'
-  pod 'Google-Mobile-Ads-SDK'
-  pod 'GoogleMobileAdsMediationFacebook'
+  if ENV['GOOGLE_MOBILE_ADS'] == 'YES'
+    pod 'Google-Mobile-Ads-SDK',          '~> 9.0.0'
+#    pod 'GoogleMobileAdsMediationFacebook'
+  end # GOOGLE_MOBILE_ADS
   #-------------------------------------------------------------------------------------------------------------------------------#
 
   library

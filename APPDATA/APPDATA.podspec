@@ -158,9 +158,6 @@ Pod::Spec.new do |spec|
 #  elif __has_include("YYKit/YYKit.h")
 #     import "YYKit/YYKit.h"
 #     define YY_KIT                                                        (1)
-// #  elif __has_include("YYKit.h")
-// #     import "YYKit.h"
-// #     define YY_KIT                                                        (1)
 #  else
 #     define YY_KIT                                                        (0)
 #  endif
@@ -441,10 +438,28 @@ __END_DECLS
 
 /******************************************************************************************************/
 
+#define IsInvalid                                  (YES)
+
+#define I_FUNCTION                                 __PRETTY_FUNCTION__
+
+#ifndef __STRING
+#  define __STRING(STR)                            (#STR)
+#endif /* __STRING */
+
+#ifndef FREE_IF
+#  define FREE_IF(p)                               if(p) {free (p); (p)=NULL;}
+#endif /* DELETE_IF */
+
+/******************************************************************************************************/
+
 #define __DebugFunc__                              (__AUTO__)
 #define __DebugDebug__                             (__AUTO__)
+#define __DebugWarn__                              (__AUTO__)
+#define __DebugError__                             (__AUTO__)
 #define __DebugColor__                             (__AUTO__)
 #define __DebugView__                              (__AUTO__)
+
+#define __DebugKeyboard__                          (__OFF__)
 
 /******************************************************************************************************/
 
@@ -452,6 +467,18 @@ __END_DECLS
 #  define LogDebug(x)                              ____LoggerDebug x
 #else
 #  define LogDebug(x)
+#endif
+
+#if __DebugWarn__
+#  define LogWarn(x)                               ____LoggerWarn x
+#else
+#  define LogWarn(x)
+#endif
+
+#if __DebugError__
+#  define LogError(x)                              ____LoggerError x
+#else
+#  define LogError(x)
 #endif
 
 #if __DebugFunc__
@@ -465,6 +492,14 @@ __END_DECLS
 #else
 #  define LogView(x)
 #endif
+
+#if __DebugKeyboard__
+#  define LogKeyboard(x)                           ____LoggerInfo x
+#else
+#  define LogKeyboard(x)
+#endif
+
+/******************************************************************************************************/
 
 #define  __Function_Start()                        LogFunc(((@"%s - Enter!") , I_FUNCTION));
 #define  __Function_End(_Return)                                                                                              \\

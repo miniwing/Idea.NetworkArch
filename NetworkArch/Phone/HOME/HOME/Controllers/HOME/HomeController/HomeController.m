@@ -226,6 +226,12 @@
 
    } /* End if () */
    
+   /**
+    * ADs
+    */
+   [self.bannerView setHidden:YES];
+   [self.bannerViewHeight setConstant:0];
+
    __CATCH(nErr);
    
    return;

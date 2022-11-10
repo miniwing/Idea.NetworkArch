@@ -40,8 +40,25 @@
                                     <constraint firstAttribute="height" constant="110" id="CkD-Cy-V8n"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a34-g5-TFa" userLabel="广告">
+                                <rect key="frame" x="0.0" y="110" width="375" height="116"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ec-P4-cPh" customClass="GADBannerView">
+                                        <rect key="frame" x="16" y="8" width="343" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6ec-P4-cPh" secondAttribute="bottom" constant="8" id="9Ys-Th-qKr"/>
+                                    <constraint firstAttribute="trailing" secondItem="6ec-P4-cPh" secondAttribute="trailing" constant="16" id="bbe-WY-aZe"/>
+                                    <constraint firstAttribute="height" constant="116" id="mSb-Ie-mci"/>
+                                    <constraint firstItem="6ec-P4-cPh" firstAttribute="top" secondItem="a34-g5-TFa" secondAttribute="top" constant="8" id="oAj-1Y-5tO"/>
+                                    <constraint firstItem="6ec-P4-cPh" firstAttribute="leading" secondItem="a34-g5-TFa" secondAttribute="leading" constant="16" id="sOR-9h-koy"/>
+                                </constraints>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdA-Lf-zxg" userLabel="CONTENT-VIEW">
-                                <rect key="frame" x="0.0" y="110" width="375" height="668"/>
+                                <rect key="frame" x="0.0" y="226" width="375" height="552"/>
                                 <connections>
                                     <segue destination="FpE-1M-I5K" kind="embed" identifier="HomeContentController" id="iC0-8D-llQ"/>
                                 </connections>
@@ -50,19 +67,25 @@
                         <viewLayoutGuide key="safeArea" id="Jx0-Fl-Mpd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="a34-g5-TFa" firstAttribute="top" secondItem="nRZ-hc-SuU" secondAttribute="bottom" id="2Og-ei-82P"/>
+                            <constraint firstItem="a34-g5-TFa" firstAttribute="leading" secondItem="Jx0-Fl-Mpd" secondAttribute="leading" id="3He-lW-J3b"/>
                             <constraint firstAttribute="trailing" secondItem="AdA-Lf-zxg" secondAttribute="trailing" id="8lF-9V-z0e"/>
-                            <constraint firstItem="AdA-Lf-zxg" firstAttribute="top" secondItem="nRZ-hc-SuU" secondAttribute="bottom" identifier="contentView.top" id="XjW-aB-Gxz"/>
+                            <constraint firstItem="Jx0-Fl-Mpd" firstAttribute="trailing" secondItem="a34-g5-TFa" secondAttribute="trailing" id="LEF-Cl-gpU"/>
                             <constraint firstItem="Jx0-Fl-Mpd" firstAttribute="bottom" secondItem="AdA-Lf-zxg" secondAttribute="bottom" id="aF4-Zk-s0t"/>
                             <constraint firstItem="nRZ-hc-SuU" firstAttribute="trailing" secondItem="Jx0-Fl-Mpd" secondAttribute="trailing" id="aJ3-tA-1LE"/>
                             <constraint firstItem="nRZ-hc-SuU" firstAttribute="leading" secondItem="Jx0-Fl-Mpd" secondAttribute="leading" id="jlE-65-xEa"/>
                             <constraint firstItem="nRZ-hc-SuU" firstAttribute="top" secondItem="fu3-kW-ZxG" secondAttribute="top" id="mwv-tS-8tj"/>
+                            <constraint firstItem="AdA-Lf-zxg" firstAttribute="top" secondItem="a34-g5-TFa" secondAttribute="bottom" id="omA-xd-94n"/>
                             <constraint firstItem="AdA-Lf-zxg" firstAttribute="leading" secondItem="fu3-kW-ZxG" secondAttribute="leading" id="ye8-ZT-AfY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kge-OB-nD4"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bannerView" destination="a34-g5-TFa" id="mbU-si-pGl"/>
+                        <outlet property="bannerViewHeight" destination="mSb-Ie-mci" id="nf6-rU-DYa"/>
                         <outlet property="contentView" destination="AdA-Lf-zxg" id="Qqg-sB-30S"/>
+                        <outlet property="gadBannerView" destination="6ec-P4-cPh" id="LZ4-hF-V0D"/>
                         <outlet property="navigationBarX" destination="nRZ-hc-SuU" id="loB-2W-3UB"/>
                         <outlet property="rightBarButton" destination="pKS-zo-8q6" id="RH4-Td-GVI"/>
                         <outlet property="rightBarButtonItem" destination="ZeX-74-7E6" id="Bbg-jh-KeD"/>
@@ -80,14 +103,14 @@
                     </button>
                 </barButtonItem>
             </objects>
-            <point key="canvasLocation" x="633" y="161"/>
+            <point key="canvasLocation" x="632.79999999999995" y="159.60591133004928"/>
         </scene>
         <!--HOME-CONTENT-->
         <scene sceneID="4VA-JJ-Y4H">
             <objects>
                 <tableViewController storyboardIdentifier="HomeContentController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FpE-1M-I5K" userLabel="HOME-CONTENT" customClass="HomeContentController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" contentViewInsetsToSafeArea="NO" id="pbQ-4U-rhh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="552"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="tableFooterView" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U4B-qG-a8E" userLabel="COPYRIGHT">
                             <rect key="frame" x="0.0" y="809.33333206176758" width="375" height="30"/>
@@ -1120,7 +1143,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="tableFooterView" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4fa-Z2-DMe" userLabel="BOTTOM-VIEW">
-                            <rect key="frame" x="0.0" y="173" width="375" height="56"/>
+                            <rect key="frame" x="0.0" y="173.33333206176758" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SE0-il-yqa" userLabel="SAVE-BUTTON">

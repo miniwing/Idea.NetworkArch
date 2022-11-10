@@ -10,6 +10,7 @@
 #import "APPDelegate+Inner.h"
 #import "APPDelegate+Signal.h"
 
+#if GOOGLE_MOBILE_ADS
 @implementation APPDelegate (Admob)
 
 - (void)requestAppOpenAd {
@@ -109,3 +110,4 @@
 }
 
 @end
+#endif /* GOOGLE_MOBILE_ADS */

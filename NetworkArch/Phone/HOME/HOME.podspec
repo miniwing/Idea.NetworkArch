@@ -117,6 +117,11 @@ Pod::Spec.new do |spec|
   spec.dependency 'APPDriver'
   spec.dependency 'PRIVACY'
 
+  if ENV['GOOGLE_MOBILE_ADS'] == 'YES'
+    spec.dependency 'Google-Mobile-Ads-SDK',  '~> 9.0.0'
+#    pod 'GoogleMobileAdsMediationFacebook'
+  end # GOOGLE_MOBILE_ADS
+
   spec.public_header_files  = 'HOME/Controllers/**/*{Controller,+Notification}.h'
   spec.source_files         = 'HOME/**/*.{h,hpp,hxx,m,mm,m++,c,cpp,cxx}'
   
@@ -417,6 +422,16 @@ Pod::Spec.new do |spec|
 #  if __has_include(<IDEAApplet/IDEAAppletDebug.h>)
 #     import <IDEAApplet/IDEAAppletDebug.h>
 #  endif // __has_include(<IDEAApplet/IDEAAppletDebug.h>)
+
+#  if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
+#     import <GoogleMobileAds/GoogleMobileAds.h>
+#     define GOOGLE_MOBILE_ADS                                             (1)
+#  elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
+#     import "GoogleMobileAds/GoogleMobileAds.h"
+#     define GOOGLE_MOBILE_ADS                                             (1)
+#  else
+#     define GOOGLE_MOBILE_ADS                                             (0)
+#  endif
 
 #endif /* __OBJC__ */
 
