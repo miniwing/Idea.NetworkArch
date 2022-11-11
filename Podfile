@@ -229,7 +229,7 @@ target 'NetworkArch' do
 #  pod 'Firebase'
   if ENV['GOOGLE_MOBILE_ADS'] == 'YES'
 #    pod 'Google-Mobile-Ads-SDK'
-    pod 'Google-Mobile-Ads-SDK',          '9.3.0'
+    pod 'Google-Mobile-Ads-SDK'
 #    pod 'GoogleMobileAdsMediationFacebook'
   end # GOOGLE_MOBILE_ADS
   #-------------------------------------------------------------------------------------------------------------------------------#

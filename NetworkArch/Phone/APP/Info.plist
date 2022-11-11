@@ -38,11 +38,13 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2021-2022 Harry. All rights reserved.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>$(NSLocationAlwaysUsageDescription)</string>
+	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>$(NSLocationWhenInUseUsageDescription)</string>
+	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>$(NSLocationAlwaysAndWhenInUseUsageDescription)</string>
+	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This identifier will be used to deliver personalized ads to you.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LAUNCH</string>
 	<key>UIMainStoryboardFile</key>
@@ -69,8 +71,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>$(NSUserTrackingUsageDescription)</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-9965972454053205~1908143384</string>
 	<key>SKAdNetworkItems</key>
