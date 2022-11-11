@@ -16,7 +16,18 @@
 
 #import <UIKit/UIKit.h>
 
+#if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
+#  import <GoogleMobileAds/GoogleMobileAds.h>
+#  define GOOGLE_MOBILE_ADS                                          (1)
+#elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
+#  import "GoogleMobileAds/GoogleMobileAds.h"
+#  define GOOGLE_MOBILE_ADS                                          (1)
+#else
+#  define GOOGLE_MOBILE_ADS                                          (0)
+#endif
+
 #if GOOGLE_MOBILE_ADS
+
 @protocol AppOpenAdManagerDelegate <NSObject>
 
 /// Method to be invoked when an app open ad is complete (i.e. dismissed or fails to show).
@@ -27,22 +38,28 @@
 
 @interface AppOpenAdManager : NSObject <GADFullScreenContentDelegate>
 
-@property (nonatomic, weak)                  id <AppOpenAdManagerDelegate>         delegate;
 
 @end
 
 @interface AppOpenAdManager ()
 
-+ (AppOpenAdManager *)sharedInstance;
++ (void)setDelegate:(id<AppOpenAdManagerDelegate>)aDelegate;
 
-- (void)loadAd;
-- (void)showAdIfAvailable:(UIViewController*)viewController;
++ (void)loadAd;
++ (void)showAdIfAvailable:(UIViewController*)viewController;
+
+/// Keeps track of if an app open ad is loading.
++ (BOOL)isLoadingAd;
+
+/// Keeps track of if an app open ad is showing.
++ (BOOL)isShowingAd;
 
 @end
 
 #else /* GOOGLE_MOBILE_ADS */
 
-//@interface GADBannerView : UIView
-//@end
+@interface GADBannerView : UIView
+
+@end
 
 #endif /* !GOOGLE_MOBILE_ADS */

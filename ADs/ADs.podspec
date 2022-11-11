@@ -58,8 +58,8 @@ Pod::Spec.new do |spec|
   spec.dependency 'IDEAKit'
 
   if ENV['GOOGLE_MOBILE_ADS'] == 'YES'
-    spec.dependency 'Google-Mobile-Ads-SDK'
-#    spec.dependency 'Google-Mobile-Ads-SDK',  '~> 9.0.0'
+#    spec.dependency 'Google-Mobile-Ads-SDK'
+    spec.dependency 'Google-Mobile-Ads-SDK',  '9.3.0'
 #    pod 'GoogleMobileAdsMediationFacebook'
   end # GOOGLE_MOBILE_ADS
 
@@ -159,16 +159,6 @@ Pod::Spec.new do |spec|
 #     define YY_KIT                                                        (1)
 #  else
 #     define YY_KIT                                                        (0)
-#  endif
-
-#  if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
-#     import <GoogleMobileAds/GoogleMobileAds.h>
-#     define GOOGLE_MOBILE_ADS                                             (1)
-#  elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
-#     import "GoogleMobileAds/GoogleMobileAds.h"
-#     define GOOGLE_MOBILE_ADS                                             (1)
-#  else
-#     define GOOGLE_MOBILE_ADS                                             (0)
 #  endif
 
 #endif /* __OBJC__ */

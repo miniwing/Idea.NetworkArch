@@ -84,8 +84,8 @@
 //#  import <NetworkExtension/NetworkExtension.h>
 //#  import <WebKit/WebKit.h>
 
-//#  import <AppTrackingTransparency/AppTrackingTransparency.h>
-//#  import <AdSupport/AdSupport.h>
+#  import <AppTrackingTransparency/AppTrackingTransparency.h>
+#  import <AdSupport/AdSupport.h>
 #endif
 
 #ifdef __OBJC__
@@ -416,16 +416,6 @@ typedef FBLPromise Promise;
 #     define IDEA_TYPE_FACE                                                (1)
 #  else
 #     define IDEA_TYPE_FACE                                                (0)
-#  endif
-
-#  if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
-#     import <GoogleMobileAds/GoogleMobileAds.h>
-#     define GOOGLE_MOBILE_ADS                                             (1)
-#  elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
-#     import "GoogleMobileAds/GoogleMobileAds.h"
-#     define GOOGLE_MOBILE_ADS                                             (1)
-#  else
-#     define GOOGLE_MOBILE_ADS                                             (0)
 #  endif
 
 #endif

@@ -12,12 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 #if GOOGLE_MOBILE_ADS
 
-@interface APPDelegate (Admob)
-
-- (void)requestAppOpenAd;
-- (void)tryToPresentAd;
-
-@end
+//@interface APPDelegate (Admob)
+//
+//- (void)requestAppOpenAd;
+//- (void)tryToPresentAd;
+//
+//@end
 
 #endif /* GOOGLE_MOBILE_ADS */
 

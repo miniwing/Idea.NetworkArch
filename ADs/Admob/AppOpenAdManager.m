@@ -24,6 +24,8 @@ static const NSInteger TimeoutInterval = 4;
 
 @interface AppOpenAdManager ()
 
+@property (nonatomic, weak)                  id <AppOpenAdManagerDelegate>         delegate;
+
 /// The app open ad.
 @property (nonatomic, strong)                GADAppOpenAd                        * appOpenAd;
 
@@ -100,6 +102,20 @@ static const NSInteger TimeoutInterval = 4;
    return;
 }
 
++ (void)setDelegate:(id<AppOpenAdManagerDelegate>)aDelegate {
+   
+   [AppOpenAdManager sharedInstance].delegate   = aDelegate;
+   
+   return;
+}
+
++ (void)loadAd {
+   
+   [[AppOpenAdManager sharedInstance] loadAd];
+   
+   return;
+}
+
 - (void)loadAd {
    
    int                            nErr                                     = EFAULT;
@@ -114,42 +130,48 @@ static const NSInteger TimeoutInterval = 4;
    } /* End if () */
    
    self.isLoadingAd  = YES;
-   
-   [GADRequest request];
-   
-   LogDebug((@"-[AppOpenAdManager loadAd] : Start loading app open ad."));
+      
+   LogDebug((@"-[AppOpenAdManager loadAd] : Start loading app open ad. : %@", [NSDate date]));
 
-//   [GADAppOpenAd loadWithAdUnitID:@"ca-app-pub-3940256099942544/5662855259"
-//                          request:[GADRequest request]
-//                      orientation:UIInterfaceOrientationPortrait
-//                completionHandler:^(GADAppOpenAd * _Nullable appOpenAd, NSError * _Nullable error) {
-//
-//      self.isLoadingAd = NO;
-//
-//      if (error) {
-//
-//         self.appOpenAd = nil;
-//         self.loadTime = nil;
-//
-//         LogError((@"-[AppOpenAdManager loadAd] : App open ad failed to load with error: %@.", error));
-//
-//         return;
-//      }
-//      self.appOpenAd = appOpenAd;
-//      self.appOpenAd.fullScreenContentDelegate = self;
-//      self.loadTime  = [NSDate date];
-//
-//      LogDebug((@"-[AppOpenAdManager loadAd] : App open ad loaded successfully."));
-//
-//      return;
-//   }];
+   [GADAppOpenAd loadWithAdUnitID:@"ca-app-pub-3940256099942544/5662855259"
+                          request:[GADRequest request]
+                      orientation:UIInterfaceOrientationPortrait
+                completionHandler:^(GADAppOpenAd * _Nullable aOpenAd, NSError * _Nullable aError) {
+
+      self.isLoadingAd = NO;
+
+      if (aError) {
+
+         self.appOpenAd = nil;
+         self.loadTime  = nil;
+
+         LogError((@"-[AppOpenAdManager loadAd] : App open ad failed to load with error: %@.", aError));
+
+         return;
+      }
+      
+      self.appOpenAd = aOpenAd;
+      self.appOpenAd.fullScreenContentDelegate = self;
+      self.loadTime  = [NSDate date];
+
+      LogDebug((@"-[AppOpenAdManager loadAd] : App open ad loaded successfully. : %@", [NSDate date]));
+
+      return;
+   }];
    
    __CATCH(nErr);
    
    return;
 }
 
-- (void)showAdIfAvailable:(nonnull UIViewController *)viewController {
++ (void)showAdIfAvailable:(UIViewController*)viewController {
+   
+   [[AppOpenAdManager sharedInstance] showAdIfAvailable:viewController];
+   
+   return;
+}
+
+- (void)showAdIfAvailable:(nonnull UIViewController *)aViewController {
    
    int                            nErr                                     = EFAULT;
    
@@ -185,17 +207,29 @@ static const NSInteger TimeoutInterval = 4;
    LogDebug((@"-[AppOpenAdManager adWillPresentFullScreenContent:] : App open ad will be displayed."));
 
    self.isShowingAd  = YES;
-   [self.appOpenAd presentFromRootViewController:viewController];
+   [self.appOpenAd presentFromRootViewController:aViewController];
    
    __CATCH(nErr);
    
    return;
 }
 
+/// Keeps track of if an app open ad is loading.
++ (BOOL)isLoadingAd {
+   
+   return [AppOpenAdManager sharedInstance].isLoadingAd;
+}
+
+/// Keeps track of if an app open ad is showing.
++ (BOOL)isShowingAd {
+   
+   return [AppOpenAdManager sharedInstance].isShowingAd;
+}
+
 #pragma mark - GADFullScreenContentDelegate
 
 /// Tells the delegate that the ad will present full screen content.
-- (void)adWillPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+- (void)adWillPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)aAD {
    
    int                            nErr                                     = EFAULT;
    
@@ -209,7 +243,7 @@ static const NSInteger TimeoutInterval = 4;
 }
 
 /// Tells the delegate that the ad dismissed full screen content.
-- (void)adDidDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+- (void)adDidDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)aAD {
    
    int                            nErr                                     = EFAULT;
    
@@ -252,7 +286,8 @@ static const NSInteger TimeoutInterval = 4;
 
 #else /* GOOGLE_MOBILE_ADS */
 
-//@implementation GADBannerView : UIView
-//@end
+@implementation GADBannerView
+
+@end
 
 #endif /* !GOOGLE_MOBILE_ADS */

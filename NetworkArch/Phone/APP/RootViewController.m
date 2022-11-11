@@ -120,13 +120,13 @@
          return;
       });
 
-      self.onNotification(PrivacyController.trackingDoneNotification, ^(NSNotification *aNotification) {
-
-         LogDebug((@"-[RootViewController onNotification:] : trackingDoneNotification : %@", aNotification.name));
-//         @strongify(self);
-
-         return;
-      });
+//      self.onNotification(PrivacyController.trackingDoneNotification, ^(NSNotification *aNotification) {
+//
+//         LogDebug((@"-[RootViewController onNotification:] : trackingDoneNotification : %@", aNotification.name));
+////         @strongify(self);
+//
+//         return;
+//      });
       
       _titles           = @[ APP_STR(@"HOME"),
                              APP_STR(@"SETTING") ];

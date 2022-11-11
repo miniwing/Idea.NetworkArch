@@ -16,6 +16,8 @@
 #import <APPDATA/APPDATA.h>
 #import <APPDATA/NetworkArch.h>
 
+#import <ADs/AppOpenAdManager.h>
+
 #import "APPDelegate.h"
 #import "APPDelegate+ADs.h"
 #import "APPDelegate+Inner.h"
@@ -77,6 +79,24 @@
 #endif /* APP_RATER */
       return;
    });
+   
+//   // 检测锁屏和解锁
+//   // 私有 API
+//   CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), //center
+//                                   NULL, // CFBridgingRetain(self), // observer
+//                                   displayStatusChanged, // callback
+//                                   CFSTR("com.apple.springboard.lockcomplete"), // event name
+//                                   NULL, // object
+//                                   CFNotificationSuspensionBehaviorDeliverImmediately);
+//   
+//   
+//   CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), //center
+//                                   NULL, // observer
+//                                   displayStatusChanged,
+//                                   CFSTR("com.apple.springboard.lockstate"),
+//                                   NULL, // object
+//                                   CFNotificationSuspensionBehaviorDeliverImmediately);
+   
    /******************************************************************************************/
    
 #if __InjectionIII__
@@ -143,6 +163,39 @@
 #endif /* __Debug__ */
    
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
+   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IDFA : %@", [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString));
+   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IDFV : %@", UIDevice.currentDevice.identifierForVendor.UUIDString));
+
+   /******************************************************************************************/
+
+#if GOOGLE_MOBILE_ADS
+   [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
+   
+#if __Debug__
+   NSMutableArray   *stTestDevices = [NSMutableArray array];
+   
+#  if TARGET_OS_SIMULATOR
+   [stTestDevices addObject:kGADSimulatorID];
+#  endif /* TARGET_OS_SIMULATOR */
+
+//   [stTestDevices addObject:@"d843fe76c85abf1f5ca02c98904f81bf"]; // Harry's iPhone 5s
+//   [stTestDevices addObject:@"09b9c6760653656e703bd450c3385513"]; // ROM's iPhone 5s
+
+   [stTestDevices addObject:UIDevice.currentDevice.identifierForVendor.UUIDString];
+
+   [stTestDevices addObject:[ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString]; // TEST Device
+   [stTestDevices addObject:UIDevice.currentDevice.identifierForVendor.UUIDString];
+
+   [stTestDevices addObject:@"80fbff4cdaad0a572a0b0e2faa24035a"];
+
+   [GADMobileAds sharedInstance].requestConfiguration.testDeviceIdentifiers = stTestDevices;
+#endif /* __Debug__ */
+
+   [AppOpenAdManager setDelegate:self];
+   [AppOpenAdManager loadAd];
+#endif /* GOOGLE_MOBILE_ADS */
+
+   /******************************************************************************************/
 
    __CATCH(nErr);
    
@@ -232,11 +285,6 @@
 
    LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
 
-#if GOOGLE_MOBILE_ADS
-   [GADMobileAds.sharedInstance startWithCompletionHandler:nil];
-   [self requestAppOpenAd];
-#endif /* GOOGLE_MOBILE_ADS */
-
    /******************************************************************************************/
 
    __CATCH(nErr);
@@ -252,7 +300,8 @@
    
    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-   
+   // [self splash];
+
    __CATCH(nErr);
    
    return;
@@ -266,7 +315,7 @@
    
    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-   
+
    __CATCH(nErr);
    
    return;
@@ -289,7 +338,11 @@
 - (void)applicationDidBecomeActive:(UIApplication *)aApplication {
    
    int                            nErr                                     = EFAULT;
-   
+
+#if GOOGLE_MOBILE_ADS
+   UIViewController              *stRootController                         = nil;
+#endif /* GOOGLE_MOBILE_ADS */
+
    __TRY;
    
    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
@@ -300,10 +353,18 @@
 //   } /* End if () */
 
 #if GOOGLE_MOBILE_ADS
-   [self tryToPresentAd];
-   [self tryToPresentAd];
+   stRootController = self.window.rootViewController;
+   LogDebug((@"-[APPDelegate applicationDidBecomeActive:] : RootController : %@", stRootController));
+
+   // Do not show app open ad if the current view controller is SplashViewController.
+//   if (stRootViewController && [rootViewController isKindOfClass:[SplashViewController class]]) {
+   if (stRootController && ([stRootController isKindOfClass:SplashViewController.class] || [stRootController isKindOfClass:RootViewController.class])) {
+
+      [AppOpenAdManager showAdIfAvailable:stRootController];
+
+   } /* End if () */
 #endif /* GOOGLE_MOBILE_ADS */
-   
+
    __CATCH(nErr);
    
    return;
@@ -414,11 +475,7 @@
    NSString                      *szVersion                                = nil;
    
    __TRY;
-   
-#if __Debug__
-   sleep(1.5);
-#endif /* __Debug__ */
-   
+      
    szVersion   = [SettingProvider version];
    LogDebug((@"-[APPDelegate loadData] : version    : %@", szVersion));
    LogDebug((@"-[APPDelegate loadData] : appVersion : %@", [UIApplication sharedApplication].appVersion));
@@ -452,7 +509,7 @@
       
    } /* End else */
    
-   LogDebug((@"[UIDevice ipv4:NetworkCellular] : %@", [UIDevice ipv4:NetworkCellular]));
+   LogDebug((@"[APPDelegate loadData] : [UIDevice ipv4:NetworkCellular] : %@", [UIDevice ipv4:NetworkCellular]));
 
    /******************************************************************************************/
 
@@ -460,12 +517,68 @@
 
    /******************************************************************************************/
 
+#if GOOGLE_MOBILE_ADS
+   UI_PERFORM_SELECTOR(self, @selector(showAD), nil, NO);
+#else /* GOOGLE_MOBILE_ADS */
    UI_PERFORM_SELECTOR(self, @selector(splashing), nil, NO);
+#endif /* !GOOGLE_MOBILE_ADS */
    
    __CATCH(nErr);
    
    return;
 }
+
+#if GOOGLE_MOBILE_ADS
+- (void)showAD {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+
+   [AppOpenAdManager showAdIfAvailable:self.window.rootViewController];
+   LogDebug((@"[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
+
+   DISPATCH_AFTER_ON_MAIN_QUEUE(3, ^{
+
+      LogDebug((@"[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
+
+      if ([AppOpenAdManager isShowingAd]) {
+
+         // 有广告展示
+         DISPATCH_AFTER_ON_MAIN_QUEUE(5, ^{
+            
+            [self splashing];
+         });
+         
+      } /* End if () */
+      else {
+
+         // 无广告展示
+         [self splashing];
+
+      } /* End else */
+      
+      return;
+   });
+   
+   __CATCH(nErr);
+   
+   return;
+}
+
+#pragma mark - AppOpenAdManagerDelegate
+- (void)adDidComplete {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+      
+   __CATCH(nErr);
+   
+   return;
+}
+
+#endif /* GOOGLE_MOBILE_ADS */
 
 // 如果sleep，必需是非UI线程。
 - (void)splashing {
@@ -488,7 +601,7 @@
    self.rootViewController.view.alpha  = 1;
    
    [self.rootViewController setNeedsStatusBarAppearanceUpdate];
-
+   
    [UIView animateWithDuration:[UIView animationDefaultDuration]
                     animations:^(void) {
       

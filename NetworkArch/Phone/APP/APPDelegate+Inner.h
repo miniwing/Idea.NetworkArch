@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface APPDelegate () <UIApplicationDelegate
 #if GOOGLE_MOBILE_ADS
 , GADFullScreenContentDelegate
+, AppOpenAdManagerDelegate
 #endif /* GOOGLE_MOBILE_ADS */
 >
 
@@ -32,5 +33,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface APPDelegate (Inner)
 
 @end
+
+//void displayStatusChanged(CFNotificationCenterRef center,
+//                          void *observer,
+//                          CFStringRef name,
+//                          const void *object,
+//                          CFDictionaryRef userInfo);
 
 NS_ASSUME_NONNULL_END
