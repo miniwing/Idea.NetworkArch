@@ -291,6 +291,30 @@
    return;
 }
 
++ (NSTimeInterval)activeTime {
+   
+   return [[SettingProvider sharedInstance] activeTime];
+}
+
+- (NSTimeInterval)activeTime {
+   
+   return [NSUserDefaults doubleForKey:@"activeTime"];
+}
+
++ (void)setActiveTime:(NSTimeInterval)aActiveTime {
+   
+   [[SettingProvider sharedInstance] setActiveTime:aActiveTime];
+   
+   return;
+}
+
+- (void)setActiveTime:(NSTimeInterval)aActiveTime {
+   
+   [NSUserDefaults setDouble:aActiveTime forKey:@"activeTime"];
+   
+   return;
+}
+
 + (NSString *)xmlApiKey {
    
    return [[SettingProvider sharedInstance] xmlApiKey];

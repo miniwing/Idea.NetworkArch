@@ -912,6 +912,8 @@ NS_INLINE NSString * __APP_BUILD_VERSION() {
 #  define GOOGLE_MOBILE_ADS                                          (0)
 #endif
 
+/****************************************************************************/
+
 #import <ImageProvider/ImageProvider.h>
 #import <SettingProvider/SettingProvider.h>
 #import <SettingProvider/UISetting.h>

@@ -278,12 +278,9 @@
    
    LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
    
+   self.applicationState   = UIApplicationStateActive;
    [self splash];
    
-   /******************************************************************************************/
-
-   LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
-
    /******************************************************************************************/
 
    __CATCH(nErr);
@@ -315,6 +312,8 @@
    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 
+   self.applicationState   = UIApplicationStateBackground;
+   
    __CATCH(nErr);
    
    return;
@@ -338,6 +337,8 @@
    
    int                            nErr                                     = EFAULT;
 
+   NSTimeInterval                 dLastTime                                = 0.0f;
+   
 #if GOOGLE_MOBILE_ADS
    UIViewController              *stRootController                         = nil;
 #endif /* GOOGLE_MOBILE_ADS */
@@ -351,6 +352,8 @@
 //
 //   } /* End if () */
 
+   dLastTime   = [SettingProvider activeTime];
+   
 #if GOOGLE_MOBILE_ADS
    stRootController = self.window.rootViewController;
    LogDebug((@"-[APPDelegate applicationDidBecomeActive:] : RootController : %@", stRootController));
@@ -362,10 +365,17 @@
    } /* End if () */
    else {
       
-      [AppOpenAdManager showAdIfAvailable:stRootController];
+      if ((UIApplicationStateBackground == self.applicationState) && (0 != dLastTime) && ([NSDate date].timeIntervalSince1970 - dLastTime > 5 * 60)) {
+         
+         [AppOpenAdManager showAdIfAvailable:stRootController];
 
+      } /* End if () */
+      
    } /* End else */
 #endif /* GOOGLE_MOBILE_ADS */
+
+   [SettingProvider setActiveTime:[NSDate date].timeIntervalSince1970];
+   self.applicationState   = UIApplicationStateActive;
 
    __CATCH(nErr);
    
@@ -536,42 +546,42 @@
 }
 
 #if GOOGLE_MOBILE_ADS
-//- (void)showAD {
-//
-//   int                            nErr                                     = EFAULT;
-//
-//   __TRY;
-//
-//   [AppOpenAdManager showAdIfAvailable:self.window.rootViewController];
-//   LogDebug((@"-[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
-//
-//   DISPATCH_AFTER_ON_MAIN_QUEUE(5, ^{
-//
-//      LogDebug((@"-[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
-//
-//      if ([AppOpenAdManager isShowingAd]) {
-//
-//         // 有广告展示
-//         DISPATCH_AFTER_ON_MAIN_QUEUE(5, ^{
-//
-//            [self splashing];
-//         });
-//
-//      } /* End if () */
-//      else {
-//
-//         // 无广告展示
-//         [self splashing];
-//
-//      } /* End else */
-//
-//      return;
-//   });
-//
-//   __CATCH(nErr);
-//
-//   return;
-//}
+- (void)showAD {
+
+   int                            nErr                                     = EFAULT;
+
+   __TRY;
+
+   [AppOpenAdManager showAdIfAvailable:self.window.rootViewController];
+   LogDebug((@"-[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
+
+   DISPATCH_AFTER_ON_MAIN_QUEUE(5, ^{
+
+      LogDebug((@"-[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
+
+      if ([AppOpenAdManager isShowingAd]) {
+
+         // 有广告展示
+         DISPATCH_AFTER_ON_MAIN_QUEUE(5, ^{
+
+            [self splashing];
+         });
+
+      } /* End if () */
+      else {
+
+         // 无广告展示
+         [self splashing];
+
+      } /* End else */
+
+      return;
+   });
+
+   __CATCH(nErr);
+
+   return;
+}
 
 #pragma mark - AppOpenAdManagerDelegate
 - (void)adDidComplete {

@@ -40,6 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isICMPEnable;
 + (void)setICMPEnable:(BOOL)aICMPEnable;
 
++ (NSTimeInterval)activeTime;
++ (void)setActiveTime:(NSTimeInterval)aActiveTime;
+
 /**
  * 用户自定义 xmlApiKey
  */

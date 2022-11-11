@@ -6,6 +6,9 @@
 //  Copyright © 2021 Harry. All rights reserved.
 //
 
+#import <ADs/AD.h>
+#import <ADs/AppOpenAdManager.h>
+
 #import "APPDelegate.h"
 
 #import "RootViewController.h"
@@ -23,10 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)                RootViewController                  * rootViewController;
 @property (nonatomic, strong, nullable)      SplashViewController                * splashViewController;
 
-#if GOOGLE_MOBILE_ADS
-@property (nonatomic, strong)                GADAppOpenAd                        * appOpenAd;
-@property (nonatomic, weak)                  NSDate                              * loadTime;
-#endif /* GOOGLE_MOBILE_ADS */
+@property (nonatomic, assign)                UIApplicationState                    applicationState;
 
 @end
 

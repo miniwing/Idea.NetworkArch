@@ -446,6 +446,18 @@ typedef FBLPromise Promise;
 
 /****************************************************************************/
 
+#if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
+#  import <GoogleMobileAds/GoogleMobileAds.h>
+#  define GOOGLE_MOBILE_ADS                                          (1)
+#elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
+#  import "GoogleMobileAds/GoogleMobileAds.h"
+#  define GOOGLE_MOBILE_ADS                                          (1)
+#else
+#  define GOOGLE_MOBILE_ADS                                          (0)
+#endif
+
+/****************************************************************************/
+
 #import <IDEAColor/IDEAColor.h>
 #import <IDEAColor/UIColorX+System.h>
 #import <IDEAColor/UIColorX+Dynamic.h>

@@ -191,6 +191,8 @@ static const NSInteger TimeoutInterval = 4;
    
    int                            nErr                                     = EFAULT;
    
+   LogDebug((@"-[AppOpenAdManager showAdIfAvailable:] : ViewController : %@", aViewController));
+
    __TRY;
 
    // If the app open ad is already showing, do not show the ad again.
