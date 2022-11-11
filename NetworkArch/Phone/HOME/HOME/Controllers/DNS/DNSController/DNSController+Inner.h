@@ -8,6 +8,9 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
+#import <ADs/AD.h>
+#import <ADs/AppOpenAdManager.h>
+
 #import "DNSController.h"
 
 #import "DNSContentController+Inner.h"
@@ -40,6 +43,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       MDCActivityIndicator                * activityIndicator;
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * contentView;
+
+@end
+
+@interface DNSController ()
+
+@property (nonatomic, weak)   IBOutlet       UIView                              * bannerView;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewWidth;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewHeight;
+@property (nonatomic, weak)   IBOutlet       GADBannerView                       * gadBannerView;
 
 @end
 

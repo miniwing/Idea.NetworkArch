@@ -21,6 +21,8 @@
 #import "WhoisController+Theme.h"
 #import "WhoisController+Debug.h"
 
+#import "WhoisController+AD.h"
+
 @implementation WhoisController (Signal)
 
 #if __Debug__
@@ -29,6 +31,8 @@
 
 @def_signal(start);
 @def_signal(done);
+
+@def_signal(loadAD);
 
 @end
 
@@ -275,6 +279,21 @@ handleSignal(WhoisController, doneSignal) {
    
    __CATCH(nErr);
    
+   return;
+}
+
+handleSignal(WhoisController, loadADSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[WhoisController loadADSignal:] : Signal : %@", aSignal));
+
+   [self loadAd];
+   
+   __CATCH(nErr);
+
    return;
 }
 

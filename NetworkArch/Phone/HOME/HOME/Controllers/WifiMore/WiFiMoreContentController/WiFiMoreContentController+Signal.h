@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @signal(loadExternalIPv4);
 
+@signal(loadAD);
+
 @end
 
 NS_ASSUME_NONNULL_END

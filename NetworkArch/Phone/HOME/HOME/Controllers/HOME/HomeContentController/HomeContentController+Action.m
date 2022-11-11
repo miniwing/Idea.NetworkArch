@@ -12,6 +12,8 @@
 #import "HomeContentController+Theme.h"
 #import "HomeContentController+Debug.h"
 
+#import "HomeContentController+AD.h"
+
 #pragma mark - IBAction
 @implementation HomeContentController (Action)
 

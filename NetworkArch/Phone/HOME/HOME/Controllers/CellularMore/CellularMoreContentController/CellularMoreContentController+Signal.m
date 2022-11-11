@@ -16,11 +16,15 @@
 #import "CellularMoreContentController+Theme.h"
 #import "CellularMoreContentController+Debug.h"
 
+#import "CellularMoreContentController+AD.h"
+
 @implementation CellularMoreContentController (Signal)
 
 #if __Debug__
 @def_signal(self);
 #endif /* __Debug__ */
+
+@def_signal(loadAD);
 
 @end
 
@@ -41,5 +45,20 @@ handleSignal(CellularMoreContentController, selfSignal) {
    return;
 }
 #endif /* __Debug__ */
+
+handleSignal(CellularMoreContentController, loadADSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[CellularMoreContentController loadADSignal:] : Signal : %@", aSignal));
+
+   [self loadAd];
+   
+   __CATCH(nErr);
+
+   return;
+}
 
 @end

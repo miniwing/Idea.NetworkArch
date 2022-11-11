@@ -19,6 +19,8 @@
 #import "CellularMoreContentController+Theme.h"
 #import "CellularMoreContentController+Debug.h"
 
+#import "CellularMoreContentController+AD.h"
+
 #import "DataUsage.h"
 
 @implementation CellularMoreContentController
@@ -57,6 +59,11 @@
    
    int                            nErr                                     = EFAULT;
    
+#if GOOGLE_MOBILE_ADS
+   NSDictionary                  *stAdUnitIDs                              = nil;
+   NSString                      *szAdUnitID                               = nil;
+#endif /* GOOGLE_MOBILE_ADS */
+
    __TRY;
    
    [super viewDidLoad];
@@ -154,9 +161,45 @@
    [self.warningImageView setImage:[ImageProvider imageNamed:@"UIAccessoryButtonInfo"]];
 
    /**
-    添加网络状态监听
+    * 广告
     */
+#if GOOGLE_MOBILE_ADS
+   stAdUnitIDs = [AD admobs];
+   LogDebug((@"-[CellularMoreContentController viewDidLoad] : AdUnitIDs : %@", stAdUnitIDs));
+   
+   szAdUnitID  = [stAdUnitIDs objectForKey:@"CELLULAR-BANNER"];
+   
+#if __Debug__
+   [self.bannerView setBackgroundColor:UIColorX.systemYellowColor];
+#else /* __Debug__ */
+   [self.bannerView setBackgroundColor:UIColor.clearColor];
+#endif /* !__Debug__ */
+   [self.gadBannerView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
+   [self.gadBannerView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemGroupedBackground]];
+         
+      } /* End if () */
+      
+      return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
+   }];
+   
+   [self.bannerViewWidth setConstant:self.tableView.width];
+
+   [self.gadBannerView setAdUnitID:szAdUnitID];
+   [self.gadBannerView setAdSize:GADAdSizeBanner];
+   [self.gadBannerView setAutoloadEnabled:YES];
+
+   [self.gadBannerView setRootViewController:self];
+   [self.gadBannerView setDelegate:self];
+   [self.gadBannerView setAdSizeDelegate:self];
+   
+   [self postSignal:CellularMoreContentController.loadADSignal
+            onQueue:DISPATCH_GET_MAIN_QUEUE()];
+#endif /* GOOGLE_MOBILE_ADS */
+
    __CATCH(nErr);
    
    return;

@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @signal(start);
 
+@signal(loadAD);
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -99,7 +99,8 @@
 
                      [self popUp:aViewController animated:YES completion:^{
 
-                        [SettingProvider setPrivacy:!__Debug__];
+//                        [SettingProvider setPrivacy:!__Debug__];
+                        [SettingProvider setPrivacy:YES];
 
                         return;
                      }];
@@ -384,8 +385,9 @@
             
             [self popUp:aViewController animated:[aAnimated boolValue] completion:^{
                
-               [SettingProvider setIntroduction:!__Debug__];
-               
+//               [SettingProvider setIntroduction:!__Debug__];
+               [SettingProvider setIntroduction:YES];
+
                return;
             }];
          } /* End if () */

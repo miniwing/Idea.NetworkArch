@@ -139,9 +139,10 @@ static const NSInteger TimeoutInterval = 4;
    
    szAdUnitID  = [stAdUnitIDs objectForKey:@"SPLASH"];
 
-#if TARGET_OS_SIMULATOR
-   szAdUnitID  = @"ca-app-pub-3940256099942544/5662855259";
-#endif /* TARGET_OS_SIMULATOR */
+//#if __Debug__
+//   szAdUnitID  = @"ca-app-pub-3940256099942544/5662855259";
+//#endif /* __Debug__ */
+   
    LogDebug((@"-[AppOpenAdManager loadAd] : AdUnitID : %@", szAdUnitID));
 
    self.isLoadingAd  = YES;

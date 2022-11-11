@@ -8,17 +8,23 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import <IDEAUIVendor/IDEAUIVendor.h>
-
-#import "WiFiMoreContentController.h"
+#import <ADs/AD.h>
+#import <ADs/AppOpenAdManager.h>
 
 #import <IDEAKit/UIDevice+Network.h>
 
 #import <APPDriver/DataUsage.h>
 
+#import "WiFiMoreContentController.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WiFiMoreContentController ()
+
+@property (nonatomic, weak)   IBOutlet       UIView                              * bannerView;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewWidth;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewHeight;
+@property (nonatomic, weak)   IBOutlet       GADBannerView                       * gadBannerView;
 
 @property (nonatomic, strong) IBOutletCollection(WifiMoreCell)    NSArray<WifiMoreCell *>    * detailCells;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * detailCellContainerViews;

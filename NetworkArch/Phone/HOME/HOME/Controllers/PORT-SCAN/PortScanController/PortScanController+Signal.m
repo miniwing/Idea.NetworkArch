@@ -18,6 +18,8 @@
 #import "PortScanController+Theme.h"
 #import "PortScanController+Debug.h"
 
+#import "PortScanController+AD.h"
+
 @implementation PortScanController (Signal)
 
 #if __Debug__
@@ -26,6 +28,8 @@
 
 @def_signal(startScan);
 @def_signal(stopScan);
+
+@def_signal(loadAD);
 
 @end
 
@@ -170,6 +174,21 @@ handleSignal(PortScanController, stopScanSignal) {
    
    __CATCH(nErr);
    
+   return;
+}
+
+handleSignal(PortScanController, loadADSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[PortScanController loadADSignal:] : Signal : %@", aSignal));
+
+   [self loadAd];
+   
+   __CATCH(nErr);
+
    return;
 }
 

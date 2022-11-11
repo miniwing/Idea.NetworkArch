@@ -16,6 +16,8 @@
 #import "WoLANContentController+Theme.h"
 #import "WoLANContentController+Debug.h"
 
+#import "WoLANContentController+AD.h"
+
 @implementation WoLANContentController (Signal)
 
 #if __Debug__
@@ -23,6 +25,8 @@
 #endif /* __Debug__ */
 
 @def_signal(start);
+
+@def_signal(loadAD);
 
 @end
 
@@ -99,6 +103,21 @@ handleSignal(WoLANContentController, doneSignal) {
       
    __CATCH(nErr);
    
+   return;
+}
+
+handleSignal(WoLANContentController, loadADSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[WoLANContentController loadADSignal:] : Signal : %@", aSignal));
+
+   [self loadAd];
+   
+   __CATCH(nErr);
+
    return;
 }
 

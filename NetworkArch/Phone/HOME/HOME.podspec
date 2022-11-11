@@ -216,6 +216,9 @@ Pod::Spec.new do |spec|
 #  import <AVFoundation/AVFoundation.h>
 #  import <CoreTelephony/CTCarrier.h>
 #  import <CoreTelephony/CTTelephonyNetworkInfo.h>
+
+#  import <AppTrackingTransparency/AppTrackingTransparency.h>
+#  import <AdSupport/AdSupport.h>
 #else /* __OBJC__ */
 #endif /* !__OBJC__ */
 
@@ -898,6 +901,16 @@ NS_INLINE NSString * __APP_BUILD_VERSION() {
 }
 
 /******************************************************************************************************/
+
+#if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
+#  import <GoogleMobileAds/GoogleMobileAds.h>
+#  define GOOGLE_MOBILE_ADS                                          (1)
+#elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
+#  import "GoogleMobileAds/GoogleMobileAds.h"
+#  define GOOGLE_MOBILE_ADS                                          (1)
+#else
+#  define GOOGLE_MOBILE_ADS                                          (0)
+#endif
 
 #import <ImageProvider/ImageProvider.h>
 #import <SettingProvider/SettingProvider.h>

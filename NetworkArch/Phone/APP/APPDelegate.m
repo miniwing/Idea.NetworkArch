@@ -171,7 +171,7 @@
 #if GOOGLE_MOBILE_ADS
    [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
    
-#if __Debug__
+#if ADMOB_TEST_DEVICE
    NSMutableArray   *stTestDevices = [NSMutableArray array];
    
 #  if TARGET_OS_SIMULATOR
@@ -188,7 +188,7 @@
    [stTestDevices addObject:@"bc7bde38feef1e59c9d73072448d9126"]; // Harry's iPhone 6s+
 
    [GADMobileAds sharedInstance].requestConfiguration.testDeviceIdentifiers = stTestDevices;
-#endif /* __Debug__ */
+#endif /* ADMOB_TEST_DEVICE */
 
    [AppOpenAdManager setDelegate:self];
    [AppOpenAdManager loadAd];

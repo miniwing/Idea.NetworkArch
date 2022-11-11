@@ -160,20 +160,7 @@
          
          return;
       }];
-      
-   #if __Debug__
-      DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
-
-         [stWoLANCell.macTextField setText:@"FF:FF:FE:EE:EE:EE"];
-         [stWoLANCell.broadcastTextField setText:@"255.255.255.0"];
-         [stWoLANCell.portTextField setText:@"19"];
-         
-         [stWoLANCell.macTextField becomeFirstResponder];
-         
-         return;
-      });
-   #endif /* __Debug__ */
-      
+            
       stTableViewCell   = stWoLANCell;
 
    } /* End if () */

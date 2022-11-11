@@ -8,13 +8,19 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import <IDEAUIVendor/IDEAUIVendor.h>
+#import <ADs/AD.h>
+#import <ADs/AppOpenAdManager.h>
 
 #import "CellularMoreContentController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CellularMoreContentController ()
+
+@property (nonatomic, weak)   IBOutlet       UIView                              * bannerView;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewWidth;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewHeight;
+@property (nonatomic, weak)   IBOutlet       GADBannerView                       * gadBannerView;
 
 @end
 

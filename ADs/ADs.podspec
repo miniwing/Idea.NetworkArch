@@ -536,6 +536,16 @@ __END_DECLS
 
 /******************************************************************************************************/
 
+#if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
+#  import <GoogleMobileAds/GoogleMobileAds.h>
+#  define GOOGLE_MOBILE_ADS                                          (1)
+#elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
+#  import "GoogleMobileAds/GoogleMobileAds.h"
+#  define GOOGLE_MOBILE_ADS                                          (1)
+#else
+#  define GOOGLE_MOBILE_ADS                                          (0)
+#endif
+
 #import <IDEAKit/IDEAKit.h>
 
 /******************************************************************************************************/

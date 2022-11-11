@@ -16,6 +16,8 @@
 #import "HomeContentController+Theme.h"
 #import "HomeContentController+Debug.h"
 
+#import "HomeContentController+AD.h"
+
 @implementation HomeContentController (Signal)
 
 #if __Debug__
@@ -24,6 +26,8 @@
 
 @def_signal(loadWifiInfo);
 @def_signal(loadCellularInfo);
+
+@def_signal(loadAD);
 
 @end
 
@@ -271,6 +275,21 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
    
    __CATCH(nErr);
    
+   return;
+}
+
+handleSignal(HomeContentController, loadADSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[HomeContentController loadADSignal:] : Signal : %@", aSignal));
+
+   [self loadAd];
+   
+   __CATCH(nErr);
+
    return;
 }
 

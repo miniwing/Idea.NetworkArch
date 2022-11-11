@@ -16,6 +16,8 @@
 #import "CellularMoreContentController+Theme.h"
 #import "CellularMoreContentController+Debug.h"
 
+#import "CellularMoreContentController+AD.h"
+
 @implementation CellularMoreContentController (Notification)
 
 #if __Debug__

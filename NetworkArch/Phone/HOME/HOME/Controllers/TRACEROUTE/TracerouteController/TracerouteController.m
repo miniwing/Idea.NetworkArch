@@ -46,22 +46,7 @@
    self  = [super initWithCoder:aCoder];
    
    if (self) {
-      
-#if MATERIAL_APP_BAR
-      _appBar  = [[MDCAppBar alloc] init];
-      
-      [_appBar.headerViewController.headerView setShadowColor:[IDEAColor colorWithKey:[IDEAColor systemBackground]]];
-      [_appBar.headerViewController.headerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-      
-//      [_appBar.headerViewController setShowsHairline:YES];
-//      [_appBar.headerViewController setHairlineColor:[IDEAColor colorWithKey:[IDEAColor separator]]];
-
-      [_appBar.headerViewController setShowsHairline:NO];
-      [_appBar.headerViewController setHairlineColor:UIColor.clearColor];
-
-      [self addChildViewController:_appBar.headerViewController];
-#endif /* MATERIAL_APP_BAR */
-      
+            
    } /* End if () */
    
    __CATCH(nErr);
@@ -72,7 +57,12 @@
 - (void)viewDidLoad {
    
    int                            nErr                                     = EFAULT;
-      
+
+#if GOOGLE_MOBILE_ADS
+   NSDictionary                  *stAdUnitIDs                              = nil;
+   NSString                      *szAdUnitID                               = nil;
+#endif /* GOOGLE_MOBILE_ADS */
+
    __TRY;
    
    [super viewDidLoad];
@@ -254,6 +244,48 @@
    [self.textView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
    [self.textView setText:nil];
    [self.textView setEditable:NO];
+
+   /**
+    * 广告
+    */
+#if GOOGLE_MOBILE_ADS
+   stAdUnitIDs = [AD admobs];
+   LogDebug((@"-[TracerouteController viewDidLoad] : AdUnitIDs : %@", stAdUnitIDs));
+   
+   szAdUnitID  = [stAdUnitIDs objectForKey:@"CELLULAR-BANNER"];
+   
+#if __Debug__
+   [self.bannerView setBackgroundColor:UIColorX.systemYellowColor];
+#else /* __Debug__ */
+   [self.bannerView setBackgroundColor:UIColor.clearColor];
+#endif /* !__Debug__ */
+   [self.gadBannerView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
+   [self.gadBannerView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemGroupedBackground]];
+         
+      } /* End if () */
+      
+      return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
+   }];
+   
+   [self.bannerView setHidden:YES animated:NO];
+   [self.bannerViewWidth setConstant:self.view.width];
+   [self.bannerViewHeight setConstant:0];
+
+   [self.gadBannerView setAdUnitID:szAdUnitID];
+   [self.gadBannerView setAdSize:GADAdSizeBanner];
+   [self.gadBannerView setAutoloadEnabled:YES];
+
+   [self.gadBannerView setRootViewController:self];
+   [self.gadBannerView setDelegate:self];
+   [self.gadBannerView setAdSizeDelegate:self];
+   
+   [self postSignal:TracerouteController.loadADSignal
+            onQueue:DISPATCH_GET_MAIN_QUEUE()];
+#endif /* GOOGLE_MOBILE_ADS */
 
 #if __Debug__
    DISPATCH_ASYNC_ON_MAIN_QUEUE(^{

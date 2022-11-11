@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @signal(startScan);
 @signal(stopScan);
 
+@signal(loadAD);
+
 @end
 
 NS_ASSUME_NONNULL_END

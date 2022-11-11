@@ -16,6 +16,8 @@
 #import "HomeContentController+Theme.h"
 #import "HomeContentController+Debug.h"
 
+#import "HomeContentController+AD.h"
+
 #if __Debug__
 @implementation HomeContentController (Debug)
 

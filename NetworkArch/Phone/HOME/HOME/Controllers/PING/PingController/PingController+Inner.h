@@ -8,7 +8,8 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import <IDEAUIVendor/IDEAUIVendor.h>
+#import <ADs/AD.h>
+#import <ADs/AppOpenAdManager.h>
 
 #import <IDEAPing/IDEAPing.h>
 
@@ -50,6 +51,15 @@ IDEA_ENUM(NSInteger, PingSection) {
 @property (nonatomic, weak)   IBOutlet       UITextFieldX                        * textField;
 
 @property (nonatomic, weak)   IBOutlet       UITableView                         * tableView;
+
+@end
+
+@interface PingController ()
+
+@property (nonatomic, weak)   IBOutlet       UIView                              * bannerView;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewWidth;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewHeight;
+@property (nonatomic, weak)   IBOutlet       GADBannerView                       * gadBannerView;
 
 @end
 

@@ -8,6 +8,9 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
+#import <ADs/AD.h>
+#import <ADs/AppOpenAdManager.h>
+
 #import <IDEAKit/UIDevice+Network.h>
 #import <IDEARouter/IDEARouter.h>
 
@@ -16,6 +19,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeContentController ()
+
+@property (nonatomic, weak)   IBOutlet       UIView                              * bannerView;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewWidth;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewHeight;
+@property (nonatomic, weak)   IBOutlet       GADBannerView                       * gadBannerView;
 
 @property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * wifiCells;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * wifiCellContainerViews;

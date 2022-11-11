@@ -770,6 +770,10 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="bannerView" destination="Qrl-7L-zM5" id="rqU-Wj-b24"/>
+                        <outlet property="bannerViewHeight" destination="d7q-bR-nf3" id="s9e-n4-Vtw"/>
+                        <outlet property="bannerViewWidth" destination="8H0-DH-Mog" id="ufR-dU-VyV"/>
+                        <outlet property="gadBannerView" destination="hCV-yP-wc5" id="HiD-2C-Obg"/>
                         <outlet property="warningImageView" destination="SEn-3L-ToT" id="YLS-AR-mFa"/>
                         <outletCollection property="detailCells" destination="i7S-Qs-ek3" id="xVs-8F-Oz4"/>
                         <outletCollection property="detailCells" destination="MuQ-xt-V8S" id="ACr-yf-NbN"/>
@@ -807,6 +811,26 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFL-vQ-W6j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrl-7L-zM5" userLabel="广告">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCV-yP-wc5" customClass="GADBannerView">
+                            <rect key="frame" x="16" y="5" width="343" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="oCh-vb-i6F"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="375" id="8H0-DH-Mog"/>
+                        <constraint firstItem="hCV-yP-wc5" firstAttribute="top" secondItem="Qrl-7L-zM5" secondAttribute="top" constant="5" id="FIf-RW-2r5"/>
+                        <constraint firstItem="hCV-yP-wc5" firstAttribute="leading" secondItem="Qrl-7L-zM5" secondAttribute="leading" constant="16" id="bXY-MO-ixj"/>
+                        <constraint firstAttribute="height" constant="60" id="d7q-bR-nf3"/>
+                        <constraint firstAttribute="trailing" secondItem="hCV-yP-wc5" secondAttribute="trailing" constant="16" id="yAE-yH-bGy"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="1989.5999999999999" y="113.79310344827587"/>
         </scene>

@@ -8,6 +8,7 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
+#import <ADs/AD.h>
 #import <ADs/AppOpenAdManager.h>
 
 #import "HomeController.h"
@@ -23,10 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) IBOutlet       UIButton                            * rightBarButton;
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * contentView;
-
-@property (nonatomic, weak)   IBOutlet       UIView                              * bannerView;
-@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewHeight;
-@property (nonatomic, weak)   IBOutlet       GADBannerView                       * gadBannerView;
 
 @end
 

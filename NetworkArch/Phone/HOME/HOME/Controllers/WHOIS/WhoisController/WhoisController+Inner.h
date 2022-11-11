@@ -8,7 +8,8 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
-#import <IDEAUIVendor/IDEAUIVendor.h>
+#import <ADs/AD.h>
+#import <ADs/AppOpenAdManager.h>
 
 #import "WhoisController.h"
 
@@ -38,6 +39,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UITextView                          * textView;
 
 @property (nonatomic, weak)   IBOutlet       MDCActivityIndicator                * activityIndicator;
+
+@end
+
+@interface WhoisController ()
+
+@property (nonatomic, weak)   IBOutlet       UIView                              * bannerView;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewWidth;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewHeight;
+@property (nonatomic, weak)   IBOutlet       GADBannerView                       * gadBannerView;
 
 @end
 

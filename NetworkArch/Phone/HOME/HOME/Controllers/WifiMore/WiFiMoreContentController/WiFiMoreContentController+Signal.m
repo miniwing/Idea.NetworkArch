@@ -10,7 +10,13 @@
 //
 
 #import "WiFiMoreContentController+Inner.h"
+#import "WiFiMoreContentController+Action.h"
 #import "WiFiMoreContentController+Signal.h"
+#import "WiFiMoreContentController+Notification.h"
+#import "WiFiMoreContentController+Theme.h"
+#import "WiFiMoreContentController+Debug.h"
+
+#import "WiFiMoreContentController+AD.h"
 
 @implementation WiFiMoreContentController (Signal)
 
@@ -19,6 +25,8 @@
 #endif /* __Debug__ */
 
 @def_signal(loadExternalIPv4);
+
+@def_signal(loadAD);
 
 @end
 
@@ -63,6 +71,21 @@ handleSignal(WiFiMoreContentController, loadExternalIPv4Signal) {
       
    __CATCH(nErr);
    
+   return;
+}
+
+handleSignal(WiFiMoreContentController, loadADSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[WiFiMoreContentController loadADSignal:] : Signal : %@", aSignal));
+
+   [self loadAd];
+   
+   __CATCH(nErr);
+
    return;
 }
 

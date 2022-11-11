@@ -12,6 +12,8 @@
 #import "CellularMoreContentController+Theme.h"
 #import "CellularMoreContentController+Debug.h"
 
+#import "CellularMoreContentController+AD.h"
+
 #pragma mark - IBAction
 @implementation CellularMoreContentController (Action)
 

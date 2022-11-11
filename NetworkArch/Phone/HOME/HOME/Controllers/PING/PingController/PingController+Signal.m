@@ -16,6 +16,8 @@
 #import "PingController+Theme.h"
 #import "PingController+Debug.h"
 
+#import "PingController+AD.h"
+
 @implementation PingController (Signal)
 
 #if __Debug__
@@ -23,6 +25,8 @@
 #endif /* __Debug__ */
 
 @def_signal(startPing);
+
+@def_signal(loadAD);
 
 @end
 
@@ -230,6 +234,21 @@ handleSignal(PingController, startPingSignal) {
    
    __CATCH(nErr);
    
+   return;
+}
+
+handleSignal(PingController, loadADSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[PingController loadADSignal:] : Signal : %@", aSignal));
+
+   [self loadAd];
+   
+   __CATCH(nErr);
+
    return;
 }
 

@@ -16,6 +16,8 @@
 #import "LanScanController+Theme.h"
 #import "LanScanController+Debug.h"
 
+#import "LanScanController+AD.h"
+
 @implementation LanScanController (Signal)
 
 #if __Debug__
@@ -24,6 +26,8 @@
 
 @def_signal(startScan);
 @def_signal(stopScan);
+
+@def_signal(loadAD);
 
 @end
 
@@ -90,6 +94,21 @@ handleSignal(LanScanController, stopScanSignal) {
    
    __CATCH(nErr);
    
+   return;
+}
+
+handleSignal(LanScanController, loadADSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[LanScanController loadADSignal:] : Signal : %@", aSignal));
+
+   [self loadAd];
+   
+   __CATCH(nErr);
+
    return;
 }
 

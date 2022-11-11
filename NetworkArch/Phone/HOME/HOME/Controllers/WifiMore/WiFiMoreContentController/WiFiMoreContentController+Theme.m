@@ -9,7 +9,14 @@
 //  TEL : +(852)53054612
 //
 
+#import "WiFiMoreContentController+Inner.h"
+#import "WiFiMoreContentController+Action.h"
+#import "WiFiMoreContentController+Signal.h"
+#import "WiFiMoreContentController+Notification.h"
 #import "WiFiMoreContentController+Theme.h"
+#import "WiFiMoreContentController+Debug.h"
+
+#import "WiFiMoreContentController+AD.h"
 
 #pragma mark - UITheme
 @implementation WiFiMoreContentController (Theme)

@@ -16,6 +16,8 @@
 #import "TracerouteController+Theme.h"
 #import "TracerouteController+Debug.h"
 
+#import "TracerouteController+AD.h"
+
 @implementation TracerouteController (Signal)
 
 #if __Debug__
@@ -24,6 +26,8 @@
 
 @def_signal(startScan);
 @def_signal(stopScan);
+
+@def_signal(loadAD);
 
 @end
 
@@ -151,6 +155,21 @@ handleSignal(TracerouteController, stopScanSignal) {
 
    __CATCH(nErr);
    
+   return;
+}
+
+handleSignal(TracerouteController, loadADSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[TracerouteController loadADSignal:] : Signal : %@", aSignal));
+
+   [self loadAd];
+   
+   __CATCH(nErr);
+
    return;
 }
 

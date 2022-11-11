@@ -16,11 +16,15 @@
 #import "DNSController+Theme.h"
 #import "DNSController+Debug.h"
 
+#import "DNSController+AD.h"
+
 @implementation DNSController (Signal)
 
 #if __Debug__
 @def_signal(self);
 #endif /* __Debug__ */
+
+@def_signal(loadAD);
 
 @end
 
@@ -56,6 +60,21 @@ handleSignal(DNSController, keyEmptySignal) {
    
    [self.textField becomeFirstResponder];
 
+   __CATCH(nErr);
+
+   return;
+}
+
+handleSignal(DNSController, loadADSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[DNSController loadADSignal:] : Signal : %@", aSignal));
+
+   [self loadAd];
+   
    __CATCH(nErr);
 
    return;

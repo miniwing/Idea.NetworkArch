@@ -14,17 +14,28 @@
 //  limitations under the License.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 #if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
 #  import <GoogleMobileAds/GoogleMobileAds.h>
-#  define GOOGLE_MOBILE_ADS                                          (1)
+#  ifndef GOOGLE_MOBILE_ADS
+#     define GOOGLE_MOBILE_ADS                                       (1)
+#  endif /* GOOGLE_MOBILE_ADS */
 #elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
 #  import "GoogleMobileAds/GoogleMobileAds.h"
-#  define GOOGLE_MOBILE_ADS                                          (1)
+#  ifndef GOOGLE_MOBILE_ADS
+#     define GOOGLE_MOBILE_ADS                                       (1)
+#  endif /* GOOGLE_MOBILE_ADS */
 #else
-#  define GOOGLE_MOBILE_ADS                                          (0)
+#  ifndef GOOGLE_MOBILE_ADS
+#     define GOOGLE_MOBILE_ADS                                       (0)
+#  endif /* GOOGLE_MOBILE_ADS */
 #endif
+
+#define ADMOB_TEST_DEVICE                                            (__Debug__)
+
+#import <ADs/AD.h>
 
 #if GOOGLE_MOBILE_ADS
 
