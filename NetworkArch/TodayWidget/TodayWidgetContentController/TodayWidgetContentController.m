@@ -527,7 +527,7 @@
          [self.extensionContext openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [IDEAIdentifier scheme], @"Wi-Fi"]]
                       completionHandler:^(BOOL aSuccess) {
             
-            LogDebug((@"[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : openURL"));
+            LogDebug((@"-[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : openURL"));
          }];
          
       } /* End if () */
@@ -542,7 +542,7 @@
          [self.extensionContext openURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@%@", [IDEAIdentifier scheme], @"Wi-Fi"]]
                       completionHandler:^(BOOL aSuccess) {
             
-            LogDebug((@"[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : openURL"));
+            LogDebug((@"-[TodayWidgetContentController tableView:didSelectRowAtIndexPath:] : openURL"));
          }];
          
       } /* End if () */

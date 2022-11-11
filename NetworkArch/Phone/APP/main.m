@@ -14,7 +14,7 @@ int main(int argc, char * argv[]) {
    [UncaughtExceptionHandler installUncaughtExceptionHandler:YES showAlert:YES];
    
    @autoreleasepool {
-      return UIApplicationMain(argc, argv, nil, NSStringFromClass([APPDelegate class]));
+      return UIApplicationMain(argc, argv, nil, NSStringFromClass(APPDelegate.class));
    }
 }
 

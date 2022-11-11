@@ -175,18 +175,17 @@
    NSMutableArray   *stTestDevices = [NSMutableArray array];
    
 #  if TARGET_OS_SIMULATOR
-   [stTestDevices addObject:kGADSimulatorID];
+   [stTestDevices addObject:GADSimulatorID];
 #  endif /* TARGET_OS_SIMULATOR */
 
 //   [stTestDevices addObject:@"d843fe76c85abf1f5ca02c98904f81bf"]; // Harry's iPhone 5s
 //   [stTestDevices addObject:@"09b9c6760653656e703bd450c3385513"]; // ROM's iPhone 5s
 
-   [stTestDevices addObject:UIDevice.currentDevice.identifierForVendor.UUIDString];
-
+   [stTestDevices addObject:[UIDevice currentDevice].identifierForVendor.UUIDString];
    [stTestDevices addObject:[ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString]; // TEST Device
-   [stTestDevices addObject:UIDevice.currentDevice.identifierForVendor.UUIDString];
 
-   [stTestDevices addObject:@"80fbff4cdaad0a572a0b0e2faa24035a"];
+   [stTestDevices addObject:@"80fbff4cdaad0a572a0b0e2faa24035a"]; // Harry's iPhone 6s
+   [stTestDevices addObject:@"bc7bde38feef1e59c9d73072448d9126"]; // Harry's iPhone 6s+
 
    [GADMobileAds sharedInstance].requestConfiguration.testDeviceIdentifiers = stTestDevices;
 #endif /* __Debug__ */
@@ -358,11 +357,14 @@
 
    // Do not show app open ad if the current view controller is SplashViewController.
 //   if (stRootViewController && [rootViewController isKindOfClass:[SplashViewController class]]) {
-   if (stRootController && ([stRootController isKindOfClass:SplashViewController.class] || [stRootController isKindOfClass:RootViewController.class])) {
-
-      [AppOpenAdManager showAdIfAvailable:stRootController];
+   if (!stRootController || ([stRootController isKindOfClass:SplashViewController.class])) {
 
    } /* End if () */
+   else {
+      
+      [AppOpenAdManager showAdIfAvailable:stRootController];
+
+   } /* End else */
 #endif /* GOOGLE_MOBILE_ADS */
 
    __CATCH(nErr);
@@ -509,7 +511,7 @@
       
    } /* End else */
    
-   LogDebug((@"[APPDelegate loadData] : [UIDevice ipv4:NetworkCellular] : %@", [UIDevice ipv4:NetworkCellular]));
+   LogDebug((@"-[APPDelegate loadData] : [UIDevice ipv4:NetworkCellular] : %@", [UIDevice ipv4:NetworkCellular]));
 
    /******************************************************************************************/
 
@@ -517,54 +519,59 @@
 
    /******************************************************************************************/
 
-#if GOOGLE_MOBILE_ADS
-   UI_PERFORM_SELECTOR(self, @selector(showAD), nil, NO);
-#else /* GOOGLE_MOBILE_ADS */
+//#if GOOGLE_MOBILE_ADS
+//   UI_PERFORM_SELECTOR(self, @selector(showAD), nil, NO);
+//#else /* GOOGLE_MOBILE_ADS */
+//   UI_PERFORM_SELECTOR(self, @selector(splashing), nil, NO);
+//#endif /* !GOOGLE_MOBILE_ADS */
+
+   /**
+    * 冷启动时不显示开屏广告
+    */
    UI_PERFORM_SELECTOR(self, @selector(splashing), nil, NO);
-#endif /* !GOOGLE_MOBILE_ADS */
-   
+
    __CATCH(nErr);
    
    return;
 }
 
 #if GOOGLE_MOBILE_ADS
-- (void)showAD {
-   
-   int                            nErr                                     = EFAULT;
-   
-   __TRY;
-
-   [AppOpenAdManager showAdIfAvailable:self.window.rootViewController];
-   LogDebug((@"[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
-
-   DISPATCH_AFTER_ON_MAIN_QUEUE(3, ^{
-
-      LogDebug((@"[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
-
-      if ([AppOpenAdManager isShowingAd]) {
-
-         // 有广告展示
-         DISPATCH_AFTER_ON_MAIN_QUEUE(5, ^{
-            
-            [self splashing];
-         });
-         
-      } /* End if () */
-      else {
-
-         // 无广告展示
-         [self splashing];
-
-      } /* End else */
-      
-      return;
-   });
-   
-   __CATCH(nErr);
-   
-   return;
-}
+//- (void)showAD {
+//
+//   int                            nErr                                     = EFAULT;
+//
+//   __TRY;
+//
+//   [AppOpenAdManager showAdIfAvailable:self.window.rootViewController];
+//   LogDebug((@"-[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
+//
+//   DISPATCH_AFTER_ON_MAIN_QUEUE(5, ^{
+//
+//      LogDebug((@"-[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
+//
+//      if ([AppOpenAdManager isShowingAd]) {
+//
+//         // 有广告展示
+//         DISPATCH_AFTER_ON_MAIN_QUEUE(5, ^{
+//
+//            [self splashing];
+//         });
+//
+//      } /* End if () */
+//      else {
+//
+//         // 无广告展示
+//         [self splashing];
+//
+//      } /* End else */
+//
+//      return;
+//   });
+//
+//   __CATCH(nErr);
+//
+//   return;
+//}
 
 #pragma mark - AppOpenAdManagerDelegate
 - (void)adDidComplete {

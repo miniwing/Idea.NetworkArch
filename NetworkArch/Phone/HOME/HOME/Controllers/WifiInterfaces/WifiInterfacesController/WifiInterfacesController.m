@@ -126,7 +126,7 @@
    self.tableView.dataSource  = self;
 
    self.interfaces   = [IDEANetUtils allInterfaces];
-   LogDebug((@"[WifiInterfacesController viewDidLoad] : Interfaces : %d", self.interfaces.count));
+   LogDebug((@"-[WifiInterfacesController viewDidLoad] : Interfaces : %d", self.interfaces.count));
    
    [self.tableView reloadData];
 
