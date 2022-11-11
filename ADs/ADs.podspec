@@ -59,7 +59,7 @@ Pod::Spec.new do |spec|
 
   if ENV['GOOGLE_MOBILE_ADS'] == 'YES'
 #    spec.dependency 'Google-Mobile-Ads-SDK'
-    spec.dependency 'Google-Mobile-Ads-SDK'
+    spec.dependency 'Google-Mobile-Ads-SDK',    '9.3.0'
 #    pod 'GoogleMobileAdsMediationFacebook'
   end # GOOGLE_MOBILE_ADS
 
