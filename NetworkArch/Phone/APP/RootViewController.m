@@ -71,8 +71,8 @@
          
          @strongify(self);
          
-         LogDebug((@"-[RootViewController onNotification : %@] : strongify : %@", aNotification.name, self));
-         LogDebug((@"-[RootViewController onNotification : %@] : %@ : %@", aNotification.name, aNotification.name, aNotification.object));
+         LogDebug((@"-[RootViewController initWithCoder : %@] : strongify : %@", aNotification.name, self));
+         LogDebug((@"-[RootViewController initWithCoder : %@] : %@ : %@", aNotification.name, aNotification.name, aNotification.object));
          
          return;
       });
@@ -83,8 +83,8 @@
 
          @strongify(self);
 
-         LogDebug((@"-[RootViewController onNotification:] : strongify : %@", self));
-         LogDebug((@"-[RootViewController onNotification:] : introductionDoneNotification : %@", aNotification.name));
+         LogDebug((@"-[RootViewController initWithCoder:] : strongify : %@", self));
+         LogDebug((@"-[RootViewController initWithCoder:] : introductionDoneNotification : %@", aNotification.name));
 
          if (@available(iOS 14, *)) {
             
@@ -99,7 +99,7 @@
 
                      [self popUp:aViewController animated:YES completion:^{
 
-                        [SettingProvider setPrivacy:!__Debug__];
+//                        [SettingProvider setPrivacy:!__Debug__];
 //                        [SettingProvider setPrivacy:YES];
 
                         return;

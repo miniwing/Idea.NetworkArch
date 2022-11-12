@@ -486,10 +486,10 @@ typedef FBLPromise Promise;
 
 /****************************************************************************/
 
-#if __has_include(<PRIVACY/PrivacyController+Notification.h>)
+#if __has_include(<PRIVACY/PrivacyController.h>)
 #  import <PRIVACY/PrivacyController+Notification.h>
 #  define PRIVACY                                                          (1)
-#elif __has_include("PRIVACY/PrivacyController+Notification.h")
+#elif __has_include("PRIVACY/PrivacyController.h")
 #  import "PRIVACY/PrivacyController+Notification.h"
 #  define PRIVACY                                                          (1)
 #else

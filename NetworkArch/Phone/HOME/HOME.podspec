@@ -119,8 +119,11 @@ Pod::Spec.new do |spec|
   spec.dependency 'INTRODUCTION'
 
   if ENV['GOOGLE_MOBILE_ADS'] == 'YES'
-#    spec.dependency 'Google-Mobile-Ads-SDK'
-    spec.dependency 'Google-Mobile-Ads-SDK',    '9.3.0'
+    if ENV['GOOGLE_MOBILE_ADS_XCODE14'] == 'YES'
+      spec.dependency 'Google-Mobile-Ads-SDK'
+    else
+      spec.dependency 'Google-Mobile-Ads-SDK',    '9.3.0'
+    end
 #    pod 'GoogleMobileAdsMediationFacebook'
   end # GOOGLE_MOBILE_ADS
 
@@ -924,20 +927,20 @@ NS_INLINE NSString * __APP_BUILD_VERSION() {
 
 #if __has_include(<APPDEBUG/APPDEBUG.h>)
 #  import <APPDEBUG/APPDEBUG.h>
-#  define APP_DEBUG                                                     (1)
+#  define APP_DEBUG                                                  (1)
 #elif __has_include("APPDEBUG/APPDEBUG.h")
 #  import "APPDEBUG/APPDEBUG.h"
-#  define APP_DEBUG                                                     (1)
+#  define APP_DEBUG                                                  (1)
 #else
-#  define APP_DEBUG                                                     (0)
+#  define APP_DEBUG                                                  (0)
 #endif
 
 /******************************************************************************************************/
 
-#if __has_include(<PRIVACY/PrivacyController+Notification.h>)
+#if __has_include(<PRIVACY/PrivacyController.h>)
 #  import <PRIVACY/PrivacyController+Notification.h>
 #  define PRIVACY                                                    (1)
-#elif __has_include("PRIVACY/PrivacyController+Notification.h")
+#elif __has_include("PRIVACY/PrivacyController.h")
 #  import "PRIVACY/PrivacyController+Notification.h"
 #  define PRIVACY                                                    (1)
 #else

@@ -24,6 +24,8 @@
    [self dismissViewControllerAnimated:YES
                             completion:^{
       
+      [SettingProvider setPrivacy:!__Debug__];
+      
       [self postNotify:IntroductionController.introductionDoneNotification
                onQueue:DISPATCH_GET_MAIN_QUEUE()];
       

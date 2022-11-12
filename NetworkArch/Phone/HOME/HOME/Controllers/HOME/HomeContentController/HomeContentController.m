@@ -314,23 +314,6 @@
                                                   weight:UIFontWeightLight]];
    
    /**
-    添加网络状态监听
-    */
-//   [[APPDelegate APP] addSignalResponder:self];
-   
-   /**
-    Load Wi-Fi, Cellular
-    */
-//   [self postSignal:HomeContentController.loadWifiInfoSignal onQueue:DISPATCH_GET_MAIN_QUEUE()];
-   
-//   if ([SettingProvider isPrivacy]) {
-//      
-//      [self sendSignal:HomeContentController.loadWifiInfoSignal];
-//      [self sendSignal:HomeContentController.loadCellularInfoSignal];
-//
-//   } /* End if () */
-   
-   /**
     * ADs
     */   
 #if GOOGLE_MOBILE_ADS

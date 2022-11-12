@@ -47,6 +47,7 @@ ENV['OpenSSL']                            = 'NO'
 ENV['SSZipArchive']                       = 'NO'
 
 ENV['GOOGLE_MOBILE_ADS']                  = 'YES'
+ENV['GOOGLE_MOBILE_ADS_XCODE14']          = 'YES'
 
 ENV['ios.deployment_target']              = '12.0'
 ENV['watchos.deployment_target']          = '5.0'
@@ -228,8 +229,11 @@ target 'NetworkArch' do
 #  pod 'GoogleAnalytics'
 #  pod 'Firebase'
   if ENV['GOOGLE_MOBILE_ADS'] == 'YES'
-#    pod 'Google-Mobile-Ads-SDK'
-    pod 'Google-Mobile-Ads-SDK',    '9.3.0'
+    if ENV['GOOGLE_MOBILE_ADS_XCODE14'] == 'YES'
+      pod 'Google-Mobile-Ads-SDK'
+    else
+      pod 'Google-Mobile-Ads-SDK',    '9.3.0'
+    end
 #    pod 'GoogleMobileAdsMediationFacebook'
   end # GOOGLE_MOBILE_ADS
   #-------------------------------------------------------------------------------------------------------------------------------#

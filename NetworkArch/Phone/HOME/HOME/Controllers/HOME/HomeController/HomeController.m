@@ -58,25 +58,37 @@
       @weakify(self);
       self.onNotification(SERVICE(INetworkService).networkStatusNotification, ^(NSNotification *aNotification) {
 
+         @strongify(self);
+
+         LogDebug((@"-[HomeController initWithCoder:] : networkStatusNotification : strongify : %@", self));
          LogDebug((@"-[HomeController initWithCoder:] : networkStatusNotification : %@", aNotification));
 
-         @strongify(self);
-         
+#if PRIVACY
          if ([SettingProvider isPrivacy]) {
             
             [self sendSignal:HomeContentController.loadWifiInfoSignal];
             [self sendSignal:HomeContentController.loadCellularInfoSignal];
 
          } /* End if () */
+#else /* PRIVACY */
+         if ([SettingProvider isIntroduction]) {
+            
+            [self sendSignal:HomeContentController.loadWifiInfoSignal];
+            [self sendSignal:HomeContentController.loadCellularInfoSignal];
+
+         } /* End if () */
+#endif /* !PRIVACY */
 
          return;
       });
 
       self.onNotification(SettingProvider.apiKeySettingNotification, ^(NSNotification *aNotification) {
 
-         LogDebug((@"-[HomeController initWithCoder:] : networkStatusNotification : %@", aNotification));
-
          @strongify(self);
+
+         LogDebug((@"-[HomeController initWithCoder:] : apiKeySettingNotification : strongify : %@", self));
+         LogDebug((@"-[HomeController initWithCoder:] : apiKeySettingNotification : %@", aNotification));
+
          [UIView transitionWithView:self.navigationBarX
                            duration:[UIView animationDefaultDuration]
                             options:UIViewAnimationOptionTransitionCrossDissolve
@@ -101,9 +113,10 @@
 #if PRIVACY
       self.onNotification(PrivacyController.trackingDoneNotification, ^(NSNotification *aNotification) {
 
-         LogDebug((@"-[HomeController initWithCoder:] : trackingDoneNotification : %@", aNotification));
-
          @strongify(self);
+
+         LogDebug((@"-[HomeController initWithCoder:] : trackingDoneNotification : strongify : %@", self));
+         LogDebug((@"-[HomeController initWithCoder:] : trackingDoneNotification : %@", aNotification));
 
          DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
 
@@ -120,9 +133,10 @@
 #else
       self.onNotification(IntroductionController.introductionDoneNotification, ^(NSNotification *aNotification) {
          
-         LogDebug((@"-[HomeController onNotification:] : introductionDoneNotification : %@", aNotification.name));
-
          @strongify(self);
+
+         LogDebug((@"-[HomeController initWithCoder:] : introductionDoneNotification : strongify : %@", self));
+         LogDebug((@"-[HomeController initWithCoder:] : introductionDoneNotification : %@", aNotification.name));
 
          DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
 
@@ -140,9 +154,11 @@
       
       self.onNotification(HomeController.settingNotification, ^(NSNotification *aNotification) {
 
+         @strongify(self);
+
+         LogDebug((@"-[HomeController initWithCoder:] : settingNotification : strongify : %@", self));
          LogDebug((@"-[HomeController initWithCoder:] : settingNotification : %@", aNotification));
 
-         @strongify(self);
          [IDEAUIRouter openURL:@"HOME.SETTING/create"
                     completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
 
@@ -241,11 +257,19 @@
 
    [self.contentView setBackgroundColor:UIColor.clearColor];
 
+#if PRIVACY
    if ([SettingProvider isPrivacy]) {
       
       [self.locationManager requestAlwaysAuthorization];
 
    } /* End if () */
+#else /* PRIVACY */
+   if ([SettingProvider isIntroduction]) {
+      
+      [self.locationManager requestAlwaysAuthorization];
+
+   } /* End if () */
+#endif /* !PRIVACY */
    
    __CATCH(nErr);
    
@@ -308,11 +332,19 @@
    
    [super viewDidAppear:aAnimated];
    
+#if PRIVACY
    if ([SettingProvider isPrivacy]) {
       
       [self.locationManager requestAlwaysAuthorization];
 
    } /* End if () */
+#else /* PRIVACY */
+   if ([SettingProvider isIntroduction]) {
+      
+      [self.locationManager requestAlwaysAuthorization];
+
+   } /* End if () */
+#endif /* !PRIVACY */
    
    __CATCH(nErr);
    
