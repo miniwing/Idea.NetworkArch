@@ -286,7 +286,7 @@
    stAdUnitIDs = [AD admobs];
    LogDebug((@"-[PortScanController viewDidLoad] : AdUnitIDs : %@", stAdUnitIDs));
    
-   szAdUnitID  = [stAdUnitIDs objectForKey:@"CELLULAR-BANNER"];
+   szAdUnitID  = [stAdUnitIDs objectForKey:@"UNIVERSAL-BANNER"];
    
 #if __Debug__
    [self.bannerView setBackgroundColor:UIColorX.systemYellowColor];
