@@ -115,7 +115,8 @@ Pod::Spec.new do |spec|
   spec.dependency 'ADs'
   spec.dependency 'APPDATA'
   spec.dependency 'APPDriver'
-  spec.dependency 'PRIVACY'
+#  spec.dependency 'PRIVACY'
+  spec.dependency 'INTRODUCTION'
 
   if ENV['GOOGLE_MOBILE_ADS'] == 'YES'
 #    spec.dependency 'Google-Mobile-Ads-SDK'
@@ -929,6 +930,18 @@ NS_INLINE NSString * __APP_BUILD_VERSION() {
 #  define APP_DEBUG                                                     (1)
 #else
 #  define APP_DEBUG                                                     (0)
+#endif
+
+/******************************************************************************************************/
+
+#if __has_include(<PRIVACY/PrivacyController+Notification.h>)
+#  import <PRIVACY/PrivacyController+Notification.h>
+#  define PRIVACY                                                    (1)
+#elif __has_include("PRIVACY/PrivacyController+Notification.h")
+#  import "PRIVACY/PrivacyController+Notification.h"
+#  define PRIVACY                                                    (1)
+#else
+#  define PRIVACY                                                    (0)
 #endif
 
 /******************************************************************************************************/

@@ -160,6 +160,13 @@
 
    /******************************************************************************************/
 
+   float  w    = [UIScreen mainScreen].bounds.size.width * [UIScreen mainScreen].scale;
+   float  h    = [UIScreen mainScreen].bounds.size.height * [UIScreen mainScreen].scale;
+
+   float  dpi  = sqrt( w*w + h*h ); // 屏幕对角尺寸
+
+   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : dpi : %.2f", dpi));
+   
 #endif /* __Debug__ */
    
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));

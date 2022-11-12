@@ -17,4 +17,4 @@ NSLocationWhenInUseUsageDescription          = "需要位置权限才能获取 W
 // NSPhotoLibraryAddUsageDescription            = "保存到相机胶卷，并为照片和视频启用其他功能。";
 // NSCameraUsageDescription                     = "拍照和录制视频。";
 //
-NSUserTrackingUsageDescription               = "此标识符将用于向您投放个性化广告。";
+// NSUserTrackingUsageDescription               = "此标识符将用于向您投放个性化广告。";

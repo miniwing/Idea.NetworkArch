@@ -18,9 +18,6 @@
 
 #import "SplashViewController.h"
 
-#import <PRIVACY/PrivacyController+Notification.h>
-#import <INTRODUCTION/IntroductionController+Notification.h>
-
 @implementation RootViewController
 
 - (void)dealloc {
@@ -73,6 +70,7 @@
       self.onNotification(SettingProvider.tabAnimationNotification, ^(NSNotification *aNotification) {
          
          @strongify(self);
+         
          LogDebug((@"-[RootViewController onNotification : %@] : strongify : %@", aNotification.name, self));
          LogDebug((@"-[RootViewController onNotification : %@] : %@ : %@", aNotification.name, aNotification.name, aNotification.object));
          
@@ -80,12 +78,14 @@
       });
 #endif /* IDEA_TABBARCONTROLLER_TRANSITION */
 
+#if PRIVACY
       self.onNotification(IntroductionController.introductionDoneNotification, ^(NSNotification *aNotification) {
-         
-         LogDebug((@"-[RootViewController onNotification:] : introductionDoneNotification : %@", aNotification.name));
 
          @strongify(self);
-         
+
+         LogDebug((@"-[RootViewController onNotification:] : strongify : %@", self));
+         LogDebug((@"-[RootViewController onNotification:] : introductionDoneNotification : %@", aNotification.name));
+
          if (@available(iOS 14, *)) {
             
             if (![SettingProvider isPrivacy]) {
@@ -120,14 +120,7 @@
          
          return;
       });
-
-//      self.onNotification(PrivacyController.trackingDoneNotification, ^(NSNotification *aNotification) {
-//
-//         LogDebug((@"-[RootViewController onNotification:] : trackingDoneNotification : %@", aNotification.name));
-////         @strongify(self);
-//
-//         return;
-//      });
+#endif
       
       _titles           = @[ APP_STR(@"HOME"),
                              APP_STR(@"SETTING") ];

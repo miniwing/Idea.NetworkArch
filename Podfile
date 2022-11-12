@@ -119,7 +119,7 @@ def library
 
   if ENV['IDEA_UIKIT_EXTENSION'] == 'YES'
     github_pod('UIKitExtension', file = 'FoundationExtension', type = 'local', branch = 'develop')
-  end # IDEA_FOUNDATION_EXTENSION
+  end # IDEA_UIKIT_EXTENSION
 
   if ENV['IDEA_YYKIT'] == 'YES'
     github_pod('YYKit', file = 'YYKit', type = 'local', branch = 'develop')
@@ -201,13 +201,13 @@ target 'NetworkArch' do
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'NetworkService',     :path => 'NetworkArch/Phone/NetworkService'
   pod 'INTRODUCTION',       :path => 'NetworkArch/Phone/INTRODUCTION'
-  pod 'PRIVACY',            :path => 'NetworkArch/Phone/PRIVACY'
+#  pod 'PRIVACY',            :path => 'NetworkArch/Phone/PRIVACY'
   
   pod 'UISETTING',          :path => 'NetworkArch/Phone/UISETTING'
   pod 'HOME',               :path => 'NetworkArch/Phone/HOME'
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'ImageProvider',      :path => 'NetworkArch/ImageProvider'
-  pod 'SecurityUtils',      :path => 'NetworkArch/SecurityUtils'
+#  pod 'SecurityUtils',      :path => 'NetworkArch/SecurityUtils'
   pod 'SettingProvider',    :path => 'NetworkArch/SettingProvider'
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'ADs',                :path => 'ADs'

@@ -14,7 +14,7 @@
 #import <APPDATA/APPDATA.h>
 #import <APPDATA/NetworkArch.h>
 
-#import <PRIVACY/PrivacyController+Notification.h>
+#import <INTRODUCTION/IntroductionController+Notification.h>
 
 #import "HomeContentController+Inner.h"
 #import "HomeContentController+Signal.h"
@@ -98,6 +98,7 @@
          return;
       });
       
+#if PRIVACY
       self.onNotification(PrivacyController.trackingDoneNotification, ^(NSNotification *aNotification) {
 
          LogDebug((@"-[HomeController initWithCoder:] : trackingDoneNotification : %@", aNotification));
@@ -116,6 +117,26 @@
 
          return;
       });
+#else
+      self.onNotification(IntroductionController.introductionDoneNotification, ^(NSNotification *aNotification) {
+         
+         LogDebug((@"-[HomeController onNotification:] : introductionDoneNotification : %@", aNotification.name));
+
+         @strongify(self);
+
+         DISPATCH_ASYNC_ON_MAIN_QUEUE(^{
+
+            [self.locationManager requestAlwaysAuthorization];
+
+            [self.contentController sendSignal:HomeContentController.loadWifiInfoSignal];
+            [self.contentController sendSignal:HomeContentController.loadCellularInfoSignal];
+            
+            return;
+         });
+
+         return;
+      });
+#endif /* PRIVACY */
       
       self.onNotification(HomeController.settingNotification, ^(NSNotification *aNotification) {
 

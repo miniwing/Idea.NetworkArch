@@ -471,6 +471,12 @@ typedef FBLPromise Promise;
 
 /****************************************************************************/
 
+#import <APPDATA/APPDATA.h>
+#import <APPDATA/NetworkArch.h>
+#import <IDEANetUtils/IDEANetUtils.h>
+
+/****************************************************************************/
+
 #if __has_include(<APPDEBUG/APPDEBUG.h>)
 #  import <APPDEBUG/APPDEBUG.h>
 #  define APP_DEBUG                                                        (1)
@@ -480,9 +486,15 @@ typedef FBLPromise Promise;
 
 /****************************************************************************/
 
-#import <APPDATA/APPDATA.h>
-#import <APPDATA/NetworkArch.h>
-#import <IDEANetUtils/IDEANetUtils.h>
+#if __has_include(<PRIVACY/PrivacyController+Notification.h>)
+#  import <PRIVACY/PrivacyController+Notification.h>
+#  define PRIVACY                                                          (1)
+#elif __has_include("PRIVACY/PrivacyController+Notification.h")
+#  import "PRIVACY/PrivacyController+Notification.h"
+#  define PRIVACY                                                          (1)
+#else
+#  define PRIVACY                                                          (0)
+#endif
 
 /****************************************************************************/
 

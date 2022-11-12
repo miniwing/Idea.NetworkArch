@@ -43,8 +43,6 @@
 	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>This identifier will be used to deliver personalized ads to you.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LAUNCH</string>
 	<key>UIMainStoryboardFile</key>
