@@ -308,3 +308,52 @@ NS_INLINE size_t encodeLength(unsigned char * buf, size_t length) {
 
 @end
 
+@implementation SecurityUtils (deCrypt)
+
++ (int)getStringIndex:(NSString *)result {
+   
+   NSString *hexString[] = {@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"a", @"b", @"c", @"d", @"e", @"f"};
+
+   if (1 == result.length) {
+      
+      for (int H = 0; H < sizeof(hexString) / sizeof(NSString *); H++) {
+         NSString *szHex = hexString[H];
+         
+         if ([hexString[H] equalsIgnoreCase:result]) {
+            
+            return H;
+            
+         } /* End if () */
+         
+      } /* End for () */
+      
+   } /* End if () */
+   
+   return -1;
+}
+
++ (NSString *)deCrypt:(NSString *)data {
+   
+   NSMutableString   *resultBuilder = [NSMutableString string];
+
+   for (int index = 0; index < data.length - 1; index += 2) {
+      NSString * firstchar = [data substringFromIndex:index toIndex:index+1];
+//      NSString * firstchar = data.substring(index, index + 1);
+      
+      NSString * nextchar = [data substringFromIndex:index+1 toIndex:index+2];
+//      NSString * nextchar = data.substring(index + 1, index + 2);
+      int firstValue = [SecurityUtils getStringIndex:firstchar] << 4;
+      int nextvalue = [SecurityUtils getStringIndex:nextchar];
+      int result = firstValue + nextvalue - 4;
+      
+      [resultBuilder appendString:[NSString stringWithFormat:@"%c", (char)result]];
+      
+   }
+   
+   return resultBuilder;
+
+   return nil;
+}
+
+@end
+

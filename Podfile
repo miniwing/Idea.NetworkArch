@@ -49,10 +49,10 @@ ENV['SSZipArchive']                       = 'NO'
 ENV['GOOGLE_MOBILE_ADS']                  = 'YES'
 ENV['XCODE_VERSION']                      = '13.0'
 
-ENV['ios.deployment_target']              = '12.0'
-ENV['watchos.deployment_target']          = '5.0'
-ENV['osx.deployment_target']              = '10.10'
-ENV['tvos.deployment_target']             = '12.0'
+ENV['ios.deployment_target']              = '10.0'
+ENV['watchos.deployment_target']          = '4.3'
+ENV['osx.deployment_target']              = '10.15'
+ENV['tvos.deployment_target']             = '10.0'
 
 ENV['Debug.Keyboard']                     = 'NO'
 ENV['IDEA_APPLET_DEBUG']                  = 'YES'
@@ -194,6 +194,7 @@ target 'NetworkArch' do
   miniwing_pod('IDEAStartUp',                     type = 'local', branch = 'develop')
   miniwing_pod('IDEAServiceManager',              type = 'local', branch = 'develop')
   miniwing_pod('IDEANightVersion',                type = 'local', branch = 'develop')
+  miniwing_pod('IDEAWaterDropView',               type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
   miniwing_pod('IDEAPing',                        type = 'local', branch = 'develop')
   miniwing_pod('IDEARouter',                      type = 'local', branch = 'develop')
@@ -208,7 +209,7 @@ target 'NetworkArch' do
   pod 'HOME',               :path => 'NetworkArch/Phone/HOME'
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'ImageProvider',      :path => 'NetworkArch/ImageProvider'
-#  pod 'SecurityUtils',      :path => 'NetworkArch/SecurityUtils'
+  pod 'SecurityUtils',      :path => 'NetworkArch/SecurityUtils'
   pod 'SettingProvider',    :path => 'NetworkArch/SettingProvider'
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'ADs',                :path => 'ADs'

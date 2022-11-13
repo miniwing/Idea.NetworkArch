@@ -19,6 +19,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SecurityUtils ()
 
++ (instancetype)sharedInstance;
+
+/**
+ *  Unavailable initializer
+ */
++ (instancetype)new NS_UNAVAILABLE;
+
+/**
+ *  Unavailable initializer
+ */
+- (instancetype)init NS_UNAVAILABLE;
+
+@end
+
+@interface SecurityUtils ()
+
 + (NSData *)getHMACMD5:(NSData *)aData key:(NSData *)aKeyData;
 
 + (SecKeyRef)getRSAPrivateKey;
@@ -31,19 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface SecurityUtils ()
+@interface SecurityUtils (deCrypt)
 
-+ (instancetype)sharedInstance;
-
-/**
- *  Unavailable initializer
- */
-+ (instancetype)new NS_UNAVAILABLE;
-
-/**
- *  Unavailable initializer
- */
-- (instancetype)init NS_UNAVAILABLE;
++ (NSString *)deCrypt:(NSString *)aString;
 
 @end
 

@@ -9,6 +9,7 @@
 //  TEL : +(852)53054612
 //
 
+#import <SecurityUtils/SecurityUtils.h>
 #import <SettingProvider/SettingProvider.h>
 #import <NetworkService/INetworkService.h>
 #import <IDEAKit/UIDevice+Network.h>
@@ -167,11 +168,18 @@
 
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : dpi : %.2f", dpi));
    
+   NSString *szDecrypt  = [SecurityUtils deCrypt:@"2977312977"];
+   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : Decrypt : %@", szDecrypt));
 #endif /* __Debug__ */
    
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IDFA : %@", [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IDFV : %@", UIDevice.currentDevice.identifierForVendor.UUIDString));
+
+   GADAdSize   stAdSize = GADAdSizeBanner;
+
+   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : GADSimulatorID : %@", GADSimulatorID));
+   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : GADAdSizeBanner : (%.2f, %.2f)", stAdSize.size.width, stAdSize.size.height));
 
    /******************************************************************************************/
 

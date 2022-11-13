@@ -58,6 +58,8 @@
 
       /******************************************************************************************/
       @weakify(self);
+      LogDebug((@"-[RootViewController initWithCoder] : weakify : %@", weak_self));
+
 #if IDEA_TABBARCONTROLLER_TRANSITION
       [self addNotificationName:IDEATabBarControllerTransitionBeginNotification
                        selector:@selector(__onIDEATabBarControllerTransitionBeginNotification:)
