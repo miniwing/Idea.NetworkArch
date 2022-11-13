@@ -194,7 +194,6 @@ target 'NetworkArch' do
   miniwing_pod('IDEAStartUp',                     type = 'local', branch = 'develop')
   miniwing_pod('IDEAServiceManager',              type = 'local', branch = 'develop')
   miniwing_pod('IDEANightVersion',                type = 'local', branch = 'develop')
-  miniwing_pod('IDEAWaterDropView',               type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
   miniwing_pod('IDEAPing',                        type = 'local', branch = 'develop')
   miniwing_pod('IDEARouter',                      type = 'local', branch = 'develop')
@@ -209,7 +208,7 @@ target 'NetworkArch' do
   pod 'HOME',               :path => 'NetworkArch/Phone/HOME'
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'ImageProvider',      :path => 'NetworkArch/ImageProvider'
-  pod 'SecurityUtils',      :path => 'NetworkArch/SecurityUtils'
+#  pod 'SecurityUtils',      :path => 'NetworkArch/SecurityUtils'
   pod 'SettingProvider',    :path => 'NetworkArch/SettingProvider'
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'ADs',                :path => 'ADs'
@@ -439,7 +438,7 @@ post_install do |installer|
                                                                    'APP_BUNDLE_IDENTIFIER=\"com.idea.NetworkArch\"',
                                                                    'APP_BUNDLE_IDENTIFIER_GROUP=\"group.com.idea.NetworkArch\"',
                                                                    'APP_BUNDLE_IDENTIFIER_WIDGET=\"com.idea.NetworkArch.Widget\"',
-                                                                   'APP_ID=1568321747',
+                                                                   'APP_ID=1579612932',
 #                                                                   'IDEAKIT_AFNETWORKING_OPERATIONS=1',
                                                                    'FY_TRANSITION=0',
                                                                    'NS_EVIL_TRANSFORM=0'
@@ -457,17 +456,9 @@ post_install do |installer|
                                                                     'UI_CYCLE_SCROLL_VIEW=0',
                                                                     'UI_DROP_REFRESH=0',
                                                                     'UI_SEVEN_SWITCH=0',
-                                                                    'UI_WATER_DROP_VIEW=0'
                                                                   ]
       end
-      
-      if target.name == 'IDEAWaterDropView'
-        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                    '$(inherited)',
-                                                                    'IDEA_WATER_DROP_VIEW=1'
-                                                                  ]
-      end
-      
+            
 #      if target.name == 'CocoaAsyncSocket'
 #
 #        if config.name == 'Debug'
