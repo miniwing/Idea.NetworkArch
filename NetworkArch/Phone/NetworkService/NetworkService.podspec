@@ -57,6 +57,8 @@ Pod::Spec.new do |spec|
     spec.dependency 'AFNetworking'
   end # if IDEA_AFNETWORKING
 
+  spec.dependency 'AFNetworking/Reachability'
+  
 #  spec.dependency 'PromisesObjC'
 #  spec.dependency 'SharkORM'
 #  spec.dependency 'SSZipArchive'
@@ -191,6 +193,22 @@ Pod::Spec.new do |spec|
 #  else
 #     define YY_KIT                                                        (0)
 #  endif
+
+#  if __has_include(<AFNetworking/AFNetworking.h>)
+#     import <AFNetworking/AFNetworking.h>
+#     import <AFNetworking/AFNetworkReachabilityManager.h>
+#     import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#     define AF_NETWORKING                                                 (1)
+#  elif __has_include("AFNetworking/AFNetworking.h")
+#     import "AFNetworking/AFNetworking.h"
+#     import "AFNetworking/AFNetworkReachabilityManager.h"
+#     import "AFNetworking/AFNetworkActivityIndicatorManager.h"
+#     define AF_NETWORKING                                                 (1)
+#  else
+#     define AF_NETWORKING                                                 (0)
+#  endif
+
+# import <AFNetworking/AFNetworkReachabilityManager.h>
 
 #  if __has_include(<SSZipArchive/SSZipArchive.h>)
 #     import <SSZipArchive/SSZipArchive.h>

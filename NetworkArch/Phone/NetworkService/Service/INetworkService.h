@@ -9,7 +9,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import <AFNetworking/AFNetworking.h>
 #import <YYKit/NSObject+YYModel.h>
 
 #import <IDEAServiceManager/IDEAServiceManager.h>

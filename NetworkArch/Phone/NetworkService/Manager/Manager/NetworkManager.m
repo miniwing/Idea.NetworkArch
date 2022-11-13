@@ -8,8 +8,6 @@
 //  TEL : +(852)53054612
 //
 
-#import <AFNetworking/AFNetworking.h>
-
 #import "NetworkManager.h"
 #import "NetworkManager+Inner.h"
 

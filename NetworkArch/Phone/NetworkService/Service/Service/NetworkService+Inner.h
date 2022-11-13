@@ -17,7 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 // 服务器时间与本地时间的时间差
 @property (nonatomic, assign)                NSTimeInterval                        timeDifference;
 
+#if AF_NETWORKING
 @property (nonatomic, strong)                AFHTTPSessionManager                * httpManager;
+#endif /* AF_NETWORKING */
+
 @property (nonatomic, strong)                AFNetworkReachabilityManager        * networkReachabilityManager;
 
 @end
