@@ -511,7 +511,6 @@
    
    return YES;
 }
-
 #endif /* IDEA_TABBARCONTROLLER_TRANSITION */
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {

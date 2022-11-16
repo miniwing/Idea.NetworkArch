@@ -660,19 +660,18 @@
    
    /******************************************************************************************/
 #if APP_RATER
+#  if TARGET_IPHONE_SIMULATOR
+#  else /* TARGET_IPHONE_SIMULATOR */
    [Appirater setAppId:[IDEAIdentifier appId]];
    [Appirater setDaysUntilPrompt:7];
    [Appirater setUsesUntilPrompt:5];
    [Appirater setSignificantEventsUntilPrompt:-1];
    [Appirater setTimeBeforeReminding:2];
    [Appirater setDebug:__Debug__];
-   /******************************************************************************************/
-#  if __Debug__
-#  else
-   [Appirater appLaunched:YES];
-#  endif
-#endif /* APP_RATER */
 
+   [Appirater appLaunched:!__Debug__];
+#  endif /* !TARGET_IPHONE_SIMULATOR */
+#endif /* APP_RATER */
    /******************************************************************************************/
 
    [self postNotificationName:SplashViewController.SPLASH_DONE

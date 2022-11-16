@@ -134,7 +134,7 @@
    stToVC.view.transform = CGAffineTransformIdentity;
    
 //   [stToVC.view setCornerRadius:0 clipsToBounds:YES];
-   [stToVC.view setRectCorner:0
+   [stToVC.view setRectCorner:UIRectCornerNone
                        radius:8];
 
    [UIView commitAnimations];
