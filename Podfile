@@ -160,7 +160,7 @@ target 'NetworkArch' do
     
   if ENV['IDEA_ROOT_NAVIGATION_CONTROLLER'] == 'YES'
     pod 'RTRootNavigationController'
-    pod "RTInteractivePush"
+    pod 'RTInteractivePush'
   end # IDEA_ROOT_NAVIGATION_CONTROLLER
 
   if ENV['IDEA_MATERIAL_COMPONENTS'] == 'YES'
@@ -183,6 +183,7 @@ target 'NetworkArch' do
   if ENV['IDEA_PAN_MODAL'] == 'YES'
     miniwing_pod('IDEAPanModal',                  type = 'local',   branch = 'develop')
   end # IDEA_PAN_MODAL
+  
   if ENV['IDEA_TABBAR_CONTROLLER_TRANSITION'] == 'YES'
     miniwing_pod('IDEATabBarControllerTransition',  type = 'local', branch = 'develop')
   end # IDEA_TABBAR_CONTROLLER_TRANSITION
