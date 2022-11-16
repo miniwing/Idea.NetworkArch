@@ -49,10 +49,10 @@ ENV['SSZipArchive']                       = 'NO'
 ENV['GOOGLE_MOBILE_ADS']                  = 'YES'
 ENV['XCODE_VERSION']                      = '13.0'
 
-ENV['ios.deployment_target']              = '10.0'
+ENV['ios.deployment_target']              = '12.0'
 ENV['watchos.deployment_target']          = '4.3'
 ENV['osx.deployment_target']              = '10.15'
-ENV['tvos.deployment_target']             = '10.0'
+ENV['tvos.deployment_target']             = '12.0'
 
 ENV['Debug.Keyboard']                     = 'NO'
 ENV['IDEA_APPLET_DEBUG']                  = 'YES'
