@@ -36,12 +36,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuA-w1-yJf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
-                                <connections>
-                                    <segue destination="TCQ-kv-Y5d" kind="embed" id="OqW-gs-nNk"/>
-                                </connections>
-                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSm-Hh-qvg" userLabel="NavigationBarX" customClass="UINavigationBarX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -49,6 +43,12 @@
                                     <constraint firstAttribute="height" constant="110" id="ku5-m1-DI6"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuA-w1-yJf">
+                                <rect key="frame" x="0.0" y="110" width="375" height="668"/>
+                                <connections>
+                                    <segue destination="TCQ-kv-Y5d" kind="embed" id="OqW-gs-nNk"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NGV-Dx-JN4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,7 +59,7 @@
                             <constraint firstItem="SSm-Hh-qvg" firstAttribute="trailing" secondItem="INa-P9-wge" secondAttribute="trailing" id="es7-V4-MKO"/>
                             <constraint firstItem="SSm-Hh-qvg" firstAttribute="leading" secondItem="INa-P9-wge" secondAttribute="leading" id="kfu-7Y-N1l"/>
                             <constraint firstItem="xuA-w1-yJf" firstAttribute="leading" secondItem="INa-P9-wge" secondAttribute="leading" id="kr6-pZ-Iu5"/>
-                            <constraint firstItem="xuA-w1-yJf" firstAttribute="top" secondItem="INa-P9-wge" secondAttribute="top" id="oZk-lS-ffC"/>
+                            <constraint firstItem="xuA-w1-yJf" firstAttribute="top" secondItem="SSm-Hh-qvg" secondAttribute="bottom" id="oZk-lS-ffC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OG0-Gw-D1m"/>
@@ -85,14 +85,14 @@
                     </button>
                 </barButtonItem>
             </objects>
-            <point key="canvasLocation" x="1657" y="1624"/>
+            <point key="canvasLocation" x="1474" y="1623"/>
         </scene>
         <!--UISETTING-CONTENT-->
         <scene sceneID="fB4-dZ-jyW">
             <objects>
                 <tableViewController storyboardIdentifier="UISettingTableController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TCQ-kv-Y5d" userLabel="UISETTING-CONTENT" customClass="UISettingTableController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="W6W-Kz-4lx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections/>
                         <connections>
@@ -123,6 +123,8 @@
                         <outlet property="cellWeiboName" destination="eaS-Sa-REl" id="FnZ-zl-Pak"/>
                         <outlet property="cellWeiboRightImage" destination="83b-08-smB" id="H42-HE-0v2"/>
                         <outlet property="cellWeiboTitle" destination="QrG-ay-ONy" id="BWt-zM-ZRE"/>
+                        <outlet property="copyrightLabel" destination="7Wx-8t-Xdv" id="oAN-G4-7Hl"/>
+                        <outlet property="copyrightView" destination="fj2-ym-NSw" id="OKH-Bv-nd9"/>
                         <outlet property="hapticsCellContainerView" destination="TTv-Am-hhl" id="OTZ-U6-kum"/>
                         <outlet property="hapticsSeparatorView" destination="cuh-F7-cxI" id="G6e-XE-ujS"/>
                         <outlet property="lightBGView" destination="R9M-KX-5sw" id="JvV-b9-9EK"/>
@@ -175,6 +177,27 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVb-1Z-c3Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fj2-ym-NSw" userLabel="COPYRIGHT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Copyright © 2021-2022 Harry. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wx-8t-Xdv" userLabel="TITLE">
+                            <rect key="frame" x="16" y="0.0" width="343" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="14" id="tUz-Ul-0Lf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                    <constraints>
+                        <constraint firstItem="7Wx-8t-Xdv" firstAttribute="leading" secondItem="fj2-ym-NSw" secondAttribute="leading" constant="16" id="KgY-JF-OVJ"/>
+                        <constraint firstItem="7Wx-8t-Xdv" firstAttribute="top" secondItem="fj2-ym-NSw" secondAttribute="top" id="feI-RE-1Vb"/>
+                        <constraint firstAttribute="trailing" secondItem="7Wx-8t-Xdv" secondAttribute="trailing" constant="16" id="w5p-YS-Fag"/>
+                    </constraints>
+                </view>
                 <tableViewSection headerTitle="外观" id="ycF-sv-LLD">
                     <cells>
                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="190" id="kR3-eU-WLo" userLabel="UI">
@@ -836,7 +859,7 @@
                     </cells>
                 </tableViewSection>
             </objects>
-            <point key="canvasLocation" x="3008.8000000000002" y="1623.3990147783252"/>
+            <point key="canvasLocation" x="2358" y="1624"/>
         </scene>
     </scenes>
     <resources>
@@ -866,6 +889,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -105,6 +105,9 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<NSLayoutConstraint *> * cellContainerLeft;
 @property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<NSLayoutConstraint *> * cellContainerRight;
 
+@property (nonatomic, weak)   IBOutlet       UILabel                                * copyrightLabel;
+@property (nonatomic, weak)   IBOutlet       UIView                                 * copyrightView;
+
 @end
 
 @interface UISettingTableController (Inner)

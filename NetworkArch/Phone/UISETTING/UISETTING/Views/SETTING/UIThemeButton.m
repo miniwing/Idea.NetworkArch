@@ -14,7 +14,7 @@
 
 #import "UIThemeButton.h"
 
-const static NSTimeInterval   UIButtonAnimationDuraton   = 0.1f;
+const static NSTimeInterval   UIButtonAnimationDuration  = 0.1f;
 
 @interface UIThemeButton ()
 //@interface UIThemeButton () <XXNibBridge>
@@ -85,12 +85,12 @@ const static NSTimeInterval   UIButtonAnimationDuraton   = 0.1f;
    
    __TRY;
    
-   [self.maskView setHidden:NO animated:YES duration:UIButtonAnimationDuraton];
+   [self.maskView setHidden:NO animated:YES duration:UIButtonAnimationDuration];
    
    self.titleTextColor  = self.titleLabel.textColor;
    
    [UIView transitionWithView:self.titleLabel
-                     duration:UIButtonAnimationDuraton
+                     duration:UIButtonAnimationDuration
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^ {
       
@@ -109,10 +109,10 @@ const static NSTimeInterval   UIButtonAnimationDuraton   = 0.1f;
    
    __TRY;
    
-   [self.maskView setHidden:YES animated:YES duration:UIButtonAnimationDuraton];
+   [self.maskView setHidden:YES animated:YES duration:UIButtonAnimationDuration];
    
    [UIView transitionWithView:self.titleLabel
-                     duration:UIButtonAnimationDuraton
+                     duration:UIButtonAnimationDuration
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^ {
       
@@ -133,10 +133,10 @@ const static NSTimeInterval   UIButtonAnimationDuraton   = 0.1f;
    
    __TRY;
    
-   [self.maskView setHidden:YES animated:YES duration:UIButtonAnimationDuraton];
+   [self.maskView setHidden:YES animated:YES duration:UIButtonAnimationDuration];
    
    [UIView transitionWithView:self.titleLabel
-                     duration:UIButtonAnimationDuraton
+                     duration:UIButtonAnimationDuration
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^ {
       
@@ -155,10 +155,10 @@ const static NSTimeInterval   UIButtonAnimationDuraton   = 0.1f;
    
    __TRY;
    
-   [self.maskView setHidden:YES animated:YES duration:UIButtonAnimationDuraton];
+   [self.maskView setHidden:YES animated:YES duration:UIButtonAnimationDuration];
    
    [UIView transitionWithView:self.titleLabel
-                     duration:UIButtonAnimationDuraton
+                     duration:UIButtonAnimationDuration
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^ {
    
@@ -180,7 +180,7 @@ const static NSTimeInterval   UIButtonAnimationDuraton   = 0.1f;
    [super setSelected:aSelected];
    
    [UIView transitionWithView:self.checkImageView
-                     duration:UIButtonAnimationDuraton
+                     duration:UIButtonAnimationDuration
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^ {
    

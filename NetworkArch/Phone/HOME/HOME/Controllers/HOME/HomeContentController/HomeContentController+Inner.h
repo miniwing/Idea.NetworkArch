@@ -61,12 +61,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesPortScanLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * utilitiesLanScanLabel;
 
-//@property (nonatomic, strong) IBOutletCollection(HomeContentCell) NSArray<HomeContentCell *> * copyrightCells;
-//@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *>          * copyrightCellContainerViews;
-
-@property (nonatomic, weak)   IBOutlet       UILabel                             * copyrightLabel;
-@property (nonatomic, weak)   IBOutlet       UIView                              * copyrightView;
-
 @property (nonatomic, strong) IBOutletCollection(UIImageView)     NSArray<UIImageView *>     * cellRightImageViews;
 
 @end

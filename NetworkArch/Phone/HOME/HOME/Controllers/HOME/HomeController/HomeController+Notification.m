@@ -31,34 +31,4 @@
 #pragma mark - handleNotification
 @implementation HomeController (handleNotification)
 
-//handleNotification(HomeController, settingNotification) {
-//
-//   int                            nErr                                     = EFAULT;
-//
-//   __TRY;
-//
-//   LogDebug((@"-[HomeController settingNotification:] : %@", aNotification));
-//
-//   [IDEAUIRouter openURL:@"HOME.SETTING/create"
-//              completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
-//
-//      if (nil != aViewController) {
-//
-//         LogDebug((@"-[HomeController settingNotification:] : %@ : %@", aURL, aViewController));
-//
-//         [aViewController setModalPresentationStyle:UIModalPresentationFullScreen];
-//
-//         [self presentViewController:aViewController
-//                            animated:YES
-//                          completion:^{
-//
-//         }];
-//      } /* End if () */
-//   }];
-//
-//   __CATCH(nErr);
-//
-//   return;
-//}
-
 @end

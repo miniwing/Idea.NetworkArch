@@ -361,7 +361,26 @@
             [self followFacebook];
          });
       } /* End if () */
-      
+      else if (SettingAboutVersion == aIndexPath.row) {
+         
+         LogDebug((@"UISettingTableController::tableView:didSelectRowAtIndexPath : SettingAboutVersion"));
+         
+//         [IDEAUIRouter openURL:@"AuthorizationRootController/create"
+//                    completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+//
+//            if (nil != aViewController) {
+//               
+//               [self presentViewController:aViewController
+//                                  animated:YES
+//                                completion:^{
+//                  
+//                  return;
+//               }];
+//               
+//            } /* End if () */
+//         }];
+      } /* End if () */
+
    } /* End if () */
    
    __CATCH(nErr);

@@ -110,7 +110,7 @@
 ////   if (aAnimated) {
 ////
 ////      [UIView transitionWithView:self.selectedColorView
-////                        duration:UIAViewAnimationDefaultDuraton
+////                        duration:UIAViewAnimationDefaultDuration
 ////                         options:UIViewAnimationOptionTransitionCrossDissolve
 ////                      animations:^{
 ////
@@ -191,7 +191,7 @@
 ////   if (aAnimated) {
 ////
 ////      [UIView transitionWithView:self.selectedColorView
-////                        duration:UIAViewAnimationDefaultDuraton
+////                        duration:UIAViewAnimationDefaultDuration
 ////                         options:UIViewAnimationOptionTransitionCrossDissolve
 ////                      animations:^{
 ////

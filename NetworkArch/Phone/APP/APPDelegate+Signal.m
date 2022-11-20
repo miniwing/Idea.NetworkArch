@@ -100,6 +100,10 @@ handleSignal(APPDelegate, loadApiKeyDoneSignal) {
 
       [SettingProvider setApiKeySetting:[NetworkArch apiKey]];
       
+#if __Debug__
+      [SettingProvider setApiKeySetting:YES];
+#endif /* __Debug__ */
+      
    } /* End if () */
    else {
 

@@ -16,13 +16,28 @@
 
 @end
 
+#pragma mark - UIStoryboard
+@implementation PHAuthorizationController (UIStoryboard)
+
++ (NSString *)storyboard {
+   
+   return @"AUTHORIZATION";
+}
+
++ (NSString *)bundle {
+
+   return @(BUNDLE);
+}
+
+@end
+
 @implementation PHAuthorizationController (HWPanModalPresentable)
 
 #pragma mark - HWPanModalPresentable
 - (PanModalHeight)longFormHeight {
    
 //   return PanModalHeightMake(PanModalHeightTypeContent, 284);
-   return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 44);
+   return PanModalHeightMake(PanModalHeightTypeMaxTopInset, 0);
 }
 
 - (CGFloat)topOffset {
@@ -91,17 +106,23 @@
 
 @end
 
-#pragma mark - UIStoryboard
-@implementation PHAuthorizationController (UIStoryboard)
+#pragma mark - IDEAPresentationControllerDelegate
+@implementation PHAuthorizationController (IDEAPresentationControllerDelegate)
 
-+ (NSString *)storyboard {
+- (CGRect)frameOfPresented {
    
-   return @"AUTHORIZATION";
+   LogDebug((@"-[PHAuthorizationController frameOfPresented] : presentationController : %@", self.presentationController));
+   LogDebug((@"-[PHAuthorizationController frameOfPresented] : presentedViewController : %@", self.presentedViewController));
+
+   return CGRectMake(0,
+                     [UIWindow topSafeAreaInset] + [self intrinsicNavigationBarSize].height,
+                     self.view.width,
+                     self.view.height - ([UIWindow topSafeAreaInset] + [self intrinsicNavigationBarSize].height) - ([(UITabBarController *)UIApplication.sharedApplication.delegate.window.rootViewController tabBar].height));
 }
 
-+ (NSString *)bundle {
-
-   return @(BUNDLE);
+- (BOOL)backgroundTouchToClose {
+   
+   return NO;
 }
 
 @end
@@ -111,7 +132,7 @@ IDEA_MAIN() {
    
    LogDebug((@"PHAuthorizationController::IDEA_MAIN"));
    
-   [IDEAUIRouter registerURLPattern:@"PHAuthorizationRootController/create"
+   [IDEAUIRouter registerURLPattern:@"AuthorizationRootController/create"
                           toHandler:^(NSString *aURL, NSDictionary *aRouter, IDEAUIRouterCompletion aCompletion) {
       
       LogDebug((@"PHAuthorizationController::IDEA_MAIN : URL     : %@", aURL));
@@ -128,7 +149,7 @@ IDEA_MAIN() {
       } /* End if () */
    }];
    
-   [IDEAUIRouter registerURLPattern:@"PHAuthorizationController/create"
+   [IDEAUIRouter registerURLPattern:@"AuthorizationController/create"
                           toHandler:^(NSString *aURL, NSDictionary *aRouter, IDEAUIRouterCompletion aCompletion) {
       
       LogDebug((@"PHAuthorizationController::IDEA_MAIN : URL     : %@", aURL));

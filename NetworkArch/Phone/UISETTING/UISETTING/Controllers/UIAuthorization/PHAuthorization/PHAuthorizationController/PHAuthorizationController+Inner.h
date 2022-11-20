@@ -18,11 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * backgroundViewX;
 
-@property (nonatomic, weak)   IBOutlet       UIView                              * navigationView;
-@property (nonatomic, weak)   IBOutlet       UINavigationBar                     * navigationBar;
-@property (nonatomic, weak)   IBOutlet       UINavigationItem                    * navigationItemTitle;
+@property (nonatomic, weak)   IBOutlet       UINavigationBarX                    * navigationBarX;
 
 @property (nonatomic, weak)   IBOutlet       UIBarButtonItem                     * rightBarButtonItem;
+@property (nonatomic, weak)   IBOutlet       UIButton                            * rightBarButton;
 
 @property (nonatomic, weak)   IBOutlet       UIImageView                         * iconImageViewX;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * tipLabelX;

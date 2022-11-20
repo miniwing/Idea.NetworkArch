@@ -18,32 +18,15 @@
 
    int                            nErr                                     = EFAULT;
    
-   NSMutableDictionary           *stTitleAttributes                        = nil;
-
    __TRY;
    
    LogDebug((@"-[PHAuthorizationController onThemeUpdate:] : Notification : %@", aNotification));
 
    [super onThemeUpdate:aNotification];
 
-   if (nil == self.navigationBar.titleTextAttributes) {
-      
-      stTitleAttributes = [NSMutableDictionary dictionary];
-      
-   } /* End if () */
-   else {
-      
-      stTitleAttributes = [self.navigationBar.titleTextAttributes mutableCopy];
-      
-   } /* End else */
-   
-   [stTitleAttributes setObject:[IDEAColor colorWithKey:[IDEAColor label]]
-                         forKey:NSForegroundColorAttributeName];
-   [stTitleAttributes setObject:[UIFont systemFontOfSize:16 weight:UIFontWeightRegular]
-                         forKey:NSFontAttributeName];
-   
-   [self.navigationBar setTitleTextAttributes:stTitleAttributes];
-   
+   [self.navigationBarX.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
+   [self.navigationBarX.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
+
    __CATCH(nErr);
 
    return;
@@ -54,25 +37,23 @@
 
    LogView((@"-[%@ preferredStatusBarStyle]", [self class]));
    
-//   if ([[DKNightVersionManager sharedManager].themeVersion isEqualToString:DKThemeVersionNight]) {
-//
-//      return UIStatusBarStyleLightContent;
-//
-//   } /* End if () */
-//   else { // if ([[DKNightVersionManager sharedManager].themeVersion isEqualToString:DKThemeVersionNormal])
-//
-//      if (@available(iOS 13, *)) {
-//
-//         // 系统版本高于 13.0
-//         return UIStatusBarStyleDarkContent;
-//
-//      } /* End if () */
-//
-//      return UIStatusBarStyleDefault;
-//
-//   } /* End if () */
-   
-   return UIStatusBarStyleLightContent;
+   if ([[DKNightVersionManager sharedManager].themeVersion isEqualToString:DKThemeVersionNight]) {
+
+      return UIStatusBarStyleLightContent;
+
+   } /* End if () */
+   else { // if ([[DKNightVersionManager sharedManager].themeVersion isEqualToString:DKThemeVersionNormal])
+
+      if (@available(iOS 13, *)) {
+
+         // 系统版本高于 13.0
+         return UIStatusBarStyleDarkContent;
+
+      } /* End if () */
+
+      return UIStatusBarStyleDefault;
+
+   } /* End if () */
 }
 
 - (UIUserInterfaceStyle)overrideUserInterfaceStyle {
@@ -120,11 +101,11 @@
    
    LogView((@"-[%@ modalPresentationStyle]", [self class]));
 
-   if (@available(iOS 13, *)) {
-      
-      return UIModalPresentationPageSheet;
-      
-   } /* End if () */
+//   if (@available(iOS 13, *)) {
+//
+//      return UIModalPresentationPageSheet;
+//
+//   } /* End if () */
 
    return UIModalPresentationCustom;
 }

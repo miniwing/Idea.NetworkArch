@@ -63,7 +63,7 @@
    
    [super viewDidLoad];
    
-   [self.tableView setTableFooterView:[UIView new]];
+   [self.tableView setTableFooterView:self.copyrightView];
    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
    
    [self.tableView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
@@ -374,8 +374,10 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
       [self.hapticsCellContainerView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
       [self.rateCellContainerView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
 
-      [self.aboutCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
-      [self.aboutCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
+      [self.aboutCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight
+                                                       radius:[UISetting cornerRadiusBig]];
+      [self.aboutCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight
+                                                      radius:[UISetting cornerRadiusBig]];
 
       for (NSLayoutConstraint *stLayout in self.cellContainerLeft) {
          
@@ -391,6 +393,16 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
 
    } /* End else */
    
+   /**
+    Copyright
+    */
+   [self.copyrightView setBackgroundColor:UIColor.clearColor];
+   
+   [self.copyrightLabel setBackgroundColor:UIColor.clearColor];
+   [self.copyrightLabel setTextColor:UIColor.lightGrayColor];
+   [self.copyrightLabel setFont:[UIFont systemFontOfSize:self.copyrightLabel.font.pointSize
+                                                  weight:UIFontWeightLight]];
+
 //   [self.tableView reloadData];
    
    __CATCH(nErr);

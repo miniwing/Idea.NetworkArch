@@ -176,7 +176,7 @@
 //{
 
 //#if UIKIT_EXTENSION
-//   return UIAViewAnimationDefaultDuraton * 2;
+//   return UIAViewAnimationDefaultDuration * 2;
 //#else /* UIKIT_EXTENSION */
 //   return 0.3;
 //#endif /* !UIKIT_EXTENSION */

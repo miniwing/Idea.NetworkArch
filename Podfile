@@ -119,20 +119,20 @@ def library
   end # IDEA_FOUNDATION_EXTENSION
 
   if ENV['IDEA_UIKIT_EXTENSION'] == 'YES'
-    github_pod('UIKitExtension', file = 'FoundationExtension', type = 'local', branch = 'develop')
+    github_pod('UIKitExtension',      file = 'FoundationExtension', type = 'local', branch = 'develop')
   end # IDEA_UIKIT_EXTENSION
 
   if ENV['IDEA_YYKIT'] == 'YES'
-    github_pod('YYKit', file = 'YYKit', type = 'local', branch = 'develop')
+    github_pod('YYKit',               file = 'YYKit',               type = 'local', branch = 'develop')
   end # IDEA_YYKIT
 
   if ENV['IDEA_AFNETWORKING'] == 'YES'
-    github_pod('AFNetworking', file = 'AFNetworking', type = 'local', branch = 'develop')
+    github_pod('AFNetworking',        file = 'AFNetworking',        type = 'local', branch = 'develop')
   else
-    github_pod('AFNetworking/Reachability', file = 'AFNetworking', type = 'local', branch = 'develop')
+    github_pod('AFNetworking/Reachability', file = 'AFNetworking',  type = 'local', branch = 'develop')
   end # IDEA_AFNETWORKING
 
-  github_pod('IDEAApplet', file = 'IDEAApplet', type = 'local', branch = 'develop')
+  github_pod('IDEAApplet',            file = 'IDEAApplet',          type = 'local', branch = 'develop')
 
   miniwing_pod('IDEAKit',             type = 'local', branch = 'develop')
   miniwing_pod('IDEAColor',           type = 'local', branch = 'develop')
@@ -185,7 +185,7 @@ target 'NetworkArch' do
   end # IDEA_PAN_MODAL
   
   if ENV['IDEA_TABBAR_CONTROLLER_TRANSITION'] == 'YES'
-    miniwing_pod('IDEATabBarControllerTransition',  type = 'local', branch = 'develop')
+    miniwing_pod('IDEATabBarControllerTransition',type = 'local',   branch = 'develop')
   end # IDEA_TABBAR_CONTROLLER_TRANSITION
   #-------------------------------------------------------------------------------------------------------------------------------#
   miniwing_pod('IDEANibBridge',                   type = 'local', branch = 'develop')
@@ -201,12 +201,13 @@ target 'NetworkArch' do
   miniwing_pod('IDEANetUtils',                    type = 'local', branch = 'develop')
   miniwing_pod('PhoneNetSDK',                     type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
+  pod 'MonitorService',     :path => 'NetworkArch/MonitorService'
   pod 'NetworkService',     :path => 'NetworkArch/Phone/NetworkService'
   pod 'INTRODUCTION',       :path => 'NetworkArch/Phone/INTRODUCTION'
-#  pod 'PRIVACY',            :path => 'NetworkArch/Phone/PRIVACY'
   
   pod 'UISETTING',          :path => 'NetworkArch/Phone/UISETTING'
   pod 'HOME',               :path => 'NetworkArch/Phone/HOME'
+  pod 'MONITOR',            :path => 'NetworkArch/Phone/MONITOR'
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'ImageProvider',      :path => 'NetworkArch/ImageProvider'
 #  pod 'SecurityUtils',      :path => 'NetworkArch/SecurityUtils'
@@ -344,64 +345,64 @@ post_install do |installer|
     target.build_configurations.each do |config|
       
 #      if config.name == 'Release'
-#        config.build_settings['GCC_VERSION']                  = 'com.apple.compilers.llvm.obfuscator.4_0';
-#        config.build_settings['OTHER_CPLUSPLUSFLAGS']       ||= [
-#                                                                  '$(OTHER_CFLAGS)',
-#                                                                  "-mllvm",
-#                                                                  "-fla",
-#                                                                  "-mllvm",
-#                                                                  "-sub",
-#                                                                  "-mllvm",
-#                                                                  "-bcf_loop=3",
-#                                                                  "-mllvm",
-#                                                                  "-split"
-#                                                                ]
+#        config.build_settings['GCC_VERSION']                     = 'com.apple.compilers.llvm.obfuscator.4_0';
+#        config.build_settings['OTHER_CPLUSPLUSFLAGS']            ||= [
+#                                                                       '$(OTHER_CFLAGS)',
+#                                                                       "-mllvm",
+#                                                                       "-fla",
+#                                                                       "-mllvm",
+#                                                                       "-sub",
+#                                                                       "-mllvm",
+#                                                                       "-bcf_loop=3",
+#                                                                       "-mllvm",
+#                                                                       "-split"
+#                                                                   ]
 #      end
       
-      config.build_settings['LD_RUNPATH_SEARCH_PATHS']          = ['$(FRAMEWORK_SEARCH_PATHS)']
-      config.build_settings['WARNING_CFLAGS']                   = [
-                                                                    '$(inherited)',
-                                                                    '-Wnonnull',
-                                                                    '-Wdocumentation',
-                                                                    '-Wstrict-prototypes',
-                                                                    '-Wdocumentation-html',
-                                                                    '-Wdeprecated-declarations',
-                                                                    '-Wnullability-completeness',
-                                                                    '-Wno-nonnull',
-                                                                    '-Wno-documentation',
-                                                                    '-Wno-int-conversion',
-                                                                    '-Wno-unused-variable',
-                                                                    '-Wno-strict-prototypes',
-#                                                                    '-Wno-implicit-retain-self',
-                                                                    '-Wno-deprecated-declarations',
-                                                                    '-Wno-nullability-completeness',
-                                                                    '-Wno-nullability-completeness',
-                                                                    '-Wno-nullability-completeness-on-arrays'
-                                                                  ]
-      config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS']= 'NO'
+      config.build_settings['LD_RUNPATH_SEARCH_PATHS']            = [ '$(FRAMEWORK_SEARCH_PATHS)' ]
+      config.build_settings['WARNING_CFLAGS']                     = [
+                                                                      '$(inherited)',
+                                                                      '-Wnonnull',
+                                                                      '-Wdocumentation',
+                                                                      '-Wstrict-prototypes',
+                                                                      '-Wdocumentation-html',
+                                                                      '-Wdeprecated-declarations',
+                                                                      '-Wnullability-completeness',
+                                                                      '-Wno-nonnull',
+                                                                      '-Wno-documentation',
+                                                                      '-Wno-int-conversion',
+                                                                      '-Wno-unused-variable',
+                                                                      '-Wno-strict-prototypes',
+#                                                                      '-Wno-implicit-retain-self',
+                                                                      '-Wno-deprecated-declarations',
+                                                                      '-Wno-nullability-completeness',
+                                                                      '-Wno-nullability-completeness',
+                                                                      '-Wno-nullability-completeness-on-arrays'
+                                                                    ]
+      config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS']  = 'NO'
       
-#      if config.build_settings['MACOSX_DEPLOYMENT_TARGET'].to_f < 10.13
-#        config.build_settings['MACOSX_DEPLOYMENT_TARGET']    = '10.13'
-#      end
-      config.build_settings['MACOSX_DEPLOYMENT_TARGET']       = ENV['osx.deployment_target']
-      config.build_settings['TVOS_DEPLOYMENT_TARGET']         = ENV['tvos.deployment_target']
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']     = ENV['ios.deployment_target']
-      config.build_settings['WATCHOS_DEPLOYMENT_TARGET']      = ENV['watchos.deployment_target']
+      config.build_settings['MACOSX_DEPLOYMENT_TARGET']           = ENV['osx.deployment_target']
+      config.build_settings['TVOS_DEPLOYMENT_TARGET']             = ENV['tvos.deployment_target']
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']         = ENV['ios.deployment_target']
+      config.build_settings['WATCHOS_DEPLOYMENT_TARGET']          = ENV['watchos.deployment_target']
 
       if ENV['OLLVM'] == 'YES'
-        config.build_settings['LIBRARY_SEARCH_PATHS']         = ["$(SRCROOT)/../ollvm-libs"];
-        config.build_settings['OTHER_LDFLAGS']                = ['-l"clang_rt.ios"'];
-#        config.build_settings['OTHER_CFLAGS']                 = ["-mllvm -sub -mllvm -fla -mllvm -bcf"];
+        config.build_settings['LIBRARY_SEARCH_PATHS']             = ["$(SRCROOT)/../ollvm-libs"];
+        config.build_settings['OTHER_LDFLAGS']                    = ['-l"clang_rt.ios"'];
+#        config.build_settings['OTHER_CFLAGS']                     = ["-mllvm -sub -mllvm -fla -mllvm -bcf"];
       end # OLLVM
       
 #      config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'NO'
+
       if config.name == 'Debug'
-        config.build_settings['DEBUG_INFORMATION_FORMAT']     = 'dwarf'
+        config.build_settings['DEBUG_INFORMATION_FORMAT']         = 'dwarf'
       end
-#      config.build_settings['SWIFT_VERSION']                  = '5.0'
-      config.build_settings['ENABLE_BITCODE']                 = 'NO'
+      
+#      config.build_settings['SWIFT_VERSION']                      = '5.0'
+      config.build_settings['ENABLE_BITCODE']                     = 'NO'
+      
       if ENV['OLLVM'] == 'YES'
-        config.build_settings['COMPILER_INDEX_STORE_ENABLE']  = 'NO'
+        config.build_settings['COMPILER_INDEX_STORE_ENABLE']      = 'NO'
       end # OLLVM
       
 #      config.build_settings['EMBEDDED_CONTENT_CONTAINS_SWIFT']                        = 'NO'
@@ -419,102 +420,75 @@ post_install do |installer|
 #      end
       
       if target.name == 'IDEAColor'
-        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                    '$(inherited)',
-                                                                    'UICOLOR_SYSTEM=0'
-                                                                  ]
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']     ||= [
+                                                                        '$(inherited)',
+                                                                        'UICOLOR_SYSTEM=0'
+                                                                      ]
       end
       
       if target.name == 'IDEAUIVendor'
-        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                    '$(inherited)',
-                                                                    'APP_NAVIGATION_BAR_BACKGROUND_IMAGE=0'
-                                                                  ]
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']     ||= [
+                                                                        '$(inherited)',
+                                                                        'APP_NAVIGATION_BAR_BACKGROUND_IMAGE=0'
+                                                                      ]
       end
       
       if target.name == 'IDEAKit'
-        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                   '$(inherited)',
-                                                                   'APP_SCHEME=\"NetworkArch://\"',
-                                                                   'APP_BUNDLE_IDENTIFIER=\"com.idea.NetworkArch\"',
-                                                                   'APP_BUNDLE_IDENTIFIER_GROUP=\"group.com.idea.NetworkArch\"',
-                                                                   'APP_BUNDLE_IDENTIFIER_WIDGET=\"com.idea.NetworkArch.Widget\"',
-                                                                   'APP_ID=1579612932',
-#                                                                   'IDEAKIT_AFNETWORKING_OPERATIONS=1',
-                                                                   'FY_TRANSITION=0',
-                                                                   'NS_EVIL_TRANSFORM=0'
-                                                                   ]
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']     ||= [
+                                                                        '$(inherited)',
+                                                                        'APP_SCHEME=\"NetworkArch://\"',
+                                                                        'APP_BUNDLE_IDENTIFIER=\"com.idea.NetworkArch\"',
+                                                                        'APP_BUNDLE_IDENTIFIER_GROUP=\"group.com.idea.NetworkArch\"',
+                                                                        'APP_BUNDLE_IDENTIFIER_WIDGET=\"com.idea.NetworkArch.Widget\"',
+                                                                        'APP_ID=1579612932'
+                                                                      ]
       end
 
       if target.name == 'IDEAUIKit'
-        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                    '$(inherited)',
-                                                                    'HV_TABLE_VIEW=0',
-                                                                    'MB_SLIDER_VIEW=0',
-                                                                    'MK_MAP_VIEW_ZOOM_LEVEL=0',
-                                                                    'UI_CAMERA_BUTTON=0',
-                                                                    'UI_CHART_VIEW=0',
-                                                                    'UI_CYCLE_SCROLL_VIEW=0',
-                                                                    'UI_DROP_REFRESH=0',
-                                                                    'UI_SEVEN_SWITCH=0',
-                                                                  ]
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']     ||= [
+                                                                        '$(inherited)',
+                                                                        'HV_TABLE_VIEW=0',
+                                                                        'MB_SLIDER_VIEW=0',
+                                                                        'MK_MAP_VIEW_ZOOM_LEVEL=0',
+                                                                        'UI_CAMERA_BUTTON=0',
+                                                                        'UI_CHART_VIEW=0',
+                                                                        'UI_CYCLE_SCROLL_VIEW=0',
+                                                                        'UI_DROP_REFRESH=0',
+                                                                        'UI_SEVEN_SWITCH=0',
+                                                                      ]
       end
             
 #      if target.name == 'CocoaAsyncSocket'
 #
 #        if config.name == 'Debug'
-#          config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-#                                                                     '$(inherited)',
-#                                                                     'GCDAsyncSocketLoggingEnabled=1'
+#          config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']  ||= [
+#                                                                       '$(inherited)',
+#                                                                       'GCDAsyncSocketLoggingEnabled=1'
 #                                                                     ]
 #        end
 #      end
       
       if target.name == 'IDEAAppletDebugger'
-        
-        if config.name == 'Debug'
-          config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                      '$(inherited)',
-                                                                      ' SERVICE_BORDER=0 ',
-                                                                      ' SERVICE_CONSOLE=0 ',
-                                                                      ' SERVICE_GESTURE=0 ',
-                                                                      ' SERVICE_GRIDS=0 ',
-                                                                      ' SERVICE_INSPECTOR=1 ',
-                                                                      ' SERVICE_MONITOR=0 ',
-                                                                      ' SERVICE_FILE_SYNC=0 ',
-                                                                      ' SERVICE_TAPSPOT=0 ',
-                                                                      ' SERVICE_THEME=1 ',
-                                                                      ' SERVICE_WIFI=0 '
-                                                                    ]
-        else
-          config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-                                                                      '$(inherited)',
-                                                                      ' SERVICE_BORDER=0 ',
-                                                                      ' SERVICE_CONSOLE=0 ',
-                                                                      ' SERVICE_GESTURE=0 ',
-                                                                      ' SERVICE_GRIDS=0 ',
-                                                                      ' SERVICE_INSPECTOR=0 ',
-                                                                      ' SERVICE_MONITOR=0 ',
-                                                                      ' SERVICE_FILE_SYNC=0 ',
-                                                                      ' SERVICE_TAPSPOT=0 ',
-                                                                      ' SERVICE_THEME=0 ',
-                                                                      ' SERVICE_WIFI=0 '
-                                                                    ]
-        end
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']     ||= [
+                                                                        '$(inherited)',
+                                                                        ' SERVICE_BORDER=0 ',
+                                                                        ' SERVICE_CONSOLE=0 ',
+                                                                        ' SERVICE_GESTURE=0 ',
+                                                                        ' SERVICE_GRIDS=0 ',
+                                                                        ' SERVICE_INSPECTOR=0 ',
+                                                                        ' SERVICE_MONITOR=0 ',
+                                                                        ' SERVICE_FILE_SYNC=0 ',
+                                                                        ' SERVICE_TAPSPOT=0 ',
+                                                                        ' SERVICE_THEME=1 ',
+                                                                        ' SERVICE_WIFI=1 '
+                                                                      ]
       end
-      
-      if target.name == 'IDEAFONT'
-        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']   ||= [
-                                                                      '$(inherited)',
-                                                                      'IDEA_FONT_BOLD=0'
-                                                                    ]
-      end
-      
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']     ||= [
-                                                                      '$(inherited)',
-                                                                      'TRANSITION_ANIMATION_BOUNCE=30',
-                                                                      'GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1'
-                                                                    ]
+
+      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']       ||= [
+                                                                        '$(inherited)',
+                                                                        'TRANSITION_ANIMATION_BOUNCE=30',
+                                                                        'GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1'
+                                                                      ]
 
     end
   end

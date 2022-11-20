@@ -22,6 +22,8 @@
 @def_signal(self);
 #endif /* __Debug__ */
 
+@def_signal(setting);
+
 @end
 
 #pragma mark - handleSignal
@@ -41,5 +43,36 @@ handleSignal(HomeController, selfSignal) {
    return;
 }
 #endif /* __Debug__ */
+
+handleSignal(HomeController, settingSignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   LogDebug((@"-[HomeController settingSignal:] : Signal : %@", aSignal));
+
+   [IDEAUIRouter openURL:@"HOME.SETTING/create"
+              completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+
+      if (nil != aViewController) {
+
+         LogDebug((@"-[HomeController initWithCoder:] : %@ : %@", aURL, aViewController));
+         
+         [aViewController setModalPresentationStyle:UIModalPresentationFullScreen];
+
+         [self presentViewController:aViewController
+                            animated:YES
+                          completion:^{
+            
+            return;
+         }];
+      } /* End if () */
+   }];
+
+   __CATCH(nErr);
+
+   return;
+}
 
 @end

@@ -53,8 +53,6 @@
    
    int                            nErr                                     = EFAULT;
    
-   NSMutableDictionary           *stTitleAttributes                        = nil;
-   
    __TRY;
    
    [super viewDidLoad];
@@ -62,123 +60,74 @@
    // Do any additional setup after loading the view.
    [self.view setBackgroundColor:UIColor.clearColor];
    
-   [self.backgroundViewX setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-      
-      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-         
-         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemBackground]];
-         
-      } /* End if () */
-      else {
-         
-         return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
-         
-      } /* End else */
-   }];
-
-   [self.navigationView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-      
-      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-         
-         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemBackground]];
-         
-      } /* End if () */
-      else {
-         
-         return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
-         
-      } /* End else */
-   }];
+   //   [self setTitle:__LOCALIZED_STRING(self.class, @"SETTING")];
+   [self.navigationItem setTitle:__LOCALIZED_STRING(self.class, @"Permission Title")];
+   [self.tabBarItem setTitle:__LOCALIZED_STRING(self.class, @"Permission Title")];
+   LogDebug((@"-[UISettingController viewDidLoad] : Title : %@", __LOCALIZED_STRING(self.class, @"Permission Title")));
    
-   [self.navigationBar setTranslucent:NO];
-   [self.navigationBar setShadowColor:UIColor.clearColor];
-   [self.navigationBar setShadowImage:[UIImage new]];
-   [self.navigationBar setBackgroundColor:UIColor.clearColor];
-   [self.navigationBar setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-
-      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-
-         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemBackground]];
-
-      } /* End if () */
-      else {
-
-         return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
-
-      } /* End else */
-   }];
+   [self.navigationController setNavigationBarHidden:YES];
    
-//   [self.navigationBar setBarTintColor:UIColor.clearColor];
-   [self.navigationBar setBarTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-      
-      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-         
-         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemBackground]];
-         
-      } /* End if () */
-      else {
-         
-         return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
-         
-      } /* End else */
-   }];
+#if FULLSCREEN_POP_GESTURE
+   [self setPrefersNavigationBarHidden:YES];
+#else /* FULLSCREEN_POP_GESTURE */
+   self.navigationController.interactivePopGestureRecognizer.delegate = self;
+#endif /* !FULLSCREEN_POP_GESTURE */
    
-   [self.navigationBar setBackgroundImage:nil
-                            forBarMetrics:UIBarMetricsDefault];
+   [self.navigationBarX.navigationBar setTitle:__LOCALIZED_STRING(self.class, @"Permission Title")];
+   //   [self.navigationBarX setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
    
-//   [self.navigationBar setBackgroundImagePicker:^UIImage *(DKThemeVersion *aThemeVersion) {
-//
-//      return [UIImage imageWithColor:UIColorX.systemBackgroundColor];
-//   }
-//                                  forBarMetrics:UIBarMetricsDefault];
+   [self.navigationBarX.navigationBar setAllowAnyTitleFontSize:YES];
+   [self.navigationBarX.navigationBar setEnableRippleBehavior:NO];
    
-   [self.navigationItemTitle setTitle:__LOCALIZED_STRING(self.class, @"Permission Title")];
-//   [self.navigationItemTitle setTitle:__LOCALIZED_STRING(self.class, @"服务器选择")];
-
-   if (nil == self.navigationBar.titleTextAttributes) {
-      
-      stTitleAttributes = [NSMutableDictionary dictionary];
-      
-   } /* End if () */
-   else {
-      
-      stTitleAttributes = [self.navigationBar.titleTextAttributes mutableCopy];
-      
-   } /* End else */
+   //   [self.navigationBarX showLine:YES];
    
-   [stTitleAttributes setObject:[IDEAColor colorWithKey:[IDEAColor label]]
-                         forKey:NSForegroundColorAttributeName];
-   [stTitleAttributes setObject:[UIFont systemFontOfSize:16 weight:UIFontWeightRegular]
-                         forKey:NSFontAttributeName];
+   /// 关闭水波纹效果
+   [self.navigationBarX.navigationBar setRippleColor:UIColor.clearColor];
+   [self.navigationBarX.navigationBar setInkColor:UIColor.clearColor];
    
-   [self.navigationBar setTitleTextAttributes:stTitleAttributes];
+   [self.navigationBarX.navigationBar setTintColor:[IDEAColor colorWithKey:[IDEAColor appNavigationBarTint]]];
+   [self.navigationBarX.navigationBar setTitleTextColor:[IDEAColor colorWithKey:[IDEAColor label]]];
    
-   [self.rightBarButtonItem setTitle:nil];
+   [self.navigationBarX setNavigationBarTopInset:[UIWindow topSafeAreaInset]];
+   [self.navigationBarX.navigationBarXHeight setConstant:[self.navigationBarX.navigationBar intrinsicContentSize].height + [UIWindow topSafeAreaInset]];
+   
+   /**
+    * 设置返回按钮
+    */
+   [self.navigationBarX.navigationBar setRightBarButtonItem:self.rightBarButtonItem];
    [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.rightBarButtonItem setImage:[ImageProvider imageNamed:@"UIButtonBarClose"]];
-
+   [self.rightBarButtonItem setImage:nil];
+   [self.rightBarButtonItem setTitle:nil];
+   [self.rightBarButtonItem setWidth:[UISetting rightBarButtonWidth]];
+   
+   [self.rightBarButton setImage:[ImageProvider imageNamed:@"UIButtonBarClose"]
+                        forState:UIControlStateNormal];
+   
+   [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarClose"] imageRenderWithTintColor:UIColor.systemGrayColor]
+                        forState:UIControlStateSelected];
+   
+   [self.rightBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarClose"] imageRenderWithTintColor:UIColor.systemGrayColor]
+                        forState:UIControlStateHighlighted];
+   
    /**
     * 主动调整布局
     */
    [self.view setNeedsLayout];
    [self.view layoutIfNeeded];
-      
-   [self.navigationView setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight
-                               radius:8];
-      
+   
    if (@available(iOS 13, *)) {
       
       self.modalInPresentation      = YES;
       
    } /* End if () */
    else {
-
+      
 #if FULLSCREEN_POP_GESTURE
       self.interactivePopDisabled   = YES;
 #else /* FULLSCREEN_POP_GESTURE */
       self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 #endif /* !FULLSCREEN_POP_GESTURE */
-
+      
    } /* End else */
    
    /**
@@ -191,18 +140,19 @@
    if (kStringIsBlank(_permissionTip)) {
       
       [self.tipLabelX setText:__LOCALIZED_STRING(self.class, @"No Permission")];
-
+      
    } /* End if () */
    else {
       
       [self.tipLabelX setText:_permissionTip];
       
    } /* End else */
-
+   
    [self.tipLabelX setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    
-   [self.allowButtonX setCornerRadius:5 clipsToBounds:YES];
-
+   [self.allowButtonX setCornerRadius:[UISetting cornerRadiusSmall]
+                        clipsToBounds:YES];
+   
    __CATCH(nErr);
    
    return;

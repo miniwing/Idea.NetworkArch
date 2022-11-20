@@ -302,17 +302,7 @@
       stHomeContentCell.canSelected = YES;
       
    } /* End for () */
-   
-   /**
-    Copyright
-    */
-   [self.copyrightView setBackgroundColor:UIColor.clearColor];
-   
-   [self.copyrightLabel setBackgroundColor:UIColor.clearColor];
-   [self.copyrightLabel setTextColor:UIColor.lightGrayColor];
-   [self.copyrightLabel setFont:[UIFont systemFontOfSize:self.copyrightLabel.font.pointSize
-                                                  weight:UIFontWeightLight]];
-   
+      
    /**
     * ADs
     */   
@@ -322,11 +312,7 @@
    
    szAdUnitID  = [stAdUnitIDs objectForKey:@"HOME-BANNER"];
    
-#if __Debug__
-   [self.bannerView setBackgroundColor:UIColorX.systemYellowColor];
-#else /* __Debug__ */
    [self.bannerView setBackgroundColor:UIColor.clearColor];
-#endif /* !__Debug__ */
    [self.gadBannerView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
    [self.gadBannerView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       

@@ -501,7 +501,7 @@
    } /* End if () */
    
    //   [UIView transitionWithView:stTableViewCell.selectedColorView
-   //                     duration:[UIView animationDefaultDuraton]
+   //                     duration:[UIView animationDefaultDuration]
    //                      options:UIViewAnimationOptionTransitionCrossDissolve
    //                   animations:^{
    //      [stTableViewCell.selectedColorView setBackgroundColor:UIColor.systemBlueColor];

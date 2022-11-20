@@ -125,13 +125,13 @@
 #endif
       
       _titles           = @[ APP_STR(@"HOME"),
-                             APP_STR(@"SETTING") ];
+                             APP_STR(@"MONITOR") ];
       
       _images           = @[ @"TAB-HOME",
-                             @"TAB-SETTING" ];
+                             @"TAB-MONITOR" ];
       
       _imageSelecteds   = @[ @"TAB-HOME+",
-                             @"TAB-SETTING+" ];
+                             @"TAB-MONITOR+" ];
 
       [IDEAUIRouter registerURLPattern:@"query/tabbar/height"
                              toHandler:^(NSString *aURL, NSDictionary *aRouter, IDEAUIRouterCompletion aCompletion) {
@@ -194,7 +194,7 @@
       return;
    }];
 
-   [IDEAUIRouter openURL:@"UISETTING/create"
+   [IDEAUIRouter openURL:@"MONITOR/create"
               completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
       
       if (nil != aViewController) {

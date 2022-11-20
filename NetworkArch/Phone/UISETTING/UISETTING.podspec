@@ -363,6 +363,8 @@ Pod::Spec.new do |spec|
 #import <IDEAColor/UIColorX+System.h>
 #import <IDEAColor/UIColorX+Dynamic.h>
 
+#import <IDEAUIVendor/IDEAUIVendor.h>
+
 /******************************************************************************************************/
 
 #if __has_feature(objc_arc)

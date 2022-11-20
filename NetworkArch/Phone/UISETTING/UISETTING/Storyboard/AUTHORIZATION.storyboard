@@ -17,63 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jH-9k-JOx" userLabel="NavigationView">
-                                <rect key="frame" x="0.0" y="44" width="375" height="59"/>
-                                <subviews>
-                                    <navigationBar contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgL-mO-FMi">
-                                        <rect key="frame" x="14" y="10" width="347" height="44"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="1of-N4-QLE"/>
-                                        </constraints>
-                                        <items>
-                                            <navigationItem title="选择服务器" id="oIb-4v-mSE">
-                                                <barButtonItem key="rightBarButtonItem" title="RIGHT" id="bPX-cE-Glq">
-                                                    <color key="tintColor" systemColor="systemPinkColor"/>
-                                                    <connections>
-                                                        <action selector="onClose:" destination="4m9-Dq-p5Y" id="Gk9-xa-3Eo"/>
-                                                    </connections>
-                                                </barButtonItem>
-                                            </navigationItem>
-                                        </items>
-                                    </navigationBar>
-                                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEK-sM-kck">
-                                        <rect key="frame" x="0.0" y="58.666666666666671" width="375" height="0.3333333333333357"/>
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="0.5" id="QXD-tT-mWX"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4C-Hs-M1D" userLabel="NavigationBarX" customClass="UINavigationBarX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="kEK-sM-kck" secondAttribute="bottom" id="54j-KA-0z7"/>
-                                    <constraint firstAttribute="trailing" secondItem="bgL-mO-FMi" secondAttribute="trailing" constant="14" id="GE2-wo-oAt"/>
-                                    <constraint firstItem="bgL-mO-FMi" firstAttribute="top" secondItem="7jH-9k-JOx" secondAttribute="top" constant="10" id="Ocg-Ro-dMU"/>
-                                    <constraint firstAttribute="trailing" secondItem="kEK-sM-kck" secondAttribute="trailing" id="b1E-jo-87U"/>
-                                    <constraint firstAttribute="bottom" secondItem="bgL-mO-FMi" secondAttribute="bottom" constant="5" id="bNa-Nu-RiD"/>
-                                    <constraint firstItem="kEK-sM-kck" firstAttribute="leading" secondItem="7jH-9k-JOx" secondAttribute="leading" id="lQN-TR-ss7"/>
-                                    <constraint firstItem="bgL-mO-FMi" firstAttribute="leading" secondItem="7jH-9k-JOx" secondAttribute="leading" constant="14" id="txe-UC-w9l"/>
+                                    <constraint firstAttribute="height" constant="110" id="ro9-16-lb1"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cx-MH-VqK">
-                                <rect key="frame" x="0.0" y="103" width="375" height="709"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="702"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="permission-lock" translatesAutoresizingMaskIntoConstraints="NO" id="ZgF-KG-r30">
-                                        <rect key="frame" x="140.66666666666666" y="225.66666666666669" width="93.666666666666657" height="94"/>
+                                        <rect key="frame" x="140.66666666666666" y="223" width="93.666666666666657" height="94"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ZgF-KG-r30" secondAttribute="height" multiplier="1:1" id="r7i-zL-UeH"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Allow Access to share or send photos and videos. you can always change this in your devices settings." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b81-f9-mWy">
-                                        <rect key="frame" x="32" y="333.66666666666669" width="311" height="50.333333333333314"/>
+                                        <rect key="frame" x="32" y="331" width="311" height="50.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpq-cN-0FR">
-                                        <rect key="frame" x="126" y="400" width="123" height="38"/>
+                                        <rect key="frame" x="126" y="397.33333333333331" width="123" height="38"/>
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
@@ -85,7 +53,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="b81-f9-mWy" firstAttribute="top" secondItem="ZgF-KG-r30" secondAttribute="bottom" constant="14" id="4mo-TW-wdw"/>
                                     <constraint firstItem="ZgF-KG-r30" firstAttribute="width" secondItem="5cx-MH-VqK" secondAttribute="width" multiplier="0.25" id="77x-xE-3Gl"/>
@@ -99,15 +67,15 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hob-be-7k6"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7jH-9k-JOx" firstAttribute="bottom" secondItem="5cx-MH-VqK" secondAttribute="top" id="1O1-qu-9Ge"/>
                             <constraint firstAttribute="trailing" secondItem="5cx-MH-VqK" secondAttribute="trailing" id="3Ra-7r-dtc"/>
                             <constraint firstAttribute="bottom" secondItem="5cx-MH-VqK" secondAttribute="bottom" id="Fr8-cr-NhG"/>
-                            <constraint firstItem="7jH-9k-JOx" firstAttribute="leading" secondItem="M6K-Uq-xt0" secondAttribute="leading" id="XSK-ew-Xy8"/>
+                            <constraint firstItem="5cx-MH-VqK" firstAttribute="top" secondItem="F4C-Hs-M1D" secondAttribute="bottom" id="Z7e-gD-JnF"/>
+                            <constraint firstAttribute="trailing" secondItem="F4C-Hs-M1D" secondAttribute="trailing" id="e7M-x6-hc0"/>
                             <constraint firstItem="5cx-MH-VqK" firstAttribute="leading" secondItem="M6K-Uq-xt0" secondAttribute="leading" id="lK3-K3-fE3"/>
-                            <constraint firstItem="7jH-9k-JOx" firstAttribute="top" secondItem="Hob-be-7k6" secondAttribute="top" id="s49-OM-1c1"/>
-                            <constraint firstItem="7jH-9k-JOx" firstAttribute="trailing" secondItem="M6K-Uq-xt0" secondAttribute="trailing" id="xPn-5K-N4M"/>
+                            <constraint firstItem="F4C-Hs-M1D" firstAttribute="leading" secondItem="M6K-Uq-xt0" secondAttribute="leading" id="qNa-nL-zNC"/>
+                            <constraint firstItem="F4C-Hs-M1D" firstAttribute="top" secondItem="M6K-Uq-xt0" secondAttribute="top" id="vB6-1x-buH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="knZ-w6-VMF"/>
@@ -116,34 +84,60 @@
                         <outlet property="allowButtonX" destination="Dpq-cN-0FR" id="jGB-Qw-DeM"/>
                         <outlet property="backgroundViewX" destination="5cx-MH-VqK" id="RrW-WZ-fQJ"/>
                         <outlet property="iconImageViewX" destination="ZgF-KG-r30" id="ZRH-NI-7H3"/>
-                        <outlet property="navigationBar" destination="bgL-mO-FMi" id="dgO-TU-Lnq"/>
-                        <outlet property="navigationItemTitle" destination="oIb-4v-mSE" id="1zn-kk-4PP"/>
-                        <outlet property="navigationView" destination="7jH-9k-JOx" id="K16-2c-3wb"/>
-                        <outlet property="rightBarButtonItem" destination="bPX-cE-Glq" id="pYh-p2-Uzk"/>
+                        <outlet property="navigationBarX" destination="F4C-Hs-M1D" id="u1D-ZT-mPU"/>
+                        <outlet property="rightBarButton" destination="v8E-Dl-YwQ" id="cMy-gC-HWX"/>
+                        <outlet property="rightBarButtonItem" destination="agP-w1-Z6c" id="hh1-Eo-Z1G"/>
                         <outlet property="tipLabelX" destination="b81-f9-mWy" id="wvA-DG-GT7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lff-Al-0be" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <barButtonItem style="plain" id="agP-w1-Z6c" userLabel="关闭">
+                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="v8E-Dl-YwQ" userLabel="关闭按钮">
+                        <rect key="frame" x="339" y="11" width="20" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <state key="normal" image="xmark.circle"/>
+                        <connections>
+                            <action selector="onClose:" destination="4m9-Dq-p5Y" eventType="touchUpInside" id="YeA-Iw-Wh3"/>
+                        </connections>
+                    </button>
+                </barButtonItem>
             </objects>
-            <point key="canvasLocation" x="2049" y="955"/>
+            <point key="canvasLocation" x="2991.1999999999998" y="954.67980295566508"/>
+        </scene>
+        <!--PH-AUTHORIZATION-ROOT-->
+        <scene sceneID="laV-VH-7tT">
+            <objects>
+                <navigationController storyboardIdentifier="PHAuthorizationRootController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="KOT-iW-tSo" userLabel="PH-AUTHORIZATION-ROOT" customClass="PHAuthorizationRootController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gqR-Hg-k2S">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4m9-Dq-p5Y" kind="relationship" relationship="rootViewController" id="aZi-Sj-iGK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eqg-eE-I9y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2048.8000000000002" y="954.67980295566508"/>
         </scene>
     </scenes>
     <resources>
         <image name="permission-lock" width="140" height="140"/>
+        <image name="xmark.circle" width="20" height="20"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

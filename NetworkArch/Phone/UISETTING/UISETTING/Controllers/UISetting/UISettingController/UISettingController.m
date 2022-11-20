@@ -99,7 +99,7 @@
    /**
     * 设置返回按钮
     */
-   [self.navigationBarX.navigationBar setLeftBarButtonItem:nil];
+   [self.navigationBarX.navigationBar setLeftBarButtonItem:self.leftBarButtonItem];
    [self.leftBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.leftBarButtonItem setImage:nil];
    [self.leftBarButtonItem setTitle:nil];
@@ -124,8 +124,6 @@
 
    [self.contentView setNeedsLayout];
    [self.contentView layoutIfNeeded];
-
-   [self.contentViewTop setConstant:self.navigationBarX.height];
 
    __CATCH(nErr);
    

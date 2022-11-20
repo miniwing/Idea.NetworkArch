@@ -130,7 +130,7 @@
 
          return;
       });
-#else
+#else /* PRIVACY */
       self.onNotification(IntroductionController.introductionDoneNotification, ^(NSNotification *aNotification) {
          
          @strongify(self);
@@ -150,7 +150,7 @@
 
          return;
       });
-#endif /* PRIVACY */
+#endif /* !PRIVACY */
       
       self.onNotification(HomeController.settingNotification, ^(NSNotification *aNotification) {
 
@@ -165,13 +165,13 @@
             if (nil != aViewController) {
 
                LogDebug((@"-[HomeController initWithCoder:] : %@ : %@", aURL, aViewController));
-               
+
                [aViewController setModalPresentationStyle:UIModalPresentationFullScreen];
 
                [self presentViewController:aViewController
                                   animated:YES
                                 completion:^{
-                  
+
                }];
             } /* End if () */
          }];
@@ -298,27 +298,6 @@
    
    [super viewWillAppear:aAnimated];
    
-//   [self.contentController viewWillAppear:aAnimated];
-   
-//   if ([APPDelegate isApiKeySetting]) {
-//      
-//      [self.rightBarButtonItem setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-//      [self.rightBarButtonItem setImage:[UIImage imageNamed:@"UIButtonBarSetting"]];
-//
-//      [self.rightBarButtonItem setEnabled:YES];
-//      [self.appBar.navigationBar.rightBarButtonItem setEnabled:YES];
-//
-//   } /* End if () */
-//   else {
-//
-//      [self.rightBarButtonItem setTintColor:UIColor.clearColor];
-//      [self.rightBarButtonItem setImage:nil];
-//
-//      [self.rightBarButtonItem setEnabled:NO];
-//      [self.appBar.navigationBar.rightBarButtonItem setEnabled:NO];
-//
-//   } /* End else */
-
    __CATCH(nErr);
    
    return;

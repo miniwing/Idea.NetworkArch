@@ -245,11 +245,7 @@
    
    szAdUnitID  = [stAdUnitIDs objectForKey:@"UNIVERSAL-BANNER"];
    
-#if __Debug__
-   [self.bannerView setBackgroundColor:UIColorX.systemYellowColor];
-#else /* __Debug__ */
    [self.bannerView setBackgroundColor:UIColor.clearColor];
-#endif /* !__Debug__ */
    [self.gadBannerView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
    [self.gadBannerView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
       

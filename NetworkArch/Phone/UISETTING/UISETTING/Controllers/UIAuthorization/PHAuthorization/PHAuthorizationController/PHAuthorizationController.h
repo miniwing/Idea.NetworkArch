@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PHAuthorizationController : IDEAViewController
+@interface PHAuthorizationController : IDEAViewController <IDEAPresentationControllerDelegate>
 
 @end
 
