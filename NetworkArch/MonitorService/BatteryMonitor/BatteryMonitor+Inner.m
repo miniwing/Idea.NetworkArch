@@ -9,49 +9,89 @@
 
 @implementation BatteryMonitor (Inner)
 
-- (void)batteryState:(NSNotification *)aNotification {
+- (void)onBatteryState:(NSNotification *)aNotification {
    
-   UIDeviceBatteryState batteryStatu = [UIDevice currentDevice].batteryState;
+   int                            nErr                                     = EFAULT;
+
+#if __Debug__
+   UIDeviceBatteryState           eBatteryState                            = UIDeviceBatteryStateUnknown;
+#endif /* __Debug__ */
+
+   __TRY;
    
-   switch (batteryStatu) {
+#if __Debug__
+   eBatteryState  = [UIDevice currentDevice].batteryState;
+   
+   switch ([UIDevice currentDevice].batteryState) {
       case UIDeviceBatteryStateCharging:
-         LogDebug((@"电量: 正在充电"));
+         LogDebug((@"-[BatteryMonitor batteryState:] : 电量: 正在充电"));
          break;
       case UIDeviceBatteryStateFull:
-         LogDebug((@"电量: 已充满"));
+         LogDebug((@"-[BatteryMonitor batteryState:] : 电量: 已充满"));
          break;
       case UIDeviceBatteryStateUnplugged:
-         LogDebug((@"电量: 正在放电"));
+         LogDebug((@"-[BatteryMonitor batteryState:] : 电量: 正在放电"));
          break;
+      case UIDeviceBatteryStateUnknown:
       default:
-         LogDebug((@"电量: 未知状态"));
+         LogDebug((@"-[BatteryMonitor batteryState:] : 电量: 未知状态"));
          break;
-   }
+         
+   } /* End switch () */
+#endif /* __Debug__ */
    
+   [self postNotify:SERVICE(IMonitorService).batteryStateNotification
+            onQueue:DISPATCH_GET_MAIN_QUEUE()];
+
+   __CATCH(nErr);
+
    return;
 }
 
-- (void)batteryLevel:(NSNotification *)aNotification {
+- (void)onBatteryLevel:(NSNotification *)aNotification {
    
-   LogDebug((@"电量: 电池电量:%.02lf", [UIDevice currentDevice].batteryLevel * 100));
+   int                            nErr                                     = EFAULT;
    
+   __TRY;
+
+   LogDebug((@"-[BatteryMonitor batteryLevel:] : 电量: 电池电量:%.02lf", [UIDevice currentDevice].batteryLevel * 100));
+   
+   [self postNotify:SERVICE(IMonitorService).batteryLevelNotification
+            onQueue:DISPATCH_GET_MAIN_QUEUE()];
+
+   __CATCH(nErr);
+
    return;
 }
 
-- (void)didChangePowerMode:(NSNotification *)aNotification {
+- (void)onBatteryDidChangePowerMode:(NSNotification *)aNotification {
    
-   LogDebug((@"电量发生了变化"));
+   int                            nErr                                     = EFAULT;
    
+   __TRY;
+
+   LogDebug((@"-[BatteryMonitor didChangePowerMode:] : 电量发生了变化"));
+   
+#if __Debug__
    if ([[NSProcessInfo processInfo] isLowPowerModeEnabled]) {
       
       // low power mode on
-      LogDebug((@"电量发生了变化: 低电量模式开"));
-   }
+      LogDebug((@"-[BatteryMonitor didChangePowerMode:] : 电量发生了变化: 低电量模式开"));
+      
+   } /*  End if () */
    else {
+      
       // low power mode off
-      LogDebug((@"电量发生了变化: 低电量模式关"));
-   }
+      LogDebug((@"-[BatteryMonitor didChangePowerMode:] : 电量发生了变化: 低电量模式关"));
+      
+   } /*  End else */
+#endif /* __Debug__ */
    
+   [self postNotify:SERVICE(IMonitorService).batteryLowPowerModeNotification
+            onQueue:DISPATCH_GET_MAIN_QUEUE()];
+
+   __CATCH(nErr);
+
    return;
 }
 

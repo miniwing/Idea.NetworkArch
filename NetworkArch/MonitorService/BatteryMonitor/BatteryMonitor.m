@@ -9,6 +9,7 @@
 //
 
 #import "BatteryMonitor.h"
+#import "BatteryMonitor+Inner.h"
 
 @implementation BatteryMonitor
 
@@ -51,7 +52,10 @@
    self  = [super init];
    
    if (self) {
-            
+
+      // 开启监控
+      [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
+
    } /* End if () */
    
    __CATCH(nErr);
@@ -64,27 +68,38 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-   
-   // 开启监控
-   [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
-   
+      
    // 监听电池低电量模式变化
    [[NSNotificationCenter defaultCenter] addObserver:self
-                                            selector:@selector(didChangePowerMode:)
+                                            selector:@selector(onBatteryDidChangePowerMode:)
                                                 name:NSProcessInfoPowerStateDidChangeNotification
                                               object:nil];
    
    // 监听电池状态
    [[NSNotificationCenter defaultCenter] addObserver:self
-                                            selector:@selector(batteryState:)
+                                            selector:@selector(onBatteryState:)
                                                 name:UIDeviceBatteryStateDidChangeNotification
                                               object:nil];
    
    // 电量发生变化
    [[NSNotificationCenter defaultCenter] addObserver:self
-                                            selector:@selector(batteryLevel:)
+                                            selector:@selector(onBatteryLevel:)
                                                 name:UIDeviceBatteryLevelDidChangeNotification
                                               object:nil];
+   
+   DISPATCH_ASYNC_ON_BACKGROUND_QUEUE(^{
+      
+      [self postNotify:SERVICE(IMonitorService).batteryLevelNotification
+               onQueue:DISPATCH_GET_MAIN_QUEUE()];
+
+      [self postNotify:SERVICE(IMonitorService).batteryStateNotification
+               onQueue:DISPATCH_GET_MAIN_QUEUE()];
+
+      [self postNotify:SERVICE(IMonitorService).batteryLowPowerModeNotification
+               onQueue:DISPATCH_GET_MAIN_QUEUE()];
+
+      return;
+   });
    
    __CATCH(nErr);
    
@@ -111,6 +126,21 @@
    __CATCH(nErr);
    
    return;
+}
+
+- (UIDeviceBatteryState)batteryState {
+   
+   return [UIDevice currentDevice].batteryState;
+}
+
+- (float)batteryLevel {
+   
+   return [UIDevice currentDevice].batteryLevel;
+}
+
+- (BOOL)batteryLowPowerModeEnabled {
+   
+   return [NSProcessInfo processInfo].isLowPowerModeEnabled;
 }
 
 @end

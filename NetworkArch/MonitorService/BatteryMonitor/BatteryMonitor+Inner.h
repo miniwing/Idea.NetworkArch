@@ -5,6 +5,8 @@
 //  Created by Harry on 2022/11/20.
 //
 
+#import "IMonitorService.h"
+
 #import "BatteryMonitor.h"
 
 NS_ASSUME_NONNULL_BEGIN

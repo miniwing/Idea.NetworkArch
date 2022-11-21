@@ -73,12 +73,12 @@ Pod::Spec.new do |spec|
 #  spec.dependency 'SecurityUtils'
 #  spec.dependency 'ContentProvider'
 
-  spec.public_header_files  = 'MonitorService/**/*.h',
-                              'BatteryMonitor/**/*.h',
-                              'CPUMonitor/**/*.h',
-                              'MemoryMonitor/**/*.h',
-                              'NetworkMonitor/**/*.h',
-                              'DriveMonitor/**/*.h'
+  spec.public_header_files  = 'MonitorService/IMonitorService.h',
+                              'BatteryMonitor/*.h',
+                              'CPUMonitor/*.h',
+                              'MemoryMonitor/*.h',
+                              'NetworkMonitor/*.h',
+                              'DriveMonitor/*.h'
 
   spec.source_files         = 'MonitorService/**/*.{h,hpp,hxx,m,c,cpp,cxx}',
                               'BatteryMonitor/**/*.{h,hpp,hxx,m,c,cpp,cxx}',

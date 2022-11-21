@@ -150,3 +150,24 @@
 }
 
 @end
+
+#pragma mark - UITableViewDelegate
+@implementation MonitorContentController (UITableViewDelegate)
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)aSection {
+   
+   return 0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)aSection {
+   
+   if (MonitorSectionMemory == aSection) {
+      
+      return 0;
+      
+   } /* End if () */
+   
+   return 24;
+}
+
+@end

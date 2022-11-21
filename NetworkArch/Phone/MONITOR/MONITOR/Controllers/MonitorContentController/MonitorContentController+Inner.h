@@ -10,6 +10,8 @@
 #import <ADs/AD.h>
 #import <ADs/AppOpenAdManager.h>
 
+#import <MonitorService/IMonitorService.h>
+
 #import "MonitorContentController.h"
 
 #import "MonitorContentCell.h"

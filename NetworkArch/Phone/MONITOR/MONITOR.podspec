@@ -92,6 +92,8 @@ Pod::Spec.new do |spec|
   spec.dependency 'APPDATA'
   spec.dependency 'APPDriver'
 
+  spec.dependency 'MonitorService'
+
   if ENV['GOOGLE_MOBILE_ADS'] == 'YES'
     if ENV['XCODE_VERSION'] == '13.0'
       spec.dependency 'Google-Mobile-Ads-SDK',    '9.3.0'

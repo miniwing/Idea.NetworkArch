@@ -24,6 +24,9 @@
 
    // Custom dealloc
 
+   [self unobserveAllNotifications];
+   [self removeAllSignalResponders];
+
    __SUPER_DEALLOC;
 
    return;
@@ -39,6 +42,48 @@
    
    if (self) {
       
+      @weakify(self);
+      self.onNotification(SERVICE(IMonitorService).batteryLevelNotification, ^(NSNotification *aNotification) {
+         
+         @strongify(self);
+
+         LogDebug((@"-[MonitorContentController initWithCoder:] : batteryLevelNotification : strongify : %@", self));
+
+         return;
+      });
+
+      self.onNotification(SERVICE(IMonitorService).batteryStateNotification, ^(NSNotification *aNotification) {
+         
+         @strongify(self);
+
+         LogDebug((@"-[MonitorContentController initWithCoder:] : batteryStateNotification : strongify : %@", self));
+
+         return;
+      });
+
+      self.onNotification(SERVICE(IMonitorService).batteryLowPowerModeNotification, ^(NSNotification *aNotification) {
+         
+         @strongify(self);
+
+         LogDebug((@"-[MonitorContentController initWithCoder:] : batteryLowPowerModeNotification : strongify : %@", self));
+
+         if (SERVICE(IMonitorService).batteryLowPowerModeEnabled) {
+            
+            [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+               
+               return UIColorX.systemYellowColor;
+            }];
+            
+         } /* End if () */
+         else {
+            
+            [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+
+         } /* End else */
+
+         return;
+      });
+
    } /* End if () */
    
    __CATCH(nErr);
@@ -68,8 +113,8 @@
    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
    
 //   [self.tableView setTableHeaderView:[UIView new]];
-//   [self.tableView setTableFooterView:[UIView new]];
-   [self.tableView setEstimatedSectionFooterHeight:0];
+   [self.tableView setTableFooterView:[UIView new]];
+   
    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
    
    [self.tableView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
@@ -252,6 +297,42 @@
    [self postSignal:MonitorContentController.loadADSignal
             onQueue:DISPATCH_GET_MAIN_QUEUE()];
 #endif /* GOOGLE_MOBILE_ADS */
+
+   /**
+    * 电池信息初始化
+    */
+//   LogDebug((@"-[HomeContentController viewDidLoad] : BatterLevel : %.2f", SERVICE(IMonitorService).batteryLevel));
+   LogDebug((@"-[HomeContentController viewDidLoad] : BatterLevel : %d", (int)(SERVICE(IMonitorService).batteryLevel * 100)));
+
+   if (SERVICE(IMonitorService).batteryLowPowerModeEnabled) {
+      
+      [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+         
+         return UIColorX.systemYellowColor;
+      }];
+      
+   } /* End if () */
+   
+   if (SERVICE(IMonitorService).batteryLevel < 0.25) {
+      
+      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.25", self.class)];
+
+   } /* End if () */
+   else if (SERVICE(IMonitorService).batteryLevel < 0.50) {
+      
+      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.50", self.class)];
+
+   } /* End if () */
+   else if (SERVICE(IMonitorService).batteryLevel < 0.75) {
+      
+      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.75", self.class)];
+
+   } /* End if () */
+   else if (SERVICE(IMonitorService).batteryLevel < 0.75) {
+      
+      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.75", self.class)];
+
+   } /* End if () */
 
    __CATCH(nErr);
    

@@ -20,6 +20,25 @@ __EXPORT_SERVICE(IMonitorService, MonitorService);
 
 @end
 
+@implementation MonitorService (Battery)
+
+- (NSString *)batteryLowPowerModeNotification {
+   
+   return @"battery.LowPowerMode.Notification";
+}
+
+- (NSString *)batteryLevelNotification {
+   
+   return @"battery.Level.Notification";
+}
+
+- (NSString *)batteryStateNotification {
+   
+   return @"battery.State.Notification";
+}
+
+@end
+
 #pragma mark - IDEA_MAIN
 IDEA_MAIN() {
    

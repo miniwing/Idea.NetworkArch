@@ -36,6 +36,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)startMonitor;
 - (void)stopMonitor;
 
+- (UIDeviceBatteryState)batteryState;
+- (float)batteryLevel;
+- (BOOL)batteryLowPowerModeEnabled;
+
 @end
 
 NS_ASSUME_NONNULL_END

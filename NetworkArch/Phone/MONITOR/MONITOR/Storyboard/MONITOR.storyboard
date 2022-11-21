@@ -69,7 +69,7 @@
         <scene sceneID="Fbc-nt-gkp">
             <objects>
                 <tableViewController storyboardIdentifier="MonitorContentController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uQP-3P-sTb" userLabel="MONITOR-CONTENT" customClass="MonitorContentController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="16" id="vbS-80-HcU">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="24" id="vbS-80-HcU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,45 +77,29 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="名称" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="is7-7t-cRk" userLabel="名称">
-                                    <rect key="frame" x="16" y="16" width="343" height="16"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="16" id="CjT-Rh-wBd"/>
-                                    </constraints>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" text="名称" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="is7-7t-cRk" userLabel="名称">
+                                    <rect key="frame" x="16" y="8" width="343" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="版本" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKz-ZD-oah" userLabel="版本">
-                                    <rect key="frame" x="16" y="40" width="151.66666666666666" height="14"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="14" id="Fqw-oF-qpG"/>
-                                    </constraints>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" text="版本" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKz-ZD-oah" userLabel="版本">
+                                    <rect key="frame" x="16" y="40" width="152" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Build" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFf-js-zma" userLabel="Build">
-                                    <rect key="frame" x="207.66666666666663" y="40" width="151.33333333333337" height="14"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" text="Build" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFf-js-zma" userLabel="Build">
+                                    <rect key="frame" x="208" y="40" width="151" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="UKz-ZD-oah" secondAttribute="bottom" constant="16" id="7cd-sV-2hh"/>
-                                <constraint firstItem="UKz-ZD-oah" firstAttribute="bottom" secondItem="rFf-js-zma" secondAttribute="bottom" id="8UY-ax-ILB"/>
-                                <constraint firstItem="UKz-ZD-oah" firstAttribute="leading" secondItem="is7-7t-cRk" secondAttribute="leading" id="9At-FP-BtB"/>
-                                <constraint firstItem="UKz-ZD-oah" firstAttribute="top" secondItem="is7-7t-cRk" secondAttribute="bottom" constant="8" id="B7d-lj-433"/>
-                                <constraint firstItem="is7-7t-cRk" firstAttribute="leading" secondItem="o1y-xK-COS" secondAttribute="leading" constant="16" id="CAI-2g-wfb"/>
-                                <constraint firstItem="rFf-js-zma" firstAttribute="trailing" secondItem="is7-7t-cRk" secondAttribute="trailing" id="FqV-mT-ujz"/>
-                                <constraint firstItem="rFf-js-zma" firstAttribute="width" secondItem="UKz-ZD-oah" secondAttribute="width" id="JJl-3R-35y"/>
-                                <constraint firstItem="UKz-ZD-oah" firstAttribute="top" secondItem="rFf-js-zma" secondAttribute="top" id="MrC-6F-1ph"/>
-                                <constraint firstItem="rFf-js-zma" firstAttribute="leading" secondItem="UKz-ZD-oah" secondAttribute="trailing" constant="40" id="PzB-b2-jNg"/>
-                                <constraint firstAttribute="trailing" secondItem="is7-7t-cRk" secondAttribute="trailing" constant="16" id="UD4-A4-PjB"/>
-                                <constraint firstItem="is7-7t-cRk" firstAttribute="top" secondItem="o1y-xK-COS" secondAttribute="top" constant="16" id="pLe-Um-oqc"/>
-                            </constraints>
                         </view>
                         <sections>
                             <tableViewSection id="vOp-zT-W2I" userLabel="电池">
@@ -252,7 +236,7 @@
                             <tableViewSection id="2ga-GJ-hOJ" userLabel="网络">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="88" id="T74-bM-Qrh" userLabel="网络" customClass="MonitorContentCell">
-                                        <rect key="frame" x="16" y="198" width="343" height="88"/>
+                                        <rect key="frame" x="16" y="206" width="343" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T74-bM-Qrh" id="Aa2-E4-mVF">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="88"/>
@@ -364,7 +348,7 @@
                             <tableViewSection id="FmM-c7-S4k" userLabel="CPU">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="88" id="nSr-L0-LeT" userLabel="CPU" customClass="MonitorContentCell">
-                                        <rect key="frame" x="16" y="303" width="343" height="88"/>
+                                        <rect key="frame" x="16" y="319" width="343" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nSr-L0-LeT" id="flI-21-JTE">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="88"/>
@@ -476,7 +460,7 @@
                             <tableViewSection id="oXQ-xZ-aRT" userLabel="存储">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="110" id="e33-bJ-te8" userLabel="存储" customClass="MonitorContentCell">
-                                        <rect key="frame" x="16" y="408" width="343" height="110"/>
+                                        <rect key="frame" x="16" y="432" width="343" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e33-bJ-te8" id="dxd-Rb-B79">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="110"/>
@@ -607,7 +591,7 @@
                             <tableViewSection id="9LA-Ah-gLl" userLabel="内存">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="110" id="SUa-ZI-Oay" userLabel="内存" customClass="MonitorContentCell">
-                                        <rect key="frame" x="16" y="535" width="343" height="110"/>
+                                        <rect key="frame" x="16" y="567" width="343" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SUa-ZI-Oay" id="KDO-1W-5sd">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="110"/>

@@ -669,7 +669,10 @@
    [Appirater setTimeBeforeReminding:2];
    [Appirater setDebug:__Debug__];
 
-   [Appirater appLaunched:!__Debug__];
+#if __Debug__
+#  else
+   [Appirater appLaunched:YES];
+#  endif /* __Debug__ */
 #  endif /* !TARGET_IPHONE_SIMULATOR */
 #endif /* APP_RATER */
    /******************************************************************************************/
