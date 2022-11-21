@@ -19,6 +19,8 @@
 #import "MonitorController+Notification.h"
 #import "MonitorController+Theme.h"
 
+#import "MonitorContentController+Inner.h"
+
 @implementation MonitorController
 
 - (void)dealloc {
@@ -201,6 +203,12 @@
 
    // Get the new view controller using [aSegue destinationViewController].
    // Pass the selected object to the new view controller.
+
+   if ([aSegue.identifier isEqualToString:MonitorContentController.className]) {
+      
+      self.contentController  = aSegue.destinationViewController;
+      
+   } /* End if () */
 
    __CATCH(nErr);
 

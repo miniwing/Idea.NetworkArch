@@ -24,17 +24,17 @@
    
    switch ([UIDevice currentDevice].batteryState) {
       case UIDeviceBatteryStateCharging:
-         LogDebug((@"-[BatteryMonitor batteryState:] : 电量: 正在充电"));
+         LogDebug((@"-[BatteryMonitor onBatteryState:] : 电量: 正在充电"));
          break;
       case UIDeviceBatteryStateFull:
-         LogDebug((@"-[BatteryMonitor batteryState:] : 电量: 已充满"));
+         LogDebug((@"-[BatteryMonitor onBatteryState:] : 电量: 已充满"));
          break;
       case UIDeviceBatteryStateUnplugged:
-         LogDebug((@"-[BatteryMonitor batteryState:] : 电量: 正在放电"));
+         LogDebug((@"-[BatteryMonitor onBatteryState:] : 电量: 正在放电"));
          break;
       case UIDeviceBatteryStateUnknown:
       default:
-         LogDebug((@"-[BatteryMonitor batteryState:] : 电量: 未知状态"));
+         LogDebug((@"-[BatteryMonitor onBatteryState:] : 电量: 未知状态"));
          break;
          
    } /* End switch () */
@@ -54,7 +54,7 @@
    
    __TRY;
 
-   LogDebug((@"-[BatteryMonitor batteryLevel:] : 电量: 电池电量:%.02lf", [UIDevice currentDevice].batteryLevel * 100));
+   LogDebug((@"-[BatteryMonitor onBatteryLevel:] : 电量: 电池电量:%.02lf", [UIDevice currentDevice].batteryLevel * 100));
    
    [self postNotify:SERVICE(IMonitorService).batteryLevelNotification
             onQueue:DISPATCH_GET_MAIN_QUEUE()];
@@ -70,19 +70,19 @@
    
    __TRY;
 
-   LogDebug((@"-[BatteryMonitor didChangePowerMode:] : 电量发生了变化"));
+   LogDebug((@"-[BatteryMonitor onBatteryDidChangePowerMode:] : 电量发生了变化"));
    
 #if __Debug__
    if ([[NSProcessInfo processInfo] isLowPowerModeEnabled]) {
       
       // low power mode on
-      LogDebug((@"-[BatteryMonitor didChangePowerMode:] : 电量发生了变化: 低电量模式开"));
+      LogDebug((@"-[BatteryMonitor onBatteryDidChangePowerMode:] : 电量发生了变化: 低电量模式开"));
       
    } /*  End if () */
    else {
       
       // low power mode off
-      LogDebug((@"-[BatteryMonitor didChangePowerMode:] : 电量发生了变化: 低电量模式关"));
+      LogDebug((@"-[BatteryMonitor onBatteryDidChangePowerMode:] : 电量发生了变化: 低电量模式关"));
       
    } /*  End else */
 #endif /* __Debug__ */

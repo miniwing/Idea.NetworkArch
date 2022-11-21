@@ -145,7 +145,9 @@
 
 - (BOOL)isCharging {
    
-   return (UIDeviceBatteryStateCharging == [UIDevice currentDevice].batteryState);
+   LogDebug((@"-[BatteryMonitor isCharging:] : batteryState : %d", [UIDevice currentDevice].batteryState));
+
+   return ((UIDeviceBatteryStateCharging == [UIDevice currentDevice].batteryState) || (UIDeviceBatteryStateFull == [UIDevice currentDevice].batteryState));
 }
 
 @end

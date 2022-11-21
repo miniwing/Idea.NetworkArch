@@ -49,6 +49,50 @@
 
          LogDebug((@"-[MonitorContentController initWithCoder:] : batteryLevelNotification : strongify : %@", self));
 
+         if (SERVICE(IMonitorService).batteryLevel == 1) {
+            
+            if (SERVICE(IMonitorService).batteryIsCharging) {
+
+               [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery-100-bolt", self.class)];
+
+            } /* End if () */
+            else {
+               
+               [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.100", self.class)];
+
+            } /* End else */
+
+         } /* End if () */
+         else if (SERVICE(IMonitorService).batteryLevel >= 0.75) {
+            
+            [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.75", self.class)];
+
+         } /* End if () */
+         else if (SERVICE(IMonitorService).batteryLevel >= 0.50) {
+            
+            [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.50", self.class)];
+
+         } /* End if () */
+         else if (SERVICE(IMonitorService).batteryLevel >= 0.25) {
+            
+            [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.25", self.class)];
+
+         } /* End if () */
+         else {
+            
+            [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.0", self.class)];
+
+            if (SERVICE(IMonitorService).batteryLowPowerModeEnabled) {
+
+               [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+
+                  return UIColorX.systemRedColor;
+               }];
+
+            } /* End if () */
+
+         } /* End else */
+
          return;
       });
 
@@ -68,15 +112,15 @@
          LogDebug((@"-[MonitorContentController initWithCoder:] : batteryLowPowerModeNotification : strongify : %@", self));
 
          if (SERVICE(IMonitorService).batteryLowPowerModeEnabled) {
-            
+
             [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-               
+
                return UIColorX.systemYellowColor;
             }];
-            
+
          } /* End if () */
          else {
-            
+
             [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
 
          } /* End else */
@@ -129,28 +173,19 @@
    }];
 
    stIconImages   = @[
-      @"battery.0",
+      @"battery-100-bolt",
       @"wifi",
       @"cpu",
       @"drive",
       @"memory"];
 
    for (int H = 0; H < self.iconImageViews.count; ++H) {
-      
+            
       [self.iconImageViews[H] setBackgroundColor:UIColor.clearColor];
       [self.iconImageViews[H] setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
       [self.iconImageViews[H] setImage:__IMAGE_NAMED(stIconImages[H], self.class)];
       
    } /* End for () */
-
-//   stNames  = @[
-//      __LOCALIZED_STRING(self.class, @"BATTERY"),
-//      __LOCALIZED_STRING(self.class, @"WIFI"),
-//      __LOCALIZED_STRING(self.class, @"CELLULAR"),
-//      __LOCALIZED_STRING(self.class, @"CPU"),
-//      __LOCALIZED_STRING(self.class, @"DRIVE"),
-//      __LOCALIZED_STRING(self.class, @"MEMORY")
-//   ];
    
    [self.deviceView setBackgroundColor:UIColor.clearColor];
    [self.deviceView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -267,7 +302,7 @@
     */
 #if GOOGLE_MOBILE_ADS
    stAdUnitIDs = [AD admobs];
-   LogDebug((@"-[HomeContentController viewDidLoad] : AdUnitIDs : %@", stAdUnitIDs));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : AdUnitIDs : %@", stAdUnitIDs));
    
    szAdUnitID  = [stAdUnitIDs objectForKey:@"HOME-BANNER"];
    
@@ -298,26 +333,49 @@
             onQueue:DISPATCH_GET_MAIN_QUEUE()];
 #endif /* GOOGLE_MOBILE_ADS */
 
+   LogDebug((@"-[MonitorContentController viewDidLoad] : Device Name : %@", [UIDevice currentDevice].name));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : Device model : %@", [UIDevice currentDevice].model));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : Device localizedModel : %@", [UIDevice currentDevice].localizedModel));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : Device systemName : %@", [UIDevice currentDevice].systemName));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : Device systemVersion : %@", [UIDevice currentDevice].systemVersion));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : Device identifierForVendor : %@", [UIDevice currentDevice].identifierForVendor));
+
+   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo environment : %@", [NSProcessInfo processInfo].environment));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo arguments : %@", [NSProcessInfo processInfo].arguments));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo hostName : %@", [NSProcessInfo processInfo].hostName));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo processName : %@", [NSProcessInfo processInfo].processName));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo processIdentifier : %d", [NSProcessInfo processInfo].processIdentifier));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo globallyUniqueString : %@", [NSProcessInfo processInfo].globallyUniqueString));
+
+   struct utsname  systemInfo = {0};
+   
+   uname(&systemInfo);
+   
+   LogDebug((@"-[MonitorContentController viewDidLoad] : sysname : %@", [NSString stringWithCString:systemInfo.sysname encoding:NSASCIIStringEncoding]));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : machine : %@", [NSString stringWithCString:systemInfo.machine encoding:NSASCIIStringEncoding]));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : nodename : %@", [NSString stringWithCString:systemInfo.nodename encoding:NSASCIIStringEncoding]));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : release : %@", [NSString stringWithCString:systemInfo.release encoding:NSASCIIStringEncoding]));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : version : %@", [NSString stringWithCString:systemInfo.version encoding:NSASCIIStringEncoding]));
+
    /**
     * 电池信息初始化
     */
-//   LogDebug((@"-[HomeContentController viewDidLoad] : BatterLevel : %.2f", SERVICE(IMonitorService).batteryLevel));
-   LogDebug((@"-[HomeContentController viewDidLoad] : BatterLevel : %d", (int)(SERVICE(IMonitorService).batteryLevel * 100)));
+   LogDebug((@"-[MonitorContentController viewDidLoad] : BatterLevel : %d", (int)(SERVICE(IMonitorService).batteryLevel * 100)));
 
    if (SERVICE(IMonitorService).batteryLowPowerModeEnabled) {
-      
+
       [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-         
+
          return UIColorX.systemYellowColor;
       }];
-      
+
    } /* End if () */
    
    if (SERVICE(IMonitorService).batteryLevel == 1) {
       
       if (SERVICE(IMonitorService).batteryIsCharging) {
 
-         [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.100.bolt", self.class)];
+         [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery-100-bolt", self.class)];
 
       } /* End if () */
       else {
@@ -345,6 +403,15 @@
    else {
       
       [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.0", self.class)];
+
+      if (SERVICE(IMonitorService).batteryLowPowerModeEnabled) {
+
+         [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+
+            return UIColorX.systemRedColor;
+         }];
+
+      } /* End if () */
 
    } /* End else */
 
