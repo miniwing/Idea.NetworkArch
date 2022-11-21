@@ -12,7 +12,57 @@
 
 #import "MonitorContentController.h"
 
+#import "MonitorContentCell.h"
+
 NS_ASSUME_NONNULL_BEGIN
+
+IDEA_ENUM(NSInteger, MonitorSection) {
+   
+   MonitorSectionBattery   = 0,
+   MonitorSectionNetwork,
+   MonitorSectionCPU,
+   MonitorSectionDrive,
+   MonitorSectionMemory,
+   MonitorSectionNumber
+};
+
+IDEA_ENUM(NSInteger, MonitorCPU) {
+   
+   MonitorCPUName          = 0,
+   MonitorCPUUsage,
+   MonitorCPUNumber
+};
+
+IDEA_ENUM(NSInteger, MonitorNetwork) {
+   
+   MonitorNetworkName      = 0,
+   MonitorNetworkUsage,
+   MonitorNetworkNumber
+};
+
+IDEA_ENUM(NSInteger, MonitorBattery) {
+   
+   MonitorBatteryName      = 0,
+   MonitorBatteryUsage,
+   MonitorBatteryProgress,
+   MonitorBatteryNumber
+};
+
+IDEA_ENUM(NSInteger, MonitorDrive) {
+   
+   MonitorDriveName        = 0,
+   MonitorDriveUsage,
+   MonitorDriveProgress,
+   MonitorDriveNumber
+};
+
+IDEA_ENUM(NSInteger, MonitorMemory) {
+   
+   MonitorMemoryName       = 0,
+   MonitorMemoryUsage,
+   MonitorMemoryProgress,
+   MonitorMemoryNumber
+};
 
 @interface MonitorContentController ()
 
@@ -21,9 +71,44 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewHeight;
 @property (nonatomic, weak)   IBOutlet       GADBannerView                       * gadBannerView;
 
+@property (nonatomic, weak)   IBOutlet       UIView                              * deviceView;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * deviceNameLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * deviceVersionLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * deviceBuildLabel;
+
+@property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * batteryCell;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * batteryNameLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * batteryStateLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * batteryTotalLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * batteryRealLabel;
+
+@property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * networkCell;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * networkNameLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * networkStateLabel;
+
+@property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * cpuCell;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * cpuNameLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * cpuStateLabel;
+
+@property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * driveCell;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * driveNameLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * driveStateLabel;
+
+@property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * memoryCell;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * memoryNameLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * memoryStateLabel;
+
+@property (nonatomic, strong) IBOutletCollection(UIImageView) NSArray<UIImageView *> * iconImageViews;
+
+@property (nonatomic, weak)   IBOutlet       UIProgressView                      * batteryProgressView;
+@property (nonatomic, weak)   IBOutlet       UIProgressView                      * driveProgressView;
+@property (nonatomic, weak)   IBOutlet       UIProgressView                      * memoryProgressView;
+
 @end
 
 @interface MonitorContentController (Inner)
+
+- (void)loadBattery;
 
 @end
 

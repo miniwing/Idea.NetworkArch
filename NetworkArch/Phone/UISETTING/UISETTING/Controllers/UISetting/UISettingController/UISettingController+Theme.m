@@ -10,7 +10,11 @@
 //
 
 #import "UISettingController+Inner.h"
+#import "UISettingController+Action.h"
+#import "UISettingController+Signal.h"
+#import "UISettingController+Notification.h"
 #import "UISettingController+Theme.h"
+#import "UISettingController+Debug.h"
 
 #pragma mark - UITheme
 @implementation UISettingController (Theme)

@@ -380,8 +380,8 @@
             
             [self popUp:aViewController animated:[aAnimated boolValue] completion:^{
                
-               [SettingProvider setIntroduction:!__Debug__];
-//               [SettingProvider setIntroduction:YES];
+//               [SettingProvider setIntroduction:!__Debug__];
+               [SettingProvider setIntroduction:YES];
 
                return;
             }];

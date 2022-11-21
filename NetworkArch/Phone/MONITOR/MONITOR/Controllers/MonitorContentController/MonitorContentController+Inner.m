@@ -17,6 +17,17 @@
 
 @implementation MonitorContentController (Inner)
 
+- (void)loadBattery {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+   
+   __CATCH(nErr);
+
+   return;
+}
+
 @end
 
 #pragma mark - UIStoryboard
@@ -30,6 +41,112 @@
 + (NSString *)bundle {
    
    return @(BUNDLE);
+}
+
+@end
+
+#pragma mark - UITableViewDataSource
+@implementation MonitorContentController (UITableViewDataSource)
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
+   
+   return MonitorSectionNumber;
+}
+
+- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection {
+      
+   return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)aIndexPath {
+   
+   int                            nErr                                     = EFAULT;
+   
+   UITableViewCellX              *stTableViewCell                          = nil;
+
+   __TRY;
+   
+//   MonitorSectionBattery   = 0,
+//   MonitorSectionNetwork,
+//   MonitorSectionCPU,
+//   MonitorSectionDrive,
+//   MonitorSectionMemory,
+//   MonitorSectionNumber
+
+   if (MonitorSectionBattery == aIndexPath.section) {
+      
+      stTableViewCell   = self.batteryCell;
+      
+      if (@available(iOS 13, *)) {
+
+      } /* End if () */
+      else {
+         
+         [stTableViewCell setRectCorner:UIRectCornerAllCorners];
+
+      } /* End else */
+
+   } /* End if () */
+   else if (MonitorSectionNetwork == aIndexPath.section) {
+      
+      stTableViewCell   = self.networkCell;
+      
+      if (@available(iOS 13, *)) {
+
+      } /* End if () */
+      else {
+         
+         [stTableViewCell setRectCorner:UIRectCornerAllCorners];
+
+      } /* End else */
+
+   } /* End else if () */
+   else if (MonitorSectionCPU == aIndexPath.section) {
+      
+      stTableViewCell   = self.cpuCell;
+      
+      if (@available(iOS 13, *)) {
+
+      } /* End if () */
+      else {
+         
+         [stTableViewCell setRectCorner:UIRectCornerAllCorners];
+
+      } /* End else */
+
+   } /* End else if () */
+   else if (MonitorSectionDrive == aIndexPath.section) {
+      
+      stTableViewCell   = self.driveCell;
+      
+      if (@available(iOS 13, *)) {
+
+      } /* End if () */
+      else {
+         
+         [stTableViewCell setRectCorner:UIRectCornerAllCorners];
+
+      } /* End else */
+
+   } /* End else if () */
+   else if (MonitorSectionMemory == aIndexPath.section) {
+      
+      stTableViewCell   = self.memoryCell;
+      
+      if (@available(iOS 13, *)) {
+
+      } /* End if () */
+      else {
+         
+         [stTableViewCell setRectCorner:UIRectCornerAllCorners];
+
+      } /* End else */
+
+   } /* End else if () */
+
+   __CATCH(nErr);
+   
+   return stTableViewCell;
 }
 
 @end

@@ -23,6 +23,8 @@
 
 @def_signal(loadAD);
 
+@def_signal(battery);
+
 @end
 
 #pragma mark - handleSignal
@@ -48,6 +50,17 @@ handleSignal(MonitorContentController, loadADSignal) {
    __TRY;
    
    LogDebug((@"-[HomeContentController loadADSignal:] : Signal : %@", aSignal));
+   
+   __CATCH(nErr);
+
+   return;
+}
+
+handleSignal(MonitorContentController, batterySignal) {
+      
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
    
    __CATCH(nErr);
 

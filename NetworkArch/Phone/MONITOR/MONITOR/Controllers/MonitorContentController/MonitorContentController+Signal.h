@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @signal(loadAD);
 
+@signal(battery);
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -16,10 +16,6 @@
 #import "MonitorContentController+Theme.h"
 #import "MonitorContentController+Debug.h"
 
-@interface MonitorContentController ()
-
-@end
-
 @implementation MonitorContentController
 
 - (void)dealloc {
@@ -59,6 +55,8 @@
    NSString                      *szAdUnitID                               = nil;
 #endif /* GOOGLE_MOBILE_ADS */
 
+   NSArray<NSString *>           *stIconImages                             = nil;
+
    __TRY;
    
    [super viewDidLoad];
@@ -69,7 +67,7 @@
    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
    
-   [self.tableView setTableHeaderView:[UIView new]];
+//   [self.tableView setTableHeaderView:[UIView new]];
 //   [self.tableView setTableFooterView:[UIView new]];
    [self.tableView setEstimatedSectionFooterHeight:0];
    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -84,6 +82,140 @@
       
       return [IDEAColor colorWithKey:[IDEAColor systemGroupedBackground]];
    }];
+
+   stIconImages   = @[
+      @"battery.0",
+      @"wifi",
+      @"cpu",
+      @"drive",
+      @"memory"];
+
+   for (int H = 0; H < self.iconImageViews.count; ++H) {
+      
+      [self.iconImageViews[H] setBackgroundColor:UIColor.clearColor];
+      [self.iconImageViews[H] setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+      [self.iconImageViews[H] setImage:__IMAGE_NAMED(stIconImages[H], self.class)];
+      
+   } /* End for () */
+
+//   stNames  = @[
+//      __LOCALIZED_STRING(self.class, @"BATTERY"),
+//      __LOCALIZED_STRING(self.class, @"WIFI"),
+//      __LOCALIZED_STRING(self.class, @"CELLULAR"),
+//      __LOCALIZED_STRING(self.class, @"CPU"),
+//      __LOCALIZED_STRING(self.class, @"DRIVE"),
+//      __LOCALIZED_STRING(self.class, @"MEMORY")
+//   ];
+   
+   [self.deviceView setBackgroundColor:UIColor.clearColor];
+   [self.deviceView setTranslatesAutoresizingMaskIntoConstraints:NO];
+   
+//   self.deviceNameLabel;
+   [self.deviceNameLabel setBackgroundColor:UIColor.clearColor];
+   [self.deviceNameLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.deviceNameLabel setFont:[UIFont systemFontOfSize:self.deviceNameLabel.font.pointSize
+                                                    weight:UIFontWeightRegular]];
+   [self.deviceNameLabel setText:[UIDevice currentDevice].name];
+   
+//   self.deviceVersionLabel;
+   [self.deviceVersionLabel setBackgroundColor:UIColor.clearColor];
+   [self.deviceVersionLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.deviceVersionLabel setFont:[UIFont systemFontOfSize:self.deviceVersionLabel.font.pointSize
+                                                    weight:UIFontWeightLight]];
+   [self.deviceVersionLabel setText:[NSString stringWithFormat:@"Version : %@", [UIDevice getOSVersion]]];
+
+//   self.deviceBuildLabel;
+   [self.deviceBuildLabel setBackgroundColor:UIColor.clearColor];
+   [self.deviceBuildLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.deviceBuildLabel setFont:[UIFont systemFontOfSize:self.deviceBuildLabel.font.pointSize
+                                                    weight:UIFontWeightLight]];
+   [self.deviceBuildLabel setText:[NSString stringWithFormat:@"Build : %@", [UIDevice getSystemBuildVersion]]];
+
+//   self.batteryCell;
+   [self.batteryNameLabel setBackgroundColor:UIColor.clearColor];
+   [self.batteryNameLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.batteryNameLabel setFont:[UIFont systemFontOfSize:self.batteryNameLabel.font.pointSize
+                                                    weight:UIFontWeightLight]];
+   [self.batteryNameLabel setText:__LOCALIZED_STRING(self.class, @"BATTERY")];
+   
+   [self.batteryStateLabel setBackgroundColor:UIColor.clearColor];
+   [self.batteryStateLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.batteryStateLabel setFont:[UIFont systemFontOfSize:self.batteryStateLabel.font.pointSize
+                                                     weight:UIFontWeightLight]];
+   [self.batteryStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+   
+   /**
+    * 电量信息
+    */
+   [self.batteryTotalLabel setBackgroundColor:UIColor.clearColor];
+   [self.batteryTotalLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.batteryTotalLabel setFont:[UIFont systemFontOfSize:self.batteryTotalLabel.font.pointSize
+                                                    weight:UIFontWeightLight]];
+   [self.batteryTotalLabel setText:__LOCALIZED_STRING(self.class, @"BATTERY")];
+   
+   [self.batteryRealLabel setBackgroundColor:UIColor.clearColor];
+   [self.batteryRealLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.batteryRealLabel setFont:[UIFont systemFontOfSize:self.batteryRealLabel.font.pointSize
+                                                    weight:UIFontWeightLight]];
+   [self.batteryRealLabel setText:__LOCALIZED_STRING(self.class, @"BATTERY")];
+   
+   [self.batteryProgressView setProgress:[UIDevice currentDevice].batteryLevel animated:YES];
+
+//   self.networkCell;
+   [self.networkNameLabel setBackgroundColor:UIColor.clearColor];
+   [self.networkNameLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.networkNameLabel setFont:[UIFont systemFontOfSize:self.networkNameLabel.font.pointSize
+                                                    weight:UIFontWeightLight]];
+   [self.networkNameLabel setText:__LOCALIZED_STRING(self.class, @"WIFI")];
+   
+   [self.networkStateLabel setBackgroundColor:UIColor.clearColor];
+   [self.networkStateLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.networkStateLabel setFont:[UIFont systemFontOfSize:self.networkStateLabel.font.pointSize
+                                                     weight:UIFontWeightLight]];
+   [self.networkStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+
+//   self.cpuCell;
+   [self.cpuNameLabel setBackgroundColor:UIColor.clearColor];
+   [self.cpuNameLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.cpuNameLabel setFont:[UIFont systemFontOfSize:self.cpuNameLabel.font.pointSize
+                                                weight:UIFontWeightLight]];
+   [self.cpuNameLabel setText:__LOCALIZED_STRING(self.class, @"CPU")];
+   
+   [self.cpuStateLabel setBackgroundColor:UIColor.clearColor];
+   [self.cpuStateLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.cpuStateLabel setFont:[UIFont systemFontOfSize:self.cpuStateLabel.font.pointSize
+                                                 weight:UIFontWeightLight]];
+   [self.cpuStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+
+//   self.driveCell;
+   [self.driveNameLabel setBackgroundColor:UIColor.clearColor];
+   [self.driveNameLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.driveNameLabel setFont:[UIFont systemFontOfSize:self.driveNameLabel.font.pointSize
+                                                  weight:UIFontWeightLight]];
+   [self.driveNameLabel setText:__LOCALIZED_STRING(self.class, @"DRIVE")];
+   
+   [self.driveStateLabel setBackgroundColor:UIColor.clearColor];
+   [self.driveStateLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.driveStateLabel setFont:[UIFont systemFontOfSize:self.driveStateLabel.font.pointSize
+                                                   weight:UIFontWeightLight]];
+   [self.driveStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+
+//   self.memoryCell;
+   [self.memoryNameLabel setBackgroundColor:UIColor.clearColor];
+   [self.memoryNameLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.memoryNameLabel setFont:[UIFont systemFontOfSize:self.memoryNameLabel.font.pointSize
+                                                   weight:UIFontWeightLight]];
+   [self.memoryNameLabel setText:__LOCALIZED_STRING(self.class, @"MEMORY")];
+   
+   [self.memoryStateLabel setBackgroundColor:UIColor.clearColor];
+   [self.memoryStateLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.memoryStateLabel setFont:[UIFont systemFontOfSize:self.memoryStateLabel.font.pointSize
+                                                    weight:UIFontWeightLight]];
+   [self.memoryStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+
+   self.batteryProgressView;
+   self.driveProgressView;
+   self.memoryProgressView;
 
    /**
     * ADs

@@ -7,3 +7,12 @@
 */
 
 "MONITOR"                           = "MONITOR";
+
+"UNKNOW"                            = "--";
+
+"BATTERY"                           = "BATTERY";
+"WIFI"                              = "WIFI";
+"CELLULAR"                          = "CELLULAR";
+"CPU"                               = "CPU";
+"DRIVE"                             = "DRIVE";
+"MEMORY"                            = "MEMORY";

@@ -7,3 +7,12 @@
 */
 
 "MONITOR"                           = "监控";
+
+"UNKNOW"                            = "--";
+
+"BATTERY"                           = "电池";
+"WIFI"                              = "WI-FI";
+"CELLULAR"                          = "蜂窝数据";
+"CPU"                               = "CPU";
+"DRIVE"                             = "存储";
+"MEMORY"                            = "内存";

@@ -77,13 +77,15 @@ Pod::Spec.new do |spec|
                               'BatteryMonitor/**/*.h',
                               'CPUMonitor/**/*.h',
                               'MemoryMonitor/**/*.h',
-                              'NetworkMonitor/**/*.h'
+                              'NetworkMonitor/**/*.h',
+                              'DriveMonitor/**/*.h'
 
   spec.source_files         = 'MonitorService/**/*.{h,hpp,hxx,m,c,cpp,cxx}',
                               'BatteryMonitor/**/*.{h,hpp,hxx,m,c,cpp,cxx}',
                               'CPUMonitor/**/*.{h,hpp,hxx,m,c,cpp,cxx}',
                               'MemoryMonitor/**/*.{h,hpp,hxx,m,c,cpp,cxx}',
-                              'NetworkMonitor/**/*.{h,hpp,hxx,m,c,cpp,cxx}'
+                              'NetworkMonitor/**/*.{h,hpp,hxx,m,c,cpp,cxx}',
+                              'DriveMonitor/**/*.{h,hpp,hxx,m,c,cpp,cxx}'
 
   spec.requires_arc         = true
 

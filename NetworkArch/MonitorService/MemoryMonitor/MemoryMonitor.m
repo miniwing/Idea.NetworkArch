@@ -12,19 +12,38 @@
 
 @implementation MemoryMonitor
 
-- (void)dealloc {
++ (instancetype)sharedInstance {
+   
+   static MemoryMonitor    *g_INSTANCE = nil;
+   static dispatch_once_t   onceToken;
+   
+   dispatch_once(&onceToken, ^(void) {
+      
+      if (nil == g_INSTANCE) {
+         
+         g_INSTANCE = [[MemoryMonitor alloc] __init];
+         LogDebug((@"+[MemoryMonitor sharedInstance] : INSTANCE : %@", g_INSTANCE));
+         
+      } /* End if () */
+   });
+   
+   return g_INSTANCE;
+}
 
+- (void)dealloc {
+   
    __LOG_FUNCTION;
 
    // Custom dealloc
-
+   [self stopMonitor];
+   
    __SUPER_DEALLOC;
-
+   
    return;
 }
 
-- (instancetype)init {
-
+- (instancetype)__init {
+   
    int                            nErr                                     = EFAULT;
    
    __TRY;
@@ -38,6 +57,28 @@
    __CATCH(nErr);
    
    return self;
+}
+
+- (void)startMonitor {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+      
+   __CATCH(nErr);
+   
+   return;
+}
+
+- (void)stopMonitor {
+   
+   int                            nErr                                     = EFAULT;
+   
+   __TRY;
+
+   __CATCH(nErr);
+   
+   return;
 }
 
 @end

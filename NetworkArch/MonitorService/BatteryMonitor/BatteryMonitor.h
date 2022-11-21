@@ -9,13 +9,32 @@
 
 #import <Foundation/Foundation.h>
 
+#import <YYKit/NSObject+YYModel.h>
+
+#import <IDEAServiceManager/IDEAServiceManager.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BatteryMonitor : NSObject
+@interface BatteryMonitor : NSObject <YYModel>
+
++ (instancetype)sharedInstance;
+
+/**
+ *  Unavailable initializer
+ */
++ (instancetype)new NS_UNAVAILABLE;
+
+/**
+ *  Unavailable initializer
+ */
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 
 @interface BatteryMonitor ()
+
+- (void)startMonitor;
+- (void)stopMonitor;
 
 @end
 

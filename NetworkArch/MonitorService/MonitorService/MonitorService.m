@@ -25,7 +25,7 @@
        */
 #if FRAMEWORK_DUPLICATE
       g_INSTANCE  = (MonitorService *)objc_getAssociatedObject([NSUserDefaults standardUserDefaults],
-                                                               (__bridge const void *)([NSUserDefaults standardUserDefaults]) + 0x05);
+                                                               (__bridge const void *)([NSUserDefaults standardUserDefaults]) + 0x10);
 #endif /* FRAMEWORK_DUPLICATE */
       
       if (nil == g_INSTANCE) {
@@ -35,7 +35,7 @@
 
 #if FRAMEWORK_DUPLICATE
          objc_setAssociatedObject([NSUserDefaults standardUserDefaults],
-                                  (__bridge const void *)([NSUserDefaults standardUserDefaults]) + 0x05,
+                                  (__bridge const void *)([NSUserDefaults standardUserDefaults]) + 0x10,
                                   g_INSTANCE,
                                   OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 #endif /* FRAMEWORK_DUPLICATE */
@@ -52,7 +52,7 @@
 
 #if FRAMEWORK_DUPLICATE
    objc_setAssociatedObject([NSUserDefaults standardUserDefaults],
-                            (__bridge const void *)([NSUserDefaults standardUserDefaults]) + 0x05,
+                            (__bridge const void *)([NSUserDefaults standardUserDefaults]) + 0x10,
                             nil,
                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 #endif /* FRAMEWORK_DUPLICATE */
@@ -88,7 +88,7 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-      
+
    __CATCH(nErr);
    
    return;

@@ -7,11 +7,12 @@
 
 #import "MonitorService.h"
 
+#import "BatteryMonitor+Inner.h"
+#import "NetworkMonitor+Inner.h"
+#import "CPUMonitor+Inner.h"
+#import "MemoryMonitor+Inner.h"
+
 NS_ASSUME_NONNULL_BEGIN
-
-@interface MonitorService ()
-
-@end
 
 @interface MonitorService ()
 

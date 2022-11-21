@@ -9,7 +9,12 @@
 //  TEL : +(852)53054612
 //
 
+#import "UISettingController+Inner.h"
+#import "UISettingController+Action.h"
+#import "UISettingController+Signal.h"
 #import "UISettingController+Notification.h"
+#import "UISettingController+Theme.h"
+#import "UISettingController+Debug.h"
 
 //IDEA_DUMMY_CLASS(UISettingController_Notification);
 

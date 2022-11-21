@@ -6,6 +6,11 @@
 //  Copyright © 2021 Harry. All rights reserved.
 //
 
+#import "UISettingController+Inner.h"
+#import "UISettingController+Action.h"
+#import "UISettingController+Signal.h"
+#import "UISettingController+Notification.h"
+#import "UISettingController+Theme.h"
 #import "UISettingController+Debug.h"
 
 #if __Debug__

@@ -13,9 +13,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CPUMonitor : NSObject
 
++ (instancetype)sharedInstance;
+
+/**
+ *  Unavailable initializer
+ */
++ (instancetype)new NS_UNAVAILABLE;
+
+/**
+ *  Unavailable initializer
+ */
+- (instancetype)init NS_UNAVAILABLE;
+
 @end
 
 @interface CPUMonitor ()
+
+- (void)startMonitor;
+- (void)stopMonitor;
 
 @end
 
