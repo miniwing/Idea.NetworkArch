@@ -313,26 +313,40 @@
       
    } /* End if () */
    
-   if (SERVICE(IMonitorService).batteryLevel < 0.25) {
+   if (SERVICE(IMonitorService).batteryLevel == 1) {
       
-      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.25", self.class)];
+      if (SERVICE(IMonitorService).batteryIsCharging) {
+
+         [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.100.bolt", self.class)];
+
+      } /* End if () */
+      else {
+         
+         [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.100", self.class)];
+
+      } /* End else */
 
    } /* End if () */
-   else if (SERVICE(IMonitorService).batteryLevel < 0.50) {
+   else if (SERVICE(IMonitorService).batteryLevel >= 0.75) {
+      
+      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.75", self.class)];
+
+   } /* End if () */
+   else if (SERVICE(IMonitorService).batteryLevel >= 0.50) {
       
       [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.50", self.class)];
 
    } /* End if () */
-   else if (SERVICE(IMonitorService).batteryLevel < 0.75) {
+   else if (SERVICE(IMonitorService).batteryLevel >= 0.25) {
       
-      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.75", self.class)];
+      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.25", self.class)];
 
    } /* End if () */
-   else if (SERVICE(IMonitorService).batteryLevel < 0.75) {
+   else {
       
-      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.75", self.class)];
+      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.0", self.class)];
 
-   } /* End if () */
+   } /* End else */
 
    __CATCH(nErr);
    

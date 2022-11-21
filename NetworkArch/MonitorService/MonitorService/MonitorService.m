@@ -110,17 +110,22 @@
  */
 - (UIDeviceBatteryState)batteryState {
    
-   return [BatteryMonitor sharedInstance].batteryState;
+   return [BatteryMonitor sharedInstance].state;
 }
 
 - (float)batteryLevel {
    
-   return [BatteryMonitor sharedInstance].batteryLevel;
+   return [BatteryMonitor sharedInstance].level;
 }
 
 - (BOOL)batteryLowPowerModeEnabled {
    
-   return [BatteryMonitor sharedInstance].batteryLowPowerModeEnabled;
+   return [BatteryMonitor sharedInstance].isLowPowerModeEnabled;
+}
+
+- (BOOL)batteryIsCharging {
+   
+   return [BatteryMonitor sharedInstance].isCharging;
 }
 
 @end

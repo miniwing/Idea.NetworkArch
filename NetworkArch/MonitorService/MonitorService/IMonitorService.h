@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIDeviceBatteryState)batteryState;
 - (float)batteryLevel;
 - (BOOL)batteryLowPowerModeEnabled;
+- (BOOL)batteryIsCharging;
 
 @end
 

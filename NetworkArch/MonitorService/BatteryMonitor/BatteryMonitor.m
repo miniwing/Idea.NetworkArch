@@ -128,19 +128,24 @@
    return;
 }
 
-- (UIDeviceBatteryState)batteryState {
+- (UIDeviceBatteryState)state {
    
    return [UIDevice currentDevice].batteryState;
 }
 
-- (float)batteryLevel {
+- (float)level {
    
    return [UIDevice currentDevice].batteryLevel;
 }
 
-- (BOOL)batteryLowPowerModeEnabled {
+- (BOOL)isLowPowerModeEnabled {
    
    return [NSProcessInfo processInfo].isLowPowerModeEnabled;
+}
+
+- (BOOL)isCharging {
+   
+   return (UIDeviceBatteryStateCharging == [UIDevice currentDevice].batteryState);
 }
 
 @end
