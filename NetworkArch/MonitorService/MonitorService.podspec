@@ -92,11 +92,11 @@ Pod::Spec.new do |spec|
 #  spec.resources            = '*.lproj/*.storyboard}'
 #  spec.resources            = [ '*.lproj/*.storyboard}' ]
 
-  spec.resource_bundles     = {
-                                'MonitorService' => [
-                                                      'JSON/*.json'
-                                                    ]
-                              }
+#  spec.resource_bundles     = {
+#                                'MonitorService' => [
+#                                                      'JSON/*.json'
+#                                                    ]
+#                              }
 
   pch_app_kit = <<-EOS
   

@@ -34,9 +34,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BatteryMonitor ()
 
 @property (nonatomic, readonly)              UIDeviceBatteryState                  state;
-@property (nonatomic, readonly)              float                                 level;
+@property (nonatomic, readonly)              CGFloat                               level;
 @property (nonatomic, readonly)              BOOL                                  isLowPowerModeEnabled;
 @property (nonatomic, readonly)              BOOL                                  isCharging;
+@property (nonatomic, readonly)              NSInteger                             capacity;
 
 @end
 

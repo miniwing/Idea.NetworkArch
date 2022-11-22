@@ -1,1 +1,616 @@
-{"iPhone6,2":{"Battery":"7340mAh","CPU Clock":"1850MHz","RAM":"2048MB","PPI":"264","CPU Arch":"ARMv8","Model":"Twister","RAM Speed":"800MHz","CPU Core":"2"}}
+{
+    "i386": {
+        "name": "iPhone Simulator",
+        "Battery" : "0000 mAh",
+        "Ram" : "0000 MB"
+    },
+    "x86_64": {
+        "name": "iPhone Simulator",
+        "Battery" : "0000 mAh",
+        "Ram" : "0000 MB"
+    },
+    "arm64": {
+        "name": "iPhone Simulator",
+        "Battery" : "0000 mAh",
+        "Ram" : "0000 MB"
+    },
+    "iPhone1,1": {
+        "name": "iPhone",
+        "Battery" : "1400 mAh",
+        "Ram" : "128 MB"
+    },
+    "iPhone1,2": {
+        "name": "iPhone 3G",
+        "Battery" : "1150 mAh",
+        "Ram" : "128 MB"
+    },
+    "iPhone2,1": {
+        "name": "iPhone 3GS",
+        "Battery" : "1219 mAh",
+        "Ram" : "256 MB"
+    },
+    "iPhone3,1": {
+        "name": "iPhone 4",
+        "Battery" : "1419 mAh",
+        "Ram" : "512 MB"
+    },
+    "iPhone3,2": {
+        "name": "iPhone 4 GSM Rev A",
+        "Battery" : "1419 mAh",
+        "Ram" : "512 MB"
+    },
+    "iPhone3,3": {
+        "name": "iPhone 4 CDMA",
+        "Battery" : "1419 mAh",
+        "Ram" : "512 MB"
+    },
+    "iPhone4,1": {
+        "name": "iPhone 4S",
+        "Battery" : "1419 mAh",
+        "Ram" : "512 MB"
+    },
+    "iPhone5,1": {
+        "name": "iPhone 5 (GSM)",
+        "Battery" : "1440 mAh",
+        "Ram" : "1 GB"
+    },
+    "iPhone5,2": {
+        "name": "iPhone 5 (GSM+CDMA)",
+        "Battery" : "1440 mAh",
+        "Ram" : "1 GB"
+    },
+    "iPhone5,3": {
+        "name": "iPhone 5C (GSM)",
+        "Battery" : "1510 mAh",
+        "Ram" : "1 GB"
+    },
+    "iPhone5,4": {
+        "name": "iPhone 5C (Global)",
+        "Battery" : "1510 mAh",
+        "Ram" : "1 GB"
+    },
+    "iPhone6,1": {
+        "name": "iPhone 5S (GSM)",
+        "Battery" : "1560 mAh",
+        "Ram" : "1 GB"
+    },
+    "iPhone6,2": {
+        "name": "iPhone 5S (Global)",
+        "Battery" : "1560 mAh",
+        "Ram" : "1 GB"
+    },
+    "iPhone7,1": {
+        "name": "iPhone 6 Plus",
+        "Battery" : "2915 mAh",
+        "Ram" : "1 GB"
+    },
+    "iPhone7,2": {
+        "name": "iPhone 6",
+        "Battery" : "1810 mAh",
+        "Ram" : "1 GB"
+    },
+    "iPhone8,1": {
+        "name": "iPhone 6s",
+        "Battery" : "1715 mAh",
+        "Ram" : "2 GB"
+    },
+    "iPhone8,2": {
+        "name": "iPhone 6s Plus",
+        "Battery" : "2750 mAh",
+        "Ram" : "2 GB"
+    },
+    "iPhone8,4": {
+        "name": "iPhone SE (GSM)",
+        "Battery" : "1642 mAh",
+        "Ram" : "2 GB"
+    },
+    "iPhone9,1": {
+        "name": "iPhone 7",
+        "Battery" : "1960 mAh",
+        "Ram" : "2 GB"
+    },
+    "iPhone9,2": {
+        "name": "iPhone 7 Plus",
+        "Battery" : "2675 mAh",
+        "Ram" : "3 GB"
+    },
+    "iPhone9,3": {
+        "name": "iPhone 7",
+        "Battery" : "1960 mAh",
+        "Ram" : "2 GB"
+    },
+    "iPhone9,4": {
+        "name": "iPhone 7 Plus",
+        "Battery" : "2675 mAh",
+        "Ram" : "3 GB"
+    },
+    "iPhone10,1": {
+        "name": "iPhone 8",
+        "Battery" : "1821 mAh",
+        "Ram" : "2 GB"
+    },
+    "iPhone10,2": {
+        "name": "iPhone 8 Plus",
+        "Battery" : "2675 mAh",
+        "Ram" : "3 GB"
+    },
+    "iPhone10,3": {
+        "name": "iPhone X Global",
+        "Battery" : "2716 mAh",
+        "Ram" : "3 GB"
+    },
+    "iPhone10,4": {
+        "name": "iPhone 8",
+        "Battery" : "1821 mAh",
+        "Ram" : "2 GB"
+    },
+    "iPhone10,5": {
+        "name": "iPhone 8 Plus",
+        "Battery" : "2675 mAh",
+        "Ram" : "3 GB"
+    },
+    "iPhone10,6": {
+        "name": "iPhone X GSM",
+        "Battery" : "2716 mAh",
+        "Ram" : "3 GB"
+    },
+    "iPhone11,2": {
+        "name": "iPhone XS"
+    },
+    "iPhone11,4": {
+        "name": "iPhone XS Max"
+    },
+    "iPhone11,6": {
+        "name": "iPhone XS Max Global"
+    },
+    "iPhone11,8": {
+        "name": "iPhone XR"
+    },
+    "iPhone12,1": {
+        "name": "iPhone 11"
+    },
+    "iPhone12,3": {
+        "name": "iPhone 11 Pro"
+    },
+    "iPhone12,5": {
+        "name": "iPhone 11 Pro Max"
+    },
+    "iPhone12,8": {
+        "name": "iPhone SE 2nd Gen"
+    },
+    "iPhone13,1": {
+        "name": "iPhone 12 Mini"
+    },
+    "iPhone13,2": {
+        "name": "iPhone 12"
+    },
+    "iPhone13,3": {
+        "name": "iPhone 12 Pro"
+    },
+    "iPhone13,4": {
+        "name": "iPhone 12 Pro Max"
+    },
+    "iPhone14,2": {
+        "name": "iPhone 13 Pro"
+    },
+    "iPhone14,3": {
+        "name": "iPhone 13 Pro Max"
+    },
+    "iPhone14,4": {
+        "name": "iPhone 13 Mini"
+    },
+    "iPhone14,5": {
+        "name": "iPhone 13"
+    },
+    "iPhone14,6": {
+        "name": "iPhone SE 3rd Gen"
+    },
+    "iPhone14,7": {
+        "name": "iPhone 14"
+    },
+    "iPhone14,8": {
+        "name": "iPhone 14 Plus"
+    },
+    "iPhone15,2": {
+        "name": "iPhone 14 Pro"
+    },
+    "iPhone15,3": {
+        "name": "iPhone 14 Pro Max"
+    },
+    "iPod1,1": {
+        "name": "1st Gen iPod"
+    },
+    "iPod2,1": {
+        "name": "2nd Gen iPod"
+    },
+    "iPod3,1": {
+        "name": "3rd Gen iPod"
+    },
+    "iPod4,1": {
+        "name": "4th Gen iPod"
+    },
+    "iPod5,1": {
+        "name": "5th Gen iPod"
+    },
+    "iPod7,1": {
+        "name": "6th Gen iPod"
+    },
+    "iPod9,1": {
+        "name": "7th Gen iPod"
+    },
+    "iPad1,1": {
+        "name": "iPad"
+    },
+    "iPad1,2": {
+        "name": "iPad 3G"
+    },
+    "iPad2,1": {
+        "name": "2nd Gen iPad"
+    },
+    "iPad2,2": {
+        "name": "2nd Gen iPad GSM"
+    },
+    "iPad2,3": {
+        "name": "2nd Gen iPad CDMA"
+    },
+    "iPad2,4": {
+        "name": "2nd Gen iPad New Revision"
+    },
+    "iPad3,1": {
+        "name": "3rd Gen iPad"
+    },
+    "iPad3,2": {
+        "name": "3rd Gen iPad CDMA"
+    },
+    "iPad3,3": {
+        "name": "3rd Gen iPad GSM"
+    },
+    "iPad2,5": {
+        "name": "iPad mini"
+    },
+    "iPad2,6": {
+        "name": "iPad mini GSM+LTE"
+    },
+    "iPad2,7": {
+        "name": "iPad mini CDMA+LTE"
+    },
+    "iPad3,4": {
+        "name": "4th Gen iPad"
+    },
+    "iPad3,5": {
+        "name": "4th Gen iPad GSM+LTE"
+    },
+    "iPad3,6": {
+        "name": "4th Gen iPad CDMA+LTE"
+    },
+    "iPad4,1": {
+        "name": "iPad Air (WiFi)"
+    },
+    "iPad4,2": {
+        "name": "iPad Air (GSM+CDMA)"
+    },
+    "iPad4,3": {
+        "name": "1st Gen iPad Air (China)"
+    },
+    "iPad4,4": {
+        "name": "iPad mini Retina (WiFi)"
+    },
+    "iPad4,5": {
+        "name": "iPad mini Retina (GSM+CDMA)"
+    },
+    "iPad4,6": {
+        "name": "iPad mini Retina (China)"
+    },
+    "iPad4,7": {
+        "name": "iPad mini 3 (WiFi)"
+    },
+    "iPad4,8": {
+        "name": "iPad mini 3 (GSM+CDMA)"
+    },
+    "iPad4,9": {
+        "name": "iPad Mini 3 (China)"
+    },
+    "iPad5,1": {
+        "name": "iPad mini 4 (WiFi)"
+    },
+    "iPad5,2": {
+        "name": "4th Gen iPad mini (WiFi+Cellular)"
+    },
+    "iPad5,3": {
+        "name": "iPad Air 2 (WiFi)"
+    },
+    "iPad5,4": {
+        "name": "iPad Air 2 (Cellular)"
+    },
+    "iPad6,3": {
+        "name": "iPad Pro (9.7 inch, WiFi)"
+    },
+    "iPad6,4": {
+        "name": "iPad Pro (9.7 inch, WiFi+LTE)"
+    },
+    "iPad6,7": {
+        "name": "iPad Pro (12.9 inch, WiFi)"
+    },
+    "iPad6,8": {
+        "name": "iPad Pro (12.9 inch, WiFi+LTE)"
+    },
+    "iPad6,11": {
+        "name": "iPad (2017)"
+    },
+    "iPad6,12": {
+        "name": "iPad (2017)"
+    },
+    "iPad7,1": {
+        "name": "iPad Pro 2nd Gen (WiFi)"
+    },
+    "iPad7,2": {
+        "name": "iPad Pro 2nd Gen (WiFi+Cellular)"
+    },
+    "iPad7,3": {
+        "name": "iPad Pro 10.5-inch 2nd Gen"
+    },
+    "iPad7,4": {
+        "name": "iPad Pro 10.5-inch 2nd Gen"
+    },
+    "iPad7,5": {
+        "name": "iPad 6th Gen (WiFi)"
+    },
+    "iPad7,6": {
+        "name": "iPad 6th Gen (WiFi+Cellular)"
+    },
+    "iPad7,11": {
+        "name": "iPad 7th Gen 10.2-inch (WiFi)"
+    },
+    "iPad7,12": {
+        "name": "iPad 7th Gen 10.2-inch (WiFi+Cellular)"
+    },
+    "iPad8,1": {
+        "name": "iPad Pro 11 inch 3rd Gen (WiFi)"
+    },
+    "iPad8,2": {
+        "name": "iPad Pro 11 inch 3rd Gen (1TB, WiFi)"
+    },
+    "iPad8,3": {
+        "name": "iPad Pro 11 inch 3rd Gen (WiFi+Cellular)"
+    },
+    "iPad8,4": {
+        "name": "iPad Pro 11 inch 3rd Gen (1TB, WiFi+Cellular)"
+    },
+    "iPad8,5": {
+        "name": "iPad Pro 12.9 inch 3rd Gen (WiFi)"
+    },
+    "iPad8,6": {
+        "name": "iPad Pro 12.9 inch 3rd Gen (1TB, WiFi)"
+    },
+    "iPad8,7": {
+        "name": "iPad Pro 12.9 inch 3rd Gen (WiFi+Cellular)"
+    },
+    "iPad8,8": {
+        "name": "iPad Pro 12.9 inch 3rd Gen (1TB, WiFi+Cellular)"
+    },
+    "iPad8,9": {
+        "name": "iPad Pro 11 inch 4th Gen (WiFi)"
+    },
+    "iPad8,10": {
+        "name": "iPad Pro 11 inch 4th Gen (WiFi+Cellular)"
+    },
+    "iPad8,11": {
+        "name": "iPad Pro 12.9 inch 4th Gen (WiFi)"
+    },
+    "iPad8,12": {
+        "name": "iPad Pro 12.9 inch 4th Gen (WiFi+Cellular)"
+    },
+    "iPad11,1": {
+        "name": "iPad mini 5th Gen (WiFi)"
+    },
+    "iPad11,2": {
+        "name": "iPad mini 5th Gen"
+    },
+    "iPad11,3": {
+        "name": "iPad Air 3rd Gen (WiFi)"
+    },
+    "iPad11,4": {
+        "name": "iPad Air 3rd Gen"
+    },
+    "iPad11,6": {
+        "name": "iPad 8th Gen (WiFi)"
+    },
+    "iPad11,7": {
+        "name": "iPad 8th Gen (WiFi+Cellular)"
+    },
+    "iPad12,1": {
+        "name": "iPad 9th Gen (WiFi)"
+    },
+    "iPad12,2": {
+        "name": "iPad 9th Gen (WiFi+Cellular)"
+    },
+    "iPad14,1": {
+        "name": "iPad mini 6th Gen (WiFi)"
+    },
+    "iPad14,2": {
+        "name": "iPad mini 6th Gen (WiFi+Cellular)"
+    },
+    "iPad13,1": {
+        "name": "iPad Air 4th Gen (WiFi)"
+    },
+    "iPad13,2": {
+        "name": "iPad Air 4th Gen (WiFi+Cellular)"
+    },
+    "iPad13,4": {
+        "name": "iPad Pro 11 inch 5th Gen"
+    },
+    "iPad13,5": {
+        "name": "iPad Pro 11 inch 5th Gen"
+    },
+    "iPad13,6": {
+        "name": "iPad Pro 11 inch 5th Gen"
+    },
+    "iPad13,7": {
+        "name": "iPad Pro 11 inch 5th Gen"
+    },
+    "iPad13,8": {
+        "name": "iPad Pro 12.9 inch 5th Gen"
+    },
+    "iPad13,9": {
+        "name": "iPad Pro 12.9 inch 5th Gen"
+    },
+    "iPad13,10": {
+        "name": "iPad Pro 12.9 inch 5th Gen"
+    },
+    "iPad13,11": {
+        "name": "iPad Pro 12.9 inch 5th Gen"
+    },
+    "iPad13,16": {
+        "name": "iPad Air 5th Gen (WiFi)"
+    },
+    "iPad13,17": {
+        "name": "iPad Air 5th Gen (WiFi+Cellular)"
+    },
+    "iPad13,18": {
+        "name": "iPad 10th Gen"
+    },
+    "iPad13,19": {
+        "name": "iPad 10th Gen"
+    },
+    "iPad14,3-A": {
+        "name": "iPad Pro 11 inch 4th Gen"
+    },
+    "iPad14,3-B": {
+        "name": "iPad Pro 11 inch 4th Gen"
+    },
+    "iPad14,4-A": {
+        "name": "iPad Pro 11 inch 4th Gen"
+    },
+    "iPad14,4-B": {
+        "name": "iPad Pro 11 inch 4th Gen"
+    },
+    "iPad14,5-A": {
+        "name": "iPad Pro 12.9 inch 6th Gen"
+    },
+    "iPad14,5-B": {
+        "name": "iPad Pro 12.9 inch 6th Gen"
+    },
+    "iPad14,6-A": {
+        "name": "iPad Pro 12.9 inch 6th Gen"
+    },
+    "iPad14,6-B": {
+        "name": "iPad Pro 12.9 inch 6th Gen"
+    },
+    "Watch1,1": {
+        "name": "Apple Watch 38mm case"
+    },
+    "Watch1,2": {
+        "name": "Apple Watch 42mm case"
+    },
+    "Watch2,6": {
+        "name": "Apple Watch Series 1 38mm case"
+    },
+    "Watch2,7": {
+        "name": "Apple Watch Series 1 42mm case"
+    },
+    "Watch2,3": {
+        "name": "Apple Watch Series 2 38mm case"
+    },
+    "Watch2,4": {
+        "name": "Apple Watch Series 2 42mm case"
+    },
+    "Watch3,1": {
+        "name": "Apple Watch Series 3 38mm case (GPS+Cellular)"
+    },
+    "Watch3,2": {
+        "name": "Apple Watch Series 3 42mm case (GPS+Cellular)"
+    },
+    "Watch3,3": {
+        "name": "Apple Watch Series 3 38mm case (GPS)"
+    },
+    "Watch3,4": {
+        "name": "Apple Watch Series 3 42mm case (GPS)"
+    },
+    "Watch4,1": {
+        "name": "Apple Watch Series 4 40mm case (GPS)"
+    },
+    "Watch4,2": {
+        "name": "Apple Watch Series 4 44mm case (GPS)"
+    },
+    "Watch4,3": {
+        "name": "Apple Watch Series 4 40mm case (GPS+Cellular)"
+    },
+    "Watch4,4": {
+        "name": "Apple Watch Series 4 44mm case (GPS+Cellular)"
+    },
+    "Watch5,1": {
+        "name": "Apple Watch Series 5 40mm case (GPS)"
+    },
+    "Watch5,2": {
+        "name": "Apple Watch Series 5 44mm case (GPS)"
+    },
+    "Watch5,3": {
+        "name": "Apple Watch Series 5 40mm case (GPS+Cellular)"
+    },
+    "Watch5,4": {
+        "name": "Apple Watch Series 5 44mm case (GPS+Cellular)"
+    },
+    "Watch5,9": {
+        "name": "Apple Watch SE 40mm case (GPS)"
+    },
+    "Watch5,10": {
+        "name": "Apple Watch SE 44mm case (GPS)"
+    },
+    "Watch5,11": {
+        "name": "Apple Watch SE 40mm case (GPS+Cellular)"
+    },
+    "Watch5,12": {
+        "name": "Apple Watch SE 44mm case (GPS+Cellular)"
+    },
+    "Watch6,1": {
+        "name": "Apple Watch Series 6 40mm case (GPS)"
+    },
+    "Watch6,2": {
+        "name": "Apple Watch Series 6 44mm case (GPS)"
+    },
+    "Watch6,3": {
+        "name": "Apple Watch Series 6 40mm case (GPS+Cellular)"
+    },
+    "Watch6,4": {
+        "name": "Apple Watch Series 6 44mm case (GPS+Cellular)"
+    },
+    "Watch6,6": {
+        "name": "Apple Watch Series 7 41mm case (GPS)"
+    },
+    "Watch6,7": {
+        "name": "Apple Watch Series 7 45mm case (GPS)"
+    },
+    "Watch6,8": {
+        "name": "Apple Watch Series 7 41mm case (GPS+Cellular)"
+    },
+    "Watch6,9": {
+        "name": "Apple Watch Series 7 45mm case (GPS+Cellular)"
+    },
+    "Watch6,10": {
+        "name": "Apple Watch SE 40mm case (GPS)"
+    },
+    "Watch6,11": {
+        "name": "Apple Watch SE 44mm case (GPS)"
+    },
+    "Watch6,12": {
+        "name": "Apple Watch SE 40mm case (GPS+Cellular)"
+    },
+    "Watch6,13": {
+        "name": "Apple Watch SE 44mm case (GPS+Cellular)"
+    },
+    "Watch6,14": {
+        "name": "Apple Watch Series 8 41mm case (GPS)"
+    },
+    "Watch6,15": {
+        "name": "Apple Watch Series 8 45mm case (GPS)"
+    },
+    "Watch6,16": {
+        "name": "Apple Watch Series 8 41mm case (GPS+Cellular)"
+    },
+    "Watch6,17": {
+        "name": "Apple Watch Series 8 45mm case (GPS+Cellular)"
+    },
+    "Watch6,18": {
+        "name": "Apple Watch Ultra"
+    }
+}

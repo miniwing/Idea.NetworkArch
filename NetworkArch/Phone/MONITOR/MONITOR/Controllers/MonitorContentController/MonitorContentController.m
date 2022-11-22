@@ -49,49 +49,7 @@
 
          LogDebug((@"-[MonitorContentController initWithCoder:] : batteryLevelNotification : strongify : %@", self));
 
-         if (SERVICE(IMonitorService).batteryLevel == 1) {
-            
-            if (SERVICE(IMonitorService).batteryIsCharging) {
-
-               [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery-100-bolt", self.class)];
-
-            } /* End if () */
-            else {
-               
-               [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.100", self.class)];
-
-            } /* End else */
-
-         } /* End if () */
-         else if (SERVICE(IMonitorService).batteryLevel >= 0.75) {
-            
-            [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.75", self.class)];
-
-         } /* End if () */
-         else if (SERVICE(IMonitorService).batteryLevel >= 0.50) {
-            
-            [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.50", self.class)];
-
-         } /* End if () */
-         else if (SERVICE(IMonitorService).batteryLevel >= 0.25) {
-            
-            [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.25", self.class)];
-
-         } /* End if () */
-         else {
-            
-            [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.0", self.class)];
-
-            if (SERVICE(IMonitorService).batteryLowPowerModeEnabled) {
-
-               [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-
-                  return UIColorX.systemRedColor;
-               }];
-
-            } /* End if () */
-
-         } /* End else */
+         [self updateBattery];
 
          return;
       });
@@ -102,6 +60,8 @@
 
          LogDebug((@"-[MonitorContentController initWithCoder:] : batteryStateNotification : strongify : %@", self));
 
+         [self updateBattery];
+
          return;
       });
 
@@ -111,19 +71,7 @@
 
          LogDebug((@"-[MonitorContentController initWithCoder:] : batteryLowPowerModeNotification : strongify : %@", self));
 
-         if (SERVICE(IMonitorService).batteryLowPowerModeEnabled) {
-
-            [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-
-               return UIColorX.systemYellowColor;
-            }];
-
-         } /* End if () */
-         else {
-
-            [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-
-         } /* End else */
+         [self updateBattery];
 
          return;
       });
@@ -239,8 +187,11 @@
                                                     weight:UIFontWeightLight]];
    [self.batteryRealLabel setText:__LOCALIZED_STRING(self.class, @"BATTERY")];
    
-   [self.batteryProgressView setProgress:[UIDevice currentDevice].batteryLevel animated:YES];
+   [self.batteryProgressView setProgress:[UIDevice currentDevice].batteryLevel animated:NO];
 
+   /**
+    * 网络
+    */
 //   self.networkCell;
    [self.networkNameLabel setBackgroundColor:UIColor.clearColor];
    [self.networkNameLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
@@ -254,6 +205,9 @@
                                                      weight:UIFontWeightLight]];
    [self.networkStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
 
+   /**
+    * CPU
+    */
 //   self.cpuCell;
    [self.cpuNameLabel setBackgroundColor:UIColor.clearColor];
    [self.cpuNameLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
@@ -267,6 +221,9 @@
                                                  weight:UIFontWeightLight]];
    [self.cpuStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
 
+   /**
+    * 存储空间
+    */
 //   self.driveCell;
    [self.driveNameLabel setBackgroundColor:UIColor.clearColor];
    [self.driveNameLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
@@ -280,6 +237,9 @@
                                                    weight:UIFontWeightLight]];
    [self.driveStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
 
+   /**
+    * 内存
+    */
 //   self.memoryCell;
    [self.memoryNameLabel setBackgroundColor:UIColor.clearColor];
    [self.memoryNameLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
@@ -293,9 +253,27 @@
                                                     weight:UIFontWeightLight]];
    [self.memoryStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
 
-   self.batteryProgressView;
-   self.driveProgressView;
-   self.memoryProgressView;
+   [self.batteryProgressView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
+   [self.batteryProgressView setTrackTintColorPicker:DKColorPickerWithKey([IDEAColor lightGray])];
+   [self.batteryProgressView setProgressTintColor:UIColorX.systemYellowColor];
+   
+#if TARGET_IPHONE_SIMULATOR
+   [self.batteryProgressView setProgress:0.3 animated:NO];
+#endif /* TARGET_IPHONE_SIMULATOR */
+   
+   [self.driveProgressView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
+   [self.driveProgressView setTrackTintColorPicker:DKColorPickerWithKey([IDEAColor lightGray])];
+   [self.driveProgressView setProgressTintColor:UIColorX.systemYellowColor];
+#if TARGET_IPHONE_SIMULATOR
+   [self.driveProgressView setProgress:0.3 animated:NO];
+#endif /* TARGET_IPHONE_SIMULATOR */
+
+   [self.memoryProgressView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
+   [self.memoryProgressView setTrackTintColorPicker:DKColorPickerWithKey([IDEAColor lightGray])];
+   [self.memoryProgressView setProgressTintColor:UIColorX.systemYellowColor];
+#if TARGET_IPHONE_SIMULATOR
+   [self.memoryProgressView setProgress:0.3 animated:NO];
+#endif /* TARGET_IPHONE_SIMULATOR */
 
    /**
     * ADs
@@ -333,88 +311,13 @@
             onQueue:DISPATCH_GET_MAIN_QUEUE()];
 #endif /* GOOGLE_MOBILE_ADS */
 
-   LogDebug((@"-[MonitorContentController viewDidLoad] : Device Name : %@", [UIDevice currentDevice].name));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : Device model : %@", [UIDevice currentDevice].model));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : Device localizedModel : %@", [UIDevice currentDevice].localizedModel));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : Device systemName : %@", [UIDevice currentDevice].systemName));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : Device systemVersion : %@", [UIDevice currentDevice].systemVersion));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : Device identifierForVendor : %@", [UIDevice currentDevice].identifierForVendor));
-
-   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo environment : %@", [NSProcessInfo processInfo].environment));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo arguments : %@", [NSProcessInfo processInfo].arguments));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo hostName : %@", [NSProcessInfo processInfo].hostName));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo processName : %@", [NSProcessInfo processInfo].processName));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo processIdentifier : %d", [NSProcessInfo processInfo].processIdentifier));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : NSProcessInfo globallyUniqueString : %@", [NSProcessInfo processInfo].globallyUniqueString));
-
-   struct utsname  systemInfo = {0};
-   
-   uname(&systemInfo);
-   
-   LogDebug((@"-[MonitorContentController viewDidLoad] : sysname : %@", [NSString stringWithCString:systemInfo.sysname encoding:NSASCIIStringEncoding]));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : machine : %@", [NSString stringWithCString:systemInfo.machine encoding:NSASCIIStringEncoding]));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : nodename : %@", [NSString stringWithCString:systemInfo.nodename encoding:NSASCIIStringEncoding]));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : release : %@", [NSString stringWithCString:systemInfo.release encoding:NSASCIIStringEncoding]));
-   LogDebug((@"-[MonitorContentController viewDidLoad] : version : %@", [NSString stringWithCString:systemInfo.version encoding:NSASCIIStringEncoding]));
-
    /**
     * 电池信息初始化
     */
    LogDebug((@"-[MonitorContentController viewDidLoad] : BatterLevel : %d", (int)(SERVICE(IMonitorService).batteryLevel * 100)));
 
-   if (SERVICE(IMonitorService).batteryLowPowerModeEnabled) {
-
-      [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-
-         return UIColorX.systemYellowColor;
-      }];
-
-   } /* End if () */
+   [self updateBattery];
    
-   if (SERVICE(IMonitorService).batteryLevel == 1) {
-      
-      if (SERVICE(IMonitorService).batteryIsCharging) {
-
-         [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery-100-bolt", self.class)];
-
-      } /* End if () */
-      else {
-         
-         [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.100", self.class)];
-
-      } /* End else */
-
-   } /* End if () */
-   else if (SERVICE(IMonitorService).batteryLevel >= 0.75) {
-      
-      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.75", self.class)];
-
-   } /* End if () */
-   else if (SERVICE(IMonitorService).batteryLevel >= 0.50) {
-      
-      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.50", self.class)];
-
-   } /* End if () */
-   else if (SERVICE(IMonitorService).batteryLevel >= 0.25) {
-      
-      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.25", self.class)];
-
-   } /* End if () */
-   else {
-      
-      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.0", self.class)];
-
-      if (SERVICE(IMonitorService).batteryLowPowerModeEnabled) {
-
-         [self.iconImageViews[MonitorSectionBattery] setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-
-            return UIColorX.systemRedColor;
-         }];
-
-      } /* End if () */
-
-   } /* End else */
-
    __CATCH(nErr);
    
    return;

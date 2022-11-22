@@ -128,12 +128,17 @@
    return;
 }
 
+- (NSInteger)capacity {
+   
+   return 0;
+}
+
 - (UIDeviceBatteryState)state {
    
    return [UIDevice currentDevice].batteryState;
 }
 
-- (float)level {
+- (CGFloat)level {
    
    return [UIDevice currentDevice].batteryLevel;
 }

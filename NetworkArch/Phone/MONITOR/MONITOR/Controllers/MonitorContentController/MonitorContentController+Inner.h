@@ -110,7 +110,9 @@ IDEA_ENUM(NSInteger, MonitorMemory) {
 
 @interface MonitorContentController (Inner)
 
-- (void)loadBattery;
+- (void)updateBattery;
+
+- (void)updateDrive;
 
 @end
 
