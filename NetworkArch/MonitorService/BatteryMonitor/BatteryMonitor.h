@@ -17,6 +17,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BatteryMonitor : NSObject <YYModel>
 
+@property (nonatomic, readonly)              UIDeviceBatteryState                  state;
+@property (nonatomic, readonly)              CGFloat                               level;
+@property (nonatomic, readonly)              BOOL                                  isLowPowerModeEnabled;
+@property (nonatomic, readonly)              BOOL                                  isCharging;
+@property (nonatomic, readonly)              NSInteger                             capacity;
+
+@end
+
+@interface BatteryMonitor ()
+
 + (instancetype)sharedInstance;
 
 /**
@@ -28,16 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  Unavailable initializer
  */
 - (instancetype)init NS_UNAVAILABLE;
-
-@end
-
-@interface BatteryMonitor ()
-
-@property (nonatomic, readonly)              UIDeviceBatteryState                  state;
-@property (nonatomic, readonly)              CGFloat                               level;
-@property (nonatomic, readonly)              BOOL                                  isLowPowerModeEnabled;
-@property (nonatomic, readonly)              BOOL                                  isCharging;
-@property (nonatomic, readonly)              NSInteger                             capacity;
 
 @end
 

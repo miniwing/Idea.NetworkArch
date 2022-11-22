@@ -11,6 +11,7 @@
 #import "NetworkMonitor+Inner.h"
 #import "CPUMonitor+Inner.h"
 #import "MemoryMonitor+Inner.h"
+#import "DriveMonitor+Inner.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

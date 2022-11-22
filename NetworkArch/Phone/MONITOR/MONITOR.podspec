@@ -88,6 +88,9 @@ Pod::Spec.new do |spec|
   spec.dependency 'ImageProvider'
   spec.dependency 'SettingProvider'
 
+  spec.dependency 'IDEARouter'
+  spec.dependency 'IDEANetUtils'
+
   spec.dependency 'ADs'
   spec.dependency 'APPDATA'
   spec.dependency 'APPDriver'
@@ -194,6 +197,8 @@ Pod::Spec.new do |spec|
 #  import <PhotosUI/PhotosUI.h>
 #  import <AVKit/AVKit.h>
 #  import <AVFoundation/AVFoundation.h>
+#  import <CoreTelephony/CTCarrier.h>
+#  import <CoreTelephony/CTTelephonyNetworkInfo.h>
 
 #  import <AppTrackingTransparency/AppTrackingTransparency.h>
 #  import <AdSupport/AdSupport.h>
@@ -886,6 +891,9 @@ NS_INLINE NSString * __APP_BUILD_VERSION() {
 #import <ImageProvider/ImageProvider.h>
 #import <SettingProvider/SettingProvider.h>
 #import <SettingProvider/UISetting.h>
+
+#import <IDEARouter/IDEARouter.h>
+#import <IDEANetUtils/IDEANetUtils.h>
 
 #if __has_include(<APPDEBUG/APPDEBUG.h>)
 #  import <APPDEBUG/APPDEBUG.h>

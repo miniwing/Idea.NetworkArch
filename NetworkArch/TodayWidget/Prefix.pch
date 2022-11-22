@@ -149,4 +149,6 @@
 #import <IDEAKit/IDEADebug.h>
 #import <IDEAKit/IDEAKit.h>
 
+#import <ImageProvider/ImageProvider.h>
+
 #endif /* Prefix_pch */

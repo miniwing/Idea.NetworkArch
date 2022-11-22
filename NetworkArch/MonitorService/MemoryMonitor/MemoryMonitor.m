@@ -81,4 +81,22 @@
    return;
 }
 
+/// Total physical memory in byte. (-1 when error occurs)
+- (int64_t)total {
+   
+   return [UIDevice currentDevice].memoryTotal;
+}
+
+/// Used (active + inactive + wired) memory in byte. (-1 when error occurs)
+- (int64_t)used {
+   
+   return [UIDevice currentDevice].memoryUsed;
+}
+
+/// Free memory in byte. (-1 when error occurs)
+- (int64_t)free {
+   
+   return [UIDevice currentDevice].memoryFree;
+}
+
 @end

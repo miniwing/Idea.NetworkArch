@@ -12,7 +12,17 @@
 
 "BATTERY"                           = "BATTERY";
 "WIFI"                              = "WIFI";
-"CELLULAR"                          = "CELLULAR";
+"CELLULAR"                          = "Cellular Network";
 "CPU"                               = "CPU";
 "DRIVE"                             = "DRIVE";
 "MEMORY"                            = "MEMORY";
+
+"Total: "                           = "Total: ";
+"Free: "                            = "Free: ";
+"Used: "                            = "Used: ";
+
+"Core: "                            = "Core: ";
+"App: "                             = "App: ";
+"System: "                          = "System: ";
+
+"No Service"                        = "No Service";

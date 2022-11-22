@@ -13,6 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CPUMonitor : NSObject
 
+@property (nonatomic, readonly)              NSInteger                             core;
+@property (nonatomic, readonly)              float                                 appUsage;
+@property (nonatomic, readonly)              float                                 systemUsage;
+
+@end
+
+@interface CPUMonitor ()
+
 + (instancetype)sharedInstance;
 
 /**

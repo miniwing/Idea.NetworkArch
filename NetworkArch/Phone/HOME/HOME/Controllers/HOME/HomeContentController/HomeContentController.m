@@ -146,7 +146,7 @@
    
    [self.wifiSSIDIcon setBackgroundColor:UIColor.clearColor];
    [self.wifiSSIDIcon setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.wifiSSIDIcon setImage:__IMAGE_NAMED(@"WIFI-SLASH", self.class)];
+   [self.wifiSSIDIcon setImage:[ImageProvider imageNamed:@"wifi.slash"]];
    LogDebug((@"-[HomeContentController viewDidLoad] : WIFI-SLASH : %@", __IMAGE_NAMED(@"WIFI-SLASH", self.class)));
    
 //#if TARGET_IPHONE_SIMULATOR
@@ -197,7 +197,7 @@
 
    [self.cellularOperatorIcon setBackgroundColor:UIColor.clearColor];
    [self.cellularOperatorIcon setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.cellularOperatorIcon setImage:__IMAGE_NAMED(@"CELLULAR-SLASH", self.class)];
+   [self.cellularOperatorIcon setImage:[ImageProvider imageNamed:@"antenna.radiowaves.left.and.right.slash"]];
 
 //#if TARGET_IPHONE_SIMULATOR
 //   [self.cellularOperatorIcon setImage:__IMAGE_NAMED(@"CELLULAR", self.class)];

@@ -16,3 +16,13 @@
 "CPU"                               = "CPU";
 "DRIVE"                             = "存储";
 "MEMORY"                            = "内存";
+
+"Total: "                           = "总量: ";
+"Free: "                            = "剩余: ";
+"Used: "                            = "使用: ";
+
+"Core: "                            = "核心: ";
+"App: "                             = "当前: ";
+"System: "                          = "系统: ";
+
+"No Service"                        = "无服务";

@@ -128,4 +128,79 @@
    return [BatteryMonitor sharedInstance].isCharging;
 }
 
+/**
+ * 存储
+ */
+/// Total disk space in byte. (-1 when error occurs)
+- (int64_t)diskSpace {
+   
+   return [DriveMonitor sharedInstance].space;
+}
+
+/// Free disk space in byte. (-1 when error occurs)
+- (int64_t)diskSpaceFree {
+   
+   return [DriveMonitor sharedInstance].spaceFree;
+}
+
+/// Used disk space in byte. (-1 when error occurs)
+- (int64_t)diskSpaceUsed {
+   
+   return [DriveMonitor sharedInstance].spaceUsed;
+}
+
+/**
+ * 内存
+ */
+/// Total physical memory in byte. (-1 when error occurs)
+- (int64_t)memoryTotal {
+   
+   return [MemoryMonitor sharedInstance].total;
+}
+
+/// Used (active + inactive + wired) memory in byte. (-1 when error occurs)
+- (int64_t)memoryUsed {
+   
+   return [MemoryMonitor sharedInstance].used;
+}
+
+/// Free memory in byte. (-1 when error occurs)
+- (int64_t)memoryFree {
+   
+   return [MemoryMonitor sharedInstance].free;
+}
+
+/**
+ * CPU
+ */
+- (NSInteger)cpuCoreCount {
+   
+   return [CPUMonitor sharedInstance].core;
+}
+
+- (float)cpuAppUsage {
+   
+   return [CPUMonitor sharedInstance].appUsage;
+}
+
+- (float)cpuSystemUsage {
+   
+   return [CPUMonitor sharedInstance].systemUsage;
+}
+
+/**
+ * 网络
+ */
+/// 网络上行速率
+- (float)uploadSpeed {
+   
+   return [NetworkMonitor sharedInstance].uploadSpeed;
+}
+
+/// 网络下行速率
+- (float)downloadSpeed {
+   
+   return [NetworkMonitor sharedInstance].downloadSpeed;
+}
+
 @end

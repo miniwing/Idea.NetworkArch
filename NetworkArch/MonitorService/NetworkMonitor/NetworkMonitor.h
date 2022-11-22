@@ -13,6 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkMonitor : NSObject
 
+/// 网络上行速率
+@property (nonatomic, readonly)              CGFloat                               uploadSpeed;
+
+/// 网络下行速率
+@property (nonatomic, readonly)              CGFloat                               downloadSpeed;
+
+@end
+
+@interface NetworkMonitor ()
+
 + (instancetype)sharedInstance;
 
 /**

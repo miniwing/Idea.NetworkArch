@@ -42,7 +42,7 @@ handleSignal(TodayWidgetContentController, loadWifiInfoSignal) {
    LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : IPV4 : %@", aSignal.name, szIP));
    LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : SSID : %@", aSignal.name, szSSID));
 
-   szIcon   = @"WIFI-ON";
+   szIcon   = @"wifi";
    
    if (kStringIsEmpty(szSSID)) {
       
@@ -54,7 +54,7 @@ handleSignal(TodayWidgetContentController, loadWifiInfoSignal) {
          szSSID   = APP_STR(@"SSID not available");
          szIP     = APP_STR(@"N/A");
          
-         szIcon   = @"WIFI-ON";
+         szIcon   = @"wifi";
          
       } /* End if () */
       else {
@@ -62,7 +62,7 @@ handleSignal(TodayWidgetContentController, loadWifiInfoSignal) {
          szSSID   = APP_STR(@"Wi-Fi not connected");
          szIP     = APP_STR(@"N/A");
 
-         szIcon   = @"WIFI-SLASH";
+         szIcon   = @"wifi.slash";
 
       } /* End else */
 
@@ -80,7 +80,8 @@ handleSignal(TodayWidgetContentController, loadWifiInfoSignal) {
                      duration:[UIView animationDefaultDuration]
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
-      [self.wifiSSIDIcon setImage:[UIImage imageNamed:szIcon]];
+      
+      [self.wifiSSIDIcon setImage:[ImageProvider imageNamed:szIcon]];
    }
                    completion:nil];
 
@@ -115,7 +116,7 @@ handleSignal(TodayWidgetContentController, loadCellularInfoSignal) {
    
    stTelephonyNetworkInfo  = [[CTTelephonyNetworkInfo alloc] init];
    
-   szIcon   = @"CELLULAR";
+   szIcon   = @"antenna.radiowaves.left.and.right";
    
    if (@available(iOS 12.0, *)) {
       

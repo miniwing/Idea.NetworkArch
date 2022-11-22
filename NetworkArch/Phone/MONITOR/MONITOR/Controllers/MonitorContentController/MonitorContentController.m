@@ -121,7 +121,7 @@
    }];
 
    stIconImages   = @[
-      @"battery-100-bolt",
+      @"battery.100-bolt",
       @"wifi",
       @"cpu",
       @"drive",
@@ -159,6 +159,9 @@
                                                     weight:UIFontWeightLight]];
    [self.deviceBuildLabel setText:[NSString stringWithFormat:@"Build : %@", [UIDevice getSystemBuildVersion]]];
 
+   /**
+    * 电池
+    */
 //   self.batteryCell;
    [self.batteryNameLabel setBackgroundColor:UIColor.clearColor];
    [self.batteryNameLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
@@ -171,23 +174,14 @@
    [self.batteryStateLabel setFont:[UIFont systemFontOfSize:self.batteryStateLabel.font.pointSize
                                                      weight:UIFontWeightLight]];
    [self.batteryStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
-   
-   /**
-    * 电量信息
-    */
-   [self.batteryTotalLabel setBackgroundColor:UIColor.clearColor];
-   [self.batteryTotalLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.batteryTotalLabel setFont:[UIFont systemFontOfSize:self.batteryTotalLabel.font.pointSize
-                                                    weight:UIFontWeightLight]];
-   [self.batteryTotalLabel setText:__LOCALIZED_STRING(self.class, @"BATTERY")];
-   
-   [self.batteryRealLabel setBackgroundColor:UIColor.clearColor];
-   [self.batteryRealLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.batteryRealLabel setFont:[UIFont systemFontOfSize:self.batteryRealLabel.font.pointSize
-                                                    weight:UIFontWeightLight]];
-   [self.batteryRealLabel setText:__LOCALIZED_STRING(self.class, @"BATTERY")];
-   
-   [self.batteryProgressView setProgress:[UIDevice currentDevice].batteryLevel animated:NO];
+      
+   [self.batteryProgressView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
+   [self.batteryProgressView setTrackTintColorPicker:DKColorPickerWithKey([IDEAColor lightGray])];
+   [self.batteryProgressView setProgressTintColor:UIColorX.systemYellowColor];
+
+#if TARGET_IPHONE_SIMULATOR
+   [self.batteryProgressView setProgress:0.0 animated:NO];
+#endif /* TARGET_IPHONE_SIMULATOR */
 
    /**
     * 网络
@@ -204,6 +198,26 @@
    [self.networkStateLabel setFont:[UIFont systemFontOfSize:self.networkStateLabel.font.pointSize
                                                      weight:UIFontWeightLight]];
    [self.networkStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+   
+   [self.networkUpLabel setBackgroundColor:UIColor.clearColor];
+   [self.networkUpLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.networkUpLabel setFont:[UIFont systemFontOfSize:self.networkUpLabel.font.pointSize
+                                                  weight:UIFontWeightLight]];
+   [self.networkUpLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+
+   [self.networkUpImageView setBackgroundColor:UIColor.clearColor];
+   [self.networkUpImageView setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.networkUpImageView setImage:__IMAGE_NAMED(@"arrow.up.right", self.class)];
+
+   [self.networkDownLabel setBackgroundColor:UIColor.clearColor];
+   [self.networkDownLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.networkDownLabel setFont:[UIFont systemFontOfSize:self.networkDownLabel.font.pointSize
+                                                    weight:UIFontWeightLight]];
+   [self.networkDownLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+   
+   [self.networkDownImageView setBackgroundColor:UIColor.clearColor];
+   [self.networkDownImageView setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.networkDownImageView setImage:__IMAGE_NAMED(@"arrow.down.right", self.class)];
 
    /**
     * CPU
@@ -215,12 +229,24 @@
                                                 weight:UIFontWeightLight]];
    [self.cpuNameLabel setText:__LOCALIZED_STRING(self.class, @"CPU")];
    
-   [self.cpuStateLabel setBackgroundColor:UIColor.clearColor];
-   [self.cpuStateLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.cpuStateLabel setFont:[UIFont systemFontOfSize:self.cpuStateLabel.font.pointSize
+   [self.cpuCountLabel setBackgroundColor:UIColor.clearColor];
+   [self.cpuCountLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.cpuCountLabel setFont:[UIFont systemFontOfSize:self.cpuCountLabel.font.pointSize
                                                  weight:UIFontWeightLight]];
-   [self.cpuStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
-
+   [self.cpuCountLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+   
+   [self.cpuAppUsageLabel setBackgroundColor:UIColor.clearColor];
+   [self.cpuAppUsageLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.cpuAppUsageLabel setFont:[UIFont systemFontOfSize:self.cpuAppUsageLabel.font.pointSize
+                                                    weight:UIFontWeightLight]];
+   [self.cpuAppUsageLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+   
+   [self.cpuUsageLabel setBackgroundColor:UIColor.clearColor];
+   [self.cpuUsageLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.cpuUsageLabel setFont:[UIFont systemFontOfSize:self.cpuUsageLabel.font.pointSize
+                                                 weight:UIFontWeightLight]];
+   [self.cpuUsageLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+   
    /**
     * 存储空间
     */
@@ -231,11 +257,30 @@
                                                   weight:UIFontWeightLight]];
    [self.driveNameLabel setText:__LOCALIZED_STRING(self.class, @"DRIVE")];
    
-   [self.driveStateLabel setBackgroundColor:UIColor.clearColor];
-   [self.driveStateLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.driveStateLabel setFont:[UIFont systemFontOfSize:self.driveStateLabel.font.pointSize
+   [self.driveFreeLabel setBackgroundColor:UIColor.clearColor];
+   [self.driveFreeLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.driveFreeLabel setFont:[UIFont systemFontOfSize:self.driveFreeLabel.font.pointSize
                                                    weight:UIFontWeightLight]];
-   [self.driveStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+   [self.driveFreeLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+
+   [self.driveUsedLabel setBackgroundColor:UIColor.clearColor];
+   [self.driveUsedLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.driveUsedLabel setFont:[UIFont systemFontOfSize:self.driveUsedLabel.font.pointSize
+                                                   weight:UIFontWeightLight]];
+   [self.driveUsedLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+
+   [self.driveTotalLabel setBackgroundColor:UIColor.clearColor];
+   [self.driveTotalLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.driveTotalLabel setFont:[UIFont systemFontOfSize:self.driveTotalLabel.font.pointSize
+                                                   weight:UIFontWeightLight]];
+   [self.driveTotalLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+
+   [self.driveProgressView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
+   [self.driveProgressView setTrackTintColorPicker:DKColorPickerWithKey([IDEAColor lightGray])];
+   [self.driveProgressView setProgressTintColor:UIColorX.systemYellowColor];
+#if TARGET_IPHONE_SIMULATOR
+   [self.driveProgressView setProgress:0.3 animated:NO];
+#endif /* TARGET_IPHONE_SIMULATOR */
 
    /**
     * 内存
@@ -247,26 +292,23 @@
                                                    weight:UIFontWeightLight]];
    [self.memoryNameLabel setText:__LOCALIZED_STRING(self.class, @"MEMORY")];
    
-   [self.memoryStateLabel setBackgroundColor:UIColor.clearColor];
-   [self.memoryStateLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.memoryStateLabel setFont:[UIFont systemFontOfSize:self.memoryStateLabel.font.pointSize
+   [self.memoryFreeLabel setBackgroundColor:UIColor.clearColor];
+   [self.memoryFreeLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.memoryFreeLabel setFont:[UIFont systemFontOfSize:self.memoryFreeLabel.font.pointSize
                                                     weight:UIFontWeightLight]];
-   [self.memoryStateLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+   [self.memoryFreeLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
 
-   [self.batteryProgressView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
-   [self.batteryProgressView setTrackTintColorPicker:DKColorPickerWithKey([IDEAColor lightGray])];
-   [self.batteryProgressView setProgressTintColor:UIColorX.systemYellowColor];
-   
-#if TARGET_IPHONE_SIMULATOR
-   [self.batteryProgressView setProgress:0.3 animated:NO];
-#endif /* TARGET_IPHONE_SIMULATOR */
-   
-   [self.driveProgressView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
-   [self.driveProgressView setTrackTintColorPicker:DKColorPickerWithKey([IDEAColor lightGray])];
-   [self.driveProgressView setProgressTintColor:UIColorX.systemYellowColor];
-#if TARGET_IPHONE_SIMULATOR
-   [self.driveProgressView setProgress:0.3 animated:NO];
-#endif /* TARGET_IPHONE_SIMULATOR */
+   [self.memoryUsedLabel setBackgroundColor:UIColor.clearColor];
+   [self.memoryUsedLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.memoryUsedLabel setFont:[UIFont systemFontOfSize:self.memoryUsedLabel.font.pointSize
+                                                    weight:UIFontWeightLight]];
+   [self.memoryUsedLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
+
+   [self.memoryTotalLabel setBackgroundColor:UIColor.clearColor];
+   [self.memoryTotalLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.memoryTotalLabel setFont:[UIFont systemFontOfSize:self.memoryTotalLabel.font.pointSize
+                                                    weight:UIFontWeightLight]];
+   [self.memoryTotalLabel setText:__LOCALIZED_STRING(self.class, @"UNKNOW")];
 
    [self.memoryProgressView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
    [self.memoryProgressView setTrackTintColorPicker:DKColorPickerWithKey([IDEAColor lightGray])];
@@ -274,7 +316,7 @@
 #if TARGET_IPHONE_SIMULATOR
    [self.memoryProgressView setProgress:0.3 animated:NO];
 #endif /* TARGET_IPHONE_SIMULATOR */
-
+   
    /**
     * ADs
     */
@@ -318,6 +360,16 @@
 
    [self updateBattery];
    
+   [self updateDrive];
+   
+   [self updateMemory];
+   
+   [self updateCPU];
+
+   [self updateNetwork];
+
+   [self.timer fire];
+
    __CATCH(nErr);
    
    return;
@@ -344,7 +396,9 @@
    __TRY;
 
    [super viewWillAppear:aAnimated];
-
+   
+   self.needMonitor  = YES;
+   
    __CATCH(nErr);
 
    return;
@@ -384,9 +438,62 @@
 
    [super viewDidDisappear:aAnimated];
 
+   self.needMonitor  = NO;
+
    __CATCH(nErr);
 
    return;
+}
+
+
+- (NSTimer *)timer {
+   
+   if (nil == _timer) {
+
+      @weakify(self);
+      
+//      _timer   = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
+//      dispatch_source_set_timer(_timer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+//      dispatch_source_set_event_handler(_timer, ^{
+//
+//         @strongify(self);
+//
+//         if (self.needMonitor) {
+//
+//            [self updateBattery];
+//            [self updateDrive];
+//            [self updateMemory];
+//            [self updateCPU];
+//            [self updateNetwork];
+//
+//         } /* End if () */
+//      });
+//      dispatch_resume(_timer);
+
+      _timer   = [NSTimer timerWithTimeInterval:1.0f
+                                        repeats:YES
+                                          block:^(NSTimer *aTimer) {
+
+         @strongify(self);
+
+         if (self.needMonitor) {
+
+//            [self updateBattery];
+//            [self updateDrive];
+//            [self updateMemory];
+            [self updateCPU];
+//            [self updateNetwork];
+
+         } /* End if () */
+
+         return;
+      }];
+
+      [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+
+   } /* End if () */
+
+   return _timer;
 }
 
 @end

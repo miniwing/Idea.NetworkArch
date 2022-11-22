@@ -81,24 +81,32 @@ IDEA_ENUM(NSInteger, MonitorMemory) {
 @property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * batteryCell;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * batteryNameLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * batteryStateLabel;
-@property (nonatomic, weak)   IBOutlet       UILabel                             * batteryTotalLabel;
-@property (nonatomic, weak)   IBOutlet       UILabel                             * batteryRealLabel;
 
 @property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * networkCell;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * networkNameLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * networkStateLabel;
+@property (nonatomic, weak)   IBOutlet       UIImageView                         * networkUpImageView;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * networkUpLabel;
+@property (nonatomic, weak)   IBOutlet       UIImageView                         * networkDownImageView;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * networkDownLabel;
 
 @property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * cpuCell;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * cpuNameLabel;
-@property (nonatomic, weak)   IBOutlet       UILabel                             * cpuStateLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * cpuCountLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * cpuAppUsageLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * cpuUsageLabel;
 
 @property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * driveCell;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * driveNameLabel;
-@property (nonatomic, weak)   IBOutlet       UILabel                             * driveStateLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * driveFreeLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * driveUsedLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * driveTotalLabel;
 
 @property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * memoryCell;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * memoryNameLabel;
-@property (nonatomic, weak)   IBOutlet       UILabel                             * memoryStateLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * memoryFreeLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * memoryUsedLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * memoryTotalLabel;
 
 @property (nonatomic, strong) IBOutletCollection(UIImageView) NSArray<UIImageView *> * iconImageViews;
 
@@ -108,11 +116,25 @@ IDEA_ENUM(NSInteger, MonitorMemory) {
 
 @end
 
+@interface MonitorContentController ()
+
+@property (nonatomic, assign)                BOOL                                  needMonitor;
+@property (nonatomic, strong)                NSTimer                             * timer;
+//@property (nonatomic, strong)                dispatch_source_t                     timer;
+
+@end
+
 @interface MonitorContentController (Inner)
 
 - (void)updateBattery;
 
 - (void)updateDrive;
+
+- (void)updateMemory;
+
+- (void)updateCPU;
+
+- (void)updateNetwork;
 
 @end
 

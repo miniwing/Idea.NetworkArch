@@ -76,22 +76,22 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
          szSSID   = __LOCALIZED_STRING(self.class, @"SSID not available");
          szIP     = __LOCALIZED_STRING(self.class, @"N/A");
          
-         szIcon   = @"WIFI-ON";
-         
+         szIcon   = @"wifi";
+
       } /* End if () */
       else {
          
          szSSID   = __LOCALIZED_STRING(self.class, @"Wi-Fi not connected");
          szIP     = __LOCALIZED_STRING(self.class, @"N/A");
          
-         szIcon   = @"WIFI-SLASH";
-         
+         szIcon   = @"wifi.slash";
+
       } /* End else */
       
    } /* End if () */
    else {
       
-      szIcon   = @"WIFI-ON";
+      szIcon   = @"wifi";
 
    } /* End else */
    
@@ -115,7 +115,7 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       
-      [self.wifiSSIDIcon setImage:__IMAGE_NAMED(szIcon, self.class)];
+      [self.wifiSSIDIcon setImage:[ImageProvider imageNamed:szIcon]];
       
 //#if TARGET_IPHONE_SIMULATOR
 //      [self.wifiSSIDIcon setImage:__IMAGE_NAMED(@"WIFI-ON", self.class)];
@@ -209,16 +209,16 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
       
    } /* End else */
    
-   if ((nil == stCarrier) || (YES == kStringIsEmpty(stCarrier.carrierName))){
+   if ((nil == stCarrier) || (YES == kStringIsEmpty(stCarrier.carrierName))) {
       
       szCarrierName  = __LOCALIZED_STRING(self.class, @"No service");
-      szIcon         = @"CELLULAR-SLASH";
+      szIcon         = @"antenna.radiowaves.left.and.right.slash";
       
    } /* End if () */
    else {
       
       szCarrierName  = stCarrier.carrierName;
-      szIcon         = @"CELLULAR";
+      szIcon         = @"antenna.radiowaves.left.and.right";
       
    } /* End else */
    
@@ -236,10 +236,6 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
                    animations:^{
       [self.cellularOperatorLabel setText:szCarrierName];
       
-//#if TARGET_IPHONE_SIMULATOR
-//      [self.cellularOperatorLabel setText:__LOCALIZED_STRING(self.class, @"Cellular Network")];
-//#endif /* TARGET_IPHONE_SIMULATOR */
-
       return;
    }
                    completion:nil];
@@ -249,10 +245,7 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
       
-      [self.cellularOperatorIcon setImage:__IMAGE_NAMED(szIcon, self.class)];
-//#if TARGET_IPHONE_SIMULATOR
-//      [self.cellularOperatorIcon setImage:__IMAGE_NAMED(@"CELLULAR", self.class)];
-//#endif /* TARGET_IPHONE_SIMULATOR */
+      [self.cellularOperatorIcon setImage:[ImageProvider imageNamed:szIcon]];
 
       return;
    }
@@ -264,10 +257,6 @@ handleSignal(HomeContentController, loadCellularInfoSignal) {
                    animations:^{
       
       [self.cellularIP setText:szIP];
-
-//#if TARGET_IPHONE_SIMULATOR
-//      [self.cellularIP setText:__LOCALIZED_STRING(self.class, @"10.8.8.8")];
-//#endif /* TARGET_IPHONE_SIMULATOR */
 
       return;
    }

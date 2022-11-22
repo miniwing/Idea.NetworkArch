@@ -13,6 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DriveMonitor : NSObject
 
+@property (nonatomic, readonly)              int64_t                               space;
+@property (nonatomic, readonly)              int64_t                               spaceFree;
+@property (nonatomic, readonly)              int64_t                               spaceUsed;
+
+@end
+
+@interface DriveMonitor ()
+
 + (instancetype)sharedInstance;
 
 /**

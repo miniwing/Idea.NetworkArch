@@ -81,4 +81,19 @@
    return;
 }
 
+- (int64_t)space {
+   
+   return [UIDevice currentDevice].diskSpace;
+}
+
+- (int64_t)spaceFree {
+   
+   return [UIDevice currentDevice].diskSpaceFree;
+}
+
+- (int64_t)spaceUsed {
+   
+   return [UIDevice currentDevice].diskSpaceUsed;
+}
+
 @end
