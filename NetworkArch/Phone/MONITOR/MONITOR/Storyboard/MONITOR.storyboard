@@ -366,6 +366,12 @@
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="核心: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLy-Uv-nCJ" userLabel="CPU-数目-标签">
+                                                                    <rect key="frame" x="227" y="0.0" width="36.333333333333314" height="40"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPU-数目" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGe-HO-3hb" userLabel="CPU-数目">
                                                                     <rect key="frame" x="263.33333333333331" y="0.0" width="63.666666666666686" height="40"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
@@ -375,11 +381,14 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
+                                                                <constraint firstItem="FGe-HO-3hb" firstAttribute="top" secondItem="nLy-Uv-nCJ" secondAttribute="top" id="5cR-Qx-5PR"/>
                                                                 <constraint firstItem="bi1-Gf-hAK" firstAttribute="leading" secondItem="WRb-ki-h7h" secondAttribute="trailing" constant="8" id="BJE-f1-fgc"/>
                                                                 <constraint firstAttribute="trailing" secondItem="FGe-HO-3hb" secondAttribute="trailing" constant="16" id="INJ-b0-rX3"/>
                                                                 <constraint firstAttribute="height" priority="750" constant="40" id="Sxd-cX-RPg"/>
                                                                 <constraint firstItem="WRb-ki-h7h" firstAttribute="leading" secondItem="qeS-jO-hyE" secondAttribute="leading" constant="16" id="ZiK-w6-qql"/>
+                                                                <constraint firstItem="FGe-HO-3hb" firstAttribute="leading" secondItem="nLy-Uv-nCJ" secondAttribute="trailing" id="aFX-7U-c8s"/>
                                                                 <constraint firstItem="bi1-Gf-hAK" firstAttribute="top" secondItem="qeS-jO-hyE" secondAttribute="top" id="ciL-uB-98Z"/>
+                                                                <constraint firstItem="FGe-HO-3hb" firstAttribute="bottom" secondItem="nLy-Uv-nCJ" secondAttribute="bottom" id="fEP-52-Kv8"/>
                                                                 <constraint firstItem="FGe-HO-3hb" firstAttribute="top" secondItem="qeS-jO-hyE" secondAttribute="top" id="hV6-Jx-CpN"/>
                                                                 <constraint firstAttribute="bottom" secondItem="bi1-Gf-hAK" secondAttribute="bottom" id="rHk-r3-Aso"/>
                                                                 <constraint firstAttribute="bottom" secondItem="FGe-HO-3hb" secondAttribute="bottom" id="vGR-La-Jpx"/>
@@ -390,14 +399,33 @@
                                                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INp-Ga-dTF" userLabel="CPU-用量">
                                                             <rect key="frame" x="0.0" y="40" width="343" height="40"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="CPU-应用使用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bol-sJ-Fj8" userLabel="CPU-应用使用">
-                                                                    <rect key="frame" x="64" y="0.0" width="79.666666666666686" height="40"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="应用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bol-sJ-Fj8" userLabel="CPU-应用使用-标签">
+                                                                    <rect key="frame" x="63.999999999999993" y="0.0" width="24.666666666666664" height="40"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPU-系统使用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eU-hd-Q7B" userLabel="CPU-系统使用">
-                                                                    <rect key="frame" x="247.33333333333334" y="0.0" width="79.666666666666657" height="40"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="00.00%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGJ-aY-f6w" userLabel="CPU-应用使用">
+                                                                    <rect key="frame" x="88.666666666666671" y="0.0" width="44.000000000000014" height="40"/>
+                                                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="weh-7z-hDF"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="系统" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Co-xB-2eC" userLabel="CPU-系统使用-标签">
+                                                                    <rect key="frame" x="258.33333333333331" y="0.0" width="24.666666666666686" height="40"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="00.00%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eU-hd-Q7B" userLabel="CPU-系统使用">
+                                                                    <rect key="frame" x="283" y="0.0" width="44" height="40"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="mM6-CI-89M"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -405,12 +433,18 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
+                                                                <constraint firstItem="RGJ-aY-f6w" firstAttribute="top" secondItem="bol-sJ-Fj8" secondAttribute="top" id="7hL-eq-1Mh"/>
+                                                                <constraint firstItem="RGJ-aY-f6w" firstAttribute="leading" secondItem="bol-sJ-Fj8" secondAttribute="trailing" id="9Um-Hg-gLW"/>
+                                                                <constraint firstItem="2eU-hd-Q7B" firstAttribute="leading" secondItem="9Co-xB-2eC" secondAttribute="trailing" id="B1y-tf-kuO"/>
+                                                                <constraint firstItem="2eU-hd-Q7B" firstAttribute="bottom" secondItem="9Co-xB-2eC" secondAttribute="bottom" id="EHh-wE-oIJ"/>
                                                                 <constraint firstAttribute="trailing" secondItem="2eU-hd-Q7B" secondAttribute="trailing" constant="16" id="Jyl-5V-ekZ"/>
                                                                 <constraint firstItem="2eU-hd-Q7B" firstAttribute="top" secondItem="INp-Ga-dTF" secondAttribute="top" id="RC4-BJ-e51"/>
                                                                 <constraint firstAttribute="height" constant="40" id="Sn4-aW-xOM"/>
                                                                 <constraint firstAttribute="bottom" secondItem="bol-sJ-Fj8" secondAttribute="bottom" id="bSa-vH-L9n"/>
                                                                 <constraint firstAttribute="bottom" secondItem="2eU-hd-Q7B" secondAttribute="bottom" id="cAC-Yf-Tq9"/>
                                                                 <constraint firstItem="bol-sJ-Fj8" firstAttribute="leading" secondItem="INp-Ga-dTF" secondAttribute="leading" constant="64" id="cgv-xa-fBg"/>
+                                                                <constraint firstItem="RGJ-aY-f6w" firstAttribute="bottom" secondItem="bol-sJ-Fj8" secondAttribute="bottom" id="mEs-l6-av0"/>
+                                                                <constraint firstItem="2eU-hd-Q7B" firstAttribute="top" secondItem="9Co-xB-2eC" secondAttribute="top" id="nkS-Zl-xsk"/>
                                                                 <constraint firstItem="bol-sJ-Fj8" firstAttribute="top" secondItem="INp-Ga-dTF" secondAttribute="top" id="o99-P0-U1j"/>
                                                             </constraints>
                                                         </view>
@@ -729,11 +763,14 @@
                         <outlet property="batteryNameLabel" destination="Bz9-gJ-V3C" id="uf0-6B-AbK"/>
                         <outlet property="batteryProgressView" destination="zKr-ZT-92T" id="mwC-r2-Kt7"/>
                         <outlet property="batteryStateLabel" destination="piJ-CM-x4a" id="HCd-tE-l74"/>
-                        <outlet property="cpuAppUsageLabel" destination="bol-sJ-Fj8" id="WrJ-hy-AWd"/>
+                        <outlet property="cpuAppUsageLabel" destination="RGJ-aY-f6w" id="42D-80-gcu"/>
+                        <outlet property="cpuAppUsageTitleLabel" destination="bol-sJ-Fj8" id="uZ0-fi-3XJ"/>
                         <outlet property="cpuCell" destination="nSr-L0-LeT" id="3ON-nF-4SE"/>
                         <outlet property="cpuCountLabel" destination="FGe-HO-3hb" id="89R-a2-YPh"/>
+                        <outlet property="cpuCountTitleLabel" destination="nLy-Uv-nCJ" id="5K5-Au-Qfs"/>
                         <outlet property="cpuNameLabel" destination="bi1-Gf-hAK" id="gcq-Ib-bmD"/>
                         <outlet property="cpuUsageLabel" destination="2eU-hd-Q7B" id="OlD-17-0oN"/>
+                        <outlet property="cpuUsageTitleLabel" destination="9Co-xB-2eC" id="Cif-cp-T4f"/>
                         <outlet property="deviceBuildLabel" destination="rFf-js-zma" id="7Ob-9E-oDv"/>
                         <outlet property="deviceNameLabel" destination="is7-7t-cRk" id="a9W-Ij-UZ1"/>
                         <outlet property="deviceVersionLabel" destination="UKz-ZD-oah" id="hMm-th-6cI"/>

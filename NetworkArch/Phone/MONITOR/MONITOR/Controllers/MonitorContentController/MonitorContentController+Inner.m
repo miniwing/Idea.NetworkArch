@@ -186,7 +186,7 @@
 //   LogDebug((@"-[MonitorContentController updateCPU] : MaxFrequency : %lluMHz", [UIDevice currentDevice].cpuMaxFrequency / 1024 / 1024));
 //   LogDebug((@"-[MonitorContentController updateCPU] : MinFrequency : %lluMHz", [UIDevice currentDevice].cpuMinFrequency / 1024 / 1024));
 
-   [self.cpuCountLabel setText:[NSString stringWithFormat:@"%@%d%", __LOCALIZED_STRING(self.class, @"Core: "), SERVICE(IMonitorService).cpuCoreCount]];
+   [self.cpuCountLabel setText:[NSString stringWithFormat:@"%d%", SERVICE(IMonitorService).cpuCoreCount]];
    
 //   LogDebug((@"-[MonitorContentController updateCPU] : AppUsage    : %.2f",   SERVICE(IMonitorService).cpuAppUsage));
 //   LogDebug((@"-[MonitorContentController updateCPU] : AppUsage    : %.2f%%", SERVICE(IMonitorService).cpuAppUsage * 100));
@@ -203,8 +203,8 @@
       
    } /* End if () */
    
-   [self.cpuUsageLabel setText:[NSString stringWithFormat:@"%@%.2f%%", __LOCALIZED_STRING(self.class, @"System: "), SERVICE(IMonitorService).cpuSystemUsage * 100]];
-   [self.cpuAppUsageLabel setText:[NSString stringWithFormat:@"%@%.2f%%", __LOCALIZED_STRING(self.class, @"App: "), SERVICE(IMonitorService).cpuAppUsage * 100]];
+   [self.cpuUsageLabel setText:[NSString stringWithFormat:@"%.2f%%", SERVICE(IMonitorService).cpuSystemUsage * 100.0f]];
+   [self.cpuAppUsageLabel setText:[NSString stringWithFormat:@"%.2f%%", SERVICE(IMonitorService).cpuAppUsage * 100.0f]];
    
    __CATCH(nErr);
 

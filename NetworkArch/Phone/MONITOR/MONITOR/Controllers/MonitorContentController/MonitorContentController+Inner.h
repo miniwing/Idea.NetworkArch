@@ -92,8 +92,11 @@ IDEA_ENUM(NSInteger, MonitorMemory) {
 
 @property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * cpuCell;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * cpuNameLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * cpuCountTitleLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * cpuCountLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * cpuAppUsageTitleLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * cpuAppUsageLabel;
+@property (nonatomic, weak)   IBOutlet       UILabel                             * cpuUsageTitleLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * cpuUsageLabel;
 
 @property (nonatomic, weak)   IBOutlet       MonitorContentCell                  * driveCell;
