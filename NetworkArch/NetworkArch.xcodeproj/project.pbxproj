@@ -19,6 +19,7 @@
 		4A25F19426AED9A10075BE73 /* FleetingWidgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A25F19326AED9A10075BE73 /* FleetingWidgetController.m */; };
 		4A25F19726AED9A10075BE73 /* FLEETING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A25F19526AED9A10075BE73 /* FLEETING.storyboard */; };
 		4A25F19B26AED9A10075BE73 /* FleetingWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A25F18F26AED9A10075BE73 /* FleetingWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4A26DBD3292DD6BE005B10E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A26DBD1292DD6BE005B10E7 /* Localizable.strings */; };
 		4A303578290EA6D80019FA8C /* StartUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A303574290EA6D80019FA8C /* StartUp.m */; };
 		4A303579290EA6D80019FA8C /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A303577290EA6D80019FA8C /* ServiceManager.m */; };
 		4A303902290ECEAB0019FA8C /* RootViewController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A303900290ECEAB0019FA8C /* RootViewController+Inner.m */; };
@@ -129,6 +130,9 @@
 		4A25F19326AED9A10075BE73 /* FleetingWidgetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FleetingWidgetController.m; sourceTree = "<group>"; };
 		4A25F19626AED9A10075BE73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FLEETING.storyboard; sourceTree = "<group>"; };
 		4A25F19826AED9A10075BE73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A26DBD2292DD6BE005B10E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4A26DBD7292DD6C5005B10E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4A26DBD8292DD6C8005B10E7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4A2E05DF26D3EFE4000A3354 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		4A2E05E026D3EFF0000A3354 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		4A303573290EA6D80019FA8C /* StartUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartUp.h; sourceTree = "<group>"; };
@@ -370,6 +374,7 @@
 			children = (
 				4AF4412326AC5D440008C169 /* TodayWidget.entitlements */,
 				4A4D0A6626AC0F56008A30E0 /* TODAY.storyboard */,
+				4A26DBD1292DD6BE005B10E7 /* Localizable.strings */,
 				4A842C7E26AC1C0B005DC131 /* InfoPlist.strings */,
 				4A4D0A6926AC0F56008A30E0 /* Info.plist */,
 				4A842C7B26AC19D0005DC131 /* Prefix.pch */,
@@ -614,6 +619,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A26DBD3292DD6BE005B10E7 /* Localizable.strings in Resources */,
 				4A4D0A6826AC0F56008A30E0 /* TODAY.storyboard in Resources */,
 				4AF4411F26AC536F0008C169 /* IMAGEs.xcassets in Resources */,
 				4A842C8126AC1C19005DC131 /* Localizable.strings in Resources */,
@@ -888,6 +894,16 @@
 			name = FLEETING.storyboard;
 			sourceTree = "<group>";
 		};
+		4A26DBD1292DD6BE005B10E7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A26DBD2292DD6BE005B10E7 /* Base */,
+				4A26DBD7292DD6C5005B10E7 /* en */,
+				4A26DBD8292DD6C8005B10E7 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		4A4A004726AEFDD4000D4708 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -974,7 +990,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = Idea.NetworkArch.FleetingWidget;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -997,7 +1013,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = IdeaNetworkArchFleetingWidget;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1019,7 +1035,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = Idea.NetworkArch.TodayWidget;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1041,7 +1057,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = IdeaNetworkArchTodayWidget;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

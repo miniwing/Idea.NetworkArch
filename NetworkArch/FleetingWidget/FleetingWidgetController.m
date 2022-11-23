@@ -50,8 +50,9 @@
 
    LogDebug((@"-[FleetingWidgetController viewDidLoad] : Remaining : ", APP_STR(@"Remaining")));
    [self.titleLabel setText:[NSString stringWithFormat:APP_STR(@"Remaining"), [OneYear sharedInstance].year]];
-   
-   [self.progressLabel setFont:[UIFont monospacedDigitSystemFontOfSize:self.progressLabel.font.pointSize weight:UIFontWeightRegular]];
+   [self.titleLabel setFont:[UIFont systemFontOfSize:self.titleLabel.font.pointSize weight:UIFontWeightRegular]];
+
+   [self.progressLabel setFont:[UIFont monospacedDigitSystemFontOfSize:self.progressLabel.font.pointSize weight:UIFontWeightLight]];
    [self.progressLabel setText:[OneYear sharedInstance].currentProgress];
 
    @weakify(self);
@@ -67,7 +68,8 @@
    [[NSRunLoop currentRunLoop] addTimer:self.timer
                                 forMode:NSDefaultRunLoopMode];
    
-   [self.copyrightLabel setText:@"Copyright © 2021 Harry. All rights reserved."];
+   [self.copyrightLabel setText:@"Copyright © 2021-2022 Harry. All rights reserved."];
+   [self.copyrightLabel setFont:[UIFont systemFontOfSize:self.copyrightLabel.font.pointSize weight:UIFontWeightLight]];
 
    if (@available(iOS 13.0, *)) {
       

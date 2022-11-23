@@ -13,10 +13,6 @@
 #import "TodayWidgetContentController+Inner.h"
 #import "TodayWidgetContentController+Signal.h"
 
-@interface TodayWidgetContentController ()
-
-@end
-
 @implementation TodayWidgetContentController
 
 - (void)dealloc {
