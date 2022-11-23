@@ -6,7 +6,8 @@
   Copyright © 2021 Harry. All rights reserved.
 */
 
-CFBundleDisplayName     = "NetworkArch";
+//CFBundleDisplayName     = "NetworkArch";
+CFBundleDisplayName     = "MonitorArch";
 
 NSLocationAlwaysAndWhenInUseUsageDescription = "需要位置权限才能获取 Wi-Fi SSID/BSSID";
 NSLocationAlwaysUsageDescription             = "需要位置权限才能获取 Wi-Fi SSID/BSSID";

@@ -496,11 +496,11 @@
 
          if (self.needMonitor) {
 
-//            [self updateBattery];
-//            [self updateDrive];
-//            [self updateMemory];
+            [self updateBattery];
+            [self updateDrive];
+            [self updateMemory];
             [self updateCPU];
-//            [self updateNetwork];
+            [self updateNetwork];
 
          } /* End if () */
 

@@ -1,9 +1,10 @@
 /* 
   Localizations.strings
-  FleetingWidget
+  TodayWidget
 
   Created by Harry on 2021/6/7.
   Copyright © 2021 Harry. All rights reserved.
 */
 
-"Remaining"             = "%d has past";
+"IP Address"            = "IP地址";
+"More Info"             = "更多";
