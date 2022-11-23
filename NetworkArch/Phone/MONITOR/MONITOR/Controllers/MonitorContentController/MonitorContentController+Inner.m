@@ -88,7 +88,8 @@
    } /* End else */
 
    [self.batteryStateLabel setText:[NSString stringWithFormat:@"%d%%", (int)(SERVICE(IMonitorService).batteryLevel * 100)]];
-
+   [self.batteryProgressView setProgress:SERVICE(IMonitorService).batteryLevel animated:NO];
+   
 #if TARGET_IPHONE_SIMULATOR
    [self.batteryStateLabel setText:[NSString stringWithFormat:@"%d%%", 100]];
    [self.batteryProgressView setProgress:1 animated:NO];

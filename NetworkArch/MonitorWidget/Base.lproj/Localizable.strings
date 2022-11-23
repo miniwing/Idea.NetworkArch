@@ -1,0 +1,10 @@
+/* 
+  Localizations.strings
+  MonitorWidget
+
+  Created by Harry on 2021/6/7.
+  Copyright © 2021 Harry. All rights reserved.
+*/
+
+"IP Address"            = "IP Address";
+"More Info"             = "More Info";

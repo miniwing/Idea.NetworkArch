@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>NetworkArch</string>
+	<string>MonitorWidget</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -25,13 +25,13 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widget-extension</string>
 		<key>NSExtensionMainStoryboard</key>
-		<string>TODAY</string>
+		<string>MONITOR</string>
 	</dict>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2021-2022 MINIWING. All rights reserved.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location permission is required to access Wi-Fi SSID/BSSID</string>
 </dict>
 </plist>

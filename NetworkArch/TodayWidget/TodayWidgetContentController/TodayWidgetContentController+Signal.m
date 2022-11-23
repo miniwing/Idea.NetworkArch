@@ -117,45 +117,69 @@ handleSignal(TodayWidgetContentController, loadCellularInfoSignal) {
    stTelephonyNetworkInfo  = [[CTTelephonyNetworkInfo alloc] init];
    
    szIcon   = @"antenna.radiowaves.left.and.right";
+
+   stCarriers  = stTelephonyNetworkInfo.serviceSubscriberCellularProviders;
    
-   if (@available(iOS 12.0, *)) {
-      
-      stCarriers  = stTelephonyNetworkInfo.serviceSubscriberCellularProviders;
-      
-      LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : Carriers : %@", aSignal.name, stCarriers));
-      
+   LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : Carriers : %@", aSignal.name, stCarriers));
+   
 #if __Debug__
-      [stCarriers enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, CTCarrier * _Nonnull aObject, BOOL * _Nonnull aStop) {
+   [stCarriers enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, CTCarrier * _Nonnull aObject, BOOL * _Nonnull aStop) {
 
-         LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : Carrier : %@:%@", aSignal.name, aKey, aObject));
+      LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : Carrier : %@:%@", aSignal.name, aKey, aObject));
 
-      }];
+   }];
 #endif /* __Debug__ */
-      
-      stRadioAccesses   = stTelephonyNetworkInfo.serviceCurrentRadioAccessTechnology;
-      
-      LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : RadioAccesses : %@", aSignal.name, stRadioAccesses));
+   
+   stRadioAccesses   = stTelephonyNetworkInfo.serviceCurrentRadioAccessTechnology;
+   
+   LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : RadioAccesses : %@", aSignal.name, stRadioAccesses));
 
 #if __Debug__
-      [stRadioAccesses enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, NSString * _Nonnull aObject, BOOL * _Nonnull aStop) {
+   [stRadioAccesses enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, NSString * _Nonnull aObject, BOOL * _Nonnull aStop) {
 
-         LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : RadioAccess : %@:%@", aSignal.name, aKey, aObject));
+      LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : RadioAccess : %@:%@", aSignal.name, aKey, aObject));
 
-      }];
+   }];
 #endif /* __Debug__ */
 
-   } /* End if () */
-   else {
-      
-      stCarrier   = stTelephonyNetworkInfo.subscriberCellularProvider;
-      
-      LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : Carrier : %@", aSignal.name, stCarrier));
-      
-      szRadioAccess  = stTelephonyNetworkInfo.currentRadioAccessTechnology;
-      
-      LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : RadioAccess : %@", aSignal.name, szRadioAccess));
-      
-   } /* End else */
+//   if (@available(iOS 12.0, *)) {
+//
+//      stCarriers  = stTelephonyNetworkInfo.serviceSubscriberCellularProviders;
+//
+//      LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : Carriers : %@", aSignal.name, stCarriers));
+//
+//#if __Debug__
+//      [stCarriers enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, CTCarrier * _Nonnull aObject, BOOL * _Nonnull aStop) {
+//
+//         LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : Carrier : %@:%@", aSignal.name, aKey, aObject));
+//
+//      }];
+//#endif /* __Debug__ */
+//
+//      stRadioAccesses   = stTelephonyNetworkInfo.serviceCurrentRadioAccessTechnology;
+//
+//      LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : RadioAccesses : %@", aSignal.name, stRadioAccesses));
+//
+//#if __Debug__
+//      [stRadioAccesses enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull aKey, NSString * _Nonnull aObject, BOOL * _Nonnull aStop) {
+//
+//         LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : RadioAccess : %@:%@", aSignal.name, aKey, aObject));
+//
+//      }];
+//#endif /* __Debug__ */
+//
+//   } /* End if () */
+//   else {
+//
+//      stCarrier   = stTelephonyNetworkInfo.subscriberCellularProvider;
+//
+//      LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : Carrier : %@", aSignal.name, stCarrier));
+//
+//      szRadioAccess  = stTelephonyNetworkInfo.currentRadioAccessTechnology;
+//
+//      LogDebug((@"-[TodayWidgetContentController handleSignal:%@] : RadioAccess : %@", aSignal.name, szRadioAccess));
+//
+//   } /* End else */
    
    __CATCH(nErr);
    

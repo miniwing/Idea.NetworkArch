@@ -20,6 +20,18 @@
 		4A25F19726AED9A10075BE73 /* FLEETING.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A25F19526AED9A10075BE73 /* FLEETING.storyboard */; };
 		4A25F19B26AED9A10075BE73 /* FleetingWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A25F18F26AED9A10075BE73 /* FleetingWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4A26DBD3292DD6BE005B10E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A26DBD1292DD6BE005B10E7 /* Localizable.strings */; };
+		4A26DBEC292DDB6F005B10E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A26DBEB292DDB6F005B10E7 /* Assets.xcassets */; };
+		4A26DC14292DDD66005B10E7 /* MONITOR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A26DC0E292DDD65005B10E7 /* MONITOR.storyboard */; };
+		4A26DC15292DDD66005B10E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A26DC10292DDD65005B10E7 /* InfoPlist.strings */; };
+		4A26DC16292DDD66005B10E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A26DC12292DDD65005B10E7 /* Localizable.strings */; };
+		4A26DC43292DDDFC005B10E7 /* MonitorWidgetController+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A26DC37292DDDF8005B10E7 /* MonitorWidgetController+Debug.m */; };
+		4A26DC44292DDDFC005B10E7 /* MonitorWidgetController+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A26DC38292DDDF8005B10E7 /* MonitorWidgetController+Action.m */; };
+		4A26DC45292DDDFC005B10E7 /* MonitorWidgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A26DC39292DDDF8005B10E7 /* MonitorWidgetController.m */; };
+		4A26DC46292DDDFC005B10E7 /* MonitorWidgetController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A26DC3B292DDDF9005B10E7 /* MonitorWidgetController+Inner.m */; };
+		4A26DC47292DDDFC005B10E7 /* MonitorWidgetController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A26DC3C292DDDFA005B10E7 /* MonitorWidgetController+Theme.m */; };
+		4A26DC48292DDDFC005B10E7 /* MonitorWidgetController+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A26DC40292DDDFB005B10E7 /* MonitorWidgetController+Notification.m */; };
+		4A26DC49292DDDFC005B10E7 /* MonitorWidgetController+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A26DC42292DDDFC005B10E7 /* MonitorWidgetController+Signal.m */; };
+		4A26DD13292DE968005B10E7 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A421C0526AC0CC200935235 /* NotificationCenter.framework */; };
 		4A303578290EA6D80019FA8C /* StartUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A303574290EA6D80019FA8C /* StartUp.m */; };
 		4A303579290EA6D80019FA8C /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A303577290EA6D80019FA8C /* ServiceManager.m */; };
 		4A303902290ECEAB0019FA8C /* RootViewController+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A303900290ECEAB0019FA8C /* RootViewController+Inner.m */; };
@@ -37,7 +49,6 @@
 		4A4D0A6C26AC0F56008A30E0 /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A4D0A6026AC0F56008A30E0 /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4A6C2155291C261C005417F8 /* APPDelegate+ADs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C2154291C261C005417F8 /* APPDelegate+ADs.m */; };
 		4A842C8026AC1C0B005DC131 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A842C7E26AC1C0B005DC131 /* InfoPlist.strings */; };
-		4A842C8126AC1C19005DC131 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B992685CD3400DC1DA2 /* Localizable.strings */; };
 		4A99B5B926B5910D006F479F /* APPDelegate+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D98EB26A47B1200E00610 /* APPDelegate+Inner.m */; };
 		4AAF697826B58E1300E68E32 /* APPDelegate+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF697726B58E1300E68E32 /* APPDelegate+Signal.m */; };
 		4AE51B942685C4DA00DC1DA2 /* SPONSOR.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B932685C4DA00DC1DA2 /* SPONSOR.png */; };
@@ -62,6 +73,7 @@
 		4AF4411F26AC536F0008C169 /* IMAGEs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B952685C7C500DC1DA2 /* IMAGEs.xcassets */; };
 		4AF4412726AC8C060008C169 /* BOTTOM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412526AC8C040008C169 /* BOTTOM.png */; };
 		4AF4412926AC8C060008C169 /* LAUNCH.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF4412626AC8C050008C169 /* LAUNCH.png */; };
+		6FDC3A97E74979B454EFD35D /* Pods_MonitorWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE0917DF3E629E0A2FF2327 /* Pods_MonitorWidget.framework */; };
 		815C0DBBA74EFBF9C423C8A8 /* Pods_FleetingWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8B0BD48B836CB754FE9B49 /* Pods_FleetingWidget.framework */; };
 		85DAB33CDD1EE68A7D38CEDB /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6903DDDE192856FDB4D240 /* Pods_TodayWidget.framework */; };
 		FB35C9C714F36F7F54630E47 /* Pods_NetworkArch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B5B2CA0F8572B993F026A9 /* Pods_NetworkArch.framework */; };
@@ -133,6 +145,34 @@
 		4A26DBD2292DD6BE005B10E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4A26DBD7292DD6C5005B10E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4A26DBD8292DD6C8005B10E7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4A26DBE3292DDB6B005B10E7 /* MonitorWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MonitorWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A26DBE4292DDB6B005B10E7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4A26DBE6292DDB6B005B10E7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4A26DBEB292DDB6F005B10E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A26DBED292DDB6F005B10E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A26DBFC292DDBC5005B10E7 /* MonitorWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonitorWidget.entitlements; sourceTree = "<group>"; };
+		4A26DC0F292DDD65005B10E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MONITOR.storyboard; sourceTree = "<group>"; };
+		4A26DC11292DDD65005B10E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4A26DC13292DDD65005B10E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4A26DC35292DDDF7005B10E7 /* MonitorWidgetController+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MonitorWidgetController+Signal.h"; sourceTree = "<group>"; };
+		4A26DC36292DDDF7005B10E7 /* MonitorWidgetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorWidgetController.h; sourceTree = "<group>"; };
+		4A26DC37292DDDF8005B10E7 /* MonitorWidgetController+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MonitorWidgetController+Debug.m"; sourceTree = "<group>"; };
+		4A26DC38292DDDF8005B10E7 /* MonitorWidgetController+Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MonitorWidgetController+Action.m"; sourceTree = "<group>"; };
+		4A26DC39292DDDF8005B10E7 /* MonitorWidgetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorWidgetController.m; sourceTree = "<group>"; };
+		4A26DC3A292DDDF9005B10E7 /* MonitorWidgetController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MonitorWidgetController+Theme.h"; sourceTree = "<group>"; };
+		4A26DC3B292DDDF9005B10E7 /* MonitorWidgetController+Inner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MonitorWidgetController+Inner.m"; sourceTree = "<group>"; };
+		4A26DC3C292DDDFA005B10E7 /* MonitorWidgetController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MonitorWidgetController+Theme.m"; sourceTree = "<group>"; };
+		4A26DC3D292DDDFA005B10E7 /* MonitorWidgetController+Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MonitorWidgetController+Action.h"; sourceTree = "<group>"; };
+		4A26DC3E292DDDFA005B10E7 /* MonitorWidgetController+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MonitorWidgetController+Debug.h"; sourceTree = "<group>"; };
+		4A26DC3F292DDDFB005B10E7 /* MonitorWidgetController+Inner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MonitorWidgetController+Inner.h"; sourceTree = "<group>"; };
+		4A26DC40292DDDFB005B10E7 /* MonitorWidgetController+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MonitorWidgetController+Notification.m"; sourceTree = "<group>"; };
+		4A26DC41292DDDFC005B10E7 /* MonitorWidgetController+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MonitorWidgetController+Notification.h"; sourceTree = "<group>"; };
+		4A26DC42292DDDFC005B10E7 /* MonitorWidgetController+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MonitorWidgetController+Signal.m"; sourceTree = "<group>"; };
+		4A26DC4E292DDF27005B10E7 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		4A26DD09292DE50B005B10E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4A26DD0A292DE50D005B10E7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		4A26DD6D292E11A0005B10E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4A26DD6E292E11AA005B10E7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4A2E05DF26D3EFE4000A3354 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		4A2E05E026D3EFF0000A3354 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		4A303573290EA6D80019FA8C /* StartUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartUp.h; sourceTree = "<group>"; };
@@ -215,6 +255,7 @@
 		4AF4412426AC8AC90008C169 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AF4412526AC8C040008C169 /* BOTTOM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BOTTOM.png; sourceTree = "<group>"; };
 		4AF4412626AC8C050008C169 /* LAUNCH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LAUNCH.png; sourceTree = "<group>"; };
+		4F75DFB060410342E39D6E2A /* Pods-MonitorWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitorWidget.debug.xcconfig"; path = "Target Support Files/Pods-MonitorWidget/Pods-MonitorWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		51094CFDD28FA237A0372EFB /* Pods-FleetingWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetingWidget.release.xcconfig"; path = "Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget.release.xcconfig"; sourceTree = "<group>"; };
 		5D6903DDDE192856FDB4D240 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DF92DFFC64AB4198E20875 /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,9 +264,11 @@
 		7F34AAABB40EF7A521F9987D /* libPods-APPBase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APPBase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9427FC1B9FB3144B40E0E517 /* Pods-FleetingWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetingWidget.debug.xcconfig"; path = "Target Support Files/Pods-FleetingWidget/Pods-FleetingWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		A90D912BF379DE28D323CFC9 /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
+		C4789428905E75E07BF27037 /* Pods-MonitorWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitorWidget.release.xcconfig"; path = "Target Support Files/Pods-MonitorWidget/Pods-MonitorWidget.release.xcconfig"; sourceTree = "<group>"; };
 		C567634D22600ACDE499AF6E /* Pods-NetworkArch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.release.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.release.xcconfig"; sourceTree = "<group>"; };
 		CC7F3049F2B28E17A49195A2 /* Pods-NetworkArch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkArch.debug.xcconfig"; path = "Target Support Files/Pods-NetworkArch/Pods-NetworkArch.debug.xcconfig"; sourceTree = "<group>"; };
 		D6B5B2CA0F8572B993F026A9 /* Pods_NetworkArch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkArch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE0917DF3E629E0A2FF2327 /* Pods_MonitorWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonitorWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BB361642C7C47D27E17358 /* Pods_TodayClip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayClip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -236,6 +279,15 @@
 			files = (
 				4A25F19026AED9A10075BE73 /* NotificationCenter.framework in Frameworks */,
 				815C0DBBA74EFBF9C423C8A8 /* Pods_FleetingWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A26DBE0292DDB6B005B10E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A26DD13292DE968005B10E7 /* NotificationCenter.framework in Frameworks */,
+				6FDC3A97E74979B454EFD35D /* Pods_MonitorWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +377,50 @@
 			path = FleetingWidget;
 			sourceTree = "<group>";
 		};
+		4A26DBE8292DDB6B005B10E7 /* MonitorWidget */ = {
+			isa = PBXGroup;
+			children = (
+				4A26DC1B292DDDA6005B10E7 /* MonitorWidgetController */,
+				4A26DC0D292DDCCC005B10E7 /* Supporting Files */,
+			);
+			path = MonitorWidget;
+			sourceTree = "<group>";
+		};
+		4A26DC0D292DDCCC005B10E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A26DC4E292DDF27005B10E7 /* Prefix.pch */,
+				4A26DC10292DDD65005B10E7 /* InfoPlist.strings */,
+				4A26DC12292DDD65005B10E7 /* Localizable.strings */,
+				4A26DC0E292DDD65005B10E7 /* MONITOR.storyboard */,
+				4A26DBFC292DDBC5005B10E7 /* MonitorWidget.entitlements */,
+				4A26DBEB292DDB6F005B10E7 /* Assets.xcassets */,
+				4A26DBED292DDB6F005B10E7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A26DC1B292DDDA6005B10E7 /* MonitorWidgetController */ = {
+			isa = PBXGroup;
+			children = (
+				4A26DC36292DDDF7005B10E7 /* MonitorWidgetController.h */,
+				4A26DC39292DDDF8005B10E7 /* MonitorWidgetController.m */,
+				4A26DC3D292DDDFA005B10E7 /* MonitorWidgetController+Action.h */,
+				4A26DC38292DDDF8005B10E7 /* MonitorWidgetController+Action.m */,
+				4A26DC3E292DDDFA005B10E7 /* MonitorWidgetController+Debug.h */,
+				4A26DC37292DDDF8005B10E7 /* MonitorWidgetController+Debug.m */,
+				4A26DC3F292DDDFB005B10E7 /* MonitorWidgetController+Inner.h */,
+				4A26DC3B292DDDF9005B10E7 /* MonitorWidgetController+Inner.m */,
+				4A26DC41292DDDFC005B10E7 /* MonitorWidgetController+Notification.h */,
+				4A26DC40292DDDFB005B10E7 /* MonitorWidgetController+Notification.m */,
+				4A26DC35292DDDF7005B10E7 /* MonitorWidgetController+Signal.h */,
+				4A26DC42292DDDFC005B10E7 /* MonitorWidgetController+Signal.m */,
+				4A26DC3A292DDDF9005B10E7 /* MonitorWidgetController+Theme.h */,
+				4A26DC3C292DDDFA005B10E7 /* MonitorWidgetController+Theme.m */,
+			);
+			path = MonitorWidgetController;
+			sourceTree = "<group>";
+		};
 		4A303572290EA6D80019FA8C /* StartUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +484,7 @@
 				4A98A6382684B50F00EEEB60 /* Phone */,
 				4A4D0A6226AC0F56008A30E0 /* TodayWidget */,
 				4A25F19126AED9A10075BE73 /* FleetingWidget */,
+				4A26DBE8292DDB6B005B10E7 /* MonitorWidget */,
 				4A98A6372684B50F00EEEB60 /* Products */,
 				5A073BE837F8A6FE5151B56D /* Pods */,
 				BC9F1E42789CEDD6C11BF75C /* Frameworks */,
@@ -400,6 +497,7 @@
 				4A98A6362684B50F00EEEB60 /* NetworkArch.app */,
 				4A4D0A6026AC0F56008A30E0 /* TodayWidget.appex */,
 				4A25F18F26AED9A10075BE73 /* FleetingWidget.appex */,
+				4A26DBE3292DDB6B005B10E7 /* MonitorWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -476,6 +574,8 @@
 				63DF92DFFC64AB4198E20875 /* Pods-TodayWidget.release.xcconfig */,
 				9427FC1B9FB3144B40E0E517 /* Pods-FleetingWidget.debug.xcconfig */,
 				51094CFDD28FA237A0372EFB /* Pods-FleetingWidget.release.xcconfig */,
+				4F75DFB060410342E39D6E2A /* Pods-MonitorWidget.debug.xcconfig */,
+				C4789428905E75E07BF27037 /* Pods-MonitorWidget.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -492,6 +592,9 @@
 				0D8B0BD48B836CB754FE9B49 /* Pods_FleetingWidget.framework */,
 				D6B5B2CA0F8572B993F026A9 /* Pods_NetworkArch.framework */,
 				5D6903DDDE192856FDB4D240 /* Pods_TodayWidget.framework */,
+				4A26DBE4292DDB6B005B10E7 /* WidgetKit.framework */,
+				4A26DBE6292DDB6B005B10E7 /* SwiftUI.framework */,
+				DFE0917DF3E629E0A2FF2327 /* Pods_MonitorWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -516,6 +619,25 @@
 			name = FleetingWidget;
 			productName = FleetingWidget;
 			productReference = 4A25F18F26AED9A10075BE73 /* FleetingWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		4A26DBE2292DDB6B005B10E7 /* MonitorWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A26DBF1292DDB6F005B10E7 /* Build configuration list for PBXNativeTarget "MonitorWidget" */;
+			buildPhases = (
+				8E5C87046DC109131C730315 /* [CP] Check Pods Manifest.lock */,
+				4A26DBDF292DDB6B005B10E7 /* Sources */,
+				4A26DBE0292DDB6B005B10E7 /* Frameworks */,
+				4A26DBE1292DDB6B005B10E7 /* Resources */,
+				B69FF52BB0BD979D6A5A4E11 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonitorWidget;
+			productName = MonitorWidgetExtension;
+			productReference = 4A26DBE3292DDB6B005B10E7 /* MonitorWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		4A4D0A5F26AC0F56008A30E0 /* TodayWidget */ = {
@@ -568,12 +690,15 @@
 		4A98A62E2684B50F00EEEB60 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = Harry;
 				TargetAttributes = {
 					4A25F18E26AED9A10075BE73 = {
 						CreatedOnToolsVersion = 10.3;
+					};
+					4A26DBE2292DDB6B005B10E7 = {
+						CreatedOnToolsVersion = 12.4;
 					};
 					4A4D0A5F26AC0F56008A30E0 = {
 						CreatedOnToolsVersion = 10.3;
@@ -599,6 +724,7 @@
 			targets = (
 				4A25F18E26AED9A10075BE73 /* FleetingWidget */,
 				4A4D0A5F26AC0F56008A30E0 /* TodayWidget */,
+				4A26DBE2292DDB6B005B10E7 /* MonitorWidget */,
 				4A98A6352684B50F00EEEB60 /* NetworkArch */,
 			);
 		};
@@ -615,6 +741,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4A26DBE1292DDB6B005B10E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A26DBEC292DDB6F005B10E7 /* Assets.xcassets in Resources */,
+				4A26DC16292DDD66005B10E7 /* Localizable.strings in Resources */,
+				4A26DC15292DDD66005B10E7 /* InfoPlist.strings in Resources */,
+				4A26DC14292DDD66005B10E7 /* MONITOR.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A4D0A5E26AC0F56008A30E0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -622,7 +759,6 @@
 				4A26DBD3292DD6BE005B10E7 /* Localizable.strings in Resources */,
 				4A4D0A6826AC0F56008A30E0 /* TODAY.storyboard in Resources */,
 				4AF4411F26AC536F0008C169 /* IMAGEs.xcassets in Resources */,
-				4A842C8126AC1C19005DC131 /* Localizable.strings in Resources */,
 				4A842C8026AC1C0B005DC131 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -798,6 +934,45 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8E5C87046DC109131C730315 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MonitorWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B69FF52BB0BD979D6A5A4E11 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MonitorWidget/Pods-MonitorWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MonitorWidget/Pods-MonitorWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MonitorWidget/Pods-MonitorWidget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -810,6 +985,20 @@
 				4A25F19426AED9A10075BE73 /* FleetingWidgetController.m in Sources */,
 				4A4A004626AEF55A000D4708 /* OneYear+Inner.m in Sources */,
 				4A4A004326AEEE55000D4708 /* OneYear.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A26DBDF292DDB6B005B10E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A26DC49292DDDFC005B10E7 /* MonitorWidgetController+Signal.m in Sources */,
+				4A26DC44292DDDFC005B10E7 /* MonitorWidgetController+Action.m in Sources */,
+				4A26DC46292DDDFC005B10E7 /* MonitorWidgetController+Inner.m in Sources */,
+				4A26DC47292DDDFC005B10E7 /* MonitorWidgetController+Theme.m in Sources */,
+				4A26DC45292DDDFC005B10E7 /* MonitorWidgetController.m in Sources */,
+				4A26DC43292DDDFC005B10E7 /* MonitorWidgetController+Debug.m in Sources */,
+				4A26DC48292DDDFC005B10E7 /* MonitorWidgetController+Notification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -904,6 +1093,32 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		4A26DC0E292DDD65005B10E7 /* MONITOR.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A26DC0F292DDD65005B10E7 /* Base */,
+			);
+			name = MONITOR.storyboard;
+			sourceTree = "<group>";
+		};
+		4A26DC10292DDD65005B10E7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A26DC11292DDD65005B10E7 /* Base */,
+				4A26DD09292DE50B005B10E7 /* en */,
+				4A26DD0A292DE50D005B10E7 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4A26DC12292DDD65005B10E7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A26DC13292DDD65005B10E7 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		4A4A004726AEFDD4000D4708 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -918,6 +1133,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				4A4A004C26AEFFA7000D4708 /* Base */,
+				4A26DD6D292E11A0005B10E7 /* en */,
+				4A26DD6E292E11AA005B10E7 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1013,6 +1230,60 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = IdeaNetworkArchFleetingWidget;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4A26DBF2292DDB6F005B10E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F75DFB060410342E39D6E2A /* Pods-MonitorWidget.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MonitorWidget/MonitorWidget.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = G8G9TAP4UN;
+				GCC_PREFIX_HEADER = MonitorWidget/Prefix.pch;
+				INFOPLIST_FILE = MonitorWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.idea.NetworkArch.MonitorWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Idea.NetworkArch.MonitorWidget;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4A26DBF3292DDB6F005B10E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4789428905E75E07BF27037 /* Pods-MonitorWidget.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MonitorWidget/MonitorWidget.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = G8G9TAP4UN;
+				GCC_PREFIX_HEADER = MonitorWidget/Prefix.pch;
+				INFOPLIST_FILE = MonitorWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.idea.NetworkArch.MonitorWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Ad Hoc: IdeaNetworkArchMonitorWidget";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1244,6 +1515,15 @@
 			buildConfigurations = (
 				4A25F19C26AED9A10075BE73 /* Debug */,
 				4A25F19D26AED9A10075BE73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A26DBF1292DDB6F005B10E7 /* Build configuration list for PBXNativeTarget "MonitorWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A26DBF2292DDB6F005B10E7 /* Debug */,
+				4A26DBF3292DDB6F005B10E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

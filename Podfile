@@ -283,6 +283,33 @@ end
 
 ###################################################################################################################################
 
+target 'MonitorWidget' do
+  
+  if ENV['ROOT_NAVIGATION_CONTROLLER'] == 'YES'
+    pod 'RTRootNavigationController'
+    pod "RTInteractivePush"
+  end # IDEA_ROOT_NAVIGATION_CONTROLLER
+  
+  miniwing_pod('IDEAUIKit',       type = 'local',   branch = 'develop')
+  miniwing_pod('IDEAUIVendor',    type = 'local',   branch = 'develop')
+  miniwing_pod('IDEANibBridge',   type = 'local',   branch = 'develop')
+
+  miniwing_pod('IDEARouter',      type = 'local',   branch = 'develop')
+
+  #-------------------------------------------------------------------------------------------------------------------------------#
+
+  pod 'ImageProvider',      :path => 'NetworkArch/ImageProvider'
+
+  #-------------------------------------------------------------------------------------------------------------------------------#
+  pod 'Reveal-SDK', '~> 24' ,                                               :configurations => ['Debug']
+  #-------------------------------------------------------------------------------------------------------------------------------#
+
+  library
+  
+end
+
+###################################################################################################################################
+
 target 'FleetingWidget' do
 
   #-------------------------------------------------------------------------------------------------------------------------------#
