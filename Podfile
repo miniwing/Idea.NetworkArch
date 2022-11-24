@@ -203,22 +203,21 @@ target 'NetworkArch' do
   miniwing_pod('PhoneNetSDK',                     type = 'local', branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'MonitorService',     :path => 'NetworkArch/MonitorService'
+  pod 'ImageProvider',      :path => 'NetworkArch/ImageProvider'
+#  pod 'SecurityUtils',      :path => 'NetworkArch/SecurityUtils'
+  pod 'SettingProvider',    :path => 'NetworkArch/SettingProvider'
+  #-------------------------------------------------------------------------------------------------------------------------------#
+  pod 'APPDriver',          :path => 'APPDriver'
+  pod 'APPDATA' ,           :path => 'APPDATA'
+  pod 'APPDEBUG',           :path => 'APPDEBUG',                            :configurations => ['Debug']
+  #-------------------------------------------------------------------------------------------------------------------------------#
+  pod 'ADs',                :path => 'NetworkArch/Phone/ADs'
   pod 'NetworkService',     :path => 'NetworkArch/Phone/NetworkService'
   pod 'INTRODUCTION',       :path => 'NetworkArch/Phone/INTRODUCTION'
   
   pod 'UISETTING',          :path => 'NetworkArch/Phone/UISETTING'
   pod 'HOME',               :path => 'NetworkArch/Phone/HOME'
   pod 'MONITOR',            :path => 'NetworkArch/Phone/MONITOR'
-  #-------------------------------------------------------------------------------------------------------------------------------#
-  pod 'ImageProvider',      :path => 'NetworkArch/ImageProvider'
-#  pod 'SecurityUtils',      :path => 'NetworkArch/SecurityUtils'
-  pod 'SettingProvider',    :path => 'NetworkArch/SettingProvider'
-  #-------------------------------------------------------------------------------------------------------------------------------#
-  pod 'ADs',                :path => 'ADs'
-  
-  pod 'APPDriver',          :path => 'APPDriver'
-  pod 'APPDATA' ,           :path => 'APPDATA'
-  pod 'APPDEBUG',           :path => 'APPDEBUG',                            :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'Reveal-SDK', '~> 24' ,                                               :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
@@ -489,17 +488,7 @@ post_install do |installer|
                                                                         'UI_SEVEN_SWITCH=0',
                                                                       ]
       end
-            
-#      if target.name == 'CocoaAsyncSocket'
-#
-#        if config.name == 'Debug'
-#          config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']  ||= [
-#                                                                       '$(inherited)',
-#                                                                       'GCDAsyncSocketLoggingEnabled=1'
-#                                                                     ]
-#        end
-#      end
-      
+
       if target.name == 'IDEAAppletDebugger'
         config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']     ||= [
                                                                         '$(inherited)',
