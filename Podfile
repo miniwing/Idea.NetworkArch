@@ -47,7 +47,7 @@ ENV['OpenSSL']                            = 'NO'
 ENV['SSZipArchive']                       = 'NO'
 
 ENV['GOOGLE_MOBILE_ADS']                  = 'YES'
-ENV['XCODE_VERSION']                      = '13.0'
+ENV['XCODE_VERSION']                      = '14.+'
 
 ENV['ios.deployment_target']              = '12.0'
 ENV['watchos.deployment_target']          = '4.3'
@@ -102,8 +102,8 @@ workspace 'Idea.NetworkArch'
 
 project   'NetworkArch/NetworkArch.xcodeproj'
 
-#use_frameworks! :linkage => :static
-use_frameworks! :linkage => :dynamic
+use_frameworks! :linkage => :static
+#use_frameworks! :linkage => :dynamic
 
 use_modular_headers!
 inhibit_all_warnings!
@@ -283,30 +283,30 @@ end
 
 ###################################################################################################################################
 
-target 'MonitorWidget' do
-  
-  if ENV['ROOT_NAVIGATION_CONTROLLER'] == 'YES'
-    pod 'RTRootNavigationController'
-    pod "RTInteractivePush"
-  end # IDEA_ROOT_NAVIGATION_CONTROLLER
-  
-  miniwing_pod('IDEAUIKit',       type = 'local',   branch = 'develop')
-  miniwing_pod('IDEAUIVendor',    type = 'local',   branch = 'develop')
-  miniwing_pod('IDEANibBridge',   type = 'local',   branch = 'develop')
-
-  miniwing_pod('IDEARouter',      type = 'local',   branch = 'develop')
-
-  #-------------------------------------------------------------------------------------------------------------------------------#
-
-  pod 'ImageProvider',      :path => 'NetworkArch/ImageProvider'
-
-  #-------------------------------------------------------------------------------------------------------------------------------#
-  pod 'Reveal-SDK', '~> 24' ,                                               :configurations => ['Debug']
-  #-------------------------------------------------------------------------------------------------------------------------------#
-
-  library
-  
-end
+#target 'MonitorWidget' do
+#  
+#  if ENV['ROOT_NAVIGATION_CONTROLLER'] == 'YES'
+#    pod 'RTRootNavigationController'
+#    pod "RTInteractivePush"
+#  end # IDEA_ROOT_NAVIGATION_CONTROLLER
+#  
+#  miniwing_pod('IDEAUIKit',       type = 'local',   branch = 'develop')
+#  miniwing_pod('IDEAUIVendor',    type = 'local',   branch = 'develop')
+#  miniwing_pod('IDEANibBridge',   type = 'local',   branch = 'develop')
+#
+#  miniwing_pod('IDEARouter',      type = 'local',   branch = 'develop')
+#
+#  #-------------------------------------------------------------------------------------------------------------------------------#
+#
+#  pod 'ImageProvider',      :path => 'NetworkArch/ImageProvider'
+#
+#  #-------------------------------------------------------------------------------------------------------------------------------#
+#  pod 'Reveal-SDK', '~> 24' ,                                               :configurations => ['Debug']
+#  #-------------------------------------------------------------------------------------------------------------------------------#
+#
+#  library
+#  
+#end
 
 ###################################################################################################################################
 

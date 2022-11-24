@@ -388,6 +388,8 @@
    if ([aSegue.identifier isEqualToString:HomeContentController.className]) {
       
       self.contentController  = aSegue.destinationViewController;
+      
+      [self addSignalResponder:self.contentController];
 
    } /* End if () */
    
