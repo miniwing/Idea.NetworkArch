@@ -66,13 +66,13 @@
    /**
     监听网络状态
     */
-   @weakify(self);
+//   @weakify(self);
    self.onNotification(SettingProvider.appRateOnStoreNotification, ^(NSNotification *aNotification) {
 
-      @strongify(self);
+//      @strongify(self);
       
-      LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : appRateOnStore : %@", aNotification));
       LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : strongify : %@", self));
+      LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : appRateOnStore : %@", aNotification));
 
 #if APP_RATER
       [Appirater rateApp];
@@ -114,7 +114,8 @@
    // https://www.jianshu.com/p/a02be724b7ec
    // 动态注册字体
    
-   LogDebug((@"----------------------------------------------------"));
+   LogDebug((@"---------------------------------------------------------------------------------------------------"));
+
    for (NSString *szFamilyName = nil in [UIFont familyNames]) {
       
       LogDebug((@"family:'%@'", szFamilyName));
@@ -127,12 +128,12 @@
       
    } /* End for () */
    
-   LogDebug((@"----------------------------------------------------"));
-   
+   LogDebug((@"---------------------------------------------------------------------------------------------------"));
+
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : [IDEAIdentifier scheme] : %@", [IDEAIdentifier scheme]));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : [IDEAIdentifier schemePrefix] : %@", [IDEAIdentifier schemePrefix]));
    
-   LogDebug((@"----------------------------------------------------"));
+   LogDebug((@"---------------------------------------------------------------------------------------------------"));
 
 //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"www.baidu.com") isEmail] ? @"YES" : @"NO"));
 //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"xxx.xxx@gmail.com") isEmail] ? @"YES" : @"NO"));
@@ -150,7 +151,7 @@
    NSArray<NSString *>  *stIPV4s = [(@"192.168.2.22") IPV4s];
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IPV4s : %@", stIPV4s));
 
-   LogDebug((@"----------------------------------------------------"));
+   LogDebug((@"---------------------------------------------------------------------------------------------------"));
 
    /******************************************************************************************/
       
@@ -169,7 +170,6 @@
    
 //   NSString *szDecrypt  = [SecurityUtils deCrypt:@"2977312977"];
 //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : Decrypt : %@", szDecrypt));
-#endif /* __Debug__ */
    
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IDFA : %@", [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString));
@@ -179,6 +179,8 @@
 
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : GADSimulatorID : %@", GADSimulatorID));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : GADAdSizeBanner : (%.2f, %.2f)", stAdSize.size.width, stAdSize.size.height));
+
+#endif /* __Debug__ */
 
    /******************************************************************************************/
 
@@ -228,7 +230,7 @@
    /******************************************************************************************/
    // setup appearance
    if (@available(iOS 15.0, *)) {
-      
+         
       UINavigationBarAppearance  *stAppearance  = [[UINavigationBarAppearance alloc] init];
       [stAppearance configureWithOpaqueBackground];
       [stAppearance setBackgroundColor:UIColor.clearColor];

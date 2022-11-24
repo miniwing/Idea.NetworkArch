@@ -64,18 +64,21 @@ Pod::Spec.new do |spec|
       spec.dependency 'Google-Mobile-Ads-SDK'
     end
 #    pod 'GoogleMobileAdsMediationFacebook'
+
+#    spec.vendored_frameworks  = 'GoogleMobileAds.xcframework'
+#    spec.vendored_framework   = 'GoogleMobileAds.xcframework'
   end # GOOGLE_MOBILE_ADS
 
-  spec.public_header_files  = 'ADs/*.h',
-                              'Admob/*.h'
-  spec.source_files         = 'ADs/*.{h,m}',
-                              'Admob/*.{h,m}'
+  spec.public_header_files    = 'ADs/*.h',
+                                'Admob/*.h'
+  spec.source_files           = 'ADs/*.{h,m}',
+                                'Admob/*.{h,m}'
 
-  spec.resource_bundles     = {
-                                'ADs' => [
+  spec.resource_bundles       = {
+                                  'ADs' => [
                                               'IDs/**/*.json'
-                                         ]
-                              }
+                                           ]
+                                }
   pch_app_kit = <<-EOS
   
 /******************************************************************************************************/

@@ -12,10 +12,6 @@
 #import "FleetingWidgetController+Inner.h"
 #import "FleetingWidgetController+Theme.h"
 
-@interface FleetingWidgetController () <NCWidgetProviding>
-
-@end
-
 @implementation FleetingWidgetController
 
 - (void)dealloc {

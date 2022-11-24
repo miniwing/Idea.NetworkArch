@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TodayWidgetController () <CLLocationManagerDelegate>
+@interface TodayWidgetController () <NCWidgetProviding, CLLocationManagerDelegate>
 
 @property (nonatomic, strong)                TodayWidgetContentController        * contentController;
 @property (nonatomic, strong)                CLLocationManager                   * locationManager;

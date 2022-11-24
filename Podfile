@@ -102,8 +102,8 @@ workspace 'Idea.NetworkArch'
 
 project   'NetworkArch/NetworkArch.xcodeproj'
 
-use_frameworks! :linkage => :static
-#use_frameworks! :linkage => :dynamic
+#use_frameworks! :linkage => :static
+use_frameworks! :linkage => :dynamic
 
 use_modular_headers!
 inhibit_all_warnings!

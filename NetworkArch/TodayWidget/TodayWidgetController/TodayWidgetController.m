@@ -9,10 +9,6 @@
 #import "TodayWidgetController.h"
 #import "TodayWidgetController+Inner.h"
 
-@interface TodayWidgetController () <NCWidgetProviding>
-
-@end
-
 @implementation TodayWidgetController
 
 - (void)dealloc {

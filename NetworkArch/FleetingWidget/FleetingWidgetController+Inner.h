@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FleetingWidgetController ()
+@interface FleetingWidgetController () <NCWidgetProviding>
 
 @property (nonatomic, strong)                NSTimer                             * timer;
 

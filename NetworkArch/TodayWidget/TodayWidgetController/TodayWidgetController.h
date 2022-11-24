@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TodayWidgetController : UIViewController
+@interface TodayWidgetController : IDEAViewController
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * contentView;
 
