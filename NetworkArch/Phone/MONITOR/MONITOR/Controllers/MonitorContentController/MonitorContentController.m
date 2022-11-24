@@ -104,7 +104,7 @@
    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
    
-   //   [self.tableView setTableHeaderView:[UIView new]];
+   [self.tableView setTableHeaderView:self.stackView];
    [self.tableView setTableFooterView:[UIView new]];
    
    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -342,7 +342,7 @@
    stAdUnitIDs = [AD admobs];
    LogDebug((@"-[MonitorContentController viewDidLoad] : AdUnitIDs : %@", stAdUnitIDs));
    
-   szAdUnitID  = [stAdUnitIDs objectForKey:@"HOME-BANNER"];
+   szAdUnitID  = [stAdUnitIDs objectForKey:@"MONITOR-BANNER"];
    
    [self.bannerView setBackgroundColor:UIColor.clearColor];
    [self.gadBannerView setCornerRadius:[UISetting cornerRadiusSmall] clipsToBounds:YES];
@@ -371,6 +371,16 @@
             onQueue:DISPATCH_GET_MAIN_QUEUE()];
 #endif /* GOOGLE_MOBILE_ADS */
    
+   [self.bannerView setHidden:YES];
+   
+   LogDebug((@"-[MonitorContentController viewDidLoad] : StackViewHeight : %.2f", self.stackViewHeight.constant));
+
+//   [self.stackViewHeight setConstant:self.stackViewHeight.constant - self.bannerViewHeight.constant];
+
+   LogDebug((@"-[MonitorContentController viewDidLoad] : StackViewHeight : %.2f", self.stackViewHeight.constant));
+   [self.stackView setHeight:self.deviceView.height];
+   [self.tableView reloadData];
+
    /**
     * 电池信息初始化
     */

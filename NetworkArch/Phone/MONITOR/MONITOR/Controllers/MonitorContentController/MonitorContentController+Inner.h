@@ -68,6 +68,9 @@ IDEA_ENUM(NSInteger, MonitorMemory) {
 
 @interface MonitorContentController ()
 
+@property (nonatomic, weak)   IBOutlet       UIStackView                         * stackView;
+@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * stackViewHeight;
+
 @property (nonatomic, weak)   IBOutlet       UIView                              * bannerView;
 @property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewWidth;
 @property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * bannerViewHeight;

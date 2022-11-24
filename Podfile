@@ -47,7 +47,8 @@ ENV['OpenSSL']                            = 'NO'
 ENV['SSZipArchive']                       = 'NO'
 
 ENV['GOOGLE_MOBILE_ADS']                  = 'YES'
-ENV['XCODE_VERSION']                      = '14.+'
+ENV['XCODE_VERSION']                      = '13.0'
+#ENV['XCODE_VERSION']                      = '14.+'
 
 ENV['ios.deployment_target']              = '12.0'
 ENV['watchos.deployment_target']          = '4.3'

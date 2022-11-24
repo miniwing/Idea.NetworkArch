@@ -45,36 +45,25 @@
       
    __TRY;
    
-//   [self.bannerView setHidden:NO animated:NO];
-
-//   [UIView animateWithDuration:[UIView animationDefaultDuration]
-//                    animations:^{
-//
-//      [self.bannerViewHeight setConstant:GADAdSizeHeight];
-//      [self.bannerView updateConstraintsIfNeeded];
-//      [self.view layoutIfNeeded];
-//   }
-//                    completion:^(BOOL finished) {
-//   }];
-   
-//   [UIView animateWithDuration:[UIView animationDefaultDuration]
-//                         delay:0
-//                       options:UIViewAnimationOptionTransitionCrossDissolve
-//                    animations:^{
-//      [self.bannerViewHeight setConstant:GADAdSizeHeight];
-////      [self.bannerView updateConstraintsIfNeeded];
-//      [self.view layoutIfNeeded];
-//   }
-//                    completion:nil];
+   [self.bannerViewHeight setConstant:GADAdSizeHeight];
+   [self.bannerView setHidden:NO animated:NO];
 
    [UIView transitionWithView:self.tableView
                      duration:[UIView animationDefaultDuration]
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
 
-      [self.tableView setTableHeaderView:self.bannerView];
+      [self.stackView setHeight:self.deviceView.height + GADAdSizeHeight];
+//      [self.tableView setNeedsUpdateConstraints];
+//      [self.tableView updateConstraintsIfNeeded];
+      
+      [self.tableView reloadData];
    }
-                   completion:nil];
+                   completion:^(BOOL finished) {
+
+      LogDebug((@"-[MonitorContentController bannerViewDidReceiveAd:] : deviceView.height : %.2f", self.deviceView.height));
+      LogDebug((@"-[MonitorContentController bannerViewDidReceiveAd:] : deviceView.height : %.2f", self.stackView.height));
+   }];
       
    __CATCH(nErr);
    
@@ -89,14 +78,21 @@
       
    __TRY;
 
+   [self.bannerView setHidden:YES animated:NO];
+   
    [UIView transitionWithView:self.tableView
                      duration:[UIView animationDefaultDuration]
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
 
-      [self.tableView setTableHeaderView:nil];
+      [self.stackView setHeight:self.deviceView.height];
+      
+//      [self.tableView setNeedsUpdateConstraints];
+//      [self.tableView updateConstraintsIfNeeded];
+      [self.tableView reloadData];
    }
                    completion:nil];
+      
 
    __CATCH(nErr);
    

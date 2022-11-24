@@ -22,7 +22,7 @@
 /// Ad references in the app open beta will time out after four hours, but this time limit
 /// may change in future beta versions. For details, see:
 /// https://support.google.com/admanager/answer/9351867?hl=en
-static const NSInteger TimeoutInterval = 4;
+static const NSInteger  TimeoutInterval      = 4;
 
 @interface AppOpenAdManager ()
 

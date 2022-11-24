@@ -12,6 +12,7 @@
 #import "MonitorContentController+Action.h"
 #import "MonitorContentController+Signal.h"
 #import "MonitorContentController+Notification.h"
+#import "MonitorContentController+AD.h"
 #import "MonitorContentController+Theme.h"
 #import "MonitorContentController+Debug.h"
 
@@ -50,6 +51,8 @@ handleSignal(MonitorContentController, loadADSignal) {
    __TRY;
    
    LogDebug((@"-[HomeContentController loadADSignal:] : Signal : %@", aSignal));
+   
+   [self loadAd];
    
    __CATCH(nErr);
 
