@@ -46,6 +46,9 @@
 		4A4D0A6C26AC0F56008A30E0 /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A4D0A6026AC0F56008A30E0 /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4A6C2155291C261C005417F8 /* APPDelegate+ADs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C2154291C261C005417F8 /* APPDelegate+ADs.m */; };
 		4A842C8026AC1C0B005DC131 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A842C7E26AC1C0B005DC131 /* InfoPlist.strings */; };
+		4A86020B292F56950026F199 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A421C0526AC0CC200935235 /* NotificationCenter.framework */; };
+		4A86020C292F569B0026F199 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A421C0526AC0CC200935235 /* NotificationCenter.framework */; };
+		4A86020E292F56A20026F199 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A86020D292F56A20026F199 /* UserNotifications.framework */; };
 		4A99B5B926B5910D006F479F /* APPDelegate+Inner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D98EB26A47B1200E00610 /* APPDelegate+Inner.m */; };
 		4AAF697826B58E1300E68E32 /* APPDelegate+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF697726B58E1300E68E32 /* APPDelegate+Signal.m */; };
 		4AE51B942685C4DA00DC1DA2 /* SPONSOR.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE51B932685C4DA00DC1DA2 /* SPONSOR.png */; };
@@ -211,6 +214,7 @@
 		4A76718926D3766200EC44B1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4A842C7B26AC19D0005DC131 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		4A842C7F26AC1C0B005DC131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4A86020D292F56A20026F199 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4A8A192A268C535B003ECA69 /* NetworkArch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkArch.entitlements; sourceTree = "<group>"; };
 		4A98A6362684B50F00EEEB60 /* NetworkArch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkArch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAF697626B58E1300E68E32 /* APPDelegate+Signal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APPDelegate+Signal.h"; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A86020B292F56950026F199 /* NotificationCenter.framework in Frameworks */,
 				815C0DBBA74EFBF9C423C8A8 /* Pods_FleetingWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +285,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A86020E292F56A20026F199 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +293,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A86020C292F569B0026F199 /* NotificationCenter.framework in Frameworks */,
 				85DAB33CDD1EE68A7D38CEDB /* Pods_TodayWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +580,7 @@
 		BC9F1E42789CEDD6C11BF75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A86020D292F56A20026F199 /* UserNotifications.framework */,
 				4A1B847B2715B5EE008710F6 /* libc++.tbd */,
 				4A64D9CB26C41FDD00A9BBC0 /* libclang_rt.ios.a */,
 				4A421C0526AC0CC200935235 /* NotificationCenter.framework */,
@@ -1314,7 +1322,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Development: Cai Lu (PHD24T76XW)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2022.11241510.00;
+				CURRENT_PROJECT_VERSION = 2022.11241530.00;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1382,7 +1390,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Cai Lu (G8G9TAP4UN)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2022.11241510.00;
+				CURRENT_PROJECT_VERSION = 2022.11241530.00;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
