@@ -107,11 +107,11 @@ Pod::Spec.new do |spec|
   spec.dependency 'SettingProvider'
 #  spec.dependency 'NetworkService'
 #  spec.dependency 'PhoneNetSDK'
-  
-  spec.dependency 'IDEARouter'
+
+#  spec.dependency 'IDEARouter'
 #  spec.dependency 'IDEANetUtils'
 #  spec.dependency 'IDEAPing'
-  
+
   spec.dependency 'APPDATA'
   spec.dependency 'APPDriver'
 
@@ -895,16 +895,14 @@ NS_INLINE NSString * __APP_BUILD_VERSION() {
 #import <SettingProvider/SettingProvider.h>
 #import <SettingProvider/UISetting.h>
 
-#import <IDEARouter/IDEARouter.h>
-
 #if __has_include(<APPDEBUG/APPDEBUG.h>)
 #  import <APPDEBUG/APPDEBUG.h>
-#  define APP_DEBUG                                                     (1)
+#  define APP_DEBUG                                                        (1)
 #elif __has_include("APPDEBUG/APPDEBUG.h")
 #  import "APPDEBUG/APPDEBUG.h"
-#  define APP_DEBUG                                                     (1)
+#  define APP_DEBUG                                                        (1)
 #else
-#  define APP_DEBUG                                                     (0)
+#  define APP_DEBUG                                                        (0)
 #endif
 
 /******************************************************************************************************/

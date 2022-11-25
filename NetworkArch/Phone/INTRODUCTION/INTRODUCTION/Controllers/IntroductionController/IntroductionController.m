@@ -15,8 +15,6 @@
 #import "IntroductionController+Notification.h"
 #import "IntroductionController+Theme.h"
 
-#import "AppIntroduction.h"
-
 @implementation IntroductionController
 
 - (void)dealloc {

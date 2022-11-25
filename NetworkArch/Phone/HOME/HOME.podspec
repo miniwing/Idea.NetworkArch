@@ -927,24 +927,24 @@ NS_INLINE NSString * __APP_BUILD_VERSION() {
 
 #if __has_include(<APPDEBUG/APPDEBUG.h>)
 #  import <APPDEBUG/APPDEBUG.h>
-#  define APP_DEBUG                                                  (1)
+#  define APP_DEBUG                                                        (1)
 #elif __has_include("APPDEBUG/APPDEBUG.h")
 #  import "APPDEBUG/APPDEBUG.h"
-#  define APP_DEBUG                                                  (1)
+#  define APP_DEBUG                                                        (1)
 #else
-#  define APP_DEBUG                                                  (0)
+#  define APP_DEBUG                                                        (0)
 #endif
 
 /******************************************************************************************************/
 
 #if __has_include(<PRIVACY/PrivacyController.h>)
 #  import <PRIVACY/PrivacyController+Notification.h>
-#  define PRIVACY                                                    (1)
+#  define PRIVACY                                                          (1)
 #elif __has_include("PRIVACY/PrivacyController.h")
 #  import "PRIVACY/PrivacyController+Notification.h"
-#  define PRIVACY                                                    (1)
+#  define PRIVACY                                                          (1)
 #else
-#  define PRIVACY                                                    (0)
+#  define PRIVACY                                                          (0)
 #endif
 
 /******************************************************************************************************/

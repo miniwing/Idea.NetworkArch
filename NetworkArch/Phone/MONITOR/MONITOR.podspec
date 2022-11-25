@@ -897,12 +897,12 @@ NS_INLINE NSString * __APP_BUILD_VERSION() {
 
 #if __has_include(<APPDEBUG/APPDEBUG.h>)
 #  import <APPDEBUG/APPDEBUG.h>
-#  define APP_DEBUG                                                     (1)
+#  define APP_DEBUG                                                        (1)
 #elif __has_include("APPDEBUG/APPDEBUG.h")
 #  import "APPDEBUG/APPDEBUG.h"
-#  define APP_DEBUG                                                     (1)
+#  define APP_DEBUG                                                        (1)
 #else
-#  define APP_DEBUG                                                     (0)
+#  define APP_DEBUG                                                        (0)
 #endif
 
 /******************************************************************************************************/
