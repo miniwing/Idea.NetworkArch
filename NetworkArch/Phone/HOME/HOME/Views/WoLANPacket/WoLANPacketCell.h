@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UILabel                             * macLabel;
 @property (nonatomic, weak)   IBOutlet       UILabel                             * sentLabel;
 
-@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
+//@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
 
 @end
 

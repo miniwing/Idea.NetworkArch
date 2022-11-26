@@ -1121,7 +1121,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="tableFooterView" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4fa-Z2-DMe" userLabel="BOTTOM-VIEW">
-                            <rect key="frame" x="0.0" y="173.33333206176758" width="375" height="56"/>
+                            <rect key="frame" x="0.0" y="173" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SE0-il-yqa" userLabel="SAVE-BUTTON">

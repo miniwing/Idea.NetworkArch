@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak)   IBOutlet       UILabel                             * ipLabel;
 @property (nonatomic, weak)   IBOutlet       UIImageView                         * rightIcon;
 
-@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
+//@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
 
 @end
 

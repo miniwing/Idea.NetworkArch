@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeSettingApiKeyCell : UITableViewCellX
 
-@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
+//@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
 
 @property (nonatomic, weak)   IBOutlet       UITextFieldX                        * apiKeytextField;
 

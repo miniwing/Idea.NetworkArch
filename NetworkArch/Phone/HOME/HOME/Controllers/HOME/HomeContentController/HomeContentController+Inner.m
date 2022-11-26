@@ -211,7 +211,7 @@
       } /* End if () */
       else {
          
-         [stTableViewCell setRectCorner:0];
+         [stTableViewCell setRectCorner:UIRectCornerNone];
 
          [stTableViewCell.selectedColorView setHidden:YES];
          [stTableViewCell.separatorView setHidden:NO];
@@ -260,7 +260,7 @@
       } /* End if () */
       else {
          
-         [stTableViewCell setRectCorner:0];
+         [stTableViewCell setRectCorner:UIRectCornerNone];
 
          [stTableViewCell.selectedColorView setHidden:YES];
          [stTableViewCell.separatorView setHidden:NO];
@@ -304,7 +304,7 @@
       } /* End if () */
       else {
          
-         [stTableViewCell setRectCorner:0];
+         [stTableViewCell setRectCorner:UIRectCornerNone];
 
          [stTableViewCell.separatorView setHidden:NO];
 

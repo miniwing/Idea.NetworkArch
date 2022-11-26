@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CellularMoreCell : UITableViewCellX
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * selectedColorView;
-@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
+//@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                             * titleLabel;
 @property (nonatomic, weak)   IBOutlet       UIView                              * infoView;

@@ -29,7 +29,7 @@ IDEA_ENUM(NSInteger, PingStatistics) {
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * selectedColorView;
 
-@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
+//@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
 
 @end
 

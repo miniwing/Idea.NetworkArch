@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomeSettingLinkCell : UITableViewCellX
 
 //@property (nonatomic, weak)   IBOutlet       UIView                              * containerView;
-@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
+//@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
 
 @property (nonatomic, weak)   IBOutlet       UIButton                            * addButton;
 

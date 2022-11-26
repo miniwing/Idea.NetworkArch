@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WifiInterfacesCell : UITableViewCellX
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * topView;
-@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
+//@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
 @property (nonatomic, weak)   IBOutlet       UIView                              * bottomView;
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * upView;

@@ -471,7 +471,7 @@ post_install do |installer|
                                                                         'APP_BUNDLE_IDENTIFIER=\"com.idea.NetworkArch\"',
                                                                         'APP_BUNDLE_IDENTIFIER_GROUP=\"group.com.idea.NetworkArch\"',
                                                                         'APP_BUNDLE_IDENTIFIER_WIDGET=\"com.idea.NetworkArch.Widget\"',
-                                                                        'APP_ID=1579612932'
+                                                                        'APP_ID=\"1579612932\"'
                                                                       ]
       end
 

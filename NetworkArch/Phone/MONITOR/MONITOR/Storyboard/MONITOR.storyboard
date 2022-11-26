@@ -174,6 +174,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerView" destination="fFu-Jf-lQu" id="voA-iX-zwW"/>
+                                            <outlet property="separatorView" destination="h4u-77-Sus" id="7Ue-o5-NwN"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -306,6 +307,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerView" destination="5T0-qZ-Pue" id="oF1-Xn-QeD"/>
+                                            <outlet property="separatorView" destination="Nb8-3p-EGm" id="ObT-kn-7Ht"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -452,6 +454,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerView" destination="jlj-ND-jSn" id="Pi4-rr-aPq"/>
+                                            <outlet property="separatorView" destination="Ssv-af-4C9" id="6WN-PP-hQw"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -586,6 +589,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerView" destination="FBC-1G-clS" id="naj-6t-AGd"/>
+                                            <outlet property="separatorView" destination="0oR-mN-NNc" id="1h2-si-Irf"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -720,6 +724,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerView" destination="qeg-au-W3E" id="NJS-9m-hBn"/>
+                                            <outlet property="separatorView" destination="yTQ-mb-A3y" id="7Nj-Mi-JJA"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -946,13 +951,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="版本" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKz-ZD-oah" userLabel="版本">
-                                    <rect key="frame" x="16" y="40" width="164" height="12"/>
+                                    <rect key="frame" x="16" y="40" width="163.66666666666666" height="12"/>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Build" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFf-js-zma" userLabel="Build">
-                                    <rect key="frame" x="196" y="40" width="163" height="12"/>
+                                    <rect key="frame" x="195.66666666666663" y="40" width="163.33333333333337" height="12"/>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>

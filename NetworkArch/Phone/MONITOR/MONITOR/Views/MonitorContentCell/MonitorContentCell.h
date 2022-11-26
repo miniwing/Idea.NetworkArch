@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak)   IBOutlet       UIView                              * selectedColorView;
 @property (nonatomic, weak)   IBOutlet       UIImageView                         * cellRightImage;
-@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
+//@property (nonatomic, weak)   IBOutlet       UIView                              * separatorView;
 
 @end
 

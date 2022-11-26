@@ -18,10 +18,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface RootViewController (UIStoryboard)
-
-@property (nonatomic, class, readonly)       NSString                            * storyboard;
-
-@end
-
 NS_ASSUME_NONNULL_END
