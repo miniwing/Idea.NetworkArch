@@ -48,13 +48,13 @@ IDEA_MAIN() {
       LogDebug((@"HomeSettingController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"HomeSettingController::IDEA_MAIN : Router   : %@", aRouter));
       
-      HomeSettingRootController  *stController  = [UIStoryboard loadStoryboard:HomeSettingRootController.storyboard
-                                                                viewController:HomeSettingRootController.class
-                                                                      inBundle:HomeSettingRootController.bundle];
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:HomeSettingRootController.storyboard
+                                                          viewController:HomeSettingRootController.class
+                                                                inBundle:HomeSettingRootController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

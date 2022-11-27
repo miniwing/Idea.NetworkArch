@@ -169,7 +169,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UIButtonBarArrowRightLandscape" translatesAutoresizingMaskIntoConstraints="NO" id="5de-2l-wOY" userLabel="ICON">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UIButtonBarArrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="5de-2l-wOY" userLabel="ICON">
                                                             <rect key="frame" x="272" y="0.5" width="8" height="34.5"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -326,7 +326,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UIButtonBarArrowRightLandscape" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-FU-4mX" userLabel="ICON">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UIButtonBarArrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-FU-4mX" userLabel="ICON">
                                                             <rect key="frame" x="272" y="0.5" width="8" height="34.5"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -407,7 +407,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="UIButtonBarArrowRightLandscape" width="9" height="16"/>
+        <image name="UIButtonBarArrowRight" width="11.5" height="21"/>
         <image name="wifi" width="22.5" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

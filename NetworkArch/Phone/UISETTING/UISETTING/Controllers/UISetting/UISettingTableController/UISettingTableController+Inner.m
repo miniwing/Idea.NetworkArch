@@ -180,7 +180,7 @@
    
    int                            nErr                                     = EFAULT;
    
-   UITableViewCell               *stTableViewCell                          = nil;
+   UITableViewCellX              *stTableViewCell                          = nil;
    
    __TRY;
    
@@ -190,6 +190,35 @@
 
       stTableViewCell   = self.cellUIs[aIndexPath.row];
       
+      if (@available(iOS 13.0, *)) {
+         
+         if (0 == aIndexPath.row) {
+            
+            [stTableViewCell setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight];
+            [stTableViewCell.separatorView setHidden:NO];
+
+         } /* End if () */
+         else if (self.cellUIs.count - 1 == aIndexPath.row) {
+
+            [stTableViewCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
+            [stTableViewCell.separatorView setHidden:YES];
+
+         } /* End else if () */
+         else {
+
+            [stTableViewCell setRectCorner:UIRectCornerNone];
+            [stTableViewCell.separatorView setHidden:NO];
+
+         } /* End else */
+
+      } /* End if () */
+      else {
+         
+         [stTableViewCell setRectCorner:UIRectCornerAllCorners];
+         [stTableViewCell.separatorView setHidden:YES];
+
+      } /* End else */
+
    } /* End if () */
 #if TAB_ANIMATE
    else if (SettingAnimation == aIndexPath.section) {
@@ -197,7 +226,8 @@
       LogDebug((@"-[UISettingTableController tableView:cellForRowAtIndexPath:] : SettingAnimation : %d, %d", aIndexPath.section, aIndexPath.row));
 
       stTableViewCell   = self.cellAnimates[aIndexPath.row];
-      
+      [stTableViewCell setRectCorner:UIRectCornerAllCorners];
+
    } /* End if () */
 #endif /* TAB_ANIMATE */
    else if (SettingHaptics == aIndexPath.section) {
@@ -205,14 +235,16 @@
       LogDebug((@"-[UISettingTableController tableView:cellForRowAtIndexPath:] : SettingHaptics : %d, %d", aIndexPath.section, aIndexPath.row));
 
       stTableViewCell   = self.cellHapticses[aIndexPath.row];
-      
+      [stTableViewCell setRectCorner:UIRectCornerAllCorners];
+
    } /* End if () */
    else if (SettingRate == aIndexPath.section) {
       
       LogDebug((@"-[UISettingTableController tableView:cellForRowAtIndexPath:] : SettingRate : %d, %d", aIndexPath.section, aIndexPath.row));
 
       stTableViewCell   = self.cellRates[aIndexPath.row];
-      
+      [stTableViewCell setRectCorner:UIRectCornerAllCorners];
+
    } /* End if () */
    else if (SettingAbout == aIndexPath.section) {
       
@@ -220,6 +252,25 @@
 
       stTableViewCell   = self.cellAbouts[aIndexPath.row];
       
+      if (0 == aIndexPath.row) {
+         
+         [stTableViewCell setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight];
+         [stTableViewCell.separatorView setHidden:NO];
+
+      } /* End if () */
+      else if (self.cellAbouts.count - 1 == aIndexPath.row) {
+
+         [stTableViewCell setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight];
+         [stTableViewCell.separatorView setHidden:YES];
+
+      } /* End else if () */
+      else {
+
+         [stTableViewCell setRectCorner:UIRectCornerNone];
+         [stTableViewCell.separatorView setHidden:NO];
+
+      } /* End else */
+
    } /* End if () */
    else {
       
@@ -294,7 +345,7 @@
       
       if (SettingAppearanceTheme == aIndexPath.row) {
          
-         return 190;
+         return 210.0;
          
       } /* End if () */
       
@@ -365,20 +416,16 @@
          
          LogDebug((@"UISettingTableController::tableView:didSelectRowAtIndexPath : SettingAboutVersion"));
          
-//         [IDEAUIRouter openURL:@"AuthorizationRootController/create"
-//                    completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
-//
-//            if (nil != aViewController) {
-//               
-//               [self presentViewController:aViewController
-//                                  animated:YES
-//                                completion:^{
-//                  
-//                  return;
-//               }];
-//               
-//            } /* End if () */
-//         }];
+         [IDEAUIRouter openURL:@"ABOUT/create"
+                    completion:^(NSString *aURL, NSError *aError, UIViewController *aViewController) {
+            
+            if (nil != aViewController) {
+               
+               [self.navigationController pushViewController:aViewController
+                                                    animated:YES];
+               
+            } /* End if () */
+         }];
       } /* End if () */
 
    } /* End if () */

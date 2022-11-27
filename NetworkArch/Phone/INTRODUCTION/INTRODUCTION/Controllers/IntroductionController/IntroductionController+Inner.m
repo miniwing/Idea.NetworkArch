@@ -62,13 +62,13 @@ IDEA_MAIN() {
       LogDebug((@"IntroductionController::IDEA_MAIN : URL     : %@", aURL));
       LogDebug((@"IntroductionController::IDEA_MAIN : Router  : %@", aRouter));
       
-      IntroductionController  *stController  = [UIStoryboard loadStoryboard:IntroductionController.storyboard
-                                                             viewController:IntroductionController.class
-                                                                   inBundle:IntroductionController.bundle];
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:IntroductionController.storyboard
+                                                          viewController:IntroductionController.class
+                                                                inBundle:IntroductionController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

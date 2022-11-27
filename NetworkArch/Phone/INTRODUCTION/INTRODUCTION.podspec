@@ -54,12 +54,15 @@ Pod::Spec.new do |spec|
   
   if ENV['IDEA_MATERIAL_COMPONENTS'] == 'YES'
     spec.dependency 'MaterialComponents'
-    #    spec.dependency 'MaterialComponents/Palettes'
-    #    spec.dependency 'MaterialComponents/NavigationBar'
-    #    spec.dependency 'MaterialComponents/ActivityIndicator'
     spec.dependency 'MotionInterchange'
+  else
+    if ENV['IDEA_MATERIAL_NAVIGATION_BAR'] == 'YES'
+      spec.dependency 'MaterialComponents/NavigationBar'
+      spec.dependency 'MaterialComponents/ActivityIndicator'
+      spec.dependency 'MotionInterchange'
+    end # IDEA_MATERIAL_NAVIGATION_BAR
   end # IDEA_MATERIAL_COMPONENTS
-  
+
   if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
     spec.dependency 'FoundationExtension'
   end # IDEA_FOUNDATION_EXTENSION
@@ -363,9 +366,23 @@ Pod::Spec.new do |spec|
 #     define SS_ZIP_ARCHIVE                                                (0)
 #  endif
 
+#  if __has_include(<MaterialComponents/MaterialNavigationBar.h>)
+#     import <MaterialComponents/MaterialNavigationBar.h>
+#     define MATERIAL_NAVIGATIONBAR                                        (1)
+#  elif __has_include("MaterialComponents/MaterialNavigationBar.h")
+#     import "MaterialComponents/MaterialNavigationBar.h"
+#     define MATERIAL_NAVIGATIONBAR                                        (1)
+#  else
+#     define MATERIAL_NAVIGATIONBAR                                        (0)
+#  endif
+
 #  if __has_include(<MaterialComponents/MaterialActivityIndicator.h>)
 #     import <MaterialComponents/MaterialPalettes.h>
 #     import <MaterialComponents/MaterialActivityIndicator.h>
+#     define MATERIAL_ACTIVITY_INDICATOR                                   (1)
+#  elif __has_include("MaterialComponents/MaterialActivityIndicator.h")
+#     import "MaterialComponents/MaterialPalettes.h"
+#     import "MaterialComponents/MaterialActivityIndicator.h"
 #     define MATERIAL_ACTIVITY_INDICATOR                                   (1)
 #  else
 #     define MATERIAL_ACTIVITY_INDICATOR                                   (0)

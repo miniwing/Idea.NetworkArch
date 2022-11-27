@@ -138,13 +138,13 @@ IDEA_MAIN() {
       LogDebug((@"PHAuthorizationController::IDEA_MAIN : URL     : %@", aURL));
       LogDebug((@"PHAuthorizationController::IDEA_MAIN : Router  : %@", aRouter));
       
-      PHAuthorizationRootController *stPHAuthorizationController  = [UIStoryboard loadStoryboard:PHAuthorizationRootController.storyboard
-                                                                                  viewController:PHAuthorizationRootController.class
-                                                                                        inBundle:PHAuthorizationRootController.bundle];
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:PHAuthorizationRootController.storyboard
+                                                          viewController:PHAuthorizationRootController.class
+                                                                inBundle:PHAuthorizationRootController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stPHAuthorizationController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

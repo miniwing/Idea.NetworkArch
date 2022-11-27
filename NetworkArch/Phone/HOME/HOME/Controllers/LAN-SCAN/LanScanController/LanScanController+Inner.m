@@ -162,13 +162,13 @@ IDEA_MAIN() {
       LogDebug((@"LanScanController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"LanScanController::IDEA_MAIN : Router   : %@", aRouter));
       
-      LanScanController *stController  = [UIStoryboard loadStoryboard:LanScanController.storyboard
-                                                       viewController:LanScanController.class
-                                                             inBundle:LanScanController.bundle];
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:LanScanController.storyboard
+                                                          viewController:LanScanController.class
+                                                                inBundle:LanScanController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

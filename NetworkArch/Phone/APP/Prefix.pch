@@ -230,27 +230,23 @@ typedef FBLPromise Promise;
 #     import <MDFTextAccessibility/MDFTextAccessibility.h>
 #  endif
 
-#  if __has_include(<MaterialComponents/MaterialPalettes.h>)
-#     import <MaterialComponents/MaterialPalettes.h>
-#  elif __has_include("MaterialComponents/MaterialPalettes.h")
-#     import "MaterialComponents/MaterialPalettes.h"
-#  endif
-
-#  if __has_include(<MaterialComponents/MaterialAppBar.h>)
-#     import <MaterialComponents/MaterialAppBar.h>
-#     import <MaterialComponents/MaterialFlexibleHeader.h>
-#     define MATERIAL_APP_BAR                                              (1)
-#  elif __has_include("MaterialComponents/MaterialAppBar.h")
-#     import "MaterialComponents/MaterialAppBar.h"
-#     import "MaterialComponents/MaterialFlexibleHeader.h"
-#     define MATERIAL_APP_BAR                                              (1)
+#  if __has_include(<MaterialComponents/MaterialNavigationBar.h>)
+#     import <MaterialComponents/MaterialNavigationBar.h>
+#     define MATERIAL_NAVIGATIONBAR                                        (1)
+#  elif __has_include("MaterialComponents/MaterialNavigationBar.h")
+#     import "MaterialComponents/MaterialNavigationBar.h"
+#     define MATERIAL_NAVIGATIONBAR                                        (1)
 #  else
-#     define MATERIAL_APP_BAR                                              (0)
+#     define MATERIAL_NAVIGATIONBAR                                        (0)
 #  endif
 
 #  if __has_include(<MaterialComponents/MaterialActivityIndicator.h>)
 #     import <MaterialComponents/MaterialPalettes.h>
 #     import <MaterialComponents/MaterialActivityIndicator.h>
+#     define MATERIAL_ACTIVITY_INDICATOR                                   (1)
+#  elif __has_include("MaterialComponents/MaterialActivityIndicator.h")
+#     import "MaterialComponents/MaterialPalettes.h"
+#     import "MaterialComponents/MaterialActivityIndicator.h"
 #     define MATERIAL_ACTIVITY_INDICATOR                                   (1)
 #  else
 #     define MATERIAL_ACTIVITY_INDICATOR                                   (0)

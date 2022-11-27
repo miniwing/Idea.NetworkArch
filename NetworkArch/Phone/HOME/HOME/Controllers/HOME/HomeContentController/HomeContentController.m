@@ -204,7 +204,7 @@
 //#endif /* TARGET_IPHONE_SIMULATOR */
 
    LogDebug((@"-[HomeContentController viewDidLoad] : CELLULAR : %@", __IMAGE_NAMED(@"CELLULAR", self.class)));
-   LogDebug((@"-[HomeContentController viewDidLoad] : UIButtonBarArrowRightLandscape : %@", [ImageProvider imageNamed:@"UIButtonBarArrowRightLandscape"]));
+   LogDebug((@"-[HomeContentController viewDidLoad] : UIButtonBarArrowRight : %@", [ImageProvider imageNamed:@"UIButtonBarArrowRight"]));
 
    [self.cellularIPLabel setBackgroundColor:UIColor.clearColor];
    [self.cellularIPLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
@@ -292,9 +292,19 @@
    for (UIImageView *stICON in self.cellRightImageViews) {
       
       [stICON setBackgroundColor:UIColor.clearColor];
-      [stICON setImage:[ImageProvider imageNamed:@"UIButtonBarArrowRightLandscape"]];
-      [stICON setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-      
+      [stICON setImage:[ImageProvider imageNamed:@"UIButtonBarArrowRight"]];
+//      [stICON setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+      [stICON setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+
+         if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+            
+            return [IDEAColor colorWithKey:[IDEAColor lightText]];
+            
+         } /* End if () */
+         
+         return [IDEAColor colorWithKey:[IDEAColor darkGray]];
+      }];
+
    } /* End for () */
    
    for (HomeContentCell *stHomeContentCell in self.utilitiesCells) {

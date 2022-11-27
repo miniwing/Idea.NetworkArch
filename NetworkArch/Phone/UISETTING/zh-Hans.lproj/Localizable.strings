@@ -34,3 +34,7 @@
 "Permission Title"                  = "无权限";
 "No Permission"                     = "允许访问共享或发送照片和视频。 您可以随时在设备设置中更改此设置。";
 "Allow Access"                      = "允许访问";
+
+/// ABOUT
+"About"                             = "关于";
+"ABOUT"                             = "关于";

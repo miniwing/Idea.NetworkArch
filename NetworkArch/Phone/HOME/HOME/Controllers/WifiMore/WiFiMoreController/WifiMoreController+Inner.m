@@ -46,13 +46,13 @@ IDEA_MAIN() {
       LogDebug((@"WifiMoreController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"WifiMoreController::IDEA_MAIN : Router   : %@", aRouter));
       
-      WifiMoreController   *stController  = [UIStoryboard loadStoryboard:WifiMoreController.storyboard
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:WifiMoreController.storyboard
                                                           viewController:WifiMoreController.class
                                                                 inBundle:WifiMoreController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

@@ -193,13 +193,13 @@ IDEA_MAIN() {
       LogDebug((@"WhoisController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"WhoisController::IDEA_MAIN : Router   : %@", aRouter));
       
-      WhoisController   *stController  = [UIStoryboard loadStoryboard:WhoisController.storyboard
-                                                       viewController:WhoisController.class
-                                                             inBundle:WhoisController.bundle];
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:WhoisController.storyboard
+                                                          viewController:WhoisController.class
+                                                                inBundle:WhoisController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

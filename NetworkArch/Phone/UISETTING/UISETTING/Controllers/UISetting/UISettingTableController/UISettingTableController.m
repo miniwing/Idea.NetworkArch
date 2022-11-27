@@ -89,75 +89,6 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
 
    } /* End for () */
    
-   for (UIView *stView in self.uiCellContainerViews) {
-                  
-//#if __DEBUG_COLOR__
-//      [stView setBackgroundColor:UIColor.systemBlueColor];
-//#else /* __DEBUG_COLOR__ */
-//      [stView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-//#endif /* !__DEBUG_COLOR__ */
-
-      [stView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-
-         if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-
-            return [IDEAColor colorWithKey:[IDEAColor tertiarySystemGroupedBackground]];
-
-         } /* End if () */
-
-         return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
-      }];
-
-   } /* End for () */
-   
-   if (@available(iOS 13.0, *)) {
-      
-      for (UIView *stSeparatorView in self.uiSeparatorViews) {
-         
-#if __DEBUG_COLOR__
-         [stSeparatorView setBackgroundColor:UIColor.whiteColor];
-#else /* __DEBUG_COLOR__ */
-         [stSeparatorView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
-#endif /* !__DEBUG_COLOR__ */
-
-//         [stSeparatorView setBackgroundColor:UIColor.redColor];
-
-      } /* End for () */
-      
-   } /* End if () */
-   else {
-      
-      for (UIView *stSeparatorView in self.uiSeparatorViews) {
-         
-         [stSeparatorView setHidden:YES];
-         
-      } /* End for () */
-      
-   } /* End else */
-
-//   [self.animateCellContainerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-   [self.animateCellContainerView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-      
-      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-         
-         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemGroupedBackground]];
-         
-      } /* End if () */
-
-      return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
-   }];
-   
-   [self.hapticsCellContainerView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-      
-      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-         
-         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemGroupedBackground]];
-         
-      } /* End if () */
-
-      return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
-   }];
-   
    /// Rate Cells
    for (UITableViewCell *stCell in self.cellRates) {
       
@@ -173,32 +104,18 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
       
    } /* End for () */
    
-//   [self.rateCellContainerView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-   [self.rateCellContainerView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-      
-      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-         
-         return [IDEAColor colorWithKey:[IDEAColor tertiarySystemGroupedBackground]];
-         
-      } /* End if () */
-
-      return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
-   }];
-
    // Header Footer
    [self.lightBGView setBackgroundColor:UIColor.clearColor];
    [self.nightBGView setBackgroundColor:UIColor.clearColor];
    [self.lightButton setBackgroundColor:UIColor.clearColor];
    [self.nightButton setBackgroundColor:UIColor.clearColor];
    
-//   [self.lightButton.titleLabel setFont:[APPFont lightFontOfSize:self.lightButton.titleLabel.font.pointSize]];
    [self.lightButton.titleLabel setText:__LOCALIZED_STRING(self.class, @"Light")];
    [self.lightButton.titleLabel setFont:[UIFont systemFontOfSize:self.lightButton.titleLabel.font.pointSize
                                                           weight:UIFontWeightLight]];
 
    [self.lightButton.imageView setImage:__IMAGE_NAMED_IN_BUNDLE(@"UI-Light", self.class)];
    
-//   [self.nightButton.titleLabel setFont:[APPFont lightFontOfSize:self.nightButton.titleLabel.font.pointSize]];
    [self.nightButton.titleLabel setText:__LOCALIZED_STRING(self.class, @"Night")];
    [self.nightButton.titleLabel setFont:[UIFont systemFontOfSize:self.nightButton.titleLabel.font.pointSize
                                                           weight:UIFontWeightLight]];
@@ -222,7 +139,6 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
    } /* End else */
    
    [self.cellUITitle setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-//   [self.cellUITitle setFont:[APPFont lightFontOfSize:self.cellUITitle.font.pointSize]];
    [self.cellUITitle setText:__LOCALIZED_STRING(self.class, @"Auto")];
    [self.cellUITitle setFont:[UIFont systemFontOfSize:self.cellUITitle.font.pointSize
                                                weight:UIFontWeightLight]];
@@ -235,7 +151,6 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
     */
    [self.cellAnimateTitle setText:__LOCALIZED_STRING(self.class, @"Animation")];
    [self.cellAnimateTitle setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-//   [self.cellAnimateTitle setFont:[APPFont lightFontOfSize:self.cellAnimateTitle.font.pointSize]];
    [self.cellAnimateTitle setFont:[UIFont systemFontOfSize:self.cellAnimateTitle.font.pointSize
                                                     weight:UIFontWeightLight]];
 
@@ -249,7 +164,6 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
     */
    [self.cellHapticsTitle setText:__LOCALIZED_STRING(self.class, @"Haptics")];
    [self.cellHapticsTitle setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-//   [self.cellHapticsTitle setFont:[APPFont lightFontOfSize:self.cellAnimateTitle.font.pointSize]];
    [self.cellHapticsTitle setFont:[UIFont systemFontOfSize:self.cellHapticsTitle.font.pointSize
                                                     weight:UIFontWeightLight]];
 
@@ -263,7 +177,6 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
     */
    [self.cellRateTitle setText:__LOCALIZED_STRING(self.class, @"Rate on App Store")];
    [self.cellRateTitle setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-//   [self.cellRateTitle setFont:[APPFont lightFontOfSize:self.cellRateTitle.font.pointSize]];
    [self.cellRateTitle setFont:[UIFont systemFontOfSize:self.cellRateTitle.font.pointSize
                                                  weight:UIFontWeightLight]];
    
@@ -272,126 +185,67 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
     */
    [self.cellWeiboTitle setText:__LOCALIZED_STRING(self.class, @"Follow on Weibo")];
    [self.cellWeiboTitle setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-//   [self.cellWeiboTitle setFont:[APPFont lightFontOfSize:self.cellWeiboTitle.font.pointSize]];
    [self.cellWeiboTitle setFont:[UIFont systemFontOfSize:self.cellWeiboTitle.font.pointSize
                                                   weight:UIFontWeightLight]];
 
    [self.cellWeiboName setText:@"@MINIWING"];
    [self.cellWeiboName setTextColorPicker:DKColorPickerWithKey([IDEAColor darkGray])];
-//   [self.cellWeiboName setFont:[APPFont lightFontOfSize:self.cellWeiboName.font.pointSize]];
    [self.cellWeiboName setFont:[UIFont systemFontOfSize:self.cellWeiboName.font.pointSize
                                                  weight:UIFontWeightLight]];
    
    [self.cellTwitterTitle setText:__LOCALIZED_STRING(self.class, @"Follow on Twitter")];
    [self.cellTwitterTitle setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-//   [self.cellTwitterTitle setFont:[APPFont lightFontOfSize:self.cellTwitterTitle.font.pointSize]];
    [self.cellTwitterTitle setFont:[UIFont systemFontOfSize:self.cellTwitterTitle.font.pointSize
                                                     weight:UIFontWeightLight]];
 
    [self.cellTwitterName setText:__LOCALIZED_STRING(self.class, @"@MINIWING")];
    [self.cellTwitterName setTextColorPicker:DKColorPickerWithKey([IDEAColor darkGray])];
-//   [self.cellTwitterName setFont:[APPFont lightFontOfSize:self.cellTwitterName.font.pointSize]];
    [self.cellTwitterName setFont:[UIFont systemFontOfSize:self.cellTwitterName.font.pointSize
                                                    weight:UIFontWeightLight]];
    
    [self.cellFacebookTitle setText:__LOCALIZED_STRING(self.class, @"Follow on Facebook")];
    [self.cellFacebookTitle setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-//   [self.cellFacebookTitle setFont:[APPFont lightFontOfSize:self.cellFacebookTitle.font.pointSize]];
    [self.cellFacebookTitle setFont:[UIFont systemFontOfSize:self.cellFacebookTitle.font.pointSize
                                                      weight:UIFontWeightLight]];
 
    [self.cellFacebookName setText:__LOCALIZED_STRING(self.class, @"@MINIWING")];
    [self.cellFacebookName setTextColorPicker:DKColorPickerWithKey([IDEAColor darkGray])];
-//   [self.cellFacebookName setFont:[APPFont lightFontOfSize:self.cellFacebookName.font.pointSize]];
    [self.cellFacebookName setFont:[UIFont systemFontOfSize:self.cellFacebookName.font.pointSize
                                                     weight:UIFontWeightLight]];
    
-   [self.cellVerTitle setText:__LOCALIZED_STRING(self.class, @"Version")];
-   [self.cellVerTitle setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-//   [self.cellVerTitle setFont:[APPFont lightFontOfSize:self.cellVerTitle.font.pointSize]];
-   [self.cellVerTitle setFont:[UIFont systemFontOfSize:self.cellVerTitle.font.pointSize
-                                                weight:UIFontWeightLight]];
+   [self.cellAboutTitle setText:__LOCALIZED_STRING(self.class, @"About")];
+   [self.cellAboutTitle setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.cellAboutTitle setFont:[UIFont systemFontOfSize:self.cellAboutTitle.font.pointSize
+                                                  weight:UIFontWeightLight]];
 
-   [self.cellVerBuild setText:[NSString stringWithFormat:@"%@ (%@)", [UIApplication sharedApplication].appVersion, [UIApplication sharedApplication].appBuildVersion]];
-   [self.cellVerBuild setTextColorPicker:DKColorPickerWithKey([IDEAColor darkGray])];
-//   [self.cellVerBuild setFont:[APPFont lightFontOfSize:self.cellVerBuild.font.pointSize]];
-   [self.cellVerBuild setFont:[UIFont systemFontOfSize:self.cellVerBuild.font.pointSize
-                                                weight:UIFontWeightLight]];
+//   [self.cellVerBuild setText:[NSString stringWithFormat:@"%@ (%@)", [UIApplication sharedApplication].appVersion, [UIApplication sharedApplication].appBuildVersion]];
+   [self.cellAboutVersion setText:[UIApplication sharedApplication].appVersion];
+   [self.cellAboutVersion setTextColorPicker:DKColorPickerWithKey([IDEAColor darkGray])];
+   [self.cellAboutVersion setFont:[UIFont systemFontOfSize:self.cellAboutVersion.font.pointSize
+                                                    weight:UIFontWeightLight]];
 
-   for (UIView *stView in self.aboutCellContainerViews) {
-            
-      [stView setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
-         
-         if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
-            
-            return [IDEAColor colorWithKey:[IDEAColor tertiarySystemGroupedBackground]];
-            
-         } /* End if () */
-         
-         return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
-      }];
-   } /* End for () */
-   
    for (UIImageView *stRightImage in self.cellRightImages) {
             
       [stRightImage setBackgroundColor:UIColor.clearColor];
-      [stRightImage setImage:[ImageProvider imageNamed:@"UIButtonBarArrowRightLandscape"]];
-      [stRightImage setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+      [stRightImage setImage:[ImageProvider imageNamed:@"UIButtonBarArrowRight"]];
+//      [stRightImage setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+      [stRightImage setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+
+         if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+            
+            return [IDEAColor colorWithKey:[IDEAColor lightText]];
+            
+         } /* End if () */
+         
+         return [IDEAColor colorWithKey:[IDEAColor darkGray]];
+      }];
 
    } /* End for () */
-
-   for (UIView *stSeparatorView in self.aboutSeparatorViews) {
-      
-      [stSeparatorView setHidden:NO];
-      
-#if __DEBUG_COLOR__
-      [stSeparatorView setBackgroundColor:UIColor.whiteColor];
-#else /* __DEBUG_COLOR__ */
-      [stSeparatorView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
-#endif /* !__DEBUG_COLOR__ */
-      
-   } /* End for () */
-   
-//   [self.view setNeedsLayout];
-//   [self.view layoutIfNeeded];
 
    LogDebug((@"-[UISettingTableController viewDidLoad] : Section : %d", [self.tableView numberOfSections]));
 
-   [self.tableView setNeedsLayout];
-   [self.tableView setNeedsUpdateConstraints];
-
-   if (@available(iOS 13.0, *)) {
-
-//      [self.uiCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight radius:8];
-//      [self.uiCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight radius:8];
-
-   } /* End if () */
-   else {
-
-      [self.uiCellContainerViews.firstObject setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
-
-      [self.animateCellContainerView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
-      [self.hapticsCellContainerView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
-      [self.rateCellContainerView setCornerRadius:[UISetting cornerRadiusBig] clipsToBounds:YES];
-
-      [self.aboutCellContainerViews.firstObject setRectCorner:UIRectCornerTopLeft | UIRectCornerTopRight
-                                                       radius:[UISetting cornerRadiusBig]];
-      [self.aboutCellContainerViews.lastObject setRectCorner:UIRectCornerBottomLeft | UIRectCornerBottomRight
-                                                      radius:[UISetting cornerRadiusBig]];
-
-      for (NSLayoutConstraint *stLayout in self.cellContainerLeft) {
-         
-         [stLayout setConstant:[UITableViewCellX constraintLeftInset]];
-
-      } /* End for () */
-
-      for (NSLayoutConstraint *stLayout in self.cellContainerRight) {
-         
-         [stLayout setConstant:[UITableViewCellX constraintRightInset]];
-         
-      } /* End for () */
-
-   } /* End else */
+//   [self.tableView setNeedsLayout];
+//   [self.tableView setNeedsUpdateConstraints];
    
    /**
     Copyright
@@ -403,7 +257,7 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
    [self.copyrightLabel setFont:[UIFont systemFontOfSize:self.copyrightLabel.font.pointSize
                                                   weight:UIFontWeightLight]];
 
-//   [self.tableView reloadData];
+   [self.tableView reloadData];
    
    __CATCH(nErr);
    

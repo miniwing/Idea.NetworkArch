@@ -703,13 +703,13 @@ IDEA_MAIN() {
       LogDebug((@"PingController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"PingController::IDEA_MAIN : Router   : %@", aRouter));
       
-      PingController *stController  = [UIStoryboard loadStoryboard:PingController.storyboard
-                                                    viewController:PingController.class
-                                                          inBundle:PingController.bundle];
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:PingController.storyboard
+                                                          viewController:PingController.class
+                                                                inBundle:PingController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

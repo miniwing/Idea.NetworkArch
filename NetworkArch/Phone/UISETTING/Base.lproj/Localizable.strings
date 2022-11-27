@@ -34,3 +34,7 @@
 "Permission Title"                  = "No Permission";
 "No Permission"                     = "Allow Access to share or send photos and videos. you can always change this in your devices settings.";
 "Allow Access"                      = "Allow Access";
+
+/// ABOUT
+"About"                             = "About";
+"ABOUT"                             = "ABOUT";

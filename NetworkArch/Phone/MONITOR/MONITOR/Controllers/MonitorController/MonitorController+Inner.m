@@ -41,13 +41,13 @@ IDEA_MAIN() {
       LogDebug((@"MonitorController::IDEA_MAIN : URL     : %@", aURL));
       LogDebug((@"MonitorController::IDEA_MAIN : Router  : %@", aRouter));
       
-      MonitorRootController   *stMonitorRootController   = [UIStoryboard loadStoryboard:MonitorRootController.storyboard
-                                                                         viewController:MonitorRootController.class
-                                                                               inBundle:MonitorRootController.bundle];
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:MonitorRootController.storyboard
+                                                          viewController:MonitorRootController.class
+                                                                inBundle:MonitorRootController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stMonitorRootController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

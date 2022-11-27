@@ -251,13 +251,13 @@ IDEA_MAIN() {
       LogDebug((@"DNSController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"DNSController::IDEA_MAIN : Router   : %@", aRouter));
       
-      DNSController  *stController  = [UIStoryboard loadStoryboard:DNSController.storyboard
-                                                    viewController:DNSController.class
-                                                          inBundle:DNSController.bundle];
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:DNSController.storyboard
+                                                          viewController:DNSController.class
+                                                                inBundle:DNSController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

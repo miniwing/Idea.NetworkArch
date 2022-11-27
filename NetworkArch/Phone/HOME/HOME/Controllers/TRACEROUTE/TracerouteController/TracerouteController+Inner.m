@@ -180,13 +180,13 @@ IDEA_MAIN() {
       LogDebug((@"TracerouteController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"TracerouteController::IDEA_MAIN : Router   : %@", aRouter));
       
-      TracerouteController *stController  = [UIStoryboard loadStoryboard:TracerouteController.storyboard
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:TracerouteController.storyboard
                                                           viewController:TracerouteController.class
                                                                 inBundle:TracerouteController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

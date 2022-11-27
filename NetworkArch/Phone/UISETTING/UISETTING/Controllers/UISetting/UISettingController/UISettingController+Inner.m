@@ -27,7 +27,7 @@
 
 + (NSString *)storyboard {
    
-   return @(MODULE);
+   return @"UISETTING";
 }
 
 + (NSString *)bundle {
@@ -42,19 +42,36 @@ IDEA_MAIN() {
    
    LogDebug((@"UISettingController::IDEA_MAIN"));
    
+   [IDEAUIRouter registerURLPattern:@"UISETTING-ROOT/create"
+                          toHandler:^(NSString *aURL, NSDictionary *aRouter, IDEAUIRouterCompletion aCompletion) {
+      
+      LogDebug((@"UISettingController::IDEA_MAIN : URL      : %@", aURL));
+      LogDebug((@"UISettingController::IDEA_MAIN : Router   : %@", aRouter));
+      
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:UISettingRootController.storyboard
+                                                          viewController:UISettingRootController.class
+                                                                inBundle:UISettingRootController.bundle];
+      
+      if (nil != aCompletion) {
+         
+         aCompletion(aURL, nil, stViewController);
+         
+      } /* End if () */
+   }];
+   
    [IDEAUIRouter registerURLPattern:@"UISETTING/create"
                           toHandler:^(NSString *aURL, NSDictionary *aRouter, IDEAUIRouterCompletion aCompletion) {
       
       LogDebug((@"UISettingController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"UISettingController::IDEA_MAIN : Router   : %@", aRouter));
-
-      UISettingController *stSettingController = [UIStoryboard loadStoryboard:UISettingRootController.storyboard
-                                                               viewController:UISettingController.class
-                                                                     inBundle:UISettingRootController.bundle];
+      
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:UISettingController.storyboard
+                                                          viewController:UISettingController.class
+                                                                inBundle:UISettingController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stSettingController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

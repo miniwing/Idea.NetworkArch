@@ -75,13 +75,13 @@ IDEA_MAIN() {
       LogDebug((@"HomeRootController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"HomeRootController::IDEA_MAIN : Router   : %@", aRouter));
       
-      HomeRootController   *stHomeRootController   = [UIStoryboard loadStoryboard:HomeRootController.storyboard
-                                                                   viewController:HomeRootController.class
-                                                                         inBundle:HomeRootController.bundle];
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:HomeRootController.storyboard
+                                                          viewController:HomeRootController.class
+                                                                inBundle:HomeRootController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stHomeRootController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

@@ -180,13 +180,13 @@ IDEA_MAIN() {
       LogDebug((@"PortScanController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"PortScanController::IDEA_MAIN : Router   : %@", aRouter));
       
-      PortScanController   *stController  = [UIStoryboard loadStoryboard:PortScanController.storyboard
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:PortScanController.storyboard
                                                           viewController:PortScanController.class
                                                                 inBundle:PortScanController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

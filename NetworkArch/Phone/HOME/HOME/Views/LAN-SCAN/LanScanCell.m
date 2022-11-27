@@ -69,10 +69,20 @@
    
    [self.separatorView setBackgroundColor:[IDEAColor colorWithKey:[IDEAColor opaqueSeparator]]];
 
-   [self.rightIcon setImage:[ImageProvider imageNamed:@"UIButtonBarArrowRightLandscape"]];
+   [self.rightIcon setImage:[ImageProvider imageNamed:@"UIButtonBarArrowRight"]];
    [self.rightIcon setBackgroundColor:UIColor.clearColor];
-   [self.rightIcon setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   
+//   [self.rightIcon setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.rightIcon setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return [IDEAColor colorWithKey:[IDEAColor lightText]];
+         
+      } /* End if () */
+      
+      return [IDEAColor colorWithKey:[IDEAColor darkGray]];
+   }];
+
    [self.rightIcon setHidden:YES];
 
    [self.ipLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];

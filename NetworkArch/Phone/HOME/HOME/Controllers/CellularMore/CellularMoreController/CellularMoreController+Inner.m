@@ -46,13 +46,13 @@ IDEA_MAIN() {
       LogDebug((@"CellularMoreController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"CellularMoreController::IDEA_MAIN : Router   : %@", aRouter));
       
-      CellularMoreController  *stController  = [UIStoryboard loadStoryboard:CellularMoreController.storyboard
-                                                             viewController:CellularMoreController.class
-                                                                   inBundle:CellularMoreController.bundle];
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:CellularMoreController.storyboard
+                                                          viewController:CellularMoreController.class
+                                                                inBundle:CellularMoreController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

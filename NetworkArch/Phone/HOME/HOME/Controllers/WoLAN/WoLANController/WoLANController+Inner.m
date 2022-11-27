@@ -46,13 +46,13 @@ IDEA_MAIN() {
       LogDebug((@"WoLANController::IDEA_MAIN : URL      : %@", aURL));
       LogDebug((@"WoLANController::IDEA_MAIN : Router   : %@", aRouter));
       
-      WoLANController   *stController  = [UIStoryboard loadStoryboard:WoLANController.storyboard
-                                                       viewController:WoLANController.class
-                                                             inBundle:WoLANController.bundle];
+      UIViewController  *stViewController = [UIStoryboard loadStoryboard:WoLANController.storyboard
+                                                          viewController:WoLANController.class
+                                                                inBundle:WoLANController.bundle];
       
       if (nil != aCompletion) {
          
-         aCompletion(aURL, nil, stController);
+         aCompletion(aURL, nil, stViewController);
          
       } /* End if () */
    }];

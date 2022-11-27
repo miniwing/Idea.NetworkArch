@@ -47,42 +47,29 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
 
 @interface UISettingTableController ()
 
-@property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray           * cellUIs;
-@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *> * uiCellContainerViews;
-@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *> * uiSeparatorViews;
-
 @property (nonatomic, strong) IBOutletCollection(UIImageView)     NSArray<UIImageView *> * cellRightImages;
+
+@property (nonatomic, strong) IBOutletCollection(UITableViewCellX)NSArray           * cellUIs;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                                * cellUITitle;
 @property (nonatomic, weak)   IBOutlet       UISwitch                               * cellUISwitch;
-@property (nonatomic, weak)   IBOutlet       UIView                                 * uiSeparatorView;
 
-@property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray           * cellAnimates;
-@property (nonatomic, weak)   IBOutlet       UIView                                 * animateCellContainerView;
-@property (nonatomic, weak)   IBOutlet       UIView                                 * animateSeparatorView;
-//@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *> * animateCellContainerViews;
+@property (nonatomic, strong) IBOutletCollection(UITableViewCellX)NSArray           * cellAnimates;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                                * cellAnimateTitle;
 @property (nonatomic, weak)   IBOutlet       UISwitch                               * cellAnimateSwitch;
 
-@property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray           * cellHapticses;
-@property (nonatomic, weak)   IBOutlet       UIView                                 * hapticsCellContainerView;
-@property (nonatomic, weak)   IBOutlet       UIView                                 * hapticsSeparatorView;
+@property (nonatomic, strong) IBOutletCollection(UITableViewCellX)NSArray           * cellHapticses;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                                * cellHapticsTitle;
 @property (nonatomic, weak)   IBOutlet       UISwitch                               * cellHapticsSwitch;
 
-@property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray           * cellRates;
-@property (nonatomic, weak)   IBOutlet       UIView                                 * rateCellContainerView;
-@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *> * rateSeparatorViews;
-//@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *> * rateCellContainerViews;
+@property (nonatomic, strong) IBOutletCollection(UITableViewCellX)NSArray           * cellRates;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                                * cellRateTitle;
 @property (nonatomic, weak)   IBOutlet       UIImageView                            * cellRatesRightImage;
 
-@property (nonatomic, strong) IBOutletCollection(UITableViewCell) NSArray           * cellAbouts;
-@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *> * aboutCellContainerViews;
-@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<UIView *> * aboutSeparatorViews;
+@property (nonatomic, strong) IBOutletCollection(UITableViewCellX)NSArray           * cellAbouts;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                                * cellWeiboTitle;
 @property (nonatomic, weak)   IBOutlet       UILabel                                * cellWeiboName;
@@ -93,17 +80,15 @@ IDEA_ENUM(NSInteger, SettingAboutRow) {
 @property (nonatomic, weak)   IBOutlet       UILabel                                * cellFacebookTitle;
 @property (nonatomic, weak)   IBOutlet       UILabel                                * cellFacebookName;
 @property (nonatomic, weak)   IBOutlet       UIImageView                            * cellFacebookRightImage;
-@property (nonatomic, weak)   IBOutlet       UILabel                                * cellVerTitle;
-@property (nonatomic, weak)   IBOutlet       UILabel                                * cellVerBuild;
+@property (nonatomic, weak)   IBOutlet       UILabel                                * cellAboutTitle;
+@property (nonatomic, weak)   IBOutlet       UILabel                                * cellAboutVersion;
+@property (nonatomic, weak)   IBOutlet       UIImageView                            * cellAboutRightImage;
 
 @property (nonatomic, weak)   IBOutlet       UIView                                 * lightBGView;
 @property (nonatomic, weak)   IBOutlet       UIView                                 * nightBGView;
 
 @property (nonatomic, weak)   IBOutlet       UIThemeButton                          * lightButton;
 @property (nonatomic, weak)   IBOutlet       UIThemeButton                          * nightButton;
-
-@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<NSLayoutConstraint *> * cellContainerLeft;
-@property (nonatomic, strong) IBOutletCollection(UIView)          NSArray<NSLayoutConstraint *> * cellContainerRight;
 
 @property (nonatomic, weak)   IBOutlet       UILabel                                * copyrightLabel;
 @property (nonatomic, weak)   IBOutlet       UIView                                 * copyrightView;

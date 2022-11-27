@@ -806,7 +806,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UIButtonBarArrowRightLandscape" translatesAutoresizingMaskIntoConstraints="NO" id="zX7-rg-rzv" userLabel="ICON">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="UIButtonBarArrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="zX7-rg-rzv" userLabel="ICON">
                                                             <rect key="frame" x="319" y="0.0" width="8" height="48"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -1136,7 +1136,7 @@
     </scenes>
     <resources>
         <image name="UIAccessoryButtonInfo" width="22" height="22"/>
-        <image name="UIButtonBarArrowRightLandscape" width="9" height="16"/>
+        <image name="UIButtonBarArrowRight" width="11.5" height="21"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

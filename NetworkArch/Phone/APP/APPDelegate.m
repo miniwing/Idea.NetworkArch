@@ -352,47 +352,47 @@
 - (void)applicationDidBecomeActive:(UIApplication *)aApplication {
    
    int                            nErr                                     = EFAULT;
-
+   
    NSTimeInterval                 dLastTime                                = 0.0f;
    
 #if GOOGLE_MOBILE_ADS
    UIViewController              *stRootController                         = nil;
 #endif /* GOOGLE_MOBILE_ADS */
-
+   
    __TRY;
    
    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-//   if (NO == [APPDelegate isApiKeySetting]) {
-//
-//      [self sendSignal:APPDelegate.loadApiKeySignal];
-//
-//   } /* End if () */
-
+   //   if (NO == [APPDelegate isApiKeySetting]) {
+   //
+   //      [self sendSignal:APPDelegate.loadApiKeySignal];
+   //
+   //   } /* End if () */
+   
    dLastTime   = [SettingProvider activeTime];
    
 #if GOOGLE_MOBILE_ADS
    stRootController = self.window.rootViewController;
    LogDebug((@"-[APPDelegate applicationDidBecomeActive:] : RootController : %@", stRootController));
-
+   
    // Do not show app open ad if the current view controller is SplashViewController.
-//   if (stRootViewController && [rootViewController isKindOfClass:[SplashViewController class]]) {
+   //   if (stRootViewController && [rootViewController isKindOfClass:[SplashViewController class]]) {
    if (!stRootController || ([stRootController isKindOfClass:SplashViewController.class])) {
-
+      
    } /* End if () */
    else {
       
-      if ((UIApplicationStateBackground == self.applicationState) && (0 != dLastTime) && ([NSDate date].timeIntervalSince1970 - dLastTime > 5 * 60)) {
+      if ((UIApplicationStateBackground == self.applicationState) && (0 != dLastTime) && ([NSDate date].timeIntervalSince1970 - dLastTime > 3 * 60)) {
          
          [AppOpenAdManager showAdIfAvailable:stRootController];
-
+         
       } /* End if () */
       
    } /* End else */
 #endif /* GOOGLE_MOBILE_ADS */
-
+   
    [SettingProvider setActiveTime:[NSDate date].timeIntervalSince1970];
    self.applicationState   = UIApplicationStateActive;
-
+   
    __CATCH(nErr);
    
    return;

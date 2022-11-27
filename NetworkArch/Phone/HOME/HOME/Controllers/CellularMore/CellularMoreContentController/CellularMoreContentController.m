@@ -143,8 +143,18 @@
    } /* End for () */
       
    [self.interfacesImageView setBackgroundColor:UIColor.clearColor];
-   [self.interfacesImageView setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.interfacesImageView setImage:[ImageProvider imageNamed:@"UIButtonBarArrowRightLandscape"]];
+   [self.interfacesImageView setImage:[ImageProvider imageNamed:@"UIButtonBarArrowRight"]];
+//   [self.interfacesImageView setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
+   [self.interfacesImageView setTintColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return [IDEAColor colorWithKey:[IDEAColor lightText]];
+         
+      } /* End if () */
+      
+      return [IDEAColor colorWithKey:[IDEAColor darkGray]];
+   }];
 
 #if __Debug__
 #else /* __Debug__ */
