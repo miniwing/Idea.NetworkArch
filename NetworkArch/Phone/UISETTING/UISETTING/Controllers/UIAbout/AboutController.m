@@ -61,7 +61,7 @@
    [super viewDidLoad];
    
    [self setTitle:__LOCALIZED_STRING(self.class, @"ABOUT")];
-   LogDebug((@"-[UISettingController viewDidLoad] : Title : %@", __LOCALIZED_STRING(self.class, @"ABOUT")));
+   LogDebug((@"-[AboutController viewDidLoad] : Title : %@", __LOCALIZED_STRING(self.class, @"ABOUT")));
 
    [self.navigationController setNavigationBarHidden:YES];
 
@@ -76,7 +76,18 @@
    
    [self.navigationBarX.navigationBar setAllowAnyTitleFontSize:YES];
    [self.navigationBarX.navigationBar setEnableRippleBehavior:NO];
-   
+
+   [self.view setBackgroundColorPicker:^UIColor *(DKThemeVersion *aThemeVersion) {
+      
+      if ([DKThemeVersionNight isEqualToString:aThemeVersion]) {
+         
+         return [IDEAColor colorWithKey:[IDEAColor systemBackground]];
+         
+      } /* End if () */
+
+      return [IDEAColor colorWithKey:[IDEAColor systemGroupedBackground]];
+   }];
+
 //   [self.navigationBarX showLine:YES];
 
    /// 关闭水波纹效果
@@ -107,6 +118,9 @@
    [self.leftBarButton setImage:[[ImageProvider imageNamed:@"UIButtonBarArrowLeft"] imageRenderWithTintColor:UIColor.systemGrayColor]
                        forState:UIControlStateHighlighted];
 
+   /**
+    * 内容设置
+    */
    [self.sponsorImageView setBackgroundColor:UIColor.clearColor];
    [self.sponsorImageView setImage:[ImageProvider imageNamed:@"SPONSOR"]];
    

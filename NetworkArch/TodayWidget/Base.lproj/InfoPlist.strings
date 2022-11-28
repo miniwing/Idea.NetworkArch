@@ -6,7 +6,7 @@
   Copyright © 2021 Harry. All rights reserved.
 */
 
-CFBundleDisplayName     = "NetworkArch";
+CFBundleDisplayName     = "Network X";
 
 NSLocationAlwaysAndWhenInUseUsageDescription = "Location permission is required to access Wi-Fi SSID/BSSID";
 NSLocationAlwaysUsageDescription             = "Location permission is required to access Wi-Fi SSID/BSSID";

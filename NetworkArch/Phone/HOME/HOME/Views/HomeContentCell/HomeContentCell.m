@@ -67,8 +67,6 @@
    [self.selectedColorView setClipsToBounds:YES];
    [self.selectedColorView setBackgroundColor:UIColor.clearColor];
 
-   [self.separatorView setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor separator])];
-
    __CATCH(nErr);
 
    return;
