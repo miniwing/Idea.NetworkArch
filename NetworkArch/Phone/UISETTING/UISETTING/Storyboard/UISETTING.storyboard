@@ -44,7 +44,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuA-w1-yJf">
-                                <rect key="frame" x="0.0" y="110" width="375" height="668"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="702"/>
                                 <connections>
                                     <segue destination="TCQ-kv-Y5d" kind="embed" id="OqW-gs-nNk"/>
                                 </connections>
@@ -54,7 +54,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SSm-Hh-qvg" firstAttribute="top" secondItem="INa-P9-wge" secondAttribute="top" id="JYb-YV-B25"/>
-                            <constraint firstItem="NGV-Dx-JN4" firstAttribute="bottom" secondItem="xuA-w1-yJf" secondAttribute="bottom" id="OQI-hP-XUJ"/>
+                            <constraint firstAttribute="bottom" secondItem="xuA-w1-yJf" secondAttribute="bottom" id="OQI-hP-XUJ"/>
                             <constraint firstAttribute="trailing" secondItem="xuA-w1-yJf" secondAttribute="trailing" id="UYp-bN-xYi"/>
                             <constraint firstItem="SSm-Hh-qvg" firstAttribute="trailing" secondItem="INa-P9-wge" secondAttribute="trailing" id="es7-V4-MKO"/>
                             <constraint firstItem="SSm-Hh-qvg" firstAttribute="leading" secondItem="INa-P9-wge" secondAttribute="leading" id="kfu-7Y-N1l"/>
@@ -205,7 +205,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="UISettingTableController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TCQ-kv-Y5d" userLabel="UISETTING-CONTENT" customClass="UISettingTableController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="W6W-Kz-4lx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
                             <tableViewSection headerTitle="外观" id="ycF-sv-LLD">
@@ -958,7 +958,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SPONSOR.png" width="512" height="512"/>
+        <image name="SPONSOR.png" width="1024" height="1024"/>
         <image name="UI-Light" width="94" height="203"/>
         <image name="UI-Night" width="94" height="203"/>
         <image name="UIButtonBarArrowRight" width="11.5" height="21"/>
