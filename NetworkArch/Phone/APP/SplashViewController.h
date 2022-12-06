@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SplashViewController : UIViewController
 
-@property (nonatomic, weak)   IBOutlet       UILabel                             * copyrightLabel;
 @property (nonatomic, weak)   IBOutlet       UIActivityIndicatorView             * activityIndicatorView;
-@property (nonatomic, weak)   IBOutlet       NSLayoutConstraint                  * indicatorViewWidth;
+
+//@property (nonatomic, weak)   IBOutlet       UILabel                             * copyrightLabel;
 
 @end
 

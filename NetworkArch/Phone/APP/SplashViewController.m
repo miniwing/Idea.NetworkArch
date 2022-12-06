@@ -61,20 +61,20 @@
    [super viewDidLoad];
    // Do any additional setup after loading the view.
    
-   //   UIImage  *stImage = Image Literal
+//   UIImage  *stImage = Image Literal
    
-   //#if IDEA_NIGHT_VERSION_MANAGER
-   //   [self.view setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
-   //#  pragma clang diagnostic push
-   //#  pragma clang diagnostic ignored "-Wundeclared-selector"
-   //   [self addNotificationName:DKNightVersionThemeChangingNotification
-   //                    selector:@selector(onThemeUpdate:)
-   //                      object:nil];
-   //#  pragma clang diagnostic pop
-   //
-   //   [self.copyrightLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   //   [self.activityIndicatorView setColorPicker:DKColorPickerWithKey([IDEAColor systemGray2])];
-   //#endif /* if IDEA_NIGHT_VERSION_MANAGER */
+//#if IDEA_NIGHT_VERSION_MANAGER
+//   [self.view setBackgroundColorPicker:DKColorPickerWithKey([IDEAColor systemBackground])];
+//#  pragma clang diagnostic push
+//#  pragma clang diagnostic ignored "-Wundeclared-selector"
+//   [self addNotificationName:DKNightVersionThemeChangingNotification
+//                    selector:@selector(onThemeUpdate:)
+//                      object:nil];
+//#  pragma clang diagnostic pop
+//
+//   [self.copyrightLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
+//   [self.activityIndicatorView setColorPicker:DKColorPickerWithKey([IDEAColor systemGray2])];
+//#endif /* if IDEA_NIGHT_VERSION_MANAGER */
    
    if (@available(iOS 13, *)) {
       
@@ -83,13 +83,12 @@
    } /* End if () */
    else {
       
-      [self.activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
+      [self.activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
 
    } /* End else */
 
-//   [self.activityIndicatorView setColor:UIColor.whiteColor];
    [self.activityIndicatorView setColor:UIColor.blackColor];
-//   [self.activityIndicatorView setWidth:100];
+   [self.activityIndicatorView startAnimating];
 
    /**
     * 主动调整布局
