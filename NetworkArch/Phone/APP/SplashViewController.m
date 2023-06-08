@@ -78,7 +78,7 @@
    
    if (@available(iOS 13, *)) {
       
-      [self.activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleMedium];
+      [self.activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleLarge];
       
    } /* End if () */
    else {

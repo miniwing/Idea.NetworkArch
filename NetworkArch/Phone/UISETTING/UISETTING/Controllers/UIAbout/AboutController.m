@@ -132,12 +132,12 @@
    [self.versionLabel setBackgroundColor:UIColor.clearColor];
    [self.versionLabel setFont:[UIFont systemFontOfSize:self.versionLabel.font.pointSize weight:UIFontWeightLight]];
    [self.versionLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.versionLabel setText:[NSString stringWithFormat:@"V %@", [UIApplication sharedApplication].appVersion]];
+   [self.versionLabel setText:[NSString stringWithFormat:@"Version %@", [UIApplication sharedApplication].appVersion]];
 
    [self.buildLabel setBackgroundColor:UIColor.clearColor];
    [self.buildLabel setFont:[UIFont systemFontOfSize:self.buildLabel.font.pointSize weight:UIFontWeightLight]];
    [self.buildLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.buildLabel setText:[NSString stringWithFormat:@"Build: %@", [UIApplication sharedApplication].appBuildVersion]];
+   [self.buildLabel setText:[NSString stringWithFormat:@"Build %@", [UIApplication sharedApplication].appBuildVersion]];
 
    [self.copyrightLabel setBackgroundColor:UIColor.clearColor];
    [self.copyrightLabel setFont:[UIFont systemFontOfSize:self.copyrightLabel.font.pointSize weight:UIFontWeightLight]];
