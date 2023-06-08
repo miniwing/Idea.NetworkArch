@@ -47,6 +47,8 @@ ENV['OpenSSL']                            = 'NO'
 ENV['SSZipArchive']                       = 'NO'
 
 ENV['GOOGLE_MOBILE_ADS']                  = 'YES'
+ENV['FACEBOOK_AUDIENCE_NETWORK']          = 'YES'
+
 #ENV['XCODE_VERSION']                      = '12.4'
 #ENV['XCODE_VERSION']                      = '14.+'
 
@@ -181,29 +183,29 @@ target 'NetworkArch' do
   end # IDEA_APPLET_DEBUG
   #-------------------------------------------------------------------------------------------------------------------------------#
   if ENV['IDEA_FULLSCREEN_POP_GESTURE'] == 'YES'
-    miniwing_pod('IDEAFullscreenPopGesture',      type = 'local',   branch = 'develop')
+    miniwing_pod('IDEAFullscreenPopGesture',                type = 'local',   branch = 'develop')
   end # IDEA_FULLSCREEN_POP_GESTURE
   
   if ENV['IDEA_PAN_MODAL'] == 'YES'
-    miniwing_pod('IDEAPanModal',                  type = 'local',   branch = 'develop')
+    miniwing_pod('IDEAPanModal',                            type = 'local',   branch = 'develop')
   end # IDEA_PAN_MODAL
   
   if ENV['IDEA_TABBAR_CONTROLLER_TRANSITION'] == 'YES'
-    miniwing_pod('IDEATabBarControllerTransition',type = 'local',   branch = 'develop')
+    miniwing_pod('IDEATabBarControllerTransition',          type = 'local',   branch = 'develop')
   end # IDEA_TABBAR_CONTROLLER_TRANSITION
   #-------------------------------------------------------------------------------------------------------------------------------#
-  miniwing_pod('IDEANibBridge',                   type = 'local', branch = 'develop')
-  miniwing_pod('IDEAUIKit',                       type = 'local', branch = 'develop')
-  miniwing_pod('IDEAUIVendor',                    type = 'local', branch = 'develop')
-  miniwing_pod('IDEAUIRouter',                    type = 'local', branch = 'develop')
-  miniwing_pod('IDEAStartUp',                     type = 'local', branch = 'develop')
-  miniwing_pod('IDEAServiceManager',              type = 'local', branch = 'develop')
-  miniwing_pod('IDEANightVersion',                type = 'local', branch = 'develop')
+  miniwing_pod('IDEANibBridge',                             type = 'local',   branch = 'develop')
+  miniwing_pod('IDEAUIKit',                                 type = 'local',   branch = 'develop')
+  miniwing_pod('IDEAUIVendor',                              type = 'local',   branch = 'develop')
+  miniwing_pod('IDEAUIRouter',                              type = 'local',   branch = 'develop')
+  miniwing_pod('IDEAStartUp',                               type = 'local',   branch = 'develop')
+  miniwing_pod('IDEAServiceManager',                        type = 'local',   branch = 'develop')
+  miniwing_pod('IDEANightVersion',                          type = 'local',   branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
-  miniwing_pod('IDEAPing',                        type = 'local', branch = 'develop')
-  miniwing_pod('IDEARouter',                      type = 'local', branch = 'develop')
-  miniwing_pod('IDEANetUtils',                    type = 'local', branch = 'develop')
-  miniwing_pod('PhoneNetSDK',                     type = 'local', branch = 'develop')
+  miniwing_pod('IDEAPing',                                  type = 'local',   branch = 'develop')
+  miniwing_pod('IDEARouter',                                type = 'local',   branch = 'develop')
+  miniwing_pod('IDEANetUtils',                              type = 'local',   branch = 'develop')
+  miniwing_pod('PhoneNetSDK',                               type = 'local',   branch = 'develop')
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'MonitorService',     :path => 'NetworkArch/MonitorService'
   pod 'ImageProvider',      :path => 'NetworkArch/ImageProvider'
@@ -234,6 +236,16 @@ target 'NetworkArch' do
   #-------------------------------------------------------------------------------------------------------------------------------#
 #  pod 'GoogleAnalytics'
 #  pod 'Firebase'
+
+  if ENV['FACEBOOK_AUDIENCE_NETWORK'] == 'YES'
+    if ENV['XCODE_VERSION'] == '12.4'
+      pod 'FBAudienceNetwork',        '6.5.0'
+    else
+      pod 'FBAudienceNetwork'
+    end
+    pod 'GoogleMobileAdsMediationFacebook'
+  end # FACEBOOK_AUDIENCE_NETWORK
+
   if ENV['GOOGLE_MOBILE_ADS'] == 'YES'
     if ENV['XCODE_VERSION'] == '12.4'
       pod 'Google-Mobile-Ads-SDK',    '9.3.0'
