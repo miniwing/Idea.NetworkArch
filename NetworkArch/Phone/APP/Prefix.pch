@@ -442,14 +442,34 @@ typedef FBLPromise Promise;
 
 /****************************************************************************/
 
+#if __has_include(<FBAudienceNetwork/FBAudienceNetwork.h>)
+#import <FBAudienceNetwork/FBAudienceNetwork.h>
+#  define ADS_AUDIENCE_NETWORK                                             (1)
+#elif __has_include("FBAudienceNetwork/FBAudienceNetwork.h")
+#  import "FBAudienceNetwork/FBAudienceNetwork.h"
+#  define ADS_AUDIENCE_NETWORK                                             (1)
+#else
+#  define ADS_AUDIENCE_NETWORK                                             (0)
+#endif
+
+#if __has_include(<FacebookAdapter/FacebookAdapter.h>)
+#  import <FacebookAdapter/FacebookAdapter.h>
+#  define ADS_FACEBOOK_ADAPTER                                             (1)
+#elif __has_include("FacebookAdapter/FacebookAdapter.h")
+#  import "FacebookAdapter/FacebookAdapter.h"
+#  define ADS_FACEBOOK_ADAPTER                                             (1)
+#else
+#  define ADS_FACEBOOK_ADAPTER                                             (0)
+#endif
+
 #if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
 #  import <GoogleMobileAds/GoogleMobileAds.h>
-#  define GOOGLE_MOBILE_ADS                                          (1)
+#  define ADS_GOOGLE_MOBILE                                                (1)
 #elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
 #  import "GoogleMobileAds/GoogleMobileAds.h"
-#  define GOOGLE_MOBILE_ADS                                          (1)
+#  define ADS_GOOGLE_MOBILE                                                (1)
 #else
-#  define GOOGLE_MOBILE_ADS                                          (0)
+#  define ADS_GOOGLE_MOBILE                                                (0)
 #endif
 
 /****************************************************************************/

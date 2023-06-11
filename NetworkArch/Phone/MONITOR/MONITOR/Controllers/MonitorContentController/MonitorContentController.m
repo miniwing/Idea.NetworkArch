@@ -87,10 +87,10 @@
    
    int                            nErr                                     = EFAULT;
    
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
    NSDictionary                  *stAdUnitIDs                              = nil;
    NSString                      *szAdUnitID                               = nil;
-#endif /* GOOGLE_MOBILE_ADS */
+#endif /* ADS_GOOGLE_MOBILE */
    
    NSArray<NSString *>           *stIconImages                             = nil;
    
@@ -338,7 +338,7 @@
    /**
     * ADs
     */
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
    stAdUnitIDs = [AD admobs];
    LogDebug((@"-[MonitorContentController viewDidLoad] : AdUnitIDs : %@", stAdUnitIDs));
    
@@ -369,7 +369,7 @@
    
    [self postSignal:MonitorContentController.loadADSignal
             onQueue:DISPATCH_GET_MAIN_QUEUE()];
-#endif /* GOOGLE_MOBILE_ADS */
+#endif /* ADS_GOOGLE_MOBILE */
    
    [self.bannerView setHidden:YES];
    

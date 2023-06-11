@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
 
 //@interface APPDelegate (Admob)
 //
@@ -19,6 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 //
 //@end
 
-#endif /* GOOGLE_MOBILE_ADS */
+#endif /* ADS_GOOGLE_MOBILE */
 
 NS_ASSUME_NONNULL_END

@@ -46,11 +46,9 @@ ENV['IDEA_ROOT_NAVIGATION_CONTROLLER']    = 'NO'
 ENV['OpenSSL']                            = 'NO'
 ENV['SSZipArchive']                       = 'NO'
 
-ENV['GOOGLE_MOBILE_ADS']                  = 'YES'
-ENV['FACEBOOK_AUDIENCE_NETWORK']          = 'YES'
-
-#ENV['XCODE_VERSION']                      = '12.4'
-#ENV['XCODE_VERSION']                      = '14.+'
+ENV['ADS_GOOGLE_MOBILE']                  = 'YES'
+ENV['ADS_AUDIENCE_NETWORK']               = 'YES'
+ENV['ADS_GOOGLE_MEDIATION_FACEBOOK']      = 'YES'
 
 ENV['ios.deployment_target']              = '12.0'
 ENV['watchos.deployment_target']          = '4.3'
@@ -59,7 +57,10 @@ ENV['tvos.deployment_target']             = '12.0'
 
 ENV['Debug.Keyboard']                     = 'NO'
 ENV['IDEA_APPLET_DEBUG']                  = 'YES'
+
 #ENV['IM_HOST']                            = 'T450'
+#ENV['XCODE_VERSION']                      = '12.4'
+#ENV['XCODE_VERSION']                      = '14.+'
 
 ###################################################################################################################################
 
@@ -237,23 +238,31 @@ target 'NetworkArch' do
 #  pod 'GoogleAnalytics'
 #  pod 'Firebase'
 
-  if ENV['FACEBOOK_AUDIENCE_NETWORK'] == 'YES'
+  if ENV['ADS_AUDIENCE_NETWORK'] == 'YES'
     if ENV['XCODE_VERSION'] == '12.4'
-      pod 'FBAudienceNetwork',        '6.5.0'
+      pod 'FBAudienceNetwork',                '6.10.0'
     else
       pod 'FBAudienceNetwork'
     end
-    pod 'GoogleMobileAdsMediationFacebook'
-  end # FACEBOOK_AUDIENCE_NETWORK
+  end # ADS_AUDIENCE_NETWORK
 
-  if ENV['GOOGLE_MOBILE_ADS'] == 'YES'
+  if ENV['ADS_GOOGLE_MOBILE'] == 'YES'
     if ENV['XCODE_VERSION'] == '12.4'
-      pod 'Google-Mobile-Ads-SDK',    '9.3.0'
+#      pod 'Google-Mobile-Ads-SDK',            '9.3.0'
+      pod 'Google-Mobile-Ads-SDK',            '9.3.0'
     else
       pod 'Google-Mobile-Ads-SDK'
     end
-#    pod 'GoogleMobileAdsMediationFacebook'
-  end # GOOGLE_MOBILE_ADS
+  end # ADS_GOOGLE_MOBILE
+
+  if ENV['ADS_GOOGLE_MEDIATION_FACEBOOK'] == 'YES'
+    if ENV['XCODE_VERSION'] == '12.4'
+      pod 'GoogleMobileAdsMediationFacebook', '6.10.0.0'
+    else
+      pod 'GoogleMobileAdsMediationFacebook'
+    end
+  end # ADS_GOOGLE_MEDIATION_FACEBOOK
+
   #-------------------------------------------------------------------------------------------------------------------------------#
 
   library

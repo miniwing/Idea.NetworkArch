@@ -59,10 +59,10 @@
    
    int                            nErr                                     = EFAULT;
 
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
    NSDictionary                  *stAdUnitIDs                              = nil;
    NSString                      *szAdUnitID                               = nil;
-#endif /* GOOGLE_MOBILE_ADS */
+#endif /* ADS_GOOGLE_MOBILE */
 
    __TRY;
    
@@ -239,7 +239,7 @@
    /**
     * 广告
     */
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
    stAdUnitIDs = [AD admobs];
    LogDebug((@"-[WhoisController viewDidLoad] : AdUnitIDs : %@", stAdUnitIDs));
    
@@ -272,7 +272,7 @@
    
    [self postSignal:WhoisController.loadADSignal
             onQueue:DISPATCH_GET_MAIN_QUEUE()];
-#endif /* GOOGLE_MOBILE_ADS */
+#endif /* ADS_GOOGLE_MOBILE */
 
    __CATCH(nErr);
    

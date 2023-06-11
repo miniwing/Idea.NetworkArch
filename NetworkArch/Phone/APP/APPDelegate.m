@@ -184,7 +184,7 @@
 
    /******************************************************************************************/
 
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
    [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
    
 #if ADMOB_TEST_DEVICE
@@ -208,7 +208,7 @@
 
    [AppOpenAdManager setDelegate:self];
    [AppOpenAdManager loadAd];
-#endif /* GOOGLE_MOBILE_ADS */
+#endif /* ADS_GOOGLE_MOBILE */
 
    /******************************************************************************************/
 
@@ -355,9 +355,9 @@
    
    NSTimeInterval                 dLastTime                                = 0.0f;
    
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
    UIViewController              *stRootController                         = nil;
-#endif /* GOOGLE_MOBILE_ADS */
+#endif /* ADS_GOOGLE_MOBILE */
    
    __TRY;
    
@@ -370,7 +370,7 @@
    
    dLastTime   = [SettingProvider activeTime];
    
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
    stRootController = self.window.rootViewController;
    LogDebug((@"-[APPDelegate applicationDidBecomeActive:] : RootController : %@", stRootController));
    
@@ -388,7 +388,7 @@
       } /* End if () */
       
    } /* End else */
-#endif /* GOOGLE_MOBILE_ADS */
+#endif /* ADS_GOOGLE_MOBILE */
    
    [SettingProvider setActiveTime:[NSDate date].timeIntervalSince1970];
    self.applicationState   = UIApplicationStateActive;
@@ -545,11 +545,11 @@
 
    /******************************************************************************************/
 
-//#if GOOGLE_MOBILE_ADS
+//#if ADS_GOOGLE_MOBILE
 //   UI_PERFORM_SELECTOR(self, @selector(showAD), nil, NO);
-//#else /* GOOGLE_MOBILE_ADS */
+//#else /* ADS_GOOGLE_MOBILE */
 //   UI_PERFORM_SELECTOR(self, @selector(splashing), nil, NO);
-//#endif /* !GOOGLE_MOBILE_ADS */
+//#endif /* !ADS_GOOGLE_MOBILE */
 
    /**
     * 冷启动时不显示开屏广告
@@ -561,7 +561,7 @@
    return;
 }
 
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
 - (void)showAD {
 
    int                            nErr                                     = EFAULT;
@@ -611,7 +611,7 @@
    return;
 }
 
-#endif /* GOOGLE_MOBILE_ADS */
+#endif /* ADS_GOOGLE_MOBILE */
 
 // 如果sleep，必需是非UI线程。
 - (void)splashing {

@@ -17,10 +17,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APPDelegate () <UIApplicationDelegate
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
 , GADFullScreenContentDelegate
 , AppOpenAdManagerDelegate
-#endif /* GOOGLE_MOBILE_ADS */
+#endif /* ADS_GOOGLE_MOBILE */
 >
 
 @property (nonatomic, strong)                RootViewController                  * rootViewController;

@@ -10,7 +10,7 @@
 #import "APPDelegate+Inner.h"
 #import "APPDelegate+Signal.h"
 
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
 
 //@implementation APPDelegate (Admob)
 //
@@ -112,4 +112,4 @@
 //
 //@end
 
-#endif /* GOOGLE_MOBILE_ADS */
+#endif /* ADS_GOOGLE_MOBILE */

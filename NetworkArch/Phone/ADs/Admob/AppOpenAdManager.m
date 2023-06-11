@@ -18,7 +18,7 @@
 
 #import "AppOpenAdManager.h"
 
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
 /// Ad references in the app open beta will time out after four hours, but this time limit
 /// may change in future beta versions. For details, see:
 /// https://support.google.com/admanager/answer/9351867?hl=en
@@ -344,10 +344,10 @@ static const NSInteger  TimeoutInterval      = 4;
 
 @end
 
-#else /* GOOGLE_MOBILE_ADS */
+#else /* ADS_GOOGLE_MOBILE */
 
 @implementation GADBannerView
 
 @end
 
-#endif /* !GOOGLE_MOBILE_ADS */
+#endif /* !ADS_GOOGLE_MOBILE */

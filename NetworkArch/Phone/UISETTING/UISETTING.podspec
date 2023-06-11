@@ -77,6 +77,30 @@ Pod::Spec.new do |spec|
   spec.dependency 'MBProgressHUD'
 #  spec.dependency 'SSZipArchive'
 
+  if ENV['ADS_AUDIENCE_NETWORK'] == 'YES'
+    if ENV['XCODE_VERSION'] == '12.4'
+      spec.dependency 'FBAudienceNetwork',                '6.10.0'
+    else
+      spec.dependency 'FBAudienceNetwork'
+    end
+  end # ADS_AUDIENCE_NETWORK
+
+  if ENV['ADS_GOOGLE_MOBILE'] == 'YES'
+    if ENV['XCODE_VERSION'] == '12.4'
+      spec.dependency 'Google-Mobile-Ads-SDK',            '9.3.0'
+      else
+      spec.dependency 'Google-Mobile-Ads-SDK'
+    end
+  end # ADS_GOOGLE_MOBILE
+
+  if ENV['ADS_GOOGLE_MEDIATION_FACEBOOK'] == 'YES'
+    if ENV['XCODE_VERSION'] == '12.4'
+      spec.dependency 'GoogleMobileAdsMediationFacebook', '6.10.0.0'
+    else
+      spec.dependency 'GoogleMobileAdsMediationFacebook'
+    end
+  end # ADS_GOOGLE_MEDIATION_FACEBOOK
+
   spec.dependency 'IDEAKit'
   spec.dependency 'IDEAUIKit'
   spec.dependency 'IDEAUIVendor'
@@ -344,12 +368,12 @@ Pod::Spec.new do |spec|
 
 #  if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
 #     import <GoogleMobileAds/GoogleMobileAds.h>
-#     define GOOGLE_MOBILE_ADS                                             (1)
+#     define ADS_GOOGLE_MOBILE                                             (1)
 #  elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
 #     import "GoogleMobileAds/GoogleMobileAds.h"
-#     define GOOGLE_MOBILE_ADS                                             (1)
+#     define ADS_GOOGLE_MOBILE                                             (1)
 #  else
-#     define GOOGLE_MOBILE_ADS                                             (0)
+#     define ADS_GOOGLE_MOBILE                                             (0)
 #  endif
 
 #endif /* __OBJC__ */
@@ -826,6 +850,38 @@ NS_INLINE NSString * __APP_VERSION() {
 NS_INLINE NSString * __APP_BUILD_VERSION() {
    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
 }
+
+/******************************************************************************************************/
+
+#if __has_include(<FBAudienceNetwork/FBAudienceNetwork.h>)
+#import <FBAudienceNetwork/FBAudienceNetwork.h>
+#  define ADS_AUDIENCE_NETWORK                                             (1)
+#elif __has_include("FBAudienceNetwork/FBAudienceNetwork.h")
+#  import "FBAudienceNetwork/FBAudienceNetwork.h"
+#  define ADS_AUDIENCE_NETWORK                                             (1)
+#else
+#  define ADS_AUDIENCE_NETWORK                                             (0)
+#endif
+
+#if __has_include(<FacebookAdapter/FacebookAdapter.h>)
+#  import <FacebookAdapter/FacebookAdapter.h>
+#  define ADS_FACEBOOK_ADAPTER                                             (1)
+#elif __has_include("FacebookAdapter/FacebookAdapter.h")
+#  import "FacebookAdapter/FacebookAdapter.h"
+#  define ADS_FACEBOOK_ADAPTER                                             (1)
+#else
+#  define ADS_FACEBOOK_ADAPTER                                             (0)
+#endif
+
+#if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
+#  import <GoogleMobileAds/GoogleMobileAds.h>
+#  define ADS_GOOGLE_MOBILE                                                (1)
+#elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
+#  import "GoogleMobileAds/GoogleMobileAds.h"
+#  define ADS_GOOGLE_MOBILE                                                (1)
+#else
+#  define ADS_GOOGLE_MOBILE                                                (0)
+#endif
 
 /******************************************************************************************************/
 

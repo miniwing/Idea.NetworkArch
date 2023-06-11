@@ -19,25 +19,25 @@
 
 #if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
 #  import <GoogleMobileAds/GoogleMobileAds.h>
-#  ifndef GOOGLE_MOBILE_ADS
-#     define GOOGLE_MOBILE_ADS                                       (1)
-#  endif /* GOOGLE_MOBILE_ADS */
+#  ifndef ADS_GOOGLE_MOBILE
+#     define ADS_GOOGLE_MOBILE                                       (1)
+#  endif /* ADS_GOOGLE_MOBILE */
 #elif __has_include("GoogleMobileAds/GoogleMobileAds.h")
 #  import "GoogleMobileAds/GoogleMobileAds.h"
-#  ifndef GOOGLE_MOBILE_ADS
-#     define GOOGLE_MOBILE_ADS                                       (1)
-#  endif /* GOOGLE_MOBILE_ADS */
+#  ifndef ADS_GOOGLE_MOBILE
+#     define ADS_GOOGLE_MOBILE                                       (1)
+#  endif /* ADS_GOOGLE_MOBILE */
 #else
-#  ifndef GOOGLE_MOBILE_ADS
-#     define GOOGLE_MOBILE_ADS                                       (0)
-#  endif /* GOOGLE_MOBILE_ADS */
+#  ifndef ADS_GOOGLE_MOBILE
+#     define ADS_GOOGLE_MOBILE                                       (0)
+#  endif /* ADS_GOOGLE_MOBILE */
 #endif
 
 #define ADMOB_TEST_DEVICE                                            (__Debug__)
 
 #import <ADs/AD.h>
 
-#if GOOGLE_MOBILE_ADS
+#if ADS_GOOGLE_MOBILE
 
 @protocol AppOpenAdManagerDelegate <NSObject>
 
@@ -67,10 +67,10 @@
 
 @end
 
-#else /* GOOGLE_MOBILE_ADS */
+#else /* ADS_GOOGLE_MOBILE */
 
 @interface GADBannerView : UIView
 
 @end
 
-#endif /* !GOOGLE_MOBILE_ADS */
+#endif /* !ADS_GOOGLE_MOBILE */
