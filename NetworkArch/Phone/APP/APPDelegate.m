@@ -482,6 +482,25 @@
     return bDone;
  }
 
+- (BOOL)application:(UIApplication *)aApplication shouldAllowExtensionPointIdentifier:(NSString *)aExtensionPointIdentifier {
+   
+   if (@available(iOS 17.0, *)) {
+      
+      
+   } /* End if () */
+   else if (@available(iOS 16.0, *)) {
+         
+      if ([aExtensionPointIdentifier isEqualToString:@"com.apple.keyboard-service"]) {
+         
+         return NO;
+         
+      } /* End if () */
+
+   } /* End if () */
+      
+   return YES;
+}
+
 #pragma mark - Splash
 - (void)splash {
    
