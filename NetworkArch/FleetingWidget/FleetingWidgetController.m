@@ -64,7 +64,7 @@
    [[NSRunLoop currentRunLoop] addTimer:self.timer
                                 forMode:NSDefaultRunLoopMode];
    
-   [self.copyrightLabel setText:@"Copyright © 2021-2022 Harry. All rights reserved."];
+   [self.copyrightLabel setText:@"Copyright © 2021-2023 MINIWING. All rights reserved."];
    [self.copyrightLabel setFont:[UIFont systemFontOfSize:self.copyrightLabel.font.pointSize weight:UIFontWeightLight]];
 
    if (@available(iOS 13.0, *)) {
