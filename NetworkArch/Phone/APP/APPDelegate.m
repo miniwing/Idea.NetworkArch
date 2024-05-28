@@ -77,6 +77,7 @@
 #if APP_RATER
       [Appirater rateApp];
 #endif /* APP_RATER */
+      
       return;
    });
    
