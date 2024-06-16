@@ -151,7 +151,6 @@ static const NSInteger  TimeoutInterval      = 4;
    
    [GADAppOpenAd loadWithAdUnitID:szAdUnitID
                           request:[GADRequest request]
-                      orientation:UIInterfaceOrientationPortrait
                 completionHandler:^(GADAppOpenAd * _Nullable aOpenAd, NSError * _Nullable aError) {
       
       self.isLoadingAd = NO;
@@ -174,6 +173,32 @@ static const NSInteger  TimeoutInterval      = 4;
       
       return;
    }];
+
+//   [GADAppOpenAd loadWithAdUnitID:szAdUnitID
+//                          request:[GADRequest request]
+//                      orientation:UIInterfaceOrientationPortrait
+//                completionHandler:^(GADAppOpenAd * _Nullable aOpenAd, NSError * _Nullable aError) {
+//      
+//      self.isLoadingAd = NO;
+//      
+//      if (aError) {
+//         
+//         self.appOpenAd = nil;
+//         self.loadTime  = nil;
+//         
+//         LogError((@"-[AppOpenAdManager loadAd] : App open ad failed to load with error: %@.", aError));
+//         
+//         return;
+//      }
+//      
+//      self.appOpenAd = aOpenAd;
+//      self.appOpenAd.fullScreenContentDelegate = self;
+//      self.loadTime  = [NSDate date];
+//      
+//      LogDebug((@"-[AppOpenAdManager loadAd] : App open ad loaded successfully. : %@", [NSDate date]));
+//      
+//      return;
+//   }];
    
    __CATCH(nErr);
    
@@ -346,8 +371,8 @@ static const NSInteger  TimeoutInterval      = 4;
 
 #else /* ADS_GOOGLE_MOBILE */
 
-@implementation GADBannerView
-
-@end
+//@implementation GADBannerView
+//
+//@end
 
 #endif /* !ADS_GOOGLE_MOBILE */

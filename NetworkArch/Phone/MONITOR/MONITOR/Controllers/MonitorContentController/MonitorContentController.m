@@ -179,10 +179,9 @@
    [self.batteryProgressView setTrackTintColorPicker:DKColorPickerWithKey([IDEAColor lightGray])];
    [self.batteryProgressView setProgressTintColor:UIColorX.systemYellowColor];
    
-#if TARGET_IPHONE_SIMULATOR
-   [self.batteryProgressView setProgress:0.0 animated:NO];
-#endif /* TARGET_IPHONE_SIMULATOR */
-   
+   [self.batteryStateLabel setText:[NSString stringWithFormat:@"%d%%", (int)(SERVICE(IMonitorService).batteryLevel * 100)]];
+   [self.batteryProgressView setProgress:SERVICE(IMonitorService).batteryLevel animated:NO];
+
    /**
     * 网络
     */

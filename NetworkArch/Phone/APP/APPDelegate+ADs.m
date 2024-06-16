@@ -12,8 +12,8 @@
 
 #if ADS_GOOGLE_MOBILE
 
-//@implementation APPDelegate (Admob)
-//
+@implementation APPDelegate (Admob)
+
 //- (void)requestAppOpenAd {
 //   
 //   int                            nErr                                     = EFAULT;
@@ -109,7 +109,7 @@
 //   
 //   return;
 //}
-//
-//@end
+
+@end
 
 #endif /* ADS_GOOGLE_MOBILE */

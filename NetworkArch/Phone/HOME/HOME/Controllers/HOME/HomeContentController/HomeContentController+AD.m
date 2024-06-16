@@ -23,15 +23,17 @@
    
    int                            nErr                                     = EFAULT;
    
+#if ADS_GOOGLE_MOBILE
    GADRequest                    *stGADRequest                             = nil;
    
    __TRY;
-
+   
    stGADRequest   = [GADRequest request];
-      
+   
    [self.gadBannerView loadRequest:stGADRequest];
-
+   
    __CATCH(nErr);
+#endif /* ADS_GOOGLE_MOBILE */
    
    return;
 }
@@ -42,40 +44,40 @@
 - (void)bannerViewDidReceiveAd:(nonnull GADBannerView *)aBannerView {
    
    int                            nErr                                     = EFAULT;
-      
+   
    __TRY;
    
-//   [self.bannerView setHidden:NO animated:NO];
-
-//   [UIView animateWithDuration:[UIView animationDefaultDuration]
-//                    animations:^{
-//
-//      [self.bannerViewHeight setConstant:GADAdSizeHeight];
-//      [self.bannerView updateConstraintsIfNeeded];
-//      [self.view layoutIfNeeded];
-//   }
-//                    completion:^(BOOL finished) {
-//   }];
+   //   [self.bannerView setHidden:NO animated:NO];
    
-//   [UIView animateWithDuration:[UIView animationDefaultDuration]
-//                         delay:0
-//                       options:UIViewAnimationOptionTransitionCrossDissolve
-//                    animations:^{
-//      [self.bannerViewHeight setConstant:GADAdSizeHeight];
-////      [self.bannerView updateConstraintsIfNeeded];
-//      [self.view layoutIfNeeded];
-//   }
-//                    completion:nil];
-
+   //   [UIView animateWithDuration:[UIView animationDefaultDuration]
+   //                    animations:^{
+   //
+   //      [self.bannerViewHeight setConstant:GADAdSizeHeight];
+   //      [self.bannerView updateConstraintsIfNeeded];
+   //      [self.view layoutIfNeeded];
+   //   }
+   //                    completion:^(BOOL finished) {
+   //   }];
+   
+   //   [UIView animateWithDuration:[UIView animationDefaultDuration]
+   //                         delay:0
+   //                       options:UIViewAnimationOptionTransitionCrossDissolve
+   //                    animations:^{
+   //      [self.bannerViewHeight setConstant:GADAdSizeHeight];
+   ////      [self.bannerView updateConstraintsIfNeeded];
+   //      [self.view layoutIfNeeded];
+   //   }
+   //                    completion:nil];
+   
    [UIView transitionWithView:self.tableView
                      duration:[UIView animationDefaultDuration]
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
-
+      
       [self.tableView setTableHeaderView:self.bannerView];
    }
                    completion:nil];
-      
+   
    __CATCH(nErr);
    
    return;
@@ -86,18 +88,18 @@
 - (void)bannerView:(nonnull GADBannerView *)aBannerView didFailToReceiveAdWithError:(nonnull NSError *)aError {
    
    int                            nErr                                     = EFAULT;
-      
+   
    __TRY;
-
+   
    [UIView transitionWithView:self.tableView
                      duration:[UIView animationDefaultDuration]
                       options:UIViewAnimationOptionTransitionCrossDissolve
                    animations:^{
-
+      
       [self.tableView setTableHeaderView:nil];
    }
                    completion:nil];
-
+   
    __CATCH(nErr);
    
    return;
@@ -107,9 +109,9 @@
 - (void)bannerViewDidRecordImpression:(nonnull GADBannerView *)aBannerView {
    
    int                            nErr                                     = EFAULT;
-      
+   
    __TRY;
-
+   
    __CATCH(nErr);
    
    return;
@@ -119,9 +121,9 @@
 - (void)bannerViewDidRecordClick:(nonnull GADBannerView *)aBannerView {
    
    int                            nErr                                     = EFAULT;
-      
+   
    __TRY;
-
+   
    __CATCH(nErr);
    
    return;
@@ -134,9 +136,9 @@
 - (void)bannerViewWillPresentScreen:(nonnull GADBannerView *)aBannerView {
    
    int                            nErr                                     = EFAULT;
-      
+   
    __TRY;
-
+   
    __CATCH(nErr);
    
    return;
@@ -146,9 +148,9 @@
 - (void)bannerViewWillDismissScreen:(nonnull GADBannerView *)aBannerView {
    
    int                            nErr                                     = EFAULT;
-      
+   
    __TRY;
-
+   
    __CATCH(nErr);
    
    return;
@@ -159,25 +161,27 @@
 - (void)bannerViewDidDismissScreen:(nonnull GADBannerView *)aBannerView {
    
    int                            nErr                                     = EFAULT;
-      
+   
    __TRY;
-
+   
    __CATCH(nErr);
    
    return;
 }
 
 #pragma mark - GADAdSizeDelegate
+#if ADS_GOOGLE_MOBILE
 /// Called before the ad view changes to the new size.
 - (void)adView:(nonnull GADBannerView *)aBannerView willChangeAdSizeTo:(GADAdSize)aSize {
    
    int                            nErr                                     = EFAULT;
-      
+   
    __TRY;
-
+   
    __CATCH(nErr);
    
    return;
 }
+#endif /* ADS_GOOGLE_MOBILE */
 
 @end

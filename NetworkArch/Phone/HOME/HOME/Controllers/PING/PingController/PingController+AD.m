@@ -20,6 +20,7 @@
    
    int                            nErr                                     = EFAULT;
    
+#if ADS_GOOGLE_MOBILE
    GADRequest                    *stGADRequest                             = nil;
    
    __TRY;
@@ -29,7 +30,8 @@
    [self.gadBannerView loadRequest:stGADRequest];
 
    __CATCH(nErr);
-   
+#endif /* ADS_GOOGLE_MOBILE */
+
    return;
 }
 
@@ -151,6 +153,7 @@
 }
 
 #pragma mark - GADAdSizeDelegate
+#if ADS_GOOGLE_MOBILE
 /// Called before the ad view changes to the new size.
 - (void)adView:(nonnull GADBannerView *)aBannerView willChangeAdSizeTo:(GADAdSize)aSize {
    
@@ -162,5 +165,6 @@
    
    return;
 }
+#endif /* ADS_GOOGLE_MOBILE */
 
 @end

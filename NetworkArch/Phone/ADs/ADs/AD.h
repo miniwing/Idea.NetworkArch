@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define ADMOB_TEST_DEVICE                                            (__Debug__)
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AD : NSObject

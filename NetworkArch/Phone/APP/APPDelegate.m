@@ -176,10 +176,12 @@
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IDFA : %@", [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IDFV : %@", UIDevice.currentDevice.identifierForVendor.UUIDString));
 
+#  if ADS_GOOGLE_MOBILE
    GADAdSize   stAdSize = GADAdSizeBanner;
 
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : GADSimulatorID : %@", GADSimulatorID));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : GADAdSizeBanner : (%.2f, %.2f)", stAdSize.size.width, stAdSize.size.height));
+#endif /* ADS_GOOGLE_MOBILE */
 
 #endif /* __Debug__ */
 
@@ -188,12 +190,12 @@
 #if ADS_GOOGLE_MOBILE
    [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
    
-#if ADMOB_TEST_DEVICE
+#  if ADMOB_TEST_DEVICE
    NSMutableArray   *stTestDevices = [NSMutableArray array];
    
-#  if TARGET_OS_SIMULATOR
+#     if TARGET_OS_SIMULATOR
    [stTestDevices addObject:GADSimulatorID];
-#  endif /* TARGET_OS_SIMULATOR */
+#     endif /* TARGET_OS_SIMULATOR */
 
 //   [stTestDevices addObject:@"d843fe76c85abf1f5ca02c98904f81bf"]; // Harry's iPhone 5s
 //   [stTestDevices addObject:@"09b9c6760653656e703bd450c3385513"]; // ROM's iPhone 5s
@@ -205,7 +207,7 @@
    [stTestDevices addObject:@"bc7bde38feef1e59c9d73072448d9126"]; // Harry's iPhone 6s+
 
    [GADMobileAds sharedInstance].requestConfiguration.testDeviceIdentifiers = stTestDevices;
-#endif /* ADMOB_TEST_DEVICE */
+#  endif /* ADMOB_TEST_DEVICE */
 
    [AppOpenAdManager setDelegate:self];
    [AppOpenAdManager loadAd];

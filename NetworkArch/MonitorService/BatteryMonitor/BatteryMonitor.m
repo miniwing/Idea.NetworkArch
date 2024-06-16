@@ -52,7 +52,7 @@
    self  = [super init];
    
    if (self) {
-
+      
       // 开启监控
       [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
 

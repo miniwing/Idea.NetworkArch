@@ -92,7 +92,8 @@
    
 #if TARGET_IPHONE_SIMULATOR
    [self.batteryStateLabel setText:[NSString stringWithFormat:@"%d%%", 100]];
-   [self.batteryProgressView setProgress:1 animated:NO];
+   [self.batteryProgressView setProgress:1.0f animated:NO];
+   [self.batteryProgressView setProgressTintColor:UIColorX.systemGreenColor];
 #endif /* TARGET_IPHONE_SIMULATOR */
 
    __CATCH(nErr);

@@ -18,14 +18,14 @@
 
 #import "StartUp.h"
 
-static __attribute__((constructor)) void __constructor() {
+static __attribute__((constructor)) void __constructor(void) {
    
    LogDebug((@"StartUp::__constructor"));
    
    return;
 }
 
-static __attribute__((destructor)) void __destructor() {
+static __attribute__((destructor)) void __destructor(void) {
 
    LogDebug((@"StartUp::__destructor"));
 
@@ -50,7 +50,7 @@ static __attribute__((destructor)) void __destructor() {
 
 static dispatch_once_t   onceToken;
 
-NS_INLINE void __init() {
+NS_INLINE void __init(void) {
    
    LogDebug((@"StartUp::__init"));
 

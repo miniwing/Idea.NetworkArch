@@ -51,16 +51,15 @@ ENV['ADS_AUDIENCE_NETWORK']               = 'YES'
 ENV['ADS_GOOGLE_MEDIATION_FACEBOOK']      = 'YES'
 
 ENV['ios.deployment_target']              = '12.0'
-ENV['watchos.deployment_target']          = '4.3'
-ENV['osx.deployment_target']              = '10.15'
+ENV['watchos.deployment_target']          = '5.0'
 ENV['tvos.deployment_target']             = '12.0'
+ENV['osx.deployment_target']              = '10.15'
 
 ENV['Debug.Keyboard']                     = 'NO'
 ENV['IDEA_APPLET_DEBUG']                  = 'YES'
 
 #ENV['IM_HOST']                            = 'T450'
-#ENV['XCODE_VERSION']                      = '12.4'
-#ENV['XCODE_VERSION']                      = '14.+'
+ENV['XCODE_VERSION']                      = '15.+'
 
 ###################################################################################################################################
 
@@ -225,7 +224,7 @@ target 'NetworkArch' do
   pod 'HOME',               :path => 'NetworkArch/Phone/HOME'
   pod 'MONITOR',            :path => 'NetworkArch/Phone/MONITOR'
   #-------------------------------------------------------------------------------------------------------------------------------#
-  pod 'Reveal-SDK', '~> 24' ,                                               :configurations => ['Debug']
+  pod 'Reveal-SDK', '~> 41' ,                                               :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
   pod 'Appirater'
 #  pod 'Aspects'
@@ -299,7 +298,7 @@ target 'TodayWidget' do
   pod 'ImageProvider',      :path => 'NetworkArch/ImageProvider'
 
   #-------------------------------------------------------------------------------------------------------------------------------#
-  pod 'Reveal-SDK', '~> 24' ,                                               :configurations => ['Debug']
+  pod 'Reveal-SDK', '~> 41' ,                                               :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
 
   library
@@ -338,7 +337,7 @@ end
 target 'FleetingWidget' do
 
   #-------------------------------------------------------------------------------------------------------------------------------#
-  pod 'Reveal-SDK', '~> 24' ,                                               :configurations => ['Debug']
+  pod 'Reveal-SDK', '~> 41' ,                                               :configurations => ['Debug']
   #-------------------------------------------------------------------------------------------------------------------------------#
 
   library
@@ -435,8 +434,9 @@ post_install do |installer|
                                                                           '-Wno-nullability-completeness',
                                                                           '-Wno-nullability-completeness-on-arrays'
                                                                         ]
-      config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS']          = 'NO'
-      
+      config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS']      = 'NO'
+      config.build_settings['ENABLE_USER_SCRIPT_SANDBOXING']          = 'NO'
+
       config.build_settings['MACOSX_DEPLOYMENT_TARGET']               = ENV['osx.deployment_target']
       config.build_settings['TVOS_DEPLOYMENT_TARGET']                 = ENV['tvos.deployment_target']
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']             = ENV['ios.deployment_target']

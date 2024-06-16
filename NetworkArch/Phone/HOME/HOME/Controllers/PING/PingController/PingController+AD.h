@@ -13,7 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 #define GADAdSizeHeight                            (60)
 
-@interface PingController (AD) <GADBannerViewDelegate, GADAdSizeDelegate>
+@interface PingController (AD)
+#if ADS_GOOGLE_MOBILE
+<GADBannerViewDelegate, GADAdSizeDelegate>
+#endif /* ADS_GOOGLE_MOBILE */
 
 - (void)loadAd;
 

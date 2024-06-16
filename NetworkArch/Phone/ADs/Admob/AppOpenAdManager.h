@@ -14,9 +14,6 @@
 //  limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
 #if __has_include(<GoogleMobileAds/GoogleMobileAds.h>)
 #  import <GoogleMobileAds/GoogleMobileAds.h>
 #  ifndef ADS_GOOGLE_MOBILE
@@ -33,7 +30,8 @@
 #  endif /* ADS_GOOGLE_MOBILE */
 #endif
 
-#define ADMOB_TEST_DEVICE                                            (__Debug__)
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #import <ADs/AD.h>
 
@@ -69,8 +67,8 @@
 
 #else /* ADS_GOOGLE_MOBILE */
 
-@interface GADBannerView : UIView
-
-@end
+//@interface GADBannerView : UIView
+//
+//@end
 
 #endif /* !ADS_GOOGLE_MOBILE */
