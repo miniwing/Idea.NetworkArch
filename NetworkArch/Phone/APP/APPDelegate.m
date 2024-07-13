@@ -39,7 +39,7 @@
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : documentsPath   : %@", [UIApplication sharedApplication].documentsPath));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : identifierGroup : %@", [IDEAIdentifier identifierGroup]));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : pathGroup       : %@", [UIApplication groupPath:[IDEAIdentifier identifierGroup]]));
-      
+   
 #if AF_NETWORKING
    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 #endif /* AF_NETWORKING */
@@ -57,23 +57,23 @@
    
    /******************************************************************************************/
    
-   //   self.onNotification(IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE ), ^(NSNotification *aNotification) {
-   //
-   //      [APPDelegate setTabbarAnimation:[aNotification.object boolValue]];
-   //   });
-   //   [self observeNotification:SettingController.tabAnimationNotification];
+//   self.onNotification(IDEA_MAKE_NOTIFICATION( Setting, TABBAR, ANIMATE ), ^(NSNotification *aNotification) {
+//
+//      [APPDelegate setTabbarAnimation:[aNotification.object boolValue]];
+//   });
+//   [self observeNotification:SettingController.tabAnimationNotification];
    /******************************************************************************************/
    /**
     监听网络状态
     */
-//   @weakify(self);
+   //   @weakify(self);
    self.onNotification(SettingProvider.appRateOnStoreNotification, ^(NSNotification *aNotification) {
-
+      
 //      @strongify(self);
       
       LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : strongify : %@", self));
       LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : appRateOnStore : %@", aNotification));
-
+      
 #if APP_RATER
       [Appirater rateApp];
 #endif /* APP_RATER */
@@ -89,8 +89,8 @@
 //                                   CFSTR("com.apple.springboard.lockcomplete"), // event name
 //                                   NULL, // object
 //                                   CFNotificationSuspensionBehaviorDeliverImmediately);
-//   
-//   
+//
+//
 //   CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), //center
 //                                   NULL, // observer
 //                                   displayStatusChanged,
@@ -102,12 +102,12 @@
    
 #if __InjectionIII__
    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
-   //   // or switf
-   //   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
-   //   // for tvOS:
-   //   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle")?.load()
-   //   // Or for macOS:
-   //   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle")?.load()
+//   // or swift
+//   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
+//   // for tvOS:
+//   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle")?.load()
+//   // Or for macOS:
+//   Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle")?.load()
 #endif /* __InjectionIII__ */
    
 #if __Debug__
@@ -116,77 +116,77 @@
    // 动态注册字体
    
    LogDebug((@"---------------------------------------------------------------------------------------------------"));
-
+   
    for (NSString *szFamilyName = nil in [UIFont familyNames]) {
       
       LogDebug((@"family:'%@'", szFamilyName));
       
-      //      for(NSString *szName in [UIFont fontNamesForFamilyName:szFamilyName]) {
-      //
-      //         LogDebug((@"\tfont:'%@'",szName));
-      //
-      //      } /* End for () */
+//      for(NSString *szName in [UIFont fontNamesForFamilyName:szFamilyName]) {
+//
+//         LogDebug((@"\tfont:'%@'",szName));
+//
+//      } /* End for () */
       
    } /* End for () */
    
    LogDebug((@"---------------------------------------------------------------------------------------------------"));
-
+   
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : [IDEAIdentifier scheme] : %@", [IDEAIdentifier scheme]));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : [IDEAIdentifier schemePrefix] : %@", [IDEAIdentifier schemePrefix]));
    
    LogDebug((@"---------------------------------------------------------------------------------------------------"));
-
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"www.baidu.com") isEmail] ? @"YES" : @"NO"));
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"xxx.xxx@gmail.com") isEmail] ? @"YES" : @"NO"));
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"xxx@baidu.com") isEmail] ? @"YES" : @"NO"));
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"xxx.@baidu.com") isEmail] ? @"YES" : @"NO"));
-//
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.2.22") isIPAddress] ? @"YES" : @"NO"));
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.2") isIPAddress] ? @"YES" : @"NO"));
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.2.2222") isIPAddress] ? @"YES" : @"NO"));
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.2.256") isIPAddress] ? @"YES" : @"NO"));
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.256.254") isIPAddress] ? @"YES" : @"NO"));
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.256.168.254") isIPAddress] ? @"YES" : @"NO"));
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"256.192.168.254") isIPAddress] ? @"YES" : @"NO"));
-
+   
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"www.baidu.com") isEmail] ? @"YES" : @"NO"));
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"xxx.xxx@gmail.com") isEmail] ? @"YES" : @"NO"));
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"xxx@baidu.com") isEmail] ? @"YES" : @"NO"));
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isEmail : %@", [(@"xxx.@baidu.com") isEmail] ? @"YES" : @"NO"));
+   //
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.2.22") isIPAddress] ? @"YES" : @"NO"));
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.2") isIPAddress] ? @"YES" : @"NO"));
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.2.2222") isIPAddress] ? @"YES" : @"NO"));
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.2.256") isIPAddress] ? @"YES" : @"NO"));
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.168.256.254") isIPAddress] ? @"YES" : @"NO"));
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"192.256.168.254") isIPAddress] ? @"YES" : @"NO"));
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : isIPV4 : %@", [(@"256.192.168.254") isIPAddress] ? @"YES" : @"NO"));
+   
    NSArray<NSString *>  *stIPV4s = [(@"192.168.2.22") IPV4s];
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IPV4s : %@", stIPV4s));
-
+   
    LogDebug((@"---------------------------------------------------------------------------------------------------"));
-
+   
    /******************************************************************************************/
-      
-//   dispatch_sync(dispatch_get_main_queue(), ^{
-//      NSLog(@"死锁。。。。。。。");
-//   });
-
+   
+   //   dispatch_sync(dispatch_get_main_queue(), ^{
+   //      NSLog(@"死锁。。。。。。。");
+   //   });
+   
    /******************************************************************************************/
-
+   
    float  w    = [UIScreen mainScreen].bounds.size.width * [UIScreen mainScreen].scale;
    float  h    = [UIScreen mainScreen].bounds.size.height * [UIScreen mainScreen].scale;
-
+   
    float  dpi  = sqrt( w*w + h*h ); // 屏幕对角尺寸
-
+   
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : dpi : %.2f", dpi));
    
-//   NSString *szDecrypt  = [SecurityUtils deCrypt:@"2977312977"];
-//   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : Decrypt : %@", szDecrypt));
+   //   NSString *szDecrypt  = [SecurityUtils deCrypt:@"2977312977"];
+   //   LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : Decrypt : %@", szDecrypt));
    
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IDFA : %@", [ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : IDFV : %@", UIDevice.currentDevice.identifierForVendor.UUIDString));
-
+   
 #  if ADS_GOOGLE_MOBILE
    GADAdSize   stAdSize = GADAdSizeBanner;
-
+   
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : GADSimulatorID : %@", GADSimulatorID));
    LogDebug((@"-[APPDelegate application:willFinishLaunchingWithOptions:] : GADAdSizeBanner : (%.2f, %.2f)", stAdSize.size.width, stAdSize.size.height));
 #endif /* ADS_GOOGLE_MOBILE */
-
+   
 #endif /* __Debug__ */
-
+   
    /******************************************************************************************/
-
+   
 #if ADS_GOOGLE_MOBILE
    [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
    
@@ -196,25 +196,25 @@
 #     if TARGET_OS_SIMULATOR
    [stTestDevices addObject:GADSimulatorID];
 #     endif /* TARGET_OS_SIMULATOR */
-
-//   [stTestDevices addObject:@"d843fe76c85abf1f5ca02c98904f81bf"]; // Harry's iPhone 5s
-//   [stTestDevices addObject:@"09b9c6760653656e703bd450c3385513"]; // ROM's iPhone 5s
-
+   
+   //   [stTestDevices addObject:@"d843fe76c85abf1f5ca02c98904f81bf"]; // Harry's iPhone 5s
+   //   [stTestDevices addObject:@"09b9c6760653656e703bd450c3385513"]; // ROM's iPhone 5s
+   
    [stTestDevices addObject:[UIDevice currentDevice].identifierForVendor.UUIDString];
    [stTestDevices addObject:[ASIdentifierManager sharedManager].advertisingIdentifier.UUIDString]; // TEST Device
-
+   
    [stTestDevices addObject:@"80fbff4cdaad0a572a0b0e2faa24035a"]; // Harry's iPhone 6s
    [stTestDevices addObject:@"bc7bde38feef1e59c9d73072448d9126"]; // Harry's iPhone 6s+
-
+   
    [GADMobileAds sharedInstance].requestConfiguration.testDeviceIdentifiers = stTestDevices;
 #  endif /* ADMOB_TEST_DEVICE */
-
+   
    [AppOpenAdManager setDelegate:self];
    [AppOpenAdManager loadAd];
 #endif /* ADS_GOOGLE_MOBILE */
-
+   
    /******************************************************************************************/
-
+   
    __CATCH(nErr);
    
    return SUCCESS == nErr; //YES;
@@ -229,11 +229,11 @@
    LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : UIApplication  : %@", aApplication));
    LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : Window         : %@", self.window));
    LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : TraitCollection: %@", self.window.traitCollection));
-
+   
    /******************************************************************************************/
    // setup appearance
    if (@available(iOS 15.0, *)) {
-         
+      
       UINavigationBarAppearance  *stAppearance  = [[UINavigationBarAppearance alloc] init];
       [stAppearance configureWithOpaqueBackground];
       [stAppearance setBackgroundColor:UIColor.clearColor];
@@ -270,25 +270,25 @@
       
    } /* End else */
    /******************************************************************************************/
-
+   
    LogDebug((@"-[APPDelegate application:didFinishLaunchingWithOptions:] : appVersion : %@", [UIApplication sharedApplication].appVersion));
    
    /******************************************************************************************/
-
+   
    // Override point for customization after application launch.
    if ([self.window.rootViewController isKindOfClass:RootViewController.class]) {
       
       self.rootViewController    = __cast(RootViewController *, self.window.rootViewController);
       
-//      self.splashViewController  = [UIStoryboard loadStoryboard:SplashViewController.storyboard
-//                                                 viewController:SplashViewController.class];
+      //      self.splashViewController  = [UIStoryboard loadStoryboard:SplashViewController.storyboard
+      //                                                 viewController:SplashViewController.class];
    } /* End if () */
    else if ([self.window.rootViewController isKindOfClass:SplashViewController.class]) {
       
       self.splashViewController  = __cast(SplashViewController *, self.window.rootViewController);
       
-//      self.rootViewController    = [UIStoryboard loadStoryboard:RootViewController.storyboard
-//                                                 viewController:RootViewController.class];
+      //      self.rootViewController    = [UIStoryboard loadStoryboard:RootViewController.storyboard
+      //                                                 viewController:RootViewController.class];
    } /* End else */
    
    [self.window makeKeyAndVisible];
@@ -301,7 +301,7 @@
    [self splash];
    
    /******************************************************************************************/
-
+   
    __CATCH(nErr);
    
    return SUCCESS == nErr; //YES;
@@ -316,7 +316,7 @@
    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
    // [self splash];
-
+   
    __CATCH(nErr);
    
    return;
@@ -330,7 +330,7 @@
    
    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-
+   
    self.applicationState   = UIApplicationStateBackground;
    
    __CATCH(nErr);
@@ -444,9 +444,9 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-
+   
    LogDebug((@"-[APPDelegate applicationProtectedDataWillBecomeUnavailable:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
-
+   
    __CATCH(nErr);
    
    return;
@@ -457,33 +457,33 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-
+   
    LogDebug((@"-[APPDelegate applicationProtectedDataDidBecomeAvailable:] : ProtectedDataAvailable : %d", aApplication.isProtectedDataAvailable));
-
+   
    __CATCH(nErr);
    
    return;
 }
 
 - (BOOL)canOpenURL:(NSURL *)aURL {
-    
-    int                            nErr                                     = EFAULT;
-    
-    BOOL                           bDone                                    = NO;
-
-    __TRY;
-    
+   
+   int                            nErr                                     = EFAULT;
+   
+   BOOL                           bDone                                    = NO;
+   
+   __TRY;
+   
    if ([[aURL scheme] isEqualToString:[IDEAIdentifier schemePrefix]]) {
       
       //...
       bDone = YES;
       
    } /* End if () */
-
-    __CATCH(nErr);
-    
-    return bDone;
- }
+   
+   __CATCH(nErr);
+   
+   return bDone;
+}
 
 - (BOOL)application:(UIApplication *)aApplication shouldAllowExtensionPointIdentifier:(NSString *)aExtensionPointIdentifier {
    
@@ -492,15 +492,15 @@
       
    } /* End if () */
    else if (@available(iOS 16.0, *)) {
-         
+      
       if ([aExtensionPointIdentifier isEqualToString:@"com.apple.keyboard-service"]) {
          
          return NO;
          
       } /* End if () */
-
-   } /* End if () */
       
+   } /* End if () */
+   
    return YES;
 }
 
@@ -510,7 +510,7 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-
+   
    BG_PERFORM_SELECTOR(self, @selector(loadData), nil);
    
    __CATCH(nErr);
@@ -525,11 +525,11 @@
    NSString                      *szVersion                                = nil;
    
    __TRY;
-      
+   
    szVersion   = [SettingProvider version];
    LogDebug((@"-[APPDelegate loadData] : version    : %@", szVersion));
    LogDebug((@"-[APPDelegate loadData] : appVersion : %@", [UIApplication sharedApplication].appVersion));
-      
+   
    // 安装之后第一次进入
    if (kStringIsBlank(szVersion)) {
       
@@ -537,7 +537,7 @@
       [SettingProvider setTabbarAnimation:NO];
       [SettingProvider setApiKeySetting:NO];
       [SettingProvider setPrivacy:NO];
-
+      
    } /* End if () */
    else {
       
@@ -554,30 +554,30 @@
          [SettingProvider setTabbarAnimation:NO];
          [SettingProvider setApiKeySetting:NO];
          [SettingProvider setPrivacy:NO];
-
+         
       } /* End else */
       
    } /* End else */
    
    LogDebug((@"-[APPDelegate loadData] : [UIDevice ipv4:NetworkCellular] : %@", [UIDevice ipv4:NetworkCellular]));
-
+   
    /******************************************************************************************/
-
+   
    [self postSignal:APPDelegate.loadApiKeySignal onQueue:DISPATCH_GET_BACKGROUND_QUEUE()];
-
+   
    /******************************************************************************************/
-
-//#if ADS_GOOGLE_MOBILE
-//   UI_PERFORM_SELECTOR(self, @selector(showAD), nil, NO);
-//#else /* ADS_GOOGLE_MOBILE */
-//   UI_PERFORM_SELECTOR(self, @selector(splashing), nil, NO);
-//#endif /* !ADS_GOOGLE_MOBILE */
-
+   
+   //#if ADS_GOOGLE_MOBILE
+   //   UI_PERFORM_SELECTOR(self, @selector(showAD), nil, NO);
+   //#else /* ADS_GOOGLE_MOBILE */
+   //   UI_PERFORM_SELECTOR(self, @selector(splashing), nil, NO);
+   //#endif /* !ADS_GOOGLE_MOBILE */
+   
    /**
     * 冷启动时不显示开屏广告
     */
    UI_PERFORM_SELECTOR(self, @selector(splashing), nil, NO);
-
+   
    __CATCH(nErr);
    
    return;
@@ -585,39 +585,39 @@
 
 #if ADS_GOOGLE_MOBILE
 - (void)showAD {
-
+   
    int                            nErr                                     = EFAULT;
-
+   
    __TRY;
-
+   
    [AppOpenAdManager showAdIfAvailable:self.window.rootViewController];
    LogDebug((@"-[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
-
+   
    DISPATCH_AFTER_ON_MAIN_QUEUE(5, ^{
-
+      
       LogDebug((@"-[APPDelegate showAD] : [AppOpenAdManager isShowingAd] : %@", [AppOpenAdManager isShowingAd] ? @"YES" : @"NO"));
-
+      
       if ([AppOpenAdManager isShowingAd]) {
-
+         
          // 有广告展示
          DISPATCH_AFTER_ON_MAIN_QUEUE(5, ^{
-
+            
             [self splashing];
          });
-
+         
       } /* End if () */
       else {
-
+         
          // 无广告展示
          [self splashing];
-
+         
       } /* End else */
-
+      
       return;
    });
-
+   
    __CATCH(nErr);
-
+   
    return;
 }
 
@@ -627,7 +627,7 @@
    int                            nErr                                     = EFAULT;
    
    __TRY;
-      
+   
    __CATCH(nErr);
    
    return;
@@ -692,7 +692,7 @@
    [Appirater setSignificantEventsUntilPrompt:-1];
    [Appirater setTimeBeforeReminding:2];
    [Appirater setDebug:__Debug__];
-
+   
 #if __Debug__
 #  else
    [Appirater appLaunched:YES];
@@ -700,7 +700,7 @@
 #  endif /* !TARGET_IPHONE_SIMULATOR */
 #endif /* APP_RATER */
    /******************************************************************************************/
-
+   
    [self postNotificationName:SplashViewController.SPLASH_DONE
                        object:nil];
    

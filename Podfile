@@ -58,7 +58,8 @@ ENV['osx.deployment_target']              = '10.15'
 ENV['Debug.Keyboard']                     = 'NO'
 ENV['IDEA_APPLET_DEBUG']                  = 'YES'
 
-#ENV['IM_HOST']                            = 'T450'
+# ENV['IM_HOST']                            = 'T450'
+# ENV['XCODE_VERSION']                      = '12.4'
 ENV['XCODE_VERSION']                      = '15.+'
 
 ###################################################################################################################################
@@ -137,6 +138,8 @@ def library
 
   github_pod('IDEAApplet',                  file = 'IDEAApplet',              type = 'local', branch = 'develop')
 
+  #-------------------------------------------------------------------------------------------------------------------------------#
+
   miniwing_pod('IDEAKit',             type = 'local', branch = 'develop')
   miniwing_pod('IDEAColor',           type = 'local', branch = 'develop')
   miniwing_pod('IDEAPalettes',        type = 'local', branch = 'develop')
@@ -149,9 +152,17 @@ def library
     miniwing_pod('ollvm',             type = 'local', branch = 'develop')
   end # OLLVM
 
+  #-------------------------------------------------------------------------------------------------------------------------------#
+
+  if ENV['OpenSSL'] == 'YES'
+    pod 'OpenSSL-Universal', '1.1.2200'
+  end # OpenSSL
+
 #  pod 'MMLanScan'
 #  pod 'PhoneNetSDK'
 #  pod 'CocoaLumberjack'
+
+  #-------------------------------------------------------------------------------------------------------------------------------#
 
 end
 
