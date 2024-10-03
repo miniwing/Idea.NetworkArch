@@ -124,8 +124,8 @@
       });
 #endif
       
-      _titles           = @[ APP_STR(@"HOME"),
-                             APP_STR(@"MONITOR") ];
+      _titles           = @[ LOCALIZED_STRING(self.class, @"HOME"),
+                             LOCALIZED_STRING(self.class, @"MONITOR") ];
       
       _images           = @[ @"TAB-HOME",
                              @"TAB-MONITOR" ];

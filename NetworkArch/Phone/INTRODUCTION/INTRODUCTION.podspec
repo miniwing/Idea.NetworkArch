@@ -53,14 +53,14 @@ Pod::Spec.new do |spec|
   end # if IDEA_AFNETWORKING
   
   if ENV['IDEA_MATERIAL_COMPONENTS'] == 'YES'
-    spec.dependency 'MaterialComponents'
     spec.dependency 'MotionInterchange'
-  else
-    if ENV['IDEA_MATERIAL_NAVIGATION_BAR'] == 'YES'
-      spec.dependency 'MaterialComponents/NavigationBar'
-      spec.dependency 'MaterialComponents/ActivityIndicator'
-      spec.dependency 'MotionInterchange'
-    end # IDEA_MATERIAL_NAVIGATION_BAR
+    spec.dependency 'MaterialComponents/NavigationBar'
+    spec.dependency 'MaterialComponents/ActivityIndicator'
+    spec.dependency 'MaterialComponents/Buttons'
+    spec.dependency 'MaterialComponents/BottomSheet'
+    spec.dependency 'MaterialComponents/BottomSheet+ShapeThemer'
+    spec.dependency 'MaterialComponents/Snackbar'
+    spec.dependency 'MaterialComponents/Palettes'
   end # IDEA_MATERIAL_COMPONENTS
 
   if ENV['IDEA_FOUNDATION_EXTENSION'] == 'YES'
@@ -366,26 +366,14 @@ Pod::Spec.new do |spec|
 #     define SS_ZIP_ARCHIVE                                                (0)
 #  endif
 
-#  if __has_include(<MaterialComponents/MaterialNavigationBar.h>)
-#     import <MaterialComponents/MaterialNavigationBar.h>
-#     define MATERIAL_NAVIGATIONBAR                                        (1)
-#  elif __has_include("MaterialComponents/MaterialNavigationBar.h")
-#     import "MaterialComponents/MaterialNavigationBar.h"
-#     define MATERIAL_NAVIGATIONBAR                                        (1)
+#  if __has_include(<MaterialComponents/MaterialComponents-umbrella.h>)
+#     import <MaterialComponents/MaterialComponents-umbrella.h>
+#     define MATERIAL_COMPONENTS                                           (1)
+#  elif __has_include("MaterialComponents/MaterialComponents-umbrella.h")
+#     import "MaterialComponents/MaterialComponents-umbrella.h"
+#     define MATERIAL_COMPONENTS                                           (1)
 #  else
-#     define MATERIAL_NAVIGATIONBAR                                        (0)
-#  endif
-
-#  if __has_include(<MaterialComponents/MaterialActivityIndicator.h>)
-#     import <MaterialComponents/MaterialPalettes.h>
-#     import <MaterialComponents/MaterialActivityIndicator.h>
-#     define MATERIAL_ACTIVITY_INDICATOR                                   (1)
-#  elif __has_include("MaterialComponents/MaterialActivityIndicator.h")
-#     import "MaterialComponents/MaterialPalettes.h"
-#     import "MaterialComponents/MaterialActivityIndicator.h"
-#     define MATERIAL_ACTIVITY_INDICATOR                                   (1)
-#  else
-#     define MATERIAL_ACTIVITY_INDICATOR                                   (0)
+#     define MATERIAL_COMPONENTS                                           (0)
 #  endif
 
 #  if __has_include(<IDEARefresh/MJRefresh.h>)
@@ -856,12 +844,12 @@ NS_INLINE NSString * __LOCALIZED_STRING(Class aClass, NSString *aKey) {
    return NSLocalizedStringWithDefaultValue(aKey, nil, __BUNDLE_FROM(aClass), aKey, aKey);
 }
 
-NS_INLINE NSString * __FILE_IN_BUNDLE(NSString *aName, Class aClass) {
+NS_INLINE NSString * __FILE_IN_BUNDLE(Class aClass, NSString *aName) {
     
   return [__BUNDLE_FROM(aClass) pathForResource:aName ofType:@""];
 }
 
-NS_INLINE UIImage * __IMAGE_NAMED_IN_BUNDLE(NSString *aName, Class aClass) {
+NS_INLINE UIImage * __IMAGE_NAMED_IN_BUNDLE(Class aClass, NSString *aName) {
    
    return [UIImage imageNamed:aName inBundle:__BUNDLE_FROM(aClass) compatibleWithTraitCollection:nil];
 }
@@ -877,9 +865,9 @@ NS_INLINE UIImage * __IMAGE_NAMED_IN_FRAMEWORK(NSString *aName) {
    return [UIImage imageNamed:aName inBundle:stBundle compatibleWithTraitCollection:nil];
 }
 
-NS_INLINE UIImage * __IMAGE_NAMED(NSString *aName, Class aClass) {
+NS_INLINE UIImage * __IMAGE_NAMED(Class aClass, NSString *aName) {
    
-   UIImage  *stImage    = __IMAGE_NAMED_IN_BUNDLE(aName, aClass);
+   UIImage  *stImage    = __IMAGE_NAMED_IN_BUNDLE(aClass, aName);
    
    if (nil == stImage) {
       

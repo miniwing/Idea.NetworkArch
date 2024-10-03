@@ -230,26 +230,14 @@ typedef FBLPromise Promise;
 #     import <MDFTextAccessibility/MDFTextAccessibility.h>
 #  endif
 
-#  if __has_include(<MaterialComponents/MaterialNavigationBar.h>)
-#     import <MaterialComponents/MaterialNavigationBar.h>
-#     define MATERIAL_NAVIGATIONBAR                                        (1)
-#  elif __has_include("MaterialComponents/MaterialNavigationBar.h")
-#     import "MaterialComponents/MaterialNavigationBar.h"
-#     define MATERIAL_NAVIGATIONBAR                                        (1)
+#  if __has_include(<MaterialComponents/MaterialComponents-umbrella.h>)
+#     import <MaterialComponents/MaterialComponents-umbrella.h>
+#     define MATERIAL_COMPONENTS                                           (1)
+#  elif __has_include("MaterialComponents/MaterialComponents-umbrella.h")
+#     import "MaterialComponents/MaterialComponents-umbrella.h"
+#     define MATERIAL_COMPONENTS                                           (1)
 #  else
-#     define MATERIAL_NAVIGATIONBAR                                        (0)
-#  endif
-
-#  if __has_include(<MaterialComponents/MaterialActivityIndicator.h>)
-#     import <MaterialComponents/MaterialPalettes.h>
-#     import <MaterialComponents/MaterialActivityIndicator.h>
-#     define MATERIAL_ACTIVITY_INDICATOR                                   (1)
-#  elif __has_include("MaterialComponents/MaterialActivityIndicator.h")
-#     import "MaterialComponents/MaterialPalettes.h"
-#     import "MaterialComponents/MaterialActivityIndicator.h"
-#     define MATERIAL_ACTIVITY_INDICATOR                                   (1)
-#  else
-#     define MATERIAL_ACTIVITY_INDICATOR                                   (0)
+#     define MATERIAL_COMPONENTS                                           (0)
 #  endif
 
 #  if __has_include(<IDEANibBridge/IDEANibBridge.h>)

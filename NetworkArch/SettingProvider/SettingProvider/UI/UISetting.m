@@ -77,7 +77,7 @@ IDEA_MAIN() {
 
    @try {
       
-      NSString    *szFilePath = __FILE_IN_BUNDLE(@"Colors.txt", UISetting.class);
+      NSString    *szFilePath = __FILE_IN_BUNDLE(UISetting.class, @"Colors.txt");
       LogDebug((@"UISetting::IDEA_MAIN : FilePath : %@", szFilePath));
 
       [DKColorTable appendThemeFile:szFilePath];

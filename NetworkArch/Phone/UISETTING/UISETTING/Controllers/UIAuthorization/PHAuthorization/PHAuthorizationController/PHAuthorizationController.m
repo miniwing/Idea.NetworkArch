@@ -135,7 +135,7 @@
     */
    self.modalPresentationCapturesStatusBarAppearance  = YES;
    
-   [self.iconImageViewX setImage:__IMAGE_NAMED(@"permission-lock", self.class)];
+   [self.iconImageViewX setImage:__IMAGE_NAMED(self.class, @"permission-lock")];
    
    if (kStringIsBlank(_permissionTip)) {
       

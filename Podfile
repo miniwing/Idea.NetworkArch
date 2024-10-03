@@ -21,16 +21,13 @@ ENV['IDEAFONT_MSYH']                      = 'NO'
 ENV['IDEAFONT_ZEKTON']                    = 'NO'
 ENV['IDEAFONT']                           = 'NO'
 
-ENV['IDEA_MATERIAL_COMPONENTS']           = 'NO'
-ENV['IDEA_MATERIAL_NAVIGATION_BAR']       = 'YES'
-
 ENV['IDEA_TABBAR_CONTROLLER_TRANSITION']  = 'NO'
 
-ENV['IDEA_AFNETWORKING']                  = 'NO'
-
+ENV['IDEA_MATERIAL_COMPONENTS']           = 'YES'
 ENV['IDEA_FOUNDATION_EXTENSION']          = 'YES'
 ENV['IDEA_UIKIT_EXTENSION']               = 'YES'
 
+ENV['IDEA_AFNETWORKING']                  = 'NO'
 ENV['IDEA_YYKIT']                         = 'YES'
 ENV['IDEA_EVENT_KIT']                     = 'NO'
 
@@ -178,16 +175,16 @@ target 'NetworkArch' do
   end # IDEA_ROOT_NAVIGATION_CONTROLLER
 
   if ENV['IDEA_MATERIAL_COMPONENTS'] == 'YES'
-    pod 'MaterialComponents'
     pod 'MotionInterchange'
-  else
-    if ENV['IDEA_MATERIAL_NAVIGATION_BAR'] == 'YES'
-      pod 'MaterialComponents/NavigationBar'
-      pod 'MaterialComponents/ActivityIndicator'
-      pod 'MotionInterchange'
-    end # IDEA_MATERIAL_NAVIGATION_BAR
+    pod 'MaterialComponents/NavigationBar'
+    pod 'MaterialComponents/ActivityIndicator'
+    pod 'MaterialComponents/Buttons'
+    pod 'MaterialComponents/BottomSheet'
+    pod 'MaterialComponents/BottomSheet+ShapeThemer'
+    pod 'MaterialComponents/Snackbar'
+    pod 'MaterialComponents/Palettes'
   end # IDEA_MATERIAL_COMPONENTS
-  
+
   #-------------------------------------------------------------------------------------------------------------------------------#
   if ENV['IDEA_APPLET_DEBUG'] == 'YES'
     github_pod('IDEAAppletDebugger',  file = 'IDEAApplet', type = 'local', branch = 'develop', configurations = ['Debug'])
@@ -425,6 +422,7 @@ post_install do |installer|
 #                                                                       ]
 #      end
       
+      config.build_settings["DEVELOPMENT_TEAM"]                       = "G8G9TAP4UN"
       config.build_settings['LD_RUNPATH_SEARCH_PATHS']                = [ '$(FRAMEWORK_SEARCH_PATHS)' ]
       config.build_settings['WARNING_CFLAGS']                         = [
                                                                           '$(inherited)',

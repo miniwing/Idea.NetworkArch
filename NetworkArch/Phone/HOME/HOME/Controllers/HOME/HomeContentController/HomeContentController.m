@@ -147,10 +147,10 @@
    [self.wifiSSIDIcon setBackgroundColor:UIColor.clearColor];
    [self.wifiSSIDIcon setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
    [self.wifiSSIDIcon setImage:[ImageProvider imageNamed:@"wifi.slash"]];
-   LogDebug((@"-[HomeContentController viewDidLoad] : WIFI-SLASH : %@", __IMAGE_NAMED(@"WIFI-SLASH", self.class)));
+   LogDebug((@"-[HomeContentController viewDidLoad] : WIFI-SLASH : %@", __IMAGE_NAMED(self.class, @"WIFI-SLASH")));
    
 //#if TARGET_IPHONE_SIMULATOR
-//   [self.wifiSSIDIcon setImage:__IMAGE_NAMED(@"WIFI-ON", self.class)];
+//   [self.wifiSSIDIcon setImage:__IMAGE_NAMED(self.class, @"WIFI-ON")];
 //#endif /* TARGET_IPHONE_SIMULATOR */
 
    [self.wifiIPLabel setBackgroundColor:UIColor.clearColor];
@@ -200,10 +200,10 @@
    [self.cellularOperatorIcon setImage:[ImageProvider imageNamed:@"antenna.radiowaves.left.and.right.slash"]];
 
 //#if TARGET_IPHONE_SIMULATOR
-//   [self.cellularOperatorIcon setImage:__IMAGE_NAMED(@"CELLULAR", self.class)];
+//   [self.cellularOperatorIcon setImage:__IMAGE_NAMED(self.class, @"CELLULAR")];
 //#endif /* TARGET_IPHONE_SIMULATOR */
 
-   LogDebug((@"-[HomeContentController viewDidLoad] : CELLULAR : %@", __IMAGE_NAMED(@"CELLULAR", self.class)));
+   LogDebug((@"-[HomeContentController viewDidLoad] : CELLULAR : %@", __IMAGE_NAMED(self.class, @"CELLULAR")));
    LogDebug((@"-[HomeContentController viewDidLoad] : UIButtonBarArrowRight : %@", [ImageProvider imageNamed:@"UIButtonBarArrowRight"]));
 
    [self.cellularIPLabel setBackgroundColor:UIColor.clearColor];
@@ -283,8 +283,8 @@
 //   /**
 //    * 设置图标
 //    */
-//   [self.wifiCells[0].iconImage setImage:__IMAGE_NAMED(@"WIFI-ON", self.class)];
-//   [self.cellularCells[0].iconImage setImage:__IMAGE_NAMED(@"CELLULAR", self.class)];
+//   [self.wifiCells[0].iconImage setImage:__IMAGE_NAMED(self.class, @"WIFI-ON")];
+//   [self.cellularCells[0].iconImage setImage:__IMAGE_NAMED(self.class, @"CELLULAR")];
    
    /**
     * 设置箭头

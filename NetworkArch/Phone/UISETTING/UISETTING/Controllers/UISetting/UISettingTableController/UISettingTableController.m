@@ -114,13 +114,13 @@ forHeaderFooterViewReuseIdentifier:[UISettingHeader reuseIdentifier]];
    [self.lightButton.titleLabel setFont:[UIFont systemFontOfSize:self.lightButton.titleLabel.font.pointSize
                                                           weight:UIFontWeightLight]];
 
-   [self.lightButton.imageView setImage:__IMAGE_NAMED_IN_BUNDLE(@"UI-Light", self.class)];
+   [self.lightButton.imageView setImage:__IMAGE_NAMED_IN_BUNDLE(self.class, @"UI-Light")];
    
    [self.nightButton.titleLabel setText:__LOCALIZED_STRING(self.class, @"Night")];
    [self.nightButton.titleLabel setFont:[UIFont systemFontOfSize:self.nightButton.titleLabel.font.pointSize
                                                           weight:UIFontWeightLight]];
 
-   [self.nightButton.imageView setImage:__IMAGE_NAMED_IN_BUNDLE(@"UI-Night", self.class)];
+   [self.nightButton.imageView setImage:__IMAGE_NAMED_IN_BUNDLE(self.class, @"UI-Night")];
    
    [self.lightButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
    [self.nightButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];

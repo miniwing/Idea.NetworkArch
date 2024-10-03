@@ -51,16 +51,16 @@ handleSignal(TodayWidgetContentController, loadWifiInfoSignal) {
       
       if ([IDEARouter isWifiConnected]) {
                   
-         szSSID   = APP_STR(@"SSID not available");
-         szIP     = APP_STR(@"N/A");
+         szSSID   = LOCALIZED_STRING(self.class, @"SSID not available");
+         szIP     = LOCALIZED_STRING(self.class, @"N/A");
          
          szIcon   = @"wifi";
          
       } /* End if () */
       else {
 
-         szSSID   = APP_STR(@"Wi-Fi not connected");
-         szIP     = APP_STR(@"N/A");
+         szSSID   = LOCALIZED_STRING(self.class, @"Wi-Fi not connected");
+         szIP     = LOCALIZED_STRING(self.class, @"N/A");
 
          szIcon   = @"wifi.slash";
 

@@ -44,8 +44,8 @@
    [self.view setBackgroundColorPicker:nil];
    [self.view setBackgroundColor:UIColor.clearColor];
 
-   LogDebug((@"-[FleetingWidgetController viewDidLoad] : Remaining : ", APP_STR(@"Remaining")));
-   [self.titleLabel setText:[NSString stringWithFormat:APP_STR(@"Remaining"), [OneYear sharedInstance].year]];
+   LogDebug((@"-[FleetingWidgetController viewDidLoad] : Remaining : ", LOCALIZED_STRING(self.class, @"Remaining")));
+   [self.titleLabel setText:[NSString stringWithFormat:LOCALIZED_STRING(self.class, @"Remaining"), [OneYear sharedInstance].year]];
    [self.titleLabel setFont:[UIFont systemFontOfSize:self.titleLabel.font.pointSize weight:UIFontWeightRegular]];
 
    [self.progressLabel setFont:[UIFont monospacedDigitSystemFontOfSize:self.progressLabel.font.pointSize weight:UIFontWeightLight]];

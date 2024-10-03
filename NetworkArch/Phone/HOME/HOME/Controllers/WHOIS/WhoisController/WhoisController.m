@@ -9,6 +9,8 @@
 //  TEL : +(852)53054612
 //
 
+#import <MaterialComponents/MDCPalettes.h>
+
 #import <SettingProvider/SettingProvider.h>
 #import <SettingProvider/UISetting.h>
 

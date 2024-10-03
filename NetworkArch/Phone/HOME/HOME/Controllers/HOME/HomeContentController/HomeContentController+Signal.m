@@ -118,7 +118,7 @@ handleSignal(HomeContentController, loadWifiInfoSignal) {
       [self.wifiSSIDIcon setImage:[ImageProvider imageNamed:szIcon]];
       
 //#if TARGET_IPHONE_SIMULATOR
-//      [self.wifiSSIDIcon setImage:__IMAGE_NAMED(@"WIFI-ON", self.class)];
+//      [self.wifiSSIDIcon setImage:__IMAGE_NAMED(self.class, @"WIFI-ON")];
 //#endif /* TARGET_IPHONE_SIMULATOR */
 
       return;

@@ -207,7 +207,7 @@
    [self.textField setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
    
    [self.textField setDelegate:self];
-   [self.textField setPlaceholder:APP_STR(@"IP Address / Host Name")];
+   [self.textField setPlaceholder:LOCALIZED_STRING(self.class, @"IP Address / Host Name")];
    [self.textField setEdgeX:[UISetting textFieldEdgeX] edgeY:[UISetting textFieldEdgeY]];
    
    [self addNotificationName:UITextFieldTextDidChangeNotification

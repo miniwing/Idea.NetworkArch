@@ -66,7 +66,7 @@
    
    if (self) {
 
-      _localizations = [NSArray arrayWithContentsOfFile:__FILE_IN_BUNDLE(@"Localizations.plist", SettingProvider.class)];
+      _localizations = [NSArray arrayWithContentsOfFile:__FILE_IN_BUNDLE(SettingProvider.class, @"Localizations.plist")];
 
    } /* End if () */
    

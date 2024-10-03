@@ -46,12 +46,12 @@
       
       if (SERVICE(IMonitorService).batteryIsCharging) {
 
-         [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.100-bolt", self.class)];
+         [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(self.class, @"battery.100-bolt")];
 
       } /* End if () */
       else {
          
-         [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.100", self.class)];
+         [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(self.class, @"battery.100")];
 
       } /* End else */
 
@@ -60,28 +60,28 @@
    } /* End if () */
    else if (SERVICE(IMonitorService).batteryLevel >= 0.75) {
       
-      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.75", self.class)];
+      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(self.class, @"battery.75")];
 
       [self.batteryProgressView setProgressTintColor:UIColorX.systemGreenColor];
 
    } /* End if () */
    else if (SERVICE(IMonitorService).batteryLevel >= 0.50) {
       
-      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.50", self.class)];
+      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(self.class, @"battery.50")];
 
       [self.batteryProgressView setProgressTintColor:UIColorX.systemGreenColor];
 
    } /* End if () */
    else if (SERVICE(IMonitorService).batteryLevel >= 0.25) {
       
-      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.25", self.class)];
+      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(self.class, @"battery.25")];
 
       [self.batteryProgressView setProgressTintColor:UIColorX.systemGreenColor];
 
    } /* End if () */
    else {
       
-      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(@"battery.0", self.class)];
+      [self.iconImageViews[MonitorSectionBattery] setImage:__IMAGE_NAMED(self.class, @"battery.0")];
 
       [self.batteryProgressView setProgressTintColor:UIColorX.systemRedColor];
 

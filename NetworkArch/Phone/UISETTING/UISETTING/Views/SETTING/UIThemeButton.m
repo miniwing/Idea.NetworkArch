@@ -190,12 +190,12 @@ const static NSTimeInterval   UIButtonAnimationDuration  = 0.1f;
             
             if ([[DKNightVersionManager sharedManager].themeVersion isEqualToString:DKThemeVersionNight]) {
                
-               return __IMAGE_NAMED_IN_BUNDLE(@"ui-selected-on-night", self.class);
+               return __IMAGE_NAMED_IN_BUNDLE(self.class, @"ui-selected-on-night");
                
             } /* End if () */
             else {
                
-               return __IMAGE_NAMED_IN_BUNDLE(@"ui-selected-on-light", self.class);
+               return __IMAGE_NAMED_IN_BUNDLE(self.class, @"ui-selected-on-light");
                
             } /* End else */
          }];
@@ -207,12 +207,12 @@ const static NSTimeInterval   UIButtonAnimationDuration  = 0.1f;
             
             if ([[DKNightVersionManager sharedManager].themeVersion isEqualToString:DKThemeVersionNight]) {
                
-               return __IMAGE_NAMED_IN_BUNDLE(@"ui-selected-off-night", self.class);
+               return __IMAGE_NAMED_IN_BUNDLE(self.class, @"ui-selected-off-night");
                
             } /* End if () */
             else {
                               
-               return __IMAGE_NAMED_IN_BUNDLE(@"ui-selected-off-light", self.class);
+               return __IMAGE_NAMED_IN_BUNDLE(self.class, @"ui-selected-off-light");
                
             } /* End else */
          }];

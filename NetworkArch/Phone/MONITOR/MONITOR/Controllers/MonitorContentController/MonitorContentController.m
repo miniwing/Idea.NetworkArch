@@ -206,7 +206,7 @@
    
    [self.networkUpImageView setBackgroundColor:UIColor.clearColor];
    [self.networkUpImageView setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.networkUpImageView setImage:__IMAGE_NAMED(@"arrow.up.right", self.class)];
+   [self.networkUpImageView setImage:__IMAGE_NAMED(self.class, @"arrow.up.right")];
    
    [self.networkDownLabel setBackgroundColor:UIColor.clearColor];
    [self.networkDownLabel setTextColorPicker:DKColorPickerWithKey([IDEAColor label])];
@@ -216,7 +216,7 @@
    
    [self.networkDownImageView setBackgroundColor:UIColor.clearColor];
    [self.networkDownImageView setTintColorPicker:DKColorPickerWithKey([IDEAColor label])];
-   [self.networkDownImageView setImage:__IMAGE_NAMED(@"arrow.down.right", self.class)];
+   [self.networkDownImageView setImage:__IMAGE_NAMED(self.class, @"arrow.down.right")];
    
    /**
     * CPU

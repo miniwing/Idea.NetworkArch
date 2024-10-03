@@ -8,6 +8,8 @@
 //  Mail: miniwing.hz@gmail.com
 //
 
+#import <MaterialComponents/MDCActivityIndicator.h>
+
 #import <ADs/AD.h>
 #import <ADs/AppOpenAdManager.h>
 
